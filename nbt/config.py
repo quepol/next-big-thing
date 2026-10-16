@@ -21,7 +21,7 @@ class Region:
 
 @dataclass(frozen=True)
 class Config:
-    lastfm_user: str = os.environ.get("LASTFM_USER", "")
+    lastfm_user: str = os.environ.get("LASTFM_USER") or "quepol"
     lastfm_api_key: str = os.environ.get("LASTFM_API_KEY", "")
     bandsintown_app_id: str = os.environ.get("BANDSINTOWN_APP_ID", "")
 

@@ -46,9 +46,10 @@ Seeds are weighted by log(distinct days), so a 20-year habit counts for more tha
 
 1. Create a Last.fm API key at <https://www.last.fm/api/account/create>.
 2. In the repo settings, add:
-   - the variable `LASTFM_USER`
    - the secret `LASTFM_API_KEY`
    - optionally, the secret `BANDSINTOWN_APP_ID`, which enables artist-first lookups
+
+   The Last.fm user defaults to `quepol` (`nbt/config.py`); set `LASTFM_USER` to override it.
 3. Set **Settings → Pages → Source** to "GitHub Actions".
 4. Run the **Daily digest** workflow manually once. The first run backfills your whole scrobble history; the job saves progress as it goes, so it can resume if interrupted.
 
@@ -57,9 +58,9 @@ To run locally:
 ```sh
 pip install -r requirements.txt pytest
 python -m pytest -q
-LASTFM_USER=you LASTFM_API_KEY=... python -m nbt history   # history only
-LASTFM_USER=you LASTFM_API_KEY=... python -m nbt run       # everything
-python -m http.server -d site 8000                          # demo data until a digest exists
+LASTFM_API_KEY=... python -m nbt history   # history only
+LASTFM_API_KEY=... python -m nbt run       # everything
+python -m http.server -d site 8000          # demo data until a digest exists
 ```
 
 Settings you might want to tune are in `nbt/config.py`.

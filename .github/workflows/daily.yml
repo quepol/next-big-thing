@@ -33,7 +33,6 @@ jobs:
           restore-keys: api-cache-
       - name: Run pipeline
         env:
-          LASTFM_USER: ${{ vars.LASTFM_USER }}
           LASTFM_API_KEY: ${{ secrets.LASTFM_API_KEY }}
           BANDSINTOWN_APP_ID: ${{ secrets.BANDSINTOWN_APP_ID }}
         run: python -m nbt run
