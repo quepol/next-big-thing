@@ -137,3 +137,13 @@ The user asked about this.
 - **Ticketmaster has no public user-authorised API for purchase history**; the Partner and Commerce APIs are for distribution. The realistic universal route to "shows attended" is **parsing ticket confirmation emails** (a Gmail connection or a forwarding address), which covers Ticketmaster, TicketWeb, DICE, Eventbrite and Universe. setlist.fm covers the few people who log their shows there.
 - **Listening sources:** Last.fm (open, but few people scrobble), Spotify (developer-mode limits keep tightening; check the current user caps), and Apple Music (needs a paid Apple developer account; the library and recently-played endpoints are available).
 
+## History check #7: the taste model is considered ready
+
+https://github.com/quepol/next-big-thing/actions/runs/38859298640
+
+- History: 6,442 artists and 74,517 plays. That's 10 artists more than before the normalization fixes; these are the recovered non-Latin and symbol-only names.
+- 37 artists excluded: 32 manually, plus 5 automatically by tags (Jakeneutron and Mike Geno for Friday Night Funkin'; Ghost and Pals, CircusP and Flavor Foley for Vocaloid). No game-music artists left to review.
+- **The kids' leakage is gone:** no more Sandra Boynton, Laurie Berkner, Ralph's World or Charlie Hope.
+- The small-artist list is now mostly real side projects of loved bands: Deb Talan (The Weepies), Ruth Moody (The Wailin' Jennys), Will Sheff (Okkervil River), Tom Chaplin (Keane), Owl John (Frightened Rabbit). It also has classical neighbours of Yo-Yo Ma. The remaining junk comes from junk seeds (`Us`, `Various Musique`, a Dreamgirls cast string) and doesn't matter, because real candidates come from lineups.
+- Possible kids or musical-theatre seeds still worth asking about: **Hunter Parrish** (267 days; an actor whose cast recordings include Godspell) and **Julie Andrews** (which brings in Peggy Wood from *The Sound of Music*).
+
