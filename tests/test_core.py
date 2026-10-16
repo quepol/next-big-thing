@@ -193,6 +193,7 @@ def test_kid_tags_ignore_low_weight_tags():
     from nbt.exclusions import kid_tags
     assert kid_tags({"children's music": 100, "pop": 80}) == ["children's music"]
     assert kid_tags({"kids": 5, "indie": 100}) == []
+    assert kid_tags({"video game music": 60, "electronic": 100}) == ["video game music"]
 
 
 def test_excluded_artist_is_not_a_seed_or_a_pick():
