@@ -6,7 +6,7 @@ name: History check
 on:
   push:
     branches: [claude/music-venue-alerts-ayb8hs]
-    paths: ["nbt/**", ".github/workflows/history-check.yml"]
+    paths: ["nbt/**", "data/exclude.txt", ".github/workflows/history-check.yml"]
   workflow_dispatch:
 
 jobs:

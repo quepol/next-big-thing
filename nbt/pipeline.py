@@ -91,6 +91,7 @@ def run(log=print) -> dict:
         events, history, loved,
         affinity=taste.affinity, artist_info=info, velocity=velocity,
         regions={r.name: r.tiers for r in CONFIG.regions},
+        is_alias=taste.looks_like_alias,
     )
 
     ledger = led.load()

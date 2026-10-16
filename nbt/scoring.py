@@ -32,6 +32,7 @@ def score_events(
     regions: dict[str, str],  # region name -> tiers ("all" | "loved")
     cfg: Config = CONFIG,
     excluded: set[str] | None = None,
+    is_alias: Callable[[str], bool] = lambda name: False,
 ) -> list[Pick]:
     artists = history["artists"]
     excluded = exclusions.load() if excluded is None else excluded
@@ -59,6 +60,8 @@ def score_events(
             if loved_only:
                 continue
 
+            if is_alias(artist):
+                continue
             aff, reasons = affinity(artist)
             info = artist_info(artist)
             listeners = info["listeners"] if info else None

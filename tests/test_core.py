@@ -207,3 +207,47 @@ def test_excluded_artist_is_not_a_seed_or_a_pick():
                          regions={"Toronto": "all"}, cfg=Config(), excluded=excluded)
     names = {p.artist for p in picks}
     assert "Big Thief" not in names
+
+
+def test_affinity_is_bounded_and_does_not_saturate_on_hubs():
+    h = hist.empty_history()
+    seeds = [f"Seed {i}" for i in range(20)]
+    hist.ingest(h, [{"artist": s, "uts": uts(2010 + d, 1, 1 + i)} for i, s in enumerate(seeds) for d in range(5)])
+
+    class HubLastFM(FakeLastFM):
+        def similar(self, name):
+            k = normalize_name(name)
+            if k.startswith("seed"):
+                return [("Hub Band", 0.6)] + ([("Niche Band", 0.95)] if k == "seed 0" else [])
+            return []
+
+    taste = Taste(h, HubLastFM(), log=lambda *_: None)
+    hub, _ = taste.affinity("Hub Band")      # weak link from all 20 seeds
+    niche, _ = taste.affinity("Niche Band")  # one strong link
+    assert 0 < hub < 1 and 0 < niche < 1
+    assert hub < 0.65  # 20 weak links no longer pin it at 1.0
+
+
+def test_alias_pages_are_detected():
+    class AliasLastFM(FakeLastFM):
+        INFO = {**FakeLastFM.INFO, "michael jackson": 5_000_000}
+
+        def artist_info(self, name):
+            if name == "マイケル・ジャクソン":
+                return {"name": name, "listeners": 14_000}
+            if name == "Old Spelling":
+                return {"name": "New Spelling", "listeners": 900}
+            return super().artist_info(name)
+
+        def similar(self, name):
+            if name == "マイケル・ジャクソン":
+                return [("Michael Jackson", 0.97)]
+            if name == "Deb Talan":
+                return [("Big Thief", 0.99)]
+            return super().similar(name)
+
+    taste = Taste(make_history(), AliasLastFM(), log=lambda *_: None)
+    assert taste.looks_like_alias("マイケル・ジャクソン")
+    assert taste.looks_like_alias("Old Spelling")          # Last.fm autocorrects it
+    assert not taste.looks_like_alias("Tiny Newcomer")
+    assert not taste.looks_like_alias("Deb Talan")         # Latin-script side project: keep

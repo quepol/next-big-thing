@@ -32,10 +32,10 @@ def run(top: int = 25) -> None:
         print(f"   {a['days']:>5} days  {a['plays']:>6} plays  {a['first']}..{a['last']}  {a['name']}")
 
     excluded = exclusions.load()
-    print(f"\n== likely kids' listening among your top {CONFIG.taste_seeds} (tagged children's/kids/disney...)")
+    print(f"\n== likely kids' listening among all {len(ranked):,} known artists (tagged children's/kids/disney...)")
     print(f"   {len(excluded)} artists already excluded via {exclusions.EXCLUDE_PATH.relative_to(exclusions.EXCLUDE_PATH.parents[1])}")
     flagged = 0
-    for a in ranked[: CONFIG.taste_seeds]:
+    for a in ranked:
         tags = exclusions.kid_tags(lastfm.top_tags(a["name"]))
         if tags:
             flagged += 1
@@ -60,7 +60,7 @@ def run(top: int = 25) -> None:
     small = []
     for name in taste.top_neighbours(400):
         info = lastfm.artist_info(name)
-        if info and info["listeners"] <= CONFIG.nbt_max_listeners:
+        if info and info["listeners"] <= CONFIG.nbt_max_listeners and not taste.looks_like_alias(name):
             small.append((taste.affinity(name)[0], info["listeners"], name))
     lastfm.save()
     print(f"\n== small (<= {CONFIG.nbt_max_listeners:,} listeners) artists near your taste: "

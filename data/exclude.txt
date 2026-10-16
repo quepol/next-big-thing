@@ -2,3 +2,8 @@
 # One artist per line, spelled as on Last.fm (case and "The" don't matter).
 # Use it for listening that isn't yours (e.g. the kids) or bands you never want to see.
 # `python -m nbt summary` lists likely kids' artists to copy in here.
+
+# Kids (flagged by Last.fm tags in history check #2)
+Elizabeth Mitchell   # tagged kids; remove this line if she's also yours, like Yo-Yo Ma
+Tigger
+Phil Harris, Bruce Reitherman   # The Jungle Book

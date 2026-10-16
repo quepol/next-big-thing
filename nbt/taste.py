@@ -17,7 +17,13 @@ from .config import CONFIG
 from .history import known
 from .models import normalize_name
 
-TAG_ONLY_CAP = 0.6  # tag overlap alone is weak evidence; never let it look like a strong match
+TAG_ONLY_CAP = 0.6
+# Affinity uses only the strongest few seed links, with decaying weights, so it stays
+# bounded and discriminating. Summing every link saturated near 1.0 for popular "hub"
+# artists that appear in many seeds' similar lists (history check #1).
+LINK_WEIGHTS = (1.0, 0.5, 0.25)
+ALIAS_MIN_MATCH = 0.9
+ALIAS_SIZE_RATIO = 100  # tag overlap alone is weak evidence; never let it look like a strong match
 TAG_PROFILE_SEEDS = 100
 NOISE_TAGS = {"seen live", "favorites", "favourite", "favorite", "my favorites", "awesome", "love"}
 
@@ -56,11 +62,38 @@ class Taste:
 
     def top_neighbours(self, n: int) -> list[str]:
         """Names of unknown artists most strongly implied by your seeds (for artist-first event lookups)."""
-        scored = sorted(self.forward.items(), key=lambda kv: -self._raw(kv[1]))
+        scored = sorted(self.forward.items(), key=lambda kv: -self._combine(kv[1]))
         return [self.names[k] for k, _ in scored[:n]]
 
-    def _raw(self, per_seed: dict[str, float]) -> float:
-        return sum(self.weights.get(s, 0) * m for s, m in per_seed.items())
+    def _links(self, per_seed: dict[str, float]) -> list[tuple[str, float, float]]:
+        """(seed, match, contribution) sorted strongest first."""
+        links = [(s, m, self.weights.get(s, 0) * m) for s, m in per_seed.items()]
+        return sorted(links, key=lambda x: -x[2])
+
+    def _combine(self, per_seed: dict[str, float]) -> float:
+        top = self._links(per_seed)[: len(LINK_WEIGHTS)]
+        return sum(w * c for w, (_, _, c) in zip(LINK_WEIGHTS, top)) / sum(LINK_WEIGHTS)
+
+    def looks_like_alias(self, artist: str) -> bool:
+        """Last.fm keeps separate pages for alternate spellings (e.g. a name in another script).
+
+        They look like tiny artists. Flag when Last.fm autocorrects the name to something
+        else, or when a non-Latin name is near-identical to an artist 100x its size.
+        (The script condition protects real side projects of big bands, which also sit
+        next to a much bigger artist.)
+        """
+        info = self.lastfm.artist_info(artist)
+        if not info:
+            return False
+        if normalize_name(info["name"]) != normalize_name(artist):
+            return True
+        if all(ord(ch) < 0x250 for ch in artist):
+            return False
+        for name, match in self.lastfm.similar(artist)[:1]:
+            big = self.lastfm.artist_info(name)
+            if match >= ALIAS_MIN_MATCH and big and big["listeners"] >= ALIAS_SIZE_RATIO * max(info["listeners"], 1):
+                return True
+        return False
 
     def affinity(self, artist: str) -> tuple[float, list[str]]:
         key = normalize_name(artist)
@@ -71,11 +104,9 @@ class Taste:
                 per_seed[k] = max(per_seed.get(k, 0.0), match)
 
         if per_seed:
-            raw = self._raw(per_seed)
-            aff = 1 - math.exp(-raw)
-            top = sorted(per_seed.items(), key=lambda kv: -self.weights.get(kv[0], 0) * kv[1])[:3]
-            reasons = ["similar to " + ", ".join(f"{self.known[k]['name']} ({m:.2f})" for k, m in top)]
-            return aff, reasons
+            top = self._links(per_seed)[:3]
+            reasons = ["similar to " + ", ".join(f"{self.known[k]['name']} ({m:.2f})" for k, m, _ in top)]
+            return self._combine(per_seed), reasons
 
         tags = {t: c for t, c in self.lastfm.top_tags(artist).items() if t not in NOISE_TAGS}
         if tags and self.tag_profile:
