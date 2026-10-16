@@ -120,3 +120,10 @@ https://github.com/quepol/next-big-thing/actions/runs/38856513297
 - **Kids' leakage persisted** (Sandra Boynton, Laurie Berkner, Ralph's World, Charlie Hope) through a seed that hasn't been identified. Scoring now **refuses unknown artists whose own tags are kids' or video-game tags** (`Taste.is_noise`), and the summary prints reasons on the small-artist list so the bridging seed shows up.
 - マイケル・ジャクソン still passed the alias check at 0.41. It hasn't been diagnosed without network access. In practice it doesn't matter, because it will never appear in a Toronto lineup.
 
+## The user's rules for game music (after check #5)
+
+- **Orchestral game scores are the user's own** (e.g. Death Stranding: `+ Ludvig Forssell`; Metal Gear Rising: `+ Jamie Christopherson`).
+- **Always the kids':** ULTRAKILL, Deltarune, Undertale, FNAF, Friday Night Funkin', Roblox, Minecraft, Vocaloid, Poppy Playtime, Bendy, gaming YouTubers. These are `KID_FRANCHISE_TAGS`, treated exactly like children's tags.
+- Generic game tags (`GAME_TAGS`: video game music, VGM, game soundtrack, fallout) are **review only**. The summary lists them; they aren't excluded.
+- **Kids' exclusion is now automatic:** `exclusions.effective()` excludes every known artist carrying kids' or kid-franchise tags, unless it has a `+` keep. `data/exclude.txt` is now only for things tags can't catch. The user also named Don Cooper, Blippi, Justin Roberts, Raffi and Twenty Trucks, plus Heaven Pierce Her (ULTRAKILL) and Powerglove (non-orchestral).
+

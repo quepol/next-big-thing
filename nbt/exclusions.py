@@ -18,13 +18,18 @@ KID_TAGS = {
     "children's music", "childrens music", "children", "kids", "kids music", "for kids",
     "disney", "nursery rhymes", "lullaby", "lullabies", "children's", "kindie",
 }
-# Older kids: game soundtracks and the YouTube musicians around them (e.g. CG5).
-# Flagged for review only: Fallout's soundtrack is 1940s records that may be the user's.
+# Older kids: these franchises and the YouTube musicians around them are always the
+# kids' (user's rule), so they count as kids' tags.
+KID_FRANCHISE_TAGS = {
+    "fnaf", "five nights at freddy's", "bendy", "bendy and the ink machine", "undertale",
+    "deltarune", "ultrakill", "friday night funkin", "friday night funkin'", "fnf",
+    "roblox", "minecraft", "poppy playtime", "vocaloid", "hatsune miku", "cg5", "gaming",
+}
+# Generic game-music tags: review only. Orchestral scores (Death Stranding) are the
+# user's; Fallout's soundtrack is 1940s records that may be too.
 GAME_TAGS = {
     "video game music", "video game", "video games", "game music", "game soundtrack",
-    "video game soundtrack", "vgm", "gaming", "fnaf", "five nights at freddy's",
-    "bendy", "bendy and the ink machine", "undertale", "minecraft", "fallout",
-    "roblox", "poppy playtime", "cg5",
+    "video game soundtrack", "vgm", "fallout",
 }
 KID_TAG_MIN_COUNT = 20  # Last.fm tag weights are 0-100; ignore stray low-weight tags
 
@@ -48,4 +53,26 @@ def load_keeps(path: Path = EXCLUDE_PATH) -> set[str]:
 
 
 def kid_tags(tags: dict[str, int]) -> list[str]:
-    return [t for t, c in tags.items() if t in KID_TAGS | GAME_TAGS and c >= KID_TAG_MIN_COUNT]
+    """Tags that make an artist the kids' (excluded automatically)."""
+    return [t for t, c in tags.items() if t in KID_TAGS | KID_FRANCHISE_TAGS and c >= KID_TAG_MIN_COUNT]
+
+
+def game_tags(tags: dict[str, int]) -> list[str]:
+    """Generic game-music tags: worth a look, not excluded."""
+    return [t for t, c in tags.items() if t in GAME_TAGS and c >= KID_TAG_MIN_COUNT]
+
+
+def effective(history: dict, lastfm, min_days: int) -> tuple[set[str], dict[str, list[str]]]:
+    """Manual exclusions plus known artists auto-excluded by kids' tags, minus '+' keeps.
+
+    Returns (excluded keys, {auto-excluded key: tags}) so callers can show what happened.
+    """
+    manual, keeps = load(), load_keeps()
+    auto: dict[str, list[str]] = {}
+    for key, row in history["artists"].items():
+        if row["days"] < min_days or key in manual or key in keeps:
+            continue
+        tags = kid_tags(lastfm.top_tags(row["name"]))
+        if tags:
+            auto[key] = tags
+    return manual | set(auto), auto

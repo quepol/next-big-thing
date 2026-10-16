@@ -193,7 +193,13 @@ def test_kid_tags_ignore_low_weight_tags():
     from nbt.exclusions import kid_tags
     assert kid_tags({"children's music": 100, "pop": 80}) == ["children's music"]
     assert kid_tags({"kids": 5, "indie": 100}) == []
-    assert kid_tags({"video game music": 60, "electronic": 100}) == ["video game music"]
+    assert kid_tags({"video game music": 60, "electronic": 100}) == []   # review only
+    assert kid_tags({"fnaf": 50}) == ["fnaf"] and kid_tags({"vocaloid": 80}) == ["vocaloid"]
+
+
+def test_game_tags_are_review_only():
+    from nbt.exclusions import game_tags
+    assert game_tags({"video game music": 60, "orchestral": 90}) == ["video game music"]
 
 
 def test_excluded_artist_is_not_a_seed_or_a_pick():
@@ -285,3 +291,26 @@ def test_kids_tagged_unknown_artist_is_never_picked():
                          lfm.artist_info, velocity=lambda k, n: None, regions={"Toronto": "all"},
                          is_noise=taste.is_noise)
     assert {p.artist for p in picks} == {"Big Thief"}
+
+
+def test_effective_exclusions_auto_exclude_kids_tags_but_honour_keeps(tmp_path, monkeypatch):
+    from nbt import exclusions
+    f = tmp_path / "exclude.txt"
+    f.write_text("Manual Kid\n+ Kept Kid\n")
+    monkeypatch.setattr(exclusions, "EXCLUDE_PATH", f)
+    monkeypatch.setattr(exclusions.load, "__defaults__", (f,))
+    monkeypatch.setattr(exclusions.load_keeps, "__defaults__", (f,))
+
+    class TagLastFM:
+        TAGS = {"Tagged Kid": {"children's music": 90}, "Kept Kid": {"roblox": 90},
+                "Game Composer": {"video game music": 90}}
+
+        def top_tags(self, name):
+            return self.TAGS.get(name, {})
+
+    h = hist.empty_history()
+    names = ["Tagged Kid", "Kept Kid", "Game Composer", "Manual Kid", "Grown Up"]
+    hist.ingest(h, [{"artist": n, "uts": uts(2015 + d, 1, 1 + i)} for i, n in enumerate(names) for d in range(3)])
+    excluded, auto = exclusions.effective(h, TagLastFM(), min_days=3)
+    assert set(auto) == {"tagged kid"}
+    assert excluded == {"tagged kid", "manual kid"}

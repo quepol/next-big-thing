@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from datetime import date, datetime, timezone
 
+from . import exclusions
 from . import history as hist
 from . import ledger as led
 from . import snapshots
@@ -73,9 +74,11 @@ def run(log=print) -> dict:
     bit = Bandsintown()
 
     history = hist.sync(lastfm, log=log)
-    loved = hist.loved(history)
+    excluded, auto = exclusions.effective(history, lastfm, CONFIG.known_min_days)
+    log(f"excluded: {len(excluded)} artists ({len(auto)} automatically by kids' tags)")
+    loved = hist.loved(history, excluded=excluded)
     log("building taste graph")
-    taste = Taste(history, lastfm, log=log)
+    taste = Taste(history, lastfm, log=log, excluded=excluded)
     lastfm.save()
 
     events = gather_events(bit, history, taste, today, log=log)
@@ -92,6 +95,7 @@ def run(log=print) -> dict:
         affinity=taste.affinity, artist_info=info, velocity=velocity,
         regions={r.name: r.tiers for r in CONFIG.regions},
         is_noise=taste.is_noise,
+        excluded=excluded,
     )
 
     ledger = led.load()

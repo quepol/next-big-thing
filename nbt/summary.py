@@ -32,24 +32,25 @@ def run(top: int = 25) -> None:
     for a in ranked[:top]:
         print(f"   {a['days']:>5} days  {a['plays']:>6} plays  {a['first']}..{a['last']}  {a['name']}")
 
-    excluded = exclusions.load()
+    excluded, auto = exclusions.effective(h, lastfm, CONFIG.known_min_days)
     keeps = exclusions.load_keeps()
-    print(f"\n== likely kids' listening among all {len(ranked):,} known artists (tagged children's/kids/disney/video game...)")
-    print(f"   {len(excluded)} artists already excluded via {exclusions.EXCLUDE_PATH.relative_to(exclusions.EXCLUDE_PATH.parents[1])}")
-    flagged = 0
-    for a in ranked:
-        if normalize_name(a["name"]) in keeps:
-            continue
-        tags = exclusions.kid_tags(lastfm.top_tags(a["name"]))
-        if tags:
-            flagged += 1
-            print(f"   {a['days']:>5} days  {a['name']}  [{', '.join(tags)}]")
     lastfm.save()
-    if not flagged:
-        print("   none found by tags (teen pop won't be tagged; scan the seed list above by eye)")
+    print(f"\n== excluded: {len(excluded)} artists "
+          f"({len(excluded) - len(auto)} listed in data/exclude.txt, {len(auto)} automatically by kids' tags)")
+    for key, tags in sorted(auto.items(), key=lambda kv: -artists[kv[0]]["days"]):
+        print(f"   {artists[key]['days']:>5} days  {artists[key]['name']}  [{', '.join(tags)}]")
+    print("   (add '+ Name' to data/exclude.txt to keep any of these)")
+
+    print("\n== game-music artists to review (orchestral scores are fine; not excluded)")
+    review = [a for k, a in known.items() if k not in excluded and k not in keeps
+              and exclusions.game_tags(lastfm.top_tags(a["name"]))]
+    for a in sorted(review, key=lambda a: -a["days"]):
+        print(f"   {a['days']:>5} days  {a['name']}  [{', '.join(exclusions.game_tags(lastfm.top_tags(a['name'])))}]")
+    if not review:
+        print("   none")
 
     print("\n== building taste graph")
-    taste = Taste(h, lastfm)
+    taste = Taste(h, lastfm, excluded=excluded)
     lastfm.save()
     print(f"   {len(taste.forward):,} unknown artists reachable from {len(taste.seeds)} seeds")
     print(f"   tag profile: {', '.join(sorted(taste.tag_profile, key=lambda t: -taste.tag_profile[t])[:15])}")
