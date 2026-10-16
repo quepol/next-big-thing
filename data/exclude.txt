@@ -4,6 +4,6 @@
 # `python -m nbt summary` lists likely kids' artists to copy in here.
 
 # Kids (flagged by Last.fm tags in history check #2)
-Elizabeth Mitchell   # tagged kids; remove this line if she's also yours, like Yo-Yo Ma
+Elizabeth Mitchell
 Tigger
 Phil Harris, Bruce Reitherman   # The Jungle Book
