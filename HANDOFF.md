@@ -72,6 +72,18 @@ Other decisions they've made:
 4. Get the user's decision on the PR, then merge to `main`, switch Pages to Actions, and run Daily digest.
 5. Later: sync 👍/👎 back to the pipeline, the email digest, curator signals (KEXP, Tiny Desk, labels they trust), and the velocity signal once there are 4 or more weeks of snapshots.
 
-## History check results
+## History check results (run #1, 2026-10-16)
 
-_Pending: the first run was in progress when this note was written. Run #1: https://github.com/quepol/next-big-thing/actions/runs/38852351628._
+https://github.com/quepol/next-big-thing/actions/runs/38852351628. The backfill took about 4 minutes and the whole run about 7.
+
+- **History:** 74,485 plays, 6,432 artists, 379 pages, 2005 to now.
+  - By days played: 1 day 3,306 · 2 days 1,067 · 3–9 days 1,462 · 10–99 days 570 · 100+ days 27.
+  - Known (3 or more days): 2,059.
+- **Top seeds look like real taste** (indie folk and singer-songwriter): City and Colour, William Fitzsimmons, Joshua Radin, Radiohead, Hunter Parrish, Iron & Wine, The Weepies, Bon Iver, Elliott Smith… **Yo-Yo Ma** (2,086 plays over 114 days) is an outlier; ask whether it's the kids.
+- **Kids' listening leaks into the seeds:** Laurie Berkner and Sandra Boynton showed up as "next big thing" candidates, so kids' artists are among the seeds. That's what `exclude.txt` and the kids flagging are for.
+- **Problems found:**
+  1. **Affinity saturates.** `1 - exp(-sum)` over many seeds puts nearly every top neighbour at 1.00, so the ranking means nothing at the top.
+  2. **Hub and popularity bias.** The top neighbours are 0.3–3M-listener bands (Kasabian, Kaiser Chiefs, Editors) that appear in many seeds' similar-artist lists and that the user almost certainly already knows.
+  3. **Alias pages.** `マイケル・ジャクソン` (Michael Jackson in Japanese script, 14k listeners) looked like a small artist. Last.fm keeps separate pages for alternative spellings, and they look small.
+  4. Only 6 of the top 400 neighbours have 50k listeners or fewer. Next-big-thing candidates must come from the city feed's lineups (reverse lookups plus tags), not from the forward graph.
+- **A good sign:** Deb Talan (half of The Weepies) and Molly Tuttle & Golden Highway are exactly the kind of pick we want: side projects and new projects from artists the user loves.
