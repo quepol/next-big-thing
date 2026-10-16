@@ -1,0 +1,4 @@
+# Artists to ignore everywhere: never alerted, never used as taste seeds.
+# One artist per line, spelled as on Last.fm (case and "The" don't matter).
+# Use it for listening that isn't yours (e.g. the kids) or bands you never want to see.
+# `python -m nbt summary` lists likely kids' artists to copy in here.

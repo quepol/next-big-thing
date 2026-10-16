@@ -33,6 +33,7 @@ Other decisions they've made:
 
   Seed weight is log(distinct days).
 - **"Heard once" artists** (1–2 days played) count as unknown for next-big-thing, and the pick says "you played them on 1 day back in 2019". The user confirmed this.
+- **Kids share the Last.fm account.** This is the main reason for "never show me this band". Kids replay favourites on many distinct days, so without exclusions they'd dominate the seeds and the tag profile. `data/exclude.txt` removes artists *everywhere* (known, loved, seeds, tag profile, picks). `summary` auto-flags children's/kids/Disney-tagged artists among the top seeds. Teen pop won't carry those tags, so it needs 👎. **Backlog:** make 👎 write to `data/exclude.txt`; votes currently live only in the browser. The user hasn't said whether family shows are worth a separate tier; they're excluded for now.
 - **The bragging-rights ledger** (`data/ledger.json`) records each next-big-thing artist's listener count on the day it was first flagged. Over time it shows "flagged at 3.1k, now at 410k", and it's the label set for backtesting.
 
 ## Current state

@@ -6,6 +6,7 @@ import math
 from datetime import date
 from typing import Callable
 
+from . import exclusions
 from .config import CONFIG, Config
 from .models import Event, Pick, normalize_name
 
@@ -30,9 +31,10 @@ def score_events(
     velocity: Callable[[str, int], tuple[float, int] | None],
     regions: dict[str, str],  # region name -> tiers ("all" | "loved")
     cfg: Config = CONFIG,
+    excluded: set[str] | None = None,
 ) -> list[Pick]:
     artists = history["artists"]
-    excluded = {normalize_name(a) for a in cfg.excluded_artists}
+    excluded = exclusions.load() if excluded is None else excluded
     picks: list[Pick] = []
 
     for ev in events:

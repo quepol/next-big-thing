@@ -65,4 +65,6 @@ python -m http.server -d site 8000          # demo data until a digest exists
 
 Settings you might want to tune are in `nbt/config.py`.
 
+**Excluding artists:** list artists in `data/exclude.txt`, one per line. They're dropped everywhere: no alerts, not used as taste seeds, not counted in the tag profile. Use it for listening that isn't yours (e.g. the kids). `python -m nbt summary` flags likely kids' artists by their Last.fm tags.
+
 > **Privacy:** on a free GitHub plan, Pages needs a public repo, which would make `data/` (your per-artist listening history) public.

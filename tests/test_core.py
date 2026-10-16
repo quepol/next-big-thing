@@ -179,3 +179,31 @@ def test_gather_events_assigns_regions_and_filters(monkeypatch):
     assert {(e.lineup[0], e.region) for e in events} >= {("Big Thief", "Toronto"), ("Big Thief", "Buffalo")}
     assert all(e.region in {"Toronto", "Buffalo"} for e in events)
     assert all(e.starts_at < "2027" for e in events)
+
+
+def test_exclusions_file_parsing(tmp_path):
+    from nbt import exclusions
+    f = tmp_path / "exclude.txt"
+    f.write_text("# header\nThe Wiggles\nKidz Bop  # the kids\n\n")
+    assert exclusions.load(f) == {"wiggles", "kidz bop"}
+    assert exclusions.load(tmp_path / "missing.txt") == set()
+
+
+def test_kid_tags_ignore_low_weight_tags():
+    from nbt.exclusions import kid_tags
+    assert kid_tags({"children's music": 100, "pop": 80}) == ["children's music"]
+    assert kid_tags({"kids": 5, "indie": 100}) == []
+
+
+def test_excluded_artist_is_not_a_seed_or_a_pick():
+    h = make_history()
+    lfm = FakeLastFM()
+    excluded = {"big thief"}
+    taste = Taste(h, lfm, log=lambda *_: None, excluded=excluded)
+    assert "big thief" not in taste.known and "big thief" not in taste.seeds
+    assert "tiny newcomer" not in taste.forward  # only reachable via the excluded seed
+    picks = score_events([ev(["Big Thief", "Tiny Newcomer"])], h, hist.loved(h, excluded=excluded),
+                         taste.affinity, lfm.artist_info, velocity=lambda k, n: None,
+                         regions={"Toronto": "all"}, cfg=Config(), excluded=excluded)
+    names = {p.artist for p in picks}
+    assert "Big Thief" not in names

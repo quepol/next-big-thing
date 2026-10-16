@@ -1,6 +1,6 @@
 """Tunable settings. Everything a human might want to tweak lives here."""
 
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from pathlib import Path
 import os
 
@@ -49,7 +49,6 @@ class Config:
     lookahead_days: int = 90
     cache_ttl_days: int = 30
 
-    excluded_artists: tuple[str, ...] = field(default_factory=tuple)
 
 
 CONFIG = Config()

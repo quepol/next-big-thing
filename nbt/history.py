@@ -12,6 +12,7 @@ from datetime import datetime, timezone
 from typing import Iterable
 from zoneinfo import ZoneInfo
 
+from . import exclusions
 from .config import CONFIG, DATA_DIR
 from .models import normalize_name
 from .store import read_json, write_json
@@ -81,10 +82,12 @@ def sync(lastfm, user: str = CONFIG.lastfm_user, *, log=print) -> dict:
     return history
 
 
-def known(history: dict, min_days: int = CONFIG.known_min_days) -> dict[str, dict]:
-    return {k: v for k, v in history["artists"].items() if v["days"] >= min_days}
+def known(history: dict, min_days: int = CONFIG.known_min_days,
+          excluded: set[str] | None = None) -> dict[str, dict]:
+    excluded = exclusions.load() if excluded is None else excluded
+    return {k: v for k, v in history["artists"].items() if v["days"] >= min_days and k not in excluded}
 
 
-def loved(history: dict, top_n: int = CONFIG.loved_top_n) -> set[str]:
-    rows = sorted(known(history).items(), key=lambda kv: (-kv[1]["days"], -kv[1]["plays"]))
+def loved(history: dict, top_n: int = CONFIG.loved_top_n, excluded: set[str] | None = None) -> set[str]:
+    rows = sorted(known(history, excluded=excluded).items(), key=lambda kv: (-kv[1]["days"], -kv[1]["plays"]))
     return {k for k, _ in rows[:top_n]}

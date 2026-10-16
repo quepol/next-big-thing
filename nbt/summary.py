@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from collections import Counter
 
+from . import exclusions
 from . import history as hist
 from .config import CONFIG
 from .lastfm import LastFM
@@ -29,6 +30,19 @@ def run(top: int = 25) -> None:
     print(f"\n== top {top} seeds by distinct days")
     for a in ranked[:top]:
         print(f"   {a['days']:>5} days  {a['plays']:>6} plays  {a['first']}..{a['last']}  {a['name']}")
+
+    excluded = exclusions.load()
+    print(f"\n== likely kids' listening among your top {CONFIG.taste_seeds} (tagged children's/kids/disney...)")
+    print(f"   {len(excluded)} artists already excluded via {exclusions.EXCLUDE_PATH.relative_to(exclusions.EXCLUDE_PATH.parents[1])}")
+    flagged = 0
+    for a in ranked[: CONFIG.taste_seeds]:
+        tags = exclusions.kid_tags(lastfm.top_tags(a["name"]))
+        if tags:
+            flagged += 1
+            print(f"   {a['days']:>5} days  {a['name']}  [{', '.join(tags)}]")
+    lastfm.save()
+    if not flagged:
+        print("   none found by tags (teen pop won't be tagged; scan the seed list above by eye)")
 
     print("\n== building taste graph")
     taste = Taste(h, lastfm)

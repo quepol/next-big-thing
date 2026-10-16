@@ -12,6 +12,7 @@ from __future__ import annotations
 import math
 from collections import defaultdict
 
+from . import exclusions
 from .config import CONFIG
 from .history import known
 from .models import normalize_name
@@ -22,9 +23,10 @@ NOISE_TAGS = {"seen live", "favorites", "favourite", "favorite", "my favorites",
 
 
 class Taste:
-    def __init__(self, history: dict, lastfm, *, log=print):
+    def __init__(self, history: dict, lastfm, *, log=print, excluded: set[str] | None = None):
         self.lastfm = lastfm
-        self.known = known(history)
+        self.excluded = exclusions.load() if excluded is None else excluded
+        self.known = known(history, excluded=self.excluded)
         ranked = sorted(self.known.items(), key=lambda kv: (-kv[1]["days"], -kv[1]["plays"]))
         top = ranked[: CONFIG.taste_seeds]
         max_days = top[0][1]["days"] if top else 1
@@ -37,7 +39,7 @@ class Taste:
         for i, seed in enumerate(self.seeds):
             for name, match in lastfm.similar(self.known[seed]["name"]):
                 cand = normalize_name(name)
-                if cand not in self.known:
+                if cand not in self.known and cand not in self.excluded:
                     self.forward[cand][seed] = match
                     self.names.setdefault(cand, name)
             if i and i % 50 == 0:
