@@ -77,7 +77,13 @@ Other decisions they've made:
    3. Switch Settings → Pages → Source to "GitHub Actions".
    4. Run Daily digest once by hand.
    5. Check the page.
-5. Later: sync 👍/👎 back to the pipeline, the email digest, curator signals (KEXP, Tiny Desk, labels they trust), and the velocity signal once there are 4 or more weeks of snapshots.
+5. **setlist.fm (user `quepol`).** This comes after the city feed. It needs the user's free API key (repo secret `SETLISTFM_API_KEY`) and `api.setlist.fm` allowed in the network settings. Uses:
+   - Attended artists get a boost as seeds and count as "loved". This signal can't be polluted by the kids' listening.
+   - A **retroactive bragging-rights ledger**: compare attended shows with current listener counts. It doubles as a backtest of the next-big-thing score.
+   - **Venue novelty**: flag or boost venues the user has never been to.
+
+   The user's history there is thinner than their scrobbles, and openers often aren't logged.
+6. Later: sync 👍/👎 back to the pipeline, the email digest, curator signals (KEXP, Tiny Desk, labels they trust), and the velocity signal once there are 4 or more weeks of snapshots.
 
 ## History check results (run #1, 2026-10-16)
 
