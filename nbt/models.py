@@ -7,11 +7,22 @@ import unicodedata
 
 
 def normalize_name(name: str) -> str:
-    """Canonical form for matching artist names across sources."""
-    s = unicodedata.normalize("NFKD", name).encode("ascii", "ignore").decode()
-    s = s.lower().replace("&", " and ")
+    """Canonical form for matching artist names across sources.
+
+    Strips accents and punctuation but keeps letters from every script: an ASCII-only
+    version turned all Japanese/Korean/Cyrillic names into "" (history check #3).
+    """
+    out, base = [], ""
+    for ch in unicodedata.normalize("NFKD", name):
+        # Drop accents on Latin letters only; kana voicing marks etc. are meaningful.
+        if unicodedata.combining(ch) and base and ord(base) < 0x250:
+            continue
+        out.append(ch)
+        base = ch
+    s = unicodedata.normalize("NFC", "".join(out))
+    s = s.casefold().replace("&", " and ")
     s = re.sub(r"^the\s+", "", s.strip())
-    s = re.sub(r"[^a-z0-9]+", " ", s)
+    s = re.sub(r"[\W_]+", " ", s)
     return s.strip()
 
 

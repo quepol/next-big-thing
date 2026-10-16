@@ -251,3 +251,10 @@ def test_alias_pages_are_detected():
     assert taste.looks_like_alias("Old Spelling")          # Last.fm autocorrects it
     assert not taste.looks_like_alias("Tiny Newcomer")
     assert not taste.looks_like_alias("Deb Talan")         # Latin-script side project: keep
+
+
+def test_normalize_name_keeps_non_latin_scripts():
+    assert normalize_name("マイケル・ジャクソン") == "マイケル ジャクソン"
+    assert normalize_name("Кино") == "кино"
+    assert normalize_name("マイケル・ジャクソン") != normalize_name("宇多田ヒカル")
+    assert normalize_name("Sigur Rós") == "sigur ros"

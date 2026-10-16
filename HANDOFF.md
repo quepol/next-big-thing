@@ -100,3 +100,13 @@ https://github.com/quepol/next-big-thing/actions/runs/38852351628. The backfill 
   3. **Alias pages.** `マイケル・ジャクソン` (Michael Jackson in Japanese script, 14k listeners) looked like a small artist. Last.fm keeps separate pages for alternative spellings, and they look small.
   4. Only 6 of the top 400 neighbours have 50k listeners or fewer. Next-big-thing candidates must come from the city feed's lineups (reverse lookups plus tags), not from the forward graph.
 - **A good sign:** Deb Talan (half of The Weepies) and Molly Tuttle & Golden Highway are exactly the kind of pick we want: side projects and new projects from artists the user loves.
+
+## History check #3 (after the affinity and alias fixes)
+
+https://github.com/quepol/next-big-thing/actions/runs/38854345175
+
+- Affinity now ranges from 0.71 down to 0.53, and the ranking looks like the user's taste: Iron & Wine and Calexico, Roo Panes, Volcano Choir, Stu Larsen, Old Sea Brigade, Dar Williams, Donovan Woods. **Side projects and collaborations dominate** (Volcano Choir, Divine Fits, Matt Berninger, Monsters of Folk), because Last.fm rates a band and its side project as near-identical. That's useful; just watch that it doesn't crowd out genuinely new artists.
+- **Bug found and fixed:** `normalize_name` stripped every non-Latin character, so all Japanese, Korean and Cyrillic names became `""`. They collided in the caches, and any non-Latin artists in the scrobble history were dropped. It now keeps every script and strips accents only from Latin letters. The cache key was bumped to `history-check-v2-` to force a fresh backfill.
+- The kids' scan across all known artists flagged 14 more. 12 are excluded. **Alan Menken** (7 days) and **Selena Gomez** (6 days) are waiting on the user's call.
+- The small-artist list was still noisy: kids' artists reached through other kids' seeds (Ralph's World, Charlie Hope); junk user-upload pages (`JJerome87`, `NightCove_thefox`); and soundtrack and actor pages (Peggy Wood, Uzo Aduba). More evidence that next-big-thing candidates have to come from real lineups, not from the forward graph.
+
