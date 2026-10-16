@@ -61,7 +61,11 @@ Other decisions they've made:
 
 ## Next steps, in order
 
-1. **Coverage check.** This decides whether Bandsintown can be the main source.
+1. **Coverage check: compare two sources.** This decides the main event source.
+   - **Ticketmaster Discovery API** (`app.ticketmaster.com/discovery/v2/events`). It has a free key (needs a `TICKETMASTER_API_KEY` secret and the host allowed in the network settings) and supports search by lat/long radius and `classificationName=music`. It's documented and stable, so there's no scraping and no risk of IP blocks. It should include **TicketWeb**, which many small Toronto clubs use. Weaknesses: it misses DICE, Eventbrite and venues' own box offices, and openers appear in `_embedded.attractions` only inconsistently.
+   - **The Bandsintown Toronto city feed** (scraped).
+
+   The likely answer is both: Ticketmaster for breadth and stability, Bandsintown for gaps and openers.
    - Pull the Bandsintown Toronto city feed (website or app JSON) for the next 60 days.
    - Count how many events list more than one artist. Openers matter most for the next-big-thing tier.
    - Compare a few small venues' own calendars against it (e.g. the Horseshoe, Lee's Palace, the Baby G, the Monarch Tavern) and estimate what fraction of shows Bandsintown misses.
@@ -126,4 +130,10 @@ https://github.com/quepol/next-big-thing/actions/runs/38856513297
 - **Always the kids':** ULTRAKILL, Deltarune, Undertale, FNAF, Friday Night Funkin', Roblox, Minecraft, Vocaloid, Poppy Playtime, Bendy, gaming YouTubers. These are `KID_FRANCHISE_TAGS`, treated exactly like children's tags.
 - Generic game tags (`GAME_TAGS`: video game music, VGM, game soundtrack, fallout) are **review only**. The summary lists them; they aren't excluded.
 - **Kids' exclusion is now automatic:** `exclusions.effective()` excludes every known artist carrying kids' or kid-franchise tags, unless it has a `+` keep. `data/exclude.txt` is now only for things tags can't catch. The user also named Don Cooper, Blippi, Justin Roberts, Raffi and Twenty Trucks, plus Heaven Pierce Her (ULTRAKILL) and Powerglove (non-orchestral).
+
+## Onboarding other people later (not in scope now)
+
+The user asked about this.
+- **Ticketmaster has no public user-authorised API for purchase history**; the Partner and Commerce APIs are for distribution. The realistic universal route to "shows attended" is **parsing ticket confirmation emails** (a Gmail connection or a forwarding address), which covers Ticketmaster, TicketWeb, DICE, Eventbrite and Universe. setlist.fm covers the few people who log their shows there.
+- **Listening sources:** Last.fm (open, but few people scrobble), Spotify (developer-mode limits keep tightening; check the current user caps), and Apple Music (needs a paid Apple developer account; the library and recently-played endpoints are available).
 
