@@ -71,7 +71,12 @@ Other decisions they've made:
    - Add a fixture-based parser test using a saved page sample. **Don't write a parser without seeing real responses.**
    - Watch whether Bandsintown blocks GitHub Actions' IP ranges. If it does, the fallback is running the scrape from the user's own machine or a small VPS.
 3. If coverage is poor, add scrapers for individual venue sites behind the same `Event` interface.
-4. Get the user's decision on the PR, then merge to `main`, switch Pages to Actions, and run Daily digest.
+4. **Merge only once the city feed produces real shows.** The user agreed to this; they don't want a draft PR before then. Merging earlier would switch on the daily schedule with zero events. It would commit history every day, fail the Pages deploy step (Pages is still set to deploy from a branch), and start the 4-week listener-growth clock with no lineups to snapshot. At merge time:
+   1. Open the PR. Ask the user first; they decide.
+   2. Merge it.
+   3. Switch Settings → Pages → Source to "GitHub Actions".
+   4. Run Daily digest once by hand.
+   5. Check the page.
 5. Later: sync 👍/👎 back to the pipeline, the email digest, curator signals (KEXP, Tiny Desk, labels they trust), and the velocity signal once there are 4 or more weeks of snapshots.
 
 ## History check results (run #1, 2026-10-16)
