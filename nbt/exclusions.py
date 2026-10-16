@@ -29,14 +29,22 @@ GAME_TAGS = {
 KID_TAG_MIN_COUNT = 20  # Last.fm tag weights are 0-100; ignore stray low-weight tags
 
 
-def load(path: Path = EXCLUDE_PATH) -> set[str]:
-    """Normalized names from a one-artist-per-line file; '#' starts a comment."""
+def _entries(path: Path) -> list[str]:
     try:
         lines = path.read_text().splitlines()
     except FileNotFoundError:
-        return set()
-    names = (line.split("#", 1)[0].strip() for line in lines)
-    return {normalize_name(n) for n in names if n}
+        return []
+    return [e for e in (line.split("#", 1)[0].strip() for line in lines) if e]
+
+
+def load(path: Path = EXCLUDE_PATH) -> set[str]:
+    """Normalized names to exclude. One per line; '#' starts a comment; '+' lines are keeps."""
+    return {normalize_name(e) for e in _entries(path) if not e.startswith("+")}
+
+
+def load_keeps(path: Path = EXCLUDE_PATH) -> set[str]:
+    """Artists confirmed as the user's own ('+ Name'), so the summary stops flagging them."""
+    return {normalize_name(e[1:].strip()) for e in _entries(path) if e.startswith("+")}
 
 
 def kid_tags(tags: dict[str, int]) -> list[str]:

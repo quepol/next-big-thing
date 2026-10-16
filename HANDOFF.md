@@ -111,3 +111,12 @@ https://github.com/quepol/next-big-thing/actions/runs/38854345175
 - **Older kids listen to video-game music:** game soundtracks (Fallout, Bendy, FNAF…) and YouTube musicians like CG5. `GAME_TAGS` flags these for review only, without auto-excluding them; Fallout's soundtrack is 1940s records that could be the user's.
 - The small-artist list was still noisy: kids' artists reached through other kids' seeds (Ralph's World, Charlie Hope); junk user-upload pages (`JJerome87`, `NightCove_thefox`); and soundtrack and actor pages (Peggy Wood, Uzo Aduba). More evidence that next-big-thing candidates have to come from real lineups, not from the forward graph.
 
+## History check #5
+
+https://github.com/quepol/next-big-thing/actions/runs/38856513297
+
+- The video-game scan worked. **9 YouTube FNAF, Roblox and Minecraft creators** were excluded (Kyle Allen Music with 34 days, Tryhardninja, and others). **4 game composers or bands are waiting on the user:** Ludvig Forssell, Heaven Pierce Her, Jamie Christopherson, Powerglove. `+ Selena Gomez` in `exclude.txt` stops her being re-flagged.
+- **Second normalization bug:** symbol-only names (e.g. "†††", Crosses) still collapsed to `""`. This is why マイケル・ジャクソン showed †††'s similar-artist list in check #3. Fixed: such names fall back to the casefolded raw name. The cache key was bumped to `history-check-v3-`.
+- **Kids' leakage persisted** (Sandra Boynton, Laurie Berkner, Ralph's World, Charlie Hope) through a seed that hasn't been identified. Scoring now **refuses unknown artists whose own tags are kids' or video-game tags** (`Taste.is_noise`), and the summary prints reasons on the small-artist list so the bridging seed shows up.
+- マイケル・ジャクソン still passed the alias check at 0.41. It hasn't been diagnosed without network access. In practice it doesn't matter, because it will never appear in a Toronto lineup.
+

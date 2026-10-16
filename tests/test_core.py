@@ -259,3 +259,29 @@ def test_normalize_name_keeps_non_latin_scripts():
     assert normalize_name("Кино") == "кино"
     assert normalize_name("マイケル・ジャクソン") != normalize_name("宇多田ヒカル")
     assert normalize_name("Sigur Rós") == "sigur ros"
+
+
+def test_symbol_only_names_do_not_collide():
+    assert normalize_name("†††") == "†††"
+    assert normalize_name("†††") != normalize_name("!!!")
+
+
+def test_keep_lines_are_not_excluded(tmp_path):
+    from nbt import exclusions
+    f = tmp_path / "exclude.txt"
+    f.write_text("Kidz Bop\n+ Selena Gomez  # mine\n")
+    assert exclusions.load(f) == {"kidz bop"}
+    assert exclusions.load_keeps(f) == {"selena gomez"}
+
+
+def test_kids_tagged_unknown_artist_is_never_picked():
+    class KidsLastFM(FakeLastFM):
+        TAGS = {**FakeLastFM.TAGS, "tiny newcomer": {"children's music": 90}}
+
+    h = make_history()
+    lfm = KidsLastFM()
+    taste = Taste(h, lfm, log=lambda *_: None)
+    picks = score_events([ev(["Big Thief", "Tiny Newcomer"])], h, hist.loved(h), taste.affinity,
+                         lfm.artist_info, velocity=lambda k, n: None, regions={"Toronto": "all"},
+                         is_noise=taste.is_noise)
+    assert {p.artist for p in picks} == {"Big Thief"}

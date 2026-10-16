@@ -95,6 +95,13 @@ class Taste:
                 return True
         return False
 
+    def looks_like_kids(self, artist: str) -> bool:
+        """Unknown artists tagged as kids' or video-game music are never recommended."""
+        return bool(exclusions.kid_tags(self.lastfm.top_tags(artist)))
+
+    def is_noise(self, artist: str) -> bool:
+        return self.looks_like_alias(artist) or self.looks_like_kids(artist)
+
     def affinity(self, artist: str) -> tuple[float, list[str]]:
         key = normalize_name(artist)
         per_seed = dict(self.forward.get(key, {}))

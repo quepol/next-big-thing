@@ -2,6 +2,7 @@
 # One artist per line, spelled as on Last.fm (case and "The" don't matter).
 # Use it for listening that isn't yours (e.g. the kids) or bands you never want to see.
 # `python -m nbt summary` lists likely kids' artists to copy in here.
+# A line starting with "+" marks an artist as confirmed yours: never excluded, never re-flagged.
 
 # Kids (flagged by Last.fm tags in history check #2)
 Elizabeth Mitchell
@@ -22,3 +23,17 @@ KIDZ BOP Kids
 Oliver Wallace           # Disney scores
 The Kiboomers
 Alan Menken             # confirmed kids; Selena Gomez confirmed as the user's own
+
+# Kids: YouTube game-music creators (flagged in history check #5)
+Kyle Allen Music
+Tryhardninja
+Horror Skunx
+APAngryPiggy
+J.T. Machinima
+NoLongerNull
+Jaze Cinema
+jacksepticeye
+DHeusta
+
+# Confirmed as the user's own: never excluded, never re-flagged
++ Selena Gomez

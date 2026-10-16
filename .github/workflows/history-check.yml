@@ -25,9 +25,9 @@ jobs:
           path: |
             data/history.json
             data/cache
-          # v2: name normalization changed (non-Latin names were dropped), so rebuild.
-          key: history-check-v2-${{ github.run_id }}
-          restore-keys: history-check-v2-
+          # v3: name normalization changed (non-Latin and symbol-only names were dropped), so rebuild.
+          key: history-check-v3-${{ github.run_id }}
+          restore-keys: history-check-v3-
       - name: Summary
         env:
           LASTFM_API_KEY: ${{ secrets.LASTFM_API_KEY }}

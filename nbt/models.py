@@ -22,8 +22,9 @@ def normalize_name(name: str) -> str:
     s = unicodedata.normalize("NFC", "".join(out))
     s = s.casefold().replace("&", " and ")
     s = re.sub(r"^the\s+", "", s.strip())
-    s = re.sub(r"[\W_]+", " ", s)
-    return s.strip()
+    s = re.sub(r"[\W_]+", " ", s).strip()
+    # Symbol-only names (e.g. "†††") would otherwise all collapse to "" and collide.
+    return s or name.strip().casefold()
 
 
 def haversine_km(lat1: float, lon1: float, lat2: float, lon2: float) -> float:
