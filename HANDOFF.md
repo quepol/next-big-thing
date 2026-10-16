@@ -32,7 +32,7 @@ Other decisions they've made:
   - tags: cosine similarity to their tag profile, capped at 0.6. This is the fallback for tiny artists, who have no similarity data.
 
   Seed weight is log(distinct days).
-- **"Heard once" artists** (1–2 days played) still count as unknown for next-big-thing, and the pick says "you played them on 1 day back in 2019". The user hasn't confirmed this yet; ask them.
+- **"Heard once" artists** (1–2 days played) count as unknown for next-big-thing, and the pick says "you played them on 1 day back in 2019". The user confirmed this.
 - **The bragging-rights ledger** (`data/ledger.json`) records each next-big-thing artist's listener count on the day it was first flagged. Over time it shows "flagged at 3.1k, now at 410k", and it's the label set for backtesting.
 
 ## Current state
