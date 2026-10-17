@@ -74,7 +74,19 @@ The **attended ledger** is included in `digest.json` and rendered on a dedicated
   - Last.fm client with caching and rate limiting
   - Resumable history backfill
   - Taste model, scoring, ledger, snapshots
-  - Static site with real digest data (Last.fm + YouTube listen links, "Get tickets" link)
+  - Static site with real digest data. **Cards were redesigned (2026-10-17):**
+    - a date tile
+    - a strength badge: 3 pips, a label (Strong / Good / Worth a look) and the raw score, which the user wants kept visible. The thresholds are set per tab in `STRENGTH` in `site/app.js`.
+    - an accent edge on Strong picks
+    - fact chips parsed from the reason strings by `parseReasons()`. Unknown reasons fall back to plain text. **If reason wording changes in `nbt/scoring.py`, update the regexes there.**
+    - similarity weights kept (the user uses them as a sanity check)
+    - lineup role ("opening for X")
+    - theme-aware SVG listen and vote icons
+    - down-voted cards collapse, with an Undo
+    - a sort control (Best match / Soonest / Venue / Artist)
+    - an Auto / Light / Dark theme toggle
+
+    Preferences are saved in `localStorage` under `nbt.sort` and `nbt.theme`; votes keep the same `nbt.votes` format.
   - Daily workflow (runs + deploys Pages)
   - `python -m nbt summary` (taste-model sanity check)
   - Ticketmaster city feed with venue-capacity bonus
@@ -84,7 +96,7 @@ The **attended ledger** is included in `digest.json` and rendered on a dedicated
   - `would_like` tier tuning (soft upper listener cap ~1M)
   - 👎 → `data/exclude.txt` (votes currently browser-only)
   - Velocity signal needs 4 weeks of listener snapshots before it's trusted
-  - Site: sort controls, visual score signal (research done, posted to issue #2)
+  - Site: tune the per-tab strength thresholds (`STRENGTH` in `site/app.js`) once there are more digests; the artist-path ("chain") explanation idea from issue #2
 
 ## Environment
 
@@ -101,7 +113,7 @@ The **attended ledger** is included in `digest.json` and rendered on a dedicated
 3. ~~**Individual venue scrapers.**~~ Skipped; TM coverage is sufficient.
 4. ~~**Merge.**~~ Done 2026-10-17. Pages live.
 5. ~~**setlist.fm (user `quepol`).**~~ Done 2026-10-17. Attended seeds, venue novelty, attended ledger. 32 tests passing.
-6. **Later:** NBT listener threshold (try 200K), `would_like` upper listener cap (~1M), sort controls on site, visual score signal (research in issue #2), sync 👍/👎 back to the pipeline, email digest, curator signals (KEXP, Tiny Desk, labels they trust), velocity signal once there are 4+ weeks of snapshots.
+6. **Later:** NBT listener threshold (try 200K), `would_like` upper listener cap (~1M), sync 👍/👎 back to the pipeline, email digest, curator signals (KEXP, Tiny Desk, labels they trust), velocity signal once there are 4+ weeks of snapshots.
 
 ## First live Actions run (2026-10-17)
 
