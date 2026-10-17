@@ -85,6 +85,7 @@ The **attended ledger** is included in `digest.json` and rendered on a dedicated
     - theme-aware SVG listen and vote icons
     - down-voted cards collapse, with an Undo
     - a sort control (Best match / Soonest / Venue / Artist)
+    - on phones, the tab row scrolls sideways. A fade with a pink ‹ / › arrow marks whichever edge has more tabs (`.tabs-wrap.more-left/.more-right`, toggled by `updateTabEdges()` in `app.js`), and the selected tab is scrolled into view, including a remembered off-screen tab on load. The arrows are hints only, not buttons.
     - a theme switch in the header: a small segmented control with Light / Dark / System icons (the user liked setlist.fm's footer switch). It's an ARIA radiogroup, and the arrow keys move between options.
     - **the palette and fonts match OpenPublic.cc** (the user's other site, repo quepol/OpenPublic), set as tokens at the top of `site/style.css`:
       - Pink `#FF1493` is `--accent-fill`, used for non-text marks: pips, the strong edge, the tab underline and focus rings.

@@ -3,6 +3,7 @@ const TAB_KEY = "nbt.tab";
 const SORT_KEY = "nbt.sort";
 const THEME_KEY = "nbt.theme";
 const CARD_TIERS = ["next_big_thing", "would_like", "know"];
+const tabs = document.getElementById("tabs");
 
 const store = {
   get(k, d) { try { return JSON.parse(localStorage.getItem(k)) ?? d; } catch { return d; } },
@@ -124,7 +125,11 @@ function sorted(picks) {
 }
 
 function select(tier) {
-  document.querySelectorAll("#tabs button").forEach((b) => b.setAttribute("aria-selected", b.dataset.tier === tier));
+  for (const b of tabs.querySelectorAll("button")) {
+    const on = b.dataset.tier === tier;
+    b.setAttribute("aria-selected", on);
+    if (on) b.scrollIntoView({ block: "nearest", inline: "nearest" });
+  }
   store.set(TAB_KEY, tier);
   const list = document.getElementById("list");
   list.replaceChildren();
@@ -351,8 +356,19 @@ sortSel.addEventListener("change", () => {
   select(store.get(TAB_KEY, "next_big_thing"));
 });
 
-document.getElementById("tabs").addEventListener("click", (e) => {
+tabs.addEventListener("click", (e) => {
   const tier = e.target.closest("button")?.dataset.tier;
   if (tier) select(tier);
 });
+
+// Fade + chevron on whichever side of the tab row has more tabs scrolled out of view.
+function updateTabEdges() {
+  const max = tabs.scrollWidth - tabs.clientWidth;
+  tabs.parentElement.classList.toggle("more-left", tabs.scrollLeft > 2);
+  tabs.parentElement.classList.toggle("more-right", tabs.scrollLeft < max - 2);
+}
+tabs.addEventListener("scroll", updateTabEdges, { passive: true });
+window.addEventListener("resize", updateTabEdges);
+document.fonts?.ready.then(updateTabEdges);
+updateTabEdges();
 load();
