@@ -778,7 +778,7 @@
       "venue": "Kemper Arena"
     }
   ],
-  "generated_at": "2026-10-17T19:17:23+00:00",
+  "generated_at": "2026-10-17T22:15:12+00:00",
   "ledger": [
     {
       "artist": "Adam Cohen",
@@ -1058,6 +1058,61 @@
         "you've never been to The Great Hall"
       ],
       "score_at_flag": 0.1972
+    },
+    {
+      "artist": "Loviet",
+      "checked": "2026-10-17",
+      "event": {
+        "starts_at": "2026-11-09T19:00:00",
+        "url": "https://www.ticketmaster.ca/the-wldlfe-toronto-ontario-11-09-2026/event/100064CF43BE63DC",
+        "venue": "The Mod Club"
+      },
+      "first_flagged": "2026-10-17",
+      "listeners_at_flag": 7428,
+      "listeners_now": 7428,
+      "reasons": [
+        "tags match your taste: alternative, pop, indie rock",
+        "only 7,428 listeners on Last.fm",
+        "small venue (~575 cap.)",
+        "you've never been to The Mod Club"
+      ],
+      "score_at_flag": 0.2209
+    },
+    {
+      "artist": "ARK IDENTITY",
+      "checked": "2026-10-17",
+      "event": {
+        "starts_at": "2026-11-12T19:00:00",
+        "url": "https://www.ticketweb.ca/event/ark-identity-the-sound-garage-tickets/14367184",
+        "venue": "The Sound Garage"
+      },
+      "first_flagged": "2026-10-17",
+      "listeners_at_flag": 7619,
+      "listeners_now": 7619,
+      "reasons": [
+        "tags match your taste: alternative, canadian, indie pop",
+        "only 7,619 listeners on Last.fm",
+        "you've never been to The Sound Garage"
+      ],
+      "score_at_flag": 0.1124
+    },
+    {
+      "artist": "Kes",
+      "checked": "2026-10-17",
+      "event": {
+        "starts_at": "2026-12-18T20:00:00",
+        "url": "https://www.ticketmaster.ca/kesmas-with-kes-the-band-toronto-ontario-12-18-2026/event/10006549E31674D3",
+        "venue": "The Theatre at Great Canadian Toronto"
+      },
+      "first_flagged": "2026-10-17",
+      "listeners_at_flag": 52285,
+      "listeners_now": 52285,
+      "reasons": [
+        "tags match your taste: rock, folk, pop",
+        "only 52,285 listeners on Last.fm",
+        "you've never been to The Theatre at Great Canadian Toronto"
+      ],
+      "score_at_flag": 0.1066
     },
     {
       "artist": "The 4411",
@@ -1932,37 +1987,6 @@
     ],
     "next_big_thing": [
       {
-        "artist": "Dominique Way",
-        "event": {
-          "id": "tm:177Zv0G6GEsmr7Y",
-          "lineup": [
-            "Anna Graves",
-            "Dominique Way"
-          ],
-          "region": "Toronto",
-          "source": "ticketmaster",
-          "starts_at": "2026-10-17T19:00:00",
-          "url": "https://www.ticketmaster.ca/anna-graves-americas-greatest-burnout-tour-toronto-ontario-10-17-2026/event/100064C9F1B9E130",
-          "venue": {
-            "capacity": 250,
-            "city": "Toronto",
-            "lat": 43.6431078,
-            "lon": -79.4246457,
-            "name": "The Drake Hotel"
-          }
-        },
-        "heard_before": null,
-        "listeners": 11758,
-        "reasons": [
-          "tags match your taste: indie, singer-songwriter, alternative",
-          "only 11,758 listeners on Last.fm",
-          "small venue (~250 cap.)",
-          "you've never been to The Drake Hotel"
-        ],
-        "score": 0.4464,
-        "tier": "next_big_thing"
-      },
-      {
         "artist": "Bradley Hale",
         "event": {
           "id": "tm:1A8ZkfNGkegBQhd",
@@ -1990,66 +2014,38 @@
           "small venue (~200 cap.)",
           "you've never been to Rivoli"
         ],
-        "score": 0.4203,
+        "score": 0.4578,
         "tier": "next_big_thing"
       },
       {
-        "artist": "Twin Fin",
+        "artist": "Dominique Way",
         "event": {
-          "id": "tm:rZ7HnEZ1A4ZvJd",
+          "id": "tm:177Zv0G6GEsmr7Y",
           "lineup": [
-            "Twin Fin"
+            "Anna Graves",
+            "Dominique Way"
           ],
           "region": "Toronto",
           "source": "ticketmaster",
-          "starts_at": "2026-10-20T19:00:00",
-          "url": "https://www.ticketweb.ca/event/twin-fin-monarch-tavern-tickets/15001983",
+          "starts_at": "2026-10-17T19:00:00",
+          "url": "https://www.ticketmaster.ca/anna-graves-americas-greatest-burnout-tour-toronto-ontario-10-17-2026/event/100064C9F1B9E130",
           "venue": {
             "capacity": 250,
             "city": "Toronto",
-            "lat": 43.65403,
-            "lon": -79.41368,
-            "name": "Monarch Tavern"
+            "lat": 43.6431078,
+            "lon": -79.4246457,
+            "name": "The Drake Hotel"
           }
         },
         "heard_before": null,
-        "listeners": 17549,
+        "listeners": 11758,
         "reasons": [
-          "similar to Band of Horses (0.59), Local Natives (0.65), Young the Giant (0.69)",
-          "only 17,549 listeners on Last.fm",
+          "tags match your taste: indie, singer-songwriter, alternative",
+          "only 11,758 listeners on Last.fm",
           "small venue (~250 cap.)",
-          "you've never been to Monarch Tavern"
+          "you've never been to The Drake Hotel"
         ],
-        "score": 0.4158,
-        "tier": "next_big_thing"
-      },
-      {
-        "artist": "Adam Cohen",
-        "event": {
-          "id": "tm:177Zv0G6C6-O4vF",
-          "lineup": [
-            "Adam Cohen"
-          ],
-          "region": "Toronto",
-          "source": "ticketmaster",
-          "starts_at": "2026-11-07T20:00:00",
-          "url": "https://www.ticketmaster.ca/everybody-knows-leonard-cohen-10th-anniversary-toronto-ontario-11-07-2026/event/100064E1E1815048",
-          "venue": {
-            "capacity": 3191,
-            "city": "Toronto",
-            "lat": 43.6468182,
-            "lon": -79.3766657,
-            "name": "Meridian Hall"
-          }
-        },
-        "heard_before": null,
-        "listeners": 54076,
-        "reasons": [
-          "similar to City and Colour (0.70), Joshua Radin (0.66), Ray LaMontagne (0.63)",
-          "only 54,076 listeners on Last.fm",
-          "you've never been to Meridian Hall"
-        ],
-        "score": 0.4102,
+        "score": 0.4356,
         "tier": "next_big_thing"
       },
       {
@@ -2075,43 +2071,41 @@
         "heard_before": null,
         "listeners": 27255,
         "reasons": [
-          "similar to Adele (0.82), Alessia Cara (0.70), Teddy Swims (0.68)",
+          "similar to Adele (0.82), Teddy Swims (0.68), Alessia Cara (0.70)",
           "only 27,255 listeners on Last.fm",
           "small venue (~575 cap.)",
           "you've never been to The Mod Club"
         ],
-        "score": 0.3998,
+        "score": 0.3803,
         "tier": "next_big_thing"
       },
       {
-        "artist": "Ella Woolsey",
+        "artist": "Adam Cohen",
         "event": {
-          "id": "tm:177Zv0G6GR6PMw6",
+          "id": "tm:177Zv0G6C6-O4vF",
           "lineup": [
-            "The Army, The Navy",
-            "Ella Woolsey"
+            "Adam Cohen"
           ],
           "region": "Toronto",
           "source": "ticketmaster",
-          "starts_at": "2026-10-25T19:00:00",
-          "url": "https://www.ticketmaster.ca/the-army-the-navy-the-fake-toronto-ontario-10-25-2026/event/100064CBC7977C87",
+          "starts_at": "2026-11-07T20:00:00",
+          "url": "https://www.ticketmaster.ca/everybody-knows-leonard-cohen-10th-anniversary-toronto-ontario-11-07-2026/event/100064E1E1815048",
           "venue": {
-            "capacity": 575,
+            "capacity": 3191,
             "city": "Toronto",
-            "lat": 43.6551655,
-            "lon": -79.4190636,
-            "name": "The Mod Club"
+            "lat": 43.6468182,
+            "lon": -79.3766657,
+            "name": "Meridian Hall"
           }
         },
         "heard_before": null,
-        "listeners": 48687,
+        "listeners": 54076,
         "reasons": [
-          "similar to Elliott Smith (0.57), Sun Kil Moon (0.55), Phoebe Bridgers (0.48)",
-          "only 48,687 listeners on Last.fm",
-          "small venue (~575 cap.)",
-          "you've never been to The Mod Club"
+          "similar to City and Colour (0.70), Ben Harper & The Innocent Criminals (1.00), David Gray (0.72)",
+          "only 54,076 listeners on Last.fm",
+          "you've never been to Meridian Hall"
         ],
-        "score": 0.3371,
+        "score": 0.3563,
         "tier": "next_big_thing"
       },
       {
@@ -2141,35 +2135,68 @@
           "small venue (~250 cap.)",
           "you've never been to The Drake Hotel"
         ],
-        "score": 0.3244,
+        "score": 0.3356,
         "tier": "next_big_thing"
       },
       {
-        "artist": "Good Lovelies",
+        "artist": "Twin Fin",
         "event": {
-          "id": "tm:177Zv0G6G5rNQwP",
+          "id": "tm:rZ7HnEZ1A4ZvJd",
           "lineup": [
-            "Good Lovelies"
+            "Twin Fin"
           ],
           "region": "Toronto",
           "source": "ticketmaster",
-          "starts_at": "2026-12-17T20:00:00",
-          "url": "https://www.ticketmaster.ca/good-lovelies-holiday-concert-toronto-ontario-12-17-2026/event/100064C2DE8DACA5",
+          "starts_at": "2026-10-20T19:00:00",
+          "url": "https://www.ticketweb.ca/event/twin-fin-monarch-tavern-tickets/15001983",
           "venue": {
-            "capacity": 2765,
+            "capacity": 250,
             "city": "Toronto",
-            "lat": 43.6541869,
-            "lon": -79.3789975,
-            "name": "Massey Hall"
+            "lat": 43.65403,
+            "lon": -79.41368,
+            "name": "Monarch Tavern"
           }
         },
         "heard_before": null,
-        "listeners": 34446,
+        "listeners": 17549,
         "reasons": [
-          "similar to The Wailin' Jennys (1.00), Great Lake Swimmers (0.43), Basia Bulat (0.65)",
-          "only 34,446 listeners on Last.fm"
+          "similar to Band of Horses (0.59), Local Natives (0.65), Young the Giant (0.69)",
+          "only 17,549 listeners on Last.fm",
+          "small venue (~250 cap.)",
+          "you've never been to Monarch Tavern"
         ],
-        "score": 0.3056,
+        "score": 0.3067,
+        "tier": "next_big_thing"
+      },
+      {
+        "artist": "Ella Woolsey",
+        "event": {
+          "id": "tm:177Zv0G6GR6PMw6",
+          "lineup": [
+            "The Army, The Navy",
+            "Ella Woolsey"
+          ],
+          "region": "Toronto",
+          "source": "ticketmaster",
+          "starts_at": "2026-10-25T19:00:00",
+          "url": "https://www.ticketmaster.ca/the-army-the-navy-the-fake-toronto-ontario-10-25-2026/event/100064CBC7977C87",
+          "venue": {
+            "capacity": 575,
+            "city": "Toronto",
+            "lat": 43.6551655,
+            "lon": -79.4190636,
+            "name": "The Mod Club"
+          }
+        },
+        "heard_before": null,
+        "listeners": 48687,
+        "reasons": [
+          "similar to Elliott Smith (0.57), Phoebe Bridgers (0.48), Sun Kil Moon (0.55)",
+          "only 48,687 listeners on Last.fm",
+          "small venue (~575 cap.)",
+          "you've never been to The Mod Club"
+        ],
+        "score": 0.3034,
         "tier": "next_big_thing"
       },
       {
@@ -2200,7 +2227,7 @@
           "small venue (~575 cap.)",
           "you've never been to The Mod Club"
         ],
-        "score": 0.2852,
+        "score": 0.3033,
         "tier": "next_big_thing"
       },
       {
@@ -2225,11 +2252,41 @@
         "heard_before": null,
         "listeners": 41778,
         "reasons": [
-          "similar to Spoon (0.60), Silversun Pickups (0.54), The Hold Steady (0.75)",
+          "similar to Spoon (0.60), Silversun Pickups (0.54), Manchester Orchestra (0.57)",
           "only 41,778 listeners on Last.fm",
           "you've never been to The Sound Garage"
         ],
-        "score": 0.2836,
+        "score": 0.2809,
+        "tier": "next_big_thing"
+      },
+      {
+        "artist": "Raine Maida",
+        "event": {
+          "id": "tm:177Zv0G61k0Q5QL",
+          "lineup": [
+            "Raine Maida",
+            "Chantal Kreviazuk"
+          ],
+          "region": "Toronto",
+          "source": "ticketmaster",
+          "starts_at": "2026-11-22T18:30:00",
+          "url": "https://www.ticketmaster.ca/an-evening-with-raine-maida-chantal-toronto-ontario-11-22-2026/event/100064A1A468B69F",
+          "venue": {
+            "capacity": 1400,
+            "city": "Toronto",
+            "lat": 43.6764492,
+            "lon": -79.3571014,
+            "name": "The Danforth Music Hall"
+          }
+        },
+        "heard_before": null,
+        "listeners": 29283,
+        "reasons": [
+          "tags match your taste: indie, rock, singer-songwriter",
+          "only 29,283 listeners on Last.fm",
+          "small venue (~1,400 cap.)"
+        ],
+        "score": 0.2761,
         "tier": "next_big_thing"
       },
       {
@@ -2257,67 +2314,37 @@
           "similar to Beastie Boys (1.00), Mos Def (0.14), De La Soul (0.22)",
           "only 18,122 listeners on Last.fm"
         ],
-        "score": 0.275,
+        "score": 0.2724,
         "tier": "next_big_thing"
       },
       {
-        "artist": "Raine Maida",
+        "artist": "Charlotte Cornfield",
         "event": {
-          "id": "tm:177Zv0G61k0Q5QL",
+          "id": "tm:rZ7HnEZ1Af0doK",
           "lineup": [
-            "Raine Maida",
-            "Chantal Kreviazuk"
+            "Charlotte Cornfield"
           ],
           "region": "Toronto",
           "source": "ticketmaster",
-          "starts_at": "2026-11-22T18:30:00",
-          "url": "https://www.ticketmaster.ca/an-evening-with-raine-maida-chantal-toronto-ontario-11-22-2026/event/100064A1A468B69F",
+          "starts_at": "2026-12-03T20:00:00",
+          "url": "https://www.ticketweb.ca/event/charlotte-cornfield-and-friendship-with-lees-palace-tickets/14903453",
           "venue": {
-            "capacity": 1400,
+            "capacity": 700,
             "city": "Toronto",
-            "lat": 43.6764492,
-            "lon": -79.3571014,
-            "name": "The Danforth Music Hall"
+            "lat": 43.665249,
+            "lon": -79.409447,
+            "name": "Lee's Palace"
           }
         },
         "heard_before": null,
-        "listeners": 29283,
+        "listeners": 54302,
         "reasons": [
-          "tags match your taste: indie, singer-songwriter, rock",
-          "only 29,283 listeners on Last.fm",
-          "small venue (~1,400 cap.)"
+          "similar to The New Pornographers (0.40), Feist (0.39), José González (0.35)",
+          "only 54,302 listeners on Last.fm",
+          "small venue (~700 cap.)",
+          "you've never been to Lee's Palace"
         ],
-        "score": 0.267,
-        "tier": "next_big_thing"
-      },
-      {
-        "artist": "Jordan Hart",
-        "event": {
-          "id": "tm:rZ7HnEZ1AfGxZf",
-          "lineup": [
-            "Jordan Hart"
-          ],
-          "region": "Toronto",
-          "source": "ticketmaster",
-          "starts_at": "2026-12-20T19:00:00",
-          "url": "https://www.ticketweb.ca/event/jordan-hart-longboat-hall-tickets/14322014",
-          "venue": {
-            "capacity": 500,
-            "city": "Toronto",
-            "lat": 43.643,
-            "lon": -79.42216,
-            "name": "Longboat Hall"
-          }
-        },
-        "heard_before": null,
-        "listeners": 27053,
-        "reasons": [
-          "similar to Joshua Radin (0.27), William Fitzsimmons (0.24), The Weepies (0.22)",
-          "only 27,053 listeners on Last.fm",
-          "small venue (~500 cap.)",
-          "you've never been to Longboat Hall"
-        ],
-        "score": 0.2577,
+        "score": 0.2418,
         "tier": "next_big_thing"
       },
       {
@@ -2347,37 +2374,134 @@
           "small venue (~900 cap.)",
           "you've never been to The Opera House"
         ],
-        "score": 0.2534,
+        "score": 0.2231,
         "tier": "next_big_thing"
       },
       {
-        "artist": "Charlotte Cornfield",
+        "artist": "Loviet",
         "event": {
-          "id": "tm:rZ7HnEZ1Af0doK",
+          "id": "tm:177Zv0G6GWdRJ2j",
           "lineup": [
-            "Charlotte Cornfield"
+            "The Wldlfe",
+            "Landon Conrath",
+            "Loviet"
           ],
           "region": "Toronto",
           "source": "ticketmaster",
-          "starts_at": "2026-12-03T20:00:00",
-          "url": "https://www.ticketweb.ca/event/charlotte-cornfield-and-friendship-with-lees-palace-tickets/14903453",
+          "starts_at": "2026-11-09T19:00:00",
+          "url": "https://www.ticketmaster.ca/the-wldlfe-toronto-ontario-11-09-2026/event/100064CF43BE63DC",
           "venue": {
-            "capacity": 700,
+            "capacity": 575,
             "city": "Toronto",
-            "lat": 43.665249,
-            "lon": -79.409447,
-            "name": "Lee's Palace"
+            "lat": 43.6551655,
+            "lon": -79.4190636,
+            "name": "The Mod Club"
           }
         },
         "heard_before": null,
-        "listeners": 54302,
+        "listeners": 7428,
         "reasons": [
-          "similar to José González (0.35), The New Pornographers (0.40), Feist (0.39)",
-          "only 54,302 listeners on Last.fm",
-          "small venue (~700 cap.)",
-          "you've never been to Lee's Palace"
+          "tags match your taste: alternative, pop, indie rock",
+          "only 7,428 listeners on Last.fm",
+          "small venue (~575 cap.)",
+          "you've never been to The Mod Club"
         ],
-        "score": 0.2532,
+        "score": 0.2209,
+        "tier": "next_big_thing"
+      },
+      {
+        "artist": "Venus & The Flytraps",
+        "event": {
+          "id": "tm:177Zv0G6CxI79lw",
+          "lineup": [
+            "Dev Lemons",
+            "Venus & The Flytraps"
+          ],
+          "region": "Toronto",
+          "source": "ticketmaster",
+          "starts_at": "2026-11-03T19:00:00",
+          "url": "https://www.ticketmaster.ca/dev-lemons-eat-the-pavement-tour-toronto-ontario-11-03-2026/event/100064E8A8117AF2",
+          "venue": {
+            "capacity": 600,
+            "city": "Toronto",
+            "lat": 43.6432475,
+            "lon": -79.4220782,
+            "name": "The Great Hall"
+          }
+        },
+        "heard_before": null,
+        "listeners": 59696,
+        "reasons": [
+          "tags match your taste: indie rock, indie, female vocalists",
+          "only 59,696 listeners on Last.fm",
+          "small venue (~600 cap.)",
+          "you've never been to The Great Hall"
+        ],
+        "score": 0.2184,
+        "tier": "next_big_thing"
+      },
+      {
+        "artist": "Jordan Hart",
+        "event": {
+          "id": "tm:rZ7HnEZ1AfGxZf",
+          "lineup": [
+            "Jordan Hart"
+          ],
+          "region": "Toronto",
+          "source": "ticketmaster",
+          "starts_at": "2026-12-20T19:00:00",
+          "url": "https://www.ticketweb.ca/event/jordan-hart-longboat-hall-tickets/14322014",
+          "venue": {
+            "capacity": 500,
+            "city": "Toronto",
+            "lat": 43.643,
+            "lon": -79.42216,
+            "name": "Longboat Hall"
+          }
+        },
+        "heard_before": null,
+        "listeners": 27053,
+        "reasons": [
+          "similar to William Fitzsimmons (0.24), Gregory Alan Isakov (0.28), José González (0.23)",
+          "only 27,053 listeners on Last.fm",
+          "small venue (~500 cap.)",
+          "you've never been to Longboat Hall"
+        ],
+        "score": 0.2157,
+        "tier": "next_big_thing"
+      },
+      {
+        "artist": "Allison Russell",
+        "event": {
+          "id": "tm:1A8Zk46GkeYFAnZ",
+          "lineup": [
+            "Allison Russell",
+            "AHI"
+          ],
+          "region": "Toronto",
+          "source": "ticketmaster",
+          "starts_at": "2026-10-22T19:00:00",
+          "url": "https://www.ticketmaster.ca/allison-russell-with-very-special-guest-toronto-ontario-10-22-2026/event/10006547B0205A80",
+          "venue": {
+            "capacity": null,
+            "city": "Toronto",
+            "lat": 43.6729716,
+            "lon": -79.3879066,
+            "name": "The Concert Hall"
+          }
+        },
+        "heard_before": {
+          "days": 2,
+          "first": "2023-02-12"
+        },
+        "listeners": 90344,
+        "reasons": [
+          "similar to Brandi Carlile (0.66), Sarah Jarosz (0.55), Patty Griffin (0.50)",
+          "you played them on 2 days back in 2023",
+          "only 90,344 listeners on Last.fm",
+          "you've never been to The Concert Hall"
+        ],
+        "score": 0.1971,
         "tier": "next_big_thing"
       },
       {
@@ -2412,68 +2536,7 @@
           "small venue (~575 cap.)",
           "you've never been to The Mod Club"
         ],
-        "score": 0.2194,
-        "tier": "next_big_thing"
-      },
-      {
-        "artist": "Sam Quealy",
-        "event": {
-          "id": "tm:177Zv0G6CLKGD_6",
-          "lineup": [
-            "Sam Quealy"
-          ],
-          "region": "Toronto",
-          "source": "ticketmaster",
-          "starts_at": "2026-12-04T19:00:00",
-          "url": "https://www.ticketmaster.ca/sam-quealy-north-america-tour-toronto-ontario-12-04-2026/event/100064E7D333B647",
-          "venue": {
-            "capacity": 250,
-            "city": "Toronto",
-            "lat": 43.6431078,
-            "lon": -79.4246457,
-            "name": "The Drake Hotel"
-          }
-        },
-        "heard_before": null,
-        "listeners": 63208,
-        "reasons": [
-          "similar to Yelle (0.72), Robyn (0.37), Ladytron (0.41)",
-          "only 63,208 listeners on Last.fm",
-          "small venue (~250 cap.)",
-          "you've never been to The Drake Hotel"
-        ],
-        "score": 0.2194,
-        "tier": "next_big_thing"
-      },
-      {
-        "artist": "The 4411",
-        "event": {
-          "id": "tm:1A8Zk36Gkd-5FmP",
-          "lineup": [
-            "West 22nd",
-            "The 4411"
-          ],
-          "region": "Toronto",
-          "source": "ticketmaster",
-          "starts_at": "2026-11-11T19:00:00",
-          "url": "https://www.ticketmaster.ca/west-22nd-places-to-be-toronto-ontario-11-11-2026/event/10006487E12C8BA5",
-          "venue": {
-            "capacity": 400,
-            "city": "Toronto",
-            "lat": 43.6490438,
-            "lon": -79.395913,
-            "name": " Horseshoe Tavern"
-          }
-        },
-        "heard_before": null,
-        "listeners": 27198,
-        "reasons": [
-          "similar to The Lumineers (0.26), Gregory Alan Isakov (0.28), Noah Kahan (0.38)",
-          "only 27,198 listeners on Last.fm",
-          "small venue (~400 cap.)",
-          "you've never been to  Horseshoe Tavern"
-        ],
-        "score": 0.2151,
+        "score": 0.1877,
         "tier": "next_big_thing"
       },
       {
@@ -2498,141 +2561,41 @@
         "heard_before": null,
         "listeners": 31951,
         "reasons": [
-          "similar to The Weepies (0.38), Bon Iver (0.38), Ray LaMontagne (0.39)",
+          "similar to Bon Iver (0.38), Gregory Alan Isakov (0.38), Julien Baker (0.42)",
           "only 31,951 listeners on Last.fm",
           "you've never been to The Sound Garage"
         ],
-        "score": 0.2126,
+        "score": 0.1737,
         "tier": "next_big_thing"
       },
       {
-        "artist": "Boy Golden",
+        "artist": "Band Of Silver",
         "event": {
-          "id": "tm:1k7ZvPAIGA2MQZP",
+          "id": "tm:177Zv0G6Gl4Dzgx",
           "lineup": [
-            "Boy Golden",
-            "Field Guide"
+            "Judah & the Lion",
+            "Band Of Silver"
           ],
           "region": "Toronto",
           "source": "ticketmaster",
-          "starts_at": "2026-11-20T19:00:00",
-          "url": "https://www.ticketmaster.ca/boy-golden-good-goddamn-another-tour-toronto-ontario-11-20-2026/event/100065168FDDA025",
+          "starts_at": "2026-10-24T18:30:00",
+          "url": "https://www.ticketmaster.ca/judah-the-lion-toronto-ontario-10-24-2026/event/100064CAD5EF8D62",
           "venue": {
-            "capacity": 575,
+            "capacity": 1400,
             "city": "Toronto",
-            "lat": 43.6551655,
-            "lon": -79.4190636,
-            "name": "The Mod Club"
-          }
-        },
-        "heard_before": {
-          "days": 1,
-          "first": "2026-03-27"
-        },
-        "listeners": 22879,
-        "reasons": [
-          "similar to The New Pornographers (0.31), The Format (0.32), Ben Kweller (0.28)",
-          "you played them on 1 day back in 2026",
-          "only 22,879 listeners on Last.fm",
-          "small venue (~575 cap.)",
-          "you've never been to The Mod Club"
-        ],
-        "score": 0.2118,
-        "tier": "next_big_thing"
-      },
-      {
-        "artist": "Allison Russell",
-        "event": {
-          "id": "tm:1A8Zk46GkeYFAnZ",
-          "lineup": [
-            "Allison Russell",
-            "AHI"
-          ],
-          "region": "Toronto",
-          "source": "ticketmaster",
-          "starts_at": "2026-10-22T19:00:00",
-          "url": "https://www.ticketmaster.ca/allison-russell-with-very-special-guest-toronto-ontario-10-22-2026/event/10006547B0205A80",
-          "venue": {
-            "capacity": null,
-            "city": "Toronto",
-            "lat": 43.6729716,
-            "lon": -79.3879066,
-            "name": "The Concert Hall"
-          }
-        },
-        "heard_before": {
-          "days": 2,
-          "first": "2023-02-12"
-        },
-        "listeners": 90344,
-        "reasons": [
-          "similar to Brandi Carlile (0.66), Sarah Jarosz (0.55), The Wailin' Jennys (0.33)",
-          "you played them on 2 days back in 2023",
-          "only 90,344 listeners on Last.fm",
-          "you've never been to The Concert Hall"
-        ],
-        "score": 0.2036,
-        "tier": "next_big_thing"
-      },
-      {
-        "artist": "Venus & The Flytraps",
-        "event": {
-          "id": "tm:177Zv0G6CxI79lw",
-          "lineup": [
-            "Dev Lemons",
-            "Venus & The Flytraps"
-          ],
-          "region": "Toronto",
-          "source": "ticketmaster",
-          "starts_at": "2026-11-03T19:00:00",
-          "url": "https://www.ticketmaster.ca/dev-lemons-eat-the-pavement-tour-toronto-ontario-11-03-2026/event/100064E8A8117AF2",
-          "venue": {
-            "capacity": 600,
-            "city": "Toronto",
-            "lat": 43.6432475,
-            "lon": -79.4220782,
-            "name": "The Great Hall"
+            "lat": 43.6764492,
+            "lon": -79.3571014,
+            "name": "The Danforth Music Hall"
           }
         },
         "heard_before": null,
-        "listeners": 59696,
+        "listeners": 60720,
         "reasons": [
-          "tags match your taste: indie rock, indie, female vocalists",
-          "only 59,696 listeners on Last.fm",
-          "small venue (~600 cap.)",
-          "you've never been to The Great Hall"
+          "tags match your taste: indie, electronic, indie pop",
+          "only 60,720 listeners on Last.fm",
+          "small venue (~1,400 cap.)"
         ],
-        "score": 0.1972,
-        "tier": "next_big_thing"
-      },
-      {
-        "artist": "the olllam",
-        "event": {
-          "id": "tm:16vZZ_8fkG7HlQk",
-          "lineup": [
-            "the olllam"
-          ],
-          "region": "Toronto",
-          "source": "ticketmaster",
-          "starts_at": "2026-11-12T19:00:00",
-          "url": "https://www.ticketmaster.ca/the-olllam-toronto-ontario-11-12-2026/event/1000650506F2B686",
-          "venue": {
-            "capacity": 575,
-            "city": "Toronto",
-            "lat": 43.6551655,
-            "lon": -79.4190636,
-            "name": "The Mod Club"
-          }
-        },
-        "heard_before": null,
-        "listeners": 26717,
-        "reasons": [
-          "tags match your taste: folk, post-rock, irish",
-          "only 26,717 listeners on Last.fm",
-          "small venue (~575 cap.)",
-          "you've never been to The Mod Club"
-        ],
-        "score": 0.1943,
+        "score": 0.1629,
         "tier": "next_big_thing"
       },
       {
@@ -2662,187 +2625,7 @@
           "only 89,201 listeners on Last.fm",
           "small venue (~1,400 cap.)"
         ],
-        "score": 0.1625,
-        "tier": "next_big_thing"
-      },
-      {
-        "artist": "54-40",
-        "event": {
-          "id": "tm:1AvZZ_FGkTPIDY9",
-          "lineup": [
-            "54-40",
-            "Thunder Queens"
-          ],
-          "region": "Toronto",
-          "source": "ticketmaster",
-          "starts_at": "2026-11-28T19:00:00",
-          "url": "https://www.ticketmaster.ca/5440-toronto-ontario-11-28-2026/event/1000648FE5A3BC17",
-          "venue": {
-            "capacity": 1400,
-            "city": "Toronto",
-            "lat": 43.6764492,
-            "lon": -79.3571014,
-            "name": "The Danforth Music Hall"
-          }
-        },
-        "heard_before": null,
-        "listeners": 49251,
-        "reasons": [
-          "similar to The Tragically Hip (0.88), Sloan (0.71), Barenaked Ladies (0.27)",
-          "only 49,251 listeners on Last.fm",
-          "small venue (~1,400 cap.)"
-        ],
-        "score": 0.1579,
-        "tier": "next_big_thing"
-      },
-      {
-        "artist": "AHI",
-        "event": {
-          "id": "tm:1A8Zk46GkeYFAnZ",
-          "lineup": [
-            "Allison Russell",
-            "AHI"
-          ],
-          "region": "Toronto",
-          "source": "ticketmaster",
-          "starts_at": "2026-10-22T19:00:00",
-          "url": "https://www.ticketmaster.ca/allison-russell-with-very-special-guest-toronto-ontario-10-22-2026/event/10006547B0205A80",
-          "venue": {
-            "capacity": null,
-            "city": "Toronto",
-            "lat": 43.6729716,
-            "lon": -79.3879066,
-            "name": "The Concert Hall"
-          }
-        },
-        "heard_before": null,
-        "listeners": 70406,
-        "reasons": [
-          "similar to Ray LaMontagne (0.35), Neil Halstead (0.57), Natalie Merchant (0.25)",
-          "only 70,406 listeners on Last.fm",
-          "you've never been to The Concert Hall"
-        ],
-        "score": 0.1483,
-        "tier": "next_big_thing"
-      },
-      {
-        "artist": "The Watchmen",
-        "event": {
-          "id": "tm:1A8Zk3aGkdf2odd",
-          "lineup": [
-            "The Watchmen",
-            "Stuck On Planet Earth"
-          ],
-          "region": "Toronto",
-          "source": "ticketmaster",
-          "starts_at": "2026-11-21T19:00:00",
-          "url": "https://www.ticketmaster.ca/the-watchmen-toronto-ontario-11-21-2026/event/10006489D43D10C3",
-          "venue": {
-            "capacity": 1400,
-            "city": "Toronto",
-            "lat": 43.6764492,
-            "lon": -79.3571014,
-            "name": "The Danforth Music Hall"
-          }
-        },
-        "heard_before": null,
-        "listeners": 39990,
-        "reasons": [
-          "similar to The Tragically Hip (0.85), Sloan (0.50), Barenaked Ladies (0.28)",
-          "only 39,990 listeners on Last.fm",
-          "small venue (~1,400 cap.)"
-        ],
-        "score": 0.1431,
-        "tier": "next_big_thing"
-      },
-      {
-        "artist": "Band Of Silver",
-        "event": {
-          "id": "tm:177Zv0G6Gl4Dzgx",
-          "lineup": [
-            "Judah & the Lion",
-            "Band Of Silver"
-          ],
-          "region": "Toronto",
-          "source": "ticketmaster",
-          "starts_at": "2026-10-24T18:30:00",
-          "url": "https://www.ticketmaster.ca/judah-the-lion-toronto-ontario-10-24-2026/event/100064CAD5EF8D62",
-          "venue": {
-            "capacity": 1400,
-            "city": "Toronto",
-            "lat": 43.6764492,
-            "lon": -79.3571014,
-            "name": "The Danforth Music Hall"
-          }
-        },
-        "heard_before": null,
-        "listeners": 60720,
-        "reasons": [
-          "tags match your taste: indie, indie pop, electronic",
-          "only 60,720 listeners on Last.fm",
-          "small venue (~1,400 cap.)"
-        ],
-        "score": 0.1383,
-        "tier": "next_big_thing"
-      },
-      {
-        "artist": "Mamas Gun",
-        "event": {
-          "id": "tm:rZ7HnEZ1AfOpvS",
-          "lineup": [
-            "Mamas Gun",
-            "Clerel"
-          ],
-          "region": "Toronto",
-          "source": "ticketmaster",
-          "starts_at": "2026-11-19T20:00:00",
-          "url": "https://www.ticketweb.ca/event/mamas-gun-the-garrison-tickets/14816073",
-          "venue": {
-            "capacity": null,
-            "city": "Toronto",
-            "lat": 43.64913,
-            "lon": -79.42235,
-            "name": "The Garrison"
-          }
-        },
-        "heard_before": null,
-        "listeners": 77416,
-        "reasons": [
-          "similar to Mayer Hawthorne (0.75), Leon Bridges (0.29), Vulfpeck (0.29)",
-          "only 77,416 listeners on Last.fm",
-          "you've never been to The Garrison"
-        ],
-        "score": 0.1186,
-        "tier": "next_big_thing"
-      },
-      {
-        "artist": "Clerel",
-        "event": {
-          "id": "tm:rZ7HnEZ1AfOpvS",
-          "lineup": [
-            "Mamas Gun",
-            "Clerel"
-          ],
-          "region": "Toronto",
-          "source": "ticketmaster",
-          "starts_at": "2026-11-19T20:00:00",
-          "url": "https://www.ticketweb.ca/event/mamas-gun-the-garrison-tickets/14816073",
-          "venue": {
-            "capacity": null,
-            "city": "Toronto",
-            "lat": 43.64913,
-            "lon": -79.42235,
-            "name": "The Garrison"
-          }
-        },
-        "heard_before": null,
-        "listeners": 7234,
-        "reasons": [
-          "tags match your taste: folk, soul, blues",
-          "only 7,234 listeners on Last.fm",
-          "you've never been to The Garrison"
-        ],
-        "score": 0.1128,
+        "score": 0.1432,
         "tier": "next_big_thing"
       },
       {
@@ -2874,95 +2657,153 @@
           "only 90,348 listeners on Last.fm",
           "small venue (~1,400 cap.)"
         ],
+        "score": 0.1338,
+        "tier": "next_big_thing"
+      },
+      {
+        "artist": "54-40",
+        "event": {
+          "id": "tm:1AvZZ_FGkTPIDY9",
+          "lineup": [
+            "54-40",
+            "Thunder Queens"
+          ],
+          "region": "Toronto",
+          "source": "ticketmaster",
+          "starts_at": "2026-11-28T19:00:00",
+          "url": "https://www.ticketmaster.ca/5440-toronto-ontario-11-28-2026/event/1000648FE5A3BC17",
+          "venue": {
+            "capacity": 1400,
+            "city": "Toronto",
+            "lat": 43.6764492,
+            "lon": -79.3571014,
+            "name": "The Danforth Music Hall"
+          }
+        },
+        "heard_before": null,
+        "listeners": 49251,
+        "reasons": [
+          "similar to The Tragically Hip (0.88), Sloan (0.71), Barenaked Ladies (0.27)",
+          "only 49,251 listeners on Last.fm",
+          "small venue (~1,400 cap.)"
+        ],
+        "score": 0.1202,
+        "tier": "next_big_thing"
+      },
+      {
+        "artist": "The Watchmen",
+        "event": {
+          "id": "tm:1A8Zk3aGkdf2odd",
+          "lineup": [
+            "The Watchmen",
+            "Stuck On Planet Earth"
+          ],
+          "region": "Toronto",
+          "source": "ticketmaster",
+          "starts_at": "2026-11-21T19:00:00",
+          "url": "https://www.ticketmaster.ca/the-watchmen-toronto-ontario-11-21-2026/event/10006489D43D10C3",
+          "venue": {
+            "capacity": 1400,
+            "city": "Toronto",
+            "lat": 43.6764492,
+            "lon": -79.3571014,
+            "name": "The Danforth Music Hall"
+          }
+        },
+        "heard_before": null,
+        "listeners": 39990,
+        "reasons": [
+          "similar to The Tragically Hip (0.85), Sloan (0.50), Barenaked Ladies (0.28)",
+          "only 39,990 listeners on Last.fm",
+          "small venue (~1,400 cap.)"
+        ],
+        "score": 0.1131,
+        "tier": "next_big_thing"
+      },
+      {
+        "artist": "Good Lovelies",
+        "event": {
+          "id": "tm:177Zv0G6G5rNQwP",
+          "lineup": [
+            "Good Lovelies"
+          ],
+          "region": "Toronto",
+          "source": "ticketmaster",
+          "starts_at": "2026-12-17T20:00:00",
+          "url": "https://www.ticketmaster.ca/good-lovelies-holiday-concert-toronto-ontario-12-17-2026/event/100064C2DE8DACA5",
+          "venue": {
+            "capacity": 2765,
+            "city": "Toronto",
+            "lat": 43.6541869,
+            "lon": -79.3789975,
+            "name": "Massey Hall"
+          }
+        },
+        "heard_before": null,
+        "listeners": 34446,
+        "reasons": [
+          "similar to The Wailin' Jennys (1.00), The Secret Sisters (0.69), Basia Bulat (0.65)",
+          "only 34,446 listeners on Last.fm"
+        ],
+        "score": 0.1128,
+        "tier": "next_big_thing"
+      },
+      {
+        "artist": "ARK IDENTITY",
+        "event": {
+          "id": "tm:rZ7HnEZ1AfuEk7",
+          "lineup": [
+            "ARK IDENTITY"
+          ],
+          "region": "Toronto",
+          "source": "ticketmaster",
+          "starts_at": "2026-11-12T19:00:00",
+          "url": "https://www.ticketweb.ca/event/ark-identity-the-sound-garage-tickets/14367184",
+          "venue": {
+            "capacity": null,
+            "city": "Toronto",
+            "lat": 43.669849,
+            "lon": -79.436218,
+            "name": "The Sound Garage"
+          }
+        },
+        "heard_before": null,
+        "listeners": 7619,
+        "reasons": [
+          "tags match your taste: alternative, canadian, indie pop",
+          "only 7,619 listeners on Last.fm",
+          "you've never been to The Sound Garage"
+        ],
         "score": 0.1124,
         "tier": "next_big_thing"
       },
       {
-        "artist": "Salin",
+        "artist": "Kes",
         "event": {
-          "id": "tm:rZ7HnEZ1A4Z3Jd",
+          "id": "tm:1A8Zk4aGkdNAEKK",
           "lineup": [
-            "Salin",
-            "John Kong"
+            "Kes"
           ],
           "region": "Toronto",
           "source": "ticketmaster",
-          "starts_at": "2026-10-19T19:00:00",
-          "url": "https://www.ticketweb.ca/event/salin-the-garrison-tickets/15012983",
+          "starts_at": "2026-12-18T20:00:00",
+          "url": "https://www.ticketmaster.ca/kesmas-with-kes-the-band-toronto-ontario-12-18-2026/event/10006549E31674D3",
           "venue": {
-            "capacity": null,
+            "capacity": 2000,
             "city": "Toronto",
-            "lat": 43.64913,
-            "lon": -79.42235,
-            "name": "The Garrison"
+            "lat": 43.712525,
+            "lon": -79.602042,
+            "name": "The Theatre at Great Canadian Toronto"
           }
         },
         "heard_before": null,
-        "listeners": 20322,
+        "listeners": 52285,
         "reasons": [
-          "similar to Me'Shell Ndegéocello (0.63), Sault (0.29)",
-          "only 20,322 listeners on Last.fm",
-          "you've never been to The Garrison"
+          "tags match your taste: rock, folk, pop",
+          "only 52,285 listeners on Last.fm",
+          "you've never been to The Theatre at Great Canadian Toronto"
         ],
-        "score": 0.1116,
-        "tier": "next_big_thing"
-      },
-      {
-        "artist": "Caity Gyorgy",
-        "event": {
-          "id": "tm:177Zv0G65a5vuVo",
-          "lineup": [
-            "Caity Gyorgy"
-          ],
-          "region": "Toronto",
-          "source": "ticketmaster",
-          "starts_at": "2026-12-12T19:30:00",
-          "url": "https://www.ticketmaster.ca/swing-into-the-holidays-ft-caity-toronto-ontario-12-12-2026/event/100064B24B04DD11",
-          "venue": {
-            "capacity": 1800,
-            "city": "Toronto",
-            "lat": 43.7661379,
-            "lon": -79.4142505,
-            "name": "Meridian Arts Centre: George Weston"
-          }
-        },
-        "heard_before": null,
-        "listeners": 64314,
-        "reasons": [
-          "similar to Michael Buble (0.45), Kay Starr (0.40), Diana Krall (0.40)",
-          "only 64,314 listeners on Last.fm",
-          "you've never been to Meridian Arts Centre: George Weston"
-        ],
-        "score": 0.1078,
-        "tier": "next_big_thing"
-      },
-      {
-        "artist": "Whitmer Thomas",
-        "event": {
-          "id": "tm:rZ7HnEZ1A4ZwaN",
-          "lineup": [
-            "Whitmer Thomas"
-          ],
-          "region": "Toronto",
-          "source": "ticketmaster",
-          "starts_at": "2026-12-08T19:00:00",
-          "url": "https://www.ticketweb.ca/event/whitmer-thomas-the-great-hall-tickets/15032263",
-          "venue": {
-            "capacity": null,
-            "city": "Toronto",
-            "lat": 43.64336,
-            "lon": -79.42206,
-            "name": "The Great Hall"
-          }
-        },
-        "heard_before": null,
-        "listeners": 33763,
-        "reasons": [
-          "similar to Walk the Moon (0.40), Fruit Bats (0.45), AWOLNATION (0.51)",
-          "only 33,763 listeners on Last.fm",
-          "you've never been to The Great Hall"
-        ],
-        "score": 0.1015,
+        "score": 0.1066,
         "tier": "next_big_thing"
       }
     ],
@@ -2997,7 +2838,7 @@
           "you played them on 2 days back in 2015",
           "you've never been to Meridian Hall"
         ],
-        "score": 0.5657,
+        "score": 0.5653,
         "tier": "would_like"
       },
       {
@@ -3023,67 +2864,9 @@
         "heard_before": null,
         "listeners": 330530,
         "reasons": [
-          "similar to Sarah McLachlan (0.88), Natalie Merchant (0.47), A Fine Frenzy (0.51)"
+          "similar to Sarah McLachlan (0.88), Sara Bareilles (0.34), Natalie Merchant (0.47)"
         ],
-        "score": 0.5529,
-        "tier": "would_like"
-      },
-      {
-        "artist": "Jessica Lea Mayfield",
-        "event": {
-          "id": "tm:rZ7HnEZ1AfaA-0",
-          "lineup": [
-            "Jessica Lea Mayfield",
-            "Rachel Bobbitt"
-          ],
-          "region": "Toronto",
-          "source": "ticketmaster",
-          "starts_at": "2026-11-06T19:00:00",
-          "url": "https://www.ticketweb.ca/event/jessica-lea-mayfield-the-sound-garage-tickets/14245864",
-          "venue": {
-            "capacity": null,
-            "city": "Toronto",
-            "lat": 43.669849,
-            "lon": -79.436218,
-            "name": "The Sound Garage"
-          }
-        },
-        "heard_before": null,
-        "listeners": 208487,
-        "reasons": [
-          "similar to Damien Jurado (0.96), Andrew Bird (0.62), Neko Case (0.97)",
-          "you've never been to The Sound Garage"
-        ],
-        "score": 0.4926,
-        "tier": "would_like"
-      },
-      {
-        "artist": "Olivia Rodrigo",
-        "event": {
-          "id": "tm:1AvZZ_aGkmWmyKb",
-          "lineup": [
-            "Olivia Rodrigo",
-            "Wolf Alice"
-          ],
-          "region": "Toronto",
-          "source": "ticketmaster",
-          "starts_at": "2026-10-26T19:00:00",
-          "url": "https://www.ticketmaster.ca/olivia-rodrigo-the-unraveled-tour-toronto-ontario-10-26-2026/event/1000649BBDBB94D8",
-          "venue": {
-            "capacity": 19800,
-            "city": "Toronto",
-            "lat": 43.6439254,
-            "lon": -79.3783234,
-            "name": "Scotiabank Arena"
-          }
-        },
-        "heard_before": null,
-        "listeners": 3391413,
-        "reasons": [
-          "similar to Taylor Swift (0.96), Ariana Grande (0.87), Harry Styles (0.56)",
-          "+1 more date nearby"
-        ],
-        "score": 0.4863,
+        "score": 0.5098,
         "tier": "would_like"
       },
       {
@@ -3114,36 +2897,36 @@
           "similar to Toad The Wet Sprocket (0.61), Snow Patrol (0.72), The Airborne Toxic Event (0.89)",
           "you played them on 1 day back in 2009"
         ],
-        "score": 0.4665,
+        "score": 0.4526,
         "tier": "would_like"
       },
       {
-        "artist": "Rostam",
+        "artist": "Olivia Rodrigo",
         "event": {
-          "id": "tm:rZ7HnEZ1Af19Cf",
+          "id": "tm:1AvZZ_aGkmWmyKb",
           "lineup": [
-            "Hamilton Leithauser",
-            "Rostam"
+            "Olivia Rodrigo",
+            "Wolf Alice"
           ],
           "region": "Toronto",
           "source": "ticketmaster",
-          "starts_at": "2026-11-13T19:00:00",
-          "url": "https://www.ticketweb.ca/event/hamilton-leithauser-rostam-the-the-concert-hall-tickets/14297394",
+          "starts_at": "2026-10-26T19:00:00",
+          "url": "https://www.ticketmaster.ca/olivia-rodrigo-the-unraveled-tour-toronto-ontario-10-26-2026/event/1000649BBDBB94D8",
           "venue": {
-            "capacity": 850,
+            "capacity": 19800,
             "city": "Toronto",
-            "lat": 43.67308,
-            "lon": -79.38842,
-            "name": "The Concert Hall"
+            "lat": 43.6439254,
+            "lon": -79.3783234,
+            "name": "Scotiabank Arena"
           }
         },
         "heard_before": null,
-        "listeners": 268240,
+        "listeners": 3391413,
         "reasons": [
-          "similar to Vampire Weekend (1.00), Ra Ra Riot (0.63), Broken Social Scene (0.50)",
-          "you've never been to The Concert Hall"
+          "similar to Taylor Swift (0.96), Ariana Grande (0.87), Harry Styles (0.56)",
+          "+1 more date nearby"
         ],
-        "score": 0.4354,
+        "score": 0.4196,
         "tier": "would_like"
       },
       {
@@ -3169,151 +2952,68 @@
         "heard_before": null,
         "listeners": 799932,
         "reasons": [
-          "similar to Florence + the Machine (1.00), Mumford & Sons (0.23), Bastille (0.21)"
+          "similar to Florence + the Machine (1.00), Mumford & Sons (0.23), Noah Kahan (0.54)"
         ],
-        "score": 0.4311,
+        "score": 0.3877,
         "tier": "would_like"
       },
       {
-        "artist": "Unkle",
+        "artist": "Underoath",
         "event": {
-          "id": "tm:1AvZZ_3GkD0kzO5",
+          "id": "tm:1AvZZ_8GkBlKihc",
           "lineup": [
-            "Unkle"
+            "Underoath",
+            "August Burns Red",
+            "Atreyu",
+            "Emery"
           ],
           "region": "Toronto",
           "source": "ticketmaster",
-          "starts_at": "2026-12-13T19:00:00",
-          "url": "https://www.ticketmaster.ca/unkle-unkle-sounds-north-america-tour-toronto-ontario-12-13-2026/event/1000652EE41B880B",
+          "starts_at": "2026-11-27T18:30:00",
+          "url": "https://www.ticketmaster.ca/underoath-define-the-great-line-20th-toronto-ontario-11-27-2026/event/1000650EAB4EC6ED",
           "venue": {
-            "capacity": 575,
+            "capacity": 2000,
             "city": "Toronto",
-            "lat": 43.6551655,
-            "lon": -79.4190636,
-            "name": "The Mod Club"
+            "lat": 43.712525,
+            "lon": -79.602042,
+            "name": "The Theatre at Great Canadian Toronto"
           }
         },
         "heard_before": null,
-        "listeners": 1413058,
+        "listeners": 1118616,
         "reasons": [
-          "similar to DJ Shadow (1.00), Massive Attack (0.74), Sneaker Pimps (0.60)",
-          "you've never been to The Mod Club"
+          "similar to Alexisonfire (0.97), Thrice (0.75), Thursday (0.62)",
+          "you've never been to The Theatre at Great Canadian Toronto"
         ],
-        "score": 0.4178,
+        "score": 0.3778,
         "tier": "would_like"
       },
       {
-        "artist": "Hamilton Leithauser",
+        "artist": "SIENNA SPIRO",
         "event": {
-          "id": "tm:rZ7HnEZ1Af19Cf",
+          "id": "tm:177Zv0G6G9hZRkw",
           "lineup": [
-            "Hamilton Leithauser",
-            "Rostam"
+            "SIENNA SPIRO",
+            "Summer Joy"
           ],
           "region": "Toronto",
           "source": "ticketmaster",
-          "starts_at": "2026-11-13T19:00:00",
-          "url": "https://www.ticketweb.ca/event/hamilton-leithauser-rostam-the-the-concert-hall-tickets/14297394",
+          "starts_at": "2026-10-25T18:00:00",
+          "url": "https://www.ticketmaster.ca/sienna-spiro-my-house-tour-toronto-ontario-10-25-2026/event/100064C5DB02F1B2",
           "venue": {
-            "capacity": 850,
+            "capacity": 2500,
             "city": "Toronto",
-            "lat": 43.67308,
-            "lon": -79.38842,
-            "name": "The Concert Hall"
+            "lat": 43.66684147,
+            "lon": -79.31351149,
+            "name": "History Toronto"
           }
         },
         "heard_before": null,
-        "listeners": 238654,
+        "listeners": 680566,
         "reasons": [
-          "similar to The Walkmen (1.00), Destroyer (0.73), Spoon (0.43)",
-          "you've never been to The Concert Hall"
+          "similar to Adele (0.66), Sam Smith (0.72), Amy Winehouse (0.53)"
         ],
-        "score": 0.4043,
-        "tier": "would_like"
-      },
-      {
-        "artist": "Judah & the Lion",
-        "event": {
-          "id": "tm:177Zv0G6Gl4Dzgx",
-          "lineup": [
-            "Judah & the Lion",
-            "Band Of Silver"
-          ],
-          "region": "Toronto",
-          "source": "ticketmaster",
-          "starts_at": "2026-10-24T18:30:00",
-          "url": "https://www.ticketmaster.ca/judah-the-lion-toronto-ontario-10-24-2026/event/100064CAD5EF8D62",
-          "venue": {
-            "capacity": 1400,
-            "city": "Toronto",
-            "lat": 43.6764492,
-            "lon": -79.3571014,
-            "name": "The Danforth Music Hall"
-          }
-        },
-        "heard_before": null,
-        "listeners": 268946,
-        "reasons": [
-          "similar to Mumford & Sons (0.56), The Lumineers (0.57), The Head and the Heart (0.75)"
-        ],
-        "score": 0.3998,
-        "tier": "would_like"
-      },
-      {
-        "artist": "Doja Cat",
-        "event": {
-          "id": "tm:1k7ZvNCbGAGVe_c",
-          "lineup": [
-            "Doja Cat",
-            "Latto"
-          ],
-          "region": "Toronto",
-          "source": "ticketmaster",
-          "starts_at": "2026-11-25T19:30:00",
-          "url": "https://www.ticketmaster.ca/doja-cat-tour-ma-vie-world-toronto-ontario-11-25-2026/event/100063398CD0266D",
-          "venue": {
-            "capacity": 19800,
-            "city": "Toronto",
-            "lat": 43.6439254,
-            "lon": -79.3783234,
-            "name": "Scotiabank Arena"
-          }
-        },
-        "heard_before": null,
-        "listeners": 3829533,
-        "reasons": [
-          "similar to Beyoncé (0.70), Ariana Grande (0.88), Rihanna (0.70)"
-        ],
-        "score": 0.3976,
-        "tier": "would_like"
-      },
-      {
-        "artist": "Matt Dusk",
-        "event": {
-          "id": "tm:1AvZZ_aGkI-2vQp",
-          "lineup": [
-            "Matt Dusk",
-            "Sinatra With Matt Dusk"
-          ],
-          "region": "Toronto",
-          "source": "ticketmaster",
-          "starts_at": "2026-12-04T19:30:00",
-          "url": "https://www.ticketmaster.ca/matt-dusk-a-very-sinatra-christmas-toronto-ontario-12-04-2026/event/1000649A213C1696",
-          "venue": {
-            "capacity": null,
-            "city": "Toronto",
-            "lat": 43.6529194,
-            "lon": -79.3794517,
-            "name": "The Elgin & Winter Garden Theatres"
-          }
-        },
-        "heard_before": null,
-        "listeners": 179308,
-        "reasons": [
-          "similar to Michael Buble (0.89), Seth MacFarlane (0.98), Frank Sinatra (0.68)",
-          "you've never been to The Elgin & Winter Garden Theatres"
-        ],
-        "score": 0.3794,
+        "score": 0.3673,
         "tier": "would_like"
       },
       {
@@ -3345,229 +3045,160 @@
           "you played them on 2 days back in 2008",
           "you've never been to Lee's Palace"
         ],
-        "score": 0.3713,
+        "score": 0.364,
         "tier": "would_like"
       },
       {
-        "artist": "SIENNA SPIRO",
+        "artist": "Jessica Lea Mayfield",
         "event": {
-          "id": "tm:177Zv0G6G9hZRkw",
+          "id": "tm:rZ7HnEZ1AfaA-0",
           "lineup": [
-            "SIENNA SPIRO",
-            "Summer Joy"
+            "Jessica Lea Mayfield",
+            "Rachel Bobbitt"
           ],
           "region": "Toronto",
           "source": "ticketmaster",
-          "starts_at": "2026-10-25T18:00:00",
-          "url": "https://www.ticketmaster.ca/sienna-spiro-my-house-tour-toronto-ontario-10-25-2026/event/100064C5DB02F1B2",
+          "starts_at": "2026-11-06T19:00:00",
+          "url": "https://www.ticketweb.ca/event/jessica-lea-mayfield-the-sound-garage-tickets/14245864",
           "venue": {
-            "capacity": 2500,
+            "capacity": null,
             "city": "Toronto",
-            "lat": 43.66684147,
-            "lon": -79.31351149,
-            "name": "History Toronto"
+            "lat": 43.669849,
+            "lon": -79.436218,
+            "name": "The Sound Garage"
           }
         },
         "heard_before": null,
-        "listeners": 680566,
+        "listeners": 208487,
         "reasons": [
-          "similar to Adele (0.66), Sam Smith (0.64), Ariana Grande (0.42)"
+          "similar to Neko Case (0.97), Jesca Hoop (0.69), Waxahatchee (0.80)",
+          "you've never been to The Sound Garage"
         ],
-        "score": 0.3711,
+        "score": 0.3638,
         "tier": "would_like"
       },
       {
-        "artist": "Palace",
+        "artist": "Unkle",
         "event": {
-          "id": "tm:16vZZ_ak8G7y9JW",
+          "id": "tm:1AvZZ_3GkD0kzO5",
           "lineup": [
-            "Palace",
-            "Willie J Healey"
+            "Unkle"
           ],
           "region": "Toronto",
           "source": "ticketmaster",
-          "starts_at": "2026-11-08T20:00:00",
-          "url": "https://www.ticketmaster.ca/palace-usa-canada-tour-2026-toronto-ontario-11-08-2026/event/1000649190E579BD",
+          "starts_at": "2026-12-13T19:00:00",
+          "url": "https://www.ticketmaster.ca/unkle-unkle-sounds-north-america-tour-toronto-ontario-12-13-2026/event/1000652EE41B880B",
           "venue": {
-            "capacity": 2765,
+            "capacity": 575,
             "city": "Toronto",
-            "lat": 43.6541869,
-            "lon": -79.3789975,
-            "name": "Massey Hall"
+            "lat": 43.6551655,
+            "lon": -79.4190636,
+            "name": "The Mod Club"
           }
         },
         "heard_before": null,
-        "listeners": 712615,
+        "listeners": 1413058,
         "reasons": [
-          "similar to Local Natives (0.70), Gregory Alan Isakov (0.55), Bon Iver (0.28)"
+          "similar to DJ Shadow (1.00), Massive Attack (0.74), Portishead (0.45)",
+          "you've never been to The Mod Club"
         ],
-        "score": 0.3701,
+        "score": 0.3596,
         "tier": "would_like"
       },
       {
-        "artist": "Underoath",
+        "artist": "Rostam",
         "event": {
-          "id": "tm:1AvZZ_8GkBlKihc",
+          "id": "tm:rZ7HnEZ1Af19Cf",
           "lineup": [
-            "Underoath",
-            "August Burns Red",
-            "Atreyu",
-            "Emery"
+            "Hamilton Leithauser",
+            "Rostam"
           ],
           "region": "Toronto",
           "source": "ticketmaster",
-          "starts_at": "2026-11-27T18:30:00",
-          "url": "https://www.ticketmaster.ca/underoath-define-the-great-line-20th-toronto-ontario-11-27-2026/event/1000650EAB4EC6ED",
+          "starts_at": "2026-11-13T19:00:00",
+          "url": "https://www.ticketweb.ca/event/hamilton-leithauser-rostam-the-the-concert-hall-tickets/14297394",
           "venue": {
-            "capacity": 2000,
+            "capacity": 850,
             "city": "Toronto",
-            "lat": 43.712525,
-            "lon": -79.602042,
-            "name": "The Theatre at Great Canadian Toronto"
+            "lat": 43.67308,
+            "lon": -79.38842,
+            "name": "The Concert Hall"
           }
         },
         "heard_before": null,
-        "listeners": 1118616,
+        "listeners": 268240,
         "reasons": [
-          "similar to Alexisonfire (0.97), Thrice (0.48), Thursday (0.62)",
-          "you've never been to The Theatre at Great Canadian Toronto"
+          "similar to Vampire Weekend (1.00), The New Pornographers (0.36), Broken Social Scene (0.50)",
+          "you've never been to The Concert Hall"
         ],
-        "score": 0.3701,
+        "score": 0.357,
         "tier": "would_like"
       },
       {
-        "artist": "David Archuleta",
+        "artist": "Arlo",
         "event": {
-          "id": "tm:177Zv0G62KBIygC",
+          "id": "tm:1A8Zkf7Gkd7iq24",
           "lineup": [
-            "David Archuleta"
+            "Arlo"
           ],
           "region": "Toronto",
           "source": "ticketmaster",
-          "starts_at": "2026-12-09T19:00:00",
-          "url": "https://www.ticketmaster.ca/david-archuleta-the-warm-me-up-toronto-ontario-12-09-2026/event/100064F4FAA39D4E",
+          "starts_at": "2026-10-23T22:00:00",
+          "url": "https://www.ticketmaster.ca/arlo-toronto-ontario-10-23-2026/event/10006504C4B1D3D5",
           "venue": {
-            "capacity": 1400,
+            "capacity": null,
             "city": "Toronto",
-            "lat": 43.6764492,
-            "lon": -79.3571014,
-            "name": "The Danforth Music Hall"
+            "lat": 43.64335,
+            "lon": -79.42202,
+            "name": "Longboat Hall"
           }
         },
         "heard_before": null,
-        "listeners": 589628,
+        "listeners": 124417,
         "reasons": [
-          "similar to Kris Allen (0.99), Kelly Clarkson (0.54), Colbie Caillat (0.39)"
+          "tags match your taste: indie, rock, indie rock",
+          "you've never been to Longboat Hall"
         ],
-        "score": 0.3665,
+        "score": 0.3509,
         "tier": "would_like"
       },
       {
-        "artist": "Sombr",
+        "artist": "Little River Band",
         "event": {
-          "id": "tm:1A8Zk36GkdV1i_l",
+          "id": "tm:1AvZZ_8Gkni1X6G",
           "lineup": [
-            "Sombr",
-            "Dove Cameron",
-            "Hannah Jadagu"
+            "Little River Band"
           ],
           "region": "Toronto",
           "source": "ticketmaster",
-          "starts_at": "2026-11-16T19:00:00",
-          "url": "https://www.ticketmaster.ca/sombr-you-are-the-reason-tour-toronto-ontario-11-16-2026/event/10006487F42AC66B",
+          "starts_at": "2026-12-04T20:00:00",
+          "url": "https://www.ticketmaster.ca/little-river-band-pickering-ontario-12-04-2026/event/1000650AAC2BE1CC",
           "venue": {
-            "capacity": 19800,
-            "city": "Toronto",
-            "lat": 43.6439254,
-            "lon": -79.3783234,
-            "name": "Scotiabank Arena"
+            "capacity": null,
+            "city": "Pickering",
+            "lat": 43.84332,
+            "lon": -79.054,
+            "name": "The Arena at Pickering Casino Resort"
           }
         },
         "heard_before": {
           "days": 1,
-          "first": "2025-12-04"
+          "first": "2011-05-02"
         },
-        "listeners": 2085400,
+        "listeners": 611592,
         "reasons": [
-          "similar to Harry Styles (0.76), Imagine Dragons (0.38), The Neighbourhood (0.90)",
-          "you played them on 1 day back in 2025"
+          "similar to Chicago (0.97), The Doobie Brothers (0.94), James Taylor (0.49)",
+          "you played them on 1 day back in 2011",
+          "you've never been to The Arena at Pickering Casino Resort"
         ],
-        "score": 0.3647,
-        "tier": "would_like"
-      },
-      {
-        "artist": "Wolf Alice",
-        "event": {
-          "id": "tm:1AvZZ_aGkmWmyKb",
-          "lineup": [
-            "Olivia Rodrigo",
-            "Wolf Alice"
-          ],
-          "region": "Toronto",
-          "source": "ticketmaster",
-          "starts_at": "2026-10-26T19:00:00",
-          "url": "https://www.ticketmaster.ca/olivia-rodrigo-the-unraveled-tour-toronto-ontario-10-26-2026/event/1000649BBDBB94D8",
-          "venue": {
-            "capacity": 19800,
-            "city": "Toronto",
-            "lat": 43.6439254,
-            "lon": -79.3783234,
-            "name": "Scotiabank Arena"
-          }
-        },
-        "heard_before": {
-          "days": 2,
-          "first": "2022-05-30"
-        },
-        "listeners": 1355258,
-        "reasons": [
-          "similar to Florence + the Machine (0.61), Hayley Williams (0.60), The National (0.44)",
-          "you played them on 2 days back in 2022",
-          "+1 more date nearby"
-        ],
-        "score": 0.3614,
-        "tier": "would_like"
-      },
-      {
-        "artist": "Emery",
-        "event": {
-          "id": "tm:1AvZZ_8GkBlKihc",
-          "lineup": [
-            "Underoath",
-            "August Burns Red",
-            "Atreyu",
-            "Emery"
-          ],
-          "region": "Toronto",
-          "source": "ticketmaster",
-          "starts_at": "2026-11-27T18:30:00",
-          "url": "https://www.ticketmaster.ca/underoath-define-the-great-line-20th-toronto-ontario-11-27-2026/event/1000650EAB4EC6ED",
-          "venue": {
-            "capacity": 2000,
-            "city": "Toronto",
-            "lat": 43.712525,
-            "lon": -79.602042,
-            "name": "The Theatre at Great Canadian Toronto"
-          }
-        },
-        "heard_before": {
-          "days": 1,
-          "first": "2006-11-20"
-        },
-        "listeners": 525929,
-        "reasons": [
-          "similar to Alexisonfire (0.79), Anberlin (0.87), Thrice (0.57)",
-          "you played them on 1 day back in 2006",
-          "you've never been to The Theatre at Great Canadian Toronto"
-        ],
-        "score": 0.3537,
+        "score": 0.3506,
         "tier": "would_like"
       }
     ]
   },
   "stats": {
     "events": 543,
-    "known_artists": 2030,
+    "known_artists": 2024,
     "snapshot_days": 1
   },
   "user": "quepol"
