@@ -59,7 +59,18 @@ function renderCard(p) {
   const el = document.getElementById("card").content.firstElementChild.cloneNode(true);
   el.querySelector(".date").textContent = fmtDate(p.event.starts_at);
   el.querySelector(".venue").textContent = `${p.event.venue.name} · ${p.event.region || p.event.venue.city}`;
-  el.querySelector(".artist").textContent = p.artist;
+  const h2 = el.querySelector(".artist");
+  h2.textContent = p.artist;
+  const enc = encodeURIComponent(p.artist);
+  h2.insertAdjacentHTML("beforeend",
+    ` <span class="listen-links">` +
+    `<a href="https://www.last.fm/music/${enc}" target="_blank" rel="noopener" aria-label="Last.fm" title="Last.fm">` +
+    `<img src="https://www.last.fm/favicon.ico" alt="" width="16" height="16">` +
+    `</a>` +
+    `<a href="https://www.youtube.com/results?search_query=${enc}" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube">` +
+    `<img src="https://www.youtube.com/favicon.ico" alt="" width="16" height="16">` +
+    `</a></span>`
+  );
   const others = p.event.lineup.filter((a) => a !== p.artist);
   const reasons = [...p.reasons];
   if (others.length && !reasons.some((r) => r.startsWith("sharing the bill"))) reasons.push(`on the bill: ${others.join(", ")}`);

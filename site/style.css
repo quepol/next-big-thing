@@ -45,6 +45,10 @@ main { padding-top: 16px; padding-bottom: 48px; display: grid; gap: 12px; }
 .when { display: flex; gap: 10px; flex-wrap: wrap; font-size: 13px; color: var(--muted); }
 .when .date { color: var(--accent); font-weight: 600; }
 .artist { margin: 4px 0 6px; font-size: 20px; letter-spacing: -0.01em; }
+.listen-links { display: inline-flex; gap: 6px; vertical-align: middle; margin-left: 6px; }
+.listen-links a { line-height: 1; text-decoration: none; opacity: 0.55; }
+.listen-links a:hover { opacity: 1; }
+.listen-links img { display: block; border-radius: 3px; }
 .reasons { margin: 0; padding-left: 18px; font-size: 14px; }
 .reasons li { margin: 2px 0; }
 .foot { display: flex; justify-content: space-between; align-items: center; margin-top: 10px; font-size: 14px; }

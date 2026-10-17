@@ -1,6 +1,6 @@
 # Handoff notes
 
-Context for a new Claude Code session that picks this project up. Read this and `README.md` first, then `nbt/` (about 900 lines in total).
+Context for a new Claude Code session that picks this project up. Read this and `README.md` first, then `nbt/` (about 1,200 lines in total).
 
 ## The person and how they work
 
@@ -17,7 +17,9 @@ A daily digest of upcoming shows, scored against their listening history, in thr
 2. **Would like**: an unknown artist that's close to their taste.
 3. **Next big thing**: a small artist (≤50k Last.fm listeners) close to their taste. **This tier is the MVP priority.**
 
-The motivation for the next-big-thing tier is the "Northampton feeling": catching a future-big artist in an intimate room before they blow up (think Radiohead or Jeff Buckley at a 200-cap college-town venue in the late 90s). **Venue size matters here** — a 50k-listener artist headlining the Horseshoe Tavern (400 cap) is a better pick than the same artist opening at Massey Hall (2,765 cap). This is implemented as a soft venue-size bonus (up to +0.15) in the NBT score, not a hard cap.
+The motivation for the next-big-thing tier is the "Northampton feeling": catching a future-big artist in an intimate room before they blow up (think Radiohead or Jeff Buckley at a 700-cap college-town venue in the late 90s). **Venue size matters here** — a 50k-listener artist headlining the Horseshoe Tavern (400 cap) is a better pick than the same artist opening at Massey Hall (2,765 cap). This is implemented as a soft venue-size bonus (up to +0.15) in the NBT score, not a hard cap.
+
+**Open question on the NBT listener threshold:** 50K may be too low. Radiohead in 1995 at a 700-cap room would have been well over 50K listeners if Last.fm existed. The venue bonus already rewards intimate rooms; the listener cap is a separate filter that might be cutting off exactly the right artists. 200K is a reasonable next step to try — the `smallness` score already falls toward 0 as listeners approach the ceiling, so raising the cap mainly expands the eligible pool rather than flooding the tier.
 
 For the **know** tier, venue size doesn't cap eligibility — if Iron & Wine is at Massey Hall you want to know. The city-wide feed surfaces all shows regardless of venue.
 
@@ -36,12 +38,12 @@ Other decisions they've made:
   - reverse: one of the user's known artists is in the candidate's similar-artist list
   - tags: cosine similarity to their tag profile, capped at 0.6. This is the fallback for tiny artists, who have no similarity data.
 
-  Seed weight is log(distinct days).
+  Seed weight is log(distinct days). Attended artists (from setlist.fm) not already in known are injected as seeds at weight 0.4.
 - **"Heard once" artists** (1–2 days played) count as unknown for next-big-thing, and the pick says "you played them on 1 day back in 2019". The user confirmed this.
 - **Yo-Yo Ma is both kids' sleep music and the user's own taste**, so keep him as a seed. Distinct days already discounts the 2,086 plays to 114 days.
 - **"You'd probably like" includes artists the user has heard of but doesn't play** (it's for broadening their listening). So there's no listener cap on that tier; only Next Big Thing is capped at 50k. **The would_like tier needs tuning** — well-known artists (Olivia Rodrigo, Collective Soul) currently appear because the user doesn't scrobble them but they score on affinity. For now, 👎 is the stopgap. A soft upper cap (~1M listeners) is the right permanent fix.
 - **Kids share the Last.fm account.** `data/exclude.txt` removes artists *everywhere*. `summary` auto-flags children's/kids/Disney-tagged artists among the top seeds. **Backlog:** make 👎 write to `data/exclude.txt`.
-- **The bragging-rights ledger** (`data/ledger.json`) records each next-big-thing artist's listener count on the day it was first flagged.
+- **The bragging-rights ledger** (`data/ledger.json`) records each next-big-thing artist's listener count on the day it was first flagged. A separate **attended ledger** (in `digest.json`, rendered on the "Attended" tab) shows every setlist.fm-logged show with current listener counts — the retroactive version of the same idea.
 
 ## Event source: Ticketmaster only
 
@@ -53,29 +55,42 @@ Gaps: DICE, Eventbrite, and venues' own box offices are not covered. The Baby G 
 
 The `nbt/sources/ticketmaster.py` module includes a 50-venue capacity lookup table (keyed by TM venue ID) used to compute `venue_bonus`.
 
+## setlist.fm integration
+
+`nbt/sources/setlistfm.py` fetches all attended setlists (111 total, 6 pages) for user `quepol`. 7-day cache; 1s between pages; 3× retry on 429s.
+
+Three uses:
+1. **Attended artists as seeds** — 11 artists seen live but with <3 scrobble-days (Billy Corgan, Iron Maiden, PJ Harvey, John Cameron Mitchell, etc.) are injected into the taste graph at seed weight 0.4. Uncontaminated by kids' listening.
+2. **Attended artists as loved** — merged into the `loved` set, so they trigger Hamilton/Buffalo alerts and bill_bonus.
+3. **Venue novelty** — picks at venues the user has never attended get a "you've never been to X" reason. Matching is fuzzy: TM adds "The " prefixes and city suffixes ("The Danforth Music Hall", "History Toronto"); setlist.fm uses shorter names ("Danforth Music Hall", "History"). The `_venue_attended()` helper in `scoring.py` handles this with substring containment on the core name.
+
+The **attended ledger** is included in `digest.json` and rendered on a dedicated "Attended" tab: every logged show (back to 1991) with current listener counts.
+
 ## Current state
 
-- **`main` is live.** Merged and deployed 2026-10-17. The daily workflow runs at 6am Toronto time.
-- All 26 tests pass (`python -m pytest -q`).
+- **`main` is live.** The daily workflow runs at 6am Toronto time (UTC-4 in summer, UTC-5 in winter — cron is `17 10 * * *`, which is ~6am EDT).
+- All 32 tests pass (`python -m pytest -q`).
 - Working:
   - Last.fm client with caching and rate limiting
   - Resumable history backfill
   - Taste model, scoring, ledger, snapshots
-  - Static site with real digest data
+  - Static site with real digest data (Last.fm + YouTube listen links, "Get tickets" link)
   - Daily workflow (runs + deploys Pages)
   - `python -m nbt summary` (taste-model sanity check)
   - Ticketmaster city feed with venue-capacity bonus
+  - setlist.fm integration: attended seeds, venue novelty, attended ledger
 - **Not working / backlog:**
+  - NBT listener threshold may be too low at 50K — consider raising to 200K
   - `would_like` tier tuning (soft upper listener cap ~1M)
   - 👎 → `data/exclude.txt` (votes currently browser-only)
-  - setlist.fm integration (next priority — see step 5 below)
   - Velocity signal needs 4 weeks of listener snapshots before it's trusted
+  - Site: sort controls, visual score signal (research done, posted to issue #2)
 
 ## Environment
 
 - `LASTFM_API_KEY` — GitHub secret + needed locally
 - `TICKETMASTER_API_KEY` — GitHub secret + needed locally
-- `SETLISTFM_API_KEY` — GitHub secret (set), **not yet used in code**
+- `SETLISTFM_API_KEY` — GitHub secret + needed locally
 - All three are in `.env` locally (not committed; in `.gitignore`)
 - `data/history.json` is committed; `data/cache/` is CI-cached, not committed
 
@@ -85,13 +100,8 @@ The `nbt/sources/ticketmaster.py` module includes a 50-venue capacity lookup tab
 2. ~~**Implement `city_events()`.**~~ Done. Ticketmaster, 557 events, 26 tests passing.
 3. ~~**Individual venue scrapers.**~~ Skipped; TM coverage is sufficient.
 4. ~~**Merge.**~~ Done 2026-10-17. Pages live.
-5. **setlist.fm (user `quepol`).** This is the next priority. Key `SETLISTFM_API_KEY` is already a secret; `api.setlist.fm` is already in the network allowlist. Uses:
-   - Attended artists get a boost as seeds and count as "loved". This signal can't be polluted by the kids' listening.
-   - A **retroactive bragging-rights ledger**: compare attended shows with current listener counts. Doubles as a backtest of the next-big-thing score.
-   - **Venue novelty**: flag or boost venues the user has never been to.
-
-   The user's setlist.fm history is thinner than their scrobbles, and openers often aren't logged. Don't write a parser without fetching real responses first.
-6. **Later:** sync 👍/👎 back to the pipeline, the email digest, curator signals (KEXP, Tiny Desk, labels they trust), `would_like` upper listener cap, and velocity signal once there are 4+ weeks of snapshots.
+5. ~~**setlist.fm (user `quepol`).**~~ Done 2026-10-17. Attended seeds, venue novelty, attended ledger. 32 tests passing.
+6. **Later:** NBT listener threshold (try 200K), `would_like` upper listener cap (~1M), sort controls on site, visual score signal (research in issue #2), sync 👍/👎 back to the pipeline, email digest, curator signals (KEXP, Tiny Desk, labels they trust), velocity signal once there are 4+ weeks of snapshots.
 
 ## First live Actions run (2026-10-17)
 
