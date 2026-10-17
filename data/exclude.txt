@@ -11,6 +11,7 @@ Dwayne Johnson					# Moana
 Lea Salonga, Brad Kane			# Aladdin
 Oliver Wallace					# Disney scores
 Alan Menken						# Disney scores
+Alan Menken (Children's)			# Disney
 Elizabeth Mitchell (Children's)
 Elizabeth Mitchell
 Tigger
@@ -37,6 +38,11 @@ Jaze Cinema
 jacksepticeye
 DHeusta
 CG5
+Jakeneutron					# FNF
+Mike Geno					# FNF
+Ghost and Pals					# vocaloid
+CircusP						# vocaloid
+Flavor Foley					# vocaloid
 Heaven Pierce Her				# ULTRAKILL
 Powerglove						# metal covers of game music (not orchestral)
 
