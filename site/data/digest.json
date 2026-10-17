@@ -1,186 +1,9 @@
 {
-  "generated_at": "2026-10-17T01:25:59+00:00",
+  "generated_at": "2026-10-17T02:08:16+00:00",
   "ledger": [
     {
-      "artist": "Dominique Way",
-      "checked": "2026-10-16",
-      "event": {
-        "starts_at": "2026-10-17T19:00:00",
-        "url": "https://www.ticketmaster.ca/anna-graves-americas-greatest-burnout-tour-toronto-ontario-10-17-2026/event/100064C9F1B9E130",
-        "venue": "The Drake Hotel"
-      },
-      "first_flagged": "2026-10-16",
-      "listeners_at_flag": 11758,
-      "listeners_now": 11758,
-      "reasons": [
-        "tags match your taste: indie, singer-songwriter, alternative",
-        "only 11,758 listeners on Last.fm",
-        "small venue (~250 cap.)"
-      ],
-      "score_at_flag": 0.4327
-    },
-    {
-      "artist": "Bradley Hale",
-      "checked": "2026-10-16",
-      "event": {
-        "starts_at": "2026-11-12T19:00:00",
-        "url": "https://www.ticketmaster.ca/sully-burrows-the-leave-you-lonely-toronto-ontario-11-12-2026/event/10006523B5E9A6C3",
-        "venue": "Rivoli"
-      },
-      "first_flagged": "2026-10-16",
-      "listeners_at_flag": 380,
-      "listeners_now": 380,
-      "reasons": [
-        "tags match your taste: indie",
-        "only 380 listeners on Last.fm",
-        "small venue (~200 cap.)"
-      ],
-      "score_at_flag": 0.4176
-    },
-    {
-      "artist": "Twin Fin",
-      "checked": "2026-10-16",
-      "event": {
-        "starts_at": "2026-10-20T19:00:00",
-        "url": "https://www.ticketweb.ca/event/twin-fin-monarch-tavern-tickets/15001983",
-        "venue": "Monarch Tavern"
-      },
-      "first_flagged": "2026-10-16",
-      "listeners_at_flag": 17549,
-      "listeners_now": 17549,
-      "reasons": [
-        "similar to Band of Horses (0.59), Local Natives (0.65), Young the Giant (0.69)",
-        "only 17,549 listeners on Last.fm",
-        "small venue (~250 cap.)"
-      ],
-      "score_at_flag": 0.4019
-    },
-    {
-      "artist": "Macy Todd",
-      "checked": "2026-10-16",
-      "event": {
-        "starts_at": "2026-11-29T19:00:00",
-        "url": "https://www.ticketmaster.ca/an-evening-with-sasha-alex-sloan-toronto-ontario-11-29-2026/event/1000654196337229",
-        "venue": "The Mod Club"
-      },
-      "first_flagged": "2026-10-16",
-      "listeners_at_flag": 27255,
-      "listeners_now": 27255,
-      "reasons": [
-        "similar to Adele (0.82), Alessia Cara (0.70), Teddy Swims (0.68)",
-        "only 27,255 listeners on Last.fm",
-        "small venue (~575 cap.)"
-      ],
-      "score_at_flag": 0.3833
-    },
-    {
-      "artist": "Ella Woolsey",
-      "checked": "2026-10-16",
-      "event": {
-        "starts_at": "2026-10-25T19:00:00",
-        "url": "https://www.ticketmaster.ca/the-army-the-navy-the-fake-toronto-ontario-10-25-2026/event/100064CBC7977C87",
-        "venue": "The Mod Club"
-      },
-      "first_flagged": "2026-10-16",
-      "listeners_at_flag": 48687,
-      "listeners_now": 48687,
-      "reasons": [
-        "similar to Elliott Smith (0.57), Sun Kil Moon (0.55), Phoebe Bridgers (0.48)",
-        "only 48,687 listeners on Last.fm",
-        "small venue (~575 cap.)"
-      ],
-      "score_at_flag": 0.3218
-    },
-    {
-      "artist": "Good Lovelies",
-      "checked": "2026-10-16",
-      "event": {
-        "starts_at": "2026-12-17T20:00:00",
-        "url": "https://www.ticketmaster.ca/good-lovelies-holiday-concert-toronto-ontario-12-17-2026/event/100064C2DE8DACA5",
-        "venue": "Massey Hall"
-      },
-      "first_flagged": "2026-10-16",
-      "listeners_at_flag": 34446,
-      "listeners_now": 34446,
-      "reasons": [
-        "similar to The Wailin' Jennys (1.00), Great Lake Swimmers (0.43), Basia Bulat (0.65)",
-        "only 34,446 listeners on Last.fm"
-      ],
-      "score_at_flag": 0.2882
-    },
-    {
-      "artist": "Telescreens",
-      "checked": "2026-10-16",
-      "event": {
-        "starts_at": "2026-10-21T19:00:00",
-        "url": "https://www.ticketweb.ca/event/telescreens-why-the-the-sound-garage-tickets/14980963",
-        "venue": "The Sound Garage"
-      },
-      "first_flagged": "2026-10-16",
-      "listeners_at_flag": 41778,
-      "listeners_now": 41778,
-      "reasons": [
-        "similar to Spoon (0.60), Silversun Pickups (0.54), The Hold Steady (0.75)",
-        "only 41,778 listeners on Last.fm"
-      ],
-      "score_at_flag": 0.2666
-    },
-    {
-      "artist": "Mike D",
-      "checked": "2026-10-16",
-      "event": {
-        "starts_at": "2026-10-20T19:00:00",
-        "url": "https://www.ticketmaster.ca/mike-d-5d-toronto-ontario-10-20-2026/event/100064F08ADE5798",
-        "venue": "History Toronto"
-      },
-      "first_flagged": "2026-10-16",
-      "listeners_at_flag": 18122,
-      "listeners_now": 18122,
-      "reasons": [
-        "similar to Beastie Boys (1.00), Mos Def (0.14), De La Soul (0.22)",
-        "only 18,122 listeners on Last.fm"
-      ],
-      "score_at_flag": 0.2618
-    },
-    {
-      "artist": "Raine Maida",
-      "checked": "2026-10-16",
-      "event": {
-        "starts_at": "2026-11-22T18:30:00",
-        "url": "https://www.ticketmaster.ca/an-evening-with-raine-maida-chantal-toronto-ontario-11-22-2026/event/100064A1A468B69F",
-        "venue": "The Danforth Music Hall"
-      },
-      "first_flagged": "2026-10-16",
-      "listeners_at_flag": 29283,
-      "listeners_now": 29283,
-      "reasons": [
-        "tags match your taste: indie, singer-songwriter, rock",
-        "only 29,283 listeners on Last.fm",
-        "small venue (~1,400 cap.)"
-      ],
-      "score_at_flag": 0.253
-    },
-    {
-      "artist": "Jordan Hart",
-      "checked": "2026-10-16",
-      "event": {
-        "starts_at": "2026-12-20T19:00:00",
-        "url": "https://www.ticketweb.ca/event/jordan-hart-longboat-hall-tickets/14322014",
-        "venue": "Longboat Hall"
-      },
-      "first_flagged": "2026-10-16",
-      "listeners_at_flag": 27053,
-      "listeners_now": 27053,
-      "reasons": [
-        "similar to Joshua Radin (0.27), William Fitzsimmons (0.24), The Weepies (0.22)",
-        "only 27,053 listeners on Last.fm",
-        "small venue (~500 cap.)"
-      ],
-      "score_at_flag": 0.2493
-    },
-    {
       "artist": "The 4411",
-      "checked": "2026-10-16",
+      "checked": "2026-10-17",
       "event": {
         "starts_at": "2026-11-11T19:00:00",
         "url": "https://www.ticketmaster.ca/west-22nd-places-to-be-toronto-ontario-11-11-2026/event/10006487E12C8BA5",
@@ -197,8 +20,26 @@
       "score_at_flag": 0.2095
     },
     {
+      "artist": "54-40",
+      "checked": "2026-10-17",
+      "event": {
+        "starts_at": "2026-11-28T19:00:00",
+        "url": "https://www.ticketmaster.ca/5440-toronto-ontario-11-28-2026/event/1000648FE5A3BC17",
+        "venue": "The Danforth Music Hall"
+      },
+      "first_flagged": "2026-10-16",
+      "listeners_at_flag": 49251,
+      "listeners_now": 49251,
+      "reasons": [
+        "similar to The Tragically Hip (0.88), Sloan (0.71), Barenaked Ladies (0.27)",
+        "only 49,251 listeners on Last.fm",
+        "small venue (~1,400 cap.)"
+      ],
+      "score_at_flag": 0.1487
+    },
+    {
       "artist": "Boy Golden",
-      "checked": "2026-10-16",
+      "checked": "2026-10-17",
       "event": {
         "starts_at": "2026-11-20T19:00:00",
         "url": "https://www.ticketmaster.ca/boy-golden-good-goddamn-another-tour-toronto-ontario-11-20-2026/event/100065168FDDA025",
@@ -216,25 +57,131 @@
       "score_at_flag": 0.2057
     },
     {
-      "artist": "Rett Madison",
-      "checked": "2026-10-16",
+      "artist": "Bradley Hale",
+      "checked": "2026-10-17",
       "event": {
-        "starts_at": "2026-10-17T19:00:00",
-        "url": "https://www.ticketweb.ca/event/rett-madison-the-sound-garage-tickets/15001533",
-        "venue": "The Sound Garage"
+        "starts_at": "2026-11-12T19:00:00",
+        "url": "https://www.ticketmaster.ca/sully-burrows-the-leave-you-lonely-toronto-ontario-11-12-2026/event/10006523B5E9A6C3",
+        "venue": "Rivoli"
       },
       "first_flagged": "2026-10-16",
-      "listeners_at_flag": 31951,
-      "listeners_now": 31951,
+      "listeners_at_flag": 380,
+      "listeners_now": 380,
       "reasons": [
-        "similar to The Weepies (0.38), Bon Iver (0.38), Ray LaMontagne (0.39)",
-        "only 31,951 listeners on Last.fm"
+        "tags match your taste: indie",
+        "only 380 listeners on Last.fm",
+        "small venue (~200 cap.)"
       ],
-      "score_at_flag": 0.2007
+      "score_at_flag": 0.4176
+    },
+    {
+      "artist": "Clerel",
+      "checked": "2026-10-17",
+      "event": {
+        "starts_at": "2026-11-19T20:00:00",
+        "url": "https://www.ticketweb.ca/event/mamas-gun-the-garrison-tickets/14816073",
+        "venue": "The Garrison"
+      },
+      "first_flagged": "2026-10-16",
+      "listeners_at_flag": 7234,
+      "listeners_now": 7234,
+      "reasons": [
+        "tags match your taste: folk, soul, blues",
+        "only 7,234 listeners on Last.fm"
+      ],
+      "score_at_flag": 0.1087
+    },
+    {
+      "artist": "Dominique Way",
+      "checked": "2026-10-17",
+      "event": {
+        "starts_at": "2026-10-17T19:00:00",
+        "url": "https://www.ticketmaster.ca/anna-graves-americas-greatest-burnout-tour-toronto-ontario-10-17-2026/event/100064C9F1B9E130",
+        "venue": "The Drake Hotel"
+      },
+      "first_flagged": "2026-10-16",
+      "listeners_at_flag": 11758,
+      "listeners_now": 11758,
+      "reasons": [
+        "tags match your taste: indie, singer-songwriter, alternative",
+        "only 11,758 listeners on Last.fm",
+        "small venue (~250 cap.)"
+      ],
+      "score_at_flag": 0.4327
+    },
+    {
+      "artist": "Ella Woolsey",
+      "checked": "2026-10-17",
+      "event": {
+        "starts_at": "2026-10-25T19:00:00",
+        "url": "https://www.ticketmaster.ca/the-army-the-navy-the-fake-toronto-ontario-10-25-2026/event/100064CBC7977C87",
+        "venue": "The Mod Club"
+      },
+      "first_flagged": "2026-10-16",
+      "listeners_at_flag": 48687,
+      "listeners_now": 48687,
+      "reasons": [
+        "similar to Elliott Smith (0.57), Sun Kil Moon (0.55), Phoebe Bridgers (0.48)",
+        "only 48,687 listeners on Last.fm",
+        "small venue (~575 cap.)"
+      ],
+      "score_at_flag": 0.3218
+    },
+    {
+      "artist": "Good Lovelies",
+      "checked": "2026-10-17",
+      "event": {
+        "starts_at": "2026-12-17T20:00:00",
+        "url": "https://www.ticketmaster.ca/good-lovelies-holiday-concert-toronto-ontario-12-17-2026/event/100064C2DE8DACA5",
+        "venue": "Massey Hall"
+      },
+      "first_flagged": "2026-10-16",
+      "listeners_at_flag": 34446,
+      "listeners_now": 34446,
+      "reasons": [
+        "similar to The Wailin' Jennys (1.00), Great Lake Swimmers (0.43), Basia Bulat (0.65)",
+        "only 34,446 listeners on Last.fm"
+      ],
+      "score_at_flag": 0.2882
+    },
+    {
+      "artist": "Jonathan Roy",
+      "checked": "2026-10-17",
+      "event": {
+        "starts_at": "2026-10-16T20:00:00",
+        "url": "https://www.ticketmaster.ca/collective-soul-pickering-ontario-10-16-2026/event/100064DE913C6FA0",
+        "venue": "The Arena at Pickering Casino Resort"
+      },
+      "first_flagged": "2026-10-16",
+      "listeners_at_flag": 41889,
+      "listeners_now": 41889,
+      "reasons": [
+        "similar to Joshua Radin (0.26), Mumford & Sons (0.28), The Lumineers (0.30)",
+        "only 41,889 listeners on Last.fm"
+      ],
+      "score_at_flag": 0.1381
+    },
+    {
+      "artist": "Jordan Hart",
+      "checked": "2026-10-17",
+      "event": {
+        "starts_at": "2026-12-20T19:00:00",
+        "url": "https://www.ticketweb.ca/event/jordan-hart-longboat-hall-tickets/14322014",
+        "venue": "Longboat Hall"
+      },
+      "first_flagged": "2026-10-16",
+      "listeners_at_flag": 27053,
+      "listeners_now": 27053,
+      "reasons": [
+        "similar to Joshua Radin (0.27), William Fitzsimmons (0.24), The Weepies (0.22)",
+        "only 27,053 listeners on Last.fm",
+        "small venue (~500 cap.)"
+      ],
+      "score_at_flag": 0.2493
     },
     {
       "artist": "Julian Taylor",
-      "checked": "2026-10-16",
+      "checked": "2026-10-17",
       "event": {
         "starts_at": "2026-10-16T19:00:00",
         "url": "https://www.ticketmaster.ca/sanctuary-park-tour-celebrating-40-years-toronto-ontario-10-16-2026/event/100064D1D94E7213",
@@ -251,8 +198,43 @@
       "score_at_flag": 0.1993
     },
     {
+      "artist": "Macy Todd",
+      "checked": "2026-10-17",
+      "event": {
+        "starts_at": "2026-11-29T19:00:00",
+        "url": "https://www.ticketmaster.ca/an-evening-with-sasha-alex-sloan-toronto-ontario-11-29-2026/event/1000654196337229",
+        "venue": "The Mod Club"
+      },
+      "first_flagged": "2026-10-16",
+      "listeners_at_flag": 27255,
+      "listeners_now": 27255,
+      "reasons": [
+        "similar to Adele (0.82), Alessia Cara (0.70), Teddy Swims (0.68)",
+        "only 27,255 listeners on Last.fm",
+        "small venue (~575 cap.)"
+      ],
+      "score_at_flag": 0.3833
+    },
+    {
+      "artist": "Mike D",
+      "checked": "2026-10-17",
+      "event": {
+        "starts_at": "2026-10-20T19:00:00",
+        "url": "https://www.ticketmaster.ca/mike-d-5d-toronto-ontario-10-20-2026/event/100064F08ADE5798",
+        "venue": "History Toronto"
+      },
+      "first_flagged": "2026-10-16",
+      "listeners_at_flag": 18122,
+      "listeners_now": 18122,
+      "reasons": [
+        "similar to Beastie Boys (1.00), Mos Def (0.14), De La Soul (0.22)",
+        "only 18,122 listeners on Last.fm"
+      ],
+      "score_at_flag": 0.2618
+    },
+    {
       "artist": "the olllam",
-      "checked": "2026-10-16",
+      "checked": "2026-10-17",
       "event": {
         "starts_at": "2026-11-12T19:00:00",
         "url": "https://www.ticketmaster.ca/the-olllam-toronto-ontario-11-12-2026/event/1000650506F2B686",
@@ -269,43 +251,95 @@
       "score_at_flag": 0.1889
     },
     {
-      "artist": "54-40",
-      "checked": "2026-10-16",
+      "artist": "Raine Maida",
+      "checked": "2026-10-17",
       "event": {
-        "starts_at": "2026-11-28T19:00:00",
-        "url": "https://www.ticketmaster.ca/5440-toronto-ontario-11-28-2026/event/1000648FE5A3BC17",
+        "starts_at": "2026-11-22T18:30:00",
+        "url": "https://www.ticketmaster.ca/an-evening-with-raine-maida-chantal-toronto-ontario-11-22-2026/event/100064A1A468B69F",
         "venue": "The Danforth Music Hall"
       },
       "first_flagged": "2026-10-16",
-      "listeners_at_flag": 49251,
-      "listeners_now": 49251,
+      "listeners_at_flag": 29283,
+      "listeners_now": 29283,
       "reasons": [
-        "similar to The Tragically Hip (0.88), Sloan (0.71), Barenaked Ladies (0.27)",
-        "only 49,251 listeners on Last.fm",
+        "tags match your taste: indie, singer-songwriter, rock",
+        "only 29,283 listeners on Last.fm",
         "small venue (~1,400 cap.)"
       ],
-      "score_at_flag": 0.1487
+      "score_at_flag": 0.253
     },
     {
-      "artist": "Jonathan Roy",
-      "checked": "2026-10-16",
+      "artist": "Rett Madison",
+      "checked": "2026-10-17",
       "event": {
-        "starts_at": "2026-10-16T20:00:00",
-        "url": "https://www.ticketmaster.ca/collective-soul-pickering-ontario-10-16-2026/event/100064DE913C6FA0",
-        "venue": "The Arena at Pickering Casino Resort"
+        "starts_at": "2026-10-17T19:00:00",
+        "url": "https://www.ticketweb.ca/event/rett-madison-the-sound-garage-tickets/15001533",
+        "venue": "The Sound Garage"
       },
       "first_flagged": "2026-10-16",
-      "listeners_at_flag": 41889,
-      "listeners_now": 41889,
+      "listeners_at_flag": 31951,
+      "listeners_now": 31951,
       "reasons": [
-        "similar to Joshua Radin (0.26), Mumford & Sons (0.28), The Lumineers (0.30)",
-        "only 41,889 listeners on Last.fm"
+        "similar to The Weepies (0.38), Bon Iver (0.38), Ray LaMontagne (0.39)",
+        "only 31,951 listeners on Last.fm"
       ],
-      "score_at_flag": 0.1381
+      "score_at_flag": 0.2007
+    },
+    {
+      "artist": "Salin",
+      "checked": "2026-10-17",
+      "event": {
+        "starts_at": "2026-10-19T19:00:00",
+        "url": "https://www.ticketweb.ca/event/salin-the-garrison-tickets/15012983",
+        "venue": "The Garrison"
+      },
+      "first_flagged": "2026-10-16",
+      "listeners_at_flag": 20322,
+      "listeners_now": 20322,
+      "reasons": [
+        "similar to Me'Shell Ndegéocello (0.63), Sault (0.29)",
+        "only 20,322 listeners on Last.fm"
+      ],
+      "score_at_flag": 0.106
+    },
+    {
+      "artist": "Telescreens",
+      "checked": "2026-10-17",
+      "event": {
+        "starts_at": "2026-10-21T19:00:00",
+        "url": "https://www.ticketweb.ca/event/telescreens-why-the-the-sound-garage-tickets/14980963",
+        "venue": "The Sound Garage"
+      },
+      "first_flagged": "2026-10-16",
+      "listeners_at_flag": 41778,
+      "listeners_now": 41778,
+      "reasons": [
+        "similar to Spoon (0.60), Silversun Pickups (0.54), The Hold Steady (0.75)",
+        "only 41,778 listeners on Last.fm"
+      ],
+      "score_at_flag": 0.2666
+    },
+    {
+      "artist": "Twin Fin",
+      "checked": "2026-10-17",
+      "event": {
+        "starts_at": "2026-10-20T19:00:00",
+        "url": "https://www.ticketweb.ca/event/twin-fin-monarch-tavern-tickets/15001983",
+        "venue": "Monarch Tavern"
+      },
+      "first_flagged": "2026-10-16",
+      "listeners_at_flag": 17549,
+      "listeners_now": 17549,
+      "reasons": [
+        "similar to Band of Horses (0.59), Local Natives (0.65), Young the Giant (0.69)",
+        "only 17,549 listeners on Last.fm",
+        "small venue (~250 cap.)"
+      ],
+      "score_at_flag": 0.4019
     },
     {
       "artist": "The Watchmen",
-      "checked": "2026-10-16",
+      "checked": "2026-10-17",
       "event": {
         "starts_at": "2026-11-21T19:00:00",
         "url": "https://www.ticketmaster.ca/the-watchmen-toronto-ontario-11-21-2026/event/10006489D43D10C3",
@@ -322,42 +356,8 @@
       "score_at_flag": 0.1352
     },
     {
-      "artist": "Clerel",
-      "checked": "2026-10-16",
-      "event": {
-        "starts_at": "2026-11-19T20:00:00",
-        "url": "https://www.ticketweb.ca/event/mamas-gun-the-garrison-tickets/14816073",
-        "venue": "The Garrison"
-      },
-      "first_flagged": "2026-10-16",
-      "listeners_at_flag": 7234,
-      "listeners_now": 7234,
-      "reasons": [
-        "tags match your taste: folk, soul, blues",
-        "only 7,234 listeners on Last.fm"
-      ],
-      "score_at_flag": 0.1087
-    },
-    {
-      "artist": "Salin",
-      "checked": "2026-10-16",
-      "event": {
-        "starts_at": "2026-10-19T19:00:00",
-        "url": "https://www.ticketweb.ca/event/salin-the-garrison-tickets/15012983",
-        "venue": "The Garrison"
-      },
-      "first_flagged": "2026-10-16",
-      "listeners_at_flag": 20322,
-      "listeners_now": 20322,
-      "reasons": [
-        "similar to Me'Shell Ndegéocello (0.63), Sault (0.29)",
-        "only 20,322 listeners on Last.fm"
-      ],
-      "score_at_flag": 0.106
-    },
-    {
       "artist": "Whitmer Thomas",
-      "checked": "2026-10-16",
+      "checked": "2026-10-17",
       "event": {
         "starts_at": "2026-12-08T19:00:00",
         "url": "https://www.ticketweb.ca/event/whitmer-thomas-the-great-hall-tickets/15032263",
@@ -1258,36 +1258,6 @@
         "tier": "next_big_thing"
       },
       {
-        "artist": "Julian Taylor",
-        "event": {
-          "id": "tm:177Zv0G6u6_KEFK",
-          "lineup": [
-            "The Jayhawks",
-            "Julian Taylor"
-          ],
-          "region": "Toronto",
-          "source": "ticketmaster",
-          "starts_at": "2026-10-16T19:00:00",
-          "url": "https://www.ticketmaster.ca/sanctuary-park-tour-celebrating-40-years-toronto-ontario-10-16-2026/event/100064D1D94E7213",
-          "venue": {
-            "capacity": 1400,
-            "city": "Toronto",
-            "lat": 43.6764492,
-            "lon": -79.3571014,
-            "name": "The Danforth Music Hall"
-          }
-        },
-        "heard_before": null,
-        "listeners": 20720,
-        "reasons": [
-          "tags match your taste: folk, singer-songwriter, canada",
-          "only 20,720 listeners on Last.fm",
-          "small venue (~1,400 cap.)"
-        ],
-        "score": 0.1993,
-        "tier": "next_big_thing"
-      },
-      {
         "artist": "the olllam",
         "event": {
           "id": "tm:16vZZ_8fkG7HlQk",
@@ -1344,35 +1314,6 @@
           "small venue (~1,400 cap.)"
         ],
         "score": 0.1487,
-        "tier": "next_big_thing"
-      },
-      {
-        "artist": "Jonathan Roy",
-        "event": {
-          "id": "tm:177Zv0G6uBo2kXO",
-          "lineup": [
-            "Collective Soul",
-            "Jonathan Roy"
-          ],
-          "region": "Toronto",
-          "source": "ticketmaster",
-          "starts_at": "2026-10-16T20:00:00",
-          "url": "https://www.ticketmaster.ca/collective-soul-pickering-ontario-10-16-2026/event/100064DE913C6FA0",
-          "venue": {
-            "capacity": null,
-            "city": "Pickering",
-            "lat": 43.84332,
-            "lon": -79.054,
-            "name": "The Arena at Pickering Casino Resort"
-          }
-        },
-        "heard_before": null,
-        "listeners": 41889,
-        "reasons": [
-          "similar to Joshua Radin (0.26), Mumford & Sons (0.28), The Lumineers (0.30)",
-          "only 41,889 listeners on Last.fm"
-        ],
-        "score": 0.1381,
         "tier": "next_big_thing"
       },
       {
@@ -1578,34 +1519,6 @@
           "similar to Sarah McLachlan (0.88), Natalie Merchant (0.47), A Fine Frenzy (0.51)"
         ],
         "score": 0.5529,
-        "tier": "would_like"
-      },
-      {
-        "artist": "Collective Soul",
-        "event": {
-          "id": "tm:177Zv0G6uBo2kXO",
-          "lineup": [
-            "Collective Soul",
-            "Jonathan Roy"
-          ],
-          "region": "Toronto",
-          "source": "ticketmaster",
-          "starts_at": "2026-10-16T20:00:00",
-          "url": "https://www.ticketmaster.ca/collective-soul-pickering-ontario-10-16-2026/event/100064DE913C6FA0",
-          "venue": {
-            "capacity": null,
-            "city": "Pickering",
-            "lat": 43.84332,
-            "lon": -79.054,
-            "name": "The Arena at Pickering Casino Resort"
-          }
-        },
-        "heard_before": null,
-        "listeners": 1376010,
-        "reasons": [
-          "similar to Toad The Wet Sprocket (0.80), R.E.M. (0.71), Tonic (0.99)"
-        ],
-        "score": 0.5477,
         "tier": "would_like"
       },
       {
@@ -2138,7 +2051,7 @@
     ]
   },
   "stats": {
-    "events": 557,
+    "events": 543,
     "known_artists": 2030,
     "snapshot_days": 1
   },
