@@ -69,6 +69,7 @@ The **attended ledger** is included in `digest.json` and rendered on a dedicated
 ## Current state
 
 - **`main` is live.** The daily workflow runs at 6am Toronto time (UTC-4 in summer, UTC-5 in winter — cron is `17 10 * * *`, which is ~6am EDT).
+- **Site changes deploy on their own.** A push to `main` that touches `site/**` runs the same `daily.yml` in deploy-only mode: it skips the pipeline and publishes `site/` with the digest already committed. Both modes share the `pages` concurrency group, so they queue instead of overlapping. The daily run rebases onto `main` before pushing its snapshot commit, so a push made during the run can't get it rejected and the deploy carries the newest UI. Deploy-only runs depend on `site/data/digest.json` being committed to `main`, so keep it tracked.
 - All 32 tests pass (`python -m pytest -q`).
 - Working:
   - Last.fm client with caching and rate limiting
@@ -90,13 +91,13 @@ The **attended ledger** is included in `digest.json` and rendered on a dedicated
       - In light mode, small pink text uses `--accent: #cc0077`, because `#FF1493` is only 3.6:1 on white, which fails AA. Keep that split.
       - OpenPublic has no dark mode, so dark here follows its black footer: a black page with lifted grey cards (`#212121`, date tiles and chips `#3a3a3a`), off-white text (`#ededed`, not pure white), grey text `#b0b0b0` and a lighter pink for text (`#ff7ab8`). The user found pure white on near-black cards hard on the eyes.
       - Pink is kept rare: the strength dots, the Strong edge, "Tonight" and out-of-town regions. The Strong label is plain text. Tickets is a pink text link (`--ticket-text`: `#cc0077` in light, `#ff5cad` in dark, a little stronger than the `#ff7ab8` used for other dark-mode pink text). The user tried a pill and dropped it because it pulled too much focus.
-      - In light mode, date tiles and chips are pale pink (`#ffe9f4`), highlighted chips a step pinker (`#ffdcee`), and Tickets pinker again. The user asked for these tiles to stand out more in both themes.
+      - In light mode, date tiles and chips are pale pink (`#ffe9f4`) and highlighted chips a step pinker (`#ffdcee`). The user asked for these tiles to stand out more in both themes.
       - Empty pips are rings, so filled vs empty differs by shape, not just colour.
       - Body text is Inter (Google Fonts).
       - The title is Momo Trust Display, self-hosted in `site/fonts/` (Fontsource 5.3.0, OFL licence alongside). It isn't on Google Fonts and only has weight 400.
 
     Preferences are saved in `localStorage` under `nbt.sort` and `nbt.theme`; votes keep the same `nbt.votes` format.
-  - Daily workflow (runs + deploys Pages)
+  - Daily workflow (runs + deploys Pages), plus deploy-only runs on `site/**` pushes
   - `python -m nbt summary` (taste-model sanity check)
   - Ticketmaster city feed with venue-capacity bonus
   - setlist.fm integration: attended seeds, venue novelty, attended ledger

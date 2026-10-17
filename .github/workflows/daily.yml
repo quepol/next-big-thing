@@ -1,9 +1,15 @@
 name: Daily digest
 
+# Two jobs share this workflow: the scheduled run (pipeline, commit, deploy) and a
+# deploy-only run when site files change on main. Both publish the one Pages site,
+# so they share a concurrency group and queue rather than overlap.
 on:
   schedule:
     - cron: "17 10 * * *" # ~6am Toronto
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ["site/**"]
 
 permissions:
   contents: write
@@ -11,7 +17,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: daily-digest
+  group: pages
   cancel-in-progress: false
 
 jobs:
@@ -19,33 +25,45 @@ jobs:
     runs-on: ubuntu-latest
     # The first run backfills ~20 years of scrobbles; later runs take minutes.
     timeout-minutes: 300
+    env:
+      # A push to site/** only redeploys; it publishes the digest already on main.
+      DEPLOY_ONLY: ${{ github.event_name == 'push' }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
+        if: env.DEPLOY_ONLY != 'true'
         with:
           python-version: "3.12"
       - run: pip install -r requirements.txt
+        if: env.DEPLOY_ONLY != 'true'
       # API responses are a cache, not a dataset: keep them out of git.
       - uses: actions/cache@v4
+        if: env.DEPLOY_ONLY != 'true'
         with:
           path: data/cache
           key: api-cache-${{ github.run_id }}
           restore-keys: api-cache-
       - name: Run pipeline
+        if: env.DEPLOY_ONLY != 'true'
         env:
           LASTFM_API_KEY: ${{ secrets.LASTFM_API_KEY }}
           TICKETMASTER_API_KEY: ${{ secrets.TICKETMASTER_API_KEY }}
           SETLISTFM_API_KEY: ${{ secrets.SETLISTFM_API_KEY }}
           BANDSINTOWN_APP_ID: ${{ secrets.BANDSINTOWN_APP_ID }}
         run: python -m nbt run
+      # Rebase onto whatever landed on main during the run, so the push isn't
+      # rejected and the deploy below carries the latest site files.
       - name: Commit snapshots and digest
-        if: always()
+        if: always() && env.DEPLOY_ONLY != 'true'
         run: |
           git config user.name "nbt-bot"
           git config user.email "nbt-bot@users.noreply.github.com"
           git add data site/data/digest.json || true
           git diff --cached --quiet || git commit -m "Daily snapshot $(date -u +%F)"
-          git push
+          git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site
