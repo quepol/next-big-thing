@@ -42,7 +42,7 @@ class Config:
     similar_limit: int = 50
 
     # Next-big-thing thresholds.
-    nbt_max_listeners: int = 50_000
+    nbt_max_listeners: int = 100_000
     nbt_min_affinity: float = 0.15
     would_like_min_affinity: float = 0.35
     # Weeks of listener snapshots needed before velocity is trusted.
