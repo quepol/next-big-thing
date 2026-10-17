@@ -377,3 +377,90 @@ def test_effective_exclusions_auto_exclude_kids_tags_but_honour_keeps(tmp_path, 
     excluded, auto = exclusions.effective(h, TagLastFM(), min_days=3)
     assert set(auto) == {"tagged kid"}
     assert excluded == {"tagged kid", "manual kid"}
+
+
+# ---------------------------------------------------------------------------
+# setlist.fm integration
+# ---------------------------------------------------------------------------
+
+def test_attended_artists_boost_taste_seeds():
+    """An attended artist not in known history is injected as a seed."""
+    h = make_history()
+    lfm = FakeLastFM()
+    # "Live Only Band" was never scrobbled but seen live; assume it's similar to Tiny Newcomer
+    class LiveLastFM(FakeLastFM):
+        SIMILAR = {
+            **FakeLastFM.SIMILAR,
+            "live only band": [("Tiny Newcomer", 0.95)],
+        }
+
+    taste = Taste(h, LiveLastFM(), log=lambda *_: None, attended={"live only band": "Live Only Band"})
+    assert "live only band" in taste.seeds
+    # Tiny Newcomer should have affinity via the attended seed
+    aff, reasons = taste.affinity("Tiny Newcomer")
+    assert aff > 0
+
+
+def test_attended_artists_do_not_override_known_weight():
+    """An attended artist already in known keeps its scrobble-derived seed weight."""
+    h = make_history()
+    lfm = FakeLastFM()
+    taste_no_att = Taste(h, lfm, log=lambda *_: None)
+    taste_with_att = Taste(h, lfm, log=lambda *_: None, attended={"big thief": "Big Thief"})
+    # Weight should be unchanged (attended weight is lower than a 10-day listen habit)
+    assert taste_no_att.weights.get("big thief") == taste_with_att.weights.get("big thief")
+
+
+def test_venue_novelty_reason_added_for_new_venue():
+    h = make_history()
+    lfm = FakeLastFM()
+    taste = Taste(h, lfm, log=lambda *_: None)
+    new_venue_ev = Event(
+        id="enew", starts_at="2026-11-01T20:00:00",
+        venue=Venue("Brand New Room", "Toronto"),
+        lineup=["Tiny Newcomer"], region="Toronto",
+    )
+    picks = score_events(
+        [new_venue_ev], h, hist.loved(h), taste.affinity, lfm.artist_info,
+        velocity=lambda k, n: None, regions={"Toronto": "all"},
+        attended_venues={"some other venue"},  # Brand New Room not in attended
+    )
+    nbt = [p for p in picks if p.tier == "next_big_thing" and p.artist == "Tiny Newcomer"]
+    assert nbt and any("never been to" in r for r in nbt[0].reasons)
+
+
+def test_venue_novelty_reason_not_added_for_known_venue():
+    h = make_history()
+    lfm = FakeLastFM()
+    taste = Taste(h, lfm, log=lambda *_: None)
+    familiar_ev = Event(
+        id="efam", starts_at="2026-11-01T20:00:00",
+        venue=Venue("Horseshoe Tavern", "Toronto"),
+        lineup=["Tiny Newcomer"], region="Toronto",
+    )
+    picks = score_events(
+        [familiar_ev], h, hist.loved(h), taste.affinity, lfm.artist_info,
+        velocity=lambda k, n: None, regions={"Toronto": "all"},
+        attended_venues={"horseshoe tavern"},  # case-insensitive match
+    )
+    nbt = [p for p in picks if p.tier == "next_big_thing" and p.artist == "Tiny Newcomer"]
+    assert nbt and not any("never been to" in r for r in nbt[0].reasons)
+
+
+def test_attended_ledger_includes_listener_counts():
+    from nbt.sources.setlistfm import SetlistFM
+    import unittest.mock as mock
+
+    slm = SetlistFM.__new__(SetlistFM)
+    slm._raw_attended = [
+        {"artist": {"name": "Guster"}, "eventDate": "07-12-1995",
+         "venue": {"name": "Iron Horse Music Hall", "city": {"name": "Northampton"}}},
+        {"artist": {"name": "Ani DiFranco"}, "eventDate": "04-02-1993",
+         "venue": {"name": "Iron Horse Music Hall", "city": {"name": "Northampton"}}},
+    ]
+    with mock.patch.object(slm, "attended", return_value=slm._raw_attended):
+        rows = slm.attended_ledger(current_listeners={"guster": 123_456, "ani difranco": 890_000})
+    assert rows[0] == {"artist": "Guster", "date": "07-12-1995",
+                       "venue": "Iron Horse Music Hall", "city": "Northampton",
+                       "listeners_now": 123_456}
+    assert rows[1]["listeners_now"] == 890_000

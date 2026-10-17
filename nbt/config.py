@@ -25,6 +25,7 @@ class Config:
     lastfm_api_key: str = os.environ.get("LASTFM_API_KEY", "")
     bandsintown_app_id: str = os.environ.get("BANDSINTOWN_APP_ID", "")
     ticketmaster_api_key: str = os.environ.get("TICKETMASTER_API_KEY", "")
+    setlistfm_api_key: str = os.environ.get("SETLISTFM_API_KEY", "")
 
     regions: tuple[Region, ...] = (
         Region("Toronto", 43.6532, -79.3832, 40),

@@ -35,6 +35,7 @@ jobs:
         env:
           LASTFM_API_KEY: ${{ secrets.LASTFM_API_KEY }}
           TICKETMASTER_API_KEY: ${{ secrets.TICKETMASTER_API_KEY }}
+          SETLISTFM_API_KEY: ${{ secrets.SETLISTFM_API_KEY }}
           BANDSINTOWN_APP_ID: ${{ secrets.BANDSINTOWN_APP_ID }}
         run: python -m nbt run
       - name: Commit snapshots and digest

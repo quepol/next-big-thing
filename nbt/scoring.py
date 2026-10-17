@@ -48,6 +48,7 @@ def score_events(
     cfg: Config = CONFIG,
     excluded: set[str] | None = None,
     is_noise: Callable[[str], bool] = lambda name: False,
+    attended_venues: set[str] | None = None,  # lowercased venue names user has attended
 ) -> list[Pick]:
     artists = history["artists"]
     excluded = exclusions.load() if excluded is None else excluded
@@ -91,6 +92,11 @@ def score_events(
                 bonus = BILL_BONUS
                 reasons.append(f"sharing the bill with {a} ({r['days']} days played)")
 
+            new_venue = (
+                attended_venues is not None
+                and ev.venue.name.lower() not in attended_venues
+            )
+
             is_small = listeners is None or listeners <= cfg.nbt_max_listeners
             if is_small and (aff >= cfg.nbt_min_affinity or (listeners is None and co)):
                 small = smallness(listeners or 0, cfg.nbt_max_listeners)
@@ -107,8 +113,12 @@ def score_events(
                         reasons.append(f"listeners growing {growth:+.1%}/week over {weeks} weeks")
                 if vb > 0:
                     reasons.append(f"small venue (~{ev.venue.capacity:,} cap.)")
+                if new_venue:
+                    reasons.append(f"you've never been to {ev.venue.name}")
                 picks.append(Pick("next_big_thing", artist, ev, score, reasons, listeners, heard))
             elif aff + bonus >= cfg.would_like_min_affinity:
+                if new_venue:
+                    reasons.append(f"you've never been to {ev.venue.name}")
                 picks.append(Pick("would_like", artist, ev, aff + bonus, reasons, listeners, heard))
 
     return dedupe(picks)

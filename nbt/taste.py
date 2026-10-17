@@ -22,6 +22,9 @@ TAG_ONLY_CAP = 0.6
 # bounded and discriminating. Summing every link saturated near 1.0 for popular "hub"
 # artists that appear in many seeds' similar lists (history check #1).
 LINK_WEIGHTS = (1.0, 0.5, 0.25)
+# Seed weight for live-attended artists not already in known history. Equivalent to
+# a moderate but not dominant habit — less than someone played 100+ days, but real.
+ATTENDED_SEED_WEIGHT = 0.4
 ALIAS_MIN_MATCH = 0.9
 ALIAS_SIZE_RATIO = 100  # tag overlap alone is weak evidence; never let it look like a strong match
 TAG_PROFILE_SEEDS = 100
@@ -29,7 +32,8 @@ NOISE_TAGS = {"seen live", "favorites", "favourite", "favorite", "my favorites",
 
 
 class Taste:
-    def __init__(self, history: dict, lastfm, *, log=print, excluded: set[str] | None = None):
+    def __init__(self, history: dict, lastfm, *, log=print, excluded: set[str] | None = None,
+                 attended: dict[str, str] | None = None):
         self.lastfm = lastfm
         self.excluded = exclusions.load() if excluded is None else excluded
         self.known = known(history, excluded=self.excluded)
@@ -40,6 +44,17 @@ class Taste:
         # without drowning everything else out.
         self.weights = {k: math.log1p(v["days"]) / math.log1p(max_days) for k, v in self.known.items()}
         self.seeds = [k for k, _ in top]
+
+        # Inject live-attended artists as additional seeds. These are uncontaminated by
+        # kids' scrobbles. Artists already in known keep their existing seed weight.
+        if attended:
+            for key, name in attended.items():
+                if key not in self.known and key not in self.excluded:
+                    # Synthetic known entry so seed lookups (self.known[seed]["name"]) work.
+                    self.known[key] = {"name": name, "days": 0, "plays": 0, "first": "", "last": ""}
+                    self.weights[key] = ATTENDED_SEED_WEIGHT
+                    self.seeds.append(key)
+
         self.forward: dict[str, dict[str, float]] = defaultdict(dict)  # candidate -> seed -> match
         self.names: dict[str, str] = {}  # candidate key -> display name from Last.fm
         for i, seed in enumerate(self.seeds):

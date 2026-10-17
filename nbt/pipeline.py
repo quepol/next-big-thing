@@ -13,6 +13,7 @@ from .lastfm import LastFM
 from .models import Event, haversine_km, normalize_name
 from .scoring import is_upcoming, score_events
 from .sources.bandsintown import Bandsintown
+from .sources.setlistfm import SetlistFM
 from .sources.ticketmaster import Ticketmaster
 from .store import write_json
 from .taste import Taste
@@ -79,8 +80,28 @@ def run(log=print) -> dict:
     excluded, auto = exclusions.effective(history, lastfm, CONFIG.known_min_days)
     log(f"excluded: {len(excluded)} artists ({len(auto)} automatically by kids' tags)")
     loved = hist.loved(history, excluded=excluded)
+
+    # setlist.fm: attended artists count as loved (can't be polluted by kids' scrobbles)
+    # and are injected as taste seeds so their neighbours surface as recommendations.
+    slm = SetlistFM()
+    attended: dict[str, str] = {}
+    attended_venues: set[str] = set()
+    if CONFIG.setlistfm_api_key:
+        try:
+            attended = slm.attended_artists()
+            attended_venues = slm.attended_venue_names()
+            slm.save()
+            log(f"setlist.fm: {len(attended)} attended artists, {len(attended_venues)} venues")
+            # Merge attended artists into loved so they trigger out-of-town alerts
+            # and bill_bonus, regardless of scrobble count.
+            loved = loved | set(attended.keys())
+        except Exception as e:
+            log(f"setlist.fm: {e} (skipping)")
+    else:
+        log("SETLISTFM_API_KEY not set: skipping setlist.fm")
+
     log("building taste graph")
-    taste = Taste(history, lastfm, log=log, excluded=excluded)
+    taste = Taste(history, lastfm, log=log, excluded=excluded, attended=attended)
     lastfm.save()
 
     tm = Ticketmaster()
@@ -99,11 +120,16 @@ def run(log=print) -> dict:
         regions={r.name: r.tiers for r in CONFIG.regions},
         is_noise=taste.is_noise,
         excluded=excluded,
+        attended_venues=attended_venues or None,
     )
 
     ledger = led.load()
     listeners: dict[str, int] = {}
-    names = {a for e in events for a in e.lineup} | {row["artist"] for row in ledger.values()}
+    names = (
+        {a for e in events for a in e.lineup}
+        | {row["artist"] for row in ledger.values()}
+        | {v for v in attended.values()}  # attended artists for retroactive ledger
+    )
     for name in names:
         i = lastfm.artist_info(name)
         if i:
@@ -125,6 +151,7 @@ def run(log=print) -> dict:
             for tier in ("next_big_thing", "would_like", "know")
         },
         "ledger": sorted(ledger.values(), key=lambda r: r["first_flagged"], reverse=True),
+        "attended_ledger": slm.attended_ledger(current_listeners=listeners) if CONFIG.setlistfm_api_key else [],
     }
     write_json(DIGEST_PATH, digest)
     log(f"digest: " + ", ".join(f"{t}={len(v)}" for t, v in digest["picks"].items()))

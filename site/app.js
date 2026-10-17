@@ -18,6 +18,7 @@ const EMPTY = {
   would_like: "Nothing here yet.",
   know: "None of your artists are playing nearby in the next 90 days.",
   ledger: "The ledger fills up as next-big-thing picks are flagged. Check back in a few months to see who blew up.",
+  attended: "No attended shows found. Check that SETLISTFM_API_KEY is set and the setlist.fm user has logged shows.",
 };
 
 let digest;
@@ -48,6 +49,7 @@ function select(tier) {
   const list = document.getElementById("list");
   list.replaceChildren();
   if (tier === "ledger") return renderLedger(list);
+  if (tier === "attended") return renderAttended(list);
   const picks = digest.picks?.[tier] || [];
   if (!picks.length) return list.append(Object.assign(document.createElement("p"), { className: "empty", textContent: EMPTY[tier] }));
   picks.forEach((p) => list.append(renderCard(p)));
@@ -98,6 +100,34 @@ function renderLedger(list) {
       const td = document.createElement("td");
       td.textContent = v;
       if (i >= 2) td.className = "num";
+      tr.append(td);
+    });
+    body.append(tr);
+  }
+  t.append(body);
+  wrap.append(t);
+  list.append(wrap);
+}
+
+function renderAttended(list) {
+  const rows = digest.attended_ledger || [];
+  if (!rows.length) return list.append(Object.assign(document.createElement("p"), { className: "empty", textContent: EMPTY.attended }));
+  const wrap = document.createElement("div");
+  wrap.className = "ledger-wrap";
+  const t = document.createElement("table");
+  t.innerHTML = "<thead><tr><th>Artist</th><th>Date seen</th><th>Venue</th><th class=num>Listeners now</th></tr></thead>";
+  const body = document.createElement("tbody");
+  const fmtSlfDate = (s) => {
+    // setlist.fm uses DD-MM-YYYY
+    const [d, m, y] = s.split("-");
+    return new Date(`${y}-${m}-${d}`).toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" });
+  };
+  for (const r of rows) {
+    const tr = document.createElement("tr");
+    [r.artist, fmtSlfDate(r.date), `${r.venue}, ${r.city}`, fmtNum(r.listeners_now)].forEach((v, i) => {
+      const td = document.createElement("td");
+      td.textContent = v;
+      if (i === 3) td.className = "num";
       tr.append(td);
     });
     body.append(tr);
