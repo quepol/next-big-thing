@@ -25,6 +25,11 @@ def empty_history() -> dict:
     return {"artists": {}, "last_uts": 0, "backfill": None}
 
 
+def reset() -> None:
+    """Clear history so the next sync re-backfills everything (needed to populate days_by_year)."""
+    save(empty_history())
+
+
 def load() -> dict:
     return read_json(HISTORY_PATH, None) or empty_history()
 
@@ -51,6 +56,9 @@ def ingest(history: dict, scrobbles: Iterable[dict]) -> int:
         if row["days"] == 0 or day > row["last"]:
             row["days"] += 1
             row["last"] = day
+            year = day[:4]
+            dby = row.setdefault("days_by_year", {})
+            dby[year] = dby.get(year, 0) + 1
         history["last_uts"] = s["uts"]
         n += 1
     return n
