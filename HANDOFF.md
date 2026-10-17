@@ -15,7 +15,7 @@ A daily digest of upcoming shows, scored against their listening history, in thr
 
 1. **Know**: an artist they've played on **3 or more distinct days, ever**. There's no recency weighting; they asked for that explicitly.
 2. **Would like**: an unknown artist that's close to their taste.
-3. **Next big thing**: a small artist (≤50k Last.fm listeners) close to their taste. **This tier is the MVP priority.**
+3. **Next big thing**: a small artist (≤100k Last.fm listeners) close to their taste. **This tier is the MVP priority.**
 
 The motivation for the next-big-thing tier is the "Northampton feeling": catching a future-big artist in an intimate room before they blow up (think Radiohead or Jeff Buckley at a 700-cap college-town venue in the late 90s). **Venue size matters here** — a 50k-listener artist headlining the Horseshoe Tavern (400 cap) is a better pick than the same artist opening at Massey Hall (2,765 cap). This is implemented as a soft venue-size bonus (up to +0.15) in the NBT score, not a hard cap.
 
