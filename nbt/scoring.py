@@ -12,6 +12,21 @@ from .models import Event, Pick, normalize_name
 
 BILL_BONUS = 0.15
 VELOCITY_BONUS_CAP = 0.3
+VENUE_BONUS_MAX = 0.15
+VENUE_BONUS_THRESHOLD = 1500  # capacity above which no bonus is awarded
+
+
+def venue_bonus(capacity: int | None) -> float:
+    """Soft bonus for intimate venues on the next-big-thing tier.
+
+    Peaks at VENUE_BONUS_MAX for a very small room, falls linearly to 0 at
+    VENUE_BONUS_THRESHOLD, and is 0 for venues we don't know the size of.
+    This captures the Northampton feeling: catching a future-big artist in a
+    200-cap room is a better brag than catching them opening to 2,500 people.
+    """
+    if capacity is None or capacity >= VENUE_BONUS_THRESHOLD:
+        return 0.0
+    return VENUE_BONUS_MAX * (1 - capacity / VENUE_BONUS_THRESHOLD)
 
 
 def smallness(listeners: int, ceiling: int) -> float:
@@ -79,7 +94,8 @@ def score_events(
             is_small = listeners is None or listeners <= cfg.nbt_max_listeners
             if is_small and (aff >= cfg.nbt_min_affinity or (listeners is None and co)):
                 small = smallness(listeners or 0, cfg.nbt_max_listeners)
-                score = aff * (0.6 + 0.4 * small) + bonus
+                vb = venue_bonus(ev.venue.capacity)
+                score = aff * (0.6 + 0.4 * small) + bonus + vb
                 if listeners is None:
                     reasons.append("no Last.fm footprint yet")
                 else:
@@ -89,6 +105,8 @@ def score_events(
                         growth, weeks = v
                         score += min(growth * 5, VELOCITY_BONUS_CAP)
                         reasons.append(f"listeners growing {growth:+.1%}/week over {weeks} weeks")
+                if vb > 0:
+                    reasons.append(f"small venue (~{ev.venue.capacity:,} cap.)")
                 picks.append(Pick("next_big_thing", artist, ev, score, reasons, listeners, heard))
             elif aff + bonus >= cfg.would_like_min_affinity:
                 picks.append(Pick("would_like", artist, ev, aff + bonus, reasons, listeners, heard))

@@ -3,9 +3,10 @@ from datetime import date, datetime, timezone
 from nbt import history as hist
 from nbt.config import Config
 from nbt.models import Event, Venue, haversine_km, normalize_name
-from nbt.scoring import score_events, smallness
+from nbt.scoring import score_events, smallness, venue_bonus
 from nbt.snapshots import save_listeners, velocity
 from nbt.sources.bandsintown import parse_rest_event
+from nbt.sources.ticketmaster import _parse_event as parse_tm_event
 from nbt.taste import Taste
 
 
@@ -60,6 +61,64 @@ def test_velocity_needs_enough_history(tmp_path):
     save_listeners(date(2026, 8, 21), {"x": 1000}, base=tmp_path)
     growth, weeks = velocity("x", today, 2000, base=tmp_path)
     assert weeks == 8 and 0.08 < growth < 0.10  # doubled in 8 weeks ≈ 9%/week
+
+
+def test_parse_tm_event():
+    ev = parse_tm_event({
+        "id": "tm001", "name": "Hovvdy", "url": "https://x",
+        "dates": {"start": {"localDate": "2026-11-09", "localTime": "20:00:00"}},
+        "_embedded": {
+            "venues": [{"id": "KovZpZAdt7JA", "name": "Horseshoe Tavern",
+                        "city": {"name": "Toronto"},
+                        "location": {"latitude": "43.649", "longitude": "-79.401"}}],
+            "attractions": [{"name": "Hovvdy"}, {"name": "Christian Lee Hutson"}],
+        },
+    })
+    assert ev.id == "tm:tm001"
+    assert ev.starts_at == "2026-11-09T20:00:00"
+    assert ev.venue.name == "Horseshoe Tavern"
+    assert ev.venue.capacity == 400
+    assert ev.lineup == ["Hovvdy", "Christian Lee Hutson"]
+    assert ev.source == "ticketmaster"
+
+
+def test_parse_tm_event_no_attractions_falls_back_to_event_name():
+    ev = parse_tm_event({
+        "id": "tm002", "name": "Solo Act",
+        "dates": {"start": {"localDate": "2026-11-10", "localTime": "21:00:00"}},
+        "_embedded": {"venues": [{"id": "KovZ917AqfB", "name": "The Baby G",
+                                   "city": {"name": "Toronto"},
+                                   "location": {"latitude": "43.65", "longitude": "-79.43"}}]},
+    })
+    assert ev.lineup == ["Solo Act"]
+    assert ev.venue.capacity == 200
+
+
+def test_venue_bonus():
+    from nbt.scoring import VENUE_BONUS_MAX, VENUE_BONUS_THRESHOLD
+    assert venue_bonus(None) == 0.0
+    assert venue_bonus(VENUE_BONUS_THRESHOLD) == 0.0
+    assert venue_bonus(VENUE_BONUS_THRESHOLD + 1) == 0.0
+    assert venue_bonus(0) == VENUE_BONUS_MAX
+    assert venue_bonus(200) > venue_bonus(700) > venue_bonus(1400) > 0
+
+
+def test_venue_bonus_appears_in_nbt_score_and_reason():
+    small_venue_ev = Event(
+        id="e1", starts_at="2026-11-01T20:00:00",
+        venue=Venue("Baby G", "Toronto", 43.65, -79.43, capacity=200),
+        lineup=["Tiny Newcomer"], region="Toronto",
+    )
+    large_venue_ev = Event(
+        id="e2", starts_at="2026-11-01T20:00:00",
+        venue=Venue("Scotiabank", "Toronto", 43.64, -79.38, capacity=19800),
+        lineup=["Tiny Newcomer"], region="Toronto",
+    )
+    picks_small = by_artist(run_scoring([small_venue_ev]))
+    picks_large = by_artist(run_scoring([large_venue_ev]))
+    assert picks_small["Tiny Newcomer"].score > picks_large["Tiny Newcomer"].score
+    assert any("small venue" in r for r in picks_small["Tiny Newcomer"].reasons)
+    assert not any("small venue" in r for r in picks_large["Tiny Newcomer"].reasons)
 
 
 def test_parse_rest_event():
@@ -158,9 +217,6 @@ def test_gather_events_assigns_regions_and_filters(monkeypatch):
     class FakeBIT:
         app_id = "x"
 
-        def city_events(self, region):
-            raise NotImplementedError("pending")
-
         def artist_events(self, name):
             mk = lambda i, lat, lon, day: Event(f"bit:{name}{i}", f"{day}T20:00:00", Venue("V", "C", lat, lon), [name])
             return [
@@ -173,9 +229,16 @@ def test_gather_events_assigns_regions_and_filters(monkeypatch):
         def save(self):
             pass
 
+    class FakeTM:
+        def city_events(self, region):
+            return []
+
+        def save(self):
+            pass
+
     h = make_history()
     taste = Taste(h, FakeLastFM(), log=lambda *_: None)
-    events = pipeline.gather_events(FakeBIT(), h, taste, date(2026, 10, 16), log=lambda *_: None)
+    events = pipeline.gather_events(FakeBIT(), FakeTM(), h, taste, date(2026, 10, 16), log=lambda *_: None)
     assert {(e.lineup[0], e.region) for e in events} >= {("Big Thief", "Toronto"), ("Big Thief", "Buffalo")}
     assert all(e.region in {"Toronto", "Buffalo"} for e in events)
     assert all(e.starts_at < "2027" for e in events)

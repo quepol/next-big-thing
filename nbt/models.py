@@ -41,6 +41,7 @@ class Venue:
     city: str
     lat: float | None = None
     lon: float | None = None
+    capacity: int | None = None
 
 
 @dataclass

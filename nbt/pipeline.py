@@ -13,6 +13,7 @@ from .lastfm import LastFM
 from .models import Event, haversine_km, normalize_name
 from .scoring import is_upcoming, score_events
 from .sources.bandsintown import Bandsintown
+from .sources.ticketmaster import Ticketmaster
 from .store import write_json
 from .taste import Taste
 
@@ -30,16 +31,16 @@ def assign_region(ev: Event) -> str | None:
     return None
 
 
-def gather_events(bit: Bandsintown, history: dict, taste: Taste, today: date, log=print) -> list[Event]:
+def gather_events(bit: Bandsintown, tm: Ticketmaster, history: dict, taste: Taste, today: date, log=print) -> list[Event]:
     events: dict[str, Event] = {}
 
     for region in CONFIG.regions:
         if region.tiers != "all":
             continue
         try:
-            for ev in bit.city_events(region):
+            for ev in tm.city_events(region):
                 events[ev.id] = ev
-        except NotImplementedError as e:
+        except Exception as e:
             log(f"city feed for {region.name}: {e}")
 
     if not bit.app_id:
@@ -56,6 +57,7 @@ def gather_events(bit: Bandsintown, history: dict, taste: Taste, today: date, lo
             log(f"  {i}/{len(lookups)}")
             bit.save()
     bit.save()
+    tm.save()
 
     kept = []
     for ev in events.values():
@@ -81,7 +83,8 @@ def run(log=print) -> dict:
     taste = Taste(history, lastfm, log=log, excluded=excluded)
     lastfm.save()
 
-    events = gather_events(bit, history, taste, today, log=log)
+    tm = Ticketmaster()
+    events = gather_events(bit, tm, history, taste, today, log=log)
     snapshots.save_events(today, [e.to_dict() for e in events])
 
     def info(name: str):
