@@ -1,6 +1,6 @@
 /* Theme tokens, matched to OpenPublic.cc: pink #FF1493 on black/white, pale-pink
    surfaces (#fff4fa), grey text (#666). OpenPublic has no dark mode; dark here follows
-   its black footer, with grey cards, off-white text and a lighter text pink for readability.
+   its black footer, with warm dark-grey cards, off-white text and a lighter text pink for readability.
    Light is the default; dark applies via the system setting unless the user forced
    light, or via an explicit data-theme="dark" from the switch. */
 
@@ -34,16 +34,16 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --bg: #000000;
-    --surface: #212121;       /* cards lifted well off the black page */
-    --surface-2: #3a3a3a;       /* tiles and chips stand clear of the card */
+    --surface: #1e1a1c;       /* cards lifted off the black page, with a hint of pink */
+    --surface-2: #3c3237;     /* date tiles and score badge, same pink hue as the card */
     --text: #ededed;          /* off-white: pure white on black halates */
     --muted: #b0b0b0;
-    --line: #3a3a3a;
+    --line: #3a3236;
     --accent: #ff7ab8;        /* lighter pink for text: #FF1493 vibrates on dark grey */
     --ticket-text: #ff5cad;   /* the stronger pink the user preferred for Tickets */
     --accent-fill: #ff1493;
     --accent-soft: #4a1030;
-    --chip-bg: #3a3a3a;
+    --chip-bg: #3a3a3a;       /* fact chips stay neutral grey */
     --chip-text: #dcdcdc;
     --pip-off: #7a7a7a;
     --focus: #ff1493;
@@ -52,16 +52,16 @@
 }
 :root[data-theme="dark"] {
   --bg: #000000;
-  --surface: #212121;       /* cards lifted well off the black page */
-  --surface-2: #3a3a3a;       /* tiles and chips stand clear of the card */
+  --surface: #1e1a1c;       /* cards lifted off the black page, with a hint of pink */
+  --surface-2: #3c3237;     /* date tiles and score badge, same pink hue as the card */
   --text: #ededed;          /* off-white: pure white on black halates */
   --muted: #b0b0b0;
-  --line: #3a3a3a;
+  --line: #3a3236;
   --accent: #ff7ab8;        /* lighter pink for text: #FF1493 vibrates on dark grey */
   --ticket-text: #ff5cad;   /* the stronger pink the user preferred for Tickets */
   --accent-fill: #ff1493;
   --accent-soft: #4a1030;
-  --chip-bg: #3a3a3a;
+  --chip-bg: #3a3a3a;       /* fact chips stay neutral grey */
   --chip-text: #dcdcdc;
   --pip-off: #7a7a7a;
   --focus: #ff1493;
