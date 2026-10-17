@@ -88,8 +88,9 @@ The **attended ledger** is included in `digest.json` and rendered on a dedicated
     - **the palette and fonts match OpenPublic.cc** (the user's other site, repo quepol/OpenPublic), set as tokens at the top of `site/style.css`:
       - Pink `#FF1493` is `--accent-fill`, used for non-text marks: pips, the strong edge, the tab underline and focus rings.
       - In light mode, small pink text uses `--accent: #cc0077`, because `#FF1493` is only 3.6:1 on white, which fails AA. Keep that split.
-      - OpenPublic has no dark mode, so dark here follows its black footer: a black page with lifted grey cards (`#212121`, tiles and chips `#2e2e2e`), off-white text (`#ededed`, not pure white) and a lighter pink for text (`#ff5cad`). The user found pure white on near-black cards hard on the eyes.
-      - Pink is kept rare: the strength dots, the Strong edge, "Tonight" and out-of-town regions. The Strong label is plain text. Tickets is a soft pink pill (`--ticket-bg`: `#ffcce6` in light, plum `#4a1030` in dark) with normal-coloured text, so it stands out by its shape rather than by pink text.
+      - OpenPublic has no dark mode, so dark here follows its black footer: a black page with lifted grey cards (`#212121`, date tiles and chips `#3a3a3a`), off-white text (`#ededed`, not pure white), grey text `#b0b0b0` and a lighter pink for text (`#ff7ab8`). The user found pure white on near-black cards hard on the eyes.
+      - Pink is kept rare: the strength dots, the Strong edge, "Tonight" and out-of-town regions. The Strong label is plain text. Tickets is a soft pink pill (`--ticket-bg`: `#ffc4e2` in light, plum `#4a1030` in dark) with normal-coloured text, so it stands out by its shape rather than by pink text.
+      - In light mode, date tiles and chips are pale pink (`#ffe9f4`), highlighted chips a step pinker (`#ffdcee`), and Tickets pinker again. The user asked for these tiles to stand out more in both themes.
       - Empty pips are rings, so filled vs empty differs by shape, not just colour.
       - Body text is Inter (Google Fonts).
       - The title is Momo Trust Display, self-hosted in `site/fonts/` (Fontsource 5.3.0, OFL licence alongside). It isn't on Google Fonts and only has weight 400.

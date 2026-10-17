@@ -17,15 +17,15 @@
 :root {
   --bg: #ffffff;
   --surface: #ffffff;
-  --surface-2: #fff4fa;
+  --surface-2: #ffe9f4;      /* date tiles, score badge */
   --text: #000000;
   --muted: #666666;
   --line: #ebebeb;
   --accent: #cc0077;        /* pink for small text: #FF1493 is only 3.6:1 on white */
   --accent-fill: #ff1493;   /* OpenPublic pink, for non-text marks (pips, edge, underline, focus) */
-  --accent-soft: #ffe4f1;
-  --ticket-bg: #ffcce6;      /* a step deeper than the chips so Tickets stands out */
-  --chip-bg: #fff4fa;
+  --accent-soft: #ffdcee;
+  --ticket-bg: #ffc4e2;      /* a step deeper than the chips so Tickets stands out */
+  --chip-bg: #ffe9f4;
   --chip-text: #333333;
   --pip-off: #9c8592;
   --focus: #ff1493;
@@ -35,15 +35,15 @@
   :root:not([data-theme="light"]) {
     --bg: #000000;
     --surface: #212121;       /* cards lifted well off the black page */
-    --surface-2: #2e2e2e;
+    --surface-2: #3a3a3a;       /* tiles and chips stand clear of the card */
     --text: #ededed;          /* off-white: pure white on black halates */
-    --muted: #a8a8a8;
+    --muted: #b0b0b0;
     --line: #3a3a3a;
-    --accent: #ff5cad;        /* lighter pink for text: #FF1493 vibrates on dark grey */
+    --accent: #ff7ab8;        /* lighter pink for text: #FF1493 vibrates on dark grey */
     --accent-fill: #ff1493;
     --accent-soft: #4a1030;
     --ticket-bg: #4a1030;
-    --chip-bg: #2e2e2e;
+    --chip-bg: #3a3a3a;
     --chip-text: #dcdcdc;
     --pip-off: #7a7a7a;
     --focus: #ff1493;
@@ -53,15 +53,15 @@
 :root[data-theme="dark"] {
   --bg: #000000;
   --surface: #212121;       /* cards lifted well off the black page */
-  --surface-2: #2e2e2e;
+  --surface-2: #3a3a3a;       /* tiles and chips stand clear of the card */
   --text: #ededed;          /* off-white: pure white on black halates */
-  --muted: #a8a8a8;
+  --muted: #b0b0b0;
   --line: #3a3a3a;
-  --accent: #ff5cad;        /* lighter pink for text: #FF1493 vibrates on dark grey */
+  --accent: #ff7ab8;        /* lighter pink for text: #FF1493 vibrates on dark grey */
   --accent-fill: #ff1493;
   --accent-soft: #4a1030;
   --ticket-bg: #4a1030;
-  --chip-bg: #2e2e2e;
+  --chip-bg: #3a3a3a;
   --chip-text: #dcdcdc;
   --pip-off: #7a7a7a;
   --focus: #ff1493;
