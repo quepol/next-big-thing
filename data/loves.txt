@@ -1,0 +1,55 @@
+# All-time favourites: these artists bypass recency decay in the taste model.
+# Edit freely — remove anyone who doesn't feel like a genuine all-time love,
+# add anyone missing. One artist per line; '#' starts a comment.
+# Pre-populated from top 50 seeds by lifetime distinct days (2026-10-17).
+
+City and Colour
+William Fitzsimmons
+Joshua Radin
+Radiohead
+Hunter Parrish
+Iron & Wine
+The Weepies
+Bon Iver
+Elliott Smith
+Sarah McLachlan
+Coldplay
+The Decemberists
+Sufjan Stevens
+The Arcade Fire
+Death Cab for Cutie
+The Shins
+Toad The Wet Sprocket
+The Beatles
+José González
+Ray LaMontagne
+Mumford & Sons
+Spoon
+Yo-Yo Ma
+Band of Horses
+Jack Johnson
+Glee Cast
+Jeff Buckley
+Us
+Nine Inch Nails
+The National
+Silversun Pickups
+Frightened Rabbit
+Fleet Foxes
+Sia
+Kelly Clarkson
+Nick Drake
+Imagine Dragons
+Adele
+Michael Jackson
+Julie Andrews
+Andrew Bird
+John Mayer
+Ani DiFranco
+Bastille
+The Muppets
+alt-J
+Natalie Merchant
+Explosions in the Sky
+Kanye West
+Dave Matthews Band

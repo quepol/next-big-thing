@@ -169,10 +169,13 @@ def ev(lineup, region="Toronto", day="2026-11-01"):
                  lineup=lineup, region=region)
 
 
+_TEST_LOVES = {"big thief", "adrianne lenker"}  # pin test seeds to bypass recency decay
+
+
 def run_scoring(events, cfg=Config(lastfm_user="u", lastfm_api_key="k")):
     h = make_history()
     lfm = FakeLastFM()
-    taste = Taste(h, lfm, log=lambda *_: None)
+    taste = Taste(h, lfm, log=lambda *_: None, loves=_TEST_LOVES)
     return score_events(events, h, hist.loved(h), taste.affinity, lfm.artist_info,
                         velocity=lambda k, n: None, regions={"Toronto": "all", "Buffalo": "loved"}, cfg=cfg)
 
@@ -237,7 +240,7 @@ def test_gather_events_assigns_regions_and_filters(monkeypatch):
             pass
 
     h = make_history()
-    taste = Taste(h, FakeLastFM(), log=lambda *_: None)
+    taste = Taste(h, FakeLastFM(), log=lambda *_: None, loves=_TEST_LOVES)
     events = pipeline.gather_events(FakeBIT(), FakeTM(), h, taste, date(2026, 10, 16), log=lambda *_: None)
     assert {(e.lineup[0], e.region) for e in events} >= {("Big Thief", "Toronto"), ("Big Thief", "Buffalo")}
     assert all(e.region in {"Toronto", "Buffalo"} for e in events)
@@ -269,7 +272,7 @@ def test_excluded_artist_is_not_a_seed_or_a_pick():
     h = make_history()
     lfm = FakeLastFM()
     excluded = {"big thief"}
-    taste = Taste(h, lfm, log=lambda *_: None, excluded=excluded)
+    taste = Taste(h, lfm, log=lambda *_: None, excluded=excluded, loves=_TEST_LOVES)
     assert "big thief" not in taste.known and "big thief" not in taste.seeds
     assert "tiny newcomer" not in taste.forward  # only reachable via the excluded seed
     picks = score_events([ev(["Big Thief", "Tiny Newcomer"])], h, hist.loved(h, excluded=excluded),
@@ -291,7 +294,7 @@ def test_affinity_is_bounded_and_does_not_saturate_on_hubs():
                 return [("Hub Band", 0.6)] + ([("Niche Band", 0.95)] if k == "seed 0" else [])
             return []
 
-    taste = Taste(h, HubLastFM(), log=lambda *_: None)
+    taste = Taste(h, HubLastFM(), log=lambda *_: None, loves=_TEST_LOVES)
     hub, _ = taste.affinity("Hub Band")      # weak link from all 20 seeds
     niche, _ = taste.affinity("Niche Band")  # one strong link
     assert 0 < hub < 1 and 0 < niche < 1
@@ -316,7 +319,7 @@ def test_alias_pages_are_detected():
                 return [("Big Thief", 0.99)]
             return super().similar(name)
 
-    taste = Taste(make_history(), AliasLastFM(), log=lambda *_: None)
+    taste = Taste(make_history(), AliasLastFM(), log=lambda *_: None, loves=_TEST_LOVES)
     assert taste.looks_like_alias("マイケル・ジャクソン")
     assert taste.looks_like_alias("Old Spelling")          # Last.fm autocorrects it
     assert not taste.looks_like_alias("Tiny Newcomer")
@@ -349,7 +352,7 @@ def test_kids_tagged_unknown_artist_is_never_picked():
 
     h = make_history()
     lfm = KidsLastFM()
-    taste = Taste(h, lfm, log=lambda *_: None)
+    taste = Taste(h, lfm, log=lambda *_: None, loves=_TEST_LOVES)
     picks = score_events([ev(["Big Thief", "Tiny Newcomer"])], h, hist.loved(h), taste.affinity,
                          lfm.artist_info, velocity=lambda k, n: None, regions={"Toronto": "all"},
                          is_noise=taste.is_noise)
@@ -405,8 +408,8 @@ def test_attended_artists_do_not_override_known_weight():
     """An attended artist already in known keeps its scrobble-derived seed weight."""
     h = make_history()
     lfm = FakeLastFM()
-    taste_no_att = Taste(h, lfm, log=lambda *_: None)
-    taste_with_att = Taste(h, lfm, log=lambda *_: None, attended={"big thief": "Big Thief"})
+    taste_no_att = Taste(h, lfm, log=lambda *_: None, loves=_TEST_LOVES)
+    taste_with_att = Taste(h, lfm, log=lambda *_: None, loves=_TEST_LOVES, attended={"big thief": "Big Thief"})
     # Weight should be unchanged (attended weight is lower than a 10-day listen habit)
     assert taste_no_att.weights.get("big thief") == taste_with_att.weights.get("big thief")
 
@@ -414,7 +417,7 @@ def test_attended_artists_do_not_override_known_weight():
 def test_venue_novelty_reason_added_for_new_venue():
     h = make_history()
     lfm = FakeLastFM()
-    taste = Taste(h, lfm, log=lambda *_: None)
+    taste = Taste(h, lfm, log=lambda *_: None, loves=_TEST_LOVES)
     new_venue_ev = Event(
         id="enew", starts_at="2026-11-01T20:00:00",
         venue=Venue("Brand New Room", "Toronto"),
@@ -432,7 +435,7 @@ def test_venue_novelty_reason_added_for_new_venue():
 def test_venue_novelty_reason_not_added_for_known_venue():
     h = make_history()
     lfm = FakeLastFM()
-    taste = Taste(h, lfm, log=lambda *_: None)
+    taste = Taste(h, lfm, log=lambda *_: None, loves=_TEST_LOVES)
     # TM calls it "The Horseshoe Tavern"; setlist.fm logged it as "horseshoe tavern"
     familiar_ev = Event(
         id="efam", starts_at="2026-11-01T20:00:00",

@@ -12,6 +12,7 @@ from .config import DATA_DIR
 from .models import normalize_name
 
 EXCLUDE_PATH = DATA_DIR / "exclude.txt"
+LOVES_PATH = DATA_DIR / "loves.txt"
 
 # Last.fm tags that mark children's music. Teen pop won't carry these; 👎 covers that.
 KID_TAGS = {
@@ -45,6 +46,11 @@ def _entries(path: Path) -> list[str]:
 def load(path: Path = EXCLUDE_PATH) -> set[str]:
     """Normalized names to exclude. One per line; '#' starts a comment; '+' lines are keeps."""
     return {normalize_name(e) for e in _entries(path) if not e.startswith("+")}
+
+
+def load_loves(path: Path = LOVES_PATH) -> set[str]:
+    """All-time favourites that bypass recency decay. One artist per line; '#' is a comment."""
+    return {normalize_name(e) for e in _entries(path)}
 
 
 def load_keeps(path: Path = EXCLUDE_PATH) -> set[str]:

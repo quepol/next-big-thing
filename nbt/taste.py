@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import math
 from collections import defaultdict
+from datetime import date
 
 from . import exclusions
 from .config import CONFIG
@@ -25,6 +26,11 @@ LINK_WEIGHTS = (1.0, 0.5, 0.25)
 # Seed weight for live-attended artists not already in known history. Equivalent to
 # a moderate but not dominant habit — less than someone played 100+ days, but real.
 ATTENDED_SEED_WEIGHT = 0.4
+# Recency decay: seed weight is multiplied by exp(-years_since_last / HALF_LIFE).
+# At HALF_LIFE years since last play, weight halves. Never drops below DECAY_FLOOR.
+# Artists in loves.txt bypass decay entirely.
+RECENCY_HALF_LIFE = 3.0
+RECENCY_FLOOR = 0.3
 ALIAS_MIN_MATCH = 0.9
 ALIAS_SIZE_RATIO = 100  # tag overlap alone is weak evidence; never let it look like a strong match
 TAG_PROFILE_SEEDS = 100
@@ -33,16 +39,28 @@ NOISE_TAGS = {"seen live", "favorites", "favourite", "favorite", "my favorites",
 
 class Taste:
     def __init__(self, history: dict, lastfm, *, log=print, excluded: set[str] | None = None,
-                 attended: dict[str, str] | None = None):
+                 attended: dict[str, str] | None = None, loves: set[str] | None = None,
+                 _today: date | None = None):
         self.lastfm = lastfm
         self.excluded = exclusions.load() if excluded is None else excluded
         self.known = known(history, excluded=self.excluded)
         ranked = sorted(self.known.items(), key=lambda kv: (-kv[1]["days"], -kv[1]["plays"]))
         top = ranked[: CONFIG.taste_seeds]
         max_days = top[0][1]["days"] if top else 1
-        # Seed weight: log-scaled distinct days, so a 20-year habit beats a one-month binge
-        # without drowning everything else out.
-        self.weights = {k: math.log1p(v["days"]) / math.log1p(max_days) for k, v in self.known.items()}
+        loves = loves if loves is not None else exclusions.load_loves()
+        today_ord = (_today or date.today()).toordinal()
+        # Seed weight: log-scaled distinct days, decayed by time since last play.
+        # Artists in loves.txt bypass decay so all-time favourites stay influential
+        # even during quiet periods.
+        def _weight(key: str, row: dict) -> float:
+            base = math.log1p(row["days"]) / math.log1p(max_days)
+            if key in loves or not row.get("last"):
+                return base
+            years_ago = (today_ord - date.fromisoformat(row["last"]).toordinal()) / 365.25
+            decay = max(RECENCY_FLOOR, math.exp(-math.log(2) * years_ago / RECENCY_HALF_LIFE))
+            return base * decay
+
+        self.weights = {k: _weight(k, v) for k, v in self.known.items()}
         self.seeds = [k for k, _ in top]
 
         # Inject live-attended artists as additional seeds. These are uncontaminated by
