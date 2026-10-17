@@ -1,5 +1,784 @@
 {
-  "generated_at": "2026-10-17T02:08:16+00:00",
+  "attended_ledger": [
+    {
+      "artist": "Beck",
+      "city": "Toronto",
+      "date": "14-10-2026",
+      "listeners_now": 4250700,
+      "venue": "Massey Hall"
+    },
+    {
+      "artist": "Silversun Pickups",
+      "city": "Toronto",
+      "date": "25-09-2026",
+      "listeners_now": 1348551,
+      "venue": "Scotiabank Arena"
+    },
+    {
+      "artist": "Weezer",
+      "city": "Toronto",
+      "date": "25-09-2026",
+      "listeners_now": 5664207,
+      "venue": "Scotiabank Arena"
+    },
+    {
+      "artist": "The Shins",
+      "city": "Toronto",
+      "date": "25-09-2026",
+      "listeners_now": 3191507,
+      "venue": "Scotiabank Arena"
+    },
+    {
+      "artist": "Sara Bareilles",
+      "city": "Toronto",
+      "date": "16-09-2026",
+      "listeners_now": 2199085,
+      "venue": "Massey Hall"
+    },
+    {
+      "artist": "Fink",
+      "city": "Toronto",
+      "date": "09-08-2026",
+      "listeners_now": 827451,
+      "venue": "Adelaide Hall"
+    },
+    {
+      "artist": "Kelly Clarkson",
+      "city": "Las Vegas",
+      "date": "18-07-2026",
+      "listeners_now": 4635691,
+      "venue": "The Colosseum"
+    },
+    {
+      "artist": "Angine de Poitrine",
+      "city": "Toronto",
+      "date": "14-07-2026",
+      "listeners_now": 195026,
+      "venue": "RBC Amphitheatre"
+    },
+    {
+      "artist": "Jack White",
+      "city": "Toronto",
+      "date": "14-07-2026",
+      "listeners_now": 1267822,
+      "venue": "RBC Amphitheatre"
+    },
+    {
+      "artist": "John Cameron Mitchell",
+      "city": "Toronto",
+      "date": "28-06-2026",
+      "listeners_now": 10639,
+      "venue": "Danforth Music Hall"
+    },
+    {
+      "artist": "Mumford & Sons",
+      "city": "Toronto",
+      "date": "13-06-2026",
+      "listeners_now": 2749098,
+      "venue": "Rogers Stadium"
+    },
+    {
+      "artist": "James Blake",
+      "city": "Toronto",
+      "date": "06-06-2026",
+      "listeners_now": 2010732,
+      "venue": "History"
+    },
+    {
+      "artist": "Hayley Williams",
+      "city": "Toronto",
+      "date": "01-04-2026",
+      "listeners_now": 888443,
+      "venue": "Massey Hall"
+    },
+    {
+      "artist": "Brandi Carlile",
+      "city": "Toronto",
+      "date": "18-02-2026",
+      "listeners_now": 904900,
+      "venue": "Scotiabank Arena"
+    },
+    {
+      "artist": "Sarah McLachlan",
+      "city": "Toronto",
+      "date": "08-11-2025",
+      "listeners_now": 1785723,
+      "venue": "Massey Hall"
+    },
+    {
+      "artist": "Nine Inch Nails",
+      "city": "Toronto",
+      "date": "23-08-2025",
+      "listeners_now": 3719161,
+      "venue": "Scotiabank Arena"
+    },
+    {
+      "artist": "Ryan Adams",
+      "city": "Toronto",
+      "date": "18-07-2025",
+      "listeners_now": 1446205,
+      "venue": "Massey Hall"
+    },
+    {
+      "artist": "City and Colour",
+      "city": "Toronto",
+      "date": "20-06-2025",
+      "listeners_now": 1246277,
+      "venue": "Budweiser Stage"
+    },
+    {
+      "artist": "Billy Corgan",
+      "city": "Toronto",
+      "date": "12-06-2025",
+      "listeners_now": 163783,
+      "venue": "History"
+    },
+    {
+      "artist": "BoyWithUke",
+      "city": "Toronto",
+      "date": "04-05-2025",
+      "listeners_now": 750214,
+      "venue": "History"
+    },
+    {
+      "artist": "Arcade Fire",
+      "city": "Toronto",
+      "date": "01-05-2025",
+      "listeners_now": 3180034,
+      "venue": "Massey Hall"
+    },
+    {
+      "artist": "Jack White",
+      "city": "Toronto",
+      "date": "08-02-2025",
+      "listeners_now": 1267822,
+      "venue": "Massey Hall"
+    },
+    {
+      "artist": "Iron Maiden",
+      "city": "Toronto",
+      "date": "26-10-2024",
+      "listeners_now": 3270593,
+      "venue": "Scotiabank Arena"
+    },
+    {
+      "artist": "The National",
+      "city": "Toronto",
+      "date": "20-09-2024",
+      "listeners_now": 2551277,
+      "venue": "Budweiser Stage"
+    },
+    {
+      "artist": "The Smashing Pumpkins",
+      "city": "Toronto",
+      "date": "01-08-2024",
+      "listeners_now": 4707721,
+      "venue": "Rogers Centre"
+    },
+    {
+      "artist": "Green Day",
+      "city": "Toronto",
+      "date": "01-08-2024",
+      "listeners_now": 6784226,
+      "venue": "Rogers Centre"
+    },
+    {
+      "artist": "Sarah McLachlan",
+      "city": "Toronto",
+      "date": "19-06-2024",
+      "listeners_now": 1785723,
+      "venue": "Budweiser Stage"
+    },
+    {
+      "artist": "Cat Power",
+      "city": "Toronto",
+      "date": "08-06-2024",
+      "listeners_now": 2260848,
+      "venue": "Budweiser Stage"
+    },
+    {
+      "artist": "Pixies",
+      "city": "Toronto",
+      "date": "08-06-2024",
+      "listeners_now": 4394167,
+      "venue": "Budweiser Stage"
+    },
+    {
+      "artist": "Modest Mouse",
+      "city": "Toronto",
+      "date": "08-06-2024",
+      "listeners_now": 3484526,
+      "venue": "Budweiser Stage"
+    },
+    {
+      "artist": "Silversun Pickups",
+      "city": "Toronto",
+      "date": "05-03-2024",
+      "listeners_now": 1348551,
+      "venue": "History"
+    },
+    {
+      "artist": "Ben Harper",
+      "city": "Toronto",
+      "date": "25-08-2023",
+      "listeners_now": 1563363,
+      "venue": "Budweiser Stage"
+    },
+    {
+      "artist": "City and Colour",
+      "city": "Toronto",
+      "date": "25-08-2023",
+      "listeners_now": 1246277,
+      "venue": "Budweiser Stage"
+    },
+    {
+      "artist": "Patti Smith",
+      "city": "Toronto",
+      "date": "20-08-2023",
+      "listeners_now": 1423234,
+      "venue": "Budweiser Stage"
+    },
+    {
+      "artist": "P!nk",
+      "city": "Toronto",
+      "date": "24-07-2023",
+      "listeners_now": 3898304,
+      "venue": "Rogers Centre"
+    },
+    {
+      "artist": "Brandi Carlile",
+      "city": "Toronto",
+      "date": "24-07-2023",
+      "listeners_now": 904900,
+      "venue": "Rogers Centre"
+    },
+    {
+      "artist": "Bastille",
+      "city": "Toronto",
+      "date": "03-06-2022",
+      "listeners_now": 2483115,
+      "venue": "History"
+    },
+    {
+      "artist": "Radiohead",
+      "city": "Toronto",
+      "date": "20-07-2018",
+      "listeners_now": 8476781,
+      "venue": "Scotiabank Arena"
+    },
+    {
+      "artist": "alt‐J",
+      "city": "Toronto",
+      "date": "20-06-2018",
+      "listeners_now": 6239,
+      "venue": "RBC Echo Beach"
+    },
+    {
+      "artist": "Ani DiFranco",
+      "city": "San Francisco",
+      "date": "08-10-2016",
+      "listeners_now": 621809,
+      "venue": "The Fillmore"
+    },
+    {
+      "artist": "Dave Matthews Band",
+      "city": "Berkeley",
+      "date": "23-08-2014",
+      "listeners_now": 1745009,
+      "venue": "William Randolph Hearst Greek Theatre"
+    },
+    {
+      "artist": "tUnE-yArDs",
+      "city": "Washington",
+      "date": "13-06-2014",
+      "listeners_now": 561828,
+      "venue": "9:30 Club"
+    },
+    {
+      "artist": "Shovels & Rope",
+      "city": "Austin",
+      "date": "16-04-2013",
+      "listeners_now": 187065,
+      "venue": "ACL Live at The Moody Theater"
+    },
+    {
+      "artist": "Ani DiFranco",
+      "city": "San Francisco",
+      "date": "27-03-2012",
+      "listeners_now": 621809,
+      "venue": "The Fillmore"
+    },
+    {
+      "artist": "Wallpaper.",
+      "city": "Austin",
+      "date": "14-03-2012",
+      "listeners_now": 65892,
+      "venue": "ACL Live at The Moody Theater"
+    },
+    {
+      "artist": "Third Eye Blind",
+      "city": "Austin",
+      "date": "10-03-2012",
+      "listeners_now": 2216455,
+      "venue": "ACL Live at The Moody Theater"
+    },
+    {
+      "artist": "tUnE-yArDs",
+      "city": "San Francisco",
+      "date": "23-11-2011",
+      "listeners_now": 561828,
+      "venue": "The Regency Ballroom"
+    },
+    {
+      "artist": "City and Colour",
+      "city": "San Francisco",
+      "date": "05-11-2011",
+      "listeners_now": 1246277,
+      "venue": "The Fillmore"
+    },
+    {
+      "artist": "The Decemberists",
+      "city": "San Francisco",
+      "date": "14-08-2011",
+      "listeners_now": 1915259,
+      "venue": "Golden Gate Park"
+    },
+    {
+      "artist": "Arcade Fire",
+      "city": "San Francisco",
+      "date": "14-08-2011",
+      "listeners_now": 3180034,
+      "venue": "Golden Gate Park"
+    },
+    {
+      "artist": "tUnE-yArDs",
+      "city": "San Francisco",
+      "date": "14-08-2011",
+      "listeners_now": 561828,
+      "venue": "Golden Gate Park"
+    },
+    {
+      "artist": "The Roots",
+      "city": "San Francisco",
+      "date": "13-08-2011",
+      "listeners_now": 2070451,
+      "venue": "Golden Gate Park"
+    },
+    {
+      "artist": "Ellie Goulding",
+      "city": "San Francisco",
+      "date": "12-08-2011",
+      "listeners_now": 4160050,
+      "venue": "Golden Gate Park"
+    },
+    {
+      "artist": "The Shins",
+      "city": "San Francisco",
+      "date": "12-08-2011",
+      "listeners_now": 3191507,
+      "venue": "Golden Gate Park"
+    },
+    {
+      "artist": "Arcade Fire",
+      "city": "Berkeley",
+      "date": "03-10-2010",
+      "listeners_now": 3180034,
+      "venue": "William Randolph Hearst Greek Theatre"
+    },
+    {
+      "artist": "PJ Harvey & John Parish",
+      "city": "San Francisco",
+      "date": "19-06-2009",
+      "listeners_now": 144070,
+      "venue": "The Warfield"
+    },
+    {
+      "artist": "Cloud Cult",
+      "city": "San Francisco",
+      "date": "12-05-2009",
+      "listeners_now": 273857,
+      "venue": "The Independent"
+    },
+    {
+      "artist": "PJ Harvey",
+      "city": "Austin",
+      "date": "21-03-2009",
+      "listeners_now": 2216740,
+      "venue": "Stubb's Bar-B-Q"
+    },
+    {
+      "artist": "Silversun Pickups",
+      "city": "Austin",
+      "date": "21-03-2009",
+      "listeners_now": 1348551,
+      "venue": "Antone's"
+    },
+    {
+      "artist": "PJ Harvey & John Parish",
+      "city": "Austin",
+      "date": "21-03-2009",
+      "listeners_now": 144070,
+      "venue": "Stubb's Bar-B-Q"
+    },
+    {
+      "artist": "Tori Amos",
+      "city": "Austin",
+      "date": "19-03-2009",
+      "listeners_now": 1742945,
+      "venue": "La Zona Rosa"
+    },
+    {
+      "artist": "The Avett Brothers",
+      "city": "Austin",
+      "date": "19-03-2009",
+      "listeners_now": 891002,
+      "venue": "Stubb's Bar-B-Q"
+    },
+    {
+      "artist": "The Hold Steady",
+      "city": "Austin",
+      "date": "19-03-2009",
+      "listeners_now": 519687,
+      "venue": "Red 7"
+    },
+    {
+      "artist": "The Decemberists",
+      "city": "Austin",
+      "date": "19-03-2009",
+      "listeners_now": 1915259,
+      "venue": "Stubb's Bar-B-Q"
+    },
+    {
+      "artist": "The Airborne Toxic Event",
+      "city": "Austin",
+      "date": "19-03-2009",
+      "listeners_now": 601994,
+      "venue": "Bat Bar"
+    },
+    {
+      "artist": "Ben Harper and Relentless7",
+      "city": "Austin",
+      "date": "19-03-2009",
+      "listeners_now": 70433,
+      "venue": "Stubb's Bar-B-Q"
+    },
+    {
+      "artist": "Peelander‐Z",
+      "city": "Austin",
+      "date": "19-03-2009",
+      "listeners_now": 41,
+      "venue": "The Creekside Lounge"
+    },
+    {
+      "artist": "Frightened Rabbit",
+      "city": "San Francisco",
+      "date": "01-11-2008",
+      "listeners_now": 730361,
+      "venue": "Bottom of the Hill"
+    },
+    {
+      "artist": "Iron & Wine",
+      "city": "San Francisco",
+      "date": "05-10-2008",
+      "listeners_now": 2769420,
+      "venue": "Bimbo's 365 Club"
+    },
+    {
+      "artist": "Sigur Rós",
+      "city": "Berkeley",
+      "date": "03-10-2008",
+      "listeners_now": 2480318,
+      "venue": "William Randolph Hearst Greek Theatre"
+    },
+    {
+      "artist": "Shearwater",
+      "city": "San Francisco",
+      "date": "28-08-2008",
+      "listeners_now": 377798,
+      "venue": "Great American Music Hall"
+    },
+    {
+      "artist": "Sharon Jones and the Dap‐Kings",
+      "city": "San Francisco",
+      "date": "24-08-2008",
+      "listeners_now": 2228,
+      "venue": "Golden Gate Park"
+    },
+    {
+      "artist": "Bon Iver",
+      "city": "San Francisco",
+      "date": "24-08-2008",
+      "listeners_now": 3639491,
+      "venue": "Golden Gate Park"
+    },
+    {
+      "artist": "Toots & The Maytals",
+      "city": "San Francisco",
+      "date": "24-08-2008",
+      "listeners_now": 413182,
+      "venue": "Golden Gate Park"
+    },
+    {
+      "artist": "Ben Harper & The Innocent Criminals",
+      "city": "San Francisco",
+      "date": "23-08-2008",
+      "listeners_now": 262555,
+      "venue": "Golden Gate Park"
+    },
+    {
+      "artist": "Radiohead",
+      "city": "San Francisco",
+      "date": "22-08-2008",
+      "listeners_now": 8476781,
+      "venue": "Golden Gate Park"
+    },
+    {
+      "artist": "Stars",
+      "city": "San Francisco",
+      "date": "14-11-2007",
+      "listeners_now": 1370830,
+      "venue": "Bimbo's 365 Club"
+    },
+    {
+      "artist": "The Polyphonic Spree",
+      "city": "San Francisco",
+      "date": "31-10-2007",
+      "listeners_now": 503369,
+      "venue": "The Fillmore"
+    },
+    {
+      "artist": "José González",
+      "city": "San Francisco",
+      "date": "09-10-2007",
+      "listeners_now": 1984093,
+      "venue": "Great American Music Hall"
+    },
+    {
+      "artist": "St. Vincent",
+      "city": "San Francisco",
+      "date": "29-09-2007",
+      "listeners_now": 1595022,
+      "venue": "The Grand Ballroom at the Regency Center"
+    },
+    {
+      "artist": "The National",
+      "city": "San Francisco",
+      "date": "29-09-2007",
+      "listeners_now": 2551277,
+      "venue": "The Grand Ballroom at the Regency Center"
+    },
+    {
+      "artist": "Jesca Hoop",
+      "city": "San Francisco",
+      "date": "17-07-2007",
+      "listeners_now": 203748,
+      "venue": "Great American Music Hall"
+    },
+    {
+      "artist": "The Polyphonic Spree",
+      "city": "San Francisco",
+      "date": "17-07-2007",
+      "listeners_now": 503369,
+      "venue": "Great American Music Hall"
+    },
+    {
+      "artist": "Band of Horses",
+      "city": "San Francisco",
+      "date": "05-07-2007",
+      "listeners_now": 2303397,
+      "venue": "Great American Music Hall"
+    },
+    {
+      "artist": "The National",
+      "city": "San Francisco",
+      "date": "27-06-2007",
+      "listeners_now": 2551277,
+      "venue": "Bimbo's 365 Club"
+    },
+    {
+      "artist": "Arcade Fire",
+      "city": "Berkeley",
+      "date": "02-06-2007",
+      "listeners_now": 3180034,
+      "venue": "William Randolph Hearst Greek Theatre"
+    },
+    {
+      "artist": "Arcade Fire",
+      "city": "Berkeley",
+      "date": "01-06-2007",
+      "listeners_now": 3180034,
+      "venue": "William Randolph Hearst Greek Theatre"
+    },
+    {
+      "artist": "Indigo Girls",
+      "city": "San Francisco",
+      "date": "10-11-2006",
+      "listeners_now": 524160,
+      "venue": "The Warfield"
+    },
+    {
+      "artist": "Sufjan Stevens",
+      "city": "Berkeley",
+      "date": "11-10-2006",
+      "listeners_now": 4084829,
+      "venue": "Zellerbach Hall"
+    },
+    {
+      "artist": "French Kicks",
+      "city": "San Francisco",
+      "date": "19-08-2006",
+      "listeners_now": 332862,
+      "venue": "Café du Nord"
+    },
+    {
+      "artist": "Spoon",
+      "city": "Berkeley",
+      "date": "12-08-2006",
+      "listeners_now": 2067748,
+      "venue": "William Randolph Hearst Greek Theatre"
+    },
+    {
+      "artist": "Nine Inch Nails",
+      "city": "Mountain View",
+      "date": "08-07-2006",
+      "listeners_now": 3719161,
+      "venue": "Shoreline Amphitheatre"
+    },
+    {
+      "artist": "Mark Eitzel",
+      "city": "San Francisco",
+      "date": "30-03-2006",
+      "listeners_now": 57305,
+      "venue": "The Independent"
+    },
+    {
+      "artist": "The National",
+      "city": "San Francisco",
+      "date": "30-03-2006",
+      "listeners_now": 2551277,
+      "venue": "The Independent"
+    },
+    {
+      "artist": "Tori Amos",
+      "city": "San Francisco",
+      "date": "24-04-2005",
+      "listeners_now": 1742945,
+      "venue": "Louise M. Davies Symphony Hall"
+    },
+    {
+      "artist": "Andrew Bird",
+      "city": "San Francisco",
+      "date": "19-02-2005",
+      "listeners_now": 1665815,
+      "venue": "The Fillmore"
+    },
+    {
+      "artist": "Ani DiFranco",
+      "city": "San Francisco",
+      "date": "19-02-2005",
+      "listeners_now": 621809,
+      "venue": "The Fillmore"
+    },
+    {
+      "artist": "Tori Amos",
+      "city": "San Jose",
+      "date": "11-04-2003",
+      "listeners_now": 1742945,
+      "venue": "Center for the Performing Arts"
+    },
+    {
+      "artist": "Ani DiFranco",
+      "city": "Northampton",
+      "date": "19-11-1996",
+      "listeners_now": 621809,
+      "venue": "Smith College"
+    },
+    {
+      "artist": "Bob Mould",
+      "city": "Northampton",
+      "date": "23-09-1996",
+      "listeners_now": 207445,
+      "venue": "Pearl Street"
+    },
+    {
+      "artist": "Guster",
+      "city": "Washington",
+      "date": "20-06-1996",
+      "listeners_now": 821345,
+      "venue": "The Bayou"
+    },
+    {
+      "artist": "Guster",
+      "city": "Northampton",
+      "date": "03-05-1996",
+      "listeners_now": 821345,
+      "venue": "Smith College"
+    },
+    {
+      "artist": "Guster",
+      "city": "Northampton",
+      "date": "07-12-1995",
+      "listeners_now": 821345,
+      "venue": "Iron Horse Music Hall"
+    },
+    {
+      "artist": "Ani DiFranco",
+      "city": "Northampton",
+      "date": "23-09-1995",
+      "listeners_now": 621809,
+      "venue": "John M. Greene Hall"
+    },
+    {
+      "artist": "Dave Matthews Band",
+      "city": "Hartford",
+      "date": "02-09-1995",
+      "listeners_now": 1745009,
+      "venue": "Meadows Music Theater"
+    },
+    {
+      "artist": "Rusted Root",
+      "city": "Northampton",
+      "date": "20-01-1995",
+      "listeners_now": 788294,
+      "venue": "Pearl Street"
+    },
+    {
+      "artist": "Sarah McLachlan",
+      "city": "Somerville",
+      "date": "28-03-1994",
+      "listeners_now": 1785723,
+      "venue": "Somerville Theatre"
+    },
+    {
+      "artist": "Ani DiFranco",
+      "city": "Northampton",
+      "date": "13-03-1994",
+      "listeners_now": 621809,
+      "venue": "John M. Greene Hall"
+    },
+    {
+      "artist": "Ani DiFranco",
+      "city": "Amherst",
+      "date": "12-09-1993",
+      "listeners_now": 621809,
+      "venue": "Campus Center Front Room, Amherst College"
+    },
+    {
+      "artist": "Ani DiFranco",
+      "city": "Northampton",
+      "date": "04-02-1993",
+      "listeners_now": 621809,
+      "venue": "Iron Horse Music Hall"
+    },
+    {
+      "artist": "Metallica",
+      "city": "Kansas City",
+      "date": "28-11-1991",
+      "listeners_now": 5326834,
+      "venue": "Kemper Arena"
+    }
+  ],
+  "generated_at": "2026-10-17T13:44:03+00:00",
   "ledger": [
     {
       "artist": "The 4411",
@@ -898,7 +1677,8 @@
         "reasons": [
           "tags match your taste: indie, singer-songwriter, alternative",
           "only 11,758 listeners on Last.fm",
-          "small venue (~250 cap.)"
+          "small venue (~250 cap.)",
+          "you've never been to The Drake Hotel"
         ],
         "score": 0.4327,
         "tier": "next_big_thing"
@@ -928,7 +1708,8 @@
         "reasons": [
           "tags match your taste: indie",
           "only 380 listeners on Last.fm",
-          "small venue (~200 cap.)"
+          "small venue (~200 cap.)",
+          "you've never been to Rivoli"
         ],
         "score": 0.4176,
         "tier": "next_big_thing"
@@ -957,7 +1738,8 @@
         "reasons": [
           "similar to Band of Horses (0.59), Local Natives (0.65), Young the Giant (0.69)",
           "only 17,549 listeners on Last.fm",
-          "small venue (~250 cap.)"
+          "small venue (~250 cap.)",
+          "you've never been to Monarch Tavern"
         ],
         "score": 0.4019,
         "tier": "next_big_thing"
@@ -987,7 +1769,8 @@
         "reasons": [
           "similar to Adele (0.82), Alessia Cara (0.70), Teddy Swims (0.68)",
           "only 27,255 listeners on Last.fm",
-          "small venue (~575 cap.)"
+          "small venue (~575 cap.)",
+          "you've never been to The Mod Club"
         ],
         "score": 0.3833,
         "tier": "next_big_thing"
@@ -1017,7 +1800,8 @@
         "reasons": [
           "similar to Elliott Smith (0.57), Sun Kil Moon (0.55), Phoebe Bridgers (0.48)",
           "only 48,687 listeners on Last.fm",
-          "small venue (~575 cap.)"
+          "small venue (~575 cap.)",
+          "you've never been to The Mod Club"
         ],
         "score": 0.3218,
         "tier": "next_big_thing"
@@ -1073,7 +1857,8 @@
         "listeners": 41778,
         "reasons": [
           "similar to Spoon (0.60), Silversun Pickups (0.54), The Hold Steady (0.75)",
-          "only 41,778 listeners on Last.fm"
+          "only 41,778 listeners on Last.fm",
+          "you've never been to The Sound Garage"
         ],
         "score": 0.2666,
         "tier": "next_big_thing"
@@ -1101,7 +1886,8 @@
         "listeners": 18122,
         "reasons": [
           "similar to Beastie Boys (1.00), Mos Def (0.14), De La Soul (0.22)",
-          "only 18,122 listeners on Last.fm"
+          "only 18,122 listeners on Last.fm",
+          "you've never been to History Toronto"
         ],
         "score": 0.2618,
         "tier": "next_big_thing"
@@ -1131,7 +1917,8 @@
         "reasons": [
           "tags match your taste: indie, singer-songwriter, rock",
           "only 29,283 listeners on Last.fm",
-          "small venue (~1,400 cap.)"
+          "small venue (~1,400 cap.)",
+          "you've never been to The Danforth Music Hall"
         ],
         "score": 0.253,
         "tier": "next_big_thing"
@@ -1160,7 +1947,8 @@
         "reasons": [
           "similar to Joshua Radin (0.27), William Fitzsimmons (0.24), The Weepies (0.22)",
           "only 27,053 listeners on Last.fm",
-          "small venue (~500 cap.)"
+          "small venue (~500 cap.)",
+          "you've never been to Longboat Hall"
         ],
         "score": 0.2493,
         "tier": "next_big_thing"
@@ -1190,7 +1978,8 @@
         "reasons": [
           "similar to The Lumineers (0.26), Gregory Alan Isakov (0.28), Noah Kahan (0.38)",
           "only 27,198 listeners on Last.fm",
-          "small venue (~400 cap.)"
+          "small venue (~400 cap.)",
+          "you've never been to  Horseshoe Tavern"
         ],
         "score": 0.2095,
         "tier": "next_big_thing"
@@ -1224,7 +2013,8 @@
           "similar to The New Pornographers (0.31), The Format (0.32), Ben Kweller (0.28)",
           "you played them on 1 day back in 2026",
           "only 22,879 listeners on Last.fm",
-          "small venue (~575 cap.)"
+          "small venue (~575 cap.)",
+          "you've never been to The Mod Club"
         ],
         "score": 0.2057,
         "tier": "next_big_thing"
@@ -1252,7 +2042,8 @@
         "listeners": 31951,
         "reasons": [
           "similar to The Weepies (0.38), Bon Iver (0.38), Ray LaMontagne (0.39)",
-          "only 31,951 listeners on Last.fm"
+          "only 31,951 listeners on Last.fm",
+          "you've never been to The Sound Garage"
         ],
         "score": 0.2007,
         "tier": "next_big_thing"
@@ -1281,7 +2072,8 @@
         "reasons": [
           "tags match your taste: folk, post-rock, irish",
           "only 26,717 listeners on Last.fm",
-          "small venue (~575 cap.)"
+          "small venue (~575 cap.)",
+          "you've never been to The Mod Club"
         ],
         "score": 0.1889,
         "tier": "next_big_thing"
@@ -1311,7 +2103,8 @@
         "reasons": [
           "similar to The Tragically Hip (0.88), Sloan (0.71), Barenaked Ladies (0.27)",
           "only 49,251 listeners on Last.fm",
-          "small venue (~1,400 cap.)"
+          "small venue (~1,400 cap.)",
+          "you've never been to The Danforth Music Hall"
         ],
         "score": 0.1487,
         "tier": "next_big_thing"
@@ -1341,7 +2134,8 @@
         "reasons": [
           "similar to The Tragically Hip (0.85), Sloan (0.50), Barenaked Ladies (0.28)",
           "only 39,990 listeners on Last.fm",
-          "small venue (~1,400 cap.)"
+          "small venue (~1,400 cap.)",
+          "you've never been to The Danforth Music Hall"
         ],
         "score": 0.1352,
         "tier": "next_big_thing"
@@ -1370,7 +2164,8 @@
         "listeners": 7234,
         "reasons": [
           "tags match your taste: folk, soul, blues",
-          "only 7,234 listeners on Last.fm"
+          "only 7,234 listeners on Last.fm",
+          "you've never been to The Garrison"
         ],
         "score": 0.1087,
         "tier": "next_big_thing"
@@ -1399,7 +2194,8 @@
         "listeners": 20322,
         "reasons": [
           "similar to Me'Shell Ndegéocello (0.63), Sault (0.29)",
-          "only 20,322 listeners on Last.fm"
+          "only 20,322 listeners on Last.fm",
+          "you've never been to The Garrison"
         ],
         "score": 0.106,
         "tier": "next_big_thing"
@@ -1427,7 +2223,8 @@
         "listeners": 33763,
         "reasons": [
           "similar to Walk the Moon (0.40), Fruit Bats (0.45), AWOLNATION (0.51)",
-          "only 33,763 listeners on Last.fm"
+          "only 33,763 listeners on Last.fm",
+          "you've never been to The Great Hall"
         ],
         "score": 0.0957,
         "tier": "next_big_thing"
@@ -1456,7 +2253,8 @@
         "heard_before": null,
         "listeners": 54076,
         "reasons": [
-          "similar to City and Colour (0.70), Joshua Radin (0.66), Ray LaMontagne (0.63)"
+          "similar to City and Colour (0.70), Joshua Radin (0.66), Ray LaMontagne (0.63)",
+          "you've never been to Meridian Hall"
         ],
         "score": 0.6453,
         "tier": "would_like"
@@ -1488,7 +2286,8 @@
         "listeners": 539526,
         "reasons": [
           "similar to City and Colour (0.58), Manchester Orchestra (0.89), The National (0.71)",
-          "you played them on 2 days back in 2015"
+          "you played them on 2 days back in 2015",
+          "you've never been to Meridian Hall"
         ],
         "score": 0.5657,
         "tier": "would_like"
@@ -1516,7 +2315,8 @@
         "heard_before": null,
         "listeners": 330530,
         "reasons": [
-          "similar to Sarah McLachlan (0.88), Natalie Merchant (0.47), A Fine Frenzy (0.51)"
+          "similar to Sarah McLachlan (0.88), Natalie Merchant (0.47), A Fine Frenzy (0.51)",
+          "you've never been to The Danforth Music Hall"
         ],
         "score": 0.5529,
         "tier": "would_like"
@@ -1544,7 +2344,8 @@
         "heard_before": null,
         "listeners": 208487,
         "reasons": [
-          "similar to Damien Jurado (0.96), Andrew Bird (0.62), Neko Case (0.97)"
+          "similar to Damien Jurado (0.96), Andrew Bird (0.62), Neko Case (0.97)",
+          "you've never been to The Sound Garage"
         ],
         "score": 0.4926,
         "tier": "would_like"
@@ -1604,7 +2405,8 @@
         "listeners": 844601,
         "reasons": [
           "similar to Toad The Wet Sprocket (0.61), Snow Patrol (0.72), The Airborne Toxic Event (0.89)",
-          "you played them on 1 day back in 2009"
+          "you played them on 1 day back in 2009",
+          "you've never been to The Danforth Music Hall"
         ],
         "score": 0.4665,
         "tier": "would_like"
@@ -1632,7 +2434,8 @@
         "heard_before": null,
         "listeners": 268240,
         "reasons": [
-          "similar to Vampire Weekend (1.00), Ra Ra Riot (0.63), Broken Social Scene (0.50)"
+          "similar to Vampire Weekend (1.00), Ra Ra Riot (0.63), Broken Social Scene (0.50)",
+          "you've never been to The Concert Hall"
         ],
         "score": 0.4354,
         "tier": "would_like"
@@ -1660,7 +2463,8 @@
         "heard_before": null,
         "listeners": 799932,
         "reasons": [
-          "similar to Florence + the Machine (1.00), Mumford & Sons (0.23), Bastille (0.21)"
+          "similar to Florence + the Machine (1.00), Mumford & Sons (0.23), Bastille (0.21)",
+          "you've never been to The Danforth Music Hall"
         ],
         "score": 0.4311,
         "tier": "would_like"
@@ -1687,7 +2491,8 @@
         "heard_before": null,
         "listeners": 1413058,
         "reasons": [
-          "similar to DJ Shadow (1.00), Massive Attack (0.74), Sneaker Pimps (0.60)"
+          "similar to DJ Shadow (1.00), Massive Attack (0.74), Sneaker Pimps (0.60)",
+          "you've never been to The Mod Club"
         ],
         "score": 0.4178,
         "tier": "would_like"
@@ -1715,7 +2520,8 @@
         "heard_before": null,
         "listeners": 238654,
         "reasons": [
-          "similar to The Walkmen (1.00), Destroyer (0.73), Spoon (0.43)"
+          "similar to The Walkmen (1.00), Destroyer (0.73), Spoon (0.43)",
+          "you've never been to The Concert Hall"
         ],
         "score": 0.4043,
         "tier": "would_like"
@@ -1743,7 +2549,8 @@
         "heard_before": null,
         "listeners": 268946,
         "reasons": [
-          "similar to Mumford & Sons (0.56), The Lumineers (0.57), The Head and the Heart (0.75)"
+          "similar to Mumford & Sons (0.56), The Lumineers (0.57), The Head and the Heart (0.75)",
+          "you've never been to The Danforth Music Hall"
         ],
         "score": 0.3998,
         "tier": "would_like"
@@ -1799,7 +2606,8 @@
         "heard_before": null,
         "listeners": 179308,
         "reasons": [
-          "similar to Michael Buble (0.89), Seth MacFarlane (0.98), Frank Sinatra (0.68)"
+          "similar to Michael Buble (0.89), Seth MacFarlane (0.98), Frank Sinatra (0.68)",
+          "you've never been to The Elgin & Winter Garden Theatres"
         ],
         "score": 0.3794,
         "tier": "would_like"
@@ -1830,7 +2638,8 @@
         "listeners": 1438634,
         "reasons": [
           "similar to Silversun Pickups (0.52), Snow Patrol (0.54), The Joy Formidable (0.65)",
-          "you played them on 2 days back in 2008"
+          "you played them on 2 days back in 2008",
+          "you've never been to Lee's Palace"
         ],
         "score": 0.3713,
         "tier": "would_like"
@@ -1858,7 +2667,8 @@
         "heard_before": null,
         "listeners": 680566,
         "reasons": [
-          "similar to Adele (0.66), Sam Smith (0.64), Ariana Grande (0.42)"
+          "similar to Adele (0.66), Sam Smith (0.64), Ariana Grande (0.42)",
+          "you've never been to History Toronto"
         ],
         "score": 0.3711,
         "tier": "would_like"
@@ -1916,7 +2726,8 @@
         "heard_before": null,
         "listeners": 1118616,
         "reasons": [
-          "similar to Alexisonfire (0.97), Thrice (0.48), Thursday (0.62)"
+          "similar to Alexisonfire (0.97), Thrice (0.48), Thursday (0.62)",
+          "you've never been to The Theatre at Great Canadian Toronto"
         ],
         "score": 0.3701,
         "tier": "would_like"
@@ -1943,7 +2754,8 @@
         "heard_before": null,
         "listeners": 589628,
         "reasons": [
-          "similar to Kris Allen (0.99), Kelly Clarkson (0.54), Colbie Caillat (0.39)"
+          "similar to Kris Allen (0.99), Kelly Clarkson (0.54), Colbie Caillat (0.39)",
+          "you've never been to The Danforth Music Hall"
         ],
         "score": 0.3665,
         "tier": "would_like"
@@ -2043,7 +2855,8 @@
         "listeners": 525929,
         "reasons": [
           "similar to Alexisonfire (0.79), Anberlin (0.87), Thrice (0.57)",
-          "you played them on 1 day back in 2006"
+          "you played them on 1 day back in 2006",
+          "you've never been to The Theatre at Great Canadian Toronto"
         ],
         "score": 0.3537,
         "tier": "would_like"
