@@ -433,18 +433,27 @@ def test_venue_novelty_reason_not_added_for_known_venue():
     h = make_history()
     lfm = FakeLastFM()
     taste = Taste(h, lfm, log=lambda *_: None)
+    # TM calls it "The Horseshoe Tavern"; setlist.fm logged it as "horseshoe tavern"
     familiar_ev = Event(
         id="efam", starts_at="2026-11-01T20:00:00",
-        venue=Venue("Horseshoe Tavern", "Toronto"),
+        venue=Venue("The Horseshoe Tavern", "Toronto"),
         lineup=["Tiny Newcomer"], region="Toronto",
     )
     picks = score_events(
         [familiar_ev], h, hist.loved(h), taste.affinity, lfm.artist_info,
         velocity=lambda k, n: None, regions={"Toronto": "all"},
-        attended_venues={"horseshoe tavern"},  # case-insensitive match
+        attended_venues={"horseshoe tavern"},  # setlist.fm short form matches TM "The …" form
     )
     nbt = [p for p in picks if p.tier == "next_big_thing" and p.artist == "Tiny Newcomer"]
     assert nbt and not any("never been to" in r for r in nbt[0].reasons)
+
+
+def test_venue_novelty_city_suffix_variant():
+    from nbt.scoring import _venue_attended
+    # "History Toronto" (TM) vs "history" (setlist.fm)
+    assert _venue_attended("History Toronto", {"history"})
+    assert _venue_attended("The Danforth Music Hall", {"danforth music hall"})
+    assert not _venue_attended("Massey Hall", {"roy thomson hall"})
 
 
 def test_attended_ledger_includes_listener_counts():

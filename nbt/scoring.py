@@ -37,6 +37,27 @@ def smallness(listeners: int, ceiling: int) -> float:
     return max(0.0, 1 - math.log(listeners / floor) / math.log(ceiling / floor))
 
 
+def _venue_attended(tm_name: str, attended: set[str]) -> bool:
+    """True if tm_name matches any attended venue name.
+
+    Sources use different conventions: Ticketmaster adds "The " prefixes and city
+    suffixes ("The Danforth Music Hall", "History Toronto") while setlist.fm uses
+    shorter names ("Danforth Music Hall", "History"). A match fires when either name
+    contains the other as a substring (after stripping a leading "The ").
+    """
+    tm = tm_name.lower().strip()
+    tm_core = tm.removeprefix("the ")
+    for v in attended:
+        if v in (tm, tm_core):
+            return True
+        # "history toronto" contains "history"; "the danforth music hall" → core contains "danforth music hall"
+        if tm_core.startswith(v) or tm_core.endswith(v):
+            return True
+        if v.startswith(tm_core) or v.endswith(tm_core):
+            return True
+    return False
+
+
 def score_events(
     events: list[Event],
     history: dict,
@@ -94,7 +115,7 @@ def score_events(
 
             new_venue = (
                 attended_venues is not None
-                and ev.venue.name.lower() not in attended_venues
+                and not _venue_attended(ev.venue.name, attended_venues)
             )
 
             is_small = listeners is None or listeners <= cfg.nbt_max_listeners
