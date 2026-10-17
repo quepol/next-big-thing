@@ -15,7 +15,7 @@
 }
 
 :root {
-  --bg: #ffffff;
+  --bg: #fafafa;            /* off-white page so white cards lift off it */
   --surface: #ffffff;
   --surface-2: #ffe9f4;      /* date tiles, score badge */
   --text: #000000;
