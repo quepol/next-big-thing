@@ -24,6 +24,7 @@
   --accent: #cc0077;        /* pink for small text: #FF1493 is only 3.6:1 on white */
   --accent-fill: #ff1493;   /* OpenPublic pink, for non-text marks (pips, edge, underline, focus) */
   --accent-soft: #ffe4f1;
+  --ticket-bg: #ffcce6;      /* a step deeper than the chips so Tickets stands out */
   --chip-bg: #fff4fa;
   --chip-text: #333333;
   --pip-off: #9c8592;
@@ -41,6 +42,7 @@
     --accent: #ff5cad;        /* lighter pink for text: #FF1493 vibrates on dark grey */
     --accent-fill: #ff1493;
     --accent-soft: #4a1030;
+    --ticket-bg: #4a1030;
     --chip-bg: #2e2e2e;
     --chip-text: #dcdcdc;
     --pip-off: #7a7a7a;
@@ -58,6 +60,7 @@
   --accent: #ff5cad;        /* lighter pink for text: #FF1493 vibrates on dark grey */
   --accent-fill: #ff1493;
   --accent-soft: #4a1030;
+  --ticket-bg: #4a1030;
   --chip-bg: #2e2e2e;
   --chip-text: #dcdcdc;
   --pip-off: #7a7a7a;
@@ -134,7 +137,7 @@ main { padding-top: 12px; padding-bottom: 48px; display: grid; gap: 10px; }
 .pips i { width: 7px; height: 7px; border-radius: 50%; box-shadow: inset 0 0 0 1.5px var(--pip-off); }
 .pips i.on { background: var(--accent-fill); box-shadow: none; }
 .strength .label { font-weight: 600; }
-.card.strong .strength .label { color: var(--accent); }
+.card.strong .strength .label { color: var(--text); }
 .strength .score {
   font-variant-numeric: tabular-nums; font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
   font-size: 11px; background: var(--surface-2); border-radius: 4px; padding: 1px 5px; color: var(--chip-text);
@@ -162,7 +165,9 @@ main { padding-top: 12px; padding-bottom: 48px; display: grid; gap: 10px; }
 .listen { display: inline-flex; gap: 10px; }
 .listen a, .tickets { color: var(--muted); text-decoration: none; display: inline-flex; align-items: center; gap: 4px; }
 .listen a:hover, .tickets:hover { color: var(--text); }
-.tickets { color: var(--accent); font-weight: 500; white-space: nowrap; }
+/* Tickets pops by shape (a soft pink pill) rather than pink text, to keep pink rare on the page. */
+.tickets { background: var(--ticket-bg); color: var(--text); font-weight: 600; white-space: nowrap; padding: 3px 10px; border-radius: 999px; }
+.tickets:hover { color: var(--text); box-shadow: inset 0 0 0 1px var(--accent-fill); }
 .listen svg, .vote svg { width: 15px; height: 15px; fill: currentColor; }
 .vote { margin-left: auto; display: inline-flex; gap: 6px; }
 .vote button {
