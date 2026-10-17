@@ -84,7 +84,7 @@ The **attended ledger** is included in `digest.json` and rendered on a dedicated
     - theme-aware SVG listen and vote icons
     - down-voted cards collapse, with an Undo
     - a sort control (Best match / Soonest / Venue / Artist)
-    - an Auto / Light / Dark theme toggle
+    - a theme switch in the header: a small segmented control with Light / Dark / System icons (the user liked setlist.fm's footer switch). It's an ARIA radiogroup, and the arrow keys move between options.
 
     Preferences are saved in `localStorage` under `nbt.sort` and `nbt.theme`; votes keep the same `nbt.votes` format.
   - Daily workflow (runs + deploys Pages)

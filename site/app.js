@@ -313,20 +313,34 @@ function renderAttended(list) {
   list.append(wrap);
 }
 
-// Theme: Auto (follow the system) → Light → Dark. Saved per browser.
-const THEMES = ["auto", "light", "dark"];
+// Theme: Light / Dark / System (auto). Saved per browser.
+const themeSwitch = document.getElementById("theme");
+const themeButtons = [...themeSwitch.querySelectorAll("button")];
 function applyTheme(t) {
-  if (t === "light" || t === "dark") document.documentElement.dataset.theme = t;
-  else delete document.documentElement.dataset.theme;
-  const btn = document.getElementById("theme");
-  btn.textContent = `Theme: ${{ auto: "Auto", light: "Light", dark: "Dark" }[t] || "Auto"}`;
-  btn.title = "Colour theme: click to switch between Auto, Light and Dark";
+  if (t !== "light" && t !== "dark") t = "auto";
+  if (t === "auto") delete document.documentElement.dataset.theme;
+  else document.documentElement.dataset.theme = t;
+  for (const b of themeButtons) {
+    const on = b.dataset.choice === t;
+    b.setAttribute("aria-checked", on);
+    b.tabIndex = on ? 0 : -1; // radiogroup: one tab stop, arrows move between options
+  }
 }
-document.getElementById("theme").addEventListener("click", () => {
-  const cur = store.get(THEME_KEY, "auto");
-  const next = THEMES[(THEMES.indexOf(cur) + 1) % THEMES.length];
-  store.set(THEME_KEY, next);
-  applyTheme(next);
+function chooseTheme(t, focus) {
+  store.set(THEME_KEY, t);
+  applyTheme(t);
+  if (focus) themeButtons.find((b) => b.dataset.choice === t)?.focus();
+}
+themeSwitch.addEventListener("click", (e) => {
+  const b = e.target.closest("button");
+  if (b) chooseTheme(b.dataset.choice);
+});
+themeSwitch.addEventListener("keydown", (e) => {
+  const step = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 }[e.key];
+  if (!step) return;
+  e.preventDefault();
+  const i = themeButtons.findIndex((b) => b.getAttribute("aria-checked") === "true");
+  chooseTheme(themeButtons[(i + step + themeButtons.length) % themeButtons.length].dataset.choice, true);
 });
 applyTheme(store.get(THEME_KEY, "auto"));
 
