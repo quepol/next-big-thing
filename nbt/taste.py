@@ -71,8 +71,11 @@ class Taste:
             k: math.log1p(v["days"]) / math.log1p(max_days) * _recency(k, v)
             for k, v in self.known.items()
         }
-        # Select top seeds by weighted score, not raw days.
-        ranked = sorted(self.known.items(), key=lambda kv: -self.weights[kv[0]])
+        # Select top seeds: loves.txt artists first (by weight), then non-loves (by weight).
+        # This ensures your intentional loves dominate the top influential slots regardless
+        # of how recently a non-loves artist happened to be in rotation.
+        ranked = sorted(self.known.items(),
+                        key=lambda kv: (0 if kv[0] in loves else 1, -self.weights[kv[0]]))
         top = ranked[: CONFIG.taste_seeds]
         self.seeds = [k for k, _ in top]
 
