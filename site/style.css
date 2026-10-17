@@ -25,7 +25,7 @@
   --ticket-text: #cc0077;
   --accent-fill: #ff1493;   /* OpenPublic pink, for non-text marks (pips, edge, underline, focus) */
   --accent-soft: #ffdcee;
-  --chip-bg: #ffe9f4;
+  --chip-bg: #f0f0f0;       /* fact chips stay neutral grey */
   --chip-text: #333333;
   --pip-off: #9c8592;
   --focus: #ff1493;
