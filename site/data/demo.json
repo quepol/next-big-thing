@@ -1,0 +1,135 @@
+{
+  "generated_at": "2026-10-16T12:00:00+00:00",
+  "ledger": [
+    {
+      "artist": "Tiny Newcomer",
+      "first_flagged": "2026-10-16",
+      "listeners_at_flag": 2400,
+      "listeners_now": 2400
+    }
+  ],
+  "picks": {
+    "know": [
+      {
+        "artist": "Big Thief",
+        "event": {
+          "id": "demo1",
+          "lineup": [
+            "Big Thief",
+            "Tiny Newcomer"
+          ],
+          "region": "Toronto",
+          "source": "",
+          "starts_at": "2026-11-07T20:00:00",
+          "url": "",
+          "venue": {
+            "city": "Toronto, ON",
+            "lat": null,
+            "lon": null,
+            "name": "Demo Hall"
+          }
+        },
+        "heard_before": null,
+        "listeners": null,
+        "reasons": [
+          "played on 10 days since 2010 (10 plays)",
+          "one of your most-played artists"
+        ],
+        "score": 2.3979,
+        "tier": "know"
+      }
+    ],
+    "next_big_thing": [
+      {
+        "artist": "Tiny Newcomer",
+        "event": {
+          "id": "demo1",
+          "lineup": [
+            "Big Thief",
+            "Tiny Newcomer"
+          ],
+          "region": "Toronto",
+          "source": "",
+          "starts_at": "2026-11-07T20:00:00",
+          "url": "",
+          "venue": {
+            "city": "Toronto, ON",
+            "lat": null,
+            "lon": null,
+            "name": "Demo Hall"
+          }
+        },
+        "heard_before": null,
+        "listeners": 2400,
+        "reasons": [
+          "similar to Big Thief (0.90)",
+          "sharing the bill with Big Thief (10 days played)",
+          "only 2,400 listeners on Last.fm"
+        ],
+        "score": 0.622,
+        "tier": "next_big_thing"
+      },
+      {
+        "artist": "Tag Only Kid",
+        "event": {
+          "id": "demo3",
+          "lineup": [
+            "Tag Only Kid"
+          ],
+          "region": "Toronto",
+          "source": "",
+          "starts_at": "2026-10-30T20:00:00",
+          "url": "",
+          "venue": {
+            "city": "Toronto, ON",
+            "lat": null,
+            "lon": null,
+            "name": "Demo Basement"
+          }
+        },
+        "heard_before": null,
+        "listeners": 150,
+        "reasons": [
+          "tags match your taste: indie folk",
+          "only 150 listeners on Last.fm"
+        ],
+        "score": 0.4563,
+        "tier": "next_big_thing"
+      }
+    ],
+    "would_like": [
+      {
+        "artist": "Mid Band",
+        "event": {
+          "id": "demo2",
+          "lineup": [
+            "Mid Band"
+          ],
+          "region": "Toronto",
+          "source": "",
+          "starts_at": "2026-11-12T20:00:00",
+          "url": "",
+          "venue": {
+            "city": "Toronto, ON",
+            "lat": null,
+            "lon": null,
+            "name": "Demo Club"
+          }
+        },
+        "heard_before": null,
+        "listeners": 300000,
+        "reasons": [
+          "similar to Big Thief (0.70)"
+        ],
+        "score": 0.5034,
+        "tier": "would_like"
+      }
+    ]
+  },
+  "stats": {
+    "events": 3,
+    "known_artists": 2,
+    "snapshot_days": 0
+  },
+  "user": "demo"
+}

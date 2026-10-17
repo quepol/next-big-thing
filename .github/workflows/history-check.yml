@@ -1,0 +1,34 @@
+name: History check
+
+# Backfills Last.fm history and prints a taste-model summary to the log.
+# Commits nothing. The push trigger exists because workflow_dispatch only
+# works once a workflow is on the default branch.
+on:
+  push:
+    branches: [claude/music-venue-alerts-ayb8hs]
+    paths: ["nbt/**", "data/exclude.txt", ".github/workflows/history-check.yml"]
+  workflow_dispatch:
+
+jobs:
+  summary:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      # Keep history + API cache between runs so re-runs are incremental.
+      - uses: actions/cache@v4
+        with:
+          path: |
+            data/history.json
+            data/cache
+          # v3: name normalization changed (non-Latin and symbol-only names were dropped), so rebuild.
+          key: history-check-v3-${{ github.run_id }}
+          restore-keys: history-check-v3-
+      - name: Summary
+        env:
+          LASTFM_API_KEY: ${{ secrets.LASTFM_API_KEY }}
+        run: python -u -m nbt summary

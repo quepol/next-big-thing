@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Next Big Thing</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Next Big Thing</h1>
+    <p id="meta" class="muted"></p>
+    <nav id="tabs" role="tablist">
+      <button role="tab" data-tier="next_big_thing">Next big thing</button>
+      <button role="tab" data-tier="would_like">You'd probably like</button>
+      <button role="tab" data-tier="know">Bands you know</button>
+      <button role="tab" data-tier="ledger">Ledger</button>
+    </nav>
+  </header>
+  <div id="banner" hidden></div>
+  <main id="list" aria-live="polite"></main>
+  <template id="card">
+    <article class="card">
+      <div class="when"><span class="date"></span><span class="venue"></span></div>
+      <h2 class="artist"></h2>
+      <ul class="reasons"></ul>
+      <div class="foot">
+        <a class="tickets" target="_blank" rel="noopener">Bandsintown ↗</a>
+        <span class="vote">
+          <button data-v="up" aria-label="More like this">👍</button>
+          <button data-v="down" aria-label="Not for me">👎</button>
+        </span>
+      </div>
+    </article>
+  </template>
+  <script src="app.js"></script>
+</body>
+</html>
