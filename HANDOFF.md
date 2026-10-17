@@ -88,7 +88,7 @@ The **attended ledger** is included in `digest.json` and rendered on a dedicated
     - **the palette and fonts match OpenPublic.cc** (the user's other site, repo quepol/OpenPublic), set as tokens at the top of `site/style.css`:
       - Pink `#FF1493` is `--accent-fill`, used for non-text marks: pips, the strong edge, the tab underline and focus rings.
       - In light mode, small pink text uses `--accent: #cc0077`, because `#FF1493` is only 3.6:1 on white, which fails AA. Keep that split.
-      - OpenPublic has no dark mode, so dark here follows its black footer.
+      - OpenPublic has no dark mode, so dark here follows its black footer: a black page with lifted grey cards (`#212121`, tiles and chips `#2e2e2e`), off-white text (`#ededed`, not pure white) and a lighter pink for text (`#ff5cad`). The user found pure white on near-black cards hard on the eyes.
       - Empty pips are rings, so filled vs empty differs by shape, not just colour.
       - Body text is Inter (Google Fonts).
       - The title is Momo Trust Display, self-hosted in `site/fonts/` (Fontsource 5.3.0, OFL licence alongside). It isn't on Google Fonts and only has weight 400.

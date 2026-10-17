@@ -1,6 +1,6 @@
 /* Theme tokens, matched to OpenPublic.cc: pink #FF1493 on black/white, pale-pink
    surfaces (#fff4fa), grey text (#666). OpenPublic has no dark mode; dark here follows
-   its black footer (white and 70%-white text, pink accents).
+   its black footer, with grey cards, off-white text and a lighter text pink for readability.
    Light is the default; dark applies via the system setting unless the user forced
    light, or via an explicit data-theme="dark" from the switch. */
 
@@ -33,34 +33,34 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --bg: #000000;
-    --surface: #111111;
-    --surface-2: #1c1c1c;
-    --text: #ffffff;
-    --muted: #b3b3b3;
-    --line: #262626;
-    --accent: #ff1493;
+    --surface: #212121;       /* cards lifted well off the black page */
+    --surface-2: #2e2e2e;
+    --text: #ededed;          /* off-white: pure white on black halates */
+    --muted: #a8a8a8;
+    --line: #3a3a3a;
+    --accent: #ff5cad;        /* lighter pink for text: #FF1493 vibrates on dark grey */
     --accent-fill: #ff1493;
-    --accent-soft: #3a0a24;
-    --chip-bg: #1c1c1c;
-    --chip-text: #e6e6e6;
-    --pip-off: #6b6b6b;
+    --accent-soft: #4a1030;
+    --chip-bg: #2e2e2e;
+    --chip-text: #dcdcdc;
+    --pip-off: #7a7a7a;
     --focus: #ff1493;
     color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
   --bg: #000000;
-  --surface: #111111;
-  --surface-2: #1c1c1c;
-  --text: #ffffff;
-  --muted: #b3b3b3;
-  --line: #262626;
-  --accent: #ff1493;
+  --surface: #212121;       /* cards lifted well off the black page */
+  --surface-2: #2e2e2e;
+  --text: #ededed;          /* off-white: pure white on black halates */
+  --muted: #a8a8a8;
+  --line: #3a3a3a;
+  --accent: #ff5cad;        /* lighter pink for text: #FF1493 vibrates on dark grey */
   --accent-fill: #ff1493;
-  --accent-soft: #3a0a24;
-  --chip-bg: #1c1c1c;
-  --chip-text: #e6e6e6;
-  --pip-off: #6b6b6b;
+  --accent-soft: #4a1030;
+  --chip-bg: #2e2e2e;
+  --chip-text: #dcdcdc;
+  --pip-off: #7a7a7a;
   --focus: #ff1493;
   color-scheme: dark;
 }
