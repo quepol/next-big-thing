@@ -19,7 +19,7 @@ A daily digest of upcoming shows, scored against their listening history, in thr
 
 The motivation for the next-big-thing tier is the "Northampton feeling": catching a future-big artist in an intimate room before they blow up (think Radiohead or Jeff Buckley at a 700-cap college-town venue in the late 90s). **Venue size matters here** — a 50k-listener artist headlining the Horseshoe Tavern (400 cap) is a better pick than the same artist opening at Massey Hall (2,765 cap). This is implemented as a soft venue-size bonus (up to +0.15) in the NBT score, not a hard cap.
 
-**Open question on the NBT listener threshold:** 50K may be too low. Radiohead in 1995 at a 700-cap room would have been well over 50K listeners if Last.fm existed. The venue bonus already rewards intimate rooms; the listener cap is a separate filter that might be cutting off exactly the right artists. 200K is a reasonable next step to try — the `smallness` score already falls toward 0 as listeners approach the ceiling, so raising the cap mainly expands the eligible pool rather than flooding the tier.
+**NBT listener threshold is 100K** (raised from 50K on 2026-10-17 after reviewing the ledger). Radiohead in 1995 at a 700-cap room would have been well over 50K listeners if Last.fm existed. The `smallness` score falls to 0 at the ceiling, so a 99K-listener artist still ranks below a 5K one — the threshold determines eligibility, not ranking. 200K remains an option if the tier still feels thin after a few weeks.
 
 For the **know** tier, venue size doesn't cap eligibility — if Iron & Wine is at Massey Hall you want to know. The city-wide feed surfaces all shows regardless of venue.
 
@@ -80,7 +80,7 @@ The **attended ledger** is included in `digest.json` and rendered on a dedicated
   - Ticketmaster city feed with venue-capacity bonus
   - setlist.fm integration: attended seeds, venue novelty, attended ledger
 - **Not working / backlog:**
-  - NBT listener threshold may be too low at 50K — consider raising to 200K
+  - NBT listener threshold raised to 100K; revisit if tier still feels thin
   - `would_like` tier tuning (soft upper listener cap ~1M)
   - 👎 → `data/exclude.txt` (votes currently browser-only)
   - Velocity signal needs 4 weeks of listener snapshots before it's trusted
