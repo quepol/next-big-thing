@@ -22,9 +22,9 @@
   --muted: #666666;
   --line: #ebebeb;
   --accent: #cc0077;        /* pink for small text: #FF1493 is only 3.6:1 on white */
+  --ticket-text: #cc0077;
   --accent-fill: #ff1493;   /* OpenPublic pink, for non-text marks (pips, edge, underline, focus) */
   --accent-soft: #ffdcee;
-  --ticket-bg: #ffc4e2;      /* a step deeper than the chips so Tickets stands out */
   --chip-bg: #ffe9f4;
   --chip-text: #333333;
   --pip-off: #9c8592;
@@ -40,9 +40,9 @@
     --muted: #b0b0b0;
     --line: #3a3a3a;
     --accent: #ff7ab8;        /* lighter pink for text: #FF1493 vibrates on dark grey */
+    --ticket-text: #ff5cad;   /* the stronger pink the user preferred for Tickets */
     --accent-fill: #ff1493;
     --accent-soft: #4a1030;
-    --ticket-bg: #4a1030;
     --chip-bg: #3a3a3a;
     --chip-text: #dcdcdc;
     --pip-off: #7a7a7a;
@@ -58,9 +58,9 @@
   --muted: #b0b0b0;
   --line: #3a3a3a;
   --accent: #ff7ab8;        /* lighter pink for text: #FF1493 vibrates on dark grey */
+  --ticket-text: #ff5cad;   /* the stronger pink the user preferred for Tickets */
   --accent-fill: #ff1493;
   --accent-soft: #4a1030;
-  --ticket-bg: #4a1030;
   --chip-bg: #3a3a3a;
   --chip-text: #dcdcdc;
   --pip-off: #7a7a7a;
@@ -165,9 +165,7 @@ main { padding-top: 12px; padding-bottom: 48px; display: grid; gap: 10px; }
 .listen { display: inline-flex; gap: 10px; }
 .listen a, .tickets { color: var(--muted); text-decoration: none; display: inline-flex; align-items: center; gap: 4px; }
 .listen a:hover, .tickets:hover { color: var(--text); }
-/* Tickets pops by shape (a soft pink pill) rather than pink text, to keep pink rare on the page. */
-.tickets { background: var(--ticket-bg); color: var(--text); font-weight: 600; white-space: nowrap; padding: 3px 10px; border-radius: 999px; }
-.tickets:hover { color: var(--text); box-shadow: inset 0 0 0 1px var(--accent-fill); }
+.tickets { color: var(--ticket-text); font-weight: 500; white-space: nowrap; }
 .listen svg, .vote svg { width: 15px; height: 15px; fill: currentColor; }
 .vote { margin-left: auto; display: inline-flex; gap: 6px; }
 .vote button {
