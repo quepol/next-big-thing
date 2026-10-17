@@ -5,12 +5,12 @@
 # A line starting with "+" marks an artist as confirmed yours: never excluded, never re-flagged.
 
 # Kids (flagged by Last.fm tags in history check)
-Phil Harris, Bruce Reitherman   # The Jungle Book
-Auli'i Cravalho			# Moana
-Dwayne Johnson			# Moana
-Lea Salonga, Brad Kane		# Aladdin
-Oliver Wallace			# Disney scores
-Alan Menken			# Disney scores
+Phil Harris, Bruce Reitherman	# The Jungle Book
+Auli'i Cravalho					# Moana
+Dwayne Johnson					# Moana
+Lea Salonga, Brad Kane			# Aladdin
+Oliver Wallace					# Disney scores
+Alan Menken						# Disney scores
 Elizabeth Mitchell (Children's)
 Elizabeth Mitchell
 Tigger
@@ -37,12 +37,12 @@ Jaze Cinema
 jacksepticeye
 DHeusta
 CG5
-Heaven Pierce Her		# ULTRAKILL
-Powerglove			# metal covers of game music (not orchestral)
+Heaven Pierce Her				# ULTRAKILL
+Powerglove						# metal covers of game music (not orchestral)
 
 # Confirmed as the user's own: never excluded, never re-flagged
 + Selena Gomez
-+ Ludvig Forssell		# Death Stranding: orchestral, the user's
-+ Jamie Christopherson		# Metal Gear Rising: probably the user's
-+ Hunter Parrish		# Godspell; sleep music too, but the user loves musicals
-+ Julie Andrews			# musicals are fair game
++ Ludvig Forssell				# Death Stranding: orchestral, the user's
++ Jamie Christopherson			# Metal Gear Rising: probably the user's
++ Hunter Parrish				# Godspell; sleep music too, but the user loves musicals
++ Julie Andrews					# musicals are fair game
