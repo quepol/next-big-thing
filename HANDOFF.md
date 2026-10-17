@@ -7,6 +7,7 @@ Context for a new Claude Code session that picks this project up. Read this and 
 - They're the product owner and guide; Claude builds. They pick the stack only when they want to and expect a recommendation, not a list of options.
 - Their stated preferences: no sugar-coating, push back on their thinking, connect dots they might have missed, and act like a sharp chief of staff.
 - Last.fm user `quepol`, with about 20 years of scrobbles. They live in **Toronto** and will travel to **Hamilton or Buffalo** only for bands they love.
+- They love musicals. Cast recordings and musical theatre are part of their taste, not kids' noise. Touring musicals via Ticketmaster's "Arts & Theatre" classification is a possible future tier (Mirvish and others).
 
 ## What we're building
 
@@ -14,18 +15,22 @@ A daily digest of upcoming shows, scored against their listening history, in thr
 
 1. **Know**: an artist they've played on **3 or more distinct days, ever**. There's no recency weighting; they asked for that explicitly.
 2. **Would like**: an unknown artist that's close to their taste.
-3. **Next big thing**: a small artist (≤50k Last.fm listeners) close to their taste. **This tier is the MVP priority, and the motivation is bragging rights** ("I saw them in a 200-capacity room before they blew up"). They're explicitly interested in *tiny venues they don't usually go to*, so we use a city-wide feed rather than a list of venues.
+3. **Next big thing**: a small artist (≤50k Last.fm listeners) close to their taste. **This tier is the MVP priority.**
+
+The motivation for the next-big-thing tier is the "Northampton feeling": catching a future-big artist in an intimate room before they blow up (think Radiohead or Jeff Buckley at a 200-cap college-town venue in the late 90s). **Venue size matters here** — a 50k-listener artist headlining the Horseshoe Tavern (400 cap) is a better pick than the same artist opening at Massey Hall (2,765 cap). This is implemented as a soft venue-size bonus (up to +0.15) in the NBT score, not a hard cap.
+
+For the **know** tier, venue size doesn't cap eligibility — if Iron & Wine is at Massey Hall you want to know. The city-wide feed surfaces all shows regardless of venue.
 
 Other decisions they've made:
 - The output is a digest page; email is optional later. "This show exists" is enough, so on-sale timing isn't needed.
-- 👍/👎 feedback: yes, as long as it's low-friction. Votes are only stored in the browser for now.
+- 👍/👎 feedback: yes, as long as it's low-friction. Votes are only stored in the browser for now; syncing them back to the pipeline is backlog.
 - Every pick explains itself, especially with "similar to X".
 - It's for them only. Scraping is acceptable.
 - Hosting: GitHub Pages, fed by a daily GitHub Actions job. The accumulating data (listener snapshots, event snapshots, ledger) is a deliberate byproduct, kept for backtesting.
 
 ## Design calls Claude made (open to challenge)
 
-- **Next-big-thing score:** affinity × (0.6 + 0.4 × smallness). A shared bill with a known artist adds +0.15. Listener growth adds up to +0.3, but only once there are 4 or more weeks of snapshots, because Last.fm has no listener history and we have to build it.
+- **Next-big-thing score:** `affinity × (0.6 + 0.4 × smallness) + bill_bonus + venue_bonus`. A shared bill with a known artist adds +0.15. Listener growth adds up to +0.3, but only once there are 4 or more weeks of snapshots. Venue bonus is `0.15 × (1 − capacity / 1500)`, capped at 0 for venues ≥1,500 cap or unknown.
 - **Affinity has three sources:**
   - forward: the candidate is in one of the user's seed artists' similar-artist lists
   - reverse: one of the user's known artists is in the candidate's similar-artist list
@@ -34,60 +39,69 @@ Other decisions they've made:
   Seed weight is log(distinct days).
 - **"Heard once" artists** (1–2 days played) count as unknown for next-big-thing, and the pick says "you played them on 1 day back in 2019". The user confirmed this.
 - **Yo-Yo Ma is both kids' sleep music and the user's own taste**, so keep him as a seed. Distinct days already discounts the 2,086 plays to 114 days.
-- **"You'd probably like" includes artists the user has heard of but doesn't play** (it's for broadening their listening). So there's no listener cap on that tier; only Next Big Thing is capped at 50k.
-- **Kids share the Last.fm account.** This is the main reason for "never show me this band". Kids replay favourites on many distinct days, so without exclusions they'd dominate the seeds and the tag profile. `data/exclude.txt` removes artists *everywhere* (known, loved, seeds, tag profile, picks). `summary` auto-flags children's/kids/Disney-tagged artists among the top seeds. Teen pop won't carry those tags, so it needs 👎. **Backlog:** make 👎 write to `data/exclude.txt`; votes currently live only in the browser. The user hasn't said whether family shows are worth a separate tier; they're excluded for now.
-- **The bragging-rights ledger** (`data/ledger.json`) records each next-big-thing artist's listener count on the day it was first flagged. Over time it shows "flagged at 3.1k, now at 410k", and it's the label set for backtesting.
+- **"You'd probably like" includes artists the user has heard of but doesn't play** (it's for broadening their listening). So there's no listener cap on that tier; only Next Big Thing is capped at 50k. **The would_like tier needs tuning** — well-known artists (Olivia Rodrigo, Collective Soul) currently appear because the user doesn't scrobble them but they score on affinity. For now, 👎 is the stopgap. A soft upper cap (~1M listeners) is the right permanent fix.
+- **Kids share the Last.fm account.** `data/exclude.txt` removes artists *everywhere*. `summary` auto-flags children's/kids/Disney-tagged artists among the top seeds. **Backlog:** make 👎 write to `data/exclude.txt`.
+- **The bragging-rights ledger** (`data/ledger.json`) records each next-big-thing artist's listener count on the day it was first flagged.
+
+## Event source: Ticketmaster only
+
+Bandsintown's city feed is **permanently blocked by Cloudflare** from any server or CI IP. All request approaches (plain curl, mobile UA, JSON accept header) return 403. The Bandsintown REST API (`rest.bandsintown.com`) requires a `BANDSINTOWN_APP_ID` that is no longer freely issued.
+
+**Ticketmaster Discovery API** (`app.ticketmaster.com/discovery/v2/events`) is the city feed. It has a free key (`TICKETMASTER_API_KEY` secret), supports lat/long radius search with `classificationName=music`, and includes TicketWeb (used by most small Toronto clubs). Coverage check result: 557 events in the Toronto region for the next 90 days, ~28% with opener data in `_embedded.attractions`, and all four small-venue spot-checks (Lee's Palace, Horseshoe, Baby G, Monarch Tavern) were present with correct lineups.
+
+Gaps: DICE, Eventbrite, and venues' own box offices are not covered. The Baby G had only 2 events (likely sells through its own site). These are acceptable for now.
+
+The `nbt/sources/ticketmaster.py` module includes a 50-venue capacity lookup table (keyed by TM venue ID) used to compute `venue_bonus`.
 
 ## Current state
 
-- Branch `claude/music-venue-alerts-ayb8hs`, pushed. **It hasn't been merged to `main`, and there's no PR.** Don't open one unless the user asks.
-- All 11 tests pass (`python -m pytest -q`), and the Tests workflow is green on the branch.
+- **`main` is live.** Merged and deployed 2026-10-17. The daily workflow runs at 6am Toronto time.
+- All 26 tests pass (`python -m pytest -q`).
 - Working:
   - Last.fm client with caching and rate limiting
   - Resumable history backfill
   - Taste model, scoring, ledger, snapshots
-  - Static site with demo data
-  - Daily workflow
-  - `python -m nbt summary` (the taste-model sanity check)
-- **Not working:** `nbt/sources/bandsintown.py: city_events()` raises `NotImplementedError`. The next-big-thing tier can't produce picks without it. The artist-first path, using the Bandsintown REST API, needs a `BANDSINTOWN_APP_ID`. We don't have one, and it isn't clear whether Bandsintown still issues them freely.
+  - Static site with real digest data
+  - Daily workflow (runs + deploys Pages)
+  - `python -m nbt summary` (taste-model sanity check)
+  - Ticketmaster city feed with venue-capacity bonus
+- **Not working / backlog:**
+  - `would_like` tier tuning (soft upper listener cap ~1M)
+  - 👎 → `data/exclude.txt` (votes currently browser-only)
+  - setlist.fm integration (next priority — see step 5 below)
+  - Velocity signal needs 4 weeks of listener snapshots before it's trusted
 
-## Environment gotchas
+## Environment
 
-- **Repo `quepol/next-big-thing` is public.** That's acceptable: their Last.fm profile is public anyway. But anything printed to Actions logs or committed is public too.
-- The `LASTFM_API_KEY` secret is **only available in GitHub Actions.** A cloud session needs it set as an environment variable to run against Last.fm locally.
-- `workflow_dispatch` only works for workflows that exist on `main`. That's why `history-check.yml` also runs on pushes to this branch that touch `nbt/**` or the workflow file. The Daily digest workflow can't run until the branch is merged.
-- The previous session's environment **blocked** `www.bandsintown.com`, `rest.bandsintown.com` and `ws.audioscrobbler.com`. The new session should have them allowed; check with `curl` before assuming.
-- GitHub Pages is already enabled on the repo, set to branch deploy (`pages-build-deployment`). `daily.yml` deploys with Actions, so Settings → Pages → Source must be switched to "GitHub Actions" before it works.
+- `LASTFM_API_KEY` — GitHub secret + needed locally
+- `TICKETMASTER_API_KEY` — GitHub secret + needed locally
+- `SETLISTFM_API_KEY` — GitHub secret (set), **not yet used in code**
+- All three are in `.env` locally (not committed; in `.gitignore`)
+- `data/history.json` is committed; `data/cache/` is CI-cached, not committed
 
 ## Next steps, in order
 
-1. **Coverage check: compare two sources.** This decides the main event source.
-   - **Ticketmaster Discovery API** (`app.ticketmaster.com/discovery/v2/events`). It has a free key (needs a `TICKETMASTER_API_KEY` secret and the host allowed in the network settings) and supports search by lat/long radius and `classificationName=music`. It's documented and stable, so there's no scraping and no risk of IP blocks. It should include **TicketWeb**, which many small Toronto clubs use. Weaknesses: it misses DICE, Eventbrite and venues' own box offices, and openers appear in `_embedded.attractions` only inconsistently.
-   - **The Bandsintown Toronto city feed** (scraped).
-
-   The likely answer is both: Ticketmaster for breadth and stability, Bandsintown for gaps and openers.
-   - Pull the Bandsintown Toronto city feed (website or app JSON) for the next 60 days.
-   - Count how many events list more than one artist. Openers matter most for the next-big-thing tier.
-   - Compare a few small venues' own calendars against it (e.g. the Horseshoe, Lee's Palace, the Baby G, the Monarch Tavern) and estimate what fraction of shows Bandsintown misses.
-   - Report the results to the user before building further.
-2. **Implement `city_events()`.**
-   - It must return `Event`s with `lineup`, `venue.lat`/`lon` and a stable `id`.
-   - Add a fixture-based parser test using a saved page sample. **Don't write a parser without seeing real responses.**
-   - Watch whether Bandsintown blocks GitHub Actions' IP ranges. If it does, the fallback is running the scrape from the user's own machine or a small VPS.
-3. If coverage is poor, add scrapers for individual venue sites behind the same `Event` interface.
-4. **Merge only once the city feed produces real shows.** The user agreed to this; they don't want a draft PR before then. Merging earlier would switch on the daily schedule with zero events. It would commit history every day, fail the Pages deploy step (Pages is still set to deploy from a branch), and start the 4-week listener-growth clock with no lineups to snapshot. At merge time:
-   1. Open the PR. Ask the user first; they decide.
-   2. Merge it.
-   3. Switch Settings → Pages → Source to "GitHub Actions".
-   4. Run Daily digest once by hand.
-   5. Check the page.
-5. **setlist.fm (user `quepol`).** This comes after the city feed. It needs the user's free API key (repo secret `SETLISTFM_API_KEY`) and `api.setlist.fm` allowed in the network settings. Uses:
+1. ~~**Coverage check.**~~ Done. Ticketmaster wins; Bandsintown is blocked.
+2. ~~**Implement `city_events()`.**~~ Done. Ticketmaster, 557 events, 26 tests passing.
+3. ~~**Individual venue scrapers.**~~ Skipped; TM coverage is sufficient.
+4. ~~**Merge.**~~ Done 2026-10-17. Pages live.
+5. **setlist.fm (user `quepol`).** This is the next priority. Key `SETLISTFM_API_KEY` is already a secret; `api.setlist.fm` is already in the network allowlist. Uses:
    - Attended artists get a boost as seeds and count as "loved". This signal can't be polluted by the kids' listening.
-   - A **retroactive bragging-rights ledger**: compare attended shows with current listener counts. It doubles as a backtest of the next-big-thing score.
+   - A **retroactive bragging-rights ledger**: compare attended shows with current listener counts. Doubles as a backtest of the next-big-thing score.
    - **Venue novelty**: flag or boost venues the user has never been to.
 
-   The user's history there is thinner than their scrobbles, and openers often aren't logged.
-6. Later: sync 👍/👎 back to the pipeline, the email digest, curator signals (KEXP, Tiny Desk, labels they trust), and the velocity signal once there are 4 or more weeks of snapshots.
+   The user's setlist.fm history is thinner than their scrobbles, and openers often aren't logged. Don't write a parser without fetching real responses first.
+6. **Later:** sync 👍/👎 back to the pipeline, the email digest, curator signals (KEXP, Tiny Desk, labels they trust), `would_like` upper listener cap, and velocity signal once there are 4+ weeks of snapshots.
+
+## First live Actions run (2026-10-17)
+
+GitHub Actions run `38992090253`. Both jobs green; Pages deployed in 24m 19s (first run — history backfill warm from committed `data/history.json`).
+
+- 557 events in range (Toronto, 90-day window)
+- digest: next_big_thing=21, would_like=22, know=18
+- Top NBT picks: Dominique Way (11k listeners, Drake Hotel 250 cap), Bradley Hale (380 listeners, Rivoli 200 cap), Twin Fin (17k listeners, Monarch Tavern 250 cap)
+- Venue bonus working: small-room picks rank above same artist at large venues
+- Node.js 20 deprecation warnings from Actions — harmless, but worth updating action versions eventually
 
 ## History check results (run #1, 2026-10-16)
 
@@ -146,6 +160,5 @@ https://github.com/quepol/next-big-thing/actions/runs/38859298640
 - **The kids' leakage is gone:** no more Sandra Boynton, Laurie Berkner, Ralph's World or Charlie Hope.
 - The small-artist list is now mostly real side projects of loved bands: Deb Talan (The Weepies), Ruth Moody (The Wailin' Jennys), Will Sheff (Okkervil River), Tom Chaplin (Keane), Owl John (Frightened Rabbit). It also has classical neighbours of Yo-Yo Ma. The remaining junk comes from junk seeds (`Us`, `Various Musique`, a Dreamgirls cast string) and doesn't matter, because real candidates come from lineups.
 - Possible kids or musical-theatre seeds still worth asking about: **Hunter Parrish** (267 days; an actor whose cast recordings include Godspell) and **Julie Andrews** (which brings in Peggy Wood from *The Sound of Music*).
-- The user's answers: **Hunter Parrish and Julie Andrews are kept** (`+` lines). **The user loves musicals**, so cast recordings and musical theatre are part of their taste, not kids' noise. A possible later idea: touring musicals in Toronto (Mirvish and others) via Ticketmaster's "Arts & Theatre" classification, as a separate tier.
-- All three API keys are now GitHub secrets: `LASTFM_API_KEY`, `TICKETMASTER_API_KEY`, `SETLISTFM_API_KEY`. GitHub secrets can't be read back, so a cloud session needs the same values set as environment variables in its environment settings.
-
+- The user's answers: **Hunter Parrish and Julie Andrews are kept** (`+` lines). **The user loves musicals**, so cast recordings and musical theatre are part of their taste, not kids' noise.
+- All three API keys are now GitHub secrets: `LASTFM_API_KEY`, `TICKETMASTER_API_KEY`, `SETLISTFM_API_KEY`. GitHub secrets can't be read back, so a cloud session needs the same values set as environment variables.
