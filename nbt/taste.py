@@ -47,9 +47,7 @@ class Taste:
         self.lastfm = lastfm
         self.excluded = exclusions.load() if excluded is None else excluded
         self.known = known(history, excluded=self.excluded)
-        ranked = sorted(self.known.items(), key=lambda kv: (-kv[1]["days"], -kv[1]["plays"]))
-        top = ranked[: CONFIG.taste_seeds]
-        max_days = top[0][1]["days"] if top else 1
+        max_days = max((v["days"] for v in self.known.values()), default=1)
         loves = loves if loves is not None else exclusions.load_loves()
         today = _today or date.today()
         cutoff_year = today.year - RECENCY_YEARS
@@ -73,6 +71,9 @@ class Taste:
             k: math.log1p(v["days"]) / math.log1p(max_days) * _recency(k, v)
             for k, v in self.known.items()
         }
+        # Select top seeds by weighted score, not raw days.
+        ranked = sorted(self.known.items(), key=lambda kv: -self.weights[kv[0]])
+        top = ranked[: CONFIG.taste_seeds]
         self.seeds = [k for k, _ in top]
 
         # Inject live-attended artists as additional seeds. These are uncontaminated by
