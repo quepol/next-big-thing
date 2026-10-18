@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Climb</title>
+  <script>
+    // Same saved theme as the main page, applied before first paint.
+    try { const t = JSON.parse(localStorage.getItem("nbt.theme")); if (t === "light" || t === "dark") document.documentElement.dataset.theme = t; } catch {}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="research explore">
+  <header>
+    <p class="crumb"><a href="./">← Picks</a> · <a href="venues.html">Venue overlap</a></p>
+    <h1>The Climb</h1>
+    <p class="muted">Bands from your San Francisco rooms, climbing Toronto's venue ladder. Each dot is a show; higher means a bigger room.</p>
+  </header>
+  <main class="report">
+    <section class="rsec climb">
+      <div class="controls">
+        <div class="seg" id="mode" role="radiogroup" aria-label="Which bands">
+          <button type="button" role="radio" data-v="up"><span class="long">Moving up</span><span class="short">Moving up</span></button>
+          <button type="button" role="radio" data-v="small"><span class="long">Under 250k</span><span class="short">&lt;250k</span></button>
+          <button type="button" role="radio" data-v="seen"><span class="long">You've seen</span><span class="short">Seen</span></button>
+          <button type="button" role="radio" data-v="all"><span class="long">Everyone</span><span class="short">All</span></button>
+        </div>
+        <label class="sort">From
+          <select id="sfroom"><option value="">all SF rooms</option></select>
+        </label>
+        <label class="sort" id="alignwrap">Time
+          <select id="align">
+            <option value="calendar">by date</option>
+            <option value="aligned">from first show</option>
+          </select>
+        </label>
+      </div>
+      <p class="muted small" id="climbnote"></p>
+      <div id="chart" class="chart"></div>
+      <p class="muted small legend">
+        <span><span class="key head"></span> headline</span>
+        <span><span class="key supp"></span> support (from the co-bill, or assumed above Massey size)</span>
+        <span><span class="key ghost"></span> your aughts favourites, for pace</span>
+      </p>
+    </section>
+
+    <section class="rsec">
+      <h2>Look up a band</h2>
+      <input id="lookup" class="lookup" type="search" list="bands" placeholder="Band name…" autocomplete="off">
+      <datalist id="bands"></datalist>
+      <div id="card" class="bandcard" hidden></div>
+    </section>
+
+    <section class="rsec">
+      <h2>Room rivers</h2>
+      <p class="muted">Your SF rooms on the left, Toronto rooms on the right. Thicker streams mean more shared bands. These are raw counts, so busy rooms like the Danforth draw thick streams; the twin-room ranking on the <a href="venues.html">venue page</a> corrects for that. Tap a room or a stream.</p>
+      <div id="rivers" class="rivers"></div>
+      <div id="riverinfo" class="riverinfo muted"></div>
+    </section>
+  </main>
+  <script src="vendor/d3-7.9.0.min.js"></script>
+  <script src="ladder.js"></script>
+  <script src="explore.js"></script>
+</body>
+</html>

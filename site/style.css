@@ -244,3 +244,51 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
 .research ul.shows li.support { color: var(--muted); }
 .research .tag { font-size: 10px; text-transform: uppercase; letter-spacing: 0.04em; border: 1px solid var(--line); border-radius: 4px; padding: 0 4px; margin-left: 6px; color: var(--muted); }
 .research .with { font-size: 12px; color: var(--muted); }
+
+/* ---- The Climb (explore.html) ---- */
+.explore .controls { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; margin-bottom: 6px; }
+.seg { display: inline-flex; flex-wrap: wrap; gap: 2px; padding: 2px; border: 1px solid var(--line); border-radius: 999px; }
+.seg button { background: none; border: 0; border-radius: 999px; padding: 4px 10px; font: inherit; font-size: 13px; color: var(--muted); cursor: pointer; }
+.seg button[aria-checked="true"] { background: var(--surface-2); color: var(--text); font-weight: 600; }
+.chart { width: 100%; }
+.chart svg, .rivers svg { width: 100%; height: auto; display: block; }
+.climbsvg text, .riversvg text { font-family: inherit; }
+.climbsvg .rungs line { stroke: var(--line); stroke-dasharray: 3 3; }
+.climbsvg .rungs text { fill: var(--muted); font-size: 11px; }
+.climbsvg .axis path, .climbsvg .axis line { stroke: var(--line); }
+.climbsvg .axis text, .climbsvg .axislabel { fill: var(--muted); font-size: 11px; }
+.climbsvg .ghosts path { fill: none; stroke: var(--text); stroke-opacity: 0.35; stroke-width: 1.5; stroke-dasharray: 5 4; }
+.climbsvg .ghosts text { fill: var(--muted); font-size: 10px; font-style: italic; }
+.climbsvg .band { cursor: pointer; }
+.climbsvg .band .trail { fill: none; stroke: var(--muted); stroke-opacity: 0.35; stroke-width: 1.2; }
+.climbsvg .band.up .trail { stroke: var(--accent-fill); stroke-opacity: 0.3; }
+.climbsvg .band .hit { fill: none; stroke: transparent; stroke-width: 14; }
+.climbsvg .band circle.head { fill: var(--muted); fill-opacity: 0.7; }
+.climbsvg .band.up circle.head { fill: var(--accent-fill); fill-opacity: 0.4; }
+.climbsvg .band circle.supp { fill: none; stroke: var(--muted); stroke-width: 1; }
+.climbsvg.has-sel .band:not(.sel) { opacity: 0.12; }
+.climbsvg .band.sel .trail { stroke: var(--text); stroke-opacity: 1; stroke-width: 2.5; }
+.climbsvg .band.sel circle.head { fill: var(--accent-fill); fill-opacity: 1; }
+.legend { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 6px; }
+.key { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-left: 6px; }
+.key.head { background: var(--accent-fill); }
+.key.supp { border: 1px solid var(--muted); }
+.key.ghost { width: 18px; height: 0; border-radius: 0; border-top: 1.5px dashed var(--muted); }
+.lookup { width: 100%; max-width: 420px; font: inherit; font-size: 16px; padding: 8px 10px; border: 1px solid var(--line); border-radius: 4px; background: var(--surface); color: var(--text); }
+.bandcard { margin-top: 12px; background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 12px 14px; }
+.bandcard h3 { margin: 0 0 4px; font-size: 17px; }
+.bandcard .label { margin: 10px 0 4px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); }
+.bandcard ul.shows { white-space: normal; }
+.seenbadge { font-size: 12px; font-weight: 600; color: var(--accent); white-space: nowrap; }
+.linkbtn { background: none; border: 0; padding: 2px 0; font: inherit; color: var(--accent); cursor: pointer; text-align: left; }
+.riversvg .streams path { fill: none; stroke: var(--accent-fill); stroke-opacity: 0.28; cursor: pointer; }
+.riversvg.has-sel .streams path { stroke-opacity: 0.05; }
+.riversvg.has-sel .streams path.on { stroke-opacity: 0.85; }
+.riversvg .nodes text { fill: var(--text); font-size: 12px; cursor: pointer; }
+.riverinfo { margin-top: 8px; font-size: 13px; }
+.seg .short { display: none; }
+.climbsvg .band circle.head { fill-opacity: 0.45; }
+@media (max-width: 600px) {
+  .seg .long { display: none; }
+  .seg .short { display: inline; }
+}

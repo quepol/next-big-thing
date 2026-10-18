@@ -1,4 +1,5 @@
 // Renders site/data/venue_research.json (written by research/venue_overlap.py).
+// Billing and ladder rules are shared with explore.js, in ladder.js.
 // Capacities for Toronto rooms come from data/toronto_capacity.json, keyed by
 // lowercased setlist.fm venue name: a number, or a label ("Arena", "Festival") for
 // spaces too big or too variable to give one, which count as large.
@@ -8,38 +9,7 @@ const MIN_OVERLAP = 3;
 const LARGE = 1000;
 const MIN_PAIR = 5; // twin-room pairings need this many shared artists…
 const MIN_PAIR_ARTISTS = 20; // …at a Toronto room with at least this many artists
-const SMALL_LISTENERS = 250000; // "next big thing" territory for the comeback list
-const SUSPECT_LISTENERS = 3000; // below this, the Last.fm match is often the wrong artist
-const LADDER_MAX = 2765; // Massey Hall. Up to here a band is taken to be headlining;
-                         // anything bigger (amphitheatres, arenas, stadiums, festivals)
-                         // is taken to be a support slot and left off the ladder.
-let CAPS = {}; // Toronto capacities by lowercased venue name, filled in load()
-// Billing per show: from the co-bill when setlist.fm logged other acts that night (the
-// act with the most Last.fm listeners is taken as headliner); otherwise assumed from
-// room size, with anything bigger than Massey Hall (or a labelled arena/festival
-// space) taken as a support slot.
-const bySize = (sh) => {
-  const c = CAPS[sh.venue.toLowerCase()];
-  return typeof c === "string" || c > LADDER_MAX ? "support" : "headline";
-};
-const billing = (sh) => sh.billing || bySize(sh);
-const isSupport = (sh) => billing(sh) === "support";
-
-// Moving up: a later headline show (Massey size or smaller) in a room at least 25%
-// bigger than the first.
-const movingUp = (a) => {
-  const heads = a.shows.filter((sh) => billing(sh) === "headline" && sh.cap);
-  return heads.length > 1 && heads.slice(1).some((sh) => sh.cap >= heads[0].cap * 1.25);
-};
-
-const el = (tag, cls, text) => {
-  const n = document.createElement(tag);
-  if (cls) n.className = cls;
-  if (text != null) n.textContent = text;
-  return n;
-};
 const pct = (x) => `${(x * 100).toFixed(x < 0.1 ? 1 : 0)}%`;
-const fmt = (n) => n.toLocaleString();
 const capLabel = (c) => (c == null ? "—" : typeof c === "string" ? c : fmt(c));
 
 function table(head, rows, numeric = []) {
@@ -110,7 +80,7 @@ async function load() {
   report.replaceChildren();
   if (!data) return report.append(el("p", "empty", "No research results yet."));
   const cap = (v) => caps[v.name.toLowerCase()] ?? null;
-  CAPS = caps;
+  setCaps(caps);
   const since = new Date(`${data.since}T12:00:00`).toLocaleDateString(undefined, { month: "short", year: "numeric" });
 
   const head = el("p", "muted");
