@@ -299,9 +299,10 @@ function renderAttended(list) {
   t.innerHTML = "<thead><tr><th>Artist</th><th>Date seen</th><th>Venue</th><th class=num>Listeners now</th></tr></thead>";
   const body = document.createElement("tbody");
   const fmtSlfDate = (s) => {
-    // setlist.fm uses DD-MM-YYYY
-    const [d, m, y] = s.split("-");
-    return new Date(`${y}-${m}-${d}`).toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" });
+    // setlist.fm uses DD-MM-YYYY. Build a local date: "YYYY-MM-DD" alone parses as UTC
+    // midnight, which shows as the previous day anywhere west of Greenwich.
+    const [d, m, y] = s.split("-").map(Number);
+    return new Date(y, m - 1, d).toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" });
   };
   for (const r of rows) {
     const tr = document.createElement("tr");
