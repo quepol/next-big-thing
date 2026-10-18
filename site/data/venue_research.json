@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-18T15:47:40+00:00",
+ "generated_at": "2026-10-18T17:19:51+00:00",
  "since": "2023-10-01",
  "complete": true,
  "requests": 0,
@@ -2253,8 +2253,8 @@
     "Great American Music Hall": 10,
     "Bottom of the Hill": 11,
     "The Fillmore": 1,
-    "Bimbo's 365 Club": 5,
-    "The Regency Ballroom": 5
+    "The Regency Ballroom": 5,
+    "Bimbo's 365 Club": 5
    },
    "overlap_artists": [
     "Amistat",
@@ -2315,8 +2315,8 @@
    "by_sf_venue": {
     "The Independent": 7,
     "Great American Music Hall": 11,
-    "Bottom of the Hill": 11,
     "The Regency Ballroom": 10,
+    "Bottom of the Hill": 11,
     "The Fillmore": 6,
     "Café du Nord": 8,
     "Bimbo's 365 Club": 1
@@ -2582,8 +2582,8 @@
    "lift": 2.22,
    "by_sf_venue": {
     "Café du Nord": 6,
-    "Bottom of the Hill": 10,
     "The Regency Ballroom": 4,
+    "Bottom of the Hill": 10,
     "Great American Music Hall": 5,
     "The Independent": 4,
     "The Fillmore": 2
@@ -2786,8 +2786,8 @@
     "The Independent": 4,
     "The Regency Ballroom": 3,
     "Café du Nord": 2,
-    "The Fillmore": 2,
     "Great American Music Hall": 2,
+    "The Fillmore": 2,
     "Bottom of the Hill": 7,
     "Bimbo's 365 Club": 1
    },
@@ -3121,8 +3121,8 @@
    "lift": 1.12,
    "by_sf_venue": {
     "Great American Music Hall": 6,
-    "Bottom of the Hill": 1,
     "The Independent": 3,
+    "Bottom of the Hill": 1,
     "Café du Nord": 1,
     "The Regency Ballroom": 1
    },
@@ -3469,8 +3469,8 @@
    "by_sf_venue": {
     "The Fillmore": 1,
     "The Independent": 3,
-    "The Regency Ballroom": 1,
-    "Great American Music Hall": 1
+    "Great American Music Hall": 1,
+    "The Regency Ballroom": 1
    },
    "overlap_artists": [
     "Ashley McBryde",
@@ -3908,8 +3908,8 @@
    "share": 0.0172,
    "lift": 0.11,
    "by_sf_venue": {
-    "The Fillmore": 1,
     "Bottom of the Hill": 1,
+    "The Fillmore": 1,
     "Great American Music Hall": 1
    },
    "overlap_artists": [
@@ -3956,8 +3956,8 @@
    "share": 1.0,
    "lift": 6.29,
    "by_sf_venue": {
-    "Bimbo's 365 Club": 1,
-    "The Independent": 1
+    "The Independent": 1,
+    "Bimbo's 365 Club": 1
    },
    "overlap_artists": [
     "Lotus"
@@ -4107,9 +4107,9 @@
    "share": 0.5,
    "lift": 3.14,
    "by_sf_venue": {
-    "The Regency Ballroom": 1,
     "Great American Music Hall": 1,
-    "The Independent": 1
+    "The Independent": 1,
+    "The Regency Ballroom": 1
    },
    "overlap_artists": [
     "Wisp"
