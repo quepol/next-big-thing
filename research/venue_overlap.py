@@ -151,11 +151,13 @@ def lastfm_name(name: str) -> str:
     return name.translate(str.maketrans({"’": "'", "‘": "'", "“": '"', "”": '"'}))
 
 
-def repeat_visitors(shared: set, sf_artists: dict, tor_dates: dict) -> list[dict]:
+def repeat_visitors(shared: set, sf_artists: dict, tor_dates: dict, nights: dict) -> list[dict]:
     """Shared artists who came back to Toronto (2+ visits, 30+ days apart): momentum.
 
-    Adds Last.fm listeners (so the page can keep to small artists) and whether a later
-    Toronto show was in a clearly bigger room than the first, i.e. they're moving up.
+    Adds Last.fm listeners (so the page can keep to small artists). Each show gets a
+    billing guess where setlist.fm logged other acts that night: the act with the most
+    Last.fm listeners is taken as the headliner. Shows with no co-bill on record get no
+    billing, and the page falls back to its room-size rule.
     """
     caps = toronto_capacity()
     num = lambda c: c if isinstance(c, int) else None  # labels like "Festival" don't count
@@ -175,13 +177,22 @@ def repeat_visitors(shared: set, sf_artists: dict, tor_dates: dict) -> list[dict
             last = day
         if visits < 2:
             continue
-        shows = [{"date": d, "venue": v, "cap": num(caps.get(v.lower()))} for d, v in dates]
+        info = lastfm.artist_info(lastfm_name(sf_artists[k]["name"])) if lastfm else None
+        own = info["listeners"] if info else None
+        shows = []
+        for d, v in dates:
+            show = {"date": d, "venue": v, "cap": num(caps.get(v.lower()))}
+            others = [n for key, n in nights.get((v, d), {}).items() if key != k]
+            if others and lastfm and own is not None:
+                sizes = [(lastfm.artist_info(lastfm_name(n)) or {}).get("listeners") or 0 for n in others]
+                show["billing"] = "headline" if own >= max(sizes) else "support"
+                show["with"] = [n for _, n in sorted(zip(sizes, others), reverse=True)[:2]]
+            shows.append(show)
         first = shows[0]["cap"]
         later = [s["cap"] for s in shows[1:] if s["cap"]]
-        info = lastfm.artist_info(lastfm_name(sf_artists[k]["name"])) if lastfm else None
         out.append({
             "artist": sf_artists[k]["name"],
-            "listeners": info["listeners"] if info else None,
+            "listeners": own,
             "sf": sorted(sf_artists[k]["venues"]),
             "visits": visits,
             "shows": shows,
@@ -233,12 +244,14 @@ def main() -> None:
     # Toronto venues -> artists
     venues: dict[str, dict] = {}
     tor_dates: dict[str, dict[str, str]] = defaultdict(dict)  # artist -> {iso date: venue}
+    nights: dict[tuple, dict[str, str]] = defaultdict(dict)  # (venue, iso date) -> {artist key: name}
     for s in tor:
         k = artist_key(s)
         if not k:
             continue
         v = s["venue"]
         tor_dates[k].setdefault(event_date(s).isoformat(), v["name"])
+        nights[(v["name"], event_date(s).isoformat())][k] = s["artist"]["name"]
         entry = venues.setdefault(v["id"], {"name": v["name"], "artists": {}, "shows": 0})
         entry["shows"] += 1
         entry["artists"].setdefault(k, s["artist"]["name"])
@@ -277,7 +290,7 @@ def main() -> None:
         print(f"Incomplete (setlist.fm limit?), {OUT.name} left unchanged. Re-run to resume.")
         return
 
-    repeat = repeat_visitors(shared, sf_artists, tor_dates)
+    repeat = repeat_visitors(shared, sf_artists, tor_dates, nights)
 
     OUT.write_text(json.dumps({
         "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),

@@ -6,3 +6,4 @@ __pycache__/
 .env
 data/cache/
 research/cache.json
+research/ladder_cache.json

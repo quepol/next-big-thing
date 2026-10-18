@@ -1,0 +1,41 @@
+name: Ladder study
+
+# One-off study for issue #4: how the user's aughts favourites climbed the venue
+# ladder in the Bay Area and Toronto. Writes site/data/ladder_study.json to the
+# pushing branch; re-run to resume if setlist.fm's daily limit cuts it short.
+on:
+  push:
+    branches: [claude/music-venue-alerts-ayb8hs]
+    paths: ["research/ladder_study.py", ".github/workflows/ladder-study.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  study:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - uses: actions/cache@v4
+        with:
+          path: research/ladder_cache.json
+          key: ladder-study-${{ github.run_id }}
+          restore-keys: ladder-study-
+      - name: Study
+        env:
+          SETLISTFM_API_KEY: ${{ secrets.SETLISTFM_API_KEY }}
+        run: python -u research/ladder_study.py
+      - name: Commit results
+        run: |
+          git config user.name "nbt-bot"
+          git config user.email "nbt-bot@users.noreply.github.com"
+          git add site/data/ladder_study.json 2>/dev/null || true
+          git diff --cached --quiet || git commit -m "Ladder study results $(date -u +%F)"
+          git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"

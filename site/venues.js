@@ -14,17 +14,22 @@ const LADDER_MAX = 2765; // Massey Hall. Up to here a band is taken to be headli
                          // anything bigger (amphitheatres, arenas, stadiums, festivals)
                          // is taken to be a support slot and left off the ladder.
 let CAPS = {}; // Toronto capacities by lowercased venue name, filled in load()
-const isSupport = (sh) => {
+// Billing per show: from the co-bill when setlist.fm logged other acts that night (the
+// act with the most Last.fm listeners is taken as headliner); otherwise assumed from
+// room size, with anything bigger than Massey Hall (or a labelled arena/festival
+// space) taken as a support slot.
+const bySize = (sh) => {
   const c = CAPS[sh.venue.toLowerCase()];
-  return typeof c === "string" || c > LADDER_MAX; // labels are "Arena", "Festival", "Outdoor"
+  return typeof c === "string" || c > LADDER_MAX ? "support" : "headline";
 };
+const billing = (sh) => sh.billing || bySize(sh);
+const isSupport = (sh) => billing(sh) === "support";
 
 // Moving up: a later headline show (Massey size or smaller) in a room at least 25%
 // bigger than the first.
 const movingUp = (a) => {
-  const caps = a.shows.map((s) => s.cap).filter((c) => c && c <= LADDER_MAX);
-  const first = a.shows[0].cap;
-  return !!first && first <= LADDER_MAX && caps.slice(1).some((c) => c >= first * 1.25);
+  const heads = a.shows.filter((sh) => billing(sh) === "headline" && sh.cap);
+  return heads.length > 1 && heads.slice(1).some((sh) => sh.cap >= heads[0].cap * 1.25);
 };
 
 const el = (tag, cls, text) => {
@@ -191,8 +196,8 @@ async function load() {
     const s = section(
       "Coming back to Toronto",
       `Artists from your SF rooms with 2+ Toronto visits since ${since} (visits 30+ days apart, so a multi-night run counts once). ` +
-      `Billing isn't in the data, so it's assumed from room size: Massey Hall size (2,765) or smaller is taken as headlining, and bigger rooms (amphitheatres, arenas, stadiums, festivals) as likely support slots, which don't count. ` +
-      `"Moving up" means a later headline show was in a room at least 25% bigger than their first. ` +
+      `Billing: where setlist.fm logged other acts the same night, the act with the most Last.fm listeners is taken as the headliner ("support"). With no co-bill on record it's assumed from room size: Massey Hall size (2,765) or smaller is headlining, bigger rooms are "likely support". Only headline shows count toward moving up. ` +
+      `"Moving up" means a later headline show was in a room at least 25% bigger than their first headline show. ` +
       `Artists under ${fmt(SMALL_LISTENERS)} Last.fm listeners, moving-up ones first. A "?" means Last.fm may have matched the wrong artist.`,
     );
     const shows = (a) => {
@@ -200,7 +205,10 @@ async function load() {
       for (const sh of a.shows) {
         const when = new Date(`${sh.date}T12:00:00`).toLocaleDateString(undefined, { month: "short", year: "numeric" });
         const li = el("li", isSupport(sh) ? "support" : null, `${when} · ${sh.venue}${sh.cap ? ` (${fmt(sh.cap)})` : ""}`);
-        if (isSupport(sh)) li.append(el("span", "tag", "likely support"));
+        if (isSupport(sh)) {
+          li.append(el("span", "tag", sh.billing ? "support" : "likely support"));
+          if (sh.with?.length) li.append(el("span", "with", ` for ${sh.with[0]}`));
+        }
         list.append(li);
       }
       return list;
