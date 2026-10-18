@@ -82,7 +82,7 @@ The **attended ledger** is included in `digest.json` and rendered on a dedicated
     - fact chips parsed from the reason strings by `parseReasons()`. Unknown reasons fall back to plain text. **If reason wording changes in `nbt/scoring.py`, update the regexes there.**
     - similarity weights kept (the user uses them as a sanity check)
     - lineup role ("opening for X")
-    - theme-aware SVG listen and vote icons
+    - theme-aware SVG listen and vote icons. The listen links are a SoundCloud search (`soundcloud.com/search?q=<artist>`) and a YouTube search. SoundCloud replaced the Last.fm link because the user found Last.fm poor for actually playing music; all scoring data still comes from Last.fm.
     - down-voted cards collapse, with an Undo
     - a sort control (Best match / Soonest / Venue / Artist)
     - on phones, the tab row scrolls sideways. A fade with a pink ‹ / › arrow marks whichever edge has more tabs (`.tabs-wrap.more-left/.more-right`, toggled by `updateTabEdges()` in `app.js`), and the selected tab is scrolled into view, including a remembered off-screen tab on load. The arrows are hints only, not buttons.
