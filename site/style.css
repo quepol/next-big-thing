@@ -349,3 +349,6 @@ svg.mini circle { fill: var(--accent-fill); }
 .rp-facts, .rp-why { font-size: 12px; color: var(--muted); margin-top: 2px; }
 .rp-flags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; }
 .rl-chip.hot { background: var(--accent-soft); color: var(--text); }
+.seg.rp-filters { border: 0; padding: 0; gap: 6px; }
+.seg.rp-filters button { border: 1px solid var(--line); }
+.seg.rp-filters button[aria-checked="true"] { border-color: var(--accent-fill); }

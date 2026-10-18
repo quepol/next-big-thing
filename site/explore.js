@@ -739,7 +739,8 @@ function riverCard(a) {
   if (listeners != null) facts.push(fmtListeners(listeners));
   if (a.days) facts.push(`${a.days} days played`);
   if (facts.length) card.append(el("div", "rp-facts", facts.join(" · ")));
-  if (a.why) card.append(el("div", "rp-why", a.why.replace(/ \(\d\.\d+\)/g, "")));
+  // Only tiered bands get a reason: below the cutoffs it's weak evidence and just noise.
+  if (a.why && tierLabel) card.append(el("div", "rp-why", a.why.replace(/ \(\d\.\d+\)/g, "")));
   const flags = el("div", "rp-flags");
   const nx = D.next.get(k);
   if (nx) flags.append(el("span", "rl-chip hot", `${new Date(nx.starts_at).toLocaleDateString(undefined, { month: "short", day: "numeric" })} · ${short(nx.venue.name.trim(), 18)}`));
