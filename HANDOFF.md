@@ -102,6 +102,8 @@ The **attended ledger** is included in `digest.json` and rendered on a dedicated
 
     Dates: setlist.fm dates (`DD-MM-YYYY`) are built as local dates in `renderAttended`. Parsing a bare `YYYY-MM-DD` string reads it as UTC midnight, which showed every attended show a day early in Toronto (fixed 2026-10-18). Event `starts_at` values carry a time with no zone, so they already parse as local.
 
+    Research page: `site/venues.html` + `venues.js` (issue #4) render `data/venue_research.json`, written by `research/venue_overlap.py` via `.github/workflows/venue-research.yml` (runs on a push to `research/**` on the dev branch; resumable through an API cache). Toronto capacities for that page are in `data/toronto_capacity.json`, keyed by lowercased setlist.fm venue name. Not linked from the main page.
+
     Preferences are saved in `localStorage` under `nbt.sort` and `nbt.theme`; votes keep the same `nbt.votes` format.
   - Daily workflow (runs + deploys Pages), plus deploy-only runs on `site/**` pushes
   - `python -m nbt summary` (taste-model sanity check)

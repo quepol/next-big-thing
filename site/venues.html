@@ -19,8 +19,19 @@
     <h1>Venue overlap</h1>
     <p class="muted">Which Toronto rooms book the same bands as the San Francisco rooms you trust? Research for <a href="https://github.com/quepol/next-big-thing/issues/4">issue #4</a>.</p>
   </header>
-  <main id="report" class="report">
-    <p class="empty">Loading…</p>
+  <main class="report">
+    <section class="findings">
+      <h2>What it shows</h2>
+      <ul>
+        <li><strong>Each SF room has a recognisable Toronto twin, at a similar size.</strong> Café du Nord → the Drake Underground and Drake Hotel. Bottom of the Hill → Monarch Tavern, Sneaky Dee's and the Baby G. The Independent → Velvet Underground, the Mod Club and Longboat Hall. Great American Music Hall → the Great Hall, the Concert Hall and the Phoenix. Bimbo's, the Fillmore and the Regency → the Concert Hall, the Danforth and the Opera House.</li>
+        <li><strong>A lot of it is the touring circuit, not taste.</strong> Around 60% of the artists at most of your rooms also played Toronto. The rooms at the top of the city-wide ranking (the Concert Hall, the Danforth, the Opera House) rank high because they book national touring acts, like your SF rooms do. Bottom of the Hill is the exception: only 31% of its artists reached Toronto, which makes it your most local and most exploratory room.</li>
+        <li><strong>To prove it's taste, the next run needs SF rooms you <em>don't</em> trust as a control,</strong> such as Rickshaw Stop, The Chapel, August Hall or Brick &amp; Mortar. If your rooms' Toronto twins beat theirs, the signal is real.</li>
+        <li><strong>Usable now:</strong> the twins give a starting list of Toronto rooms to trust (the Drake Underground, Monarch Tavern, Velvet Underground, the Great Hall, Longboat Hall). And about 445 Bottom of the Hill artists and 97 Café du Nord artists haven't played Toronto since Oct 2023. That's a ready-made watchlist of next-big-thing candidates for when they do.</li>
+      </ul>
+    </section>
+    <div id="report">
+      <p class="empty">Loading…</p>
+    </div>
   </main>
   <script src="venues.js"></script>
 </body>

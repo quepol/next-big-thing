@@ -1,10 +1,13 @@
 // Renders site/data/venue_research.json (written by research/venue_overlap.py).
 // Capacities for Toronto rooms come from data/toronto_capacity.json, keyed by
-// lowercased setlist.fm venue name.
+// lowercased setlist.fm venue name: a number, or a label ("Arena", "Festival") for
+// spaces too big or too variable to give one, which count as large.
 
 const MIN_ARTISTS = 10; // rooms with fewer distinct artists are too thin to rank
 const MIN_OVERLAP = 3;
 const LARGE = 1000;
+const MIN_PAIR = 5; // twin-room pairings need this many shared artists…
+const MIN_PAIR_ARTISTS = 20; // …at a Toronto room with at least this many artists
 
 const el = (tag, cls, text) => {
   const n = document.createElement(tag);
@@ -14,13 +17,16 @@ const el = (tag, cls, text) => {
 };
 const pct = (x) => `${(x * 100).toFixed(x < 0.1 ? 1 : 0)}%`;
 const fmt = (n) => n.toLocaleString();
+const capLabel = (c) => (c == null ? "—" : typeof c === "string" ? c : fmt(c));
 
 function table(head, rows, numeric = []) {
   const wrap = el("div", "ledger-wrap");
   const t = el("table");
   const tr = el("tr");
   head.forEach((h, i) => tr.append(el("th", numeric.includes(i) ? "num" : null, h)));
-  t.append(el("thead")).firstChild.append(tr);
+  const thead = el("thead");
+  thead.append(tr);
+  t.append(thead);
   const body = el("tbody");
   for (const r of rows) {
     const row = el("tr");
@@ -61,7 +67,7 @@ function torontoTable(rows, cap) {
     ["Venue", "Cap.", "Artists", "Shared", "Share", "vs avg", "Most shared with"],
     rows.map((v) => [
       venueCell(v),
-      cap(v) ? fmt(cap(v)) : "—",
+      capLabel(cap(v)),
       fmt(v.artists),
       fmt(v.overlap),
       pct(v.share),
@@ -101,11 +107,43 @@ async function load() {
   ));
   report.append(sf);
 
+  // Twin rooms: for each SF room, the Toronto rooms whose lineups lean hardest toward
+  // that room's artists, relative to how often its artists turn up in Toronto at all.
+  const reach = {};
+  for (const a of data.shared_artists) for (const s of a.sf) reach[s] = (reach[s] || 0) + 1;
+  const twins = section(
+    "Closest Toronto room for each SF room",
+    `"Reach" is the share of the SF room's artists who played Toronto at all. Each Toronto room shows ` +
+    `its shared artists and how much more it leans toward that SF room than a typical Toronto room ` +
+    `(at least ${MIN_PAIR} shared, from rooms with ${MIN_PAIR_ARTISTS}+ artists).`,
+  );
+  twins.append(table(
+    ["SF room", "Reach", "Closest Toronto rooms"],
+    data.sf_venues.map((s) => {
+      const base = (reach[s.name] || 0) / data.toronto.artists;
+      const best = data.toronto_venues
+        .map((v) => ({ v, k: v.by_sf_venue[s.name] || 0 }))
+        .filter(({ v, k }) => k >= MIN_PAIR && v.artists >= MIN_PAIR_ARTISTS)
+        .map((x) => ({ ...x, lift: x.k / x.v.artists / base }))
+        .sort((a, b) => b.lift - a.lift)
+        .slice(0, 3);
+      const list = el("ul", "twins");
+      for (const { v, k, lift } of best) {
+        const c = cap(v);
+        list.append(el("li", null, `${v.name}${c != null ? ` (${capLabel(c)})` : ""} · ${k} shared · ${lift.toFixed(1)}×`));
+      }
+      return [`${s.name} (${s.capacity})`, pct((reach[s.name] || 0) / s.artists), best.length ? list : "—"];
+    }),
+    [1],
+  ));
+  report.append(twins);
+
   // Toronto rooms, ranked by lift over the average room
   const rankable = data.toronto_venues.filter((v) => v.artists >= MIN_ARTISTS && v.overlap >= MIN_OVERLAP);
   rankable.sort((a, b) => b.lift - a.lift || b.overlap - a.overlap);
-  const small = rankable.filter((v) => !(cap(v) > LARGE));
-  const large = rankable.filter((v) => cap(v) > LARGE);
+  const isLarge = (v) => typeof cap(v) === "string" || cap(v) > LARGE;
+  const small = rankable.filter((v) => !isLarge(v));
+  const large = rankable.filter(isLarge);
   const intro =
     `Ranked by "vs avg": the share of a room's artists who also played your SF rooms, compared with ` +
     `the Toronto average. 2× means twice as much overlap as a typical room. Rooms need at least ` +

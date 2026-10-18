@@ -218,6 +218,7 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
 .crumb { margin: 0 0 8px; font-size: 14px; }
 .crumb a, .research .muted a { color: var(--accent); text-decoration: none; }
 .report { gap: 4px; }
+.report > *, .rsec { min-width: 0; } /* let wide tables scroll inside their wrapper, not the page */
 .rsec { margin-top: 20px; }
 .rsec h2 { font-size: 17px; margin: 0 0 4px; letter-spacing: -0.01em; }
 .rsec > .muted { margin: 0 0 10px; font-size: 13px; }
@@ -227,3 +228,10 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
 .research details.artists p { margin: 4px 0 2px; font-size: 13px; color: var(--muted); max-width: 46ch; }
 .research details.all > summary { cursor: pointer; color: var(--accent); font-weight: 500; margin-bottom: 8px; }
 .research .small { font-size: 12px; margin-top: 24px; }
+.research ul.twins { list-style: none; margin: 0; padding: 0; }
+.research ul.twins li { margin: 0 0 2px; }
+.research ul.twins li:first-child { font-weight: 600; }
+.findings { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 14px 16px; }
+.findings h2 { font-size: 17px; margin: 0 0 6px; }
+.findings ul { margin: 0; padding-left: 18px; }
+.findings li { margin: 6px 0; }
