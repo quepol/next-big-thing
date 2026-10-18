@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-18T15:43:29+00:00",
+ "generated_at": "2026-10-18T15:47:40+00:00",
  "since": "2023-10-01",
  "complete": true,
  "requests": 0,
@@ -1947,8 +1947,8 @@
    "share": 0.3459,
    "lift": 2.17,
    "by_sf_venue": {
-    "The Independent": 14,
     "Great American Music Hall": 22,
+    "The Independent": 14,
     "Bottom of the Hill": 8,
     "Café du Nord": 9,
     "The Fillmore": 10,
@@ -2253,8 +2253,8 @@
     "Great American Music Hall": 10,
     "Bottom of the Hill": 11,
     "The Fillmore": 1,
-    "The Regency Ballroom": 5,
-    "Bimbo's 365 Club": 5
+    "Bimbo's 365 Club": 5,
+    "The Regency Ballroom": 5
    },
    "overlap_artists": [
     "Amistat",
@@ -2315,8 +2315,8 @@
    "by_sf_venue": {
     "The Independent": 7,
     "Great American Music Hall": 11,
-    "The Regency Ballroom": 10,
     "Bottom of the Hill": 11,
+    "The Regency Ballroom": 10,
     "The Fillmore": 6,
     "Café du Nord": 8,
     "Bimbo's 365 Club": 1
@@ -2377,8 +2377,8 @@
    "by_sf_venue": {
     "Café du Nord": 6,
     "Bottom of the Hill": 19,
-    "The Independent": 5,
     "Great American Music Hall": 10,
+    "The Independent": 5,
     "The Regency Ballroom": 4,
     "Bimbo's 365 Club": 1,
     "The Fillmore": 2
@@ -2582,10 +2582,10 @@
    "lift": 2.22,
    "by_sf_venue": {
     "Café du Nord": 6,
-    "The Regency Ballroom": 4,
     "Bottom of the Hill": 10,
-    "The Independent": 4,
+    "The Regency Ballroom": 4,
     "Great American Music Hall": 5,
+    "The Independent": 4,
     "The Fillmore": 2
    },
    "overlap_artists": [
@@ -3094,8 +3094,8 @@
    "share": 0.2647,
    "lift": 1.66,
    "by_sf_venue": {
-    "The Regency Ballroom": 2,
     "Great American Music Hall": 4,
+    "The Regency Ballroom": 2,
     "The Independent": 3,
     "Bottom of the Hill": 2
    },
@@ -3120,9 +3120,9 @@
    "share": 0.1778,
    "lift": 1.12,
    "by_sf_venue": {
-    "The Independent": 3,
     "Great American Music Hall": 6,
     "Bottom of the Hill": 1,
+    "The Independent": 3,
     "Café du Nord": 1,
     "The Regency Ballroom": 1
    },
@@ -3789,8 +3789,8 @@
    "share": 0.08,
    "lift": 0.5,
    "by_sf_venue": {
-    "The Independent": 1,
     "Great American Music Hall": 1,
+    "The Independent": 1,
     "Bottom of the Hill": 1
    },
    "overlap_artists": [
@@ -3956,8 +3956,8 @@
    "share": 1.0,
    "lift": 6.29,
    "by_sf_venue": {
-    "The Independent": 1,
-    "Bimbo's 365 Club": 1
+    "Bimbo's 365 Club": 1,
+    "The Independent": 1
    },
    "overlap_artists": [
     "Lotus"
@@ -4107,9 +4107,9 @@
    "share": 0.5,
    "lift": 3.14,
    "by_sf_venue": {
-    "The Independent": 1,
     "The Regency Ballroom": 1,
-    "Great American Music Hall": 1
+    "Great American Music Hall": 1,
+    "The Independent": 1
    },
    "overlap_artists": [
     "Wisp"
@@ -4274,8 +4274,8 @@
    "share": 0.25,
    "lift": 1.57,
    "by_sf_venue": {
-    "The Regency Ballroom": 1,
-    "Great American Music Hall": 1
+    "Great American Music Hall": 1,
+    "The Regency Ballroom": 1
    },
    "overlap_artists": [
     "femtanyl"
@@ -4290,8 +4290,8 @@
    "share": 0.2,
    "lift": 1.26,
    "by_sf_venue": {
-    "The Independent": 1,
-    "Great American Music Hall": 1
+    "Great American Music Hall": 1,
+    "The Independent": 1
    },
    "overlap_artists": [
     "Cam Kahin"
@@ -24193,7 +24193,7 @@
   },
   {
    "artist": "Arm’s Length",
-   "listeners": 380,
+   "listeners": 114157,
    "sf": [
     "Great American Music Hall"
    ],
@@ -24516,7 +24516,7 @@
   },
   {
    "artist": "Anxious",
-   "listeners": 111330,
+   "listeners": 111306,
    "sf": [
     "The Regency Ballroom"
    ],
@@ -24769,7 +24769,7 @@
   },
   {
    "artist": "Matt Hansen",
-   "listeners": 227779,
+   "listeners": 227832,
    "sf": [
     "The Regency Ballroom"
    ],
@@ -25024,7 +25024,7 @@
   },
   {
    "artist": "Royel Otis",
-   "listeners": 1045738,
+   "listeners": 1045992,
    "sf": [
     "The Fillmore"
    ],
@@ -25091,7 +25091,7 @@
   },
   {
    "artist": "she’s green",
-   "listeners": 362,
+   "listeners": 322735,
    "sf": [
     "Bottom of the Hill"
    ],
@@ -25332,7 +25332,7 @@
   },
   {
    "artist": "Barry Can’t Swim",
-   "listeners": 13943,
+   "listeners": 426843,
    "sf": [
     "The Independent"
    ],
@@ -25358,7 +25358,7 @@
   },
   {
    "artist": "Bella Kay",
-   "listeners": 475978,
+   "listeners": 475655,
    "sf": [
     "The Independent"
    ],
@@ -25410,7 +25410,7 @@
   },
   {
    "artist": "Buzzcocks",
-   "listeners": 1110342,
+   "listeners": 1110283,
    "sf": [
     "Great American Music Hall"
    ],
@@ -25524,7 +25524,7 @@
   },
   {
    "artist": "Christone “Kingfish” Ingram",
-   "listeners": 711,
+   "listeners": 76779,
    "sf": [
     "The Fillmore"
    ],
@@ -25750,7 +25750,7 @@
   },
   {
    "artist": "Harm’s Way",
-   "listeners": 790,
+   "listeners": 21225,
    "sf": [
     "The Regency Ballroom"
    ],
@@ -25886,7 +25886,7 @@
   },
   {
    "artist": "Jesse McCartney",
-   "listeners": 999137,
+   "listeners": 999088,
    "sf": [
     "The Regency Ballroom"
    ],
@@ -26097,7 +26097,7 @@
   },
   {
    "artist": "Laufey",
-   "listeners": 2543559,
+   "listeners": 2542508,
    "sf": [
     "The Fillmore"
    ],
@@ -26133,7 +26133,7 @@
   },
   {
    "artist": "L’Rain",
-   "listeners": 8080,
+   "listeners": 167314,
    "sf": [
     "Bottom of the Hill"
    ],
@@ -26376,7 +26376,7 @@
   },
   {
    "artist": "Mk.gee",
-   "listeners": 749596,
+   "listeners": 749705,
    "sf": [
     "Great American Music Hall"
    ],
@@ -26428,7 +26428,7 @@
   },
   {
    "artist": "Myles Smith",
-   "listeners": 652829,
+   "listeners": 652702,
    "sf": [
     "The Independent"
    ],
@@ -26610,7 +26610,7 @@
   },
   {
    "artist": "Rachel Chinouriri",
-   "listeners": 814169,
+   "listeners": 813612,
    "sf": [
     "The Independent"
    ],
@@ -26636,7 +26636,7 @@
   },
   {
    "artist": "Ravyn Lenae",
-   "listeners": 1945181,
+   "listeners": 1944274,
    "sf": [
     "The Fillmore"
    ],
@@ -26667,7 +26667,7 @@
   },
   {
    "artist": "Rickshaw Billie’s Burger Patrol",
-   "listeners": 79,
+   "listeners": 34507,
    "sf": [
     "Bottom of the Hill",
     "Great American Music Hall"
@@ -26723,7 +26723,7 @@
   },
   {
    "artist": "Ryan Beatty",
-   "listeners": 444044,
+   "listeners": 444125,
    "sf": [
     "Bimbo's 365 Club"
    ],
@@ -27019,7 +27019,7 @@
   },
   {
    "artist": "The Lemon Twigs",
-   "listeners": 314124,
+   "listeners": 314150,
    "sf": [
     "Café du Nord",
     "The Fillmore"
@@ -27448,7 +27448,7 @@
   },
   {
    "artist": "Animals as Leaders",
-   "listeners": 400796,
+   "listeners": 400766,
    "sf": [
     "The Fillmore"
    ],
@@ -27554,7 +27554,7 @@
   },
   {
    "artist": "Armored Saint",
-   "listeners": 114063,
+   "listeners": 114056,
    "sf": [
     "Great American Music Hall"
    ],
@@ -27638,7 +27638,7 @@
   },
   {
    "artist": "bbno$",
-   "listeners": 1604959,
+   "listeners": 1605295,
    "sf": [
     "The Regency Ballroom"
    ],
@@ -27918,7 +27918,7 @@
   },
   {
    "artist": "Cobrah",
-   "listeners": 508122,
+   "listeners": 508220,
    "sf": [
     "The Regency Ballroom"
    ],
@@ -28071,7 +28071,7 @@
   },
   {
    "artist": "Deafheaven",
-   "listeners": 539642,
+   "listeners": 539734,
    "sf": [
     "The Fillmore",
     "The Regency Ballroom"
@@ -28119,7 +28119,7 @@
   },
   {
    "artist": "Deicide",
-   "listeners": 384509,
+   "listeners": 384466,
    "sf": [
     "The Regency Ballroom"
    ],
@@ -28140,7 +28140,7 @@
   },
   {
    "artist": "Deltron 3030",
-   "listeners": 619726,
+   "listeners": 619676,
    "sf": [
     "The Regency Ballroom"
    ],
@@ -28230,7 +28230,7 @@
   },
   {
    "artist": "DJ Shadow",
-   "listeners": 2115414,
+   "listeners": 2115615,
    "sf": [
     "The Regency Ballroom"
    ],
@@ -28293,7 +28293,7 @@
   },
   {
    "artist": "Ensiferum",
-   "listeners": 501767,
+   "listeners": 501753,
    "sf": [
     "Great American Music Hall"
    ],
@@ -28468,7 +28468,7 @@
   },
   {
    "artist": "Ghost Mountain",
-   "listeners": 120023,
+   "listeners": 119948,
    "sf": [
     "The Independent"
    ],
@@ -28489,7 +28489,7 @@
   },
   {
    "artist": "Ginger Root",
-   "listeners": 612508,
+   "listeners": 612433,
    "sf": [
     "Great American Music Hall"
    ],
@@ -28515,7 +28515,7 @@
   },
   {
    "artist": "GoldFord",
-   "listeners": 231468,
+   "listeners": 231536,
    "sf": [
     "The Fillmore"
    ],
@@ -28747,7 +28747,7 @@
   },
   {
    "artist": "Jack White",
-   "listeners": 1267936,
+   "listeners": 1267889,
    "sf": [
     "Great American Music Hall",
     "The Fillmore"
@@ -28779,7 +28779,7 @@
   },
   {
    "artist": "Jeff Tweedy",
-   "listeners": 257887,
+   "listeners": 257893,
    "sf": [
     "The Fillmore"
    ],
@@ -29165,7 +29165,7 @@
   },
   {
    "artist": "MJ Lenderman",
-   "listeners": 394637,
+   "listeners": 394702,
    "sf": [
     "The Independent"
    ],
@@ -29369,7 +29369,7 @@
   },
   {
    "artist": "Oxxxymiron",
-   "listeners": 147263,
+   "listeners": 147277,
    "sf": [
     "The Regency Ballroom"
    ],
@@ -29390,7 +29390,7 @@
   },
   {
    "artist": "Paris Paloma",
-   "listeners": 800515,
+   "listeners": 800243,
    "sf": [
     "The Regency Ballroom"
    ],
@@ -29459,7 +29459,7 @@
   },
   {
    "artist": "Pennywise",
-   "listeners": 908333,
+   "listeners": 908292,
    "sf": [
     "The Fillmore"
    ],
@@ -29715,7 +29715,7 @@
   },
   {
    "artist": "Silversun Pickups",
-   "listeners": 1348715,
+   "listeners": 1348869,
    "sf": [
     "The Regency Ballroom"
    ],
@@ -29757,7 +29757,7 @@
   },
   {
    "artist": "smokedope2016",
-   "listeners": 347393,
+   "listeners": 347619,
    "sf": [
     "Café du Nord",
     "Great American Music Hall",
@@ -29848,7 +29848,7 @@
   },
   {
    "artist": "TesseracT",
-   "listeners": 268160,
+   "listeners": 268177,
    "sf": [
     "The Regency Ballroom"
    ],
@@ -30023,7 +30023,7 @@
   },
   {
    "artist": "urika’s bedroom",
-   "listeners": 63,
+   "listeners": 40772,
    "sf": [
     "Great American Music Hall"
    ],
@@ -31305,7 +31305,7 @@
   },
   {
    "artist": "Alessia Cara",
-   "listeners": 1846169,
+   "listeners": 1846427,
    "sf": [
     "The Fillmore"
    ],
@@ -31428,7 +31428,7 @@
   },
   {
    "artist": "Chase & Status",
-   "listeners": 1193704,
+   "listeners": 1193835,
    "sf": [
     "The Regency Ballroom"
    ],
@@ -31459,7 +31459,7 @@
   },
   {
    "artist": "Feist",
-   "listeners": 2932831,
+   "listeners": 2932200,
    "sf": [
     "The Fillmore"
    ],
@@ -32037,7 +32037,7 @@
   },
   {
    "artist": "2hollis",
-   "listeners": 931234,
+   "listeners": 931811,
    "sf": [
     "Great American Music Hall"
    ],
@@ -32094,7 +32094,7 @@
   },
   {
    "artist": "Alex Sampson",
-   "listeners": 98476,
+   "listeners": 98440,
    "sf": [
     "Café du Nord"
    ],
@@ -32452,7 +32452,7 @@
   },
   {
    "artist": "Che",
-   "listeners": 504933,
+   "listeners": 504504,
    "sf": [
     "The Regency Ballroom"
    ],
@@ -32718,7 +32718,7 @@
   },
   {
    "artist": "Etran de L’Aïr",
-   "listeners": 281,
+   "listeners": 61800,
    "sf": [
     "Great American Music Hall"
    ],
@@ -32744,7 +32744,7 @@
   },
   {
    "artist": "femtanyl",
-   "listeners": 392092,
+   "listeners": 392364,
    "sf": [
     "Great American Music Hall",
     "The Regency Ballroom"
@@ -32838,7 +32838,7 @@
   },
   {
    "artist": "Frost Children",
-   "listeners": 394541,
+   "listeners": 394228,
    "sf": [
     "Bottom of the Hill",
     "The Independent"
@@ -33056,7 +33056,7 @@
   },
   {
    "artist": "Great Lake Swimmers",
-   "listeners": 705755,
+   "listeners": 705769,
    "sf": [
     "Café du Nord"
    ],
@@ -33250,7 +33250,7 @@
   },
   {
    "artist": "Jane Remover",
-   "listeners": 643988,
+   "listeners": 643469,
    "sf": [
     "The Independent",
     "The Regency Ballroom"
@@ -33345,7 +33345,7 @@
   },
   {
    "artist": "Jutes",
-   "listeners": 323773,
+   "listeners": 323896,
    "sf": [
     "The Independent"
    ],
@@ -33371,7 +33371,7 @@
   },
   {
    "artist": "K.Flay",
-   "listeners": 1125611,
+   "listeners": 1125792,
    "sf": [
     "The Independent"
    ],
@@ -33563,7 +33563,7 @@
   },
   {
    "artist": "Malcolm Todd",
-   "listeners": 1784194,
+   "listeners": 1785884,
    "sf": [
     "The Independent",
     "The Regency Ballroom"
@@ -33701,7 +33701,7 @@
   },
   {
    "artist": "Mt. Joy",
-   "listeners": 719798,
+   "listeners": 719883,
    "sf": [
     "The Fillmore"
    ],
@@ -33755,7 +33755,7 @@
   },
   {
    "artist": "Noname",
-   "listeners": 584591,
+   "listeners": 584628,
    "sf": [
     "The Regency Ballroom"
    ],
@@ -33833,7 +33833,7 @@
   },
   {
    "artist": "Pinkshift",
-   "listeners": 212834,
+   "listeners": 212789,
    "sf": [
     "Bottom of the Hill"
    ],
@@ -33963,7 +33963,7 @@
   },
   {
    "artist": "Reverend Horton Heat",
-   "listeners": 181211,
+   "listeners": 181217,
    "sf": [
     "Great American Music Hall"
    ],
@@ -34239,7 +34239,7 @@
   },
   {
    "artist": "Streetlight Manifesto",
-   "listeners": 518460,
+   "listeners": 518492,
    "sf": [
     "The Regency Ballroom"
    ],
@@ -34449,7 +34449,7 @@
   },
   {
    "artist": "Tiffany Day",
-   "listeners": 516851,
+   "listeners": 517649,
    "sf": [
     "The Independent",
     "The Regency Ballroom"
@@ -34476,7 +34476,7 @@
   },
   {
    "artist": "Tigers Jaw",
-   "listeners": 524941,
+   "listeners": 525159,
    "sf": [
     "Great American Music Hall"
    ],
@@ -34784,7 +34784,7 @@
   },
   {
    "artist": "A Place to Bury Strangers",
-   "listeners": 428420,
+   "listeners": 428409,
    "sf": [
     "Great American Music Hall"
    ],
@@ -35085,7 +35085,7 @@
   },
   {
    "artist": "Arrows in Action",
-   "listeners": 131590,
+   "listeners": 131551,
    "sf": [
     "Café du Nord"
    ],
@@ -35106,7 +35106,7 @@
   },
   {
    "artist": "ARTMS",
-   "listeners": 271983,
+   "listeners": 272100,
    "sf": [
     "The Regency Ballroom"
    ],
@@ -35127,7 +35127,7 @@
   },
   {
    "artist": "ATARASHII GAKKO!",
-   "listeners": 391093,
+   "listeners": 391155,
    "sf": [
     "The Regency Ballroom"
    ],
@@ -35234,7 +35234,7 @@
   },
   {
    "artist": "Baroness",
-   "listeners": 443322,
+   "listeners": 443351,
    "sf": [
     "Great American Music Hall"
    ],
@@ -35277,7 +35277,7 @@
   },
   {
    "artist": "Beach Fossils",
-   "listeners": 1155374,
+   "listeners": 1155331,
    "sf": [
     "Great American Music Hall",
     "The Regency Ballroom"
@@ -35384,7 +35384,7 @@
   },
   {
    "artist": "Black Pistol Fire",
-   "listeners": 256247,
+   "listeners": 256271,
    "sf": [
     "Café du Nord",
     "The Independent"
@@ -35448,7 +35448,7 @@
   },
   {
    "artist": "Blood Incantation",
-   "listeners": 158906,
+   "listeners": 158882,
    "sf": [
     "The Regency Ballroom"
    ],
@@ -35533,7 +35533,7 @@
   },
   {
    "artist": "Brandy Clark",
-   "listeners": 61057,
+   "listeners": 61059,
    "sf": [
     "Bimbo's 365 Club"
    ],
@@ -35559,7 +35559,7 @@
   },
   {
    "artist": "Brittany Howard",
-   "listeners": 364638,
+   "listeners": 364616,
    "sf": [
     "The Fillmore"
    ],
@@ -35712,7 +35712,7 @@
   },
   {
    "artist": "Charles Wesley Godwin",
-   "listeners": 143836,
+   "listeners": 143871,
    "sf": [
     "The Regency Ballroom"
    ],
@@ -35924,7 +35924,7 @@
   },
   {
    "artist": "Corrosion of Conformity",
-   "listeners": 412913,
+   "listeners": 412943,
    "sf": [
     "Great American Music Hall"
    ],
@@ -35945,7 +35945,7 @@
   },
   {
    "artist": "Counterparts",
-   "listeners": 252189,
+   "listeners": 252218,
    "sf": [
     "The Regency Ballroom"
    ],
@@ -35988,7 +35988,7 @@
   },
   {
    "artist": "Cowboy Junkies",
-   "listeners": 517715,
+   "listeners": 517679,
    "sf": [
     "Bimbo's 365 Club"
    ],
@@ -36051,7 +36051,7 @@
   },
   {
    "artist": "Cypress Hill",
-   "listeners": 2324294,
+   "listeners": 2324456,
    "sf": [
     "The Fillmore"
    ],
@@ -36373,7 +36373,7 @@
   },
   {
    "artist": "Dope Lemon",
-   "listeners": 552734,
+   "listeners": 552677,
    "sf": [
     "The Fillmore"
    ],
@@ -37082,7 +37082,7 @@
   },
   {
    "artist": "Gigi Perez",
-   "listeners": 1591703,
+   "listeners": 1592442,
    "sf": [
     "The Independent"
    ],
@@ -37428,7 +37428,7 @@
   },
   {
    "artist": "Hot Mulligan",
-   "listeners": 394780,
+   "listeners": 394878,
    "sf": [
     "The Fillmore"
    ],
@@ -37602,7 +37602,7 @@
   },
   {
    "artist": "James",
-   "listeners": 1026886,
+   "listeners": 1026826,
    "sf": [
     "The Fillmore"
    ],
@@ -37645,7 +37645,7 @@
   },
   {
    "artist": "Jazmin Bean",
-   "listeners": 424633,
+   "listeners": 424535,
    "sf": [
     "The Regency Ballroom"
    ],
@@ -37709,7 +37709,7 @@
   },
   {
    "artist": "Jessie Ware",
-   "listeners": 1178046,
+   "listeners": 1178115,
    "sf": [
     "The Regency Ballroom"
    ],
@@ -37794,7 +37794,7 @@
   },
   {
    "artist": "Joywave",
-   "listeners": 563649,
+   "listeners": 563615,
    "sf": [
     "Great American Music Hall"
    ],
@@ -37904,7 +37904,7 @@
   },
   {
    "artist": "Katie Pruitt",
-   "listeners": 76809,
+   "listeners": 76816,
    "sf": [
     "Bimbo's 365 Club"
    ],
@@ -37946,7 +37946,7 @@
   },
   {
    "artist": "Kim Dracula",
-   "listeners": 230051,
+   "listeners": 229992,
    "sf": [
     "The Fillmore"
    ],
@@ -38030,7 +38030,7 @@
   },
   {
    "artist": "KK’s Priest",
-   "listeners": 196,
+   "listeners": 19553,
    "sf": [
     "The Regency Ballroom"
    ],
@@ -38993,7 +38993,7 @@
   },
   {
    "artist": "Nothing",
-   "listeners": 438056,
+   "listeners": 437987,
    "sf": [
     "The Regency Ballroom"
    ],
@@ -39014,7 +39014,7 @@
   },
   {
    "artist": "Odie Leigh",
-   "listeners": 154427,
+   "listeners": 154402,
    "sf": [
     "The Independent"
    ],
@@ -39167,7 +39167,7 @@
   },
   {
    "artist": "Pond",
-   "listeners": 621450,
+   "listeners": 621516,
    "sf": [
     "The Regency Ballroom"
    ],
@@ -40133,7 +40133,7 @@
   },
   {
    "artist": "Squid",
-   "listeners": 310301,
+   "listeners": 310250,
    "sf": [
     "The Independent",
     "The Regency Ballroom"
@@ -40508,7 +40508,7 @@
   },
   {
    "artist": "The Church",
-   "listeners": 662371,
+   "listeners": 662329,
    "sf": [
     "The Fillmore"
    ],
@@ -40550,7 +40550,7 @@
   },
   {
    "artist": "The Damned",
-   "listeners": 810241,
+   "listeners": 810161,
    "sf": [
     "The Regency Ballroom"
    ],
@@ -40656,7 +40656,7 @@
   },
   {
    "artist": "The Menzingers",
-   "listeners": 267329,
+   "listeners": 267311,
    "sf": [
     "Great American Music Hall"
    ],
@@ -40719,7 +40719,7 @@
   },
   {
    "artist": "The Vaccines",
-   "listeners": 1406760,
+   "listeners": 1406802,
    "sf": [
     "The Fillmore"
    ],
@@ -41135,7 +41135,7 @@
   },
   {
    "artist": "Waterparks",
-   "listeners": 678420,
+   "listeners": 678326,
    "sf": [
     "The Fillmore"
    ],
@@ -41198,7 +41198,7 @@
   },
   {
    "artist": "Wishy",
-   "listeners": 126246,
+   "listeners": 126161,
    "sf": [
     "Bottom of the Hill"
    ],
@@ -41316,7 +41316,7 @@
   },
   {
    "artist": "yeule",
-   "listeners": 786515,
+   "listeners": 786195,
    "sf": [
     "Great American Music Hall",
     "The Regency Ballroom"
@@ -41380,7 +41380,7 @@
   },
   {
    "artist": "Your Arms Are My Cocoon",
-   "listeners": 258019,
+   "listeners": 257831,
    "sf": [
     "Great American Music Hall"
    ],
