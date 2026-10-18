@@ -70,8 +70,8 @@ Other product decisions:
   - Not committed: `cache/` (kept in the CI cache).
 - `site/`: static, vanilla JS.
   - `index.html` + `app.js`: the picks.
-  - `venues.html` + `venues.js`: venue overlap research.
-  - `explore.html` + `explore.js`: The Climb / Rooms tabs.
+  - `venues.html` + `venues.js`: the "SF overlap" research page (raw tables, with sticky section links).
+  - `explore.html` + `explore.js`: Rooms (default) / The Climb tabs.
   - `ladder.js`: billing and ladder rules shared by the venue and explore pages.
   - D3 7.9.0 is self-hosted in `site/vendor/`. Design detail is in `docs/design.md`.
 - `research/`: one-off setlist.fm studies, each run by its own workflow on pushes to the dev branch. See `docs/research.md`.

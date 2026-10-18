@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Venue Overlap</title>
+  <title>SF Overlap</title>
   <script>
     // Same saved theme as the main page, applied before first paint.
     try { const t = JSON.parse(localStorage.getItem("nbt.theme")); if (t === "light" || t === "dark") document.documentElement.dataset.theme = t; } catch {}
@@ -16,11 +16,21 @@
 <body class="research">
   <header>
     <p class="crumb"><a href="./">← Picks</a> · <a href="explore.html">Explore</a></p>
-    <h1>Venue overlap</h1>
+    <h1>SF overlap</h1>
     <p class="muted">Which Toronto rooms book the same bands as the San Francisco rooms you went to most, and which of those bands keep coming back? Research for <a href="https://github.com/quepol/next-big-thing/issues/4">issue #4</a>.</p>
+    <p class="disclaimer"><strong>Here be spreadsheets.</strong> This is the raw research behind <a href="explore.html">Explore</a>: every table, every caveat, all the working. Proceed only if you enjoy footnotes. For the fun version, go to Explore.</p>
   </header>
+  <nav class="jump" aria-label="Sections">
+    <a href="#findings">Findings</a>
+    <a href="#sf-rooms">SF rooms</a>
+    <a href="#twins">Twins</a>
+    <a href="#toronto">Toronto rooms</a>
+    <a href="#larger">Larger rooms</a>
+    <a href="#coming-back">Coming back</a>
+    <a href="#played-both">Played both</a>
+  </nav>
   <main class="report">
-    <section class="findings">
+    <section class="findings" id="findings">
       <h2>What it shows</h2>
       <ul>
         <li><strong>Each SF room has a recognisable Toronto twin, at a similar size.</strong> Café du Nord → the Drake Underground and Drake Hotel. Bottom of the Hill → Monarch Tavern, Sneaky Dee's and the Baby G. The Independent → Velvet Underground, the Mod Club and Longboat Hall. Great American Music Hall → the Great Hall, the Concert Hall and the Phoenix. Bimbo's, the Fillmore and the Regency → the Concert Hall, the Danforth and the Opera House.</li>

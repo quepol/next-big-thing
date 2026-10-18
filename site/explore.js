@@ -232,27 +232,25 @@ function renderClimb() {
 }
 
 // ---------- Tabs and the band sheet ----------
-// Two tabs like the picks page: The Climb, and Rooms (your rooms + rivers). The tab is
-// remembered and mirrored in the URL hash. Rivers are drawn when their tab first shows,
+// Two tabs like the picks page: Rooms (your rooms + rivers), the default, and The Climb.
+// The tab is mirrored in the URL hash, so a link or home-screen bookmark can open either. Rivers are drawn when their tab first shows,
 // since a hidden tab has no width to lay out in.
 
-const TAB_KEY_X = "nbt.explore.tab";
-const TABS_X = ["climb", "rooms"];
+const TABS_X = ["rooms", "climb"];
 
 function setupTabs() {
   const fromHash = location.hash.slice(1);
-  const initial = TABS_X.includes(fromHash) ? fromHash : store.get(TAB_KEY_X, "climb");
+  const initial = TABS_X.includes(fromHash) ? fromHash : "rooms";
   document.getElementById("xtabs").addEventListener("click", (e) => {
     const t = e.target.closest("button")?.dataset.tab;
     if (t) showTab(t);
   });
   window.addEventListener("hashchange", () => { const t = location.hash.slice(1); if (TABS_X.includes(t)) showTab(t); });
-  showTab(TABS_X.includes(initial) ? initial : "climb");
+  showTab(initial);
 }
 
 function showTab(t) {
   state.tab = t;
-  store.set(TAB_KEY_X, t);
   if (location.hash.slice(1) !== t) history.replaceState(null, "", `#${t}`);
   document.querySelectorAll("#xtabs button").forEach((b) => b.setAttribute("aria-selected", b.dataset.tab === t));
   for (const id of TABS_X) document.getElementById(`tab-${id}`).hidden = id !== t;

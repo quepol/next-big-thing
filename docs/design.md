@@ -35,3 +35,5 @@ Preferences are saved in `localStorage` under `nbt.sort` and `nbt.theme`; votes 
 Footer: "Loaded <time> · Refresh · Explore" links to the explore page.
 
 Band sheet (explore page): in light mode it uses the page background over a 45% backdrop. In dark mode the page is black, so the sheet uses `--surface` with a border and a 72% backdrop. On phones it has a drag-handle bar.
+
+iOS text inflation: `html { -webkit-text-size-adjust: 100% }` in `style.css` stops iOS Safari enlarging text in content wider than the screen; it had blown up the show lists in the SF overlap tables. Show lists wrap on phones and stay on one line from 601px.

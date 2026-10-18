@@ -35,8 +35,9 @@ function table(head, rows, numeric = []) {
   return wrap;
 }
 
-function section(title, intro) {
+function section(title, intro, id) {
   const s = el("section", "rsec");
+  if (id) s.id = id; // targets for the jump links in the header
   s.append(el("h2", null, title));
   if (intro) s.append(el("p", "muted", intro));
   return s;
@@ -93,7 +94,7 @@ async function load() {
   report.append(head);
 
   // SF rooms
-  const sf = section("Your San Francisco rooms");
+  const sf = section("Your San Francisco rooms", null, "sf-rooms");
   sf.append(table(
     ["Venue", "Cap.", "Shows", "Artists"],
     data.sf_venues.map((v) => [v.name + (v.larger ? " (larger)" : ""), v.capacity, fmt(v.shows), fmt(v.artists)]),
@@ -110,6 +111,7 @@ async function load() {
     `"Reach" is the share of the SF room's artists who played Toronto at all. Each Toronto room shows ` +
     `its shared artists and how much more it leans toward that SF room than a typical Toronto room ` +
     `(at least ${MIN_PAIR} shared, from rooms with ${MIN_PAIR_ARTISTS}+ artists).`,
+    "twins",
   );
   twins.append(table(
     ["SF room", "Reach", "Closest Toronto rooms"],
@@ -142,10 +144,10 @@ async function load() {
     `Ranked by "vs avg": the share of a room's artists who also played your SF rooms, compared with ` +
     `the Toronto average. 2× means twice as much overlap as a typical room. Rooms need at least ` +
     `${MIN_ARTISTS} artists and ${MIN_OVERLAP} shared to be ranked. Tap a venue for the shared artists.`;
-  const s1 = section("Toronto rooms up to ~1,000", intro);
+  const s1 = section("Toronto rooms up to ~1,000", intro, "toronto");
   s1.append(small.length ? torontoTable(small, cap) : el("p", "empty", "None met the thresholds."));
   report.append(s1);
-  const s2 = section("Larger Toronto rooms");
+  const s2 = section("Larger Toronto rooms", null, "larger");
   s2.append(large.length ? torontoTable(large, cap) : el("p", "empty", "None met the thresholds."));
   report.append(s2);
 
@@ -169,6 +171,7 @@ async function load() {
       `Billing: where setlist.fm logged other acts the same night, the act with the most Last.fm listeners is taken as the headliner ("support"). With no co-bill on record it's assumed from room size: Massey Hall size (2,765) or smaller is headlining, bigger rooms are "likely support". Only headline shows count toward moving up. ` +
       `"Moving up" means a later headline show was in a room at least 25% bigger than their first headline show. ` +
       `Artists under ${fmt(SMALL_LISTENERS)} Last.fm listeners, moving-up ones first. A "?" means Last.fm may have matched the wrong artist.`,
+      "coming-back",
     );
     const shows = (a) => {
       const list = el("ul", "shows");
@@ -216,7 +219,7 @@ async function load() {
   }
 
   // Shared artists
-  const s3 = section("Artists who played both", `${fmt(data.shared_artists.length)} artists, A to Z.`);
+  const s3 = section("Artists who played both", `${fmt(data.shared_artists.length)} artists, A to Z.`, "played-both");
   const d = el("details", "all");
   d.append(el("summary", null, "Show the list"));
   d.append(table(["Artist", "SF rooms", "Toronto rooms"], data.shared_artists.map((a) => [a.artist, a.sf.join(", "), a.toronto.join(", ")])));
