@@ -145,6 +145,50 @@ def score_events(
     return dedupe(picks)
 
 
+def calendar(
+    events: list[Event],
+    history: dict,
+    affinity: Callable[[str], tuple[float, list[str]]],
+    artist_info: Callable[[str], dict | None],
+    excluded: set[str] | None = None,
+    is_noise: Callable[[str], bool] = lambda name: False,
+) -> list[dict]:
+    """Every event with each act scored, for the site's room view.
+
+    Unlike score_events, nothing is dropped for falling under a tier cutoff: a room's
+    calendar needs its quiet nights too. Excluded and noise acts stay on the bill but
+    are marked "skipped" and not scored.
+    """
+    artists = history["artists"]
+    excluded = exclusions.load() if excluded is None else excluded
+    rows = []
+    for ev in events:
+        acts = []
+        for name in ev.lineup:
+            key = normalize_name(name)
+            act: dict = {"artist": name}
+            if not key or key in excluded or is_noise(name):
+                act["skipped"] = True
+            else:
+                if key in artists:
+                    act["days"] = artists[key]["days"]
+                aff, reasons = affinity(name)
+                act["affinity"] = round(aff, 4)
+                if reasons:
+                    act["why"] = reasons[0]
+                info = artist_info(name)
+                if info:
+                    act["listeners"] = info["listeners"]
+            acts.append(act)
+        rows.append({
+            "id": ev.id, "starts_at": ev.starts_at, "url": ev.url, "region": ev.region,
+            "venue": {"name": ev.venue.name.strip(), "capacity": ev.venue.capacity},
+            "acts": acts,
+        })
+    rows.sort(key=lambda r: r["starts_at"])
+    return rows
+
+
 def dedupe(picks: list[Pick]) -> list[Pick]:
     """One pick per (tier, artist): the earliest date, noting how many other dates there are."""
     best: dict[tuple[str, str], Pick] = {}

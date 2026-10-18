@@ -3,7 +3,7 @@ from datetime import date, datetime, timezone
 from nbt import history as hist
 from nbt.config import Config
 from nbt.models import Event, Venue, haversine_km, normalize_name
-from nbt.scoring import score_events, smallness, venue_bonus
+from nbt.scoring import calendar, score_events, smallness, venue_bonus
 from nbt.snapshots import save_listeners, velocity
 from nbt.sources.bandsintown import parse_rest_event
 from nbt.sources.ticketmaster import _parse_event as parse_tm_event
@@ -200,6 +200,20 @@ def test_tiers():
     assert picks["Tag Only Kid"].tier == "next_big_thing"
     assert any("tags match" in r for r in picks["Tag Only Kid"].reasons)
     assert "Heard Once" not in picks  # no similarity evidence
+
+
+def test_calendar_keeps_every_show_and_act():
+    h = make_history()
+    lfm = FakeLastFM()
+    taste = Taste(h, lfm, log=lambda *_: None, loves=_TEST_LOVES)
+    rows = calendar([ev(["Heard Once"], day="2026-11-02"), ev(["Big Thief", "Tiny Newcomer"])],
+                    h, taste.affinity, lfm.artist_info, excluded={"tiny newcomer"})
+    assert [r["acts"][0]["artist"] for r in rows] == ["Big Thief", "Heard Once"]  # by date
+    big, tiny = rows[0]["acts"]
+    assert big["days"] == 10 and big["listeners"] == 900_000
+    assert tiny == {"artist": "Tiny Newcomer", "skipped": True}
+    once = rows[1]["acts"][0]
+    assert once["affinity"] == 0 and once["days"] == 1  # no pick, but still on the calendar
 
 
 def test_out_of_town_only_for_loved_artists():

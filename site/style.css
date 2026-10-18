@@ -292,3 +292,27 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
   .seg .long { display: none; }
   .seg .short { display: inline; }
 }
+.roomchips { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 12px; }
+.roomchip { font: inherit; font-size: 13px; padding: 5px 10px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); color: var(--text); cursor: pointer; }
+.roomchip .n { color: var(--muted); font-variant-numeric: tabular-nums; }
+.roomchip[aria-pressed="true"] { background: var(--surface-2); border-color: var(--accent-fill); font-weight: 600; }
+.roomadd { font: inherit; font-size: 13px; padding: 4px 6px; border: 1px solid var(--line); border-radius: 4px; background: var(--surface); color: var(--text); }
+.roompanel { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 12px 14px; }
+.roomhead { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
+.roomhead h3 { margin: 0; font-size: 17px; }
+.follow { font: inherit; font-size: 13px; background: none; border: 1px solid var(--line); border-radius: 999px; padding: 3px 10px; color: var(--accent); cursor: pointer; white-space: nowrap; }
+.launch { font-size: 13px; margin: 6px 0 10px; }
+.roomlist { list-style: none; margin: 8px 0 0; padding: 0; }
+.roomlist li { padding: 8px 0; border-top: 1px solid var(--line); }
+.rl-top { display: flex; align-items: baseline; gap: 10px; }
+.rl-date { flex: 0 0 auto; width: 92px; font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.rl-bill { flex: 1; font-weight: 500; overflow-wrap: anywhere; }
+.roomlist .score { flex: 0 0 auto; font-variant-numeric: tabular-nums; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11px; background: var(--surface-2); border-radius: 4px; padding: 1px 5px; color: var(--chip-text); }
+.rl-sub { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 6px; margin: 4px 0 0 102px; font-size: 12px; }
+.rl-chip { background: var(--chip-bg); color: var(--chip-text); border-radius: 999px; padding: 2px 8px; }
+.rl-room { font-weight: 600; color: var(--text); }
+.rl-sub .tickets { font-size: 12px; margin-left: auto; }
+@media (max-width: 600px) {
+  .rl-date { width: 74px; }
+  .rl-sub { margin-left: 0; }
+}

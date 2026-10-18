@@ -11,7 +11,7 @@ from . import snapshots
 from .config import CONFIG, SITE_DIR
 from .lastfm import LastFM
 from .models import Event, haversine_km, normalize_name
-from .scoring import is_upcoming, score_events
+from .scoring import calendar, is_upcoming, score_events
 from .sources.bandsintown import Bandsintown
 from .sources.setlistfm import SetlistFM
 from .sources.ticketmaster import Ticketmaster
@@ -152,6 +152,9 @@ def run(log=print) -> dict:
             tier: [p.to_dict() for p in picks if p.tier == tier]
             for tier in ("next_big_thing", "would_like", "know")
         },
+        # Every upcoming show with per-act scores, for the site's room view.
+        "calendar": calendar(events, history, taste.affinity, info,
+                             excluded=excluded, is_noise=taste.is_noise),
         "ledger": sorted(ledger.values(), key=lambda r: r["first_flagged"], reverse=True),
         "attended_ledger": slm.attended_ledger(current_listeners=listeners) if CONFIG.setlistfm_api_key else [],
     }
