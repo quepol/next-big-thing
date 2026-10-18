@@ -37,3 +37,5 @@ Footer: "Loaded <time> · Refresh · Explore" links to the explore page.
 Band sheet (explore page): in light mode it uses the page background over a 45% backdrop. In dark mode the page is black, so the sheet uses `--surface` with a border and a 72% backdrop. On phones it has a drag-handle bar.
 
 iOS text inflation: `html { -webkit-text-size-adjust: 100% }` in `style.css` stops iOS Safari enlarging text in content wider than the screen; it had blown up the show lists in the SF overlap tables. Show lists wrap on phones and stay on one line from 601px.
+
+Home-screen icon: two beamed eighth notes, white on `#FF1493`, with the beam rising into an arrow (chosen 2026-10-18). The source is `site/icons/icon.svg`, which is also the favicon. `apple-touch-icon.png` (180px) and `favicon-32.png` are rendered from it with Playwright. All three pages link them and set `apple-mobile-web-app-title` to "NBT". There's deliberately no `theme-color`: it would tint Safari's toolbar pink. iOS caches the icon, so after a change, delete the home-screen app and add it again.
