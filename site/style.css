@@ -235,3 +235,5 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
 .findings h2 { font-size: 17px; margin: 0 0 6px; }
 .findings ul { margin: 0; padding-left: 18px; }
 .findings li { margin: 6px 0; }
+.research ul.shows { list-style: none; margin: 0; padding: 0; white-space: nowrap; }
+.research .up { color: var(--accent); font-weight: 600; font-size: 12px; white-space: nowrap; }

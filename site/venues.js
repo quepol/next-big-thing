@@ -8,6 +8,7 @@ const MIN_OVERLAP = 3;
 const LARGE = 1000;
 const MIN_PAIR = 5; // twin-room pairings need this many shared artists…
 const MIN_PAIR_ARTISTS = 20; // …at a Toronto room with at least this many artists
+const SMALL_LISTENERS = 250000; // "next big thing" territory for the comeback list
 
 const el = (tag, cls, text) => {
   const n = document.createElement(tag);
@@ -154,6 +155,52 @@ async function load() {
   const s2 = section("Larger Toronto rooms");
   s2.append(large.length ? torontoTable(large, cap) : el("p", "empty", "None met the thresholds."));
   report.append(s2);
+
+  // Momentum: shared artists who came back to Toronto, smallest-first filter by listeners
+  const repeat = data.repeat_artists || [];
+  if (repeat.length) {
+    const small = repeat.filter((a) => a.listeners != null && a.listeners < SMALL_LISTENERS);
+    const up = small.filter((a) => a.stepped_up);
+    const f = document.getElementById("momentum-finding");
+    if (f) {
+      f.innerHTML = "";
+      f.append(el("strong", null, "Momentum: "),
+        `${fmt(repeat.length)} of the ${fmt(data.shared_artists_count)} shared artists came back to Toronto at least twice. ` +
+        `${fmt(small.length)} of them have under ${fmt(SMALL_LISTENERS)} Last.fm listeners, and ${fmt(up.length)} of those ` +
+        "moved up to a bigger Toronto room. Those are the strongest next-big-thing candidates here (below).");
+      f.hidden = false;
+    }
+    const s = section(
+      "Coming back to Toronto",
+      `Artists from your SF rooms with 2+ Toronto visits since ${since} (visits 30+ days apart, so a multi-night run counts once). ` +
+      `"Moving up" means a later Toronto show was in a room at least 25% bigger than their first. ` +
+      `Showing artists under ${fmt(SMALL_LISTENERS)} Last.fm listeners; bigger ones are in the second list.`,
+    );
+    const shows = (a) => {
+      const list = el("ul", "shows");
+      for (const sh of a.shows) {
+        const when = new Date(`${sh.date}T12:00:00`).toLocaleDateString(undefined, { month: "short", year: "numeric" });
+        list.append(el("li", null, `${when} · ${sh.venue}${sh.cap ? ` (${fmt(sh.cap)})` : ""}`));
+      }
+      return list;
+    };
+    const name = (a) => {
+      const n = el("span", null, a.artist);
+      if (a.stepped_up) n.append(" ", el("span", "up", "↑ Moving up"));
+      return n;
+    };
+    const rows = (list) => list.map((a) => [name(a), a.listeners != null ? fmt(a.listeners) : "—", fmt(a.visits), shows(a), a.sf.join(", ")]);
+    const head = ["Artist", "Listeners", "Visits", "Toronto shows", "SF rooms"];
+    s.append(small.length ? table(head, rows(small), [1, 2]) : el("p", "empty", "None under the listener cap."));
+    const rest = repeat.filter((a) => !small.includes(a));
+    if (rest.length) {
+      const d = el("details", "all");
+      d.append(el("summary", null, `Bigger artists who came back (${fmt(rest.length)})`));
+      d.append(table(head, rows(rest), [1, 2]));
+      s.append(d);
+    }
+    report.append(s);
+  }
 
   // Shared artists
   const s3 = section("Artists who played both", `${fmt(data.shared_artists.length)} artists, A to Z.`);
