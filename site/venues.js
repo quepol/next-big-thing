@@ -9,6 +9,7 @@ const LARGE = 1000;
 const MIN_PAIR = 5; // twin-room pairings need this many shared artists…
 const MIN_PAIR_ARTISTS = 20; // …at a Toronto room with at least this many artists
 const SMALL_LISTENERS = 250000; // "next big thing" territory for the comeback list
+const SUSPECT_LISTENERS = 3000; // below this, the Last.fm match is often the wrong artist
 const LADDER_MAX = 3000; // bigger rooms (arenas, stadiums) are usually support slots
 
 // Moving up: a later Toronto show in a club or theatre at least 25% bigger than the
@@ -184,7 +185,7 @@ async function load() {
       "Coming back to Toronto",
       `Artists from your SF rooms with 2+ Toronto visits since ${since} (visits 30+ days apart, so a multi-night run counts once). ` +
       `"Moving up" means a later Toronto show was in a club or theatre at least 25% bigger than their first. Arena and stadium dates don't count, since they're usually support slots. ` +
-      `Showing artists under ${fmt(SMALL_LISTENERS)} Last.fm listeners; bigger ones are in the second list.`,
+      `Artists under ${fmt(SMALL_LISTENERS)} Last.fm listeners, moving-up ones first. A "?" means Last.fm may have matched the wrong artist.`,
     );
     const shows = (a) => {
       const list = el("ul", "shows");
@@ -195,21 +196,34 @@ async function load() {
       return list;
     };
     const name = (a) => {
-      const n = el("span", null, a.artist);
-      if (movingUp(a)) n.append(" ", el("span", "up", "↑ Moving up"));
+      const n = el("div", null, a.artist);
+      if (movingUp(a)) n.append(" ", el("span", "up", "↑"));
+      n.append(el("div", "sfline", a.sf.join(" · ")));
       return n;
     };
-    const rows = (list) => list.map((a) => [name(a), a.listeners != null ? fmt(a.listeners) : "—", fmt(a.visits), shows(a), a.sf.join(", ")]);
-    const head = ["Artist", "Listeners", "Visits", "Toronto shows", "SF rooms"];
-    const order = (list) => [...list].sort((x, y) => movingUp(y) - movingUp(x) || y.visits - x.visits || x.artist.localeCompare(y.artist));
-    s.append(small.length ? table(head, rows(order(small)), [1, 2]) : el("p", "empty", "None under the listener cap."));
-    const rest = repeat.filter((a) => !small.includes(a));
-    if (rest.length) {
+    // A few thousand listeners for a band that headlines 300–1,000-cap rooms usually
+    // means Last.fm matched the wrong page (another band with the same name).
+    const listeners = (a) => {
+      if (a.listeners == null) return "—";
+      if (a.listeners >= SUSPECT_LISTENERS) return fmt(a.listeners);
+      const n = el("span", "suspect", `${fmt(a.listeners)}?`);
+      n.title = "Last.fm may have matched a different artist with this name";
+      return n;
+    };
+    const rows = (list) => list.map((a) => [name(a), listeners(a), fmt(a.visits), shows(a)]);
+    const head = ["Artist · SF rooms", "Listeners", "Visits", "Toronto shows"];
+    const order = (list) => [...list].sort((x, y) => y.visits - x.visits || x.artist.localeCompare(y.artist));
+    s.append(el("h3", null, `Moving up (${fmt(up.length)})`));
+    s.append(up.length ? table(head, rows(order(up)), [1, 2]) : el("p", "empty", "None yet."));
+    const folded = (label, list) => {
+      if (!list.length) return;
       const d = el("details", "all");
-      d.append(el("summary", null, `Bigger artists who came back (${fmt(rest.length)})`));
-      d.append(table(head, rows(order(rest)), [1, 2]));
+      d.append(el("summary", null, `${label} (${fmt(list.length)})`));
+      d.append(table(head, rows(order(list)), [1, 2]));
       s.append(d);
-    }
+    };
+    folded("Came back, same size room or smaller", small.filter((a) => !movingUp(a)));
+    folded(`Bigger artists who came back (${fmt(SMALL_LISTENERS)}+ listeners)`, repeat.filter((a) => !small.includes(a)));
     report.append(s);
   }
 
