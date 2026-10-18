@@ -10,11 +10,17 @@ const MIN_PAIR = 5; // twin-room pairings need this many shared artists…
 const MIN_PAIR_ARTISTS = 20; // …at a Toronto room with at least this many artists
 const SMALL_LISTENERS = 250000; // "next big thing" territory for the comeback list
 const SUSPECT_LISTENERS = 3000; // below this, the Last.fm match is often the wrong artist
-const LADDER_MAX = 3000; // bigger rooms (arenas, stadiums) are usually support slots
+const LADDER_MAX = 2765; // Massey Hall. Up to here a band is taken to be headlining;
+                         // anything bigger (amphitheatres, arenas, stadiums, festivals)
+                         // is taken to be a support slot and left off the ladder.
+let CAPS = {}; // Toronto capacities by lowercased venue name, filled in load()
+const isSupport = (sh) => {
+  const c = CAPS[sh.venue.toLowerCase()];
+  return typeof c === "string" || c > LADDER_MAX; // labels are "Arena", "Festival", "Outdoor"
+};
 
-// Moving up: a later Toronto show in a club or theatre at least 25% bigger than the
-// first room. Arena and stadium dates are left out, since a small band there is almost
-// always opening for someone else.
+// Moving up: a later headline show (Massey size or smaller) in a room at least 25%
+// bigger than the first.
 const movingUp = (a) => {
   const caps = a.shows.map((s) => s.cap).filter((c) => c && c <= LADDER_MAX);
   const first = a.shows[0].cap;
@@ -99,6 +105,7 @@ async function load() {
   report.replaceChildren();
   if (!data) return report.append(el("p", "empty", "No research results yet."));
   const cap = (v) => caps[v.name.toLowerCase()] ?? null;
+  CAPS = caps;
   const since = new Date(`${data.since}T12:00:00`).toLocaleDateString(undefined, { month: "short", year: "numeric" });
 
   const head = el("p", "muted");
@@ -184,14 +191,17 @@ async function load() {
     const s = section(
       "Coming back to Toronto",
       `Artists from your SF rooms with 2+ Toronto visits since ${since} (visits 30+ days apart, so a multi-night run counts once). ` +
-      `"Moving up" means a later Toronto show was in a club or theatre at least 25% bigger than their first. Arena and stadium dates don't count, since they're usually support slots. ` +
+      `Shows at Massey Hall size (2,765) or smaller count as headlining. Bigger rooms (amphitheatres, arenas, stadiums, festivals) are marked as support slots and don't count. ` +
+      `"Moving up" means a later headline show was in a room at least 25% bigger than their first. ` +
       `Artists under ${fmt(SMALL_LISTENERS)} Last.fm listeners, moving-up ones first. A "?" means Last.fm may have matched the wrong artist.`,
     );
     const shows = (a) => {
       const list = el("ul", "shows");
       for (const sh of a.shows) {
         const when = new Date(`${sh.date}T12:00:00`).toLocaleDateString(undefined, { month: "short", year: "numeric" });
-        list.append(el("li", null, `${when} · ${sh.venue}${sh.cap ? ` (${fmt(sh.cap)})` : ""}`));
+        const li = el("li", isSupport(sh) ? "support" : null, `${when} · ${sh.venue}${sh.cap ? ` (${fmt(sh.cap)})` : ""}`);
+        if (isSupport(sh)) li.append(el("span", "tag", "support"));
+        list.append(li);
       }
       return list;
     };
