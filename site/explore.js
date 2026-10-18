@@ -343,19 +343,25 @@ function scoreShow(row) {
     if (act.skipped) continue;
     if ((act.affinity || 0) > taste) { taste = act.affinity; best = act; }
   }
-  if (best?.why) chips.push(best.why.replace(/^similar to /, "Like ").replace(/ \(\d\.\d+\)/g, ""));
+  if (best?.why) {
+    const names = best.why.replace(/^similar to /, "").replace(/ \(\d\.\d+\)/g, "").split(", ");
+    chips.push(best.why.startsWith("similar to") ? `Like ${names.slice(0, 2).join(", ")}` : best.why.replace(/^tags match your taste: /, "Tags: "));
+  }
   const add = (w, text) => { bonus += w; chips.push(text); };
+  // Chips about the headliner skip the name; chips about an opener lead with it.
+  const head = row.acts[0]?.artist;
+  const who = (a, text) => (a === head ? text : `${a}: ${text.charAt(0).toLowerCase()}${text.slice(1)}`);
   const known = row.acts.find((a) => (a.days || 0) >= KNOW_DAYS);
   const heard = row.acts.find((a) => a.days && a.days < KNOW_DAYS);
-  if (known) add(WEIGHTS.know, `You know ${known.artist} (${known.days} days)`);
-  else if (heard) add(WEIGHTS.heard, `Heard ${heard.artist}`);
+  if (known) add(WEIGHTS.know, who(known.artist, `You know them · ${known.days} days`));
+  else if (heard) add(WEIGHTS.heard, who(heard.artist, "Heard before"));
   const seen = row.acts.find((a) => D.seen.has(norm(a.artist)));
-  if (seen) add(WEIGHTS.seen, `You've seen ${seen.artist}`);
+  if (seen) add(WEIGHTS.seen, who(seen.artist, "You've seen them"));
   const rep = row.acts.map((a) => D.repeat.get(norm(a.artist))).find(Boolean);
-  if (rep && movingUp(rep)) add(WEIGHTS.movingUp, `${rep.artist} is moving up`);
-  else if (rep) add(WEIGHTS.cameBack, `${rep.artist} keeps coming back`);
+  if (rep && movingUp(rep)) add(WEIGHTS.movingUp, who(rep.artist, "Moving up"));
+  else if (rep) add(WEIGHTS.cameBack, who(rep.artist, "Keeps coming back"));
   const sf = row.acts.map((a) => D.shared.get(norm(a.artist))).find(Boolean);
-  if (sf) add(WEIGHTS.sfLink, `${sf.artist} played ${sf.sf[0]}${sf.sf.length > 1 ? ` +${sf.sf.length - 1}` : ""}`);
+  if (sf) add(WEIGHTS.sfLink, who(sf.artist, `Played ${sf.sf[0]}${sf.sf.length > 1 ? ` +${sf.sf.length - 1}` : ""}`));
   return { score: taste + bonus, taste, bonus, chips };
 }
 
@@ -471,25 +477,33 @@ function renderRoom() {
   const list = el("ol", "roomlist");
   const shown = state.roomAll ? scored : scored.slice(0, ROOM_LIMIT);
   for (const s of shown) {
-    const li = el("li");
-    const top = el("div", "rl-top");
+    // Same shape as the main page's cards: a date tile, then headliner, support, why.
+    const li = el("li", "rl");
     const d = new Date(s.r.starts_at);
-    top.append(el("span", "rl-date", d.toLocaleDateString(undefined, { weekday: "short", month: "short", day: "numeric" })));
-    const bill = el("span", "rl-bill", s.r.acts.map((a) => a.artist).join(" · "));
-    top.append(bill);
+    const tile = el("div", "when");
+    tile.append(el("span", "dow", d.toLocaleDateString(undefined, { weekday: "short" })),
+      el("span", "day", String(d.getDate())), el("span", "mon", d.toLocaleDateString(undefined, { month: "short" })));
+    const body = el("div", "rl-body");
+    const head = el("div", "rl-head");
+    const [first, ...rest] = s.r.acts.map((a) => a.artist);
+    head.append(el("span", "rl-bill", first));
     const sc = el("span", "score", s.score.toFixed(2));
     sc.title = `taste ${s.taste.toFixed(2)} + bonuses ${s.bonus.toFixed(2)}`;
-    top.append(sc);
-    li.append(top);
-    const sub = el("div", "rl-sub");
-    if (all) sub.append(el("span", "rl-room", D.rooms.byRoom.get(s.k)?.name || s.k));
-    for (const c of s.chips) sub.append(el("span", "rl-chip", c));
+    head.append(sc);
+    body.append(head);
+    const meta = [];
+    if (rest.length) meta.push(`with ${rest.join(", ")}`);
+    if (all) meta.push(D.rooms.byRoom.get(s.k)?.name || s.k);
+    if (meta.length) body.append(el("p", "rl-meta", meta.join(" · ")));
+    const foot = el("div", "rl-foot");
+    for (const c of s.chips.slice(0, 3)) foot.append(el("span", "rl-chip", c));
     if (s.r.url) {
       const a = el("a", "tickets", "Tickets ↗");
       Object.assign(a, { href: s.r.url, target: "_blank", rel: "noopener" });
-      sub.append(a);
+      foot.append(a);
     }
-    li.append(sub);
+    if (foot.childNodes.length) body.append(foot);
+    li.append(tile, body);
     list.append(li);
   }
   box.append(list);

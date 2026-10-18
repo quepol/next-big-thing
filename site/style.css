@@ -303,16 +303,15 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
 .follow { font: inherit; font-size: 13px; background: none; border: 1px solid var(--line); border-radius: 999px; padding: 3px 10px; color: var(--accent); cursor: pointer; white-space: nowrap; }
 .launch { font-size: 13px; margin: 6px 0 10px; }
 .roomlist { list-style: none; margin: 8px 0 0; padding: 0; }
-.roomlist li { padding: 8px 0; border-top: 1px solid var(--line); }
-.rl-top { display: flex; align-items: baseline; gap: 10px; }
-.rl-date { flex: 0 0 auto; width: 92px; font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
-.rl-bill { flex: 1; font-weight: 500; overflow-wrap: anywhere; }
+.roomlist li.rl:first-child { border-top: 0; padding-top: 0; }
+.roomlist li.rl { display: grid; grid-template-columns: 44px 1fr; gap: 12px; padding: 10px 0; border-top: 1px solid var(--line); }
+.roomlist .when { padding: 5px 0; }
+.roomlist .when .day { font-size: 18px; }
+.rl-body { min-width: 0; }
+.rl-head { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
+.rl-bill { font-weight: 600; font-size: 16px; line-height: 1.3; overflow-wrap: anywhere; }
 .roomlist .score { flex: 0 0 auto; font-variant-numeric: tabular-nums; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11px; background: var(--surface-2); border-radius: 4px; padding: 1px 5px; color: var(--chip-text); }
-.rl-sub { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 6px; margin: 4px 0 0 102px; font-size: 12px; }
-.rl-chip { background: var(--chip-bg); color: var(--chip-text); border-radius: 999px; padding: 2px 8px; }
-.rl-room { font-weight: 600; color: var(--text); }
-.rl-sub .tickets { font-size: 12px; margin-left: auto; }
-@media (max-width: 600px) {
-  .rl-date { width: 74px; }
-  .rl-sub { margin-left: 0; }
-}
+.rl-meta { margin: 2px 0 0; font-size: 13px; color: var(--muted); overflow-wrap: anywhere; }
+.rl-foot { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-top: 6px; }
+.rl-chip { font-size: 12px; line-height: 1; background: var(--chip-bg); color: var(--chip-text); border-radius: 999px; padding: 5px 8px; }
+.rl-foot .tickets { font-size: 13px; margin-left: auto; }
