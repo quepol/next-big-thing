@@ -47,7 +47,7 @@ Other decisions they've made:
 
 ## Event source: Ticketmaster only
 
-Bandsintown's city feed is **permanently blocked by Cloudflare** from any server or CI IP. All request approaches (plain curl, mobile UA, JSON accept header) return 403. The Bandsintown REST API (`rest.bandsintown.com`) requires a `BANDSINTOWN_APP_ID` that is no longer freely issued.
+Bandsintown's city feed is **permanently blocked by Cloudflare** from any server or CI IP. All request approaches (plain curl, mobile UA, JSON accept header) return 403. The Bandsintown REST API (`rest.bandsintown.com`) requires a `BANDSINTOWN_APP_ID` that is no longer freely issued. A 2026-10-18 probe (`research/bandsintown_probe.py`, results in `research/bandsintown_probe.json`) confirmed the stored `BANDSINTOWN_APP_ID` gets HTTP 401 on artist past-events too, so Bandsintown is out for history and billing. Billing going forward comes from Ticketmaster: daily event snapshots keep lineup order, headliner first (154 of 526 events on 2026-10-18 list more than one act).
 
 **Ticketmaster Discovery API** (`app.ticketmaster.com/discovery/v2/events`) is the city feed. It has a free key (`TICKETMASTER_API_KEY` secret), supports lat/long radius search with `classificationName=music`, and includes TicketWeb (used by most small Toronto clubs). Coverage check result: 557 events in the Toronto region for the next 90 days, ~28% with opener data in `_embedded.attractions`, and all four small-venue spot-checks (Lee's Palace, Horseshoe, Baby G, Monarch Tavern) were present with correct lineups.
 
