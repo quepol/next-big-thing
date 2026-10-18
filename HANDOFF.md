@@ -41,8 +41,8 @@ Other decisions they've made:
   Seed weight is log(distinct days). Attended artists (from setlist.fm) not already in known are injected as seeds at weight 0.4.
 - **"Heard once" artists** (1–2 days played) count as unknown for next-big-thing, and the pick says "you played them on 1 day back in 2019". The user confirmed this.
 - **Yo-Yo Ma is both kids' sleep music and the user's own taste**, so keep him as a seed. Distinct days already discounts the 2,086 plays to 114 days.
-- **"You'd probably like" includes artists the user has heard of but doesn't play** (it's for broadening their listening). So there's no listener cap on that tier; only Next Big Thing is capped at 50k. **The would_like tier needs tuning** — well-known artists (Olivia Rodrigo, Collective Soul) currently appear because the user doesn't scrobble them but they score on affinity. For now, 👎 is the stopgap. A soft upper cap (~1M listeners) is the right permanent fix.
-- **Kids share the Last.fm account.** `data/exclude.txt` removes artists *everywhere*. `summary` auto-flags children's/kids/Disney-tagged artists among the top seeds. **Backlog:** make 👎 write to `data/exclude.txt`.
+- **"You'd probably like" includes artists the user has heard of but doesn't play** (it's for broadening their listening). So there's no listener cap on that tier; only Next Big Thing is capped (100k). Well-known artists (Olivia Rodrigo, Collective Soul) can appear because the user doesn't scrobble them but they score on affinity; 👎 is the stopgap and a soft upper cap is in issue #3.
+- **Kids share the Last.fm account.** `data/exclude.txt` removes artists *everywhere*. `summary` auto-flags children's/kids/Disney-tagged artists among the top seeds. Making 👎 persist into the pipeline is in issue #3.
 - **The bragging-rights ledger** (`data/ledger.json`) records each next-big-thing artist's listener count on the day it was first flagged. A separate **attended ledger** (in `digest.json`, rendered on the "Attended" tab) shows every setlist.fm-logged show with current listener counts — the retroactive version of the same idea.
 
 ## Event source: Ticketmaster only
@@ -61,7 +61,7 @@ The `nbt/sources/ticketmaster.py` module includes a 50-venue capacity lookup tab
 
 Three uses:
 1. **Attended artists as seeds** — 11 artists seen live but with <3 scrobble-days (Billy Corgan, Iron Maiden, PJ Harvey, John Cameron Mitchell, etc.) are injected into the taste graph at seed weight 0.4. Uncontaminated by kids' listening.
-2. **Attended artists as loved** — merged into the `loved` set, so they trigger Hamilton/Buffalo alerts and bill_bonus.
+2. **Attended artists as loved** — merged into the `loved` set, so they trigger Hamilton/Buffalo alerts and bill_bonus. `loved` is the top 200 artists by days played (`loved_top_n`) plus every attended artist, so the out-of-town set is large. The user's instinct is that out-of-town alerts should be their top ~50 seeds only. **Left at 200 for now**, to revisit after a few weeks of use (issue #3).
 3. **Venue novelty** — picks at venues the user has never attended get a "you've never been to X" reason. Matching is fuzzy: TM adds "The " prefixes and city suffixes ("The Danforth Music Hall", "History Toronto"); setlist.fm uses shorter names ("Danforth Music Hall", "History"). The `_venue_attended()` helper in `scoring.py` handles this with substring containment on the core name.
 
 The **attended ledger** is included in `digest.json` and rendered on a dedicated "Attended" tab: every logged show (back to 1991) with current listener counts.
@@ -70,7 +70,7 @@ The **attended ledger** is included in `digest.json` and rendered on a dedicated
 
 - **`main` is live.** The daily workflow runs at 6am Toronto time (UTC-4 in summer, UTC-5 in winter — cron is `17 10 * * *`, which is ~6am EDT).
 - **Site changes deploy on their own.** A push to `main` that touches `site/**` runs the same `daily.yml` in deploy-only mode: it skips the pipeline and publishes `site/` with the digest already committed. Both modes share the `pages` concurrency group, so they queue instead of overlapping. The daily run rebases onto `main` before pushing its snapshot commit, so a push made during the run can't get it rejected and the deploy carries the newest UI. Deploy-only runs depend on `site/data/digest.json` being committed to `main`, so keep it tracked.
-- All 32 tests pass (`python -m pytest -q`).
+- All 33 tests pass (`python -m pytest -q`).
 - Working:
   - Last.fm client with caching and rate limiting
   - Resumable history backfill
@@ -109,19 +109,25 @@ The **attended ledger** is included in `digest.json` and rendered on a dedicated
     - Your rooms: tap a followed Toronto room to get its upcoming shows, ranked. The score is the best act's taste fit plus fixed bonuses (`WEIGHTS` in `explore.js`): you know them, you've heard them, you've seen them, moving up, came back, played your SF rooms. Each show lists its reasons as chips. The room header shows capacity, its closest SF rooms and the climbers it launched (bands whose first Toronto headline show was there). Followed rooms are saved in `localStorage` as `nbt.rooms`. Defaults are the user's picks: Phoenix, Mod Club, Opera House, Horseshoe, Concert Hall, Adelaide Hall, Drake Underground. Followed rooms filter and sort; they never add to a show's score. The data comes from the digest's new `calendar` field (every upcoming show, each act with affinity, days played and listeners), made by `nbt.scoring.calendar()`, which drops nothing at the tier cutoffs. Until a digest has it, the page rebuilds what it can from the picks.
     D3 7.9.0 is self-hosted in `site/vendor/` (ISC licence alongside). Billing and ladder rules shared by both pages live in `site/ladder.js`.
 
-    Research page: `site/venues.html` + `venues.js` (issue #4) render `data/venue_research.json`, written by `research/venue_overlap.py` via `.github/workflows/venue-research.yml` (runs on a push to `research/**` on the dev branch; resumable through an API cache). Toronto capacities for that page are in `data/toronto_capacity.json`, keyed by lowercased setlist.fm venue name. Not linked from the main page. It also has a "Coming back to Toronto" list: shared artists with 2+ Toronto visits (30+ days apart). Last.fm listeners are looked up with typographic quotes normalised, because "Arm’s Length" otherwise matches a near-empty page. Counts under 3,000 are flagged as a possible wrong match. Headline vs support is an assumption from room size, not data (setlist.fm has no billing), following the user's rule: Massey Hall size (2,765) or smaller counts as headlining; bigger rooms and labelled spaces (Arena, Festival, Outdoor) count as support slots, shown greyed with a "support" tag and left off the ladder. "Moving up" is computed on the page from headline shows only. The user frequented these SF rooms; they weren't chosen as a taste test, so no control-room comparison is planned.
+    Research page: `site/venues.html` + `venues.js` (issue #4) render `data/venue_research.json`, written by `research/venue_overlap.py` via `.github/workflows/venue-research.yml` (runs on a push to `research/**` on the dev branch; resumable through an API cache). Toronto capacities for that page are in `data/toronto_capacity.json`, keyed by lowercased setlist.fm venue name. Not linked from the main page. It also has a "Coming back to Toronto" list: shared artists with 2+ Toronto visits (30+ days apart). Last.fm listeners are looked up with typographic quotes normalised, because "Arm’s Length" otherwise matches a near-empty page. Counts under 3,000 are flagged as a possible wrong match. Headline vs support: setlist.fm records no billing. Where other acts were logged the same night, the research job takes the act with the most Last.fm listeners as the headliner (about 80% of comeback shows; half turned out to be support slots). Otherwise the page falls back to the user's room-size rule: Massey Hall size (2,765) or smaller counts as headlining; bigger rooms and labelled spaces (Arena, Festival, Outdoor) count as likely support. Support shows are greyed with a tag and left off the ladder, and "moving up" uses headline shows only. The five-band aughts ladder study (`research/ladder_study.py`, `.github/workflows/ladder-study.yml`, output `site/data/ladder_study.json`) feeds the explore page's "for pace" box; its first run hit setlist.fm's daily limit on 10-18 and was set to re-run on 10-19. The user frequented these SF rooms; they weren't chosen as a taste test, so no control-room comparison is planned.
 
     Preferences are saved in `localStorage` under `nbt.sort` and `nbt.theme`; votes keep the same `nbt.votes` format.
   - Daily workflow (runs + deploys Pages), plus deploy-only runs on `site/**` pushes
+  - The digest's `calendar`: every upcoming show, each act with taste affinity, days played and listeners (`nbt.scoring.calendar()`). It feeds the explore page's room view. Picks and scoring don't use it.
   - `python -m nbt summary` (taste-model sanity check)
   - Ticketmaster city feed with venue-capacity bonus
   - setlist.fm integration: attended seeds, venue novelty, attended ledger
-- **Not working / backlog:**
-  - NBT listener threshold raised to 100K; revisit if tier still feels thin
-  - `would_like` tier tuning (soft upper listener cap ~1M)
-  - 👎 → `data/exclude.txt` (votes currently browser-only)
-  - Velocity signal needs 4 weeks of listener snapshots before it's trusted
-  - Site: tune the per-tab strength thresholds (`STRENGTH` in `site/app.js`) once there are more digests; the artist-path ("chain") explanation idea from issue #2
+  - One-off research jobs under `research/` (venue overlap, tiers for shared bands, aughts ladder study), each with its own workflow that runs on pushes to the dev branch. The setlist.fm daily limit (~1,440 calls) is the main constraint; the jobs cache API responses and never overwrite good results with a partial run.
+
+## Backlog: GitHub Issues
+
+From 2026-10-18 the backlog and ideas live in GitHub Issues, not in this file. Keep this file for how things work and why.
+
+- **#3 Ideas to consider: scoring and UX.** Would-like upper cap, 👎 persistence, ♥ marker for loves, `taste_seeds`. Plus the "revisit after a few weeks" list: **the out-of-town alert set (lower `loved_top_n` from 200, maybe drop attended artists from it)**, the NBT ceiling (try 200K), retuning the card strength thresholds, the velocity bonus once 4+ weeks of snapshots exist, and chain explanations.
+- **#4 Venue overlap and the ladder (SF rooms → Toronto).** Mostly done; see the 2026-10-18 progress comment. Open: the aughts ladder study, momentum as a boost in the main picks (needs the user's OK, since it changes scoring), a weekly research refresh, and small-room coverage gaps.
+- **#5 Follow bands and rooms: watchlist and alerts.** Decided: following a band is a watchlist, not a love, and out-of-town alerts are for the top ~50 seeds only.
+- **#6 Pipeline housekeeping.** Dead Bandsintown calls, typographic quotes in Last.fm lookups, the Actions Node 20 deprecation, and a scheduled research refresh.
+- **#7 Bigger feature ideas.** Email digest, curator signals, a musicals tier, onboarding other people.
 
 ## Environment
 
@@ -131,14 +137,11 @@ The **attended ledger** is included in `digest.json` and rendered on a dedicated
 - All three are in `.env` locally (not committed; in `.gitignore`)
 - `data/history.json` is committed; `data/cache/` is CI-cached, not committed
 
-## Next steps, in order
+## Next steps
 
-1. ~~**Coverage check.**~~ Done. Ticketmaster wins; Bandsintown is blocked.
-2. ~~**Implement `city_events()`.**~~ Done. Ticketmaster, 557 events, 26 tests passing.
-3. ~~**Individual venue scrapers.**~~ Skipped; TM coverage is sufficient.
-4. ~~**Merge.**~~ Done 2026-10-17. Pages live.
-5. ~~**setlist.fm (user `quepol`).**~~ Done 2026-10-17. Attended seeds, venue novelty, attended ledger. 32 tests passing.
-6. **Later:** NBT listener threshold (try 200K), `would_like` upper listener cap (~1M), sync 👍/👎 back to the pipeline, email digest, curator signals (KEXP, Tiny Desk, labels they trust), velocity signal once there are 4+ weeks of snapshots.
+1. After the first daily run that includes `calendar` (2026-10-19, 6am Toronto): check the explore page's Rooms tab has real scores and next-show dates, and that the digest size is still reasonable.
+2. Re-run the aughts ladder study if 10-19's run didn't finish (the "Ladder study" workflow; it can be dispatched from `main`), and check the "for pace" box.
+3. Then work from the Issues above, in whatever order the user picks.
 
 ## First live Actions run (2026-10-17)
 
