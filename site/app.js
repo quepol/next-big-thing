@@ -372,4 +372,18 @@ tabs.addEventListener("scroll", updateTabEdges, { passive: true });
 window.addEventListener("resize", updateTabEdges);
 document.fonts?.ready.then(updateTabEdges);
 updateTabEdges();
+// Refresh: a home-screen app keeps the page alive and has no reload control. Reload
+// with a throwaway query so the page itself is refetched, not resumed from cache.
+const loadedAt = Date.now();
+const STALE_MS = 60 * 60 * 1000;
+const refresh = () => location.replace(`${location.pathname}?r=${Date.now()}`);
+document.getElementById("loaded").textContent =
+  `Loaded ${new Date(loadedAt).toLocaleTimeString(undefined, { hour: "numeric", minute: "2-digit" })}`;
+document.getElementById("refresh").addEventListener("click", refresh);
+// Reopening the app after an hour or more reloads it on its own.
+const refreshIfStale = () => { if (Date.now() - loadedAt > STALE_MS) refresh(); };
+document.addEventListener("visibilitychange", () => { if (document.visibilityState === "visible") refreshIfStale(); });
+window.addEventListener("pageshow", (e) => { if (e.persisted) refreshIfStale(); });
+if (location.search.includes("r=")) history.replaceState(null, "", location.pathname);
+
 load();
