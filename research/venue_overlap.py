@@ -140,6 +140,53 @@ def toronto_setlists() -> tuple[list[dict], dict]:
     return out, coverage
 
 
+def toronto_capacity() -> dict:
+    path = ROOT / "site" / "data" / "toronto_capacity.json"
+    return json.loads(path.read_text()) if path.exists() else {}
+
+
+def repeat_visitors(shared: set, sf_artists: dict, tor_dates: dict) -> list[dict]:
+    """Shared artists who came back to Toronto (2+ visits, 30+ days apart): momentum.
+
+    Adds Last.fm listeners (so the page can keep to small artists) and whether a later
+    Toronto show was in a clearly bigger room than the first, i.e. they're moving up.
+    """
+    caps = toronto_capacity()
+    num = lambda c: c if isinstance(c, int) else None  # labels like "Festival" don't count
+    lastfm = None
+    if os.environ.get("LASTFM_API_KEY"):
+        from nbt.lastfm import LastFM
+        lastfm = LastFM()
+    out = []
+    for k in shared:
+        dates = sorted(tor_dates.get(k, {}).items())
+        # Back-to-back nights on one tour are one visit: count visits 30+ days apart.
+        visits, last = 0, None
+        for d, _ in dates:
+            day = date.fromisoformat(d)
+            if last is None or (day - last).days >= 30:
+                visits += 1
+            last = day
+        if visits < 2:
+            continue
+        shows = [{"date": d, "venue": v, "cap": num(caps.get(v.lower()))} for d, v in dates]
+        first = shows[0]["cap"]
+        later = [s["cap"] for s in shows[1:] if s["cap"]]
+        info = lastfm.artist_info(sf_artists[k]["name"]) if lastfm else None
+        out.append({
+            "artist": sf_artists[k]["name"],
+            "listeners": info["listeners"] if info else None,
+            "sf": sorted(sf_artists[k]["venues"]),
+            "visits": visits,
+            "shows": shows,
+            "stepped_up": bool(first and later and max(later) >= first * 1.25),
+        })
+    if lastfm:
+        lastfm.save()
+    out.sort(key=lambda a: (-a["stepped_up"], -a["visits"], a["artist"].lower()))
+    return out
+
+
 def main() -> None:
     complete = True
     sf_artists: dict[str, dict] = {}  # key -> {name, venues: set}
@@ -179,11 +226,13 @@ def main() -> None:
 
     # Toronto venues -> artists
     venues: dict[str, dict] = {}
+    tor_dates: dict[str, dict[str, str]] = defaultdict(dict)  # artist -> {iso date: venue}
     for s in tor:
         k = artist_key(s)
         if not k:
             continue
         v = s["venue"]
+        tor_dates[k].setdefault(event_date(s).isoformat(), v["name"])
         entry = venues.setdefault(v["id"], {"name": v["name"], "artists": {}, "shows": 0})
         entry["shows"] += 1
         entry["artists"].setdefault(k, s["artist"]["name"])
@@ -217,6 +266,8 @@ def main() -> None:
         shared_artists.append({"artist": sf_artists[k]["name"],
                                "sf": sorted(sf_artists[k]["venues"]), "toronto": tor_venues})
 
+    repeat = repeat_visitors(shared, sf_artists, tor_dates)
+
     OUT.write_text(json.dumps({
         "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "since": SINCE.isoformat(),
@@ -229,6 +280,7 @@ def main() -> None:
         "baseline": round(baseline, 4),
         "toronto_venues": ranked,
         "shared_artists": shared_artists,
+        "repeat_artists": repeat,
     }, indent=1, ensure_ascii=False))
     print(f"SF artists {len(sf_keys)}, Toronto artists {len(all_tor)}, shared {len(shared)}, "
           f"baseline {baseline:.3f}, complete={complete}")

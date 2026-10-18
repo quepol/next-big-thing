@@ -32,12 +32,15 @@ jobs:
       - run: pip install -r requirements.txt
       - uses: actions/cache@v4
         with:
-          path: research/cache.json
+          path: |
+            research/cache.json
+            data/cache/artist_info.json
           key: venue-research-${{ github.run_id }}
           restore-keys: venue-research-
       - name: Run research
         env:
           SETLISTFM_API_KEY: ${{ secrets.SETLISTFM_API_KEY }}
+          LASTFM_API_KEY: ${{ secrets.LASTFM_API_KEY }}
         run: python -u research/venue_overlap.py
       - name: Commit results
         run: |
