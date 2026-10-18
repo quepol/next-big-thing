@@ -778,11 +778,11 @@
       "venue": "Kemper Arena"
     }
   ],
-  "generated_at": "2026-10-17T22:15:12+00:00",
+  "generated_at": "2026-10-18T14:01:56+00:00",
   "ledger": [
     {
       "artist": "Adam Cohen",
-      "checked": "2026-10-17",
+      "checked": "2026-10-18",
       "event": {
         "starts_at": "2026-11-07T20:00:00",
         "url": "https://www.ticketmaster.ca/everybody-knows-leonard-cohen-10th-anniversary-toronto-ontario-11-07-2026/event/100064E1E1815048",
@@ -800,7 +800,7 @@
     },
     {
       "artist": "AHI",
-      "checked": "2026-10-17",
+      "checked": "2026-10-18",
       "event": {
         "starts_at": "2026-10-22T19:00:00",
         "url": "https://www.ticketmaster.ca/allison-russell-with-very-special-guest-toronto-ontario-10-22-2026/event/10006547B0205A80",
@@ -818,7 +818,7 @@
     },
     {
       "artist": "Allison Russell",
-      "checked": "2026-10-17",
+      "checked": "2026-10-18",
       "event": {
         "starts_at": "2026-10-22T19:00:00",
         "url": "https://www.ticketmaster.ca/allison-russell-with-very-special-guest-toronto-ontario-10-22-2026/event/10006547B0205A80",
@@ -837,7 +837,7 @@
     },
     {
       "artist": "Ally Salort",
-      "checked": "2026-10-17",
+      "checked": "2026-10-18",
       "event": {
         "starts_at": "2026-10-26T19:00:00",
         "url": "https://www.ticketmaster.ca/lexi-jayde-toronto-ontario-10-26-2026/event/1000651B953A7C3B",
@@ -855,8 +855,26 @@
       "score_at_flag": 0.2852
     },
     {
+      "artist": "ARK IDENTITY",
+      "checked": "2026-10-18",
+      "event": {
+        "starts_at": "2026-11-12T19:00:00",
+        "url": "https://www.ticketweb.ca/event/ark-identity-the-sound-garage-tickets/14367184",
+        "venue": "The Sound Garage"
+      },
+      "first_flagged": "2026-10-17",
+      "listeners_at_flag": 7619,
+      "listeners_now": 7619,
+      "reasons": [
+        "tags match your taste: alternative, canadian, indie pop",
+        "only 7,619 listeners on Last.fm",
+        "you've never been to The Sound Garage"
+      ],
+      "score_at_flag": 0.1124
+    },
+    {
       "artist": "Band Of Silver",
-      "checked": "2026-10-17",
+      "checked": "2026-10-18",
       "event": {
         "starts_at": "2026-10-24T18:30:00",
         "url": "https://www.ticketmaster.ca/judah-the-lion-toronto-ontario-10-24-2026/event/100064CAD5EF8D62",
@@ -874,7 +892,7 @@
     },
     {
       "artist": "Caity Gyorgy",
-      "checked": "2026-10-17",
+      "checked": "2026-10-18",
       "event": {
         "starts_at": "2026-12-12T19:30:00",
         "url": "https://www.ticketmaster.ca/swing-into-the-holidays-ft-caity-toronto-ontario-12-12-2026/event/100064B24B04DD11",
@@ -892,7 +910,7 @@
     },
     {
       "artist": "Charlotte Cornfield",
-      "checked": "2026-10-17",
+      "checked": "2026-10-18",
       "event": {
         "starts_at": "2026-12-03T20:00:00",
         "url": "https://www.ticketweb.ca/event/charlotte-cornfield-and-friendship-with-lees-palace-tickets/14903453",
@@ -911,7 +929,7 @@
     },
     {
       "artist": "Colorblind",
-      "checked": "2026-10-17",
+      "checked": "2026-10-18",
       "event": {
         "starts_at": "2026-11-19T18:00:00",
         "url": "https://www.ticketmaster.ca/catch-your-breath-not-broken-enough-toronto-ontario-11-19-2026/event/100064BAD77E4385",
@@ -929,7 +947,7 @@
     },
     {
       "artist": "Devon Gabriella",
-      "checked": "2026-10-17",
+      "checked": "2026-10-18",
       "event": {
         "starts_at": "2026-12-07T18:30:00",
         "url": "https://www.ticketmaster.ca/devon-gabriella-toronto-ontario-12-07-2026/event/100065302201E92B",
@@ -948,7 +966,7 @@
     },
     {
       "artist": "Field Guide",
-      "checked": "2026-10-17",
+      "checked": "2026-10-18",
       "event": {
         "starts_at": "2026-11-20T19:00:00",
         "url": "https://www.ticketmaster.ca/boy-golden-good-goddamn-another-tour-toronto-ontario-11-20-2026/event/100065168FDDA025",
@@ -967,8 +985,45 @@
       "score_at_flag": 0.2194
     },
     {
+      "artist": "Kes",
+      "checked": "2026-10-18",
+      "event": {
+        "starts_at": "2026-12-18T20:00:00",
+        "url": "https://www.ticketmaster.ca/kesmas-with-kes-the-band-toronto-ontario-12-18-2026/event/10006549E31674D3",
+        "venue": "The Theatre at Great Canadian Toronto"
+      },
+      "first_flagged": "2026-10-17",
+      "listeners_at_flag": 52285,
+      "listeners_now": 52285,
+      "reasons": [
+        "tags match your taste: rock, folk, pop",
+        "only 52,285 listeners on Last.fm",
+        "you've never been to The Theatre at Great Canadian Toronto"
+      ],
+      "score_at_flag": 0.1066
+    },
+    {
+      "artist": "Loviet",
+      "checked": "2026-10-18",
+      "event": {
+        "starts_at": "2026-11-09T19:00:00",
+        "url": "https://www.ticketmaster.ca/the-wldlfe-toronto-ontario-11-09-2026/event/100064CF43BE63DC",
+        "venue": "The Mod Club"
+      },
+      "first_flagged": "2026-10-17",
+      "listeners_at_flag": 7428,
+      "listeners_now": 7428,
+      "reasons": [
+        "tags match your taste: alternative, pop, indie rock",
+        "only 7,428 listeners on Last.fm",
+        "small venue (~575 cap.)",
+        "you've never been to The Mod Club"
+      ],
+      "score_at_flag": 0.2209
+    },
+    {
       "artist": "Mamas Gun",
-      "checked": "2026-10-17",
+      "checked": "2026-10-18",
       "event": {
         "starts_at": "2026-11-19T20:00:00",
         "url": "https://www.ticketweb.ca/event/mamas-gun-the-garrison-tickets/14816073",
@@ -986,7 +1041,7 @@
     },
     {
       "artist": "Mr. Fantasy",
-      "checked": "2026-10-17",
+      "checked": "2026-10-18",
       "event": {
         "starts_at": "2026-10-24T19:00:00",
         "url": "https://www.ticketmaster.ca/mr-fantasy-sexy-saturday-nights-tour-toronto-ontario-10-24-2026/event/10006528BD1EB11E",
@@ -1005,7 +1060,7 @@
     },
     {
       "artist": "Sam Quealy",
-      "checked": "2026-10-17",
+      "checked": "2026-10-18",
       "event": {
         "starts_at": "2026-12-04T19:00:00",
         "url": "https://www.ticketmaster.ca/sam-quealy-north-america-tour-toronto-ontario-12-04-2026/event/100064E7D333B647",
@@ -1024,7 +1079,7 @@
     },
     {
       "artist": "The Trews",
-      "checked": "2026-10-17",
+      "checked": "2026-10-18",
       "event": {
         "starts_at": "2026-12-05T18:30:00",
         "url": "https://www.ticketmaster.ca/the-trews-toronto-ontario-12-05-2026/event/1000652BDABA8714",
@@ -1042,7 +1097,7 @@
     },
     {
       "artist": "Venus & The Flytraps",
-      "checked": "2026-10-17",
+      "checked": "2026-10-18",
       "event": {
         "starts_at": "2026-11-03T19:00:00",
         "url": "https://www.ticketmaster.ca/dev-lemons-eat-the-pavement-tour-toronto-ontario-11-03-2026/event/100064E8A8117AF2",
@@ -1060,63 +1115,8 @@
       "score_at_flag": 0.1972
     },
     {
-      "artist": "Loviet",
-      "checked": "2026-10-17",
-      "event": {
-        "starts_at": "2026-11-09T19:00:00",
-        "url": "https://www.ticketmaster.ca/the-wldlfe-toronto-ontario-11-09-2026/event/100064CF43BE63DC",
-        "venue": "The Mod Club"
-      },
-      "first_flagged": "2026-10-17",
-      "listeners_at_flag": 7428,
-      "listeners_now": 7428,
-      "reasons": [
-        "tags match your taste: alternative, pop, indie rock",
-        "only 7,428 listeners on Last.fm",
-        "small venue (~575 cap.)",
-        "you've never been to The Mod Club"
-      ],
-      "score_at_flag": 0.2209
-    },
-    {
-      "artist": "ARK IDENTITY",
-      "checked": "2026-10-17",
-      "event": {
-        "starts_at": "2026-11-12T19:00:00",
-        "url": "https://www.ticketweb.ca/event/ark-identity-the-sound-garage-tickets/14367184",
-        "venue": "The Sound Garage"
-      },
-      "first_flagged": "2026-10-17",
-      "listeners_at_flag": 7619,
-      "listeners_now": 7619,
-      "reasons": [
-        "tags match your taste: alternative, canadian, indie pop",
-        "only 7,619 listeners on Last.fm",
-        "you've never been to The Sound Garage"
-      ],
-      "score_at_flag": 0.1124
-    },
-    {
-      "artist": "Kes",
-      "checked": "2026-10-17",
-      "event": {
-        "starts_at": "2026-12-18T20:00:00",
-        "url": "https://www.ticketmaster.ca/kesmas-with-kes-the-band-toronto-ontario-12-18-2026/event/10006549E31674D3",
-        "venue": "The Theatre at Great Canadian Toronto"
-      },
-      "first_flagged": "2026-10-17",
-      "listeners_at_flag": 52285,
-      "listeners_now": 52285,
-      "reasons": [
-        "tags match your taste: rock, folk, pop",
-        "only 52,285 listeners on Last.fm",
-        "you've never been to The Theatre at Great Canadian Toronto"
-      ],
-      "score_at_flag": 0.1066
-    },
-    {
       "artist": "The 4411",
-      "checked": "2026-10-17",
+      "checked": "2026-10-18",
       "event": {
         "starts_at": "2026-11-11T19:00:00",
         "url": "https://www.ticketmaster.ca/west-22nd-places-to-be-toronto-ontario-11-11-2026/event/10006487E12C8BA5",
@@ -1134,7 +1134,7 @@
     },
     {
       "artist": "54-40",
-      "checked": "2026-10-17",
+      "checked": "2026-10-18",
       "event": {
         "starts_at": "2026-11-28T19:00:00",
         "url": "https://www.ticketmaster.ca/5440-toronto-ontario-11-28-2026/event/1000648FE5A3BC17",
@@ -1152,7 +1152,7 @@
     },
     {
       "artist": "Boy Golden",
-      "checked": "2026-10-17",
+      "checked": "2026-10-18",
       "event": {
         "starts_at": "2026-11-20T19:00:00",
         "url": "https://www.ticketmaster.ca/boy-golden-good-goddamn-another-tour-toronto-ontario-11-20-2026/event/100065168FDDA025",
@@ -1171,7 +1171,7 @@
     },
     {
       "artist": "Bradley Hale",
-      "checked": "2026-10-17",
+      "checked": "2026-10-18",
       "event": {
         "starts_at": "2026-11-12T19:00:00",
         "url": "https://www.ticketmaster.ca/sully-burrows-the-leave-you-lonely-toronto-ontario-11-12-2026/event/10006523B5E9A6C3",
@@ -1189,7 +1189,7 @@
     },
     {
       "artist": "Clerel",
-      "checked": "2026-10-17",
+      "checked": "2026-10-18",
       "event": {
         "starts_at": "2026-11-19T20:00:00",
         "url": "https://www.ticketweb.ca/event/mamas-gun-the-garrison-tickets/14816073",
@@ -1206,7 +1206,7 @@
     },
     {
       "artist": "Dominique Way",
-      "checked": "2026-10-17",
+      "checked": "2026-10-18",
       "event": {
         "starts_at": "2026-10-17T19:00:00",
         "url": "https://www.ticketmaster.ca/anna-graves-americas-greatest-burnout-tour-toronto-ontario-10-17-2026/event/100064C9F1B9E130",
@@ -1224,7 +1224,7 @@
     },
     {
       "artist": "Ella Woolsey",
-      "checked": "2026-10-17",
+      "checked": "2026-10-18",
       "event": {
         "starts_at": "2026-10-25T19:00:00",
         "url": "https://www.ticketmaster.ca/the-army-the-navy-the-fake-toronto-ontario-10-25-2026/event/100064CBC7977C87",
@@ -1242,7 +1242,7 @@
     },
     {
       "artist": "Good Lovelies",
-      "checked": "2026-10-17",
+      "checked": "2026-10-18",
       "event": {
         "starts_at": "2026-12-17T20:00:00",
         "url": "https://www.ticketmaster.ca/good-lovelies-holiday-concert-toronto-ontario-12-17-2026/event/100064C2DE8DACA5",
@@ -1259,7 +1259,7 @@
     },
     {
       "artist": "Jonathan Roy",
-      "checked": "2026-10-17",
+      "checked": "2026-10-18",
       "event": {
         "starts_at": "2026-10-16T20:00:00",
         "url": "https://www.ticketmaster.ca/collective-soul-pickering-ontario-10-16-2026/event/100064DE913C6FA0",
@@ -1276,7 +1276,7 @@
     },
     {
       "artist": "Jordan Hart",
-      "checked": "2026-10-17",
+      "checked": "2026-10-18",
       "event": {
         "starts_at": "2026-12-20T19:00:00",
         "url": "https://www.ticketweb.ca/event/jordan-hart-longboat-hall-tickets/14322014",
@@ -1294,7 +1294,7 @@
     },
     {
       "artist": "Julian Taylor",
-      "checked": "2026-10-17",
+      "checked": "2026-10-18",
       "event": {
         "starts_at": "2026-10-16T19:00:00",
         "url": "https://www.ticketmaster.ca/sanctuary-park-tour-celebrating-40-years-toronto-ontario-10-16-2026/event/100064D1D94E7213",
@@ -1312,7 +1312,7 @@
     },
     {
       "artist": "Macy Todd",
-      "checked": "2026-10-17",
+      "checked": "2026-10-18",
       "event": {
         "starts_at": "2026-11-29T19:00:00",
         "url": "https://www.ticketmaster.ca/an-evening-with-sasha-alex-sloan-toronto-ontario-11-29-2026/event/1000654196337229",
@@ -1330,7 +1330,7 @@
     },
     {
       "artist": "Mike D",
-      "checked": "2026-10-17",
+      "checked": "2026-10-18",
       "event": {
         "starts_at": "2026-10-20T19:00:00",
         "url": "https://www.ticketmaster.ca/mike-d-5d-toronto-ontario-10-20-2026/event/100064F08ADE5798",
@@ -1347,7 +1347,7 @@
     },
     {
       "artist": "the olllam",
-      "checked": "2026-10-17",
+      "checked": "2026-10-18",
       "event": {
         "starts_at": "2026-11-12T19:00:00",
         "url": "https://www.ticketmaster.ca/the-olllam-toronto-ontario-11-12-2026/event/1000650506F2B686",
@@ -1365,7 +1365,7 @@
     },
     {
       "artist": "Raine Maida",
-      "checked": "2026-10-17",
+      "checked": "2026-10-18",
       "event": {
         "starts_at": "2026-11-22T18:30:00",
         "url": "https://www.ticketmaster.ca/an-evening-with-raine-maida-chantal-toronto-ontario-11-22-2026/event/100064A1A468B69F",
@@ -1383,7 +1383,7 @@
     },
     {
       "artist": "Rett Madison",
-      "checked": "2026-10-17",
+      "checked": "2026-10-18",
       "event": {
         "starts_at": "2026-10-17T19:00:00",
         "url": "https://www.ticketweb.ca/event/rett-madison-the-sound-garage-tickets/15001533",
@@ -1400,7 +1400,7 @@
     },
     {
       "artist": "Salin",
-      "checked": "2026-10-17",
+      "checked": "2026-10-18",
       "event": {
         "starts_at": "2026-10-19T19:00:00",
         "url": "https://www.ticketweb.ca/event/salin-the-garrison-tickets/15012983",
@@ -1417,7 +1417,7 @@
     },
     {
       "artist": "Telescreens",
-      "checked": "2026-10-17",
+      "checked": "2026-10-18",
       "event": {
         "starts_at": "2026-10-21T19:00:00",
         "url": "https://www.ticketweb.ca/event/telescreens-why-the-the-sound-garage-tickets/14980963",
@@ -1434,7 +1434,7 @@
     },
     {
       "artist": "Twin Fin",
-      "checked": "2026-10-17",
+      "checked": "2026-10-18",
       "event": {
         "starts_at": "2026-10-20T19:00:00",
         "url": "https://www.ticketweb.ca/event/twin-fin-monarch-tavern-tickets/15001983",
@@ -1452,7 +1452,7 @@
     },
     {
       "artist": "The Watchmen",
-      "checked": "2026-10-17",
+      "checked": "2026-10-18",
       "event": {
         "starts_at": "2026-11-21T19:00:00",
         "url": "https://www.ticketmaster.ca/the-watchmen-toronto-ontario-11-21-2026/event/10006489D43D10C3",
@@ -1470,7 +1470,7 @@
     },
     {
       "artist": "Whitmer Thomas",
-      "checked": "2026-10-17",
+      "checked": "2026-10-18",
       "event": {
         "starts_at": "2026-12-08T19:00:00",
         "url": "https://www.ticketweb.ca/event/whitmer-thomas-the-great-hall-tickets/15032263",
@@ -1736,33 +1736,6 @@
         "tier": "know"
       },
       {
-        "artist": "Bruce Cockburn",
-        "event": {
-          "id": "tm:1A8ZkobGke-1oba",
-          "lineup": [
-            "Bruce Cockburn"
-          ],
-          "region": "Toronto",
-          "source": "ticketmaster",
-          "starts_at": "2026-10-17T20:00:00",
-          "url": "https://www.ticketmaster.ca/bruce-cockburn-toronto-ontario-10-17-2026/event/10006458A1291609",
-          "venue": {
-            "capacity": 2765,
-            "city": "Toronto",
-            "lat": 43.6541869,
-            "lon": -79.3789975,
-            "name": "Massey Hall"
-          }
-        },
-        "heard_before": null,
-        "listeners": null,
-        "reasons": [
-          "played on 6 days since 2011 (6 plays)"
-        ],
-        "score": 1.9459,
-        "tier": "know"
-      },
-      {
         "artist": "DERBY",
         "event": {
           "id": "tm:177Zv0G629d8ms9",
@@ -2018,37 +1991,6 @@
         "tier": "next_big_thing"
       },
       {
-        "artist": "Dominique Way",
-        "event": {
-          "id": "tm:177Zv0G6GEsmr7Y",
-          "lineup": [
-            "Anna Graves",
-            "Dominique Way"
-          ],
-          "region": "Toronto",
-          "source": "ticketmaster",
-          "starts_at": "2026-10-17T19:00:00",
-          "url": "https://www.ticketmaster.ca/anna-graves-americas-greatest-burnout-tour-toronto-ontario-10-17-2026/event/100064C9F1B9E130",
-          "venue": {
-            "capacity": 250,
-            "city": "Toronto",
-            "lat": 43.6431078,
-            "lon": -79.4246457,
-            "name": "The Drake Hotel"
-          }
-        },
-        "heard_before": null,
-        "listeners": 11758,
-        "reasons": [
-          "tags match your taste: indie, singer-songwriter, alternative",
-          "only 11,758 listeners on Last.fm",
-          "small venue (~250 cap.)",
-          "you've never been to The Drake Hotel"
-        ],
-        "score": 0.4356,
-        "tier": "next_big_thing"
-      },
-      {
         "artist": "Macy Todd",
         "event": {
           "id": "tm:15vZZ_fkpGMFt",
@@ -2076,7 +2018,7 @@
           "small venue (~575 cap.)",
           "you've never been to The Mod Club"
         ],
-        "score": 0.3803,
+        "score": 0.3802,
         "tier": "next_big_thing"
       },
       {
@@ -2165,7 +2107,7 @@
           "small venue (~250 cap.)",
           "you've never been to Monarch Tavern"
         ],
-        "score": 0.3067,
+        "score": 0.3066,
         "tier": "next_big_thing"
       },
       {
@@ -2256,7 +2198,7 @@
           "only 41,778 listeners on Last.fm",
           "you've never been to The Sound Garage"
         ],
-        "score": 0.2809,
+        "score": 0.2808,
         "tier": "next_big_thing"
       },
       {
@@ -2374,7 +2316,7 @@
           "small venue (~900 cap.)",
           "you've never been to The Opera House"
         ],
-        "score": 0.2231,
+        "score": 0.223,
         "tier": "next_big_thing"
       },
       {
@@ -2467,7 +2409,7 @@
           "small venue (~500 cap.)",
           "you've never been to Longboat Hall"
         ],
-        "score": 0.2157,
+        "score": 0.2156,
         "tier": "next_big_thing"
       },
       {
@@ -2501,7 +2443,7 @@
           "only 90,344 listeners on Last.fm",
           "you've never been to The Concert Hall"
         ],
-        "score": 0.1971,
+        "score": 0.197,
         "tier": "next_big_thing"
       },
       {
@@ -2537,35 +2479,6 @@
           "you've never been to The Mod Club"
         ],
         "score": 0.1877,
-        "tier": "next_big_thing"
-      },
-      {
-        "artist": "Rett Madison",
-        "event": {
-          "id": "tm:rZ7HnEZ1A4ZvfS",
-          "lineup": [
-            "Rett Madison"
-          ],
-          "region": "Toronto",
-          "source": "ticketmaster",
-          "starts_at": "2026-10-17T19:00:00",
-          "url": "https://www.ticketweb.ca/event/rett-madison-the-sound-garage-tickets/15001533",
-          "venue": {
-            "capacity": null,
-            "city": "Toronto",
-            "lat": 43.669849,
-            "lon": -79.436218,
-            "name": "The Sound Garage"
-          }
-        },
-        "heard_before": null,
-        "listeners": 31951,
-        "reasons": [
-          "similar to Bon Iver (0.38), Gregory Alan Isakov (0.38), Julien Baker (0.42)",
-          "only 31,951 listeners on Last.fm",
-          "you've never been to The Sound Garage"
-        ],
-        "score": 0.1737,
         "tier": "next_big_thing"
       },
       {
@@ -2625,7 +2538,7 @@
           "only 89,201 listeners on Last.fm",
           "small venue (~1,400 cap.)"
         ],
-        "score": 0.1432,
+        "score": 0.1431,
         "tier": "next_big_thing"
       },
       {
@@ -2687,7 +2600,7 @@
           "only 49,251 listeners on Last.fm",
           "small venue (~1,400 cap.)"
         ],
-        "score": 0.1202,
+        "score": 0.1201,
         "tier": "next_big_thing"
       },
       {
@@ -2745,7 +2658,7 @@
           "similar to The Wailin' Jennys (1.00), The Secret Sisters (0.69), Basia Bulat (0.65)",
           "only 34,446 listeners on Last.fm"
         ],
-        "score": 0.1128,
+        "score": 0.1127,
         "tier": "next_big_thing"
       },
       {
@@ -2838,7 +2751,7 @@
           "you played them on 2 days back in 2015",
           "you've never been to Meridian Hall"
         ],
-        "score": 0.5653,
+        "score": 0.5652,
         "tier": "would_like"
       },
       {
@@ -2897,7 +2810,7 @@
           "similar to Toad The Wet Sprocket (0.61), Snow Patrol (0.72), The Airborne Toxic Event (0.89)",
           "you played them on 1 day back in 2009"
         ],
-        "score": 0.4526,
+        "score": 0.4524,
         "tier": "would_like"
       },
       {
@@ -2926,7 +2839,7 @@
           "similar to Taylor Swift (0.96), Ariana Grande (0.87), Harry Styles (0.56)",
           "+1 more date nearby"
         ],
-        "score": 0.4196,
+        "score": 0.4193,
         "tier": "would_like"
       },
       {
@@ -2954,7 +2867,7 @@
         "reasons": [
           "similar to Florence + the Machine (1.00), Mumford & Sons (0.23), Noah Kahan (0.54)"
         ],
-        "score": 0.3877,
+        "score": 0.3874,
         "tier": "would_like"
       },
       {
@@ -2985,7 +2898,7 @@
           "similar to Alexisonfire (0.97), Thrice (0.75), Thursday (0.62)",
           "you've never been to The Theatre at Great Canadian Toronto"
         ],
-        "score": 0.3778,
+        "score": 0.3776,
         "tier": "would_like"
       },
       {
@@ -3013,7 +2926,7 @@
         "reasons": [
           "similar to Adele (0.66), Sam Smith (0.72), Amy Winehouse (0.53)"
         ],
-        "score": 0.3673,
+        "score": 0.3672,
         "tier": "would_like"
       },
       {
@@ -3045,7 +2958,7 @@
           "you played them on 2 days back in 2008",
           "you've never been to Lee's Palace"
         ],
-        "score": 0.364,
+        "score": 0.3639,
         "tier": "would_like"
       },
       {
@@ -3074,7 +2987,7 @@
           "similar to Neko Case (0.97), Jesca Hoop (0.69), Waxahatchee (0.80)",
           "you've never been to The Sound Garage"
         ],
-        "score": 0.3638,
+        "score": 0.3636,
         "tier": "would_like"
       },
       {
@@ -3102,7 +3015,7 @@
           "similar to DJ Shadow (1.00), Massive Attack (0.74), Portishead (0.45)",
           "you've never been to The Mod Club"
         ],
-        "score": 0.3596,
+        "score": 0.3594,
         "tier": "would_like"
       },
       {
@@ -3131,7 +3044,7 @@
           "similar to Vampire Weekend (1.00), The New Pornographers (0.36), Broken Social Scene (0.50)",
           "you've never been to The Concert Hall"
         ],
-        "score": 0.357,
+        "score": 0.3568,
         "tier": "would_like"
       },
       {
@@ -3191,15 +3104,15 @@
           "you played them on 1 day back in 2011",
           "you've never been to The Arena at Pickering Casino Resort"
         ],
-        "score": 0.3506,
+        "score": 0.3504,
         "tier": "would_like"
       }
     ]
   },
   "stats": {
-    "events": 543,
+    "events": 526,
     "known_artists": 2024,
-    "snapshot_days": 1
+    "snapshot_days": 2
   },
   "user": "quepol"
 }
