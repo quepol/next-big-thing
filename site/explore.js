@@ -64,11 +64,12 @@ async function load() {
   document.getElementById("chartwrap").addEventListener("toggle", (e) => { if (e.target.open) renderChart(); });
   setupLookup();
   setupRooms(digest);
-  renderRivers();
+  setupSheet();
+  setupTabs();
   let w = document.getElementById("chart").clientWidth;
   window.addEventListener("resize", () => {
     const nw = document.getElementById("chart").clientWidth;
-    if (nw !== w) { w = nw; renderClimb(); renderRivers(); }
+    if (nw !== w) { w = nw; renderClimb(); if (state.tab === "rooms") renderRivers(); }
   });
 }
 
@@ -222,7 +223,60 @@ const CLIMB_LIMIT = 25;
 
 function renderClimb() {
   renderList();
-  if (document.getElementById("chartwrap").open) renderChart();
+  if (document.getElementById("chartwrap").open && state.tab === "climb") renderChart();
+}
+
+// ---------- Tabs and the band sheet ----------
+// Two tabs like the picks page: The Climb, and Rooms (your rooms + rivers). The tab is
+// remembered and mirrored in the URL hash. Rivers are drawn when their tab first shows,
+// since a hidden tab has no width to lay out in.
+
+const TAB_KEY_X = "nbt.explore.tab";
+const TABS_X = ["climb", "rooms"];
+
+function setupTabs() {
+  const fromHash = location.hash.slice(1);
+  const initial = TABS_X.includes(fromHash) ? fromHash : store.get(TAB_KEY_X, "climb");
+  document.getElementById("xtabs").addEventListener("click", (e) => {
+    const t = e.target.closest("button")?.dataset.tab;
+    if (t) showTab(t);
+  });
+  window.addEventListener("hashchange", () => { const t = location.hash.slice(1); if (TABS_X.includes(t)) showTab(t); });
+  showTab(TABS_X.includes(initial) ? initial : "climb");
+}
+
+function showTab(t) {
+  state.tab = t;
+  store.set(TAB_KEY_X, t);
+  if (location.hash.slice(1) !== t) history.replaceState(null, "", `#${t}`);
+  document.querySelectorAll("#xtabs button").forEach((b) => b.setAttribute("aria-selected", b.dataset.tab === t));
+  for (const id of TABS_X) document.getElementById(`tab-${id}`).hidden = id !== t;
+  if (t === "rooms") {
+    const w = document.getElementById("rivers").clientWidth;
+    if (w !== state.riversWidth) { state.riversWidth = w; renderRivers(); }
+  } else if (document.getElementById("chartwrap").open) renderChart();
+}
+
+function setupSheet() {
+  const sheet = document.getElementById("sheet");
+  sheet.addEventListener("click", (e) => { if (e.target.closest("[data-close]")) closeSheet(); });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !sheet.hidden) closeSheet(); });
+}
+
+function openSheet() {
+  const sheet = document.getElementById("sheet");
+  sheet.hidden = false;
+  document.body.classList.add("sheet-open");
+  sheet.querySelector(".sheet-body").scrollTop = 0;
+  sheet.querySelector(".sheet-close").focus({ preventScroll: true });
+}
+
+function closeSheet() {
+  document.getElementById("sheet").hidden = true;
+  document.body.classList.remove("sheet-open");
+  document.getElementById("lookup").value = "";
+  state.selected = null;
+  highlight(null);
 }
 
 // Upcoming Toronto dates per artist, from the digest's calendar (or picks).
@@ -410,13 +464,17 @@ function showCard(name) {
   const sh = D.shared.get(k);
   const seen = D.seen.get(k);
   card.replaceChildren();
-  card.hidden = false;
+  openSheet();
   const h = el("h3", null, name);
   if (rep && movingUp(rep)) h.append(" ", el("span", "up", "↑ moving up"));
   if (seen) h.append(" ", el("span", "seenbadge", "★ you've seen them"));
   card.append(h);
   const facts = [];
-  if (rep?.listeners != null) facts.push(`${fmt(rep.listeners)} Last.fm listeners`);
+  const listeners = rep?.listeners ?? sh?.listeners;
+  const tier = TIERS.find(([t]) => t === sh?.tier)?.[1];
+  if (tier) facts.push(tier);
+  if (listeners != null) facts.push(`${fmt(listeners)} Last.fm listeners`);
+  if (sh?.days) facts.push(`${sh.days} days played`);
   if (sh) facts.push(`SF: ${sh.sf.join(", ")}`);
   if (facts.length) card.append(el("p", "muted", facts.join(" · ")));
 
@@ -433,7 +491,8 @@ function showCard(name) {
     }
     card.append(el("p", "label", "Toronto shows since Oct 2023"), ul);
   } else if (sh) {
-    card.append(el("p", "label", "Toronto rooms since Oct 2023 (one visit, so not on The Climb)"), el("p", null, sh.toronto.join(", ")));
+    if (sh.why && tier) card.append(el("p", "muted", sh.why.replace(/ \(\d\.\d+\)/g, "")));
+    card.append(el("p", "label", "Toronto rooms since Oct 2023"), el("p", null, sh.toronto.join(", ")));
   }
   if (seen) {
     const ul = el("ul", "shows");
@@ -634,7 +693,7 @@ function renderRoom() {
       launched.slice(0, 8).forEach((a, i) => {
         const b = el("button", "linkbtn", a.artist);
         b.type = "button";
-        b.addEventListener("click", () => { select(a.artist); document.getElementById("card").scrollIntoView({ behavior: "smooth", block: "start" }); });
+        b.addEventListener("click", () => select(a.artist));
         p.append(b, i < Math.min(launched.length, 8) - 1 ? " · " : "");
       });
       if (launched.length > 8) p.append(` and ${launched.length - 8} more`);
@@ -764,7 +823,7 @@ function riverCard(a) {
   else if (rep) flags.append(el("span", "rl-chip", "Came back"));
   if (D.seen.has(k)) flags.append(el("span", "rl-chip", "★ Seen"));
   if (flags.childNodes.length) card.append(flags);
-  card.addEventListener("click", () => { select(a.artist); document.getElementById("card").scrollIntoView({ behavior: "smooth", block: "start" }); });
+  card.addEventListener("click", () => select(a.artist));
   return card;
 }
 

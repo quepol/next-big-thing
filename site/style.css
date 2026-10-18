@@ -353,3 +353,20 @@ svg.mini circle { fill: var(--accent-fill); }
 .seg.rp-filters button { border: 1px solid var(--line); }
 .seg.rp-filters button[aria-checked="true"] { border-color: var(--accent-fill); }
 .bandcard .foot { margin-top: 12px; }
+/* Explore: header search, tabs and the band sheet */
+.lookupwrap { margin: 8px 0 12px; }
+.explore .lookup { max-width: none; }
+#tab-rooms .rsec:first-child, #tab-climb .rsec:first-child { margin-top: 12px; }
+body.sheet-open { overflow: hidden; }
+.sheet { position: fixed; inset: 0; z-index: 20; display: flex; align-items: center; justify-content: center; }
+.sheet[hidden] { display: none; }
+.sheet-backdrop { position: absolute; inset: 0; background: rgba(0, 0, 0, 0.45); }
+.sheet-body { position: relative; width: min(560px, calc(100% - 32px)); max-height: 85vh; overflow-y: auto; background: var(--bg); border-radius: 10px; padding: 14px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35); }
+.sheet-body .bandcard { margin: 0; }
+.sheet-close { position: absolute; top: 18px; right: 22px; z-index: 1; width: 30px; height: 30px; border-radius: 50%; border: 1px solid var(--line); background: var(--surface); color: var(--text); font-size: 18px; line-height: 1; cursor: pointer; }
+.sheet-body .bandcard h3 { padding-right: 40px; }
+@media (max-width: 600px) {
+  .sheet { align-items: flex-end; }
+  .sheet-body { width: 100%; max-height: 88vh; border-radius: 14px 14px 0 0; padding: 12px 12px calc(12px + env(safe-area-inset-bottom)); }
+}
+.sheet-body .bandcard { border: 0; padding: 4px 2px; background: none; }
