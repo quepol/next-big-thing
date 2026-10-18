@@ -606,8 +606,8 @@ function cardActions(name) {
   foot.append(listenLinks(name));
   const nx = D.next.get(norm(name));
   if (nx?.url) {
-    const when = new Date(nx.starts_at).toLocaleDateString(undefined, { month: "short", day: "numeric" });
-    const t = el("a", "tickets", `Tickets · ${when}, ${short(nx.venue.name.trim(), 22)} ↗`);
+    // The date and room are already in the chips above; the link just says Tickets.
+    const t = el("a", "tickets", "Tickets ↗");
     Object.assign(t, { href: nx.url, target: "_blank", rel: "noopener" });
     foot.append(t);
   }
