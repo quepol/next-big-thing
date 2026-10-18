@@ -1,0 +1,47 @@
+# Research, the venue page and the explore page
+
+How the setlist.fm research works and how the two pages built on it behave. Summary in `CLAUDE.md`; backlog in issues #4 and #5.
+
+## Data sources
+
+### Ticketmaster (the only event feed)
+
+Bandsintown's city feed is **permanently blocked by Cloudflare** from any server or CI IP. All request approaches (plain curl, mobile UA, JSON accept header) return 403. The Bandsintown REST API (`rest.bandsintown.com`) requires a `BANDSINTOWN_APP_ID` that is no longer freely issued. A 2026-10-18 probe (`research/bandsintown_probe.py`, results in `research/bandsintown_probe.json`) confirmed the stored `BANDSINTOWN_APP_ID` gets HTTP 401 on artist past-events too, so Bandsintown is out for history and billing. Billing going forward comes from Ticketmaster: daily event snapshots keep lineup order, headliner first (154 of 526 events on 2026-10-18 list more than one act).
+
+**Ticketmaster Discovery API** (`app.ticketmaster.com/discovery/v2/events`) is the city feed. It has a free key (`TICKETMASTER_API_KEY` secret), supports lat/long radius search with `classificationName=music`, and includes TicketWeb (used by most small Toronto clubs). Coverage check result: 557 events in the Toronto region for the next 90 days, ~28% with opener data in `_embedded.attractions`, and all four small-venue spot-checks (Lee's Palace, Horseshoe, Baby G, Monarch Tavern) were present with correct lineups.
+
+Gaps: DICE, Eventbrite, and venues' own box offices are not covered. The Baby G had only 2 events (likely sells through its own site). These are acceptable for now.
+
+The `nbt/sources/ticketmaster.py` module includes a 50-venue capacity lookup table (keyed by TM venue ID) used to compute `venue_bonus`.
+
+### setlist.fm
+
+`nbt/sources/setlistfm.py` fetches all attended setlists (111 total, 6 pages) for user `quepol`. 7-day cache; 1s between pages; 3× retry on 429s.
+
+Three uses:
+1. **Attended artists as seeds** — 11 artists seen live but with <3 scrobble-days (Billy Corgan, Iron Maiden, PJ Harvey, John Cameron Mitchell, etc.) are injected into the taste graph at seed weight 0.4. Uncontaminated by kids' listening.
+2. **Attended artists as loved** — merged into the `loved` set, so they trigger Hamilton/Buffalo alerts and bill_bonus. `loved` is the top 200 artists by days played (`loved_top_n`) plus every attended artist, so the out-of-town set is large. The user's instinct is that out-of-town alerts should be their top ~50 seeds only. **Left at 200 for now**, to revisit after a few weeks of use (issue #3).
+3. **Venue novelty** — picks at venues the user has never attended get a "you've never been to X" reason. Matching is fuzzy: TM adds "The " prefixes and city suffixes ("The Danforth Music Hall", "History Toronto"); setlist.fm uses shorter names ("Danforth Music Hall", "History"). The `_venue_attended()` helper in `scoring.py` handles this with substring containment on the core name.
+
+The **attended ledger** is included in `digest.json` and rendered on a dedicated "Attended" tab: every logged show (back to 1991) with current listener counts.
+
+## Research jobs (`research/`)
+
+Each job has its own workflow that runs on pushes to the dev branch. Each one writes JSON into `site/data/` and commits it back to the branch.
+
+- `venue_overlap.py` (`venue-research.yml`) writes `venue_research.json`. It pulls setlist.fm history since Oct 2023 for the user's SF rooms and for all of Toronto. From that it works out the Toronto rooms ranked against the city average, each SF room's closest Toronto rooms, the shared artists, the bands that came back to Toronto with co-bill billing, and taste tiers for every shared artist (`add_tiers`, using the pipeline's `Taste` and cutoffs). It restores (never saves) the daily API cache. The Last.fm cache has its own step.
+- `ladder_study.py` (`ladder-study.yml`) writes `ladder_study.json`: Bay Area and Toronto history for The National, Arcade Fire, The Decemberists, Bon Iver and Guster. It feeds the explore page's "for pace" box.
+- `bandsintown_probe.py` was a one-off check. Its output in `bandsintown_probe.json` confirmed Bandsintown is unusable.
+
+## Venue page
+
+Research page: `site/venues.html` + `venues.js` (issue #4) render `data/venue_research.json`, written by `research/venue_overlap.py` via `.github/workflows/venue-research.yml` (runs on a push to `research/**` on the dev branch; resumable through an API cache). Toronto capacities for that page are in `data/toronto_capacity.json`, keyed by lowercased setlist.fm venue name. Not linked from the main page. It also has a "Coming back to Toronto" list: shared artists with 2+ Toronto visits (30+ days apart). Last.fm listeners are looked up with typographic quotes normalised, because "Arm’s Length" otherwise matches a near-empty page. Counts under 3,000 are flagged as a possible wrong match. Headline vs support: setlist.fm records no billing. Where other acts were logged the same night, the research job takes the act with the most Last.fm listeners as the headliner (about 80% of comeback shows; half turned out to be support slots). Otherwise the page falls back to the user's room-size rule: Massey Hall size (2,765) or smaller counts as headlining; bigger rooms and labelled spaces (Arena, Festival, Outdoor) count as likely support. Support shows are greyed with a tag and left off the ladder, and "moving up" uses headline shows only. The five-band aughts ladder study (`research/ladder_study.py`, `.github/workflows/ladder-study.yml`, output `site/data/ladder_study.json`) feeds the explore page's "for pace" box; its first run hit setlist.fm's daily limit on 10-18 and was set to re-run on 10-19. The user frequented these SF rooms; they weren't chosen as a taste test, so no control-room comparison is planned.
+
+## Explore page
+
+Explore page: `site/explore.html` + `explore.js`, linked both ways with the venue page. It has two tabs, like the picks page: **The Climb** and **Rooms** (Your rooms and Room rivers). The tab is remembered in `nbt.explore.tab` and the URL hash (`#climb` / `#rooms`). Band lookup is a search box in the header, and every band card opens as a sheet over the page (a bottom sheet on phones), whether from the search, the climb list, the rooms or the rivers. The user asked for an exploratory view: phone first, desktop can be better, and a guess-the-band game is deliberately left out. Sections:
+    - The Climb (the main feature) is a ranked list, one row per band. The user found the original all-bands chart unreadable on a phone because no line was labelled. Each row shows the band's headline steps ("Monarch Tavern 250 → Great Hall 600"), how much the room size grew and over what time, the next Toronto date from the calendar, and a tiny ladder graphic. Tapping a row opens its shows with billing. Rows are sorted by growth in room size. A "for pace" box above the list shows the aughts bands' time from a small room to Warfield size, from `data/ladder_study.json`. The old staircase chart is still available in a collapsed section ("Chart of every climb") and only renders when opened.
+    - Band lookup, which also uses the attended ledger. The card ends with the main page's listen links (SoundCloud search via the music note, and YouTube) and, when the band has an upcoming Toronto show on the calendar, a dated tickets link. The old "Show on The Climb" button was removed when the chart was folded away.
+    - Room rivers: SF → Toronto streams; widths are raw counts. Tap a room or a stream to open a band panel of small cards (listeners, tier, next date, moving up / came back / seen). The filters are All, the three main-page tiers, Playing soon, Moving up, Came back and You've seen. Tiers come from the research job (`add_tiers` in `research/venue_overlap.py`), which scores the shared bands with the pipeline's Taste model and cutoffs; the tier filters only appear once that data exists.
+    - Your rooms: tap a followed Toronto room to get its upcoming shows, ranked. The score is the best act's taste fit plus fixed bonuses (`WEIGHTS` in `explore.js`): you know them, you've heard them, you've seen them, moving up, came back, played your SF rooms. Each show lists its reasons as chips. The room header shows capacity, its closest SF rooms and the climbers it launched (bands whose first Toronto headline show was there). Followed rooms are saved in `localStorage` as `nbt.rooms`. Defaults are the user's picks: Phoenix, Mod Club, Opera House, Horseshoe, Concert Hall, Adelaide Hall, Drake Underground. Followed rooms filter and sort; they never add to a show's score. The data comes from the digest's new `calendar` field (every upcoming show, each act with affinity, days played and listeners), made by `nbt.scoring.calendar()`, which drops nothing at the tier cutoffs. Until a digest has it, the page rebuilds what it can from the picks.
+    D3 7.9.0 is self-hosted in `site/vendor/` (ISC licence alongside). Billing and ladder rules shared by both pages live in `site/ladder.js`.
