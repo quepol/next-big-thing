@@ -30,6 +30,13 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install -r requirements.txt
+      # Restore (never save) the daily pipeline's API cache, so building the taste
+      # model for tiers reuses its Last.fm lookups instead of repeating them.
+      - uses: actions/cache/restore@v4
+        with:
+          path: data/cache
+          key: api-cache-none
+          restore-keys: api-cache-
       # Keep this step's path unchanged: the path is part of the cache version, and a
       # changed path silently misses the saved setlist.fm data.
       - uses: actions/cache@v4

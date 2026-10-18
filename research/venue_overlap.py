@@ -151,7 +151,7 @@ def lastfm_name(name: str) -> str:
     return name.translate(str.maketrans({"’": "'", "‘": "'", "“": '"', "”": '"'}))
 
 
-def repeat_visitors(shared: set, sf_artists: dict, tor_dates: dict, nights: dict) -> list[dict]:
+def repeat_visitors(shared: set, sf_artists: dict, tor_dates: dict, nights: dict, lastfm) -> list[dict]:
     """Shared artists who came back to Toronto (2+ visits, 30+ days apart): momentum.
 
     Adds Last.fm listeners (so the page can keep to small artists). Each show gets a
@@ -161,10 +161,6 @@ def repeat_visitors(shared: set, sf_artists: dict, tor_dates: dict, nights: dict
     """
     caps = toronto_capacity()
     num = lambda c: c if isinstance(c, int) else None  # labels like "Festival" don't count
-    lastfm = None
-    if os.environ.get("LASTFM_API_KEY"):
-        from nbt.lastfm import LastFM
-        lastfm = LastFM()
     out = []
     for k in shared:
         dates = sorted(tor_dates.get(k, {}).items())
@@ -198,10 +194,49 @@ def repeat_visitors(shared: set, sf_artists: dict, tor_dates: dict, nights: dict
             "shows": shows,
             "stepped_up": bool(first and later and max(later) >= first * 1.25),
         })
-    if lastfm:
-        lastfm.save()
     out.sort(key=lambda a: (-a["stepped_up"], -a["visits"], a["artist"].lower()))
     return out
+
+
+def add_tiers(shared_artists: list[dict], lastfm) -> None:
+    """Score each shared artist against the user's taste with the main pipeline's model,
+    and tier it with the same cutoffs, so "next big thing" means the same thing on the
+    explore page as on the picks page. Adds tier, affinity, why, listeners, days."""
+    from nbt import exclusions, history as hist
+    from nbt.config import CONFIG
+    from nbt.taste import Taste
+
+    history = hist.load()
+    excluded, _ = exclusions.effective(history, lastfm, CONFIG.known_min_days)
+    taste = Taste(history, lastfm, log=lambda *a: None, excluded=excluded, loves=exclusions.load_loves())
+    artists = history["artists"]
+    for a in shared_artists:
+        name = lastfm_name(a["artist"])
+        key = normalize_name(name)
+        row = artists.get(key)
+        info = lastfm.artist_info(name)
+        listeners = info["listeners"] if info else None
+        if key in excluded or taste.is_noise(name):
+            a["tier"] = "skip"
+            continue
+        if row:
+            a["days"] = row["days"]
+        if row and row["days"] >= CONFIG.known_min_days:
+            a["tier"] = "know"
+        else:
+            aff, reasons = taste.affinity(name)
+            a["affinity"] = round(aff, 4)
+            if reasons:
+                a["why"] = reasons[0]
+            small = listeners is None or listeners <= CONFIG.nbt_max_listeners
+            if small and aff >= CONFIG.nbt_min_affinity:
+                a["tier"] = "next_big_thing"
+            elif aff >= CONFIG.would_like_min_affinity:
+                a["tier"] = "would_like"
+            else:
+                a["tier"] = "other"
+        if listeners is not None:
+            a["listeners"] = listeners
 
 
 def main() -> None:
@@ -290,7 +325,14 @@ def main() -> None:
         print(f"Incomplete (setlist.fm limit?), {OUT.name} left unchanged. Re-run to resume.")
         return
 
-    repeat = repeat_visitors(shared, sf_artists, tor_dates, nights)
+    lastfm = None
+    if os.environ.get("LASTFM_API_KEY"):
+        from nbt.lastfm import LastFM
+        lastfm = LastFM()
+    repeat = repeat_visitors(shared, sf_artists, tor_dates, nights, lastfm)
+    if lastfm:
+        add_tiers(shared_artists, lastfm)
+        lastfm.save()
 
     OUT.write_text(json.dumps({
         "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
