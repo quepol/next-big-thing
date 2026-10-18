@@ -4,27 +4,30 @@
 # `python -m nbt summary` lists likely kids' artists to copy in here.
 # A line starting with "+" marks an artist as confirmed yours: never excluded, never re-flagged.
 
-# Kids (flagged by Last.fm tags in history check #2)
+# Kids (flagged by Last.fm tags in history check)
+Phil Harris, Bruce Reitherman	# The Jungle Book
+Auli'i Cravalho					# Moana
+Dwayne Johnson					# Moana
+Lea Salonga, Brad Kane			# Aladdin
+Oliver Wallace					# Disney scores
+Alan Menken						# Disney scores
+Alan Menken (Children's)			# Disney
+Elizabeth Mitchell (Children's)
 Elizabeth Mitchell
 Tigger
-Phil Harris, Bruce Reitherman   # The Jungle Book
-
-# Kids (flagged by Last.fm tags in history check #3, scan of all known artists)
-Elizabeth Mitchell (Children's)
-Alan Menken (Children's)
 Dan Zanes & Friends
-Auli'i Cravalho          # Moana
-Dwayne Johnson           # Moana
 Sweet Little Band
 Daniel Tiger's Neighborhood
-Lea Salonga, Brad Kane   # Aladdin
 Caspar Babypants
 KIDZ BOP Kids
-Oliver Wallace           # Disney scores
 The Kiboomers
-Alan Menken             # confirmed kids; Selena Gomez confirmed as the user's own
+Don Cooper
+Blippi
+Justin Roberts
+Raffi
+Twenty Trucks
 
-# Kids: YouTube game-music creators (flagged in history check #5)
+# Kids: YouTube game-music creators
 Kyle Allen Music
 Tryhardninja
 Horror Skunx
@@ -34,19 +37,18 @@ NoLongerNull
 Jaze Cinema
 jacksepticeye
 DHeusta
+CG5
+Jakeneutron					# FNF
+Mike Geno					# FNF
+Ghost and Pals					# vocaloid
+CircusP						# vocaloid
+Flavor Foley					# vocaloid
+Heaven Pierce Her				# ULTRAKILL
+Powerglove						# metal covers of game music (not orchestral)
 
 # Confirmed as the user's own: never excluded, never re-flagged
 + Selena Gomez
-Heaven Pierce Her        # ULTRAKILL
-Powerglove               # metal covers of game music (not orchestral)
-
-# Kids, named by the user
-Don Cooper
-Blippi
-Justin Roberts
-Raffi
-Twenty Trucks
-+ Ludvig Forssell        # Death Stranding: orchestral, the user's
-+ Jamie Christopherson   # Metal Gear Rising: probably the user's
-+ Hunter Parrish         # Godspell; sleep music too, but the user loves musicals
-+ Julie Andrews          # musicals are fair game
++ Ludvig Forssell				# Death Stranding: orchestral, the user's
++ Jamie Christopherson			# Metal Gear Rising: probably the user's
++ Hunter Parrish				# Godspell; sleep music too, but the user loves musicals
++ Julie Andrews					# musicals are fair game

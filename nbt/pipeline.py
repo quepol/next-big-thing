@@ -100,8 +100,10 @@ def run(log=print) -> dict:
     else:
         log("SETLISTFM_API_KEY not set: skipping setlist.fm")
 
+    loves = exclusions.load_loves()
+    log(f"loves: {len(loves)} artists bypass recency decay")
     log("building taste graph")
-    taste = Taste(history, lastfm, log=log, excluded=excluded, attended=attended)
+    taste = Taste(history, lastfm, log=log, excluded=excluded, attended=attended, loves=loves)
     lastfm.save()
 
     tm = Ticketmaster()

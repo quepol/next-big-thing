@@ -1,0 +1,43 @@
+# All-time favourites: these artists bypass recency decay in the taste model.
+# Edit freely — remove anyone who doesn't feel like a genuine all-time love,
+# add anyone missing. One artist per line; '#' starts a comment.
+
+City and Colour
+Radiohead
+Bon Iver
+Elliott Smith
+Sarah McLachlan
+The Decemberists
+Sufjan Stevens
+The Arcade Fire
+The Shins
+Toad The Wet Sprocket
+Mumford & Sons
+Spoon
+Jeff Buckley
+Nine Inch Nails
+The National
+Silversun Pickups
+Frightened Rabbit
+Sia
+Kelly Clarkson
+Adele
+Michael Jackson
+Ani DiFranco
+alt-J
+Explosions in the Sky
+Dave Matthews Band
+Paramore
+Haley Williams
+Brandi Carlile
+Jack White
+The White Stripes
+Sara Bareilles
+Green Day
+The New Pornographers
+Tori Amos
+PJ Harvey
+The Smashing Pumpkins
+The Roots
+Beastie Boys
+Nirvana

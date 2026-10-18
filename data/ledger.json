@@ -109,6 +109,24 @@
     ],
     "score_at_flag": 0.2852
   },
+  "ark identity": {
+    "artist": "ARK IDENTITY",
+    "checked": "2026-10-17",
+    "event": {
+      "starts_at": "2026-11-12T19:00:00",
+      "url": "https://www.ticketweb.ca/event/ark-identity-the-sound-garage-tickets/14367184",
+      "venue": "The Sound Garage"
+    },
+    "first_flagged": "2026-10-17",
+    "listeners_at_flag": 7619,
+    "listeners_now": 7619,
+    "reasons": [
+      "tags match your taste: alternative, canadian, indie pop",
+      "only 7,619 listeners on Last.fm",
+      "you've never been to The Sound Garage"
+    ],
+    "score_at_flag": 0.1124
+  },
   "band of silver": {
     "artist": "Band Of Silver",
     "checked": "2026-10-17",
@@ -380,6 +398,43 @@
       "small venue (~1,400 cap.)"
     ],
     "score_at_flag": 0.1993
+  },
+  "kes": {
+    "artist": "Kes",
+    "checked": "2026-10-17",
+    "event": {
+      "starts_at": "2026-12-18T20:00:00",
+      "url": "https://www.ticketmaster.ca/kesmas-with-kes-the-band-toronto-ontario-12-18-2026/event/10006549E31674D3",
+      "venue": "The Theatre at Great Canadian Toronto"
+    },
+    "first_flagged": "2026-10-17",
+    "listeners_at_flag": 52285,
+    "listeners_now": 52285,
+    "reasons": [
+      "tags match your taste: rock, folk, pop",
+      "only 52,285 listeners on Last.fm",
+      "you've never been to The Theatre at Great Canadian Toronto"
+    ],
+    "score_at_flag": 0.1066
+  },
+  "loviet": {
+    "artist": "Loviet",
+    "checked": "2026-10-17",
+    "event": {
+      "starts_at": "2026-11-09T19:00:00",
+      "url": "https://www.ticketmaster.ca/the-wldlfe-toronto-ontario-11-09-2026/event/100064CF43BE63DC",
+      "venue": "The Mod Club"
+    },
+    "first_flagged": "2026-10-17",
+    "listeners_at_flag": 7428,
+    "listeners_now": 7428,
+    "reasons": [
+      "tags match your taste: alternative, pop, indie rock",
+      "only 7,428 listeners on Last.fm",
+      "small venue (~575 cap.)",
+      "you've never been to The Mod Club"
+    ],
+    "score_at_flag": 0.2209
   },
   "macy todd": {
     "artist": "Macy Todd",

@@ -28,7 +28,7 @@ def run(top: int = 25) -> None:
     print(f"   known (>= {CONFIG.known_min_days} days): {len(known):,}; loved = top {CONFIG.loved_top_n}")
 
     ranked = sorted(known.values(), key=lambda a: (-a["days"], -a["plays"]))
-    print(f"\n== top {top} seeds by distinct days")
+    print(f"\n== top {top} seeds by distinct days (all-time, before recency)")
     for a in ranked[:top]:
         print(f"   {a['days']:>5} days  {a['plays']:>6} plays  {a['first']}..{a['last']}  {a['name']}")
 
@@ -54,6 +54,13 @@ def run(top: int = 25) -> None:
     lastfm.save()
     print(f"   {len(taste.forward):,} unknown artists reachable from {len(taste.seeds)} seeds")
     print(f"   tag profile: {', '.join(sorted(taste.tag_profile, key=lambda t: -taste.tag_profile[t])[:15])}")
+    print(f"\n== top {top} seeds by weighted score (all-time days × recency)")
+    loves = exclusions.load_loves()
+    for k in taste.seeds[:top]:
+        a = taste.known[k]
+        w = taste.weights[k]
+        flag = " ♥" if k in {normalize_name(x) for x in loves} else ""
+        print(f"   {w:.2f}  {a['days']:>5} days  {a['last']}  {a['name']}{flag}")
 
     print(f"\n== top {top} unknown artists the graph points at (these drive 'you'd probably like')")
     for name in taste.top_neighbours(top):
