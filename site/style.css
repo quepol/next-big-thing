@@ -213,3 +213,17 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
   .listen .txt { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
   .listen svg { width: 17px; height: 17px; }
 }
+
+/* ---- Research pages (venues.html) ---- */
+.crumb { margin: 0 0 8px; font-size: 14px; }
+.crumb a, .research .muted a { color: var(--accent); text-decoration: none; }
+.report { gap: 4px; }
+.rsec { margin-top: 20px; }
+.rsec h2 { font-size: 17px; margin: 0 0 4px; letter-spacing: -0.01em; }
+.rsec > .muted { margin: 0 0 10px; font-size: 13px; }
+.research td, .research th { vertical-align: top; }
+.research details.artists summary { cursor: pointer; font-weight: 500; }
+.research details.artists summary::marker { color: var(--accent-fill); }
+.research details.artists p { margin: 4px 0 2px; font-size: 13px; color: var(--muted); max-width: 46ch; }
+.research details.all > summary { cursor: pointer; color: var(--accent); font-weight: 500; margin-bottom: 8px; }
+.research .small { font-size: 12px; margin-top: 24px; }

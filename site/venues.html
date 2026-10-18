@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Venue Overlap</title>
+  <script>
+    // Same saved theme as the main page, applied before first paint.
+    try { const t = JSON.parse(localStorage.getItem("nbt.theme")); if (t === "light" || t === "dark") document.documentElement.dataset.theme = t; } catch {}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="research">
+  <header>
+    <p class="crumb"><a href="./">← Picks</a></p>
+    <h1>Venue overlap</h1>
+    <p class="muted">Which Toronto rooms book the same bands as the San Francisco rooms you trust? Research for <a href="https://github.com/quepol/next-big-thing/issues/4">issue #4</a>.</p>
+  </header>
+  <main id="report" class="report">
+    <p class="empty">Loading…</p>
+  </main>
+  <script src="venues.js"></script>
+</body>
+</html>
