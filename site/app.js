@@ -85,7 +85,7 @@ function parseReasons(reasons) {
 }
 
 const ICONS = {
-  soundcloud: '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M7.2 5.6A3.8 3.8 0 0 1 13.6 7.9 2.1 2.1 0 0 1 13.5 12H7.2zM.5 9.2h1V12h-1zm1.6-1.4h1V12h-1zm1.6-.9h1V12h-1zm1.6-.6h1V12h-1z"/></svg>',
+  music: '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 2.5v7.8a2.5 2.5 0 1 0 1.5 2.3V5.2l5-1.1v4.7a2.5 2.5 0 1 0 1.5 2.3V1.6z"/></svg>',
   youtube: '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M15.2 4.3a2 2 0 0 0-1.4-1.4C12.6 2.6 8 2.6 8 2.6s-4.6 0-5.8.3A2 2 0 0 0 .8 4.3 21 21 0 0 0 .5 8a21 21 0 0 0 .3 3.7 2 2 0 0 0 1.4 1.4c1.2.3 5.8.3 5.8.3s4.6 0 5.8-.3a2 2 0 0 0 1.4-1.4A21 21 0 0 0 15.5 8a21 21 0 0 0-.3-3.7zM6.5 10.3V5.7L10.4 8z"/></svg>',
   up: '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 7h2.5v7H2zm3.5 7V7.4L8.6 1.5c.9 0 1.6.8 1.4 1.7L9.5 6H13a1.5 1.5 0 0 1 1.5 1.8l-1.1 5A1.5 1.5 0 0 1 12 14z"/></svg>',
   down: '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M14 9h-2.5V2H14zm-3.5-7v6.6L7.4 14.5c-.9 0-1.6-.8-1.4-1.7L6.5 10H3a1.5 1.5 0 0 1-1.5-1.8l1.1-5A1.5 1.5 0 0 1 4 2z"/></svg>',
@@ -242,7 +242,7 @@ function renderCard(p) {
   const enc = encodeURIComponent(p.artist);
   const listen = node.querySelector(".listen");
   for (const [href, icon, label] of [
-    [`https://soundcloud.com/search?q=${enc}`, ICONS.soundcloud, "SoundCloud"],
+    [`https://soundcloud.com/search?q=${enc}`, ICONS.music, "SoundCloud"],
     [`https://www.youtube.com/results?search_query=${enc}`, ICONS.youtube, "YouTube"],
   ]) {
     const a = el("a");
