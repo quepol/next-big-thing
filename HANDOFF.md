@@ -13,6 +13,7 @@ _Last updated: 2026-10-18 (cloud session on the phone)._
 - **Pipeline:** the digest now includes a `calendar` of every upcoming show, with per-act scores. It feeds the room view; picks are unchanged.
 - **Research:** billing inferred from co-bills, a "moving up" list, and taste tiers for the 1,515 bands that played both an SF room and Toronto.
 - The docs split: `CLAUDE.md`, `docs/`, and Issues as the backlog.
+- Band sheet restyled like the picks cards (strength badge, chips, why line with weights), a dark-mode sheet, listen links on room cards, "Explore" in the picks footer, and dated Toronto shows for every shared band.
 
 ## Check next session
 
