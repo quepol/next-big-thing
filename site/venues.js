@@ -9,6 +9,16 @@ const LARGE = 1000;
 const MIN_PAIR = 5; // twin-room pairings need this many shared artists…
 const MIN_PAIR_ARTISTS = 20; // …at a Toronto room with at least this many artists
 const SMALL_LISTENERS = 250000; // "next big thing" territory for the comeback list
+const LADDER_MAX = 3000; // bigger rooms (arenas, stadiums) are usually support slots
+
+// Moving up: a later Toronto show in a club or theatre at least 25% bigger than the
+// first room. Arena and stadium dates are left out, since a small band there is almost
+// always opening for someone else.
+const movingUp = (a) => {
+  const caps = a.shows.map((s) => s.cap).filter((c) => c && c <= LADDER_MAX);
+  const first = a.shows[0].cap;
+  return !!first && first <= LADDER_MAX && caps.slice(1).some((c) => c >= first * 1.25);
+};
 
 const el = (tag, cls, text) => {
   const n = document.createElement(tag);
@@ -160,7 +170,7 @@ async function load() {
   const repeat = data.repeat_artists || [];
   if (repeat.length) {
     const small = repeat.filter((a) => a.listeners != null && a.listeners < SMALL_LISTENERS);
-    const up = small.filter((a) => a.stepped_up);
+    const up = small.filter(movingUp);
     const f = document.getElementById("momentum-finding");
     if (f) {
       f.innerHTML = "";
@@ -173,7 +183,7 @@ async function load() {
     const s = section(
       "Coming back to Toronto",
       `Artists from your SF rooms with 2+ Toronto visits since ${since} (visits 30+ days apart, so a multi-night run counts once). ` +
-      `"Moving up" means a later Toronto show was in a room at least 25% bigger than their first. ` +
+      `"Moving up" means a later Toronto show was in a club or theatre at least 25% bigger than their first. Arena and stadium dates don't count, since they're usually support slots. ` +
       `Showing artists under ${fmt(SMALL_LISTENERS)} Last.fm listeners; bigger ones are in the second list.`,
     );
     const shows = (a) => {
@@ -186,17 +196,18 @@ async function load() {
     };
     const name = (a) => {
       const n = el("span", null, a.artist);
-      if (a.stepped_up) n.append(" ", el("span", "up", "↑ Moving up"));
+      if (movingUp(a)) n.append(" ", el("span", "up", "↑ Moving up"));
       return n;
     };
     const rows = (list) => list.map((a) => [name(a), a.listeners != null ? fmt(a.listeners) : "—", fmt(a.visits), shows(a), a.sf.join(", ")]);
     const head = ["Artist", "Listeners", "Visits", "Toronto shows", "SF rooms"];
-    s.append(small.length ? table(head, rows(small), [1, 2]) : el("p", "empty", "None under the listener cap."));
+    const order = (list) => [...list].sort((x, y) => movingUp(y) - movingUp(x) || y.visits - x.visits || x.artist.localeCompare(y.artist));
+    s.append(small.length ? table(head, rows(order(small)), [1, 2]) : el("p", "empty", "None under the listener cap."));
     const rest = repeat.filter((a) => !small.includes(a));
     if (rest.length) {
       const d = el("details", "all");
       d.append(el("summary", null, `Bigger artists who came back (${fmt(rest.length)})`));
-      d.append(table(head, rows(rest), [1, 2]));
+      d.append(table(head, rows(order(rest)), [1, 2]));
       s.append(d);
     }
     report.append(s);

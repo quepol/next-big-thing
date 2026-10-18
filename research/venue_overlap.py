@@ -145,6 +145,12 @@ def toronto_capacity() -> dict:
     return json.loads(path.read_text()) if path.exists() else {}
 
 
+def lastfm_name(name: str) -> str:
+    """setlist.fm uses typographic quotes ("Arm’s Length"); Last.fm's lookup misses on them
+    and lands on near-empty pages, which makes established bands look tiny."""
+    return name.translate(str.maketrans({"’": "'", "‘": "'", "“": '"', "”": '"'}))
+
+
 def repeat_visitors(shared: set, sf_artists: dict, tor_dates: dict) -> list[dict]:
     """Shared artists who came back to Toronto (2+ visits, 30+ days apart): momentum.
 
@@ -172,7 +178,7 @@ def repeat_visitors(shared: set, sf_artists: dict, tor_dates: dict) -> list[dict
         shows = [{"date": d, "venue": v, "cap": num(caps.get(v.lower()))} for d, v in dates]
         first = shows[0]["cap"]
         later = [s["cap"] for s in shows[1:] if s["cap"]]
-        info = lastfm.artist_info(sf_artists[k]["name"]) if lastfm else None
+        info = lastfm.artist_info(lastfm_name(sf_artists[k]["name"])) if lastfm else None
         out.append({
             "artist": sf_artists[k]["name"],
             "listeners": info["listeners"] if info else None,

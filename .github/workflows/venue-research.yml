@@ -40,8 +40,9 @@ jobs:
       - uses: actions/cache@v4
         with:
           path: data/cache/artist_info.json
-          key: venue-research-lastfm-${{ github.run_id }}
-          restore-keys: venue-research-lastfm-
+          # v2: v1 cached wrong pages looked up with typographic quotes.
+          key: venue-research-lastfm-v2-${{ github.run_id }}
+          restore-keys: venue-research-lastfm-v2-
       - name: Run research
         env:
           SETLISTFM_API_KEY: ${{ secrets.SETLISTFM_API_KEY }}
