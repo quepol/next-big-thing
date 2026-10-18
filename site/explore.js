@@ -55,7 +55,12 @@ async function load() {
   }
   const repeat = new Map(research.repeat_artists.map((a) => [norm(a.artist), a]));
   const shared = new Map(research.shared_artists.map((a) => [norm(a.artist), a]));
-  D = { research, ladder, seen, repeat, shared };
+  // Today's picks by artist, best tier first, for live scores on band cards.
+  const picks = new Map();
+  for (const tier of ["next_big_thing", "would_like", "know"]) {
+    for (const p of digest.picks?.[tier] || []) if (!picks.has(norm(p.artist))) picks.set(norm(p.artist), p);
+  }
+  D = { research, ladder, seen, repeat, shared, picks };
   state.align = "aligned"; // every band starts at 0, so lines fan out instead of crossing
   D.next = nextShows(digest);
   setupControls();
@@ -453,46 +458,70 @@ function setupLookup() {
   const input = document.getElementById("lookup");
   input.addEventListener("change", () => {
     const a = D.shared.get(norm(input.value));
-    if (a) select(a.artist);
+    if (a && a.artist !== state.selected) select(a.artist);
   });
 }
 
+// The band card, in the picks page's card style minus the date tile: name with the
+// strength badge (pips, label, raw score), chips, the "why" with similarity weights,
+// then Toronto shows and listen/ticket links. The score is the live pick when the band
+// is in today's picks; otherwise it's rebuilt from the research tier with the
+// pipeline's formula, minus the event bonuses (venue, shared bill, growth).
 function showCard(name) {
   const card = document.getElementById("card");
   const k = norm(name);
   const rep = D.repeat.get(k);
   const sh = D.shared.get(k);
   const seen = D.seen.get(k);
+  const sc = scoreFor(k, sh);
   card.replaceChildren();
-  openSheet();
-  const h = el("h3", null, name);
-  if (rep && movingUp(rep)) h.append(" ", el("span", "up", "↑ moving up"));
-  if (seen) h.append(" ", el("span", "seenbadge", "★ you've seen them"));
-  card.append(h);
-  const facts = [];
-  const listeners = rep?.listeners ?? sh?.listeners;
-  const tier = TIERS.find(([t]) => t === sh?.tier)?.[1];
-  if (tier) facts.push(tier);
-  if (listeners != null) facts.push(`${fmt(listeners)} Last.fm listeners`);
-  if (sh?.days) facts.push(`${sh.days} days played`);
-  if (sh) facts.push(`SF: ${sh.sf.join(", ")}`);
-  if (facts.length) card.append(el("p", "muted", facts.join(" · ")));
 
-  if (rep) {
+  const head = el("div", "head");
+  head.append(el("h2", "artist", name));
+  if (sc) {
+    const lvl = strengthOf(sc.tier, sc.score);
+    card.classList.toggle("strong", lvl.pips === 3);
+    const st = el("span", "strength");
+    const pips = el("span", "pips");
+    for (let n = 0; n < 3; n++) pips.append(el("i", n < lvl.pips ? "on" : null));
+    st.append(pips, el("span", "label", lvl.label), el("span", "score", sc.score.toFixed(2)));
+    st.title = sc.live ? `Today's pick score ${sc.score.toFixed(3)}` : `Estimated ${sc.score.toFixed(3)}, without venue, bill and growth bonuses`;
+    head.append(st);
+  } else card.classList.remove("strong");
+  card.append(head);
+  if (sh) card.append(el("p", "where", `SF: ${sh.sf.join(", ")}`));
+
+  const chips = el("ul", "chips");
+  const chip = (text, hot) => chips.append(el("li", hot ? "hot" : null, text));
+  const tierLabel = TIERS.find(([t]) => t === sc?.tier)?.[1];
+  if (tierLabel) chip(tierLabel, sc.tier === "next_big_thing");
+  const listeners = rep?.listeners ?? sh?.listeners;
+  if (listeners != null) chip(fmtListeners(listeners));
+  if (sh?.days) chip(sh.days >= 3 ? `Played ${sh.days} days` : `Heard ${sh.days} day${sh.days > 1 ? "s" : ""}`);
+  if (rep && movingUp(rep)) chip("Moving up", true);
+  else if (rep) chip("Came back");
+  if (seen) chip("★ You've seen them");
+  const nx = D.next.get(k);
+  if (nx) chip(`${new Date(nx.starts_at).toLocaleDateString(undefined, { month: "short", day: "numeric" })} · ${short(nx.venue.name.trim(), 22)}`, true);
+  if (chips.childNodes.length) card.append(chips);
+
+  const why = whyList(sc?.why || []);
+  if (why.childNodes.length) card.append(why);
+
+  // Toronto shows: the comeback list has billing; other bands have dates and rooms.
+  const shows = rep?.shows || sh?.shows || (sh?.toronto || []).map((venue) => ({ venue }));
+  if (shows.length) {
     const ul = el("ul", "shows");
-    for (const s of rep.shows) {
-      const li = el("li", isSupport(s) ? "support" : null,
-        `${monthYear(parseDate(s.date))} · ${s.venue}${typeof s.cap === "number" ? ` (${fmt(s.cap)})` : ""}`);
-      if (isSupport(s)) {
+    for (const s of shows) {
+      const when = s.date ? `${monthYear(parseDate(s.date))} · ` : "";
+      const li = el("li", rep && isSupport(s) ? "support" : null, `${when}${s.venue}${typeof s.cap === "number" ? ` (${fmt(s.cap)})` : ""}`);
+      if (rep && isSupport(s)) {
         li.append(el("span", "tag", s.billing ? "support" : "likely support"));
         if (s.with?.length) li.append(el("span", "with", ` for ${s.with[0]}`));
       }
       ul.append(li);
     }
     card.append(el("p", "label", "Toronto shows since Oct 2023"), ul);
-  } else if (sh) {
-    if (sh.why && tier) card.append(el("p", "muted", sh.why.replace(/ \(\d\.\d+\)/g, "")));
-    card.append(el("p", "label", "Toronto rooms since Oct 2023"), el("p", null, sh.toronto.join(", ")));
   }
   if (seen) {
     const ul = el("ul", "shows");
@@ -503,6 +532,54 @@ function showCard(name) {
     card.append(el("p", "label", "You saw them"), ul);
   }
   card.append(cardActions(name));
+  openSheet(); // last: it moves focus, which can fire the search box's change event
+}
+
+// Strength, as on the picks page. Thresholds and levels mirror STRENGTH in app.js.
+const STRENGTH = {
+  next_big_thing: { strong: 0.35, good: 0.25 },
+  would_like: { strong: 0.55, good: 0.45 },
+  know: { strong: 2.5, good: 1.8 },
+};
+const LEVELS = [{ pips: 3, label: "Strong" }, { pips: 2, label: "Good" }, { pips: 1, label: "Worth a look" }];
+const strengthOf = (tier, score) => {
+  const t = STRENGTH[tier];
+  return !t ? LEVELS[2] : score >= t.strong ? LEVELS[0] : score >= t.good ? LEVELS[1] : LEVELS[2];
+};
+const NBT_CEILING = 100000; // CONFIG.nbt_max_listeners
+const smallness = (n) => (n <= 100 ? 1 : Math.max(0, 1 - Math.log(n / 100) / Math.log(NBT_CEILING / 100)));
+
+function scoreFor(k, sh) {
+  const pick = D.picks.get(k);
+  if (pick) return { tier: pick.tier, score: pick.score, why: pick.reasons, live: true };
+  if (!sh?.tier || !STRENGTH[sh.tier]) return null;
+  const why = sh.why ? [sh.why] : [];
+  if (sh.tier === "know") return { tier: "know", score: Math.log1p(sh.days || 0), why, live: false };
+  const aff = sh.affinity || 0;
+  const score = sh.tier === "next_big_thing" ? aff * (0.6 + 0.4 * smallness(sh.listeners ?? 0)) : aff;
+  return { tier: sh.tier, score, why, live: false };
+}
+
+// "Similar to A 0.62, B 0.50" and "Tags: a · b", styled like the picks page's why line.
+function whyList(reasons) {
+  const ul = el("ul", "why");
+  for (const r of reasons) {
+    let m;
+    const li = el("li");
+    if ((m = r.match(/^similar to (.+)$/))) {
+      li.append(el("span", "k", "Similar to "));
+      [...m[1].matchAll(/(.+?) \((\d\.\d+)\)(?:, |$)/g)].forEach((x, i) => {
+        if (i) li.append(", ");
+        li.append(x[1], el("span", "w", x[2]));
+      });
+    } else if ((m = r.match(/^tags match your taste: (.+)$/))) {
+      li.append(el("span", "k", "Tags: "), m[1].split(", ").join(" · "));
+    } else if (r.startsWith("sharing the bill")) {
+      li.textContent = r.charAt(0).toUpperCase() + r.slice(1);
+    } else continue;
+    ul.append(li);
+  }
+  return ul;
 }
 
 // Same listen links as the main page's cards (icons copied from app.js), plus tickets
@@ -512,8 +589,7 @@ const LISTEN = [
   ["https://www.youtube.com/results?search_query=", "YouTube", '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M15.2 4.3a2 2 0 0 0-1.4-1.4C12.6 2.6 8 2.6 8 2.6s-4.6 0-5.8.3A2 2 0 0 0 .8 4.3 21 21 0 0 0 .5 8a21 21 0 0 0 .3 3.7 2 2 0 0 0 1.4 1.4c1.2.3 5.8.3 5.8.3s4.6 0 5.8-.3a2 2 0 0 0 1.4-1.4A21 21 0 0 0 15.5 8a21 21 0 0 0-.3-3.7zM6.5 10.3V5.7L10.4 8z"/></svg>'],
 ];
 
-function cardActions(name) {
-  const foot = el("div", "foot");
+function listenLinks(name) {
   const listen = el("span", "listen");
   for (const [base, label, icon] of LISTEN) {
     const a = el("a");
@@ -522,7 +598,12 @@ function cardActions(name) {
     a.append(el("span", "txt", label));
     listen.append(a);
   }
-  foot.append(listen);
+  return listen;
+}
+
+function cardActions(name) {
+  const foot = el("div", "foot");
+  foot.append(listenLinks(name));
   const nx = D.next.get(norm(name));
   if (nx?.url) {
     const when = new Date(nx.starts_at).toLocaleDateString(undefined, { month: "short", day: "numeric" });
@@ -729,12 +810,15 @@ function renderRoom() {
     if (meta.length) body.append(el("p", "rl-meta", meta.join(" · ")));
     const foot = el("div", "rl-foot");
     for (const c of s.chips.slice(0, 3)) foot.append(el("span", "rl-chip", c));
+    const act = el("div", "rl-actions");
+    act.append(listenLinks(first));
     if (s.r.url) {
       const a = el("a", "tickets", "Tickets ↗");
       Object.assign(a, { href: s.r.url, target: "_blank", rel: "noopener" });
-      foot.append(a);
+      act.append(a);
     }
     if (foot.childNodes.length) body.append(foot);
+    body.append(act);
     li.append(tile, body);
     list.append(li);
   }

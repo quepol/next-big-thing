@@ -200,6 +200,7 @@ main { padding-top: 12px; padding-bottom: 24px; display: grid; gap: 10px; }
 /* Home-screen apps have no reload button or pull-to-refresh, so offer one here. */
 .site-foot { max-width: 760px; margin: 0 auto; padding: 0 16px 40px; text-align: center; font-size: 13px; color: var(--muted); }
 .site-foot button { background: none; border: 0; padding: 4px 2px; font: inherit; color: var(--accent); font-weight: 500; cursor: pointer; }
+.site-foot a { color: var(--accent); font-weight: 500; text-decoration: none; padding: 4px 2px; }
 table { width: 100%; border-collapse: collapse; font-size: 14px; }
 th, td { text-align: left; padding: 8px 6px; border-bottom: 1px solid var(--line); }
 td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
@@ -370,3 +371,17 @@ body.sheet-open { overflow: hidden; }
   .sheet-body { width: 100%; max-height: 88vh; border-radius: 14px 14px 0 0; padding: 12px 12px calc(12px + env(safe-area-inset-bottom)); }
 }
 .sheet-body .bandcard { border: 0; padding: 4px 2px; background: none; }
+.rl-actions { display: flex; align-items: center; gap: 14px; margin-top: 8px; font-size: 14px; }
+.rl-actions .tickets { font-size: 13px; margin-left: auto; }
+.bandcard .label { margin: 12px 0 4px; }
+/* Dark mode: the page is black, so the sheet sits on a lifted surface with a border
+   and a heavier backdrop; in light mode the page colour already contrasts. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .sheet-body { background: var(--surface); border: 1px solid var(--line); box-shadow: 0 -8px 40px rgba(0, 0, 0, 0.8); }
+  :root:not([data-theme="light"]) .sheet-backdrop { background: rgba(0, 0, 0, 0.72); }
+}
+:root[data-theme="dark"] .sheet-body { background: var(--surface); border: 1px solid var(--line); box-shadow: 0 -8px 40px rgba(0, 0, 0, 0.8); }
+:root[data-theme="dark"] .sheet-backdrop { background: rgba(0, 0, 0, 0.72); }
+@media (max-width: 600px) {
+  .sheet-body::before { content: ""; display: block; width: 36px; height: 4px; border-radius: 2px; background: var(--line); margin: 0 auto 10px; }
+}

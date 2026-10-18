@@ -31,3 +31,7 @@ Refresh: the user runs the site as a home-screen app, which resumes the old page
 Dates: setlist.fm dates (`DD-MM-YYYY`) are built as local dates in `renderAttended`. Parsing a bare `YYYY-MM-DD` string reads it as UTC midnight, which showed every attended show a day early in Toronto (fixed 2026-10-18). Event `starts_at` values carry a time with no zone, so they already parse as local.
 
 Preferences are saved in `localStorage` under `nbt.sort` and `nbt.theme`; votes keep the same `nbt.votes` format.
+
+Footer: "Loaded <time> · Refresh · Explore" links to the explore page.
+
+Band sheet (explore page): in light mode it uses the page background over a 45% backdrop. In dark mode the page is black, so the sheet uses `--surface` with a border and a 72% backdrop. On phones it has a drag-handle bar.
