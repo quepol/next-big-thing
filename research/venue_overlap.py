@@ -317,8 +317,12 @@ def main() -> None:
     shared_artists = []
     for k in sorted(shared, key=lambda k: sf_artists[k]["name"].lower()):
         tor_venues = sorted({v["name"] for v in venues.values() if k in v["artists"]})
+        caps = toronto_capacity()
+        num = lambda c: c if isinstance(c, int) else None
+        shows = [{"date": d, "venue": v, "cap": num(caps.get(v.lower()))} for d, v in sorted(tor_dates.get(k, {}).items())]
         shared_artists.append({"artist": sf_artists[k]["name"],
-                               "sf": sorted(sf_artists[k]["venues"]), "toronto": tor_venues})
+                               "sf": sorted(sf_artists[k]["venues"]), "toronto": tor_venues,
+                               "shows": shows})
 
     if not complete:
         # Never replace good results with a partial run; the cache keeps what was fetched.
