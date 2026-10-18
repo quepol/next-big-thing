@@ -266,6 +266,11 @@ def main() -> None:
         shared_artists.append({"artist": sf_artists[k]["name"],
                                "sf": sorted(sf_artists[k]["venues"]), "toronto": tor_venues})
 
+    if not complete:
+        # Never replace good results with a partial run; the cache keeps what was fetched.
+        print(f"Incomplete (setlist.fm limit?), {OUT.name} left unchanged. Re-run to resume.")
+        return
+
     repeat = repeat_visitors(shared, sf_artists, tor_dates)
 
     OUT.write_text(json.dumps({

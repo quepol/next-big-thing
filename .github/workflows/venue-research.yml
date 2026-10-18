@@ -30,13 +30,18 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install -r requirements.txt
+      # Keep this step's path unchanged: the path is part of the cache version, and a
+      # changed path silently misses the saved setlist.fm data.
       - uses: actions/cache@v4
         with:
-          path: |
-            research/cache.json
-            data/cache/artist_info.json
+          path: research/cache.json
           key: venue-research-${{ github.run_id }}
           restore-keys: venue-research-
+      - uses: actions/cache@v4
+        with:
+          path: data/cache/artist_info.json
+          key: venue-research-lastfm-${{ github.run_id }}
+          restore-keys: venue-research-lastfm-
       - name: Run research
         env:
           SETLISTFM_API_KEY: ${{ secrets.SETLISTFM_API_KEY }}
