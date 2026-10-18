@@ -315,3 +315,37 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
 .rl-foot { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-top: 6px; }
 .rl-chip { font-size: 12px; line-height: 1; background: var(--chip-bg); color: var(--chip-text); border-radius: 999px; padding: 5px 8px; }
 .rl-foot .tickets { font-size: 13px; margin-left: auto; }
+/* The Climb as a list */
+.pace { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 10px 14px; margin: 8px 0 10px; font-size: 13px; }
+.pace-head { margin: 0; }
+.pace-list { margin: 6px 0 0; padding-left: 18px; color: var(--muted); }
+.climblist { list-style: none; margin: 6px 0 0; padding: 0; }
+.climb-row { border-top: 1px solid var(--line); }
+.climb-row summary { list-style: none; display: flex; align-items: center; gap: 12px; padding: 10px 0; cursor: pointer; }
+.climb-row summary::-webkit-details-marker { display: none; }
+.cr-main { flex: 1; min-width: 0; }
+.cr-name { font-weight: 600; font-size: 16px; }
+.cr-listeners { font-weight: 400; font-size: 12px; color: var(--muted); }
+.cr-path { font-size: 14px; margin-top: 2px; overflow-wrap: anywhere; }
+.cr-meta { font-size: 12px; color: var(--muted); margin-top: 2px; }
+.climb-row details[open] summary .cr-name { color: var(--accent); }
+.climb-row details > :not(summary) { margin-left: 0; }
+.climb-row details > ul.shows { margin: 0 0 8px; white-space: normal; }
+.climb-row details > .tickets { display: inline-block; margin-bottom: 10px; font-size: 13px; }
+svg.mini { flex: 0 0 72px; width: 72px; height: 30px; }
+svg.mini line { stroke: var(--line); stroke-width: 1; }
+svg.mini polyline { fill: none; stroke: var(--accent-fill); stroke-width: 1.5; }
+svg.mini circle { fill: var(--accent-fill); }
+.chartwrap { margin-top: 14px; }
+.chartwrap > summary { cursor: pointer; color: var(--accent); font-weight: 500; font-size: 14px; margin-bottom: 8px; }
+.riverpanel { margin-top: 10px; }
+.rp-filters { margin-bottom: 10px; }
+.rp-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 8px; }
+.rp-card { text-align: left; font: inherit; color: var(--text); background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 10px 12px; cursor: pointer; }
+.rp-card:hover { border-color: var(--accent-fill); }
+.rp-top { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
+.rp-name { font-weight: 600; overflow-wrap: anywhere; }
+.rp-tier { flex: 0 0 auto; font-size: 11px; font-weight: 600; color: var(--accent); white-space: nowrap; }
+.rp-facts, .rp-why { font-size: 12px; color: var(--muted); margin-top: 2px; }
+.rp-flags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; }
+.rl-chip.hot { background: var(--accent-soft); color: var(--text); }

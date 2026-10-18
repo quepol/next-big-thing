@@ -10,6 +10,7 @@ const el = (tag, cls, text) => {
   return n;
 };
 const fmt = (n) => n.toLocaleString();
+const fmtListeners = (n) => `${new Intl.NumberFormat(undefined, { notation: "compact", maximumFractionDigits: 1 }).format(n)} listeners`;
 
 const SMALL_LISTENERS = 250000; // "next big thing" territory for the comeback list
 const SUSPECT_LISTENERS = 3000; // below this, the Last.fm match is often the wrong artist

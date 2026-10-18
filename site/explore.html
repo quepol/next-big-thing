@@ -17,7 +17,7 @@
   <header>
     <p class="crumb"><a href="./">← Picks</a> · <a href="venues.html">Venue overlap</a></p>
     <h1>The Climb</h1>
-    <p class="muted">Bands from your San Francisco rooms, climbing Toronto's venue ladder. Each dot is a show; higher means a bigger room.</p>
+    <p class="muted">Bands from your San Francisco rooms that are headlining bigger Toronto rooms each time they come back. Biggest climbs first; tap one for its shows.</p>
   </header>
   <main class="report">
     <section class="rsec climb">
@@ -31,20 +31,26 @@
         <label class="sort">From
           <select id="sfroom"><option value="">all SF rooms</option></select>
         </label>
-        <label class="sort" id="alignwrap">Time
+      </div>
+      <div id="pace" class="pace"></div>
+      <p class="muted small" id="climbnote"></p>
+      <ol id="climblist" class="climblist"></ol>
+      <details id="chartwrap" class="chartwrap">
+        <summary>Chart of every climb (best on a wide screen)</summary>
+        <label class="sort">Time
           <select id="align">
             <option value="calendar">by date</option>
             <option value="aligned">from first show</option>
           </select>
         </label>
-      </div>
-      <p class="muted small" id="climbnote"></p>
-      <div id="chart" class="chart"></div>
-      <p class="muted small legend">
-        <span><span class="key head"></span> headline</span>
-        <span><span class="key supp"></span> support (from the co-bill, or assumed above Massey size)</span>
-        <span><span class="key ghost"></span> your aughts favourites, for pace</span>
-      </p>
+        <p class="muted small" id="chartnote"></p>
+        <div id="chart" class="chart"></div>
+        <p class="muted small legend">
+          <span><span class="key head"></span> headline</span>
+          <span><span class="key supp"></span> support (from the co-bill, or assumed above Massey size)</span>
+          <span><span class="key ghost"></span> your aughts favourites, for pace</span>
+        </p>
+      </details>
     </section>
 
     <section class="rsec rooms">
@@ -66,6 +72,7 @@
       <p class="muted">Your SF rooms on the left, Toronto rooms on the right. Thicker streams mean more shared bands. These are raw counts, so busy rooms like the Danforth draw thick streams; the twin-room ranking on the <a href="venues.html">venue page</a> corrects for that. Tap a room or a stream.</p>
       <div id="rivers" class="rivers"></div>
       <div id="riverinfo" class="riverinfo muted"></div>
+      <div id="riverpanel" class="riverpanel"></div>
     </section>
   </main>
   <script src="vendor/d3-7.9.0.min.js"></script>

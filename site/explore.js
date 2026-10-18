@@ -57,8 +57,11 @@ async function load() {
   const shared = new Map(research.shared_artists.map((a) => [norm(a.artist), a]));
   D = { research, ladder, seen, repeat, shared };
   state.align = "aligned"; // every band starts at 0, so lines fan out instead of crossing
+  D.next = nextShows(digest);
   setupControls();
+  renderPace();
   renderClimb();
+  document.getElementById("chartwrap").addEventListener("toggle", (e) => { if (e.target.open) renderChart(); });
   setupLookup();
   setupRooms(digest);
   renderRivers();
@@ -79,6 +82,7 @@ function setupControls() {
     const v = e.target.closest("button")?.dataset.v;
     if (!v) return;
     state.mode = v;
+    state.climbAll = false;
     store.set("nbt.climb.mode", v);
     paint();
     renderClimb();
@@ -89,7 +93,7 @@ function setupControls() {
   const align = document.getElementById("align");
   align.value = state.align;
   if (!D.ladder?.bands?.length) align.querySelector('[value="aligned"]').textContent = "from first show (ghosts pending)";
-  align.addEventListener("change", () => { state.align = align.value; renderClimb(); });
+  align.addEventListener("change", () => { state.align = align.value; renderChart(); });
 }
 
 function climbBands() {
@@ -103,7 +107,7 @@ function climbBands() {
   });
 }
 
-function renderClimb() {
+function renderChart() {
   const box = document.getElementById("chart");
   box.replaceChildren();
   const vertical = box.clientWidth < 600; // phone: time runs down the page
@@ -201,7 +205,7 @@ function renderClimb() {
   }
   svg.on("click", () => select(null));
 
-  const note = document.getElementById("climbnote");
+  const note = document.getElementById("chartnote");
   note.textContent = `${fmt(bands.length)} band${bands.length === 1 ? "" : "s"}. ` +
     "Lines step up when a band headlines a bigger room than before; dots are every show. " +
     (aligned ? "Each band starts at its first headline show in Toronto since Oct 2023. " : "") +
@@ -209,6 +213,160 @@ function renderClimb() {
     (aligned && !ghosts.length ? "Your aughts favourites appear as dashed lines once the ladder study finishes. " : "") +
     "Tap a line for details.";
   if (state.selected) highlight(state.selected);
+}
+
+// The list: one row per band, biggest climb first. The chart lives in a <details>
+// and only renders when opened.
+const SF_PACE_LADDER = [[700, "small room"], [2300, "Warfield size"]];
+const CLIMB_LIMIT = 25;
+
+function renderClimb() {
+  renderList();
+  if (document.getElementById("chartwrap").open) renderChart();
+}
+
+// Upcoming Toronto dates per artist, from the digest's calendar (or picks).
+function nextShows(digest) {
+  const { rows } = calendarRows(digest);
+  const today = new Date().toISOString().slice(0, 10);
+  const next = new Map();
+  for (const r of rows) {
+    if (r.starts_at.slice(0, 10) < today) continue;
+    for (const a of r.acts) {
+      const k = norm(a.artist);
+      if (!next.has(k) || next.get(k).starts_at > r.starts_at) next.set(k, r);
+    }
+  }
+  return next;
+}
+
+// A band's climb: its headline shows, and the steps where it beat its biggest room so far.
+function climbOf(a) {
+  const heads = a.shows.filter((sh) => !isSupport(sh) && typeof sh.cap === "number")
+    .map((sh) => ({ ...sh, d: parseDate(sh.date) }));
+  const steps = [];
+  for (const h of heads) if (!steps.length || h.cap > steps[steps.length - 1].cap) steps.push(h);
+  const first = steps[0], top = steps[steps.length - 1];
+  const months = first && top ? (top.d - first.d) / (30.44 * 864e5) : 0;
+  return { heads, steps, factor: first ? top.cap / first.cap : 1, months };
+}
+
+const spanText = (months) => (months < 1 ? "within a month" : months < 18 ? `in ${Math.round(months)} months` : `in ${(months / 12).toFixed(1)} years`);
+
+// A tiny ladder: Toronto rungs as faint lines, the band's headline shows as dots over time.
+function miniLadder(c) {
+  const W = 72, H = 30;
+  const y = (cap) => H - 3 - (Math.log(Math.min(Math.max(cap, 150), 3000) / 150) / Math.log(20)) * (H - 6);
+  const t0 = c.heads[0]?.d, t1 = c.heads[c.heads.length - 1]?.d;
+  const x = (d) => (t1 > t0 ? 3 + ((d - t0) / (t1 - t0)) * (W - 6) : W / 2);
+  const ns = "http://www.w3.org/2000/svg";
+  const svg = document.createElementNS(ns, "svg");
+  svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
+  svg.setAttribute("class", "mini");
+  svg.setAttribute("aria-hidden", "true");
+  for (const [cap] of RUNGS) {
+    const l = document.createElementNS(ns, "line");
+    Object.entries({ x1: 0, x2: W, y1: y(cap), y2: y(cap) }).forEach(([k, v]) => l.setAttribute(k, v));
+    svg.append(l);
+  }
+  let best = 0;
+  const pts = c.heads.map((h) => { best = Math.max(best, h.cap); return `${x(h.d).toFixed(1)},${y(best).toFixed(1)}`; });
+  if (pts.length > 1) {
+    const pl = document.createElementNS(ns, "polyline");
+    pl.setAttribute("points", pts.join(" "));
+    svg.append(pl);
+  }
+  for (const h of c.heads) {
+    const dot = document.createElementNS(ns, "circle");
+    Object.entries({ cx: x(h.d), cy: y(h.cap), r: 2.2 }).forEach(([k, v]) => dot.setAttribute(k, v));
+    svg.append(dot);
+  }
+  return svg;
+}
+
+function renderList() {
+  const list = document.getElementById("climblist");
+  list.replaceChildren();
+  const rows = climbBands().map((a) => ({ a, c: climbOf(a) })).filter(({ c }) => c.heads.length)
+    .sort((x, y) => (y.c.steps.length > 1) - (x.c.steps.length > 1) || y.c.factor - x.c.factor || x.c.months - y.c.months);
+  document.getElementById("climbnote").textContent =
+    `${fmt(rows.length)} band${rows.length === 1 ? "" : "s"}. Room sizes are Toronto headline shows since Oct 2023; support slots don't count.`;
+  const shown = state.climbAll ? rows : rows.slice(0, CLIMB_LIMIT);
+  for (const { a, c } of shown) {
+    const li = el("li", "climb-row");
+    const d = el("details");
+    const sum = el("summary");
+    const main = el("div", "cr-main");
+    const name = el("div", "cr-name", a.artist);
+    if (D.seen.has(norm(a.artist))) name.append(" ", el("span", "seenbadge", "★"));
+    if (a.listeners != null) {
+      const l = el("span", "cr-listeners", ` ${fmtListeners(a.listeners)}${a.listeners < SUSPECT_LISTENERS ? "?" : ""}`);
+      if (a.listeners < SUSPECT_LISTENERS) l.title = "Last.fm may have matched a different artist with this name";
+      name.append(l);
+    }
+    main.append(name);
+    const path = c.steps.length > 1
+      ? c.steps.map((h) => `${short(h.venue, 20)} ${fmt(h.cap)}`).join(" → ")
+      : `Headlined ${short(c.steps[0].venue, 22)} (${fmt(c.steps[0].cap)})${c.heads.length > 1 ? ` ×${c.heads.length}` : ""}`;
+    main.append(el("div", "cr-path", path));
+    const meta = [];
+    if (c.steps.length > 1) meta.push(`×${c.factor.toFixed(1)} room size ${spanText(c.months)}`);
+    const nx = D.next.get(norm(a.artist));
+    if (nx) meta.push(`Next: ${new Date(nx.starts_at).toLocaleDateString(undefined, { month: "short", day: "numeric" })}, ${short(nx.venue.name.trim(), 22)}`);
+    if (meta.length) main.append(el("div", "cr-meta", meta.join(" · ")));
+    sum.append(main, miniLadder(c));
+    d.append(sum);
+    // Opened: every Toronto show with billing, the SF rooms, and a link to the full card.
+    const ul = el("ul", "shows");
+    for (const sh of a.shows) {
+      const li2 = el("li", isSupport(sh) ? "support" : null,
+        `${monthYear(parseDate(sh.date))} · ${sh.venue}${typeof sh.cap === "number" ? ` (${fmt(sh.cap)})` : ""}`);
+      if (isSupport(sh)) {
+        li2.append(el("span", "tag", sh.billing ? "support" : "likely support"));
+        if (sh.with?.length) li2.append(el("span", "with", ` for ${sh.with[0]}`));
+      }
+      ul.append(li2);
+    }
+    d.append(el("p", "muted small", `SF: ${a.sf.join(", ")}`), ul);
+    if (nx?.url) {
+      const t = el("a", "tickets", "Tickets for the next show ↗");
+      Object.assign(t, { href: nx.url, target: "_blank", rel: "noopener" });
+      d.append(t);
+    }
+    li.append(d);
+    list.append(li);
+  }
+  if (rows.length > shown.length) {
+    const more = el("button", "linkbtn", `Show all ${rows.length}`);
+    more.type = "button";
+    more.addEventListener("click", () => { state.climbAll = true; renderList(); });
+    list.append(more);
+  }
+}
+
+// The aughts favourites as reference rows: how long from a small room to Warfield size.
+function renderPace() {
+  const box = document.getElementById("pace");
+  box.replaceChildren();
+  const bands = D.ladder?.bands || [];
+  const head = el("p", "pace-head");
+  head.append(el("strong", null, "For pace, your aughts favourites: "));
+  if (!bands.length) {
+    head.append("pending (the ladder study runs tomorrow).");
+    box.append(head);
+    return;
+  }
+  box.append(head);
+  const ul = el("ul", "pace-list");
+  for (const g of bands) {
+    const shows = g.shows.filter((sh) => typeof sh.cap === "number").map((sh) => ({ ...sh, d: parseDate(sh.date) }));
+    const start = shows.find((sh) => sh.cap <= SF_PACE_LADDER[0][0]);
+    const big = start && shows.find((sh) => sh.d > start.d && sh.cap >= SF_PACE_LADDER[1][0]);
+    ul.append(el("li", null, big
+      ? `${g.artist}: ${short(start.venue, 20)} (${fmt(start.cap)}) → ${short(big.venue, 20)} (${fmt(big.cap)}) ${spanText((big.d - start.d) / (30.44 * 864e5))}`
+      : `${g.artist}: not enough setlist.fm history`));
+  }
+  box.append(ul);
 }
 
 function highlight(name) {
@@ -516,6 +674,83 @@ function renderRoom() {
 }
 
 // ---------- Room rivers ----------
+// The band panel under the rivers: the bands in a room or stream, as small cards, with
+// filters like the main page's tabs. Tiers come from the research job, which scores the
+// shared bands with the same taste model and cutoffs as the picks; until a research run
+// has done that, only the flag filters show.
+
+const TIERS = [["next_big_thing", "Next big thing"], ["would_like", "You'd probably like"], ["know", "Bands you know"]];
+const TIER_RANK = { next_big_thing: 0, would_like: 1, know: 2, other: 3, skip: 4 };
+const FLAGS = [
+  ["soon", "Playing soon", (a) => D.next.has(norm(a.artist))],
+  ["up", "Moving up", (a) => { const r = D.repeat.get(norm(a.artist)); return !!r && movingUp(r); }],
+  ["back", "Came back", (a) => D.repeat.has(norm(a.artist))],
+  ["seen", "You've seen", (a) => D.seen.has(norm(a.artist))],
+];
+const RIVER_CARDS = 30;
+
+function riverPanel(bands, title) {
+  const box = document.getElementById("riverpanel");
+  box.replaceChildren();
+  if (!bands) return;
+  const hasTiers = bands.some((a) => a.tier);
+  const filters = [["all", "All", () => true],
+    ...(hasTiers ? TIERS.map(([t, label]) => [t, label, (a) => a.tier === t]) : []),
+    ...FLAGS];
+  const chips = el("div", "seg rp-filters");
+  for (const [key, label, test] of filters) {
+    const n = bands.filter(test).length;
+    if (!n && key !== "all") continue;
+    const b = el("button", null, `${label} ${n}`);
+    b.type = "button";
+    b.setAttribute("aria-checked", state.riverFilter === key);
+    b.addEventListener("click", () => { state.riverFilter = key; state.riverAll = false; riverPanel(bands, title); });
+    chips.append(b);
+  }
+  box.append(chips);
+  const test = filters.find(([k]) => k === state.riverFilter)?.[2] || (() => true);
+  const list = bands.filter(test).sort((a, b) =>
+    (TIER_RANK[a.tier] ?? 3) - (TIER_RANK[b.tier] ?? 3) ||
+    (D.next.has(norm(b.artist)) - D.next.has(norm(a.artist))) ||
+    (a.listeners ?? 1e9) - (b.listeners ?? 1e9) || a.artist.localeCompare(b.artist));
+  const shown = state.riverAll ? list : list.slice(0, RIVER_CARDS);
+  const grid = el("div", "rp-grid");
+  for (const a of shown) grid.append(riverCard(a));
+  box.append(grid);
+  if (list.length > shown.length) {
+    const more = el("button", "linkbtn", `Show all ${list.length}`);
+    more.type = "button";
+    more.addEventListener("click", () => { state.riverAll = true; riverPanel(bands, title); });
+    box.append(more);
+  }
+}
+
+function riverCard(a) {
+  const k = norm(a.artist);
+  const card = el("button", "rp-card");
+  card.type = "button";
+  const top = el("div", "rp-top");
+  top.append(el("span", "rp-name", a.artist));
+  const tierLabel = TIERS.find(([t]) => t === a.tier)?.[1];
+  if (tierLabel) top.append(el("span", `rp-tier t-${a.tier}`, tierLabel));
+  card.append(top);
+  const facts = [];
+  const listeners = a.listeners ?? D.repeat.get(k)?.listeners;
+  if (listeners != null) facts.push(fmtListeners(listeners));
+  if (a.days) facts.push(`${a.days} days played`);
+  if (facts.length) card.append(el("div", "rp-facts", facts.join(" · ")));
+  if (a.why) card.append(el("div", "rp-why", a.why.replace(/ \(\d\.\d+\)/g, "")));
+  const flags = el("div", "rp-flags");
+  const nx = D.next.get(k);
+  if (nx) flags.append(el("span", "rl-chip hot", `${new Date(nx.starts_at).toLocaleDateString(undefined, { month: "short", day: "numeric" })} · ${short(nx.venue.name.trim(), 18)}`));
+  const rep = D.repeat.get(k);
+  if (rep && movingUp(rep)) flags.append(el("span", "rl-chip", "Moving up"));
+  else if (rep) flags.append(el("span", "rl-chip", "Came back"));
+  if (D.seen.has(k)) flags.append(el("span", "rl-chip", "★ Seen"));
+  if (flags.childNodes.length) card.append(flags);
+  card.addEventListener("click", () => { select(a.artist); document.getElementById("card").scrollIntoView({ behavior: "smooth", block: "start" }); });
+  return card;
+}
 
 function renderRivers() {
   const box = document.getElementById("rivers");
@@ -558,38 +793,35 @@ function renderRivers() {
     .attr("x", W - sideW).attr("y", (v) => yR(v.name) + 4)
     .text((v) => `${short(v.name, narrow ? 15 : 28)}${narrow ? "" : ` · ${fmt(CAPS[v.name.toLowerCase()])}`}`);
 
-  const focus = (pred, text) => {
+  const HINT = "Tap a room or a stream to see its bands.";
+  const focus = (pred, text, bands) => {
     svg.classed("has-sel", !!pred);
     paths.classed("on", (l) => !!pred && pred(l));
-    info.replaceChildren();
-    if (text) info.append(text);
+    info.replaceChildren(el("p", null, text || HINT));
+    state.riverFilter = "all";
+    riverPanel(bands || null, text);
   };
+  const bandsWhere = (pred) => [...D.shared.values()].filter(pred);
   nodes.selectAll("text.l").on("click", (e, v) => {
     e.stopPropagation();
     const mine = links.filter((l) => l.s === v.name).sort((a, b) => b.n - a.n);
-    focus((l) => l.s === v.name, `${v.name} (${caps[v.name]}) → ${mine.map((l) => `${l.t} ${l.n}`).join(" · ") || "no streams"}`);
+    focus((l) => l.s === v.name,
+      `${v.name} (${caps[v.name]}) → ${mine.slice(0, 4).map((l) => `${short(l.t, 20)} ${l.n}`).join(" · ") || "no streams"}`,
+      bandsWhere((a) => a.sf.includes(v.name)));
   });
   nodes.selectAll("text.r").on("click", (e, v) => {
     e.stopPropagation();
     const mine = links.filter((l) => l.t === v.name).sort((a, b) => b.n - a.n);
-    focus((l) => l.t === v.name, `${v.name} (${fmt(CAPS[v.name.toLowerCase()])}) ← ${mine.map((l) => `${l.s} ${l.n}`).join(" · ") || "no streams"}`);
+    focus((l) => l.t === v.name,
+      `${v.name} (${fmt(CAPS[v.name.toLowerCase()])}) ← ${mine.slice(0, 4).map((l) => `${short(l.s, 20)} ${l.n}`).join(" · ") || "no streams"}`,
+      bandsWhere((a) => a.toronto.includes(v.name)));
   });
   paths.on("click", (e, l) => {
     e.stopPropagation();
-    const names = [...D.shared.values()].filter((a) => a.sf.includes(l.s) && a.toronto.includes(l.t)).map((a) => a.artist)
-      .sort((a, b) => a.localeCompare(b));
-    const p = el("p");
-    p.append(el("strong", null, `${l.s} → ${l.t}: ${l.n} bands. `));
-    names.forEach((n, i) => {
-      const b = el("button", "linkbtn", n);
-      b.type = "button";
-      b.addEventListener("click", () => { select(n); document.getElementById("card").scrollIntoView({ behavior: "smooth", block: "start" }); });
-      p.append(b, i < names.length - 1 ? " · " : "");
-    });
-    focus((x) => x === l, p);
+    focus((x) => x === l, `${l.s} → ${l.t}: ${l.n} bands`, bandsWhere((a) => a.sf.includes(l.s) && a.toronto.includes(l.t)));
   });
-  svg.on("click", () => focus(null, "Tap a room to see where its bands go, or a stream for the bands in it."));
-  focus(null, "Tap a room to see where its bands go, or a stream for the bands in it.");
+  svg.on("click", () => focus(null));
+  focus(null);
 }
 
 load();
