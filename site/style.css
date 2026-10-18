@@ -352,3 +352,4 @@ svg.mini circle { fill: var(--accent-fill); }
 .seg.rp-filters { border: 0; padding: 0; gap: 6px; }
 .seg.rp-filters button { border: 1px solid var(--line); }
 .seg.rp-filters button[aria-checked="true"] { border-color: var(--accent-fill); }
+.bandcard .foot { margin-top: 12px; }
