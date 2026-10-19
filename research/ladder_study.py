@@ -2,7 +2,7 @@
 
 For five bands the user watched rise in SF (Café du Nord → Independent → Regency →
 Warfield), pull every setlist.fm show in the Bay Area and Toronto, with room sizes, so
-the venue page can chart each climb and how long each step took.
+the explore page (The Climb) can show each climb as a pace reference and how long each step took.
 
 Writes site/data/ladder_study.json. Run by .github/workflows/ladder-study.yml. Uses
 per-city setlist searches (a few dozen calls) and stops without writing if setlist.fm's
@@ -52,14 +52,19 @@ TORONTO_EXTRA = {
 _cache: dict = json.loads(CACHE.read_text()) if CACHE.exists() else {}
 
 
+_calls = 0  # live setlist.fm requests this run (cache hits don't count)
+
+
 class OutOfBudget(Exception):
     pass
 
 
 def get(path: str, **params) -> dict:
+    global _calls
     key = path + json.dumps(params, sort_keys=True)
     if key in _cache:
         return _cache[key]
+    _calls += 1
     for attempt in range(4):
         time.sleep(0.6)
         r = requests.get(f"{BASE}{path}", params=params, timeout=20,
@@ -122,9 +127,10 @@ def main() -> None:
             print(f"{name}: {len(uniq)} shows", flush=True)
     except OutOfBudget:
         CACHE.write_text(json.dumps(_cache))
-        print("setlist.fm daily limit reached; results not written. Re-run to resume.")
+        print(f"setlist.fm daily limit reached after {_calls} calls; results not written. Re-run to resume.")
         return
     CACHE.write_text(json.dumps(_cache))
+    print(f"{_calls} setlist.fm calls this run", flush=True)
     OUT.write_text(json.dumps({
         "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "bands": bands,
