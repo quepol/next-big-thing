@@ -81,7 +81,9 @@ Other product decisions:
 ## Gotchas that have bitten us
 
 - **The sandbox can't reach** Last.fm, setlist.fm, Bandsintown, Wikipedia or CDNs. Anything needing them runs as a GitHub Actions workflow; read its output through the GitHub tools or from the commit it pushes.
-- **Local UI testing:** run `python3 -m http.server 8767 --directory site` (start it with `setsid nohup … &`), then Playwright with Chromium at `/opt/pw-browsers/chromium-1194/chrome-linux/chrome`. Never `pkill -f http.server`; it kills its own shell.
+- **A cloud session can't start workflows by hand** (`workflow_dispatch` returns 403). Push a real change to a path the workflow watches, or ask the user to click Run workflow.
+- **GitHub starts the daily cron late,** by about 3.5 hours on recent days (10:17 UTC scheduled, around 14:00 actual).
+- **Local UI testing:** run `python3 -m http.server 8767 --directory site` (in a cloud session, run it as a background task; `setsid nohup … &` servers die between turns), then Playwright with Chromium at `/opt/pw-browsers/chromium-1194/chrome-linux/chrome`. Never `pkill -f http.server`; it kills its own shell.
 - **setlist.fm allows about 1,440 calls a day.** Research jobs cache responses and never overwrite good results with a partial run.
 - **Changing an `actions/cache` step's `path` changes the cache version.** The old cache silently stops restoring. Give new files their own cache step.
 - **Typographic quotes** ("Arm’s Length") make Last.fm return near-empty pages. Normalise names before lookup.
