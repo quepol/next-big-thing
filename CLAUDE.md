@@ -84,7 +84,8 @@ Other product decisions:
 - **A cloud session can't start workflows by hand** (`workflow_dispatch` returns 403). Push a real change to a path the workflow watches, or ask the user to click Run workflow.
 - **GitHub starts the daily cron late,** by about 3.5 hours on recent days (10:17 UTC scheduled, around 14:00 actual).
 - **Local UI testing:** run `python3 -m http.server 8767 --directory site` (in a cloud session, run it as a background task; `setsid nohup … &` servers die between turns), then Playwright with Chromium at `/opt/pw-browsers/chromium-1194/chrome-linux/chrome`. Never `pkill -f http.server`; it kills its own shell.
-- **setlist.fm allows about 1,440 calls a day.** Research jobs cache responses and never overwrite good results with a partial run.
+- **setlist.fm allows about 1,440 calls a day.** Research jobs cache responses and never overwrite good results with a partial run Each research workflow triggers only on its own script, so editing one study doesn't run another.
+- **Tests run on `main` only,** and only for changes to `nbt/`, `tests/` or `requirements.txt`. Run `python -m pytest -q` locally before every push.
 - **Changing an `actions/cache` step's `path` changes the cache version.** The old cache silently stops restoring. Give new files their own cache step.
 - **Typographic quotes** ("Arm’s Length") make Last.fm return near-empty pages. Normalise names before lookup.
 - **Dates:** a bare `YYYY-MM-DD` string parses as UTC midnight and shows the day before in Toronto. Build local dates from their parts.

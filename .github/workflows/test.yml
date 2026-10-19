@@ -1,7 +1,12 @@
 name: Tests
 
+# Python tests only. Run on main: the dev branch gets the same commits seconds
+# earlier on every ship, and pytest runs locally before each push anyway. Docs,
+# site and data commits (including the daily snapshot) have nothing to test.
 on:
   push:
+    branches: [main]
+    paths: ["nbt/**", "tests/**", "requirements.txt", ".github/workflows/test.yml"]
   pull_request:
 
 jobs:

@@ -8,7 +8,10 @@ name: Venue research
 on:
   push:
     branches: [claude/music-venue-alerts-ayb8hs]
-    paths: ["research/**", ".github/workflows/venue-research.yml"]
+    # Only its own script: each run spends setlist.fm's ~1,440-call daily budget, so
+    # changes to another study (or to this file) mustn't set it off. Re-run by
+    # changing venue_overlap.py, or from the Actions tab once this is on main.
+    paths: ["research/venue_overlap.py"]
   workflow_dispatch:
 
 permissions:
