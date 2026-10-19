@@ -51,7 +51,7 @@ class SetlistFM:
         resp.raise_for_status()  # raise after 3 rate-limit failures
         return {}  # unreachable
 
-    def attended(self, user: str = CONFIG.lastfm_user) -> list[dict]:
+    def attended(self, user: str = CONFIG.setlistfm_user) -> list[dict]:
         """All attended setlists, newest first. Paginates automatically."""
         results = []
         page = 1
@@ -66,7 +66,7 @@ class SetlistFM:
             time.sleep(1.0)
         return results
 
-    def attended_artists(self, user: str = CONFIG.lastfm_user) -> dict[str, str]:
+    def attended_artists(self, user: str = CONFIG.setlistfm_user) -> dict[str, str]:
         """Mapping of normalized key → display name for all artists seen live."""
         result: dict[str, str] = {}
         for s in self.attended(user):
@@ -74,12 +74,12 @@ class SetlistFM:
             result[normalize_name(name)] = name
         return result
 
-    def attended_venue_names(self, user: str = CONFIG.lastfm_user) -> set[str]:
+    def attended_venue_names(self, user: str = CONFIG.setlistfm_user) -> set[str]:
         """Lowercased venue names — used to detect when a show is at a new-to-you venue."""
         return {s["venue"]["name"].lower() for s in self.attended(user)}
 
     def attended_ledger(
-        self, user: str = CONFIG.lastfm_user, current_listeners: dict[str, int] | None = None
+        self, user: str = CONFIG.setlistfm_user, current_listeners: dict[str, int] | None = None
     ) -> list[dict]:
         """Retroactive bragging-rights ledger: every attended show with current listener counts.
 

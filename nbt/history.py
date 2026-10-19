@@ -18,7 +18,7 @@ from .models import normalize_name
 from .store import read_json, write_json
 
 HISTORY_PATH = DATA_DIR / "history.json"
-LOCAL_TZ = ZoneInfo("America/Toronto")
+LOCAL_TZ = ZoneInfo(CONFIG.timezone)
 
 
 def empty_history() -> dict:

@@ -22,6 +22,10 @@ class Region:
 @dataclass(frozen=True)
 class Config:
     lastfm_user: str = os.environ.get("LASTFM_USER") or "quepol"
+    # setlist.fm username, if it differs from the Last.fm one.
+    setlistfm_user: str = os.environ.get("SETLISTFM_USER") or os.environ.get("LASTFM_USER") or "quepol"
+    # Where "a day" starts and ends when counting distinct days played.
+    timezone: str = "America/Toronto"
     lastfm_api_key: str = os.environ.get("LASTFM_API_KEY", "")
     bandsintown_app_id: str = os.environ.get("BANDSINTOWN_APP_ID", "")
     ticketmaster_api_key: str = os.environ.get("TICKETMASTER_API_KEY", "")

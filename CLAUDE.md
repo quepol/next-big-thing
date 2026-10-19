@@ -92,4 +92,5 @@ Other product decisions:
 ## Environment
 
 - Secrets (GitHub, and `.env` locally): `LASTFM_API_KEY`, `TICKETMASTER_API_KEY`, `SETLISTFM_API_KEY`. `BANDSINTOWN_APP_ID` exists but is rejected.
+- GitHub repository variables (optional): `LASTFM_USER`, `SETLISTFM_USER`. Unset means the defaults in `nbt/config.py` (`quepol`). The README's "Make your own" steps rely on them.
 - GitHub secrets can't be read back, so a cloud session can't run the pipeline locally; use the workflows.

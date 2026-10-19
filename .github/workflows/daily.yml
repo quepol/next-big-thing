@@ -52,6 +52,9 @@ jobs:
           TICKETMASTER_API_KEY: ${{ secrets.TICKETMASTER_API_KEY }}
           SETLISTFM_API_KEY: ${{ secrets.SETLISTFM_API_KEY }}
           BANDSINTOWN_APP_ID: ${{ secrets.BANDSINTOWN_APP_ID }}
+          # Repository variables; unset means the defaults in nbt/config.py.
+          LASTFM_USER: ${{ vars.LASTFM_USER }}
+          SETLISTFM_USER: ${{ vars.SETLISTFM_USER }}
         run: python -m nbt run
       # Rebase onto whatever landed on main during the run, so the push isn't
       # rejected and the deploy below carries the latest site files.
