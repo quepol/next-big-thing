@@ -178,15 +178,23 @@ function renderChart() {
   }
 
   // Ghosts: the aughts favourites, for pace
-  const line = d3.line().x((d) => d[0]).y((d) => d[1]);
   // Steps: hold the room size, then jump. Along time first, whichever way time runs.
   const stair = d3.line().x((d) => d[0]).y((d) => d[1]).curve(vertical ? d3.curveStepBefore : d3.curveStepAfter);
   const gg = svg.append("g").attr("class", "ghosts");
+  const usedY = [];
   for (const g of ghosts) {
-    const pts = g.pts.map((p) => xy(Math.min(years(p.date, g.t0), ALIGN_MAX_YEARS), p.cap));
-    gg.append("path").attr("d", line(pts));
+    // Same staircase as the bands: biggest room so far, so festival or support
+    // dips don't zig-zag across the chart.
+    let best = 0;
+    const pts = g.pts.filter((p) => years(p.date, g.t0) <= ALIGN_MAX_YEARS)
+      .map((p) => { best = Math.max(best, p.cap); return xy(years(p.date, g.t0), best); });
+    gg.append("path").attr("d", stair(pts));
     const last = pts[pts.length - 1];
-    gg.append("text").attr("x", last[0] + (vertical ? -4 : 4)).attr("y", last[1] + (vertical ? -6 : -4))
+    // Bands that top out at the same room would print their names on top of each other.
+    let ly = last[1] + (vertical ? -6 : -4);
+    while (usedY.some((u) => Math.abs(u - ly) < 11)) ly += vertical ? -11 : 11;
+    usedY.push(ly);
+    gg.append("text").attr("x", last[0] + (vertical ? -4 : 4)).attr("y", ly)
       .attr("text-anchor", vertical ? "end" : "start").text(g.name);
   }
 
@@ -223,6 +231,13 @@ function renderChart() {
 
 // The list: one row per band, biggest climb first. The chart lives in a <details>
 // and only renders when opened.
+// Long setlist.fm venue names, as people say them.
+const VENUE_NICK = {
+  "William Randolph Hearst Greek Theatre": "Greek Theatre",
+  "Great American Music Hall": "Great American",
+  "Louise M. Davies Symphony Hall": "Davies Hall",
+};
+const nick = (v) => VENUE_NICK[v] || v;
 const SF_PACE_LADDER = [[700, "small room"], [2300, "Warfield size"]];
 const CLIMB_LIMIT = 25;
 
@@ -420,7 +435,7 @@ function renderPace() {
     const start = shows.find((sh) => sh.cap <= SF_PACE_LADDER[0][0]);
     const big = start && shows.find((sh) => sh.d > start.d && sh.cap >= SF_PACE_LADDER[1][0]);
     ul.append(el("li", null, big
-      ? `${g.artist}: ${short(start.venue, 20)} (${fmt(start.cap)}) → ${short(big.venue, 20)} (${fmt(big.cap)}) ${spanText((big.d - start.d) / (30.44 * 864e5))}`
+      ? `${g.artist}: ${short(nick(start.venue), 20)} (${fmt(start.cap)}) → ${short(nick(big.venue), 20)} (${fmt(big.cap)}) ${spanText((big.d - start.d) / (30.44 * 864e5))}`
       : `${g.artist}: not enough setlist.fm history`));
   }
   box.append(ul);
