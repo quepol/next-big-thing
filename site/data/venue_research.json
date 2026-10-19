@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-18T21:42:43+00:00",
+ "generated_at": "2026-10-19T11:14:57+00:00",
  "since": "2023-10-01",
  "complete": true,
  "requests": 0,
@@ -1947,8 +1947,8 @@
    "share": 0.3459,
    "lift": 2.17,
    "by_sf_venue": {
-    "Great American Music Hall": 22,
     "The Independent": 14,
+    "Great American Music Hall": 22,
     "Bottom of the Hill": 8,
     "Café du Nord": 9,
     "The Fillmore": 10,
@@ -2315,8 +2315,8 @@
    "by_sf_venue": {
     "The Independent": 7,
     "Great American Music Hall": 11,
-    "Bottom of the Hill": 11,
     "The Regency Ballroom": 10,
+    "Bottom of the Hill": 11,
     "The Fillmore": 6,
     "Café du Nord": 8,
     "Bimbo's 365 Club": 1
@@ -2377,8 +2377,8 @@
    "by_sf_venue": {
     "Café du Nord": 6,
     "Bottom of the Hill": 19,
-    "Great American Music Hall": 10,
     "The Independent": 5,
+    "Great American Music Hall": 10,
     "The Regency Ballroom": 4,
     "Bimbo's 365 Club": 1,
     "The Fillmore": 2
@@ -2582,10 +2582,10 @@
    "lift": 2.22,
    "by_sf_venue": {
     "Café du Nord": 6,
-    "Bottom of the Hill": 10,
     "The Regency Ballroom": 4,
-    "Great American Music Hall": 5,
+    "Bottom of the Hill": 10,
     "The Independent": 4,
+    "Great American Music Hall": 5,
     "The Fillmore": 2
    },
    "overlap_artists": [
@@ -2786,8 +2786,8 @@
     "The Independent": 4,
     "The Regency Ballroom": 3,
     "Café du Nord": 2,
-    "Great American Music Hall": 2,
     "The Fillmore": 2,
+    "Great American Music Hall": 2,
     "Bottom of the Hill": 7,
     "Bimbo's 365 Club": 1
    },
@@ -3094,8 +3094,8 @@
    "share": 0.2647,
    "lift": 1.66,
    "by_sf_venue": {
-    "Great American Music Hall": 4,
     "The Regency Ballroom": 2,
+    "Great American Music Hall": 4,
     "The Independent": 3,
     "Bottom of the Hill": 2
    },
@@ -3120,9 +3120,9 @@
    "share": 0.1778,
    "lift": 1.12,
    "by_sf_venue": {
-    "Bottom of the Hill": 1,
-    "Great American Music Hall": 6,
     "The Independent": 3,
+    "Great American Music Hall": 6,
+    "Bottom of the Hill": 1,
     "Café du Nord": 1,
     "The Regency Ballroom": 1
    },
@@ -3469,8 +3469,8 @@
    "by_sf_venue": {
     "The Fillmore": 1,
     "The Independent": 3,
-    "Great American Music Hall": 1,
-    "The Regency Ballroom": 1
+    "The Regency Ballroom": 1,
+    "Great American Music Hall": 1
    },
    "overlap_artists": [
     "Ashley McBryde",
@@ -3789,8 +3789,8 @@
    "share": 0.08,
    "lift": 0.5,
    "by_sf_venue": {
-    "Great American Music Hall": 1,
     "The Independent": 1,
+    "Great American Music Hall": 1,
     "Bottom of the Hill": 1
    },
    "overlap_artists": [
@@ -3908,8 +3908,8 @@
    "share": 0.0172,
    "lift": 0.11,
    "by_sf_venue": {
-    "Bottom of the Hill": 1,
     "The Fillmore": 1,
+    "Bottom of the Hill": 1,
     "Great American Music Hall": 1
    },
    "overlap_artists": [
@@ -3956,8 +3956,8 @@
    "share": 1.0,
    "lift": 6.29,
    "by_sf_venue": {
-    "Bimbo's 365 Club": 1,
-    "The Independent": 1
+    "The Independent": 1,
+    "Bimbo's 365 Club": 1
    },
    "overlap_artists": [
     "Lotus"
@@ -4107,9 +4107,9 @@
    "share": 0.5,
    "lift": 3.14,
    "by_sf_venue": {
-    "Great American Music Hall": 1,
     "The Independent": 1,
-    "The Regency Ballroom": 1
+    "The Regency Ballroom": 1,
+    "Great American Music Hall": 1
    },
    "overlap_artists": [
     "Wisp"
@@ -4274,8 +4274,8 @@
    "share": 0.25,
    "lift": 1.57,
    "by_sf_venue": {
-    "Great American Music Hall": 1,
-    "The Regency Ballroom": 1
+    "The Regency Ballroom": 1,
+    "Great American Music Hall": 1
    },
    "overlap_artists": [
     "femtanyl"
@@ -4290,8 +4290,8 @@
    "share": 0.2,
    "lift": 1.26,
    "by_sf_venue": {
-    "Great American Music Hall": 1,
-    "The Independent": 1
+    "The Independent": 1,
+    "Great American Music Hall": 1
    },
    "overlap_artists": [
     "Cam Kahin"
@@ -9263,7 +9263,7 @@
      "cap": 250
     }
    ],
-   "affinity": 0.2176,
+   "affinity": 0.2175,
    "why": "similar to Modest Mouse (0.45), Built to Spill (0.54), Neutral Milk Hotel (0.34)",
    "tier": "other",
    "listeners": 215088
@@ -9300,7 +9300,7 @@
      "cap": 2400
     }
    ],
-   "affinity": 0.0035,
+   "affinity": 0.0034,
    "why": "tags match your taste: electronic, hip-hop, electropop",
    "tier": "other",
    "listeners": 931811
@@ -9477,7 +9477,7 @@
      "cap": 250
     }
    ],
-   "affinity": 0.2387,
+   "affinity": 0.2385,
    "why": "similar to Ryan Adams (0.56), Wilco (0.42), Shovels & Rope (0.51)",
    "tier": "next_big_thing",
    "listeners": 49360
@@ -9517,7 +9517,7 @@
      "cap": 2400
     }
    ],
-   "affinity": 0.0607,
+   "affinity": 0.0606,
    "why": "similar to Metallica (0.22), AC/DC (0.28)",
    "tier": "other",
    "listeners": 732990
@@ -9614,7 +9614,7 @@
      "cap": 1427
     }
    ],
-   "affinity": 0.0486,
+   "affinity": 0.0485,
    "why": "similar to BoyWithUke (0.33)",
    "tier": "other",
    "listeners": 172997
@@ -9705,7 +9705,7 @@
      "cap": 200
     }
    ],
-   "affinity": 0.0314,
+   "affinity": 0.0313,
    "why": "similar to The Mountain Goats (0.15), The Magnetic Fields (0.09), This is Lorelei (0.08)",
    "tier": "other",
    "listeners": 53668
@@ -9827,7 +9827,7 @@
      "cap": 8000
     }
    ],
-   "affinity": 0.0686,
+   "affinity": 0.0685,
    "why": "similar to BoyWithUke (0.29), Vance Joy (0.15), Briston Maroney (0.44)",
    "tier": "other",
    "listeners": 440515
@@ -9894,7 +9894,7 @@
      "cap": 850
     }
    ],
-   "affinity": 0.3264,
+   "affinity": 0.3263,
    "why": "tags match your taste: indie, alternative, electronic",
    "tier": "next_big_thing",
    "listeners": 5923
@@ -9935,7 +9935,7 @@
     }
    ],
    "days": 1,
-   "affinity": 0.1676,
+   "affinity": 0.1675,
    "why": "similar to Ryan Adams (0.44), Uncle Tupelo (0.82), Whiskeytown (0.56)",
    "tier": "other",
    "listeners": 123347
@@ -10108,7 +10108,7 @@
      "cap": 300
     }
    ],
-   "affinity": 0.0478,
+   "affinity": 0.0477,
    "why": "tags match your taste: electronic, pop, experimental",
    "tier": "other",
    "listeners": 319835
@@ -10201,7 +10201,7 @@
      "cap": 1427
     }
    ],
-   "affinity": 0.1167,
+   "affinity": 0.1166,
    "why": "similar to Erasure (0.72), Wham! (0.14)",
    "tier": "other",
    "listeners": 400502
@@ -10328,7 +10328,7 @@
     }
    ],
    "days": 1,
-   "affinity": 0.1734,
+   "affinity": 0.1732,
    "why": "similar to Lady Gaga (0.46), Ellie Goulding (0.45), CHVRCHES (0.42)",
    "tier": "other",
    "listeners": 890506
@@ -10445,7 +10445,7 @@
      "cap": 2500
     }
    ],
-   "affinity": 0.0537,
+   "affinity": 0.0536,
    "why": "similar to Ariana Grande (0.19), BANKS (0.15), Tori Kelly (0.25)",
    "tier": "other",
    "listeners": 291486
@@ -10465,7 +10465,7 @@
      "cap": 600
     }
    ],
-   "affinity": 0.2877,
+   "affinity": 0.2875,
    "why": "similar to Grizzly Bear (0.73), Kurt Vile (0.93), Panda Bear (0.90)",
    "tier": "other",
    "listeners": 234031
@@ -10519,7 +10519,7 @@
     }
    ],
    "days": 2,
-   "affinity": 0.2158,
+   "affinity": 0.2157,
    "why": "similar to Death Cab for Cutie (0.37), Sunny Day Real Estate (0.50), Owen (1.00)",
    "tier": "other",
    "listeners": 1231689
@@ -10586,7 +10586,7 @@
      "cap": 500
     }
    ],
-   "affinity": 0.1994,
+   "affinity": 0.1992,
    "why": "similar to William Fitzsimmons (0.29), Ben Howard (0.44), Benjamin Francis Leftwich (0.27)",
    "tier": "next_big_thing",
    "listeners": 48272
@@ -10626,7 +10626,7 @@
      "cap": 2765
     }
    ],
-   "affinity": 0.3109,
+   "affinity": 0.3108,
    "why": "similar to OutKast (1.00), The Roots (0.48), Childish Gambino (0.57)",
    "tier": "other",
    "listeners": 218691
@@ -10733,7 +10733,7 @@
     }
    ],
    "days": 1,
-   "affinity": 0.0429,
+   "affinity": 0.0428,
    "why": "similar to Pink Floyd (0.15), Porcupine Tree (0.14)",
    "tier": "other",
    "listeners": 195151
@@ -10811,7 +10811,7 @@
      "cap": 575
     }
    ],
-   "affinity": 0.2429,
+   "affinity": 0.2428,
    "why": "similar to Iron & Wine (0.52), The Mountain Goats (0.46), Josh Ritter (0.43)",
    "tier": "next_big_thing",
    "listeners": 33068
@@ -10831,7 +10831,7 @@
      "cap": 500
     }
    ],
-   "affinity": 0.1637,
+   "affinity": 0.1636,
    "why": "similar to Sufjan Stevens (0.29), Sharon Van Etten (0.44), Joni Mitchell (0.36)",
    "tier": "next_big_thing",
    "listeners": 94398
@@ -10851,7 +10851,7 @@
      "cap": null
     }
    ],
-   "affinity": 0.116,
+   "affinity": 0.1159,
    "why": "similar to MUNA (0.54), boygenius (0.28), Maggie Rogers (0.27)",
    "tier": "other",
    "listeners": 160277
@@ -11126,7 +11126,7 @@
      "cap": null
     }
    ],
-   "affinity": 0.1071,
+   "affinity": 0.1072,
    "why": "tags match your taste: pop, female vocalists, electronic",
    "tier": "other",
    "listeners": 7732
@@ -11152,7 +11152,7 @@
      "cap": 900
     }
    ],
-   "affinity": 0.0844,
+   "affinity": 0.0843,
    "why": "similar to The Kid LAROI (0.50), Jaden (0.34), Post Malone (0.23)",
    "tier": "other",
    "listeners": 508560
@@ -11183,7 +11183,7 @@
      "cap": 575
     }
    ],
-   "affinity": 0.1079,
+   "affinity": 0.1078,
    "why": "similar to Dijon (0.53), Solange (0.33)",
    "tier": "other",
    "listeners": 71994
@@ -11209,7 +11209,7 @@
      "cap": 2500
     }
    ],
-   "affinity": 0.2575,
+   "affinity": 0.2573,
    "why": "similar to James Blake (0.59), Sault (1.00), Leon Bridges (0.60)",
    "tier": "other",
    "listeners": 790923
@@ -11229,7 +11229,7 @@
      "cap": 1000
     }
    ],
-   "affinity": 0.2291,
+   "affinity": 0.2289,
    "why": "similar to Jimmy Eat World (0.44), Brand New (0.54), Thrice (0.54)",
    "tier": "other",
    "listeners": 617250
@@ -11303,7 +11303,7 @@
      "cap": 1427
     }
    ],
-   "affinity": 0.0811,
+   "affinity": 0.081,
    "why": "similar to Brand New (0.35)",
    "tier": "other",
    "listeners": 114157
@@ -11349,7 +11349,7 @@
      "cap": 400
     }
    ],
-   "affinity": 0.2581,
+   "affinity": 0.258,
    "why": "similar to Spoon (0.39), The Joy Formidable (0.46), Band of Horses (0.39)",
    "tier": "other",
    "listeners": 568491
@@ -11381,7 +11381,7 @@
      "cap": 2500
     }
    ],
-   "affinity": 0.0336,
+   "affinity": 0.0335,
    "why": "similar to Billie Eilish (0.11), RAYE (0.12), Anya Nami (0.14)",
    "tier": "other",
    "listeners": 1732582
@@ -11452,7 +11452,7 @@
      "cap": 300
     }
    ],
-   "affinity": 0.1616,
+   "affinity": 0.1615,
    "why": "similar to Noah Kahan (0.87), Phoebe Bridgers (0.41), Mumford & Sons (0.12)",
    "tier": "next_big_thing",
    "listeners": 62187
@@ -11596,7 +11596,7 @@
      "cap": 2765
     }
    ],
-   "affinity": 0.2149,
+   "affinity": 0.2148,
    "why": "similar to Lorde (0.64), Taylor Swift (0.42), Harry Styles (0.37)",
    "tier": "other",
    "listeners": 446217
@@ -11655,7 +11655,7 @@
      "cap": 600
     }
    ],
-   "affinity": 0.2023,
+   "affinity": 0.2022,
    "why": "similar to The Knife (0.77), Fever Ray (1.00), Robyn (0.36)",
    "tier": "other",
    "listeners": 441241
@@ -11675,7 +11675,7 @@
      "cap": 1427
     }
    ],
-   "affinity": 0.2456,
+   "affinity": 0.2455,
    "why": "similar to Boards of Canada (0.96), Aphex Twin (0.82)",
    "tier": "other",
    "listeners": 814210
@@ -11727,7 +11727,7 @@
      "cap": 575
     }
    ],
-   "affinity": 0.3926,
+   "affinity": 0.3925,
    "why": "similar to Spoon (0.66), Bloc Party (0.59), Yeah Yeah Yeahs (0.45)",
    "tier": "would_like",
    "listeners": 519022
@@ -11858,7 +11858,7 @@
      "cap": 575
     }
    ],
-   "affinity": 0.1001,
+   "affinity": 0.1,
    "why": "similar to This is Lorelei (0.87)",
    "tier": "other",
    "listeners": 110587
@@ -11930,7 +11930,7 @@
      "cap": 200
     }
    ],
-   "affinity": 0.0763,
+   "affinity": 0.0762,
    "why": "similar to Rilo Kiley (0.26), Jay Som (0.25), Ra Ra Riot (0.28)",
    "tier": "other",
    "listeners": 190083
@@ -11951,7 +11951,7 @@
      "cap": 2500
     }
    ],
-   "affinity": 0.2209,
+   "affinity": 0.2207,
    "why": "similar to Young the Giant (0.82), Local Natives (0.54), Bastille (0.20)",
    "tier": "other",
    "listeners": 686874
@@ -11971,7 +11971,7 @@
      "cap": 1427
     }
    ],
-   "affinity": 0.0525,
+   "affinity": 0.0524,
    "why": "similar to Sofi Tukker (0.39)",
    "tier": "other",
    "listeners": 87270
@@ -12078,7 +12078,7 @@
      "cap": 850
     }
    ],
-   "affinity": 0.0851,
+   "affinity": 0.085,
    "why": "similar to Twenty One Pilots (1.00), Foster the People (0.28), Young the Giant (0.23)",
    "tier": "other",
    "listeners": 622018
@@ -12210,7 +12210,7 @@
      "cap": null
     }
    ],
-   "affinity": 0.2286,
+   "affinity": 0.2285,
    "why": "similar to Frightened Rabbit (0.36), Manchester Orchestra (0.34), Julien Baker (0.35)",
    "tier": "other",
    "listeners": 160325
@@ -12249,7 +12249,7 @@
      "cap": 1000
     }
    ],
-   "affinity": 0.0705,
+   "affinity": 0.0704,
    "why": "similar to J. Cole (0.71)",
    "tier": "other",
    "listeners": 618461
@@ -12349,8 +12349,8 @@
     }
    ],
    "days": 2,
-   "affinity": 0.0371,
-   "why": "tags match your taste: hip-hop, rap, canadian",
+   "affinity": 0.0162,
+   "why": "similar to Post Malone (0.10), Macklemore & Ryan Lewis (0.10)",
    "tier": "other",
    "listeners": 1605295
   },
@@ -12376,7 +12376,7 @@
      "cap": 850
     }
    ],
-   "affinity": 0.1393,
+   "affinity": 0.1392,
    "why": "similar to Beach House (0.43), Wild Nothing (1.00), Real Estate (0.77)",
    "tier": "other",
    "listeners": 1155331
@@ -12437,7 +12437,7 @@
      "cap": 1427
     }
    ],
-   "affinity": 0.1544,
+   "affinity": 0.1543,
    "why": "similar to John Williams (0.47), Ludvig Forssell (0.35), Danny Elfman (0.38)",
    "tier": "other",
    "listeners": 569104
@@ -12457,7 +12457,7 @@
      "cap": null
     }
    ],
-   "affinity": 0.0946,
+   "affinity": 0.0945,
    "why": "similar to Ellie Goulding (0.32), Mark Ronson (0.32)",
    "tier": "other",
    "listeners": 627112
@@ -12478,7 +12478,7 @@
     }
    ],
    "days": 1,
-   "affinity": 0.1724,
+   "affinity": 0.1723,
    "why": "similar to Waxahatchee (0.70), Sharon Van Etten (0.65), Kevin Morby (0.76)",
    "tier": "other",
    "listeners": 233761
@@ -12561,7 +12561,7 @@
      "cap": 850
     }
    ],
-   "affinity": 0.0858,
+   "affinity": 0.0857,
    "why": "similar to This is Lorelei (0.49), MJ Lenderman (0.55), Surfer Blood (0.43)",
    "tier": "other",
    "listeners": 75178
@@ -12634,7 +12634,7 @@
      "cap": 900
     }
    ],
-   "affinity": 0.1452,
+   "affinity": 0.1451,
    "why": "similar to Noah Kahan (0.82), Billie Eilish (0.31), The Neighbourhood (0.34)",
    "tier": "other",
    "listeners": 475655
@@ -12674,7 +12674,7 @@
      "cap": 1427
     }
    ],
-   "affinity": 0.1853,
+   "affinity": 0.1852,
    "why": "similar to Andrew Garfield (0.71), Sara Bareilles (0.12), Ben Platt (0.07)",
    "tier": "next_big_thing",
    "listeners": 34466
@@ -12817,7 +12817,7 @@
      "cap": null
     }
    ],
-   "affinity": 0.0282,
+   "affinity": 0.0281,
    "why": "similar to Anderson .Paak (0.51)",
    "tier": "other",
    "listeners": 329608
@@ -13024,7 +13024,7 @@
      "cap": 575
     }
    ],
-   "affinity": 0.2066,
+   "affinity": 0.2065,
    "why": "similar to Feist (0.51), Maggie Rogers (0.38), Birdy (0.45)",
    "tier": "other",
    "listeners": 718767
@@ -13045,7 +13045,7 @@
     }
    ],
    "days": 1,
-   "affinity": 0.2796,
+   "affinity": 0.2794,
    "why": "similar to Florence + the Machine (0.55), Bastille (0.51), X Ambassadors (1.00)",
    "tier": "other",
    "listeners": 680137
@@ -13149,7 +13149,7 @@
      "cap": 500
     }
    ],
-   "affinity": 0.1133,
+   "affinity": 0.1132,
    "why": "similar to Sharon Jones and the Dap-Kings (0.34), The Black Keys (0.26), Vulfpeck (0.26)",
    "tier": "other",
    "listeners": 151470
@@ -13196,7 +13196,7 @@
      "cap": 1427
     }
    ],
-   "affinity": 0.1827,
+   "affinity": 0.1826,
    "why": "similar to The Black Keys (0.59), The Raconteurs (0.20), Kaleo (0.26)",
    "tier": "other",
    "listeners": 256271
@@ -13242,7 +13242,7 @@
      "cap": null
     }
    ],
-   "affinity": 0.2234,
+   "affinity": 0.2233,
    "why": "similar to Ben Howard (0.57), Mumford & Sons (0.19), William Fitzsimmons (0.17)",
    "tier": "other",
    "listeners": 275512
@@ -13262,7 +13262,7 @@
      "cap": 2500
     }
    ],
-   "affinity": 0.0589,
+   "affinity": 0.0588,
    "why": "tags match your taste: electronic, alternative, electronica",
    "tier": "other",
    "listeners": 171391
@@ -13420,7 +13420,7 @@
      "cap": 1000
     }
    ],
-   "affinity": 0.0987,
+   "affinity": 0.0986,
    "why": "similar to MUNA (0.43), Carly Rae Jepsen (0.42)",
    "tier": "other",
    "listeners": 148388
@@ -13480,7 +13480,7 @@
      "cap": 1427
     }
    ],
-   "affinity": 0.0815,
+   "affinity": 0.0814,
    "why": "similar to Gregory Alan Isakov (0.20), The Lumineers (0.18), The Head and the Heart (0.16)",
    "tier": "other",
    "listeners": 56831
@@ -13652,7 +13652,7 @@
      "cap": 900
     }
    ],
-   "affinity": 0.2344,
+   "affinity": 0.2343,
    "why": "similar to The Temper Trap (0.56), Vance Joy (0.33), Whitley (0.26)",
    "tier": "other",
    "listeners": 444191
@@ -13781,7 +13781,7 @@
     }
    ],
    "days": 1,
-   "affinity": 0.1064,
+   "affinity": 0.1063,
    "why": "similar to The Highwomen (0.54), Pistol Annies (0.55), The Secret Sisters (0.33)",
    "tier": "other",
    "listeners": 61059
@@ -13807,7 +13807,7 @@
      "cap": 575
     }
    ],
-   "affinity": 0.184,
+   "affinity": 0.1839,
    "why": "similar to Vance Joy (0.41), Gregory Alan Isakov (0.33), Noah Kahan (0.78)",
    "tier": "other",
    "listeners": 287931
@@ -13902,7 +13902,7 @@
      "cap": 1427
     }
    ],
-   "affinity": 0.1583,
+   "affinity": 0.1582,
    "why": "similar to Mumford & Sons (0.22), Gregory Alan Isakov (0.30), The Lumineers (0.32)",
    "tier": "next_big_thing",
    "listeners": 35046
@@ -13998,7 +13998,7 @@
      "cap": 1000
     }
    ],
-   "affinity": 0.0649,
+   "affinity": 0.0648,
    "why": "similar to Clipse (0.43)",
    "tier": "other",
    "listeners": 54657
@@ -14620,7 +14620,7 @@
      "cap": 1427
     }
    ],
-   "affinity": 0.1355,
+   "affinity": 0.1354,
    "why": "similar to MUNA (0.65), Maggie Rogers (0.56)",
    "tier": "other",
    "listeners": 118375
@@ -14668,7 +14668,7 @@
     }
    ],
    "days": 1,
-   "affinity": 0.1703,
+   "affinity": 0.1702,
    "why": "similar to Father John Misty (0.57), Midlake (0.35), Damien Jurado (0.50)",
    "tier": "other",
    "listeners": 874936
@@ -14694,7 +14694,7 @@
      "cap": 400
     }
    ],
-   "affinity": 0.1941,
+   "affinity": 0.194,
    "why": "similar to Gregory Alan Isakov (0.42), Jack White (0.36), Sarah Jarosz (0.42)",
    "tier": "other",
    "listeners": 107877
@@ -14742,7 +14742,7 @@
     }
    ],
    "days": 1,
-   "affinity": 0.1704,
+   "affinity": 0.1703,
    "why": "similar to Neko Case (0.40), St. Vincent (0.44), Waxahatchee (0.37)",
    "tier": "other",
    "listeners": 380457
@@ -14973,7 +14973,7 @@
      "cap": 2500
     }
    ],
-   "affinity": 0.2761,
+   "affinity": 0.2759,
    "why": "similar to Gregory Alan Isakov (0.61), Vance Joy (0.54), The Lumineers (0.46)",
    "tier": "other",
    "listeners": 820379
@@ -14993,7 +14993,7 @@
      "cap": 400
     }
    ],
-   "affinity": 0.094,
+   "affinity": 0.0939,
    "why": "similar to BoyWithUke (0.51), Noah Kahan (0.22), Phoebe Bridgers (0.12)",
    "tier": "other",
    "listeners": 6697
@@ -15114,7 +15114,7 @@
     }
    ],
    "days": 2,
-   "affinity": 0.0466,
+   "affinity": 0.0465,
    "why": "similar to Patrick Watson (0.30), Alessia Cara (0.19), RAYE (0.21)",
    "tier": "other",
    "listeners": 255047
@@ -15190,7 +15190,7 @@
      "cap": 2765
     }
    ],
-   "affinity": 0.2546,
+   "affinity": 0.2545,
    "why": "similar to The New Pornographers (0.40), Feist (0.39), José González (0.35)",
    "tier": "next_big_thing",
    "listeners": 54336
@@ -15572,7 +15572,7 @@
      "cap": 575
     }
    ],
-   "affinity": 0.213,
+   "affinity": 0.2128,
    "why": "similar to Dijon (1.00), Mk.gee (0.61), Frank Ocean (0.40)",
    "tier": "other",
    "listeners": 339725
@@ -15819,7 +15819,7 @@
      "cap": 1427
     }
    ],
-   "affinity": 0.1303,
+   "affinity": 0.1302,
    "why": "similar to Brand New (0.57)",
    "tier": "other",
    "listeners": 551060
@@ -15930,7 +15930,7 @@
      "cap": 850
     }
    ],
-   "affinity": 0.0402,
+   "affinity": 0.0401,
    "why": "similar to Clipse (0.27)",
    "tier": "other",
    "listeners": 383334
@@ -15981,7 +15981,7 @@
      "cap": 1427
     }
    ],
-   "affinity": 0.1355,
+   "affinity": 0.1354,
    "why": "similar to Bloc Party (0.37), Japandroids (1.00), Built to Spill (0.37)",
    "tier": "other",
    "listeners": 506474
@@ -16027,7 +16027,7 @@
      "cap": 575
     }
    ],
-   "affinity": 0.0471,
+   "affinity": 0.047,
    "why": "similar to Don Toliver (0.55)",
    "tier": "other",
    "listeners": 1023822
@@ -16067,7 +16067,7 @@
      "cap": 2500
     }
    ],
-   "affinity": 0.1562,
+   "affinity": 0.1561,
    "why": "similar to Lizzo (0.63), Beyoncé (0.16), Destiny's Child (0.36)",
    "tier": "other",
    "listeners": 369326
@@ -16232,7 +16232,7 @@
      "cap": 16000
     }
    ],
-   "affinity": 0.1211,
+   "affinity": 0.121,
    "why": "similar to Young the Giant (0.51), Walk the Moon (0.38), Grouplove (0.40)",
    "tier": "other",
    "listeners": 362356
@@ -16316,7 +16316,7 @@
     }
    ],
    "days": 1,
-   "affinity": 0.1119,
+   "affinity": 0.1118,
    "why": "similar to Sofi Tukker (0.53), Robyn (0.38), Goldfrapp (0.39)",
    "tier": "other",
    "listeners": 281483
@@ -16471,7 +16471,7 @@
      "cap": null
     }
    ],
-   "affinity": 0.1025,
+   "affinity": 0.1024,
    "why": "similar to Ingrid Michaelson (0.57)",
    "tier": "other",
    "listeners": 127050
@@ -16519,7 +16519,7 @@
     }
    ],
    "days": 1,
-   "affinity": 0.0704,
+   "affinity": 0.0703,
    "why": "similar to Talk (0.60), Vulfpeck (0.28), Snarky Puppy (0.13)",
    "tier": "other",
    "listeners": 116750
@@ -16636,7 +16636,7 @@
      "cap": 500
     }
    ],
-   "affinity": 0.1306,
+   "affinity": 0.1305,
    "why": "similar to The Hold Steady (1.00), Ryan Adams (0.13), Neko Case (0.11)",
    "tier": "other",
    "listeners": 65419
@@ -16795,7 +16795,7 @@
      "cap": 1000
     }
    ],
-   "affinity": 0.1666,
+   "affinity": 0.1665,
    "why": "similar to Lizzo (0.57), Nicki Minaj (1.00), Missy Elliott (0.34)",
    "tier": "other",
    "listeners": 902393
@@ -17069,7 +17069,7 @@
      "cap": 900
     }
    ],
-   "affinity": 0.1096,
+   "affinity": 0.1095,
    "why": "similar to Shawn Mendes (0.40), Andrew Garfield (0.13)",
    "tier": "other",
    "listeners": 185761
@@ -17095,7 +17095,7 @@
      "cap": 5000
     }
    ],
-   "affinity": 0.1857,
+   "affinity": 0.1856,
    "why": "similar to OutKast (0.69), Kendrick Lamar (0.34), Clipse (0.44)",
    "tier": "other",
    "listeners": 1146714
@@ -17370,7 +17370,7 @@
     }
    ],
    "days": 1,
-   "affinity": 0.1817,
+   "affinity": 0.1816,
    "why": "similar to Christina Perri (0.52), Vance Joy (0.41), James Arthur (0.84)",
    "tier": "other",
    "listeners": 996623
@@ -17425,7 +17425,7 @@
      "cap": 16000
     }
    ],
-   "affinity": 0.5116,
+   "affinity": 0.5115,
    "why": "similar to Spoon (0.71), Silversun Pickups (0.65), Bloc Party (0.99)",
    "tier": "would_like",
    "listeners": 1081995
@@ -17496,7 +17496,7 @@
     }
    ],
    "days": 2,
-   "affinity": 0.2783,
+   "affinity": 0.2782,
    "why": "similar to Spoon (0.44), Tune-Yards (0.35), The New Pornographers (0.29)",
    "tier": "other",
    "listeners": 138832
@@ -17522,7 +17522,7 @@
     }
    ],
    "days": 1,
-   "affinity": 0.1497,
+   "affinity": 0.1496,
    "why": "similar to Shearwater (0.32), Calexico (0.26), Shovels & Rope (0.45)",
    "tier": "other",
    "listeners": 436755
@@ -17566,7 +17566,7 @@
      "cap": 700
     }
    ],
-   "affinity": 0.0971,
+   "affinity": 0.097,
    "why": "similar to Jay Som (0.56), This is Lorelei (0.45), Surfer Blood (0.55)",
    "tier": "other",
    "listeners": 298342
@@ -17635,7 +17635,7 @@
      "cap": 16000
     }
    ],
-   "affinity": 0.1649,
+   "affinity": 0.1648,
    "why": "similar to Bleachers (0.55), MUNA (0.54), Noah Kahan (0.50)",
    "tier": "other",
    "listeners": 694880
@@ -17747,7 +17747,7 @@
      "cap": 16000
     }
    ],
-   "affinity": 0.1967,
+   "affinity": 0.1965,
    "why": "similar to Ed Sheeran (0.60), Noah Kahan (0.71), Vance Joy (0.33)",
    "tier": "other",
    "listeners": 641967
@@ -17773,7 +17773,7 @@
      "cap": 400
     }
    ],
-   "affinity": 0.1321,
+   "affinity": 0.132,
    "why": "similar to Muse (0.40), Kaleo (0.26)",
    "tier": "other",
    "listeners": 307166
@@ -17825,7 +17825,7 @@
     }
    ],
    "days": 2,
-   "affinity": 0.0503,
+   "affinity": 0.0502,
    "why": "similar to Mannequin Pussy (0.35), Le Tigre (0.18)",
    "tier": "other",
    "listeners": 799372
@@ -17901,7 +17901,7 @@
      "cap": 700
     }
    ],
-   "affinity": 0.0292,
+   "affinity": 0.0291,
    "why": "similar to Mannequin Pussy (0.25)",
    "tier": "other",
    "listeners": 108756
@@ -18012,7 +18012,7 @@
      "cap": 400
     }
    ],
-   "affinity": 0.1144,
+   "affinity": 0.1143,
    "why": "similar to Mannequin Pussy (0.87), Sleater-Kinney (0.26)",
    "tier": "other",
    "listeners": 144105
@@ -18059,7 +18059,7 @@
     }
    ],
    "days": 1,
-   "affinity": 0.4006,
+   "affinity": 0.4005,
    "why": "similar to A Tribe Called Quest (1.00), The Roots (0.64), Beastie Boys (0.40)",
    "tier": "would_like",
    "listeners": 750324
@@ -18092,7 +18092,7 @@
     }
    ],
    "days": 1,
-   "affinity": 0.1834,
+   "affinity": 0.1833,
    "why": "similar to M83 (0.52), Beach House (0.41), Slowdive (0.40)",
    "tier": "other",
    "listeners": 822277
@@ -18193,7 +18193,7 @@
      "cap": 850
     }
    ],
-   "affinity": 0.073,
+   "affinity": 0.0729,
    "why": "tags match your taste: electronic, indie pop, pop",
    "tier": "other",
    "listeners": 107446
@@ -18365,7 +18365,7 @@
      "cap": 700
     }
    ],
-   "affinity": 0.2742,
+   "affinity": 0.274,
    "why": "similar to Foo Fighters (0.75), The Smashing Pumpkins (0.38), Pearl Jam (0.40)",
    "tier": "next_big_thing",
    "listeners": 55813
@@ -18467,7 +18467,7 @@
      "cap": null
     }
    ],
-   "affinity": 0.1508,
+   "affinity": 0.1507,
    "why": "similar to MUNA (0.59), HAIM (0.38), Maggie Rogers (0.47)",
    "tier": "other",
    "listeners": 301452
@@ -18493,7 +18493,7 @@
      "cap": 2765
     }
    ],
-   "affinity": 0.0637,
+   "affinity": 0.0636,
    "why": "similar to Charli xcx (0.64)",
    "tier": "other",
    "listeners": 415832
@@ -18592,7 +18592,7 @@
      "cap": null
     }
    ],
-   "affinity": 0.1246,
+   "affinity": 0.1245,
    "why": "similar to Beach House (0.45), Slowdive (0.28)",
    "tier": "other",
    "listeners": 1225213
@@ -18658,7 +18658,7 @@
      "cap": 1427
     }
    ],
-   "affinity": 0.1148,
+   "affinity": 0.1147,
    "why": "similar to Calexico (0.25), Neko Case (0.26), Wilco (0.24)",
    "tier": "other",
    "listeners": 1921
@@ -18764,7 +18764,7 @@
      "cap": 300
     }
    ],
-   "affinity": 0.0609,
+   "affinity": 0.0608,
    "why": "similar to This is Lorelei (0.42), Alvvays (0.29), Fruit Bats (0.26)",
    "tier": "other",
    "listeners": 126350
@@ -18785,7 +18785,7 @@
     }
    ],
    "days": 2,
-   "affinity": 0.109,
+   "affinity": 0.1089,
    "why": "similar to Childish Gambino (0.40), Jaden (0.35), Anderson .Paak (0.47)",
    "tier": "other",
    "listeners": 803101
@@ -18873,7 +18873,7 @@
      "cap": 700
     }
    ],
-   "affinity": 0.0931,
+   "affinity": 0.093,
    "why": "similar to The Airborne Toxic Event (0.40), The Wombats (0.30), Briston Maroney (0.65)",
    "tier": "other",
    "listeners": 57167
@@ -18893,7 +18893,7 @@
      "cap": 400
     }
    ],
-   "affinity": 0.1053,
+   "affinity": 0.1052,
    "why": "similar to Wilco (0.35), MJ Lenderman (0.73), Sun Kil Moon (0.28)",
    "tier": "other",
    "listeners": 161728
@@ -18966,7 +18966,7 @@
      "cap": 1427
     }
    ],
-   "affinity": 0.1675,
+   "affinity": 0.1674,
    "why": "similar to Queens of the Stone Age (1.00), The White Stripes (0.20), The Black Keys (0.29)",
    "tier": "other",
    "listeners": 1090836
@@ -19091,7 +19091,7 @@
      "cap": 1427
     }
    ],
-   "affinity": 0.2897,
+   "affinity": 0.2896,
    "why": "similar to Midlake (0.71), David Gray (0.61), Shearwater (0.44)",
    "tier": "other",
    "listeners": 316130
@@ -19137,7 +19137,7 @@
      "cap": null
     }
    ],
-   "affinity": 0.0526,
+   "affinity": 0.0525,
    "why": "similar to Phish (0.43), Umphrey's McGee (0.28), Leftover Salmon (0.29)",
    "tier": "other",
    "listeners": 15255
@@ -19273,7 +19273,7 @@
      "cap": 575
     }
    ],
-   "affinity": 0.1678,
+   "affinity": 0.1677,
    "why": "similar to Julien Baker (0.56), Phoebe Bridgers (0.37), Waxahatchee (0.36)",
    "tier": "other",
    "listeners": 104508
@@ -19298,7 +19298,7 @@
      "cap": 200
     }
    ],
-   "affinity": 0.0817,
+   "affinity": 0.0816,
    "why": "similar to Anya Nami (0.59), Neoni (0.58)",
    "tier": "other",
    "listeners": 93513
@@ -19464,7 +19464,7 @@
      "cap": 400
     }
    ],
-   "affinity": 0.1068,
+   "affinity": 0.1067,
    "why": "similar to The Soup Dragons (0.64), James (0.29), Gin Blossoms (0.22)",
    "tier": "other",
    "listeners": 523003
@@ -20040,7 +20040,7 @@
      "cap": 1427
     }
    ],
-   "affinity": 0.0859,
+   "affinity": 0.0858,
    "why": "similar to Jay Som (0.50), Alvvays (0.77), Wild Nothing (0.42)",
    "tier": "other",
    "listeners": 289207
@@ -20238,7 +20238,7 @@
      "cap": 850
     }
    ],
-   "affinity": 0.2209,
+   "affinity": 0.2207,
    "why": "similar to Julien Baker (0.76), Phoebe Bridgers (0.49), Noah Kahan (0.55)",
    "tier": "next_big_thing",
    "listeners": 49208
@@ -20302,7 +20302,7 @@
      "cap": null
     }
    ],
-   "affinity": 0.2216,
+   "affinity": 0.2215,
    "why": "similar to Spoon (0.37), Yeah Yeah Yeahs (0.31), Vampire Weekend (0.29)",
    "tier": "next_big_thing",
    "listeners": 21591
@@ -20322,7 +20322,7 @@
      "cap": 900
     }
    ],
-   "affinity": 0.0427,
+   "affinity": 0.0426,
    "why": "similar to Rachel Platten (0.30), Lenka (0.28)",
    "tier": "other",
    "listeners": 23933
@@ -20425,7 +20425,7 @@
      "cap": 300
     }
    ],
-   "affinity": 0.0697,
+   "affinity": 0.0696,
    "why": "similar to Stone Temple Pilots (0.16), Alice in Chains (0.18), Local H (0.33)",
    "tier": "other",
    "listeners": 18539
@@ -20525,7 +20525,7 @@
      "cap": 500
     }
    ],
-   "affinity": 0.055,
+   "affinity": 0.0549,
    "why": "similar to Big Thief (0.39), Julien Baker (0.12)",
    "tier": "other",
    "listeners": 704750
@@ -20706,7 +20706,7 @@
     }
    ],
    "days": 2,
-   "affinity": 0.1137,
+   "affinity": 0.1136,
    "why": "similar to Brand New (0.50)",
    "tier": "other",
    "listeners": 281748
@@ -20822,7 +20822,7 @@
     }
    ],
    "days": 2,
-   "affinity": 0.3696,
+   "affinity": 0.3694,
    "why": "similar to R.E.M. (0.72), Pixies (0.95), Beck (0.59)",
    "tier": "would_like",
    "listeners": 501222
@@ -20915,7 +20915,7 @@
      "cap": 600
     }
    ],
-   "affinity": 0.1432,
+   "affinity": 0.1431,
    "why": "similar to Tune-Yards (0.29), Rilo Kiley (0.34), Jay Som (0.57)",
    "tier": "other",
    "listeners": 1085580
@@ -20941,7 +20941,7 @@
      "cap": 1427
     }
    ],
-   "affinity": 0.1719,
+   "affinity": 0.1718,
    "why": "similar to Beach House (0.52), Jay Som (0.55), Film School (0.70)",
    "tier": "other",
    "listeners": 222649
@@ -21078,7 +21078,7 @@
      "cap": 600
     }
    ],
-   "affinity": 0.1642,
+   "affinity": 0.1641,
    "why": "similar to Broken Social Scene (0.42), This is Lorelei (0.75), Big Thief (0.33)",
    "tier": "other",
    "listeners": 137915
@@ -21098,7 +21098,7 @@
      "cap": null
     }
    ],
-   "affinity": 0.2451,
+   "affinity": 0.245,
    "why": "similar to Manchester Orchestra (0.46), Death Cab for Cutie (0.28), Local Natives (0.32)",
    "tier": "other",
    "listeners": 201698
@@ -21232,7 +21232,7 @@
      "cap": 1427
     }
    ],
-   "affinity": 0.1383,
+   "affinity": 0.1382,
    "why": "similar to Natori (0.53)",
    "tier": "other",
    "listeners": 865509
@@ -21356,7 +21356,7 @@
      "cap": 2500
     }
    ],
-   "affinity": 0.1502,
+   "affinity": 0.1501,
    "why": "similar to Shearwater (0.43), Fruit Bats (0.51), Old Crow Medicine Show (0.31)",
    "tier": "next_big_thing",
    "listeners": 86252
@@ -21515,7 +21515,7 @@
     }
    ],
    "days": 1,
-   "affinity": 0.1864,
+   "affinity": 0.1863,
    "why": "similar to The Strokes (0.47), Modest Mouse (0.23), Neutral Milk Hotel (0.36)",
    "tier": "other",
    "listeners": 630817
@@ -21555,7 +21555,7 @@
      "cap": null
     }
    ],
-   "affinity": 0.1176,
+   "affinity": 0.1175,
    "why": "similar to OutKast (0.42), A Tribe Called Quest (0.21), Dijon (0.29)",
    "tier": "other",
    "listeners": 354937
@@ -21668,7 +21668,7 @@
      "cap": null
     }
    ],
-   "affinity": 0.173,
+   "affinity": 0.1729,
    "why": "similar to Julien Baker (0.54), Waxahatchee (0.48), MUNA (0.37)",
    "tier": "next_big_thing",
    "listeners": 11934
@@ -21780,7 +21780,7 @@
     }
    ],
    "days": 1,
-   "affinity": 0.234,
+   "affinity": 0.2338,
    "why": "similar to Hozier (0.70), Noah Kahan (0.71), Gregory Alan Isakov (0.27)",
    "tier": "other",
    "listeners": 1592442
@@ -22127,7 +22127,7 @@
      "cap": 500
     }
    ],
-   "affinity": 0.0528,
+   "affinity": 0.0527,
    "why": "similar to Heatmiser (0.29), Cold War Kids (0.25), Fruit Bats (0.40)",
    "tier": "other",
    "listeners": 15311
@@ -22207,7 +22207,7 @@
      "cap": 1427
     }
    ],
-   "affinity": 0.1938,
+   "affinity": 0.1937,
    "why": "similar to Teddy Swims (0.76), Hozier (0.31), Gregory Alan Isakov (0.20)",
    "tier": "other",
    "listeners": 231536
@@ -22372,7 +22372,7 @@
      "cap": 900
     }
    ],
-   "affinity": 0.1454,
+   "affinity": 0.1453,
    "why": "similar to Vance Joy (0.40), Foster the People (0.34), Sam Fender (0.29)",
    "tier": "other",
    "listeners": 543935
@@ -22439,7 +22439,7 @@
      "cap": 19800
     }
    ],
-   "affinity": 0.218,
+   "affinity": 0.2179,
    "why": "similar to The New Pornographers (0.37), MUNA (0.64), This is Lorelei (0.74)",
    "tier": "other",
    "listeners": 338402
@@ -22465,7 +22465,7 @@
      "cap": 200
     }
    ],
-   "affinity": 0.0744,
+   "affinity": 0.0743,
    "why": "similar to This is Lorelei (0.49), Jay Som (0.22), Ben Kweller (0.23)",
    "tier": "other",
    "listeners": 10163
@@ -22485,7 +22485,7 @@
      "cap": 250
     }
    ],
-   "affinity": 0.2627,
+   "affinity": 0.2626,
    "why": "similar to Explosions in the Sky (0.50), This Will Destroy You (0.60), Mogwai (0.52)",
    "tier": "other",
    "listeners": 247454
@@ -22506,7 +22506,7 @@
     }
    ],
    "days": 1,
-   "affinity": 0.3646,
+   "affinity": 0.3644,
    "why": "similar to Cloud Cult (0.66), The Arcade Fire (0.44), The Shins (0.44)",
    "tier": "would_like",
    "listeners": 963782
@@ -22734,7 +22734,7 @@
      "cap": 575
     }
    ],
-   "affinity": 0.027,
+   "affinity": 0.0269,
    "why": "similar to Jay Som (0.17), MJ Lenderman (0.17)",
    "tier": "other",
    "listeners": 157916
@@ -22787,7 +22787,7 @@
      "cap": 1427
     }
    ],
-   "affinity": 0.1242,
+   "affinity": 0.1241,
    "why": "similar to Taylor Swift (0.29), MUNA (0.34), Bleachers (0.20)",
    "tier": "other",
    "listeners": 558228
@@ -22813,7 +22813,7 @@
      "cap": 5000
     }
    ],
-   "affinity": 0.276,
+   "affinity": 0.2758,
    "why": "similar to The Chainsmokers (0.96), Marshmello (0.30), Zedd (0.35)",
    "tier": "other",
    "listeners": 732394
@@ -22944,7 +22944,7 @@
      "cap": 2500
     }
    ],
-   "affinity": 0.0501,
+   "affinity": 0.05,
    "why": "similar to Gregory Alan Isakov (0.13), Noah Kahan (0.12), Lucius (0.11)",
    "tier": "other",
    "listeners": 47903
@@ -23030,7 +23030,7 @@
     }
    ],
    "days": 1,
-   "affinity": 0.1462,
+   "affinity": 0.1461,
    "why": "similar to Imagine Dragons (0.24), Young the Giant (0.42), Bastille (0.22)",
    "tier": "other",
    "listeners": 659820
@@ -23085,7 +23085,7 @@
      "cap": 200
     }
    ],
-   "affinity": 0.0875,
+   "affinity": 0.0874,
    "why": "similar to Jay Som (0.63), Alvvays (0.34), Tennis (0.42)",
    "tier": "other",
    "listeners": 241717
@@ -23166,7 +23166,7 @@
      "cap": 1427
     }
    ],
-   "affinity": 0.0439,
+   "affinity": 0.0438,
    "why": "similar to Metro Boomin (0.44)",
    "tier": "other",
    "listeners": 499870
@@ -23238,7 +23238,7 @@
      "cap": 600
     }
    ],
-   "affinity": 0.1778,
+   "affinity": 0.1777,
    "why": "similar to MUNA (0.81), Carly Rae Jepsen (0.44), Charli xcx (0.39)",
    "tier": "other",
    "listeners": 200175
@@ -23416,7 +23416,7 @@
      "cap": 400
     }
    ],
-   "affinity": 0.0416,
+   "affinity": 0.0415,
    "why": "similar to Sharon Van Etten (0.43)",
    "tier": "other",
    "listeners": 211333
@@ -23499,7 +23499,7 @@
      "cap": 2500
     }
    ],
-   "affinity": 0.2309,
+   "affinity": 0.2308,
    "why": "similar to Stone Temple Pilots (0.60), Faith No More (0.60), Jane's Addiction (0.40)",
    "tier": "other",
    "listeners": 728348
@@ -23525,7 +23525,7 @@
      "cap": 2400
     }
    ],
-   "affinity": 0.1504,
+   "affinity": 0.1503,
    "why": "similar to MUNA (0.62), Lorde (0.29), Lykke Li (0.33)",
    "tier": "other",
    "listeners": 518672
@@ -23718,7 +23718,7 @@
     }
    ],
    "days": 1,
-   "affinity": 0.2584,
+   "affinity": 0.2582,
    "why": "similar to Local Natives (0.70), Vampire Weekend (0.55), Young the Giant (0.69)",
    "tier": "other",
    "listeners": 735895
@@ -23738,7 +23738,7 @@
      "cap": 1000
     }
    ],
-   "affinity": 0.2765,
+   "affinity": 0.2763,
    "why": "similar to Ryan Adams (0.52), Calexico (0.52), Shearwater (0.39)",
    "tier": "other",
    "listeners": 252713
@@ -23785,7 +23785,7 @@
     }
    ],
    "days": 2,
-   "affinity": 0.1961,
+   "affinity": 0.196,
    "why": "similar to MUNA (0.77), Bleachers (0.42), Phoebe Bridgers (0.36)",
    "tier": "other",
    "listeners": 607416
@@ -23956,7 +23956,7 @@
      "cap": 600
     }
    ],
-   "affinity": 0.0478,
+   "affinity": 0.0477,
    "why": "similar to This is Lorelei (0.27), Jay Som (0.21), MJ Lenderman (0.21)",
    "tier": "other",
    "listeners": 61425
@@ -23982,7 +23982,7 @@
      "cap": 2500
     }
    ],
-   "affinity": 0.1353,
+   "affinity": 0.1352,
    "why": "similar to Pavement (0.49), This is Lorelei (0.57), Yo La Tengo (0.67)",
    "tier": "other",
    "listeners": 190278
@@ -24047,7 +24047,7 @@
      "cap": 1427
     }
    ],
-   "affinity": 0.1988,
+   "affinity": 0.1987,
    "why": "similar to Thrice (0.71), Alexisonfire (0.42), Alkaline Trio (0.49)",
    "tier": "other",
    "listeners": 370822
@@ -24112,7 +24112,7 @@
      "cap": 1427
     }
    ],
-   "affinity": 0.1035,
+   "affinity": 0.1034,
    "why": "similar to This is Lorelei (0.65), Jay Som (0.49)",
    "tier": "other",
    "listeners": 107432
@@ -24132,7 +24132,7 @@
      "cap": 8000
     }
    ],
-   "affinity": 0.154,
+   "affinity": 0.1539,
    "why": "similar to This is Lorelei (0.96), Kurt Vile (0.45), Jay Som (0.46)",
    "tier": "other",
    "listeners": 329765
@@ -24298,7 +24298,7 @@
     }
    ],
    "days": 1,
-   "affinity": 0.0657,
+   "affinity": 0.0656,
    "why": "similar to Mannequin Pussy (0.43), Jay Som (0.27)",
    "tier": "other",
    "listeners": 301528
@@ -24568,7 +24568,7 @@
      "cap": 1427
     }
    ],
-   "affinity": 0.0499,
+   "affinity": 0.0498,
    "why": "similar to Owen (0.57), The Get Up Kids (0.25)",
    "tier": "other",
    "listeners": 165123
@@ -24787,7 +24787,7 @@
      "cap": 2500
     }
    ],
-   "affinity": 0.1914,
+   "affinity": 0.1913,
    "why": "similar to RAYE (1.00), Beyoncé (0.36), Ariana Grande (0.43)",
    "tier": "other",
    "listeners": 662268
@@ -24854,7 +24854,7 @@
      "cap": null
     }
    ],
-   "affinity": 0.0759,
+   "affinity": 0.0758,
    "why": "similar to The Highwomen (0.37), The Secret Sisters (0.30), Orville Peck (0.33)",
    "tier": "other",
    "listeners": 35766
@@ -24874,7 +24874,7 @@
      "cap": 1427
     }
    ],
-   "affinity": 0.102,
+   "affinity": 0.1019,
    "why": "similar to Julien Baker (0.30), Gregory Alan Isakov (0.19), Phoebe Bridgers (0.25)",
    "tier": "other",
    "listeners": 72435
@@ -24920,7 +24920,7 @@
     }
    ],
    "days": 1,
-   "affinity": 0.3902,
+   "affinity": 0.3901,
    "why": "similar to Vance Joy (0.87), Mumford & Sons (0.52), Ed Sheeran (0.76)",
    "tier": "would_like",
    "listeners": 1284351
@@ -25018,7 +25018,7 @@
      "cap": 200
     }
    ],
-   "affinity": 0.1231,
+   "affinity": 0.123,
    "why": "similar to Jay Som (0.73), This is Lorelei (0.56), Wild Nothing (0.54)",
    "tier": "other",
    "listeners": 18108
@@ -25044,7 +25044,7 @@
      "cap": null
     }
    ],
-   "affinity": 0.074,
+   "affinity": 0.0739,
    "why": "similar to Björk (0.17), Mother Mother (0.19), Lana Del Rey (0.08)",
    "tier": "other",
    "listeners": 424535
@@ -25124,7 +25124,7 @@
     }
    ],
    "days": 2,
-   "affinity": 0.2791,
+   "affinity": 0.2789,
    "why": "similar to Wilco (1.00), Neko Case (0.49), Ryan Adams (0.29)",
    "tier": "other",
    "listeners": 257893
@@ -25145,7 +25145,7 @@
     }
    ],
    "days": 1,
-   "affinity": 0.3198,
+   "affinity": 0.3196,
    "why": "similar to Belle and Sebastian (0.82), The New Pornographers (0.46), Neko Case (0.44)",
    "tier": "other",
    "listeners": 599497
@@ -25188,7 +25188,7 @@
      "cap": 1427
     }
    ],
-   "affinity": 0.2578,
+   "affinity": 0.2577,
    "why": "similar to Brandi Carlile (0.44), MUNA (0.76), Sara Bareilles (0.31)",
    "tier": "other",
    "listeners": 172176
@@ -25343,7 +25343,7 @@
      "cap": 250
     }
    ],
-   "affinity": 0.3564,
+   "affinity": 0.3562,
    "why": "similar to Neko Case (0.97), Waxahatchee (0.80), Andrew Bird (0.62)",
    "tier": "would_like",
    "listeners": 208519
@@ -25364,7 +25364,7 @@
     }
    ],
    "days": 1,
-   "affinity": 0.2586,
+   "affinity": 0.2584,
    "why": "similar to Nick Drake (0.48), Sufjan Stevens (0.31), Waxahatchee (0.44)",
    "tier": "other",
    "listeners": 507294
@@ -25424,7 +25424,7 @@
     }
    ],
    "days": 2,
-   "affinity": 0.0413,
+   "affinity": 0.0412,
    "why": "similar to Mother Mother (0.24), Shadrow (0.13), Jukebox the Ghost (0.18)",
    "tier": "other",
    "listeners": 203914
@@ -25449,7 +25449,7 @@
      "cap": 1427
     }
    ],
-   "affinity": 0.1467,
+   "affinity": 0.1466,
    "why": "similar to Spiritbox (1.00)",
    "tier": "other",
    "listeners": 270820
@@ -25507,7 +25507,7 @@
      "cap": 2500
     }
    ],
-   "affinity": 0.0608,
+   "affinity": 0.0607,
    "why": "similar to Briston Maroney (0.92), Grouplove (0.27), Sir Sly (0.25)",
    "tier": "other",
    "listeners": 242873
@@ -25621,7 +25621,7 @@
     }
    ],
    "days": 1,
-   "affinity": 0.3851,
+   "affinity": 0.3848,
    "why": "similar to Gregory Alan Isakov (1.00), The Lumineers (0.59), Vance Joy (0.40)",
    "tier": "would_like",
    "listeners": 361649
@@ -25661,7 +25661,7 @@
      "cap": 2500
     }
    ],
-   "affinity": 0.2966,
+   "affinity": 0.2964,
    "why": "similar to James (0.97), Oasis (0.57), The Verve (0.58)",
    "tier": "other",
    "listeners": 223009
@@ -25681,7 +25681,7 @@
      "cap": 2765
     }
    ],
-   "affinity": 0.1812,
+   "affinity": 0.1811,
    "why": "similar to Leon Bridges (0.71), Norah Jones (0.46), Michael Kiwanuka (0.53)",
    "tier": "other",
    "listeners": 508390
@@ -25914,7 +25914,7 @@
      "cap": 1427
     }
    ],
-   "affinity": 0.1298,
+   "affinity": 0.1297,
    "why": "similar to Jimmy Eat World (0.40)",
    "tier": "other",
    "listeners": 636985
@@ -25965,7 +25965,7 @@
      "cap": 19800
     }
    ],
-   "affinity": 0.1638,
+   "affinity": 0.1637,
    "why": "similar to Christina Perri (0.45), Shawn Mendes (0.38), Ed Sheeran (0.40)",
    "tier": "other",
    "listeners": 736472
@@ -26031,7 +26031,7 @@
     }
    ],
    "days": 1,
-   "affinity": 0.1423,
+   "affinity": 0.1422,
    "why": "similar to Björk (0.35), Arca (0.33), Animal Collective (0.37)",
    "tier": "other",
    "listeners": 430273
@@ -26608,7 +26608,7 @@
      "cap": 2765
     }
    ],
-   "affinity": 0.2015,
+   "affinity": 0.2014,
    "why": "similar to MUNA (1.00), Phoebe Bridgers (0.15), Waxahatchee (0.14)",
    "tier": "other",
    "listeners": 116431
@@ -26665,7 +26665,7 @@
      "cap": 200
     }
    ],
-   "affinity": 0.3609,
+   "affinity": 0.3608,
    "why": "similar to Brandi Carlile (0.74), Sarah Jarosz (0.65), The Secret Sisters (0.69)",
    "tier": "next_big_thing",
    "listeners": 76816
@@ -26888,7 +26888,7 @@
      "cap": 16000
     }
    ],
-   "affinity": 0.1204,
+   "affinity": 0.1203,
    "why": "similar to Childish Gambino (0.45), Dijon (0.29), Mk.gee (0.20)",
    "tier": "other",
    "listeners": 997337
@@ -26934,7 +26934,7 @@
      "cap": 900
     }
    ],
-   "affinity": 0.2817,
+   "affinity": 0.2815,
    "why": "similar to Manchester Orchestra (0.48), City and Colour (0.29), Frightened Rabbit (0.26)",
    "tier": "other",
    "listeners": 293713
@@ -27046,7 +27046,7 @@
      "cap": 850
     }
    ],
-   "affinity": 0.1796,
+   "affinity": 0.1795,
    "why": "similar to DJ Shadow (0.55), Handsome Boy Modeling School (0.48), The Cinematic Orchestra (0.36)",
    "tier": "other",
    "listeners": 479131
@@ -27203,7 +27203,7 @@
     }
    ],
    "days": 1,
-   "affinity": 0.2087,
+   "affinity": 0.2085,
    "why": "similar to Tegan and Sara (0.50), MUNA (0.64), HAIM (0.56)",
    "tier": "other",
    "listeners": 1014985
@@ -27468,7 +27468,7 @@
      "cap": 400
     }
    ],
-   "affinity": 0.0859,
+   "affinity": 0.0858,
    "why": "similar to Young the Giant (0.36), Briston Maroney (0.98)",
    "tier": "other",
    "listeners": 216885
@@ -27488,7 +27488,7 @@
      "cap": 575
     }
    ],
-   "affinity": 0.2082,
+   "affinity": 0.2081,
    "why": "similar to James (0.63), The Verve (0.53), Oasis (0.40)",
    "tier": "other",
    "listeners": 512210
@@ -27542,7 +27542,7 @@
      "cap": null
     }
    ],
-   "affinity": 0.1826,
+   "affinity": 0.1825,
    "why": "similar to Thrice (0.60), Thursday (0.94), My Chemical Romance (0.55)",
    "tier": "other",
    "listeners": 107495
@@ -27797,7 +27797,7 @@
      "cap": 1427
     }
    ],
-   "affinity": 0.2691,
+   "affinity": 0.2689,
    "why": "similar to Broken Social Scene (0.63), The New Pornographers (0.39), The Joy Formidable (0.43)",
    "tier": "other",
    "listeners": 356504
@@ -27939,7 +27939,7 @@
      "cap": 850
     }
    ],
-   "affinity": 0.2167,
+   "affinity": 0.2166,
    "why": "similar to CHVRCHES (1.00), The Naked and Famous (0.19), Maggie Rogers (0.11)",
    "tier": "next_big_thing",
    "listeners": 43470
@@ -27991,7 +27991,7 @@
     }
    ],
    "days": 2,
-   "affinity": 0.0802,
+   "affinity": 0.0801,
    "why": "similar to Ed Sheeran (0.32), James Arthur (0.32)",
    "tier": "other",
    "listeners": 392645
@@ -28082,7 +28082,7 @@
      "cap": 1427
     }
    ],
-   "affinity": 0.1187,
+   "affinity": 0.1186,
    "why": "similar to Sharon Jones and the Dap-Kings (0.53), Al Green (0.18)",
    "tier": "other",
    "listeners": 111046
@@ -28102,7 +28102,7 @@
      "cap": 2765
     }
    ],
-   "affinity": 0.5018,
+   "affinity": 0.5017,
    "why": "similar to Bon Iver (0.63), William Fitzsimmons (0.64), Ben Howard (0.71)",
    "tier": "would_like",
    "listeners": 224622
@@ -28148,7 +28148,7 @@
      "cap": 850
     }
    ],
-   "affinity": 0.1509,
+   "affinity": 0.1508,
    "why": "similar to Hozier (0.37), Gregory Alan Isakov (0.28), Julien Baker (0.40)",
    "tier": "other",
    "listeners": 865087
@@ -28228,7 +28228,7 @@
      "cap": 250
     }
    ],
-   "affinity": 0.0682,
+   "affinity": 0.0681,
    "why": "similar to Mitski (0.55), Mother Mother (0.33)",
    "tier": "other",
    "listeners": 1370159
@@ -28249,7 +28249,7 @@
     }
    ],
    "days": 1,
-   "affinity": 0.2147,
+   "affinity": 0.2145,
    "why": "similar to Grizzly Bear (0.47), TV on the Radio (0.46), The Walkmen (0.49)",
    "tier": "other",
    "listeners": 566699
@@ -28360,7 +28360,7 @@
     }
    ],
    "days": 2,
-   "affinity": 0.2989,
+   "affinity": 0.2987,
    "why": "similar to Tegan and Sara (0.69), CHVRCHES (0.83), Metric (0.61)",
    "tier": "other",
    "listeners": 651135
@@ -28518,7 +28518,7 @@
      "cap": 500
     }
    ],
-   "affinity": 0.0689,
+   "affinity": 0.0688,
    "why": "similar to The Highwomen (0.30), The Secret Sisters (0.31), Sierra Hull (0.38)",
    "tier": "other",
    "listeners": 119320
@@ -28545,7 +28545,7 @@
      "cap": 1000
     }
    ],
-   "affinity": 0.2206,
+   "affinity": 0.2204,
    "why": "similar to Lorde (0.67), Lily Allen (0.86), RAYE (1.00)",
    "tier": "other",
    "listeners": 1255774
@@ -28736,7 +28736,7 @@
     }
    ],
    "days": 2,
-   "affinity": 0.1214,
+   "affinity": 0.1213,
    "why": "similar to BoyWithUke (0.51), Arctic Monkeys (0.31), Mother Mother (0.46)",
    "tier": "other",
    "listeners": 615824
@@ -28920,7 +28920,7 @@
     }
    ],
    "days": 1,
-   "affinity": 0.1526,
+   "affinity": 0.1525,
    "why": "similar to Sam Smith (0.50), Bruno Mars (0.32), Teddy Swims (0.38)",
    "tier": "other",
    "listeners": 1246137
@@ -29266,7 +29266,7 @@
      "cap": 850
     }
    ],
-   "affinity": 0.13,
+   "affinity": 0.1299,
    "why": "similar to Tune-Yards (0.41)",
    "tier": "other",
    "listeners": 49399
@@ -29364,7 +29364,7 @@
      "cap": null
     }
    ],
-   "affinity": 0.0757,
+   "affinity": 0.0756,
    "why": "similar to Anya Nami (0.55), Neoni (0.38), Ethan Bortnick (0.25)",
    "tier": "other",
    "listeners": 150645
@@ -29396,7 +29396,7 @@
      "cap": 200
     }
    ],
-   "affinity": 0.2889,
+   "affinity": 0.2888,
    "why": "similar to Brandi Carlile (0.53), Neko Case (0.54), Waxahatchee (0.56)",
    "tier": "other",
    "listeners": 178000
@@ -29422,7 +29422,7 @@
      "cap": 1427
     }
    ],
-   "affinity": 0.3472,
+   "affinity": 0.347,
    "why": "similar to Andrew Bird (1.00), Iron & Wine (0.44), Brandi Carlile (0.43)",
    "tier": "other",
    "listeners": 185284
@@ -29494,7 +29494,7 @@
      "cap": 2500
     }
    ],
-   "affinity": 0.1253,
+   "affinity": 0.1252,
    "why": "similar to Beach House (0.31), Lorde (0.33), Charli xcx (0.66)",
    "tier": "other",
    "listeners": 1558068
@@ -29768,7 +29768,7 @@
      "cap": 900
     }
    ],
-   "affinity": 0.2378,
+   "affinity": 0.2377,
    "why": "similar to Joshua Radin (0.93), William Fitzsimmons (0.26), The Lumineers (0.38)",
    "tier": "other",
    "listeners": 134295
@@ -29801,7 +29801,7 @@
     }
    ],
    "days": 1,
-   "affinity": 0.2531,
+   "affinity": 0.253,
    "why": "similar to Waxahatchee (0.92), Andrew Bird (0.58), Lucius (0.66)",
    "tier": "other",
    "listeners": 131362
@@ -29867,7 +29867,7 @@
      "cap": 1000
     }
    ],
-   "affinity": 0.0975,
+   "affinity": 0.0974,
    "why": "similar to The Highwomen (0.46), Neko Case (0.21), Emmylou Harris (0.42)",
    "tier": "other",
    "listeners": 123385
@@ -29913,7 +29913,7 @@
      "cap": null
     }
    ],
-   "affinity": 0.0773,
+   "affinity": 0.0772,
    "why": "similar to Beach House (0.21), Jay Som (0.39), The Clientele (0.21)",
    "tier": "other",
    "listeners": 86030
@@ -29996,7 +29996,7 @@
      "cap": null
     }
    ],
-   "affinity": 0.1025,
+   "affinity": 0.1024,
    "why": "similar to Neko Case (0.27), Patty Griffin (0.26), Cat Power (0.37)",
    "tier": "other",
    "listeners": 421953
@@ -30022,7 +30022,7 @@
      "cap": 1427
     }
    ],
-   "affinity": 0.1785,
+   "affinity": 0.1784,
    "why": "similar to Vance Joy (0.45), Ed Sheeran (0.39), Teddy Swims (0.34)",
    "tier": "other",
    "listeners": 620220
@@ -30154,7 +30154,7 @@
      "cap": 575
     }
    ],
-   "affinity": 0.3041,
+   "affinity": 0.3042,
    "why": "tags match your taste: indie, female vocalists, pop",
    "tier": "next_big_thing",
    "listeners": 30955
@@ -30232,7 +30232,7 @@
      "cap": null
     }
    ],
-   "affinity": 0.2035,
+   "affinity": 0.2034,
    "why": "similar to Bon Iver (0.25), Ben Howard (0.42), Iron & Wine (0.25)",
    "tier": "other",
    "listeners": 455697
@@ -30269,7 +30269,7 @@
      "cap": 2500
     }
    ],
-   "affinity": 0.0875,
+   "affinity": 0.0874,
    "why": "similar to Ed Sheeran (0.35), James Arthur (0.31)",
    "tier": "other",
    "listeners": 227832
@@ -30290,7 +30290,7 @@
     }
    ],
    "days": 1,
-   "affinity": 0.2344,
+   "affinity": 0.2342,
    "why": "similar to Manchester Orchestra (0.45), Hozier (0.42), Imagine Dragons (0.25)",
    "tier": "other",
    "listeners": 662761
@@ -30340,7 +30340,7 @@
      "cap": null
     }
    ],
-   "affinity": 0.1328,
+   "affinity": 0.1327,
    "why": "similar to MUNA (0.52), HAIM (0.33), Maggie Rogers (0.46)",
    "tier": "other",
    "listeners": 283211
@@ -30522,7 +30522,7 @@
     }
    ],
    "days": 1,
-   "affinity": 0.2363,
+   "affinity": 0.2362,
    "why": "similar to Bon Iver (0.32), Julien Baker (0.54), Gregory Alan Isakov (0.32)",
    "tier": "other",
    "listeners": 193123
@@ -30562,7 +30562,7 @@
      "cap": 1427
     }
    ],
-   "affinity": 0.151,
+   "affinity": 0.1509,
    "why": "similar to Gregory Alan Isakov (0.35), Vance Joy (0.26), Anya Nami (0.52)",
    "tier": "other",
    "listeners": 538596
@@ -30649,7 +30649,7 @@
      "cap": 575
     }
    ],
-   "affinity": 0.1295,
+   "affinity": 0.1294,
    "why": "similar to The Temper Trap (0.25), Broken Bells (0.26), Local Natives (0.28)",
    "tier": "other",
    "listeners": 284224
@@ -30669,7 +30669,7 @@
      "cap": 1427
     }
    ],
-   "affinity": 0.129,
+   "affinity": 0.1289,
    "why": "similar to Waxahatchee (0.48), This is Lorelei (0.50), MJ Lenderman (0.53)",
    "tier": "other",
    "listeners": 45897
@@ -30690,7 +30690,7 @@
     }
    ],
    "days": 2,
-   "affinity": 0.3239,
+   "affinity": 0.3237,
    "why": "similar to The Flaming Lips (1.00), Blonde Redhead (0.56), Sugar (0.51)",
    "tier": "other",
    "listeners": 604954
@@ -30924,7 +30924,7 @@
      "cap": 1427
     }
    ],
-   "affinity": 0.1555,
+   "affinity": 0.1554,
    "why": "similar to Brand New (0.55), Manchester Orchestra (0.16)",
    "tier": "other",
    "listeners": 264576
@@ -30970,7 +30970,7 @@
      "cap": 250
     }
    ],
-   "affinity": 0.1825,
+   "affinity": 0.1824,
    "why": "similar to Iron & Wine (0.37), Kevin Morby (1.00), Father John Misty (0.23)",
    "tier": "next_big_thing",
    "listeners": 43394
@@ -31192,7 +31192,7 @@
      "cap": 200
     }
    ],
-   "affinity": 0.1193,
+   "affinity": 0.1192,
    "why": "similar to Jay Som (1.00), Tennis (0.22)",
    "tier": "other",
    "listeners": 72018
@@ -31212,7 +31212,7 @@
      "cap": null
     }
    ],
-   "affinity": 0.1287,
+   "affinity": 0.1286,
    "why": "similar to Sarah Jarosz (0.39), Gregory Alan Isakov (0.25), The Avett Brothers (0.38)",
    "tier": "other",
    "listeners": 182763
@@ -31263,7 +31263,7 @@
      "cap": 500
     }
    ],
-   "affinity": 0.081,
+   "affinity": 0.0809,
    "why": "similar to Metric (0.33)",
    "tier": "other",
    "listeners": 65164
@@ -31310,7 +31310,7 @@
     }
    ],
    "days": 1,
-   "affinity": 0.187,
+   "affinity": 0.1869,
    "why": "similar to Julien Baker (0.53), HAIM (0.57), Tegan and Sara (0.36)",
    "tier": "other",
    "listeners": 309064
@@ -31488,7 +31488,7 @@
      "cap": 1427
     }
    ],
-   "affinity": 0.0164,
+   "affinity": 0.0163,
    "why": "tags match your taste: post-punk, experimental, industrial rock",
    "tier": "other",
    "listeners": 190269
@@ -31653,7 +31653,7 @@
     }
    ],
    "days": 1,
-   "affinity": 0.1149,
+   "affinity": 0.1148,
    "why": "similar to Sharon Jones and the Dap-Kings (0.44), Sault (0.22), Mayer Hawthorne (0.28)",
    "tier": "other",
    "listeners": 228697
@@ -31769,7 +31769,7 @@
     }
    ],
    "days": 2,
-   "affinity": 0.2828,
+   "affinity": 0.2827,
    "why": "similar to Sufjan Stevens (0.40), Fleet Foxes (0.41), Elliott Smith (0.13)",
    "tier": "other",
    "listeners": 721199
@@ -31789,7 +31789,7 @@
      "cap": null
     }
    ],
-   "affinity": 0.241,
+   "affinity": 0.2409,
    "why": "similar to James Blake (0.69), Moderat (0.41), Apparat (0.44)",
    "tier": "other",
    "listeners": 832638
@@ -31809,7 +31809,7 @@
      "cap": 3191
     }
    ],
-   "affinity": 0.1028,
+   "affinity": 0.1027,
    "why": "similar to Bon Jovi (0.54), Journey (0.38), Aerosmith (0.40)",
    "tier": "other",
    "listeners": 796596
@@ -31891,7 +31891,7 @@
      "cap": 16000
     }
    ],
-   "affinity": 0.241,
+   "affinity": 0.2409,
    "why": "similar to The Lumineers (0.76), Gregory Alan Isakov (0.43), Vance Joy (0.39)",
    "tier": "other",
    "listeners": 719883
@@ -32086,7 +32086,7 @@
      "cap": 50000
     }
    ],
-   "affinity": 0.2289,
+   "affinity": 0.2288,
    "why": "similar to Ed Sheeran (0.79), Mumford & Sons (0.17), Bastille (0.26)",
    "tier": "other",
    "listeners": 652702
@@ -32106,7 +32106,7 @@
      "cap": 575
     }
    ],
-   "affinity": 0.2176,
+   "affinity": 0.2175,
    "why": "similar to Sigur Rós (0.60), Explosions in the Sky (0.24), Boards of Canada (0.21)",
    "tier": "other",
    "listeners": 896208
@@ -32264,7 +32264,7 @@
      "cap": 575
     }
    ],
-   "affinity": 0.1717,
+   "affinity": 0.1716,
    "why": "similar to Janet Jackson (0.43), Ariana Grande (0.38), Robyn (0.49)",
    "tier": "other",
    "listeners": 573300
@@ -32467,7 +32467,7 @@
      "cap": null
     }
    ],
-   "affinity": 0.0832,
+   "affinity": 0.0831,
    "why": "similar to Phish (0.59), Vulfpeck (0.56)",
    "tier": "other",
    "listeners": 92256
@@ -32711,7 +32711,7 @@
     }
    ],
    "days": 1,
-   "affinity": 0.0437,
+   "affinity": 0.0436,
    "why": "similar to Jay Som (0.38)",
    "tier": "other",
    "listeners": 557142
@@ -32788,7 +32788,7 @@
      "cap": null
     }
    ],
-   "affinity": 0.2652,
+   "affinity": 0.265,
    "why": "similar to Imagine Dragons (0.43), Manchester Orchestra (0.37), Yeah Yeah Yeahs (0.50)",
    "tier": "other",
    "listeners": 165254
@@ -32861,7 +32861,7 @@
     }
    ],
    "days": 1,
-   "affinity": 0.0331,
+   "affinity": 0.033,
    "why": "similar to Jay Som (0.18), Tennis (0.40), Wild Nothing (0.28)",
    "tier": "other",
    "listeners": 492164
@@ -32939,7 +32939,7 @@
      "cap": 1000
     }
    ],
-   "affinity": 0.3219,
+   "affinity": 0.3217,
    "why": "similar to Wilco (1.00), Tune-Yards (0.61), Cloud Cult (0.41)",
    "tier": "next_big_thing",
    "listeners": 97945
@@ -32995,7 +32995,7 @@
      "cap": null
     }
    ],
-   "affinity": 0.0919,
+   "affinity": 0.0918,
    "why": "similar to Beach House (0.37)",
    "tier": "other",
    "listeners": 992941
@@ -33066,7 +33066,7 @@
      "cap": 600
     }
    ],
-   "affinity": 0.1586,
+   "affinity": 0.1585,
    "why": "similar to The Roots (0.29), Childish Gambino (0.36), Common (0.34)",
    "tier": "other",
    "listeners": 584628
@@ -33086,7 +33086,7 @@
      "cap": 200
     }
    ],
-   "affinity": 0.1385,
+   "affinity": 0.1384,
    "why": "similar to MUNA (0.50), Julien Baker (0.33), Jay Som (0.47)",
    "tier": "other",
    "listeners": 130250
@@ -33169,7 +33169,7 @@
      "cap": null
     }
    ],
-   "affinity": 0.2062,
+   "affinity": 0.2061,
    "why": "similar to Dijon (1.00), Mk.gee (0.60), Solange (0.29)",
    "tier": "other",
    "listeners": 225494
@@ -33190,7 +33190,7 @@
     }
    ],
    "days": 1,
-   "affinity": 0.2123,
+   "affinity": 0.2121,
    "why": "similar to Air (0.56), Zero 7 (0.60), Bebel Gilberto (0.83)",
    "tier": "other",
    "listeners": 1316048
@@ -33261,7 +33261,7 @@
      "cap": 2765
     }
    ],
-   "affinity": 0.3983,
+   "affinity": 0.398,
    "why": "similar to William Fitzsimmons (0.57), Gregory Alan Isakov (0.66), Ben Howard (0.52)",
    "tier": "would_like",
    "listeners": 291406
@@ -33307,7 +33307,7 @@
      "cap": 500
     }
    ],
-   "affinity": 0.156,
+   "affinity": 0.1559,
    "why": "similar to Gregory Alan Isakov (0.38), Julien Baker (0.32), Big Thief (0.39)",
    "tier": "other",
    "listeners": 154402
@@ -33489,7 +33489,7 @@
      "cap": 1427
     }
    ],
-   "affinity": 0.1544,
+   "affinity": 0.1543,
    "why": "similar to Harry Styles (0.34), Bastille (0.25), Ed Sheeran (0.34)",
    "tier": "next_big_thing",
    "listeners": 57814
@@ -33536,7 +33536,7 @@
      "cap": null
     }
    ],
-   "affinity": 0.0801,
+   "affinity": 0.08,
    "why": "similar to Danger Mouse (0.24), De La Soul (0.33), Oddisee (0.35)",
    "tier": "other",
    "listeners": 249153
@@ -33928,7 +33928,7 @@
      "cap": 1427
     }
    ],
-   "affinity": 0.1402,
+   "affinity": 0.1401,
    "why": "similar to Måneskin (0.80), My Chemical Romance (0.26)",
    "tier": "other",
    "listeners": 531610
@@ -33948,7 +33948,7 @@
      "cap": 300
     }
    ],
-   "affinity": 0.159,
+   "affinity": 0.1589,
    "why": "similar to Rilo Kiley (0.48), Waxahatchee (0.45), Mannequin Pussy (0.53)",
    "tier": "other",
    "listeners": 241444
@@ -33995,7 +33995,7 @@
     }
    ],
    "days": 1,
-   "affinity": 0.1978,
+   "affinity": 0.1977,
    "why": "similar to Phoenix (0.49), The Whitest Boy Alive (0.60), Foster the People (0.25)",
    "tier": "next_big_thing",
    "listeners": 3427
@@ -34027,7 +34027,7 @@
      "cap": 200
     }
    ],
-   "affinity": 0.4325,
+   "affinity": 0.4324,
    "why": "similar to Michael Jackson (1.00), Hole (0.13), The Jackson 5 (0.49)",
    "tier": "next_big_thing",
    "listeners": 36507
@@ -34053,7 +34053,7 @@
      "cap": 1427
     }
    ],
-   "affinity": 0.3874,
+   "affinity": 0.3872,
    "why": "similar to Florence + the Machine (1.00), Mumford & Sons (0.23), Noah Kahan (0.54)",
    "tier": "would_like",
    "listeners": 800243
@@ -34074,7 +34074,7 @@
     }
    ],
    "days": 1,
-   "affinity": 0.1806,
+   "affinity": 0.1805,
    "why": "similar to Tiësto (0.62)",
    "tier": "other",
    "listeners": 944778
@@ -34095,7 +34095,7 @@
     }
    ],
    "days": 1,
-   "affinity": 0.2185,
+   "affinity": 0.2184,
    "why": "similar to David Gray (0.58), Ryan Adams (0.28), The Verve (0.30)",
    "tier": "other",
    "listeners": 677478
@@ -34179,7 +34179,7 @@
      "cap": 1427
     }
    ],
-   "affinity": 0.058,
+   "affinity": 0.0579,
    "why": "similar to Grimes (0.47), Ethel Cain (0.26), Tennis (0.25)",
    "tier": "other",
    "listeners": 444963
@@ -34218,7 +34218,7 @@
      "cap": 700
     }
    ],
-   "affinity": 0.0985,
+   "affinity": 0.0984,
    "why": "similar to Jay Som (0.55), The Clientele (0.68), The Sea and Cake (0.45)",
    "tier": "other",
    "listeners": 163683
@@ -34265,7 +34265,7 @@
      "cap": 2765
     }
    ],
-   "affinity": 0.071,
+   "affinity": 0.0709,
    "why": "similar to Norah Jones (0.20), Michael Kiwanuka (0.27), Teddy Swims (0.17)",
    "tier": "other",
    "listeners": 37592
@@ -34404,7 +34404,7 @@
      "cap": 900
     }
    ],
-   "affinity": 0.0628,
+   "affinity": 0.0627,
    "why": "similar to Bleachers (0.27), This is Lorelei (0.24)",
    "tier": "other",
    "listeners": 65018
@@ -34790,7 +34790,7 @@
      "cap": 2500
     }
    ],
-   "affinity": 0.2626,
+   "affinity": 0.2624,
    "why": "similar to Alexisonfire (0.61), Thrice (0.72), Thursday (0.48)",
    "tier": "other",
    "listeners": 353030
@@ -34836,7 +34836,7 @@
      "cap": 850
     }
    ],
-   "affinity": 0.2479,
+   "affinity": 0.2477,
    "why": "similar to Tame Impala (1.00), The Flaming Lips (0.49), MGMT (0.21)",
    "tier": "other",
    "listeners": 621516
@@ -34906,7 +34906,7 @@
      "cap": 2500
     }
    ],
-   "affinity": 0.1916,
+   "affinity": 0.1915,
    "why": "similar to Spiritbox (1.00), Linkin Park (0.27), Grimes (0.45)",
    "tier": "other",
    "listeners": 1187937
@@ -35135,7 +35135,7 @@
      "cap": 250
     }
    ],
-   "affinity": 0.0838,
+   "affinity": 0.0837,
    "why": "similar to This is Lorelei (0.62), Courtney Barnett (0.43)",
    "tier": "other",
    "listeners": 89502
@@ -35181,7 +35181,7 @@
      "cap": null
     }
    ],
-   "affinity": 0.0813,
+   "affinity": 0.0812,
    "why": "similar to Solange (0.47), Janelle Monáe (0.50)",
    "tier": "other",
    "listeners": 78250
@@ -35493,7 +35493,7 @@
     }
    ],
    "days": 1,
-   "affinity": 0.2124,
+   "affinity": 0.2123,
    "why": "similar to The Shins (0.27), Heatmiser (1.00), Modest Mouse (0.31)",
    "tier": "other",
    "listeners": 201215
@@ -35533,7 +35533,7 @@
     }
    ],
    "days": 1,
-   "affinity": 0.1602,
+   "affinity": 0.1601,
    "why": "similar to Thrice (0.59), Failure (0.54), Sugar (0.27)",
    "tier": "other",
    "listeners": 219345
@@ -35591,7 +35591,7 @@
      "cap": 16000
     }
    ],
-   "affinity": 0.1776,
+   "affinity": 0.1775,
    "why": "similar to Lorde (0.55), MUNA (0.52), HAIM (0.44)",
    "tier": "other",
    "listeners": 813612
@@ -35708,7 +35708,7 @@
     }
    ],
    "days": 1,
-   "affinity": 0.1062,
+   "affinity": 0.1061,
    "why": "similar to Sunny Day Real Estate (0.46), The Get Up Kids (0.58), Rilo Kiley (0.17)",
    "tier": "other",
    "listeners": 181330
@@ -35839,7 +35839,7 @@
      "cap": 19800
     }
    ],
-   "affinity": 0.1586,
+   "affinity": 0.1585,
    "why": "similar to Solange (0.74), Janet Jackson (0.37), SZA (0.50)",
    "tier": "other",
    "listeners": 1944274
@@ -35897,7 +35897,7 @@
      "cap": 575
     }
    ],
-   "affinity": 0.1465,
+   "affinity": 0.1464,
    "why": "similar to HAIM (0.58), Coconut Records (0.67), The Format (0.64)",
    "tier": "other",
    "listeners": 97176
@@ -36024,7 +36024,7 @@
      "cap": 400
     }
    ],
-   "affinity": 0.1265,
+   "affinity": 0.1264,
    "why": "similar to The Wombats (0.74), Sam Fender (0.35), The Kooks (0.35)",
    "tier": "other",
    "listeners": 40170
@@ -36101,7 +36101,7 @@
      "cap": 200
     }
    ],
-   "affinity": 0.2134,
+   "affinity": 0.2133,
    "why": "similar to Lana Del Rey (1.00), Lorde (0.33), Billie Eilish (0.24)",
    "tier": "other",
    "listeners": 216902
@@ -36142,7 +36142,7 @@
      "cap": 1427
     }
    ],
-   "affinity": 0.2607,
+   "affinity": 0.2606,
    "why": "similar to Bon Iver (0.38), Gregory Alan Isakov (0.38), Julien Baker (0.42)",
    "tier": "next_big_thing",
    "listeners": 31972
@@ -36203,7 +36203,7 @@
     }
    ],
    "days": 2,
-   "affinity": 0.1265,
+   "affinity": 0.1264,
    "why": "similar to Ryan Adams (0.26), Neko Case (0.22), Aimee Mann (0.18)",
    "tier": "other",
    "listeners": 159937
@@ -36289,7 +36289,7 @@
     }
    ],
    "days": 1,
-   "affinity": 0.2158,
+   "affinity": 0.2157,
    "why": "similar to Van Morrison (0.60), Patty Griffin (0.20), Billy Bragg (0.21)",
    "tier": "other",
    "listeners": 297618
@@ -36316,7 +36316,7 @@
      "cap": 1427
     }
    ],
-   "affinity": 0.2716,
+   "affinity": 0.2715,
    "why": "similar to Gregory Alan Isakov (0.61), Bon Iver (0.27), The Lumineers (0.46)",
    "tier": "other",
    "listeners": 1366825
@@ -36369,7 +36369,7 @@
      "cap": 1427
     }
    ],
-   "affinity": 0.0496,
+   "affinity": 0.0495,
    "why": "similar to Mother Mother (0.27), Jukebox the Ghost (0.28), Mitski (0.23)",
    "tier": "other",
    "listeners": 1425403
@@ -36533,7 +36533,7 @@
      "cap": 900
     }
    ],
-   "affinity": 0.159,
+   "affinity": 0.1589,
    "why": "similar to Janet Jackson (0.50), Solange (0.48), Janelle Monáe (0.21)",
    "tier": "other",
    "listeners": 417364
@@ -36620,7 +36620,7 @@
      "cap": 19800
     }
    ],
-   "affinity": 0.1625,
+   "affinity": 0.1624,
    "why": "similar to Robyn (0.59), James Blake (0.35), Lykke Li (0.36)",
    "tier": "other",
    "listeners": 303137
@@ -36660,7 +36660,7 @@
      "cap": 19800
     }
    ],
-   "affinity": 0.3688,
+   "affinity": 0.3687,
    "why": "similar to Death Cab for Cutie (0.53), The Shins (0.42), Spoon (0.41)",
    "tier": "would_like",
    "listeners": 778604
@@ -36705,7 +36705,7 @@
      "cap": 250
     }
    ],
-   "affinity": 0.1769,
+   "affinity": 0.1768,
    "why": "similar to Waxahatchee (0.74), Sharon Van Etten (0.59), MJ Lenderman (0.50)",
    "tier": "next_big_thing",
    "listeners": 31990
@@ -36751,7 +36751,7 @@
      "cap": null
     }
    ],
-   "affinity": 0.1644,
+   "affinity": 0.1643,
    "why": "similar to Lorde (0.48), Robyn (0.55), Lady Gaga (0.36)",
    "tier": "other",
    "listeners": 250527
@@ -37029,7 +37029,7 @@
      "cap": 2500
     }
    ],
-   "affinity": 0.1603,
+   "affinity": 0.1602,
    "why": "similar to Lorde (0.48), MUNA (0.50), Ariana Grande (0.33)",
    "tier": "other",
    "listeners": 444125
@@ -37050,7 +37050,7 @@
     }
    ],
    "days": 2,
-   "affinity": 0.3261,
+   "affinity": 0.3259,
    "why": "similar to M83 (0.89), Air (0.71), The Chemical Brothers (0.60)",
    "tier": "other",
    "listeners": 2376053
@@ -37076,7 +37076,7 @@
      "cap": 900
     }
    ],
-   "affinity": 0.096,
+   "affinity": 0.0959,
    "why": "similar to The Weeknd (0.32), BANKS (0.31)",
    "tier": "other",
    "listeners": 684859
@@ -37160,7 +37160,7 @@
      "cap": 900
     }
    ],
-   "affinity": 0.1209,
+   "affinity": 0.1208,
    "why": "similar to Lizzo (0.45), Nicki Minaj (0.47), Missy Elliott (0.40)",
    "tier": "other",
    "listeners": 68700
@@ -37226,7 +37226,7 @@
      "cap": 850
     }
    ],
-   "affinity": 0.2094,
+   "affinity": 0.2092,
    "why": "similar to Broken Bells (0.43), Young the Giant (0.65), Imagine Dragons (0.29)",
    "tier": "other",
    "listeners": 1314467
@@ -37246,7 +37246,7 @@
      "cap": null
     }
    ],
-   "affinity": 0.3887,
+   "affinity": 0.3886,
    "why": "similar to The Decemberists (0.52), Iron & Wine (0.50), Fleet Foxes (0.50)",
    "tier": "would_like",
    "listeners": 129926
@@ -37326,7 +37326,7 @@
      "cap": 900
     }
    ],
-   "affinity": 0.2148,
+   "affinity": 0.2147,
    "why": "similar to Julien Baker (0.62), MUNA (0.64), HAIM (0.60)",
    "tier": "other",
    "listeners": 597806
@@ -37352,7 +37352,7 @@
     }
    ],
    "days": 1,
-   "affinity": 0.3765,
+   "affinity": 0.3762,
    "why": "similar to James Blake (1.00), Dijon (0.84), Frank Ocean (0.67)",
    "tier": "would_like",
    "listeners": 753003
@@ -37372,7 +37372,7 @@
      "cap": 900
     }
    ],
-   "affinity": 0.0628,
+   "affinity": 0.0627,
    "why": "similar to The Chainsmokers (0.18), Marshmello (0.20)",
    "tier": "other",
    "listeners": 498932
@@ -37403,7 +37403,7 @@
      "cap": 2500
     }
    ],
-   "affinity": 0.0157,
+   "affinity": 0.0156,
    "why": "similar to Oddisee (0.27)",
    "tier": "other",
    "listeners": 248713
@@ -37423,7 +37423,7 @@
      "cap": 575
     }
    ],
-   "affinity": 0.1114,
+   "affinity": 0.1113,
    "why": "similar to Will Wood and the Tapeworms (1.00), [[LUCA]] (0.08)",
    "tier": "other",
    "listeners": 74209
@@ -37486,7 +37486,7 @@
      "cap": 575
     }
    ],
-   "affinity": 0.0776,
+   "affinity": 0.0775,
    "why": "similar to MUNA (0.38), Tennis (0.41)",
    "tier": "other",
    "listeners": 561060
@@ -37530,7 +37530,7 @@
      "cap": 2500
     }
    ],
-   "affinity": 0.1438,
+   "affinity": 0.1437,
    "why": "similar to HAIM (0.48), Jay Som (0.73), Sharon Van Etten (0.44)",
    "tier": "other",
    "listeners": 306725
@@ -37614,7 +37614,7 @@
     }
    ],
    "days": 1,
-   "affinity": 0.2745,
+   "affinity": 0.2744,
    "why": "similar to Jimmy Eat World (0.60), Brand New (0.52), The Get Up Kids (0.93)",
    "tier": "other",
    "listeners": 692403
@@ -37706,7 +37706,7 @@
      "cap": 850
     }
    ],
-   "affinity": 0.0353,
+   "affinity": 0.0352,
    "why": "similar to Mike Patton (0.40)",
    "tier": "other",
    "listeners": 125813
@@ -37771,7 +37771,7 @@
      "cap": 1427
     }
    ],
-   "affinity": 0.26,
+   "affinity": 0.2598,
    "why": "similar to Alexisonfire (0.54), Thrice (0.71), Brand New (0.57)",
    "tier": "other",
    "listeners": 1005178
@@ -38021,7 +38021,7 @@
      "cap": 2500
     }
    ],
-   "affinity": 0.1281,
+   "affinity": 0.128,
    "why": "similar to Will Wood and the Tapeworms (0.84), Hozier (0.29), Sea Wolf (0.14)",
    "tier": "other",
    "listeners": 146397
@@ -38099,7 +38099,7 @@
      "cap": 700
     }
    ],
-   "affinity": 0.0918,
+   "affinity": 0.0917,
    "why": "similar to This Will Destroy You (0.52)",
    "tier": "other",
    "listeners": 15247
@@ -38119,7 +38119,7 @@
      "cap": 600
     }
    ],
-   "affinity": 0.3672,
+   "affinity": 0.3671,
    "why": "similar to Adele (0.66), Sam Smith (0.72), Amy Winehouse (0.53)",
    "tier": "would_like",
    "listeners": 682283
@@ -38317,7 +38317,7 @@
      "cap": null
     }
    ],
-   "affinity": 0.1082,
+   "affinity": 0.1081,
    "why": "similar to Mother Mother (0.65), Mitski (0.40), Mannequin Pussy (0.27)",
    "tier": "other",
    "listeners": 1105208
@@ -38357,7 +38357,7 @@
      "cap": null
     }
    ],
-   "affinity": 0.1609,
+   "affinity": 0.1608,
    "why": "similar to Death Cab for Cutie (0.31), The Mountain Goats (0.26), MJ Lenderman (0.35)",
    "tier": "other",
    "listeners": 459772
@@ -38409,7 +38409,7 @@
      "cap": 1427
     }
    ],
-   "affinity": 0.1819,
+   "affinity": 0.1818,
    "why": "similar to Lorde (0.55), Lady Gaga (0.47), Charli xcx (0.72)",
    "tier": "other",
    "listeners": 1148066
@@ -38541,7 +38541,7 @@
     }
    ],
    "days": 1,
-   "affinity": 0.2756,
+   "affinity": 0.2755,
    "why": "similar to Silversun Pickups (0.43), Spoon (0.29), Manchester Orchestra (0.34)",
    "tier": "other",
    "listeners": 217253
@@ -38581,7 +38581,7 @@
      "cap": 300
     }
    ],
-   "affinity": 0.1196,
+   "affinity": 0.1195,
    "why": "similar to Jimmy Eat World (0.37)",
    "tier": "other",
    "listeners": 86685
@@ -38601,7 +38601,7 @@
      "cap": 500
     }
    ],
-   "affinity": 0.1956,
+   "affinity": 0.1955,
    "why": "similar to M83 (0.71), Washed Out (0.97), Wild Nothing (0.67)",
    "tier": "other",
    "listeners": 453254
@@ -38680,7 +38680,7 @@
      "cap": 1427
     }
    ],
-   "affinity": 0.0651,
+   "affinity": 0.065,
    "why": "similar to The Hold Steady (0.44), The Get Up Kids (0.48)",
    "tier": "other",
    "listeners": 133363
@@ -38747,7 +38747,7 @@
     }
    ],
    "days": 1,
-   "affinity": 0.1555,
+   "affinity": 0.1554,
    "why": "similar to Band of Horses (0.42), Waxahatchee (0.34), MUNA (0.30)",
    "tier": "other",
    "listeners": 653679
@@ -38944,7 +38944,7 @@
      "cap": 1000
     }
    ],
-   "affinity": 0.0494,
+   "affinity": 0.0493,
    "why": "similar to Porcupine Tree (0.49)",
    "tier": "other",
    "listeners": 225159
@@ -39009,7 +39009,7 @@
      "cap": 900
     }
    ],
-   "affinity": 0.1063,
+   "affinity": 0.1062,
    "why": "similar to Florence + the Machine (0.25), Billie Eilish (0.19), Hayley Williams (0.10)",
    "tier": "other",
    "listeners": 269947
@@ -39107,7 +39107,7 @@
     }
    ],
    "days": 1,
-   "affinity": 0.321,
+   "affinity": 0.3208,
    "why": "similar to Harry Styles (0.76), Imagine Dragons (0.38), The Neighbourhood (0.90)",
    "tier": "other",
    "listeners": 2086265
@@ -39148,7 +39148,7 @@
      "cap": 900
     }
    ],
-   "affinity": 0.2936,
+   "affinity": 0.2935,
    "why": "similar to Vance Joy (0.68), Mumford & Sons (0.39), Gregory Alan Isakov (0.31)",
    "tier": "other",
    "listeners": 215221
@@ -39191,7 +39191,7 @@
     }
    ],
    "days": 2,
-   "affinity": 0.3582,
+   "affinity": 0.3579,
    "why": "similar to Beck (0.79), Cake (0.60), Tripping Daisy (0.63)",
    "tier": "would_like",
    "listeners": 474006
@@ -39244,7 +39244,7 @@
      "cap": 500
     }
    ],
-   "affinity": 0.065,
+   "affinity": 0.0649,
    "why": "similar to Big Thief (0.46), Pedro the Lion (0.39)",
    "tier": "other",
    "listeners": 28223
@@ -39265,7 +39265,7 @@
     }
    ],
    "days": 1,
-   "affinity": 0.1869,
+   "affinity": 0.1868,
    "why": "similar to The Temper Trap (0.52), Sam Fender (0.30), Briston Maroney (0.21)",
    "tier": "other",
    "listeners": 389331
@@ -39291,7 +39291,7 @@
      "cap": null
     }
    ],
-   "affinity": 0.1727,
+   "affinity": 0.1726,
    "why": "similar to Jimmy Eat World (0.38), Brand New (0.37), Alkaline Trio (0.33)",
    "tier": "next_big_thing",
    "listeners": 95669
@@ -39337,7 +39337,7 @@
      "cap": null
     }
    ],
-   "affinity": 0.2107,
+   "affinity": 0.2106,
    "why": "similar to Thrice (0.69), Alexisonfire (0.41), ...And You Will Know Us by the Trail of Dead (0.58)",
    "tier": "other",
    "listeners": 347432
@@ -39357,7 +39357,7 @@
      "cap": 900
     }
    ],
-   "affinity": 0.1839,
+   "affinity": 0.1838,
    "why": "similar to Shawn Mendes (0.60), Charlie Puth (0.73), James Arthur (0.57)",
    "tier": "next_big_thing",
    "listeners": 95020
@@ -39568,7 +39568,7 @@
      "cap": 900
     }
    ],
-   "affinity": 0.144,
+   "affinity": 0.1439,
    "why": "similar to Bruno Mars (0.49), Charlie Puth (0.59), Tori Kelly (0.40)",
    "tier": "other",
    "listeners": 297354
@@ -39784,7 +39784,7 @@
      "cap": 2500
     }
    ],
-   "affinity": 0.2389,
+   "affinity": 0.2387,
    "why": "similar to John Mayer (1.00), Gregory Alan Isakov (0.43), Fleet Foxes (0.28)",
    "tier": "other",
    "listeners": 140561
@@ -39805,7 +39805,7 @@
     }
    ],
    "days": 2,
-   "affinity": 0.1571,
+   "affinity": 0.157,
    "why": "similar to LCD Soundsystem (0.38), Yo La Tengo (0.73), Beck (0.21)",
    "tier": "other",
    "listeners": 1259121
@@ -39826,7 +39826,7 @@
     }
    ],
    "days": 2,
-   "affinity": 0.5405,
+   "affinity": 0.5401,
    "why": "similar to Snow Patrol (1.00), Kings of Leon (0.96), Coldplay (0.53)",
    "tier": "would_like",
    "listeners": 2219550
@@ -40105,7 +40105,7 @@
     }
    ],
    "days": 1,
-   "affinity": 0.1296,
+   "affinity": 0.1295,
    "why": "similar to James Blake (0.31), Janet Jackson (0.23), Solange (0.42)",
    "tier": "other",
    "listeners": 398072
@@ -40393,7 +40393,7 @@
      "cap": null
     }
    ],
-   "affinity": 0.1096,
+   "affinity": 0.1095,
    "why": "similar to Phoebe Bridgers (0.36), Billie Eilish (0.28), Noah Kahan (0.33)",
    "tier": "other",
    "listeners": 601828
@@ -40745,7 +40745,7 @@
      "cap": 500
     }
    ],
-   "affinity": 0.1431,
+   "affinity": 0.143,
    "why": "similar to BANKS (0.82), HAIM (0.42), Robyn (0.35)",
    "tier": "other",
    "listeners": 462039
@@ -40977,7 +40977,7 @@
      "cap": 1000
     }
    ],
-   "affinity": 0.1043,
+   "affinity": 0.1042,
    "why": "similar to The Lumineers (0.35), Mumford & Sons (0.12), Vance Joy (0.13)",
    "tier": "other",
    "listeners": 164230
@@ -41009,7 +41009,7 @@
      "cap": 19800
     }
    ],
-   "affinity": 0.2349,
+   "affinity": 0.2347,
    "why": "similar to MUNA (0.86), HAIM (0.58), Tegan and Sara (0.39)",
    "tier": "other",
    "listeners": 416546
@@ -41029,7 +41029,7 @@
      "cap": 1427
     }
    ],
-   "affinity": 0.2742,
+   "affinity": 0.2741,
    "why": "similar to R.E.M. (0.64), Shearwater (0.35), The Smashing Pumpkins (0.28)",
    "tier": "other",
    "listeners": 170306
@@ -41154,7 +41154,7 @@
      "cap": 250
     }
    ],
-   "affinity": 0.2128,
+   "affinity": 0.2127,
    "why": "similar to Mumford & Sons (0.31), Gregory Alan Isakov (0.36), The Lumineers (0.37)",
    "tier": "other",
    "listeners": 228105
@@ -41174,7 +41174,7 @@
      "cap": 1427
     }
    ],
-   "affinity": 0.3722,
+   "affinity": 0.372,
    "why": "similar to Iron & Wine (0.61), Gregory Alan Isakov (0.64), Ben Howard (0.56)",
    "tier": "would_like",
    "listeners": 383245
@@ -41241,7 +41241,7 @@
      "cap": null
     }
    ],
-   "affinity": 0.2432,
+   "affinity": 0.2431,
    "why": "similar to Metric (0.63), Hayley Williams (0.36), Tegan and Sara (0.46)",
    "tier": "other",
    "listeners": 545984
@@ -41306,7 +41306,7 @@
     }
    ],
    "days": 2,
-   "affinity": 0.2514,
+   "affinity": 0.2513,
    "why": "similar to Death Cab for Cutie (0.36), The New Pornographers (0.40), Rilo Kiley (0.43)",
    "tier": "other",
    "listeners": 363479
@@ -41352,7 +41352,7 @@
      "cap": 850
     }
    ],
-   "affinity": 0.0877,
+   "affinity": 0.0876,
    "why": "similar to The Black Keys (0.22), Black Mountain (0.72), Black Rebel Motorcycle Club (0.77)",
    "tier": "other",
    "listeners": 558640
@@ -41372,7 +41372,7 @@
      "cap": 2765
     }
    ],
-   "affinity": 0.0562,
+   "affinity": 0.0561,
    "why": "similar to Thursday (0.51)",
    "tier": "other",
    "listeners": 380767
@@ -41404,7 +41404,7 @@
      "cap": 850
     }
    ],
-   "affinity": 0.1704,
+   "affinity": 0.1703,
    "why": "similar to The Black Keys (0.55), Kaleo (0.35), The Raconteurs (0.11)",
    "tier": "other",
    "listeners": 265187
@@ -41548,7 +41548,7 @@
      "cap": 575
     }
    ],
-   "affinity": 0.1987,
+   "affinity": 0.1986,
    "why": "similar to The Cure (0.56), New Order (0.39), Talking Heads (0.16)",
    "tier": "other",
    "listeners": 512092
@@ -41568,7 +41568,7 @@
      "cap": 1427
     }
    ],
-   "affinity": 0.2577,
+   "affinity": 0.2575,
    "why": "similar to James (0.94), The Verve (0.51), The Soup Dragons (0.38)",
    "tier": "other",
    "listeners": 712288
@@ -41595,7 +41595,7 @@
     }
    ],
    "days": 1,
-   "affinity": 0.2114,
+   "affinity": 0.2113,
    "why": "similar to The Cure (0.50), INXS (0.44), New Order (0.49)",
    "tier": "other",
    "listeners": 662329
@@ -41621,7 +41621,7 @@
      "cap": null
     }
    ],
-   "affinity": 0.145,
+   "affinity": 0.1449,
    "why": "similar to Snow Patrol (0.24), Bastille (0.23), Kings of Leon (0.30)",
    "tier": "other",
    "listeners": 61299
@@ -41641,7 +41641,7 @@
      "cap": 850
     }
    ],
-   "affinity": 0.2035,
+   "affinity": 0.2034,
    "why": "similar to Hozier (0.64), The Decemberists (0.15), The Oh Hellos (1.00)",
    "tier": "other",
    "listeners": 444264
@@ -41715,7 +41715,7 @@
     }
    ],
    "days": 1,
-   "affinity": 0.4296,
+   "affinity": 0.4294,
    "why": "similar to Beck (0.81), The Arcade Fire (0.50), Spoon (0.51)",
    "tier": "would_like",
    "listeners": 1578282
@@ -41735,7 +41735,7 @@
      "cap": 1000
     }
    ],
-   "affinity": 0.1394,
+   "affinity": 0.1393,
    "why": "similar to Bon Jovi (0.66), The Black Crowes (0.73), Guns N' Roses (0.50)",
    "tier": "other",
    "listeners": 1356546
@@ -41855,7 +41855,7 @@
     }
    ],
    "days": 1,
-   "affinity": 0.2888,
+   "affinity": 0.2887,
    "why": "similar to Jimmy Eat World (0.56), City and Colour (0.25), Death Cab for Cutie (0.31)",
    "tier": "other",
    "listeners": 518098
@@ -41940,7 +41940,7 @@
      "cap": 900
     }
    ],
-   "affinity": 0.1013,
+   "affinity": 0.1012,
    "why": "similar to Hozier (0.28), Jukebox the Ghost (0.62), Mother Mother (0.36)",
    "tier": "other",
    "listeners": 444251
@@ -41960,7 +41960,7 @@
      "cap": 1427
     }
    ],
-   "affinity": 0.1791,
+   "affinity": 0.179,
    "why": "similar to Spoon (0.27), Pavement (0.52), Wilco (0.26)",
    "tier": "next_big_thing",
    "listeners": 24111
@@ -42017,7 +42017,7 @@
     }
    ],
    "days": 1,
-   "affinity": 0.3769,
+   "affinity": 0.3768,
    "why": "similar to The White Stripes (0.66), Franz Ferdinand (0.68), Jack White (0.58)",
    "tier": "would_like",
    "listeners": 2129440
@@ -42069,7 +42069,7 @@
     }
    ],
    "days": 1,
-   "affinity": 0.2483,
+   "affinity": 0.2481,
    "why": "similar to MUNA (1.00), Bleachers (0.51), HAIM (0.45)",
    "tier": "other",
    "listeners": 1148516
@@ -42173,7 +42173,7 @@
      "cap": 2765
     }
    ],
-   "affinity": 0.3408,
+   "affinity": 0.3406,
    "why": "similar to Florence + the Machine (0.81), Hayley Williams (0.40), St. Vincent (0.30)",
    "tier": "other",
    "listeners": 850675
@@ -42516,7 +42516,7 @@
     }
    ],
    "days": 1,
-   "affinity": 0.1119,
+   "affinity": 0.1118,
    "why": "similar to The Cure (0.39)",
    "tier": "other",
    "listeners": 296754
@@ -42683,7 +42683,7 @@
      "cap": 900
     }
    ],
-   "affinity": 0.0879,
+   "affinity": 0.0878,
    "why": "similar to Porcupine Tree (0.86)",
    "tier": "other",
    "listeners": 185740
@@ -42703,7 +42703,7 @@
      "cap": null
     }
    ],
-   "affinity": 0.0819,
+   "affinity": 0.0818,
    "why": "similar to Arctic Monkeys (0.25), The Strokes (0.19), Tame Impala (0.11)",
    "tier": "other",
    "listeners": 1354094
@@ -42892,7 +42892,7 @@
      "cap": 2500
     }
    ],
-   "affinity": 0.1861,
+   "affinity": 0.186,
    "why": "similar to The Cure (0.65)",
    "tier": "other",
    "listeners": 483385
@@ -42973,7 +42973,7 @@
      "cap": 900
     }
    ],
-   "affinity": 0.3008,
+   "affinity": 0.3007,
    "why": "similar to Brandi Carlile (0.48), Ben Howard (0.60), Iron & Wine (0.42)",
    "tier": "other",
    "listeners": 466720
@@ -43060,7 +43060,7 @@
      "cap": 2765
     }
    ],
-   "affinity": 0.4108,
+   "affinity": 0.4106,
    "why": "similar to Vance Joy (0.95), Mumford & Sons (0.54), The Lumineers (0.74)",
    "tier": "would_like",
    "listeners": 466254
@@ -43092,7 +43092,7 @@
      "cap": 1427
     }
    ],
-   "affinity": 0.1635,
+   "affinity": 0.1634,
    "why": "similar to Bastille (0.34), Måneskin (0.59), The Airborne Toxic Event (0.42)",
    "tier": "other",
    "listeners": 567186
@@ -43334,7 +43334,7 @@
      "cap": 850
     }
    ],
-   "affinity": 0.3315,
+   "affinity": 0.3314,
    "why": "similar to The Arcade Fire (0.45), Kings of Leon (0.73), The Temper Trap (0.51)",
    "tier": "other",
    "listeners": 1406802
@@ -43412,7 +43412,7 @@
      "cap": 1427
     }
    ],
-   "affinity": 0.2942,
+   "affinity": 0.2941,
    "why": "similar to Van Morrison (0.72), U2 (0.32), R.E.M. (0.21)",
    "tier": "other",
    "listeners": 651212
@@ -43432,7 +43432,7 @@
      "cap": 700
     }
    ],
-   "affinity": 0.0843,
+   "affinity": 0.0842,
    "why": "similar to Eddie Vedder (0.24), Johnny Cash (0.37), Shovels & Rope (0.23)",
    "tier": "other",
    "listeners": 273470
@@ -43571,7 +43571,7 @@
      "cap": 1427
     }
    ],
-   "affinity": 0.0328,
+   "affinity": 0.0327,
    "why": "similar to The Get Up Kids (0.39)",
    "tier": "other",
    "listeners": 316730
@@ -43767,7 +43767,7 @@
     }
    ],
    "days": 2,
-   "affinity": 0.215,
+   "affinity": 0.2149,
    "why": "similar to James Blake (0.46), Stevie Wonder (0.43), OutKast (0.51)",
    "tier": "other",
    "listeners": 2150985
@@ -43850,7 +43850,7 @@
      "cap": 2500
     }
    ],
-   "affinity": 0.0185,
+   "affinity": 0.0184,
    "why": "similar to Local H (0.10), Toadies (0.09), The Kills (0.09)",
    "tier": "other",
    "listeners": 163891
@@ -43881,7 +43881,7 @@
      "cap": 1427
     }
    ],
-   "affinity": 0.1396,
+   "affinity": 0.1395,
    "why": "similar to Brand New (0.54), The Get Up Kids (0.34)",
    "tier": "other",
    "listeners": 525159
@@ -43902,7 +43902,7 @@
     }
    ],
    "days": 1,
-   "affinity": 0.1339,
+   "affinity": 0.1338,
    "why": "similar to Father John Misty (0.39), Fleet Foxes (0.19), The Decemberists (0.15)",
    "tier": "other",
    "listeners": 106728
@@ -43922,7 +43922,7 @@
      "cap": 2400
     }
    ],
-   "affinity": 0.1687,
+   "affinity": 0.1686,
    "why": "similar to Midlake (0.42), Calexico (0.36), Spoon (0.15)",
    "tier": "other",
    "listeners": 515754
@@ -43960,7 +43960,7 @@
      "cap": 2765
     }
    ],
-   "affinity": 0.0945,
+   "affinity": 0.0944,
    "why": "similar to MUNA (0.35), Phoebe Bridgers (0.22), Bleachers (0.21)",
    "tier": "other",
    "listeners": 172755
@@ -44158,7 +44158,7 @@
     }
    ],
    "days": 1,
-   "affinity": 0.1691,
+   "affinity": 0.169,
    "why": "similar to Julien Baker (0.57), Waxahatchee (0.43), Sharon Van Etten (0.47)",
    "tier": "other",
    "listeners": 232730
@@ -44256,7 +44256,7 @@
      "cap": 900
     }
    ],
-   "affinity": 0.2383,
+   "affinity": 0.2381,
    "why": "similar to Alexisonfire (0.60), Thrice (0.48), Thursday (0.46)",
    "tier": "other",
    "listeners": 318208
@@ -44276,7 +44276,7 @@
      "cap": 575
     }
    ],
-   "affinity": 0.1435,
+   "affinity": 0.1434,
    "why": "similar to M83 (0.48), Apparat (0.36), Caribou (0.56)",
    "tier": "other",
    "listeners": 448263
@@ -44296,7 +44296,7 @@
      "cap": 2500
     }
    ],
-   "affinity": 0.1764,
+   "affinity": 0.1763,
    "why": "similar to Julien Baker (0.63), Phoebe Bridgers (0.36), boygenius (0.49)",
    "tier": "other",
    "listeners": 205246
@@ -44402,7 +44402,7 @@
      "cap": 700
     }
    ],
-   "affinity": 0.0074,
+   "affinity": 0.0075,
    "why": "tags match your taste: industrial",
    "tier": "other",
    "listeners": 8211
@@ -44422,7 +44422,7 @@
      "cap": null
     }
    ],
-   "affinity": 0.1676,
+   "affinity": 0.1675,
    "why": "similar to Moderat (0.84), Apparat (0.48), SOHN (0.31)",
    "tier": "other",
    "listeners": 700166
@@ -44487,7 +44487,7 @@
     }
    ],
    "days": 1,
-   "affinity": 0.1048,
+   "affinity": 0.1047,
    "why": "similar to Orville Peck (0.68), Dolly Parton (0.26), Brandi Carlile (0.09)",
    "tier": "other",
    "listeners": 158245
@@ -44650,7 +44650,7 @@
      "cap": 850
     }
    ],
-   "affinity": 0.0339,
+   "affinity": 0.0338,
    "why": "similar to The Highwomen (0.17), Punch Brothers (0.19), The Milk Carton Kids (0.18)",
    "tier": "other",
    "listeners": 11688
@@ -44931,7 +44931,7 @@
     }
    ],
    "days": 2,
-   "affinity": 0.0973,
+   "affinity": 0.0972,
    "why": "similar to Sonic Youth (0.46), Fugazi (0.67)",
    "tier": "other",
    "listeners": 458922
@@ -45055,7 +45055,7 @@
      "cap": 200
     }
    ],
-   "affinity": 0.0687,
+   "affinity": 0.0686,
    "why": "similar to BoyWithUke (0.32), Nicky Youre (0.45), Charlie Puth (0.33)",
    "tier": "other",
    "listeners": 367804
@@ -45135,7 +45135,7 @@
      "cap": 2500
     }
    ],
-   "affinity": 0.2469,
+   "affinity": 0.2468,
    "why": "similar to Beyoncé (0.55), Ariana Grande (0.54), Lizzo (0.54)",
    "tier": "other",
    "listeners": 1102059
@@ -45366,7 +45366,7 @@
      "cap": 575
     }
    ],
-   "affinity": 0.091,
+   "affinity": 0.0909,
    "why": "similar to Mother Mother (0.47), Cage the Elephant (0.44), Grouplove (0.38)",
    "tier": "other",
    "listeners": 1376953
@@ -45563,7 +45563,7 @@
     }
    ],
    "days": 2,
-   "affinity": 0.1718,
+   "affinity": 0.1717,
    "why": "similar to This is Lorelei (1.00), Tune-Yards (0.30), MJ Lenderman (0.44)",
    "tier": "other",
    "listeners": 225591
@@ -45588,7 +45588,7 @@
      "cap": 2500
     }
    ],
-   "affinity": 0.0986,
+   "affinity": 0.0985,
    "why": "similar to Panic at the Disco (0.38), Fall Out Boy (0.55), Paramore (0.08)",
    "tier": "other",
    "listeners": 678326
@@ -45633,7 +45633,7 @@
      "cap": 400
     }
    ],
-   "affinity": 0.0007,
+   "affinity": 0.0006,
    "why": "tags match your taste: hardcore, american, punk",
    "tier": "other",
    "listeners": 48939
@@ -45679,7 +45679,7 @@
     }
    ],
    "days": 2,
-   "affinity": 0.3639,
+   "affinity": 0.3638,
    "why": "similar to Silversun Pickups (0.52), Snow Patrol (0.54), The Joy Formidable (0.65)",
    "tier": "would_like",
    "listeners": 1438664
@@ -45737,7 +45737,7 @@
      "cap": 850
     }
    ],
-   "affinity": 0.1328,
+   "affinity": 0.1327,
    "why": "similar to MJ Lenderman (1.00), Waxahatchee (0.37), This is Lorelei (0.44)",
    "tier": "other",
    "listeners": 399537
@@ -45777,7 +45777,7 @@
      "cap": 575
     }
    ],
-   "affinity": 0.1631,
+   "affinity": 0.163,
    "why": "similar to Moderat (0.82), Apparat (0.47), Bonobo (0.30)",
    "tier": "other",
    "listeners": 294155
@@ -45818,7 +45818,7 @@
     }
    ],
    "days": 1,
-   "affinity": 0.3883,
+   "affinity": 0.3882,
    "why": "similar to Spoon (0.59), Fleet Foxes (0.47), Vampire Weekend (0.61)",
    "tier": "would_like",
    "listeners": 610314
@@ -45870,7 +45870,7 @@
      "cap": 250
     }
    ],
-   "affinity": 0.0675,
+   "affinity": 0.0674,
    "why": "similar to Jay Som (0.59)",
    "tier": "other",
    "listeners": 76301
@@ -45890,7 +45890,7 @@
      "cap": null
     }
    ],
-   "affinity": 0.2406,
+   "affinity": 0.2405,
    "why": "similar to Cloud Cult (0.54), Tune-Yards (0.30), Modest Mouse (0.25)",
    "tier": "other",
    "listeners": 502544
@@ -46003,7 +46003,7 @@
      "cap": 2765
     }
    ],
-   "affinity": 0.2181,
+   "affinity": 0.218,
    "why": "similar to Gregory Alan Isakov (0.47), Vance Joy (0.40), The Lumineers (0.51)",
    "tier": "other",
    "listeners": 296253
@@ -46271,7 +46271,7 @@
      "cap": 1427
     }
    ],
-   "affinity": 0.2426,
+   "affinity": 0.2425,
    "why": "similar to The Raconteurs (0.59), The White Stripes (0.36), Foo Fighters (0.56)",
    "tier": "other",
    "listeners": 2090076
@@ -46388,7 +46388,7 @@
      "cap": 500
     }
    ],
-   "affinity": 0.378,
+   "affinity": 0.3777,
    "why": "similar to Broken Social Scene (0.88), Grizzly Bear (0.67), The Walkmen (0.91)",
    "tier": "would_like",
    "listeners": 212976
@@ -46491,7 +46491,7 @@
      "cap": 900
     }
    ],
-   "affinity": 0.0305,
+   "affinity": 0.0304,
    "why": "similar to The Smile (0.16)",
    "tier": "other",
    "listeners": 210313
@@ -46532,7 +46532,7 @@
     }
    ],
    "days": 1,
-   "affinity": 0.1115,
+   "affinity": 0.1114,
    "why": "similar to RAYE (0.63), Sault (0.45), Tori Kelly (0.82)",
    "tier": "other",
    "listeners": 715254
@@ -46579,7 +46579,7 @@
      "cap": 575
     }
    ],
-   "affinity": 0.2063,
+   "affinity": 0.2061,
    "why": "similar to Björk (0.43), Grimes (1.00), Arca (0.67)",
    "tier": "other",
    "listeners": 786195
@@ -46697,7 +46697,7 @@
     }
    ],
    "days": 1,
-   "affinity": 0.2284,
+   "affinity": 0.2283,
    "why": "similar to Grizzly Bear (0.48), Beach House (0.51), Local Natives (0.48)",
    "tier": "other",
    "listeners": 748775
@@ -46743,7 +46743,7 @@
      "cap": null
     }
    ],
-   "affinity": 0.1142,
+   "affinity": 0.1141,
    "why": "similar to Little Dragon (1.00), Sault (0.24), Lucius (0.18)",
    "tier": "other",
    "listeners": 90431
@@ -46876,7 +46876,7 @@
      "cap": 2400
     }
    ],
-   "affinity": 0.0861,
+   "affinity": 0.086,
    "why": "similar to Black Sabbath (0.64), Metallica (0.21)",
    "tier": "other",
    "listeners": 15986
