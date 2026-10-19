@@ -1,9 +1,10 @@
 const VOTES_KEY = "nbt.votes";
 const TAB_KEY = "nbt.tab";
 const SORT_KEY = "nbt.sort";
-const THEME_KEY = "nbt.theme";
 const CARD_TIERS = ["next_big_thing", "would_like", "know"];
 const tabs = document.getElementById("tabs");
+
+const GROWTH_DAYS = 28; // nbt/config.py velocity_min_weeks × 7
 
 const store = {
   get(k, d) { try { return JSON.parse(localStorage.getItem(k)) ?? d; } catch { return d; } },
@@ -102,9 +103,12 @@ async function load() {
   }
   digest = await res.json();
   const s = digest.stats || {};
+  // "Updated Mon 6:01 AM": the weekday says whether today's run has landed.
+  const updated = new Date(digest.generated_at).toLocaleString(undefined, { weekday: "short", hour: "numeric", minute: "2-digit" });
+  // Listener growth needs 4 weeks of daily snapshots (velocity_min_weeks); count up to it, then drop the note.
+  const growth = s.snapshot_days < GROWTH_DAYS ? ` · Growth tracking: day ${fmtNum(s.snapshot_days)} of ${GROWTH_DAYS}` : "";
   document.getElementById("meta").textContent =
-    `Updated ${new Date(digest.generated_at).toLocaleString()} · ${fmtNum(s.events)} shows scanned · ` +
-    `${fmtNum(s.known_artists)} artists you know · ${fmtNum(s.snapshot_days)} days of listener history`;
+    `Updated ${updated} · ${fmtNum(s.events)} upcoming shows checked against ${fmtNum(s.known_artists)} bands you know${growth}`;
   if (demo) {
     const b = document.getElementById("banner");
     b.innerHTML = "<div>Showing <strong>demo data</strong> with made-up bands. The real digest appears after the first pipeline run.</div>";
@@ -319,37 +323,6 @@ function renderAttended(list) {
   list.append(wrap);
 }
 
-// Theme: Light / Dark / System (auto). Saved per browser.
-const themeSwitch = document.getElementById("theme");
-const themeButtons = [...themeSwitch.querySelectorAll("button")];
-function applyTheme(t) {
-  if (t !== "light" && t !== "dark") t = "auto";
-  if (t === "auto") delete document.documentElement.dataset.theme;
-  else document.documentElement.dataset.theme = t;
-  for (const b of themeButtons) {
-    const on = b.dataset.choice === t;
-    b.setAttribute("aria-checked", on);
-    b.tabIndex = on ? 0 : -1; // radiogroup: one tab stop, arrows move between options
-  }
-}
-function chooseTheme(t, focus) {
-  store.set(THEME_KEY, t);
-  applyTheme(t);
-  if (focus) themeButtons.find((b) => b.dataset.choice === t)?.focus();
-}
-themeSwitch.addEventListener("click", (e) => {
-  const b = e.target.closest("button");
-  if (b) chooseTheme(b.dataset.choice);
-});
-themeSwitch.addEventListener("keydown", (e) => {
-  const step = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 }[e.key];
-  if (!step) return;
-  e.preventDefault();
-  const i = themeButtons.findIndex((b) => b.getAttribute("aria-checked") === "true");
-  chooseTheme(themeButtons[(i + step + themeButtons.length) % themeButtons.length].dataset.choice, true);
-});
-applyTheme(store.get(THEME_KEY, "auto"));
-
 const sortSel = document.getElementById("sort");
 sortSel.value = store.get(SORT_KEY, "score");
 sortSel.addEventListener("change", () => {
@@ -372,18 +345,4 @@ tabs.addEventListener("scroll", updateTabEdges, { passive: true });
 window.addEventListener("resize", updateTabEdges);
 document.fonts?.ready.then(updateTabEdges);
 updateTabEdges();
-// Refresh: a home-screen app keeps the page alive and has no reload control. Reload
-// with a throwaway query so the page itself is refetched, not resumed from cache.
-const loadedAt = Date.now();
-const STALE_MS = 60 * 60 * 1000;
-const refresh = () => location.replace(`${location.pathname}?r=${Date.now()}`);
-document.getElementById("loaded").textContent =
-  `Loaded ${new Date(loadedAt).toLocaleTimeString(undefined, { hour: "numeric", minute: "2-digit" })}`;
-document.getElementById("refresh").addEventListener("click", refresh);
-// Reopening the app after an hour or more reloads it on its own.
-const refreshIfStale = () => { if (Date.now() - loadedAt > STALE_MS) refresh(); };
-document.addEventListener("visibilitychange", () => { if (document.visibilityState === "visible") refreshIfStale(); });
-window.addEventListener("pageshow", (e) => { if (e.persisted) refreshIfStale(); });
-if (location.search.includes("r=")) history.replaceState(null, "", location.pathname);
-
 load();

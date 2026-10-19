@@ -200,9 +200,18 @@ main { padding-top: 12px; padding-bottom: 24px; display: grid; gap: 10px; }
 
 .empty { color: var(--muted); padding: 24px 0; }
 /* Home-screen apps have no reload button or pull-to-refresh, so offer one here. */
-.site-foot { max-width: 760px; margin: 0 auto; padding: 0 16px 40px; text-align: center; font-size: 13px; color: var(--muted); }
-.site-foot button { background: none; border: 0; padding: 4px 2px; font: inherit; color: var(--accent); font-weight: 500; cursor: pointer; }
-.site-foot a { color: var(--accent); font-weight: 500; text-decoration: none; padding: 4px 2px; }
+/* The same footer on every page (built by foot.js): page links, then Loaded · Refresh and the theme switch. */
+.site-foot { max-width: 760px; margin: 24px auto 0; padding: 14px 16px 40px; border-top: 1px solid var(--line); font-size: 13px; color: var(--muted); display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.foot-pages { display: flex; gap: 28px; border: 0; overflow: visible; }
+.foot-pages a { color: var(--accent); font-size: 16px; font-weight: 600; text-decoration: none; padding: 6px 4px; }
+.foot-pages a[aria-current="page"] { color: var(--text); pointer-events: none; }
+.foot-row { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 4px; }
+.foot-refresh { background: none; border: 0; padding: 4px 2px; font: inherit; color: var(--accent); font-weight: 500; cursor: pointer; }
+.foot-row .theme-switch { margin-left: 12px; }
+.foot-mark { display: block; width: 28px; height: 28px; border-radius: 7px; }
+.foot-code { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; color: var(--muted); text-decoration: none; padding: 4px 2px; }
+.foot-code:hover { color: var(--text); }
+.foot-code svg { width: 13px; height: 13px; fill: currentColor; }
 table { width: 100%; border-collapse: collapse; font-size: 14px; }
 th, td { text-align: left; padding: 8px 6px; border-bottom: 1px solid var(--line); }
 td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }

@@ -22,11 +22,6 @@
   <header>
     <div class="title-row">
       <h1>Next Big Thing</h1>
-      <div id="theme" class="theme-switch" role="radiogroup" aria-label="Colour theme">
-        <button type="button" role="radio" data-choice="light" aria-label="Light" title="Light"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="3"/><path d="M8 1v1.5M8 13.5V15M1 8h1.5M13.5 8H15M3 3l1.1 1.1M11.9 11.9 13 13M3 13l1.1-1.1M11.9 4.1 13 3"/></svg></button>
-        <button type="button" role="radio" data-choice="dark" aria-label="Dark" title="Dark"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M13.5 9.5A5.5 5.5 0 0 1 6.5 2.5a5.5 5.5 0 1 0 7 7z"/></svg></button>
-        <button type="button" role="radio" data-choice="auto" aria-label="System" title="Match system"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="1.75" y="2.5" width="12.5" height="8.5" rx="1.25"/><path d="M5.5 14h5M8 11v3"/></svg></button>
-      </div>
     </div>
     <p id="meta" class="muted"></p>
     <div class="tabs-wrap">
@@ -52,9 +47,7 @@
     </label>
   </div>
   <main id="list" aria-live="polite"></main>
-  <footer class="site-foot">
-    <span id="loaded"></span> · <button type="button" id="refresh">Refresh</button> · <a href="explore.html">Explore</a>
-  </footer>
+  <footer class="site-foot" data-page="picks"></footer>
 
   <template id="card">
     <article class="card">
@@ -92,6 +85,7 @@
       <button type="button" class="undo">Undo</button>
     </article>
   </template>
+  <script src="foot.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

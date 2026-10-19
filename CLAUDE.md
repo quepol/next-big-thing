@@ -73,6 +73,7 @@ Other product decisions:
   - `venues.html` + `venues.js`: the "SF overlap" research page (raw tables, with sticky section links).
   - `explore.html` + `explore.js`: Rooms (default) / The Climb tabs.
   - `ladder.js`: billing and ladder rules shared by the venue and explore pages.
+  - `foot.js`: the shared footer on every page (Picks/Explore links, Refresh and auto-refresh, theme switch).
   - D3 7.9.0 is self-hosted in `site/vendor/`. Design detail is in `docs/design.md`.
 - `research/`: one-off setlist.fm studies, each run by its own workflow on pushes to the dev branch. See `docs/research.md`.
 - Tests: `python -m pytest -q`; 33 pass.
