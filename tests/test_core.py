@@ -5,7 +5,6 @@ from nbt.config import Config
 from nbt.models import Event, Venue, haversine_km, normalize_name
 from nbt.scoring import calendar, score_events, smallness, venue_bonus
 from nbt.snapshots import save_listeners, velocity
-from nbt.sources.bandsintown import parse_rest_event
 from nbt.sources.ticketmaster import _parse_event as parse_tm_event
 from nbt.taste import Taste
 
@@ -121,16 +120,6 @@ def test_venue_bonus_appears_in_nbt_score_and_reason():
     assert not any("small venue" in r for r in picks_large["Tiny Newcomer"].reasons)
 
 
-def test_parse_rest_event():
-    ev = parse_rest_event({
-        "id": "123", "datetime": "2026-11-02T20:00:00", "url": "https://x",
-        "lineup": ["Headliner", "Opener"],
-        "venue": {"name": "The Baby G", "city": "Toronto", "region": "ON", "latitude": "43.65", "longitude": "-79.43"},
-    })
-    assert ev.id == "bit:123" and ev.venue.city == "Toronto, ON" and ev.venue.lat == 43.65
-    assert ev.lineup == ["Headliner", "Opener"]
-
-
 # --- scoring end to end with fakes -----------------------------------------
 
 class FakeLastFM:
@@ -231,11 +220,13 @@ def test_dedupe_keeps_earliest_and_counts_dates():
 def test_gather_events_assigns_regions_and_filters(monkeypatch):
     from nbt import pipeline
 
-    class FakeBIT:
-        app_id = "x"
+    class FakeTM:
+        def __init__(self):
+            self.asked = []
 
-        def artist_events(self, name):
-            mk = lambda i, lat, lon, day: Event(f"bit:{name}{i}", f"{day}T20:00:00", Venue("V", "C", lat, lon), [name])
+        def city_events(self, region):
+            self.asked.append(region.name)
+            mk = lambda i, lat, lon, day: Event(f"tm:{region.name}{i}", f"{day}T20:00:00", Venue("V", "C", lat, lon), ["Big Thief"])
             return [
                 mk(1, 43.66, -79.40, "2026-11-01"),  # Toronto
                 mk(2, 42.89, -78.88, "2026-11-02"),  # Buffalo
@@ -246,20 +237,12 @@ def test_gather_events_assigns_regions_and_filters(monkeypatch):
         def save(self):
             pass
 
-    class FakeTM:
-        def city_events(self, region):
-            return []
-
-        def save(self):
-            pass
-
-    h = make_history()
-    taste = Taste(h, FakeLastFM(), log=lambda *_: None, loves=_TEST_LOVES)
-    events = pipeline.gather_events(FakeBIT(), FakeTM(), h, taste, date(2026, 10, 16), log=lambda *_: None)
-    assert {(e.lineup[0], e.region) for e in events} >= {("Big Thief", "Toronto"), ("Big Thief", "Buffalo")}
-    assert all(e.region in {"Toronto", "Buffalo"} for e in events)
+    tm = FakeTM()
+    events = pipeline.gather_events(tm, date(2026, 10, 16), log=lambda *_: None)
+    # Every region is fetched, out-of-town ones included (scoring keeps only loved bands there).
+    assert tm.asked == [r.name for r in pipeline.CONFIG.regions]
+    assert {e.region for e in events} == {"Toronto", "Buffalo"}
     assert all(e.starts_at < "2027" for e in events)
-
 
 def test_exclusions_file_parsing(tmp_path):
     from nbt import exclusions
@@ -490,3 +473,18 @@ def test_attended_ledger_includes_listener_counts():
                        "venue": "Iron Horse Music Hall", "city": "Northampton",
                        "listeners_now": 123_456}
     assert rows[1]["listeners_now"] == 890_000
+
+
+def test_lastfm_lookups_use_straight_quotes_and_a_fresh_cache_key(tmp_path, monkeypatch):
+    from nbt import lastfm as lf
+
+    monkeypatch.setattr(lf, "DATA_DIR", tmp_path)
+    client = lf.LastFM(api_key="x")
+    asked = []
+    client.call = lambda method, **p: asked.append(p["artist"]) or None
+    # A wrong answer cached before the fix, under the quote-less key both spellings share.
+    client.info_cache.set(lf.normalize_name("Arm’s Length"), {"name": "Arm’s Length", "listeners": 12})
+    assert client.artist_info("Arm’s Length") is None  # refetched, not the stale entry
+    assert asked == ["Arm's Length"]
+    assert lf.cache_key("Arm’s Length") == lf.cache_key("Arm's Length") == "q:" + lf.normalize_name("Arm's Length")
+    assert lf.cache_key("Big Thief") == "big thief"

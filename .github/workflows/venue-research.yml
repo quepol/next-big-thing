@@ -26,28 +26,28 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 90
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 0
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
       - run: pip install -r requirements.txt
       # Restore (never save) the daily pipeline's API cache, so building the taste
       # model for tiers reuses its Last.fm lookups instead of repeating them.
-      - uses: actions/cache/restore@v4
+      - uses: actions/cache/restore@v5
         with:
           path: data/cache
           key: api-cache-none
           restore-keys: api-cache-
       # Keep this step's path unchanged: the path is part of the cache version, and a
       # changed path silently misses the saved setlist.fm data.
-      - uses: actions/cache@v4
+      - uses: actions/cache@v5
         with:
           path: research/cache.json
           key: venue-research-${{ github.run_id }}
           restore-keys: venue-research-
-      - uses: actions/cache@v4
+      - uses: actions/cache@v5
         with:
           path: data/cache/artist_info.json
           # v2: v1 cached wrong pages looked up with typographic quotes.

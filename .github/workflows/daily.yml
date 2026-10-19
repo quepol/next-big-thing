@@ -3,9 +3,14 @@ name: Daily digest
 # Two jobs share this workflow: the scheduled run (pipeline, commit, deploy) and a
 # deploy-only run when site files change on main. Both publish the one Pages site,
 # so they share a concurrency group and queue rather than overlap.
+#
+# The schedule has a backup: GitHub starts scheduled runs late, or drops them on busy
+# days (2026-10-19 never ran). The second cron does nothing if today's digest is
+# already on main.
 on:
   schedule:
     - cron: "17 10 * * *" # ~6am Toronto
+    - cron: "47 15 * * *" # backup, ~11:47am Toronto
   workflow_dispatch:
   push:
     branches: [main]
@@ -23,35 +28,49 @@ concurrency:
 jobs:
   run:
     runs-on: ubuntu-latest
+    outputs:
+      skip: ${{ steps.fresh.outputs.skip }}
     # The first run backfills ~20 years of scrobbles; later runs take minutes.
     timeout-minutes: 300
     env:
       # A push to site/** only redeploys; it publishes the digest already on main.
       DEPLOY_ONLY: ${{ github.event_name == 'push' }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 0
-      - uses: actions/setup-python@v5
-        if: env.DEPLOY_ONLY != 'true'
+      # Scheduled runs only: skip when main already has today's digest (Toronto date).
+      # Reads origin/main fresh, in case the earlier run finished after this one was queued.
+      - name: Already ran today?
+        id: fresh
+        if: github.event_name == 'schedule'
+        run: |
+          git fetch -q origin main
+          made=$(git show origin/main:site/data/digest.json | python3 -c "import json,sys; print(json.load(sys.stdin)['generated_at'])")
+          day=$(TZ=America/Toronto date -d "$made" +%F)
+          if [ "$day" = "$(TZ=America/Toronto date +%F)" ]; then
+            echo "Today's digest is already on main ($made); skipping."
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+          fi
+      - uses: actions/setup-python@v6
+        if: env.DEPLOY_ONLY != 'true' && steps.fresh.outputs.skip != 'true'
         with:
           python-version: "3.12"
       - run: pip install -r requirements.txt
-        if: env.DEPLOY_ONLY != 'true'
+        if: env.DEPLOY_ONLY != 'true' && steps.fresh.outputs.skip != 'true'
       # API responses are a cache, not a dataset: keep them out of git.
-      - uses: actions/cache@v4
-        if: env.DEPLOY_ONLY != 'true'
+      - uses: actions/cache@v5
+        if: env.DEPLOY_ONLY != 'true' && steps.fresh.outputs.skip != 'true'
         with:
           path: data/cache
           key: api-cache-${{ github.run_id }}
           restore-keys: api-cache-
       - name: Run pipeline
-        if: env.DEPLOY_ONLY != 'true'
+        if: env.DEPLOY_ONLY != 'true' && steps.fresh.outputs.skip != 'true'
         env:
           LASTFM_API_KEY: ${{ secrets.LASTFM_API_KEY }}
           TICKETMASTER_API_KEY: ${{ secrets.TICKETMASTER_API_KEY }}
           SETLISTFM_API_KEY: ${{ secrets.SETLISTFM_API_KEY }}
-          BANDSINTOWN_APP_ID: ${{ secrets.BANDSINTOWN_APP_ID }}
           # Repository variables; unset means the defaults in nbt/config.py.
           LASTFM_USER: ${{ vars.LASTFM_USER }}
           SETLISTFM_USER: ${{ vars.SETLISTFM_USER }}
@@ -59,7 +78,7 @@ jobs:
       # Rebase onto whatever landed on main during the run, so the push isn't
       # rejected and the deploy below carries the latest site files.
       - name: Commit snapshots and digest
-        if: always() && env.DEPLOY_ONLY != 'true'
+        if: always() && env.DEPLOY_ONLY != 'true' && steps.fresh.outputs.skip != 'true'
         run: |
           git config user.name "nbt-bot"
           git config user.email "nbt-bot@users.noreply.github.com"
@@ -68,11 +87,13 @@ jobs:
           git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
           git push origin "HEAD:${GITHUB_REF_NAME}"
       - uses: actions/upload-pages-artifact@v3
+        if: steps.fresh.outputs.skip != 'true'
         with:
           path: site
 
   deploy:
     needs: run
+    if: needs.run.outputs.skip != 'true'
     runs-on: ubuntu-latest
     environment:
       name: github-pages

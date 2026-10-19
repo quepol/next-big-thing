@@ -17,6 +17,24 @@ NOT_FOUND = 6
 RATE_LIMITED = 29
 
 
+# Typographic quotes ("Arm’s Length") make Last.fm land on a near-empty page, so an
+# established band looks tiny. Look names up with straight quotes.
+CURLY = str.maketrans({"’": "'", "‘": "'", "“": '"', "”": '"'})
+QUOTES = set("'\"’‘“”")
+
+
+def lastfm_name(name: str) -> str:
+    return name.translate(CURLY)
+
+
+def cache_key(name: str) -> str:
+    """normalize_name() drops quotes, so "Arm’s Length" and "Arm's Length" share a key, and
+    answers fetched before the quote fix are cached under it. Names with any quote get
+    their own key (q:…), which refetches just those once; every other entry stays warm."""
+    key = normalize_name(name)
+    return f"q:{key}" if QUOTES & set(name) else key
+
+
 class LastFMError(RuntimeError):
     pass
 
@@ -104,11 +122,11 @@ class LastFM:
 
     def artist_info(self, name: str) -> dict | None:
         """{"name", "listeners", "playcount", "tags"} or None if unknown to Last.fm."""
-        key = normalize_name(name)
+        key = cache_key(name)
         cached = self.info_cache.get(key)
         if cached is not None:
             return cached or None
-        body = self.call("artist.getinfo", artist=name, autocorrect=1)
+        body = self.call("artist.getinfo", artist=lastfm_name(name), autocorrect=1)
         info = {}
         if body and "artist" in body:
             a = body["artist"]
@@ -127,11 +145,11 @@ class LastFM:
         return info or None
 
     def similar(self, name: str) -> list[tuple[str, float]]:
-        key = normalize_name(name)
+        key = cache_key(name)
         cached = self.similar_cache.get(key)
         if cached is not None:
             return [tuple(x) for x in cached]
-        body = self.call("artist.getsimilar", artist=name, autocorrect=1, limit=CONFIG.similar_limit)
+        body = self.call("artist.getsimilar", artist=lastfm_name(name), autocorrect=1, limit=CONFIG.similar_limit)
         items = body.get("similarartists", {}).get("artist", []) if body else []
         if isinstance(items, dict):
             items = [items]
@@ -140,11 +158,11 @@ class LastFM:
         return result
 
     def top_tags(self, name: str) -> dict[str, int]:
-        key = normalize_name(name)
+        key = cache_key(name)
         cached = self.tags_cache.get(key)
         if cached is not None:
             return cached
-        body = self.call("artist.gettoptags", artist=name, autocorrect=1)
+        body = self.call("artist.gettoptags", artist=lastfm_name(name), autocorrect=1)
         items = body.get("toptags", {}).get("tag", []) if body else []
         if isinstance(items, dict):
             items = [items]

@@ -27,7 +27,6 @@ class Config:
     # Where "a day" starts and ends when counting distinct days played.
     timezone: str = "America/Toronto"
     lastfm_api_key: str = os.environ.get("LASTFM_API_KEY", "")
-    bandsintown_app_id: str = os.environ.get("BANDSINTOWN_APP_ID", "")
     ticketmaster_api_key: str = os.environ.get("TICKETMASTER_API_KEY", "")
     setlistfm_api_key: str = os.environ.get("SETLISTFM_API_KEY", "")
 

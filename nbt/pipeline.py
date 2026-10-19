@@ -12,15 +12,12 @@ from .config import CONFIG, SITE_DIR
 from .lastfm import LastFM
 from .models import Event, haversine_km, normalize_name
 from .scoring import calendar, is_upcoming, score_events
-from .sources.bandsintown import Bandsintown
 from .sources.setlistfm import SetlistFM
 from .sources.ticketmaster import Ticketmaster
 from .store import write_json
 from .taste import Taste
 
 DIGEST_PATH = SITE_DIR / "data" / "digest.json"
-# Artist-first lookups for unknown artists the taste graph points at most strongly.
-NEIGHBOUR_LOOKUPS = 500
 
 
 def assign_region(ev: Event) -> str | None:
@@ -32,32 +29,20 @@ def assign_region(ev: Event) -> str | None:
     return None
 
 
-def gather_events(bit: Bandsintown, tm: Ticketmaster, history: dict, taste: Taste, today: date, log=print) -> list[Event]:
-    events: dict[str, Event] = {}
+def gather_events(tm: Ticketmaster, today: date, log=print) -> list[Event]:
+    """Every music event near each region, from Ticketmaster (TicketWeb included).
 
+    Out-of-town regions are fetched too; scoring keeps only the bands you love there.
+    (They used to arrive through Bandsintown artist lookups, which have been dead
+    since its app ID started getting 401s.)
+    """
+    events: dict[str, Event] = {}
     for region in CONFIG.regions:
-        if region.tiers != "all":
-            continue
         try:
             for ev in tm.city_events(region):
-                events[ev.id] = ev
+                events.setdefault(ev.id, ev)
         except Exception as e:
             log(f"city feed for {region.name}: {e}")
-
-    if not bit.app_id:
-        log("BANDSINTOWN_APP_ID not set: skipping artist-first lookups")
-        lookups = []
-    else:
-        lookups = [row["name"] for row in hist.known(history).values()]
-        lookups += taste.top_neighbours(NEIGHBOUR_LOOKUPS)
-    log(f"artist-first lookups: {len(lookups)}")
-    for i, name in enumerate(lookups):
-        for ev in bit.artist_events(name):
-            events.setdefault(ev.id, ev)
-        if i and i % 250 == 0:
-            log(f"  {i}/{len(lookups)}")
-            bit.save()
-    bit.save()
     tm.save()
 
     kept = []
@@ -74,7 +59,6 @@ def run(log=print) -> dict:
         raise SystemExit("LASTFM_USER is not set")
     today = date.today()
     lastfm = LastFM()
-    bit = Bandsintown()
 
     history = hist.sync(lastfm, log=log)
     excluded, auto = exclusions.effective(history, lastfm, CONFIG.known_min_days)
@@ -107,7 +91,7 @@ def run(log=print) -> dict:
     lastfm.save()
 
     tm = Ticketmaster()
-    events = gather_events(bit, tm, history, taste, today, log=log)
+    events = gather_events(tm, today, log=log)
     snapshots.save_events(today, [e.to_dict() for e in events])
 
     def info(name: str):
@@ -140,6 +124,7 @@ def run(log=print) -> dict:
     snapshots.save_listeners(today, listeners)
     led.save(led.update(ledger, picks, today, listeners))
 
+    home_regions = {r.name for r in CONFIG.regions if r.tiers == "all"}
     digest = {
         "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "user": CONFIG.lastfm_user,
@@ -153,7 +138,8 @@ def run(log=print) -> dict:
             for tier in ("next_big_thing", "would_like", "know")
         },
         # Every upcoming show with per-act scores, for the site's room view.
-        "calendar": calendar(events, history, taste.affinity, info,
+        # Toronto only: out-of-town rooms aren't part of the room view.
+        "calendar": calendar([e for e in events if e.region in home_regions], history, taste.affinity, info,
                              excluded=excluded, is_noise=taste.is_noise),
         "ledger": sorted(ledger.values(), key=lambda r: r["first_flagged"], reverse=True),
         "attended_ledger": slm.attended_ledger(current_listeners=listeners) if CONFIG.setlistfm_api_key else [],
