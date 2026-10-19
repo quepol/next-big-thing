@@ -24,22 +24,27 @@ _Last updated: 2026-10-19 (cloud session on the phone)._
   - `.env.example` exists
 
   Picks are unchanged.
+- **Housekeeping (#6, closed):**
+  - Bandsintown removed. Out-of-town alerts had never worked: Ticketmaster is now asked for Hamilton and Buffalo too.
+  - Last.fm lookups use straight quotes.
+  - Actions bumped to Node 24 versions.
+  - A backup cron runs at ~11:47am Toronto.
+  - Tests run on `main` for Python changes only, and each research study runs only when its own script changes.
 - **Venue research re-ran on its own** (2026-10-19), so the SF overlap data is a day fresher.
 
 Earlier (2026-10-18): the Explore page (Rooms and The Climb tabs, search, band sheet), `digest.calendar` in the pipeline, billing from co-bills, and the docs split into `CLAUDE.md`, `docs/` and Issues.
 
 ## Check next session
 
-1. **Today's daily run hadn't landed by 11:30 UTC.** GitHub's scheduler has started the 10:17 UTC cron about 3.5 hours late on previous days. Confirm a "Daily snapshot 2026-10-19" commit exists and that `digest.calendar` is populated. Then open `explore.html#rooms` (room scores real, not empty) and check the "Next: …" dates on The Climb. If the run never came, ask the user to click Run workflow on Daily digest (dispatching it from a cloud session gets a 403).
-2. **The Picks header's "Updated" weekday** should read the current day once the run lands.
-3. **Research data is a snapshot.** It goes stale until a weekly refresh exists (#4, #6).
+1. **The first Hamilton and Buffalo shows** (2026-10-20 run). The events snapshot should have regions other than Toronto, and "Bands you know" may show an out-of-town pick, but only for loved bands. If the snapshot is still 100% Toronto, check the "city feed for …" lines in the run log.
+2. **The backup cron** (~11:47am Toronto) should log "Today's digest is already on main; skipping." when the 6am run has landed.
+3. **Research data is a snapshot.** It goes stale until a weekly refresh exists (#4).
 
 ## Active issues
 
 - **#3:** scoring and UX ideas, including the "revisit after a few weeks" list (out-of-town cutoff, NBT ceiling, strength thresholds, velocity).
 - **#4:** venue overlap and the ladder. The ladder study is done. Open: flagging side projects, momentum in the main picks (needs the user's OK), a weekly refresh, small-room gaps.
 - **#5:** follow bands and rooms, a watchlist and alerts. Follows and votes are per browser, and re-adding the home-screen app wipes them, which argues for `data/follows.txt` sooner.
-- **#6:** pipeline housekeeping.
 - **#7:** bigger feature ideas.
 
 ## In flight / not started
