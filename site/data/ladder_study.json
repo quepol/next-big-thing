@@ -1,0 +1,1169 @@
+{
+ "generated_at": "2026-10-19T11:02:25+00:00",
+ "bands": [
+  {
+   "artist": "The National",
+   "mbid": "664c3e0e-42d8-48c1-b209-1efca19c0325",
+   "shows": [
+    {
+     "date": "2003-10-25",
+     "city": "Bay Area",
+     "venue": "Last Day Saloon",
+     "cap": null
+    },
+    {
+     "date": "2005-06-10",
+     "city": "Bay Area",
+     "venue": "Café du Nord",
+     "cap": 300
+    },
+    {
+     "date": "2005-06-13",
+     "city": "Bay Area",
+     "venue": "Mezzanine",
+     "cap": null
+    },
+    {
+     "date": "2005-09-18",
+     "city": "Toronto",
+     "venue": "Horseshoe Tavern",
+     "cap": 400
+    },
+    {
+     "date": "2005-10-05",
+     "city": "Bay Area",
+     "venue": "Mezzanine",
+     "cap": null
+    },
+    {
+     "date": "2006-03-22",
+     "city": "Toronto",
+     "venue": "Horseshoe Tavern",
+     "cap": 400
+    },
+    {
+     "date": "2006-03-30",
+     "city": "Bay Area",
+     "venue": "The Independent",
+     "cap": 500
+    },
+    {
+     "date": "2006-10-12",
+     "city": "Bay Area",
+     "venue": "Great American Music Hall",
+     "cap": 600
+    },
+    {
+     "date": "2007-06-05",
+     "city": "Toronto",
+     "venue": "The Opera House",
+     "cap": 900
+    },
+    {
+     "date": "2007-06-27",
+     "city": "Bay Area",
+     "venue": "Bimbo's 365 Club",
+     "cap": 685
+    },
+    {
+     "date": "2007-09-29",
+     "city": "Bay Area",
+     "venue": "The Grand Ballroom at the Regency Center",
+     "cap": null
+    },
+    {
+     "date": "2007-10-08",
+     "city": "Toronto",
+     "venue": "The Phoenix Concert Theatre",
+     "cap": 1000
+    },
+    {
+     "date": "2008-05-31",
+     "city": "Bay Area",
+     "venue": "William Randolph Hearst Greek Theatre",
+     "cap": 8500
+    },
+    {
+     "date": "2008-06-01",
+     "city": "Bay Area",
+     "venue": "William Randolph Hearst Greek Theatre",
+     "cap": 8500
+    },
+    {
+     "date": "2008-06-08",
+     "city": "Toronto",
+     "venue": "Molson Amphitheatre",
+     "cap": 16000
+    },
+    {
+     "date": "2008-12-04",
+     "city": "Toronto",
+     "venue": "Air Canada Centre",
+     "cap": 19800
+    },
+    {
+     "date": "2009-05-21",
+     "city": "Toronto",
+     "venue": "Kool Haus",
+     "cap": 2500
+    },
+    {
+     "date": "2009-08-28",
+     "city": "Bay Area",
+     "venue": "Golden Gate Park",
+     "cap": "Festival"
+    },
+    {
+     "date": "2010-05-26",
+     "city": "Bay Area",
+     "venue": "Fox Theater",
+     "cap": 2800
+    },
+    {
+     "date": "2010-05-27",
+     "city": "Bay Area",
+     "venue": "Fox Theater",
+     "cap": 2800
+    },
+    {
+     "date": "2010-06-08",
+     "city": "Toronto",
+     "venue": "Massey Hall",
+     "cap": 2765
+    },
+    {
+     "date": "2010-06-09",
+     "city": "Toronto",
+     "venue": "Massey Hall",
+     "cap": 2765
+    },
+    {
+     "date": "2010-10-17",
+     "city": "Bay Area",
+     "venue": "Treasure Island",
+     "cap": "Festival"
+    },
+    {
+     "date": "2011-12-03",
+     "city": "Bay Area",
+     "venue": "Bill Graham Civic Auditorium",
+     "cap": 8500
+    },
+    {
+     "date": "2011-12-08",
+     "city": "Toronto",
+     "venue": "Air Canada Centre",
+     "cap": 19800
+    },
+    {
+     "date": "2013-06-14",
+     "city": "Toronto",
+     "venue": "Yonge-Dundas Square",
+     "cap": null
+    },
+    {
+     "date": "2013-08-09",
+     "city": "Bay Area",
+     "venue": "Golden Gate Park",
+     "cap": "Festival"
+    },
+    {
+     "date": "2014-04-09",
+     "city": "Toronto",
+     "venue": "Massey Hall",
+     "cap": 2765
+    },
+    {
+     "date": "2014-04-10",
+     "city": "Toronto",
+     "venue": "Massey Hall",
+     "cap": 2765
+    },
+    {
+     "date": "2014-04-11",
+     "city": "Toronto",
+     "venue": "Massey Hall",
+     "cap": 2765
+    },
+    {
+     "date": "2014-04-26",
+     "city": "Bay Area",
+     "venue": "William Randolph Hearst Greek Theatre",
+     "cap": 8500
+    },
+    {
+     "date": "2014-04-27",
+     "city": "Bay Area",
+     "venue": "William Randolph Hearst Greek Theatre",
+     "cap": 8500
+    },
+    {
+     "date": "2014-09-07",
+     "city": "Toronto",
+     "venue": "Downsview Park",
+     "cap": "Festival"
+    },
+    {
+     "date": "2015-10-18",
+     "city": "Bay Area",
+     "venue": "Treasure Island",
+     "cap": "Festival"
+    },
+    {
+     "date": "2016-06-04",
+     "city": "Toronto",
+     "venue": "Historic Fort York",
+     "cap": "Festival"
+    },
+    {
+     "date": "2016-07-29",
+     "city": "Bay Area",
+     "venue": "William Randolph Hearst Greek Theatre",
+     "cap": 8500
+    },
+    {
+     "date": "2017-10-14",
+     "city": "Bay Area",
+     "venue": "William Randolph Hearst Greek Theatre",
+     "cap": 8500
+    },
+    {
+     "date": "2017-12-09",
+     "city": "Toronto",
+     "venue": "Sony Centre for the Performing Arts",
+     "cap": null
+    },
+    {
+     "date": "2018-08-04",
+     "city": "Toronto",
+     "venue": "Historic Fort York",
+     "cap": "Festival"
+    },
+    {
+     "date": "2018-09-24",
+     "city": "Bay Area",
+     "venue": "William Randolph Hearst Greek Theatre",
+     "cap": 8500
+    },
+    {
+     "date": "2018-09-25",
+     "city": "Bay Area",
+     "venue": "William Randolph Hearst Greek Theatre",
+     "cap": 8500
+    },
+    {
+     "date": "2019-04-24",
+     "city": "Toronto",
+     "venue": "Roy Thomson Hall",
+     "cap": null
+    },
+    {
+     "date": "2023-08-20",
+     "city": "Toronto",
+     "venue": "Budweiser Stage",
+     "cap": 16000
+    },
+    {
+     "date": "2023-11-10",
+     "city": "Bay Area",
+     "venue": "Bill Graham Civic Auditorium",
+     "cap": 8500
+    },
+    {
+     "date": "2024-09-20",
+     "city": "Toronto",
+     "venue": "Budweiser Stage",
+     "cap": 16000
+    },
+    {
+     "date": "2024-10-06",
+     "city": "Bay Area",
+     "venue": "William Randolph Hearst Greek Theatre",
+     "cap": 8500
+    }
+   ]
+  },
+  {
+   "artist": "Arcade Fire",
+   "mbid": "52074ba6-e495-4ef3-9bb4-0703888a9f68",
+   "shows": [
+    {
+     "date": "2003-01-25",
+     "city": "Toronto",
+     "venue": "El Mocambo",
+     "cap": 300
+    },
+    {
+     "date": "2003-07-03",
+     "city": "Toronto",
+     "venue": "Rivoli",
+     "cap": 200
+    },
+    {
+     "date": "2003-09-13",
+     "city": "Toronto",
+     "venue": "Rivoli",
+     "cap": 200
+    },
+    {
+     "date": "2003-10-11",
+     "city": "Toronto",
+     "venue": "Horseshoe Tavern",
+     "cap": 400
+    },
+    {
+     "date": "2004-01-09",
+     "city": "Toronto",
+     "venue": "Sneaky Dee's",
+     "cap": 300
+    },
+    {
+     "date": "2004-03-03",
+     "city": "Toronto",
+     "venue": "The Phoenix Concert Theatre",
+     "cap": 1000
+    },
+    {
+     "date": "2004-06-23",
+     "city": "Toronto",
+     "venue": "Lee's Palace",
+     "cap": 700
+    },
+    {
+     "date": "2004-08-07",
+     "city": "Toronto",
+     "venue": "Olympic Island",
+     "cap": null
+    },
+    {
+     "date": "2004-10-01",
+     "city": "Toronto",
+     "venue": "Lee's Palace",
+     "cap": 700
+    },
+    {
+     "date": "2004-10-02",
+     "city": "Toronto",
+     "venue": "CBC Radio Studios",
+     "cap": null
+    },
+    {
+     "date": "2004-12-08",
+     "city": "Bay Area",
+     "venue": "Bottom of the Hill",
+     "cap": 275
+    },
+    {
+     "date": "2005-01-13",
+     "city": "Bay Area",
+     "venue": "Great American Music Hall",
+     "cap": 600
+    },
+    {
+     "date": "2005-01-14",
+     "city": "Bay Area",
+     "venue": "Great American Music Hall",
+     "cap": 600
+    },
+    {
+     "date": "2005-04-26",
+     "city": "Toronto",
+     "venue": "Danforth Music Hall",
+     "cap": 1427
+    },
+    {
+     "date": "2005-04-27",
+     "city": "Toronto",
+     "venue": "Danforth Music Hall",
+     "cap": 1427
+    },
+    {
+     "date": "2005-04-28",
+     "city": "Toronto",
+     "venue": "Danforth Music Hall",
+     "cap": 1427
+    },
+    {
+     "date": "2005-06-19",
+     "city": "Toronto",
+     "venue": "299 Queen Street West",
+     "cap": null
+    },
+    {
+     "date": "2005-09-18",
+     "city": "Bay Area",
+     "venue": "The Warfield",
+     "cap": 2300
+    },
+    {
+     "date": "2007-05-15",
+     "city": "Toronto",
+     "venue": "Massey Hall",
+     "cap": 2765
+    },
+    {
+     "date": "2007-05-16",
+     "city": "Toronto",
+     "venue": "Massey Hall",
+     "cap": 2765
+    },
+    {
+     "date": "2007-06-01",
+     "city": "Bay Area",
+     "venue": "William Randolph Hearst Greek Theatre",
+     "cap": 8500
+    },
+    {
+     "date": "2007-06-02",
+     "city": "Bay Area",
+     "venue": "William Randolph Hearst Greek Theatre",
+     "cap": 8500
+    },
+    {
+     "date": "2010-06-11",
+     "city": "Toronto",
+     "venue": "Danforth Music Hall",
+     "cap": 1427
+    },
+    {
+     "date": "2010-06-12",
+     "city": "Toronto",
+     "venue": "Danforth Music Hall",
+     "cap": 1427
+    },
+    {
+     "date": "2010-08-14",
+     "city": "Toronto",
+     "venue": "Olympic Island",
+     "cap": null
+    },
+    {
+     "date": "2010-10-02",
+     "city": "Bay Area",
+     "venue": "William Randolph Hearst Greek Theatre",
+     "cap": 8500
+    },
+    {
+     "date": "2010-10-03",
+     "city": "Bay Area",
+     "venue": "William Randolph Hearst Greek Theatre",
+     "cap": 8500
+    },
+    {
+     "date": "2011-03-27",
+     "city": "Toronto",
+     "venue": "Air Canada Centre",
+     "cap": 19800
+    },
+    {
+     "date": "2011-08-14",
+     "city": "Bay Area",
+     "venue": "Golden Gate Park",
+     "cap": "Festival"
+    },
+    {
+     "date": "2012-09-09",
+     "city": "Toronto",
+     "venue": "University of Toronto President’s Estate",
+     "cap": null
+    },
+    {
+     "date": "2013-12-07",
+     "city": "Bay Area",
+     "venue": "Oracle Arena",
+     "cap": 19000
+    },
+    {
+     "date": "2014-03-13",
+     "city": "Toronto",
+     "venue": "Air Canada Centre",
+     "cap": 19800
+    },
+    {
+     "date": "2014-03-14",
+     "city": "Toronto",
+     "venue": "Adelaide Hall",
+     "cap": 500
+    },
+    {
+     "date": "2014-08-29",
+     "city": "Toronto",
+     "venue": "Molson Amphitheatre",
+     "cap": 16000
+    },
+    {
+     "date": "2017-10-21",
+     "city": "Bay Area",
+     "venue": "Oracle Arena",
+     "cap": 19000
+    },
+    {
+     "date": "2017-11-03",
+     "city": "Toronto",
+     "venue": "Air Canada Centre",
+     "cap": 19800
+    },
+    {
+     "date": "2017-11-04",
+     "city": "Toronto",
+     "venue": "Air Canada Centre",
+     "cap": 19800
+    },
+    {
+     "date": "2018-07-22",
+     "city": "Toronto",
+     "venue": "Budweiser Stage",
+     "cap": 16000
+    },
+    {
+     "date": "2018-09-21",
+     "city": "Bay Area",
+     "venue": "William Randolph Hearst Greek Theatre",
+     "cap": 8500
+    },
+    {
+     "date": "2018-09-22",
+     "city": "Bay Area",
+     "venue": "William Randolph Hearst Greek Theatre",
+     "cap": 8500
+    },
+    {
+     "date": "2022-05-15",
+     "city": "Toronto",
+     "venue": "Budweiser Stage",
+     "cap": 16000
+    },
+    {
+     "date": "2022-11-19",
+     "city": "Bay Area",
+     "venue": "Bill Graham Civic Auditorium",
+     "cap": 8500
+    },
+    {
+     "date": "2022-11-20",
+     "city": "Bay Area",
+     "venue": "Bill Graham Civic Auditorium",
+     "cap": 8500
+    },
+    {
+     "date": "2022-12-01",
+     "city": "Toronto",
+     "venue": "Scotiabank Arena",
+     "cap": 19800
+    },
+    {
+     "date": "2022-12-02",
+     "city": "Toronto",
+     "venue": "Scotiabank Arena",
+     "cap": 19800
+    },
+    {
+     "date": "2025-05-01",
+     "city": "Toronto",
+     "venue": "Massey Hall",
+     "cap": 2765
+    }
+   ]
+  },
+  {
+   "artist": "The Decemberists",
+   "mbid": "97b1142f-c71e-4971-8736-4a8ceaf6b4c3",
+   "shows": [
+    {
+     "date": "2002-07-29",
+     "city": "Bay Area",
+     "venue": "Make Out Room",
+     "cap": null
+    },
+    {
+     "date": "2003-04-19",
+     "city": "Bay Area",
+     "venue": "Great American Music Hall",
+     "cap": 600
+    },
+    {
+     "date": "2003-06-24",
+     "city": "Bay Area",
+     "venue": "Café du Nord",
+     "cap": 300
+    },
+    {
+     "date": "2003-10-07",
+     "city": "Bay Area",
+     "venue": "Bottom of the Hill",
+     "cap": 275
+    },
+    {
+     "date": "2004-01-15",
+     "city": "Bay Area",
+     "venue": "Bottom of the Hill",
+     "cap": 275
+    },
+    {
+     "date": "2004-02-28",
+     "city": "Bay Area",
+     "venue": "Great American Music Hall",
+     "cap": 600
+    },
+    {
+     "date": "2004-03-29",
+     "city": "Toronto",
+     "venue": "Horseshoe Tavern",
+     "cap": 400
+    },
+    {
+     "date": "2004-06-06",
+     "city": "Toronto",
+     "venue": "Lee's Palace",
+     "cap": 700
+    },
+    {
+     "date": "2004-06-27",
+     "city": "Bay Area",
+     "venue": "Great American Music Hall",
+     "cap": 600
+    },
+    {
+     "date": "2004-06-28",
+     "city": "Bay Area",
+     "venue": "Great American Music Hall",
+     "cap": 600
+    },
+    {
+     "date": "2005-03-22",
+     "city": "Bay Area",
+     "venue": "Bimbo's 365 Club",
+     "cap": 685
+    },
+    {
+     "date": "2005-03-23",
+     "city": "Bay Area",
+     "venue": "Bimbo's 365 Club",
+     "cap": 685
+    },
+    {
+     "date": "2005-05-21",
+     "city": "Toronto",
+     "venue": "The Phoenix Concert Theatre",
+     "cap": 1000
+    },
+    {
+     "date": "2005-09-11",
+     "city": "Bay Area",
+     "venue": "The Fillmore",
+     "cap": 1250
+    },
+    {
+     "date": "2005-09-12",
+     "city": "Bay Area",
+     "venue": "The Fillmore",
+     "cap": 1250
+    },
+    {
+     "date": "2005-10-13",
+     "city": "Toronto",
+     "venue": "The Phoenix Concert Theatre",
+     "cap": 1000
+    },
+    {
+     "date": "2006-10-19",
+     "city": "Bay Area",
+     "venue": "The Warfield",
+     "cap": 2300
+    },
+    {
+     "date": "2006-10-20",
+     "city": "Bay Area",
+     "venue": "The Warfield",
+     "cap": 2300
+    },
+    {
+     "date": "2006-11-06",
+     "city": "Toronto",
+     "venue": "Kool Haus",
+     "cap": 2500
+    },
+    {
+     "date": "2007-04-25",
+     "city": "Bay Area",
+     "venue": "The Warfield",
+     "cap": 2300
+    },
+    {
+     "date": "2007-04-26",
+     "city": "Bay Area",
+     "venue": "The Warfield",
+     "cap": 2300
+    },
+    {
+     "date": "2008-11-25",
+     "city": "Bay Area",
+     "venue": "The Warfield",
+     "cap": 2300
+    },
+    {
+     "date": "2009-05-20",
+     "city": "Bay Area",
+     "venue": "Fox Theater",
+     "cap": 2800
+    },
+    {
+     "date": "2009-08-03",
+     "city": "Toronto",
+     "venue": "Kool Haus",
+     "cap": 2500
+    },
+    {
+     "date": "2009-10-18",
+     "city": "Bay Area",
+     "venue": "Treasure Island",
+     "cap": "Festival"
+    },
+    {
+     "date": "2011-02-01",
+     "city": "Toronto",
+     "venue": "Sound Academy",
+     "cap": 3000
+    },
+    {
+     "date": "2011-02-14",
+     "city": "Bay Area",
+     "venue": "Fox Theater",
+     "cap": 2800
+    },
+    {
+     "date": "2011-08-14",
+     "city": "Bay Area",
+     "venue": "Golden Gate Park",
+     "cap": "Festival"
+    },
+    {
+     "date": "2015-03-30",
+     "city": "Toronto",
+     "venue": "Massey Hall",
+     "cap": 2765
+    },
+    {
+     "date": "2015-05-01",
+     "city": "Bay Area",
+     "venue": "William Randolph Hearst Greek Theatre",
+     "cap": 8500
+    },
+    {
+     "date": "2015-12-31",
+     "city": "Bay Area",
+     "venue": "Masonic Auditorium",
+     "cap": null
+    },
+    {
+     "date": "2017-08-17",
+     "city": "Bay Area",
+     "venue": "Fox Theater",
+     "cap": 2800
+    },
+    {
+     "date": "2018-05-30",
+     "city": "Toronto",
+     "venue": "Sony Centre for the Performing Arts",
+     "cap": null
+    },
+    {
+     "date": "2018-07-27",
+     "city": "Bay Area",
+     "venue": "Fox Theater",
+     "cap": 2800
+    },
+    {
+     "date": "2022-08-19",
+     "city": "Toronto",
+     "venue": "Massey Hall",
+     "cap": 2765
+    },
+    {
+     "date": "2024-05-06",
+     "city": "Toronto",
+     "venue": "History",
+     "cap": 2500
+    },
+    {
+     "date": "2024-07-13",
+     "city": "Bay Area",
+     "venue": "Fox Theater",
+     "cap": 2800
+    },
+    {
+     "date": "2025-10-10",
+     "city": "Bay Area",
+     "venue": "Louise M. Davies Symphony Hall",
+     "cap": 2743
+    }
+   ]
+  },
+  {
+   "artist": "Bon Iver",
+   "mbid": "437a0e49-c6ae-42f6-a6c1-84f25ed366bc",
+   "shows": [
+    {
+     "date": "2007-11-28",
+     "city": "Toronto",
+     "venue": "Horseshoe Tavern",
+     "cap": 400
+    },
+    {
+     "date": "2008-03-23",
+     "city": "Bay Area",
+     "venue": "The Independent",
+     "cap": 500
+    },
+    {
+     "date": "2008-07-22",
+     "city": "Toronto",
+     "venue": "Lee's Palace",
+     "cap": 700
+    },
+    {
+     "date": "2008-08-24",
+     "city": "Bay Area",
+     "venue": "Golden Gate Park",
+     "cap": "Festival"
+    },
+    {
+     "date": "2009-09-22",
+     "city": "Bay Area",
+     "venue": "The Fillmore",
+     "cap": 1250
+    },
+    {
+     "date": "2009-09-24",
+     "city": "Bay Area",
+     "venue": "Fox Theater",
+     "cap": 2800
+    },
+    {
+     "date": "2011-08-08",
+     "city": "Toronto",
+     "venue": "Sound Academy",
+     "cap": 3000
+    },
+    {
+     "date": "2011-09-22",
+     "city": "Bay Area",
+     "venue": "William Randolph Hearst Greek Theatre",
+     "cap": 8500
+    },
+    {
+     "date": "2011-12-06",
+     "city": "Toronto",
+     "venue": "Massey Hall",
+     "cap": 2765
+    },
+    {
+     "date": "2011-12-07",
+     "city": "Toronto",
+     "venue": "Massey Hall",
+     "cap": 2765
+    },
+    {
+     "date": "2012-04-19",
+     "city": "Bay Area",
+     "venue": "Bill Graham Civic Auditorium",
+     "cap": 8500
+    },
+    {
+     "date": "2016-10-18",
+     "city": "Bay Area",
+     "venue": "Fox Theater",
+     "cap": 2800
+    },
+    {
+     "date": "2016-10-19",
+     "city": "Bay Area",
+     "venue": "Fox Theater",
+     "cap": 2800
+    },
+    {
+     "date": "2016-10-20",
+     "city": "Bay Area",
+     "venue": "Fox Theater",
+     "cap": 2800
+    },
+    {
+     "date": "2018-08-11",
+     "city": "Bay Area",
+     "venue": "Golden Gate Park",
+     "cap": "Festival"
+    },
+    {
+     "date": "2019-09-12",
+     "city": "Bay Area",
+     "venue": "Chase Center",
+     "cap": 18000
+    },
+    {
+     "date": "2019-10-06",
+     "city": "Toronto",
+     "venue": "Scotiabank Arena",
+     "cap": 19800
+    }
+   ]
+  },
+  {
+   "artist": "Guster",
+   "mbid": "6cbe1e63-5895-4168-ac7e-f0d2836ba0c1",
+   "shows": [
+    {
+     "date": "1998-03-28",
+     "city": "Bay Area",
+     "venue": "Great American Music Hall",
+     "cap": 600
+    },
+    {
+     "date": "1998-10-28",
+     "city": "Bay Area",
+     "venue": "The Fillmore",
+     "cap": 1250
+    },
+    {
+     "date": "1999-07-10",
+     "city": "Toronto",
+     "venue": "Historic Fort York",
+     "cap": "Festival"
+    },
+    {
+     "date": "1999-07-11",
+     "city": "Toronto",
+     "venue": "Historic Fort York",
+     "cap": "Festival"
+    },
+    {
+     "date": "1999-07-13",
+     "city": "Toronto",
+     "venue": "Horseshoe Tavern",
+     "cap": 400
+    },
+    {
+     "date": "1999-10-27",
+     "city": "Toronto",
+     "venue": "Horseshoe Tavern",
+     "cap": 400
+    },
+    {
+     "date": "1999-11-12",
+     "city": "Bay Area",
+     "venue": "Great American Music Hall",
+     "cap": 600
+    },
+    {
+     "date": "2000-03-02",
+     "city": "Bay Area",
+     "venue": "The Fillmore",
+     "cap": 1250
+    },
+    {
+     "date": "2000-04-08",
+     "city": "Toronto",
+     "venue": "Horseshoe Tavern",
+     "cap": 400
+    },
+    {
+     "date": "2001-03-30",
+     "city": "Bay Area",
+     "venue": "The Fillmore",
+     "cap": 1250
+    },
+    {
+     "date": "2002-08-16",
+     "city": "Bay Area",
+     "venue": "William Randolph Hearst Greek Theatre",
+     "cap": 8500
+    },
+    {
+     "date": "2003-08-31",
+     "city": "Bay Area",
+     "venue": "Frank H. Ogawa Plaza",
+     "cap": null
+    },
+    {
+     "date": "2003-09-18",
+     "city": "Toronto",
+     "venue": "Kool Haus",
+     "cap": 2500
+    },
+    {
+     "date": "2003-09-19",
+     "city": "Toronto",
+     "venue": "Kool Haus",
+     "cap": 2500
+    },
+    {
+     "date": "2003-11-07",
+     "city": "Bay Area",
+     "venue": "The Warfield",
+     "cap": 2300
+    },
+    {
+     "date": "2003-11-29",
+     "city": "Toronto",
+     "venue": "Lee's Palace",
+     "cap": 700
+    },
+    {
+     "date": "2003-12-09",
+     "city": "Bay Area",
+     "venue": "Bimbo's 365 Club",
+     "cap": 685
+    },
+    {
+     "date": "2004-04-29",
+     "city": "Toronto",
+     "venue": "The Phoenix Concert Theatre",
+     "cap": 1000
+    },
+    {
+     "date": "2004-08-28",
+     "city": "Bay Area",
+     "venue": "William Randolph Hearst Greek Theatre",
+     "cap": 8500
+    },
+    {
+     "date": "2006-03-26",
+     "city": "Bay Area",
+     "venue": "The Fillmore",
+     "cap": 1250
+    },
+    {
+     "date": "2006-09-30",
+     "city": "Bay Area",
+     "venue": "Berkeley Community Theatre",
+     "cap": null
+    },
+    {
+     "date": "2007-02-26",
+     "city": "Toronto",
+     "venue": "The Phoenix Concert Theatre",
+     "cap": 1000
+    },
+    {
+     "date": "2007-05-12",
+     "city": "Bay Area",
+     "venue": "Pier 30/32",
+     "cap": null
+    },
+    {
+     "date": "2007-09-14",
+     "city": "Bay Area",
+     "venue": "The Warfield",
+     "cap": 2300
+    },
+    {
+     "date": "2011-01-21",
+     "city": "Bay Area",
+     "venue": "The Fillmore",
+     "cap": 1250
+    },
+    {
+     "date": "2011-03-31",
+     "city": "Toronto",
+     "venue": "The Phoenix Concert Theatre",
+     "cap": 1000
+    },
+    {
+     "date": "2011-05-14",
+     "city": "Bay Area",
+     "venue": "Great Meadow at Fort Mason",
+     "cap": null
+    },
+    {
+     "date": "2012-03-14",
+     "city": "Bay Area",
+     "venue": "Palace of Fine Arts Theatre",
+     "cap": null
+    },
+    {
+     "date": "2013-06-15",
+     "city": "Bay Area",
+     "venue": "William Randolph Hearst Greek Theatre",
+     "cap": 8500
+    },
+    {
+     "date": "2013-07-11",
+     "city": "Toronto",
+     "venue": "Molson Amphitheatre",
+     "cap": 16000
+    },
+    {
+     "date": "2015-04-01",
+     "city": "Bay Area",
+     "venue": "The Fillmore",
+     "cap": 1250
+    },
+    {
+     "date": "2015-11-19",
+     "city": "Toronto",
+     "venue": "Danforth Music Hall",
+     "cap": 1427
+    },
+    {
+     "date": "2016-02-12",
+     "city": "Bay Area",
+     "venue": "The Fillmore",
+     "cap": 1250
+    },
+    {
+     "date": "2016-02-13",
+     "city": "Bay Area",
+     "venue": "The Fillmore",
+     "cap": 1250
+    },
+    {
+     "date": "2019-01-22",
+     "city": "Toronto",
+     "venue": "The Mod Club",
+     "cap": 575
+    },
+    {
+     "date": "2019-01-30",
+     "city": "Bay Area",
+     "venue": "Bimbo's 365 Club",
+     "cap": 685
+    },
+    {
+     "date": "2019-01-31",
+     "city": "Bay Area",
+     "venue": "Bimbo's 365 Club",
+     "cap": 685
+    },
+    {
+     "date": "2019-02-01",
+     "city": "Bay Area",
+     "venue": "Bimbo's 365 Club",
+     "cap": 685
+    },
+    {
+     "date": "2020-02-29",
+     "city": "Bay Area",
+     "venue": "Castro Theatre",
+     "cap": null
+    },
+    {
+     "date": "2022-11-05",
+     "city": "Bay Area",
+     "venue": "The Fillmore",
+     "cap": 1250
+    },
+    {
+     "date": "2025-02-14",
+     "city": "Bay Area",
+     "venue": "Fox Theater",
+     "cap": 2800
+    },
+    {
+     "date": "2026-01-17",
+     "city": "Bay Area",
+     "venue": "Great American Music Hall",
+     "cap": 600
+    }
+   ]
+  }
+ ]
+}
