@@ -19,7 +19,7 @@ _Last updated: 2026-10-18 (cloud session on the phone)._
 ## Check next session
 
 1. **The first daily run with `calendar`** (6am Toronto, 2026-10-19). Open `explore.html#rooms` and check the room scores are real (not empty) and that "Next: …" dates show on The Climb.
-2. **The aughts ladder study.** A re-run was scheduled for 2026-10-19 11:00 UTC (it hit the setlist.fm daily limit on 10-18). If the "Ladder study" workflow still hasn't written `site/data/ladder_study.json`, dispatch it from `main`. Then check the "for pace" box on The Climb.
+2. **The aughts ladder study is done** (2026-10-19) and live on The Climb as the "for pace" box and the dashed lines. Benchmark: 2 to 4.5 years from a 300–600 room to 2,300+. Matt Berninger's climb is a false positive (The National's singer touring solo); flagging side projects belongs in #4.
 3. **Research data is a snapshot from 2026-10-18.** It goes stale until a weekly refresh exists (#4, #6).
 
 ## Active issues
