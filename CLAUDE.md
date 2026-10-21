@@ -50,7 +50,7 @@ Other product decisions:
 
 ## Taste rules (from the history checks; detail in `docs/history-checks.md`)
 
-- Seeds: known artists weighted by log(distinct days), with `data/loves.txt` loves first. setlist.fm-attended artists not already known are added as seeds at weight 0.4.
+- Seeds: known artists weighted by log of listening depth, √(distinct days × plays), times recency, with `data/loves.txt` loves first. Depth ranks an artist played album-deep (The Civil Wars, 24 days, 110 plays) above one song on shuffle (Gary Jules, 26 days, 26 plays). The top 50 by depth always seed, at their recency-reduced weight, so old favourites like Hunter Parrish aren't dropped. setlist.fm-attended artists not already known are added as seeds at weight 0.4.
 - Affinity comes from three sources: forward (the candidate is in a seed's similar-artist list), reverse (a known artist is in the candidate's list), and tags (cosine similarity to the user's tag profile, capped at 0.6, as the fallback for tiny artists).
 - "Heard once" artists (1–2 days) count as unknown for next big thing; the pick says "you played them on 1 day back in 2019".
 - **Kids' exclusion is automatic:** `exclusions.effective()` drops known artists with kids' or kid-franchise tags (ULTRAKILL, Deltarune, FNAF, Roblox, Vocaloid…). `data/exclude.txt` handles what tags miss; a `+` line keeps an artist. Orchestral game scores are the user's own (`+ Ludvig Forssell`, `+ Jamie Christopherson`). Generic game tags are flagged for review only.
@@ -76,7 +76,7 @@ Other product decisions:
   - `foot.js`: the shared footer on every page (Picks/Explore links, Refresh and auto-refresh, theme switch).
   - D3 7.9.0 is self-hosted in `site/vendor/`. Design detail is in `docs/design.md`.
 - `research/`: one-off setlist.fm studies, each run by its own workflow on pushes to the dev branch. See `docs/research.md`.
-- Tests: `python -m pytest -q`; 34 pass.
+- Tests: `python -m pytest -q`; 36 pass.
 
 ## Gotchas that have bitten us
 

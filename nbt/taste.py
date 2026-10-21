@@ -37,7 +37,18 @@ _FALLBACK_HALF_LIFE = 3.0
 ALIAS_MIN_MATCH = 0.9
 ALIAS_SIZE_RATIO = 100  # tag overlap alone is weak evidence; never let it look like a strong match
 TAG_PROFILE_SEEDS = 100
+ALWAYS_SEED_TOP = 50  # top-N by depth are always seeds, whatever their recency
 NOISE_TAGS = {"seen live", "favorites", "favourite", "favorite", "my favorites", "awesome", "love"}
+
+
+def depth(row: dict) -> float:
+    """How deeply an artist is played: √(distinct days × plays), i.e. days × √(plays per day).
+
+    Days alone ranks one song on shuffle (Gary Jules: 26 days, 26 plays → 26) level with
+    an artist played album-deep (The Civil Wars: 24 days, 110 plays → 51). Plays alone
+    rewards binges, audiobooks and white noise. The blend needs both a habit and depth.
+    """
+    return math.sqrt(row["days"] * row["plays"])
 
 
 class Taste:
@@ -47,7 +58,7 @@ class Taste:
         self.lastfm = lastfm
         self.excluded = exclusions.load() if excluded is None else excluded
         self.known = known(history, excluded=self.excluded)
-        max_days = max((v["days"] for v in self.known.values()), default=1)
+        max_depth = max((depth(v) for v in self.known.values()), default=1)
         loves = loves if loves is not None else exclusions.load_loves()
         today = _today or date.today()
         cutoff_year = today.year - RECENCY_YEARS
@@ -65,10 +76,10 @@ class Taste:
                 return max(RECENCY_FLOOR, math.exp(-math.log(2) * years_ago / _FALLBACK_HALF_LIFE))
             return 1.0
 
-        # Seed weight: log-scaled distinct days, multiplied by recency.
+        # Seed weight: log-scaled listening depth, multiplied by recency.
         # Artists in loves.txt get full weight regardless of recent play count.
         self.weights = {
-            k: math.log1p(v["days"]) / math.log1p(max_days) * _recency(k, v)
+            k: math.log1p(depth(v)) / math.log1p(max_depth) * _recency(k, v)
             for k, v in self.known.items()
         }
         # Select top seeds: loves.txt artists first (by weight), then non-loves (by weight).
@@ -78,6 +89,14 @@ class Taste:
                         key=lambda kv: (0 if kv[0] in loves else 1, -self.weights[kv[0]]))
         top = ranked[: CONFIG.taste_seeds]
         self.seeds = [k for k, _ in top]
+        # Deepest all-time favourites always seed, however long since they were played.
+        # Recency sets how much they count, not whether they count: without this, 100+-day
+        # artists with no plays in three years (Hunter Parrish, Joshua Radin, The Weepies)
+        # ranked below 6-day recent ones and dropped out entirely. Extra seeds, so current
+        # listening isn't displaced.
+        chosen = set(self.seeds)
+        deepest = sorted(self.known, key=lambda k: -depth(self.known[k]))[:ALWAYS_SEED_TOP]
+        self.seeds += [k for k in deepest if k not in chosen]
 
         # Inject live-attended artists as additional seeds. These are uncontaminated by
         # kids' scrobbles. Artists already in known keep their existing seed weight.
