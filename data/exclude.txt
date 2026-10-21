@@ -61,10 +61,6 @@ Rob Sheffield					# audiobook (Love Is a Mix Tape)
 Dream Supplier					# white noise
 
 # Confirmed as the user's own: never excluded, never re-flagged
-+ Selena Gomez
 + Ludvig Forssell				# Death Stranding: orchestral, the user's
 + Jamie Christopherson			# Metal Gear Rising: probably the user's
-+ Hunter Parrish				# Godspell; sleep music too, but the user loves musicals
-+ Julie Andrews					# musicals are fair game
 + Bad Bunny
-+ Central Park Cast				# animated musical, the user's
