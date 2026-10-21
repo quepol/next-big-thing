@@ -31,6 +31,7 @@ Radha							# Mother Goose
 Neal Hefti						# Batman theme song
 Various Musique					# Spider-Man theme song
 Riders in the Sky				# Toy Story
+Parry Gripp						# kids' YouTube songs
 
 # Kids: YouTube game-music creators
 Kyle Allen Music
@@ -56,6 +57,8 @@ B.J. Thomas, Burt Bacharach
 Glee Cast
 Us								# radio stations
 On								# radio stations
+Rob Sheffield					# audiobook (Love Is a Mix Tape)
+Dream Supplier					# white noise
 
 # Confirmed as the user's own: never excluded, never re-flagged
 + Selena Gomez
@@ -63,3 +66,5 @@ On								# radio stations
 + Jamie Christopherson			# Metal Gear Rising: probably the user's
 + Hunter Parrish				# Godspell; sleep music too, but the user loves musicals
 + Julie Andrews					# musicals are fair game
++ Bad Bunny
++ Central Park Cast				# animated musical, the user's
