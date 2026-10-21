@@ -26,6 +26,11 @@ Blippi
 Justin Roberts
 Raffi
 Twenty Trucks
+The Muppets
+Radha							# Mother Goose
+Neal Hefti						# Batman theme song
+Various Musique					# Spider-Man theme song
+Riders in the Sky				# Toy Story
 
 # Kids: YouTube game-music creators
 Kyle Allen Music
@@ -45,6 +50,12 @@ CircusP						# vocaloid
 Flavor Foley					# vocaloid
 Heaven Pierce Her				# ULTRAKILL
 Powerglove						# metal covers of game music (not orchestral)
+
+# Random - do not include:
+B.J. Thomas, Burt Bacharach
+Glee Cast
+Us								# radio stations
+On								# radio stations
 
 # Confirmed as the user's own: never excluded, never re-flagged
 + Selena Gomez
