@@ -2,7 +2,7 @@
 
 Where things stand, for the next session (on the Mac or the phone). Read `CLAUDE.md` first; it has everything that's always true. Update this file at the end of each working session.
 
-_Last updated: 2026-10-19 (cloud session on the phone)._
+_Last updated: 2026-10-21 (cloud session on the phone)._
 
 ## Just shipped (on `main`, 2026-10-19)
 
@@ -36,9 +36,10 @@ Earlier (2026-10-18): the Explore page (Rooms and The Climb tabs, search, band s
 
 ## Check next session
 
-1. **The first Hamilton and Buffalo shows** (2026-10-20 run). The events snapshot should have regions other than Toronto, and "Bands you know" may show an out-of-town pick, but only for loved bands. If the snapshot is still 100% Toronto, check the "city feed for …" lines in the run log.
-2. **The backup cron** (~11:47am Toronto) should log "Today's digest is already on main; skipping." when the 6am run has landed.
-3. **Research data is a snapshot.** It goes stale until a weekly refresh exists (#4).
+1. **The Attended tab shows shows logged after Oct 14.** setlist.fm's attended list was cached for 7 days. It's now fetched fresh every run (fixed 2026-10-21).
+2. **Out-of-town shows are arriving** (Oct 21: 527 Toronto, 50 Buffalo, 18 Hamilton). Check that any Hamilton or Buffalo picks are only for loved bands.
+3. **The 6am cron.** The runs on Oct 20 and 21 committed at about 11:10am Toronto. Check whether those were the 6am run starting late or the backup.
+4. **Research data is a snapshot.** It goes stale until a weekly refresh exists (#4).
 
 ## Active issues
 
