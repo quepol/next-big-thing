@@ -32,6 +32,12 @@ _Last updated: 2026-10-21 (cloud session on the phone)._
   - Tests run on `main` for Python changes only, and each research study runs only when its own script changes.
 - **Venue research re-ran on its own** (2026-10-19), so the SF overlap data is a day fresher.
 
+**2026-10-21:**
+- **Taste seeds weight by listening depth**, √(days × plays) × recency, so artists played album-deep outrank one song on shuffle. About 12 one-song seeds drop out.
+- Old favourites with no recent plays can now fall out of the seeds (Joshua Radin, Hunter Parrish, The Weepies). `loves.txt` is the override; nothing is added automatically.
+- **`exclude.txt` edits** by Claude and the user: kids' themes, a "Random - do not include" section, and four `+` keeps removed on purpose.
+- **setlist.fm attended shows** are fetched fresh every run.
+
 Earlier (2026-10-18): the Explore page (Rooms and The Climb tabs, search, band sheet), `digest.calendar` in the pipeline, billing from co-bills, and the docs split into `CLAUDE.md`, `docs/` and Issues.
 
 ## Check next session
@@ -39,7 +45,8 @@ Earlier (2026-10-18): the Explore page (Rooms and The Climb tabs, search, band s
 1. **The Attended tab shows shows logged after Oct 14.** setlist.fm's attended list was cached for 7 days. It's now fetched fresh every run (fixed 2026-10-21).
 2. **Out-of-town shows are arriving** (Oct 21: 527 Toronto, 50 Buffalo, 18 Hamilton). Check that any Hamilton or Buffalo picks are only for loved bands.
 3. **The 6am cron.** The runs on Oct 20 and 21 committed at about 11:10am Toronto. Check whether those were the 6am run starting late or the backup.
-4. **Research data is a snapshot.** It goes stale until a weekly refresh exists (#4).
+4. **The first run with depth-weighted seeds.** Do "You'd probably like" and next big thing look sharper? Are Hunter Parrish and Julie Andrews still in history, or did the kids' tag filter take them once their keeps were removed?
+5. **Research data is a snapshot.** It goes stale until a weekly refresh exists (#4).
 
 ## Active issues
 
