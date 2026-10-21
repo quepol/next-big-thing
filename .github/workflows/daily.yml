@@ -6,11 +6,12 @@ name: Daily digest
 #
 # The schedule has a backup: GitHub starts scheduled runs late, or drops them on busy
 # days (2026-10-19 never ran). The second cron does nothing if today's digest is
-# already on main.
+# already on main. Both are set ~5 hours early: in Oct 2026 the 10:17 UTC cron
+# reliably started around 15:00 UTC, so 05:17 should land near 6am Toronto.
 on:
   schedule:
-    - cron: "17 10 * * *" # ~6am Toronto
-    - cron: "47 15 * * *" # backup, ~11:47am Toronto
+    - cron: "17 5 * * *" # 1:17am Toronto on paper; ~6am with GitHub's usual delay
+    - cron: "47 9 * * *" # backup: ~5:47am on paper, ~10:30am in practice
   workflow_dispatch:
   push:
     branches: [main]

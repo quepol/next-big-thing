@@ -4,58 +4,56 @@ Where things stand, for the next session (on the Mac or the phone). Read `CLAUDE
 
 _Last updated: 2026-10-21 (cloud session on the phone)._
 
-## Just shipped (on `main`, 2026-10-19)
+**Status:** the pipeline runs daily and the site is live. Nothing is half-built, and the dev branch matches `main`. The user is living with the site for a few weeks before deciding the bigger scoring questions below.
 
-- **Home-screen icon:** two beamed notes rising into an arrow, white on hot pink, named "NBT" (`site/icons/`). The user has to remove and re-add the home-screen app to see it, and re-adding clears that app's votes and followed rooms.
-- **The aughts ladder study ran** (`site/data/ladder_study.json`). It's live on The Climb as the "for pace" box and dashed staircase lines.
-  - Benchmark: 2 to 4.5 years from a 300–600 room to 2,300+. Bon Iver was fastest at 1.8 years.
-  - Angine de Poitrine (Mod Club to Massey in 2 months) and Jeremie Albino are ahead of that pace.
-  - Matt Berninger is a false positive (The National's singer touring solo). The "side project of X" proposal is in #4.
-- **One footer on every page** (`site/foot.js`):
-  - the site icon
-  - Picks and Explore links (SF overlap is linked only from Explore)
-  - Loaded · Refresh (keeps the tab hash) and the hour-away auto-refresh
-  - the theme switch, moved here from the Picks header
-  - a muted "Code on GitHub" link
-- **Picks header line:** "Updated <weekday time> · N upcoming shows checked against N bands you know · Growth tracking: day N of 28".
-- **README "Make your own":** 8 steps for anyone with a Last.fm account. Setting it up showed a fork would have scored against quepol's history, so:
-  - `LASTFM_USER` and `SETLISTFM_USER` now come from repository variables (unset means quepol)
-  - the timezone moved to `nbt/config.py`
-  - `.env.example` exists
+## Decisions waiting on the user
 
-  Picks are unchanged.
-- **Housekeeping (#6, closed):**
-  - Bandsintown removed. Out-of-town alerts had never worked: Ticketmaster is now asked for Hamilton and Buffalo too.
-  - Last.fm lookups use straight quotes.
-  - Actions bumped to Node 24 versions.
-  - A backup cron runs at ~11:47am Toronto.
-  - Tests run on `main` for Python changes only, and each research study runs only when its own script changes.
-- **Venue research re-ran on its own** (2026-10-19), so the SF overlap data is a day fresher.
+| When | Decision | Where |
+|---|---|---|
+| ~mid-Nov | Narrow the out-of-town `loved` list: top ~50 by depth × recency, plus `loves.txt` and setlist.fm-attended artists. Fix in the same change: attended artists still need 3+ days played to pass the out-of-town gate. | #3 |
+| Before the ledger redesign | Move votes and follows out of the browser. The proposal is a "Send" button that opens a pre-filled GitHub issue, which an Action commits; no token. | #5 |
+| ~mid-Dec | Ledger redesign around "Was I early, and did I go?" | #3 |
+| After using Explore a while | Momentum in the picks; flagging side projects (Matt Berninger, Adam Cohen) | #4 |
 
-**2026-10-21:**
-- **Taste seeds weight by listening depth**, √(days × plays) × recency, so artists played album-deep outrank one song on shuffle. About 12 one-song seeds drop out.
-- Old favourites with no recent plays can now fall out of the seeds (Joshua Radin, Hunter Parrish, The Weepies). `loves.txt` is the override; nothing is added automatically.
-- **`exclude.txt` edits** by Claude and the user: kids' themes, a "Random - do not include" section, and four `+` keeps removed on purpose.
-- **setlist.fm attended shows** are fetched fresh every run.
-
-Earlier (2026-10-18): the Explore page (Rooms and The Climb tabs, search, band sheet), `digest.calendar` in the pipeline, billing from co-bills, and the docs split into `CLAUDE.md`, `docs/` and Issues.
+Already decided (2026-10-21), don't re-ask:
+- Keep the routes that bring in Doja Cat and Little River Band.
+- Don't add old favourites (Joshua Radin, Hunter Parrish) to `loves.txt`.
+- Leave `exclude.txt` without the keeps for Hunter Parrish, Julie Andrews, Selena Gomez and Central Park Cast.
 
 ## Check next session
 
-1. **The Attended tab shows shows logged after Oct 14.** setlist.fm's attended list was cached for 7 days. It's now fetched fresh every run (fixed 2026-10-21).
-2. **Out-of-town shows are arriving** (Oct 21: 527 Toronto, 50 Buffalo, 18 Hamilton). Check that any Hamilton or Buffalo picks are only for loved bands.
-3. **The 6am cron.** The runs on Oct 20 and 21 committed at about 11:10am Toronto. Check whether those were the 6am run starting late or the backup.
-4. **The first run with depth-weighted seeds.** Do "You'd probably like" and next big thing look sharper? Are Hunter Parrish and Julie Andrews still in history, or did the kids' tag filter take them once their keeps were removed?
-5. **Research data is a snapshot.** It goes stale until a weekly refresh exists (#4).
+1. **Did the earlier crons land near 6am Toronto?** The main cron is now `17 5` (was `17 10`, which started around 11am every day), and the backup is `47 9`. Check the "Daily snapshot" commit times.
+2. **Which artist did the kids' tag filter exclude?** The Oct 21 run logged "51 excluded (1 automatically)", where earlier runs logged 0. It's probably one of the four whose keeps were removed. Tell the user which one; it's their call, not a surprise.
+3. **half alive should be gone from next big thing** (the stylised-name fix, 5753e70).
+
+## Watch list
+
+- **~Nov 14:** next big thing velocity switches on (28 days of listener snapshots). Look at the first growth-scored picks.
+- **~mid-Dec:** the ledger's "too soon to tell" window ends.
+- Research data (SF overlap, The Climb) is a snapshot until a weekly refresh exists (#4).
+- One Node 20 warning remains, from `upload-pages-artifact`. Low priority.
+
+## Recently shipped
+
+- **Oct 21:**
+  - seeds weighted by listening depth √(days × plays) × recency
+  - setlist.fm attended shows fetched fresh every run (111 → 147 shows)
+  - stylised Last.fm names resolved (half•alive)
+  - `exclude.txt` cleanup (kids' themes, a "Random - do not include" section)
+  - crons moved 5 hours earlier
+- **Oct 19:**
+  - Bandsintown removed, and Ticketmaster now covers Hamilton and Buffalo. Out-of-town alerts had never worked before; the first one is The Wailin' Jennys in Buffalo.
+  - a backup cron
+  - Node 24 Actions
+  - a shared footer
+  - the home-screen icon
+  - the README "Make your own" steps
+  - ladder study pace references on The Climb
+- **Oct 18:** the Explore page (Rooms and The Climb), `digest.calendar`, billing from co-bills, and the docs split into `CLAUDE.md`, `docs/` and Issues.
 
 ## Active issues
 
-- **#3:** scoring and UX ideas, including the "revisit after a few weeks" list (out-of-town cutoff, NBT ceiling, strength thresholds, velocity).
-- **#4:** venue overlap and the ladder. The ladder study is done. Open: flagging side projects, momentum in the main picks (needs the user's OK), a weekly refresh, small-room gaps.
-- **#5:** follow bands and rooms, a watchlist and alerts. Follows and votes are per browser, and re-adding the home-screen app wipes them, which argues for `data/follows.txt` sooner.
+- **#3:** scoring and UX: the out-of-town list, the ledger redesign, depth weighting notes, NBT ceiling and strength thresholds.
+- **#4:** venue overlap and the ladder: side projects, momentum, a weekly research refresh.
+- **#5:** follows, the watchlist and alerts; moving votes and follows out of the browser.
 - **#7:** bigger feature ideas.
-
-## In flight / not started
-
-- Nothing half-built. The dev branch matches `main`.
-- The user is using the explore page for a while before deciding on momentum in scoring (#4) or the watchlist (#5).

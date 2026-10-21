@@ -19,7 +19,7 @@ Where things stand right now is in `HANDOFF.md`. The backlog lives in **GitHub I
 - **UI work:** render it locally, show the user screenshots (phone and desktop, light and dark), and commit only when they approve.
 - **"Ship it"** means: merge `origin/main` into the branch, run `python -m pytest -q`, push the branch, then push to `main` (a fast-forward).
   - A push to `main` that touches `site/**` deploys on its own in about a minute (deploy-only mode of `daily.yml`).
-  - The data pipeline runs daily at about 6am Toronto (cron `17 10 * * *`), with a backup cron at ~11:47am that skips itself if today's digest is already on `main`.
+  - The data pipeline runs daily at about 6am Toronto: cron `17 5 * * *`, set ~5 hours early because GitHub starts it late. A backup cron (`47 9 * * *`, ~10:30am in practice) skips itself if today's digest is already on `main`.
 - **Pipeline or scoring changes** (`nbt/`, and the thresholds in `site/app.js`) change what shows up in the picks. Propose them first and get the user's OK.
 - **Docs:** when a change alters how something works, update `CLAUDE.md` or `docs/` in the same commit. Update `HANDOFF.md` at the end of a working session. Put new ideas in Issues.
 - **Billing assumptions must be visible.** When the data doesn't say something (for example who headlined), the page labels it as an assumption ("likely support").
@@ -82,7 +82,7 @@ Other product decisions:
 
 - **The sandbox can't reach** Last.fm, setlist.fm, Bandsintown, Wikipedia or CDNs. Anything needing them runs as a GitHub Actions workflow; read its output through the GitHub tools or from the commit it pushes.
 - **A cloud session can't start workflows by hand** (`workflow_dispatch` returns 403). Push a real change to a path the workflow watches, or ask the user to click Run workflow.
-- **GitHub starts the daily cron late,** by about 3.5 hours on recent days (10:17 UTC scheduled, around 14:00 actual), and skipped it entirely on 2026-10-19. Hence the backup cron.
+- **GitHub starts the daily cron late,** by about 5 hours in Oct 2026 (10:17 UTC scheduled, around 15:00 actual), and skipped it entirely on 2026-10-19. Hence the crons set early and the backup. If runs start landing in the middle of the night, the delay has shrunk; move them back.
 - **Local UI testing:** run `python3 -m http.server 8767 --directory site` (in a cloud session, run it as a background task; `setsid nohup … &` servers die between turns), then Playwright with Chromium at `/opt/pw-browsers/chromium-1194/chrome-linux/chrome`. Never `pkill -f http.server`; it kills its own shell.
 - **setlist.fm allows about 1,440 calls a day.** Research jobs cache responses and never overwrite good results with a partial run Each research workflow triggers only on its own script, so editing one study doesn't run another.
 - **Tests run on `main` only,** and only for changes to `nbt/`, `tests/` or `requirements.txt`. Run `python -m pytest -q` locally before every push.
@@ -95,6 +95,6 @@ Other product decisions:
 
 ## Environment
 
-- Secrets (GitHub, and `.env` locally): `LASTFM_API_KEY`, `TICKETMASTER_API_KEY`, `SETLISTFM_API_KEY`. (`BANDSINTOWN_APP_ID` is unused and can be deleted.)
+- Secrets (GitHub, and `.env` locally): `LASTFM_API_KEY`, `TICKETMASTER_API_KEY`, `SETLISTFM_API_KEY`. There is no Bandsintown secret.
 - GitHub repository variables (optional): `LASTFM_USER`, `SETLISTFM_USER`. Unset means the defaults in `nbt/config.py` (`quepol`). The README's "Make your own" steps rely on them.
 - GitHub secrets can't be read back, so a cloud session can't run the pipeline locally; use the workflows.
