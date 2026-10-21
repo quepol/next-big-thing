@@ -37,7 +37,6 @@ _FALLBACK_HALF_LIFE = 3.0
 ALIAS_MIN_MATCH = 0.9
 ALIAS_SIZE_RATIO = 100  # tag overlap alone is weak evidence; never let it look like a strong match
 TAG_PROFILE_SEEDS = 100
-ALWAYS_SEED_TOP = 50  # top-N by depth are always seeds, whatever their recency
 NOISE_TAGS = {"seen live", "favorites", "favourite", "favorite", "my favorites", "awesome", "love"}
 
 
@@ -89,14 +88,6 @@ class Taste:
                         key=lambda kv: (0 if kv[0] in loves else 1, -self.weights[kv[0]]))
         top = ranked[: CONFIG.taste_seeds]
         self.seeds = [k for k, _ in top]
-        # Deepest all-time favourites always seed, however long since they were played.
-        # Recency sets how much they count, not whether they count: without this, 100+-day
-        # artists with no plays in three years (Hunter Parrish, Joshua Radin, The Weepies)
-        # ranked below 6-day recent ones and dropped out entirely. Extra seeds, so current
-        # listening isn't displaced.
-        chosen = set(self.seeds)
-        deepest = sorted(self.known, key=lambda k: -depth(self.known[k]))[:ALWAYS_SEED_TOP]
-        self.seeds += [k for k in deepest if k not in chosen]
 
         # Inject live-attended artists as additional seeds. These are uncontaminated by
         # kids' scrobbles. Artists already in known keep their existing seed weight.

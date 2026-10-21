@@ -530,19 +530,3 @@ def test_seed_weight_prefers_depth_over_one_song_on_shuffle():
     binge = {"days": 2, "plays": 228}         # one weekend on repeat
     assert depth(album_deep) > depth(one_song) > depth(binge)
 
-
-def test_deep_old_favourites_always_seed_without_displacing_current_listening(monkeypatch):
-    from nbt import taste as tm
-
-    h = hist.empty_history()
-    plays = [{"artist": "Old Favourite", "uts": uts(2010, 1, 1 + d)} for d in range(20)]  # deep, long ago
-    plays += [{"artist": f"Recent {i}", "uts": uts(2026, 1 + i, 1 + d)} for i in range(3) for d in range(10)]
-    plays.sort(key=lambda p: p["uts"])
-    hist.ingest(h, plays)
-    from dataclasses import replace
-    monkeypatch.setattr(tm, "CONFIG", replace(tm.CONFIG, taste_seeds=3))  # room for the recent three only
-    monkeypatch.setattr(tm, "ALWAYS_SEED_TOP", 1)
-    t = Taste(h, FakeLastFM(), log=lambda *_: None, loves=set(), _today=date(2026, 10, 21))
-    assert {"recent 0", "recent 1", "recent 2"} <= set(t.seeds)  # current listening kept
-    assert "old favourite" in t.seeds                             # and the old favourite still seeds
-    assert t.weights["old favourite"] < t.weights["recent 0"]     # at a recency-reduced weight
