@@ -488,3 +488,35 @@ def test_lastfm_lookups_use_straight_quotes_and_a_fresh_cache_key(tmp_path, monk
     assert asked == ["Arm's Length"]
     assert lf.cache_key("Arm’s Length") == lf.cache_key("Arm's Length") == "q:" + lf.normalize_name("Arm's Length")
     assert lf.cache_key("Big Thief") == "big thief"
+
+
+def test_attended_is_fetched_fresh_each_run_and_once_per_run(tmp_path, monkeypatch):
+    from nbt.sources import setlistfm as sf
+
+    monkeypatch.setattr(sf, "DATA_DIR", tmp_path)
+    calls = []
+
+    class Resp:
+        status_code = 200
+
+        def __init__(self, shows):
+            self._shows = shows
+
+        def raise_for_status(self):
+            pass
+
+        def json(self):
+            return {"setlist": self._shows, "total": len(self._shows), "itemsPerPage": 20}
+
+    logged = [[{"artist": {"name": "Beck"}}]]
+    monkeypatch.setattr(sf.requests, "get", lambda *a, **k: calls.append(1) or Resp(logged[0]))
+
+    run1 = sf.SetlistFM(api_key="x")
+    assert len(run1.attended("quepol")) == 1
+    run1.attended("quepol")  # artists, venues and the ledger all ask; one fetch per run
+    assert len(calls) == 1
+    run1.save()
+
+    logged[0] = logged[0] + [{"artist": {"name": "Weezer"}}]  # a show logged overnight
+    run2 = sf.SetlistFM(api_key="x")  # next day's run, same on-disk cache
+    assert len(run2.attended("quepol")) == 2

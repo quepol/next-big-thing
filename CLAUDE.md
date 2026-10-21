@@ -76,7 +76,7 @@ Other product decisions:
   - `foot.js`: the shared footer on every page (Picks/Explore links, Refresh and auto-refresh, theme switch).
   - D3 7.9.0 is self-hosted in `site/vendor/`. Design detail is in `docs/design.md`.
 - `research/`: one-off setlist.fm studies, each run by its own workflow on pushes to the dev branch. See `docs/research.md`.
-- Tests: `python -m pytest -q`; 33 pass.
+- Tests: `python -m pytest -q`; 34 pass.
 
 ## Gotchas that have bitten us
 

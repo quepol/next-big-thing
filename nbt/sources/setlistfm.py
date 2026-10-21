@@ -7,8 +7,9 @@ Three uses in the pipeline:
   - attended_venue_names(): lowercased venue names → venue novelty flag in scoring.
   - attended(): full setlist data → retroactive bragging-rights ledger.
 
-The API returns at most 20 setlists per page. We page through all of them once and
-cache the results for a week (setlists don't change much).
+The API returns at most 20 setlists per page. The attended list is fetched fresh every
+run (a handful of calls), so a show logged yesterday shows up today; caching it for a
+week hid new shows for up to seven days.
 """
 
 from __future__ import annotations
@@ -28,10 +29,11 @@ class SetlistFM:
     def __init__(self, api_key: str = CONFIG.setlistfm_api_key):
         self.api_key = api_key
         self._cache = Cache(DATA_DIR / "cache" / "setlistfm.json", ttl_days=7)
+        self._attended: dict[str, list[dict]] = {}
 
-    def _get(self, path: str, **params) -> dict:
+    def _get(self, path: str, *, fresh: bool = False, **params) -> dict:
         key = path + str(sorted(params.items()))
-        cached = self._cache.get(key)
+        cached = None if fresh else self._cache.get(key)
         if cached is not None:
             return cached
         for attempt in range(3):
@@ -52,11 +54,13 @@ class SetlistFM:
         return {}  # unreachable
 
     def attended(self, user: str = CONFIG.setlistfm_user) -> list[dict]:
-        """All attended setlists, newest first. Paginates automatically."""
+        """All attended setlists, newest first. Paginates automatically; fetched once per run."""
+        if user in self._attended:
+            return self._attended[user]
         results = []
         page = 1
         while True:
-            data = self._get(f"/user/{user}/attended", p=page)
+            data = self._get(f"/user/{user}/attended", fresh=True, p=page)
             results.extend(data.get("setlist", []))
             total = data["total"]
             per_page = data["itemsPerPage"]
@@ -64,6 +68,7 @@ class SetlistFM:
                 break
             page += 1
             time.sleep(1.0)
+        self._attended[user] = results
         return results
 
     def attended_artists(self, user: str = CONFIG.setlistfm_user) -> dict[str, str]:
