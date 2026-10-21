@@ -7,3 +7,4 @@ __pycache__/
 data/cache/
 research/cache.json
 research/ladder_cache.json
+.DS_Store
