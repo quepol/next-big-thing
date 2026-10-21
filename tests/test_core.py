@@ -485,7 +485,7 @@ def test_lastfm_lookups_use_straight_quotes_and_a_fresh_cache_key(tmp_path, monk
     # A wrong answer cached before the fix, under the quote-less key both spellings share.
     client.info_cache.set(lf.normalize_name("Arm’s Length"), {"name": "Arm’s Length", "listeners": 12})
     assert client.artist_info("Arm’s Length") is None  # refetched, not the stale entry
-    assert asked == ["Arm's Length"]
+    assert asked and set(asked) == {"Arm's Length"}  # getinfo (and search) use straight quotes
     assert lf.cache_key("Arm’s Length") == lf.cache_key("Arm's Length") == "q:" + lf.normalize_name("Arm's Length")
     assert lf.cache_key("Big Thief") == "big thief"
 
@@ -530,3 +530,26 @@ def test_seed_weight_prefers_depth_over_one_song_on_shuffle():
     binge = {"days": 2, "plays": 228}         # one weekend on repeat
     assert depth(album_deep) > depth(one_song) > depth(binge)
 
+
+
+def test_stylised_names_resolve_to_the_real_artist(tmp_path, monkeypatch):
+    from nbt import lastfm as lf
+
+    monkeypatch.setattr(lf, "DATA_DIR", tmp_path)
+    client = lf.LastFM(api_key="x")
+    pages = {"half alive": 1_141, "half•alive": 1_050_000, "tiny band": 2_400}
+
+    def call(method, **p):
+        if method == "artist.getinfo":
+            n = p["artist"]
+            return {"artist": {"name": n, "stats": {"listeners": pages[n], "playcount": 1}}} if n in pages else None
+        matches = [{"name": n, "listeners": str(v)} for n, v in pages.items()
+                   if lf.normalize_name(n) == lf.normalize_name(p["artist"])]
+        return {"results": {"artistmatches": {"artist": matches}}}
+
+    client.call = call
+    assert client.artist_info("half alive")["listeners"] == 1_050_000  # not the near-empty page
+    assert client.artist_info("tiny band")["listeners"] == 2_400  # genuinely small stays small
+    # A wrong small answer cached before the check gets re-checked once.
+    client.info_cache.set(lf.cache_key("half alive"), {"name": "half alive", "listeners": 1_141})
+    assert client.artist_info("half alive")["listeners"] == 1_050_000

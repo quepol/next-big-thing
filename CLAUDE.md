@@ -76,7 +76,7 @@ Other product decisions:
   - `foot.js`: the shared footer on every page (Picks/Explore links, Refresh and auto-refresh, theme switch).
   - D3 7.9.0 is self-hosted in `site/vendor/`. Design detail is in `docs/design.md`.
 - `research/`: one-off setlist.fm studies, each run by its own workflow on pushes to the dev branch. See `docs/research.md`.
-- Tests: `python -m pytest -q`; 35 pass.
+- Tests: `python -m pytest -q`; 36 pass.
 
 ## Gotchas that have bitten us
 
@@ -88,6 +88,7 @@ Other product decisions:
 - **Tests run on `main` only,** and only for changes to `nbt/`, `tests/` or `requirements.txt`. Run `python -m pytest -q` locally before every push.
 - **Changing an `actions/cache` step's `path` changes the cache version.** The old cache silently stops restoring. Give new files their own cache step.
 - **Typographic quotes** ("Arm’s Length") make Last.fm return near-empty pages. `nbt/lastfm.py` looks names up with straight quotes (`lastfm_name()`), and names with quotes use a `q:` cache key so answers cached before the fix aren't reused.
+- **Stylised names** ("half•alive") have the same problem: the plain spelling lands on a near-empty page, so an established band looks like a next big thing. Artists under 20K listeners also get an `artist.search`; a same-name match (punctuation aside) with 10× the listeners wins (`_stylised_match()` in `nbt/lastfm.py`).
 - **Dates:** a bare `YYYY-MM-DD` string parses as UTC midnight and shows the day before in Toronto. Build local dates from their parts.
 - **`parseReasons()` in `site/app.js`** parses the pipeline's reason strings with regexes. Changing reason wording in `nbt/scoring.py` means updating those regexes.
 - **`site/data/digest.json` must stay committed.** Deploy-only runs publish whatever copy is on `main`.

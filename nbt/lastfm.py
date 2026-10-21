@@ -35,6 +35,12 @@ def cache_key(name: str) -> str:
     return f"q:{key}" if QUOTES & set(name) else key
 
 
+# Below this many listeners, check whether a stylised spelling ("half•alive") is the
+# real artist; it has to be at least ALIAS_MIN_RATIO times bigger to win.
+ALIAS_CHECK_BELOW = 20_000
+ALIAS_MIN_RATIO = 10
+
+
 class LastFMError(RuntimeError):
     pass
 
@@ -124,25 +130,51 @@ class LastFM:
         """{"name", "listeners", "playcount", "tags"} or None if unknown to Last.fm."""
         key = cache_key(name)
         cached = self.info_cache.get(key)
-        if cached is not None:
+        # Small answers cached before the stylised-name check get one re-check.
+        if cached is not None and (not cached or cached.get("alias_checked") or cached["listeners"] >= ALIAS_CHECK_BELOW):
             return cached or None
-        body = self.call("artist.getinfo", artist=lastfm_name(name), autocorrect=1)
-        info = {}
-        if body and "artist" in body:
-            a = body["artist"]
-            tags = a.get("tags", {}).get("tag", [])
-            if isinstance(tags, dict):
-                tags = [tags]
-            info = {
-                "name": a["name"],
-                "mbid": a.get("mbid", ""),
-                "listeners": int(a["stats"]["listeners"]),
-                "playcount": int(a["stats"]["playcount"]),
-                "tags": [t["name"].lower() for t in tags],
-                "url": a.get("url", ""),
-            }
-        self.info_cache.set(key, info)
+        info = self._getinfo(name)
+        if not info or info["listeners"] < ALIAS_CHECK_BELOW:
+            better = self._stylised_match(name, info["listeners"] if info else 0)
+            info = (self._getinfo(better) or info) if better else info
+            if info:
+                info["alias_checked"] = True
+        self.info_cache.set(key, info or {})
         return info or None
+
+    def _getinfo(self, name: str) -> dict:
+        body = self.call("artist.getinfo", artist=lastfm_name(name), autocorrect=1)
+        if not body or "artist" not in body:
+            return {}
+        a = body["artist"]
+        tags = a.get("tags", {}).get("tag", [])
+        if isinstance(tags, dict):
+            tags = [tags]
+        return {
+            "name": a["name"],
+            "mbid": a.get("mbid", ""),
+            "listeners": int(a["stats"]["listeners"]),
+            "playcount": int(a["stats"]["playcount"]),
+            "tags": [t["name"].lower() for t in tags],
+            "url": a.get("url", ""),
+        }
+
+    def _stylised_match(self, name: str, listeners: int) -> str | None:
+        """A far bigger artist whose name only differs in punctuation, if there is one.
+
+        Ticketmaster writes "half alive"; the band is "half•alive" on Last.fm (~1M
+        listeners), and the plain spelling lands on a 1,141-listener page, which made an
+        established band look like a next big thing.
+        """
+        body = self.call("artist.search", artist=lastfm_name(name), limit=10)
+        found = (body or {}).get("results", {}).get("artistmatches", {}).get("artist", [])
+        if isinstance(found, dict):
+            found = [found]
+        want = normalize_name(name)
+        same = [(int(a.get("listeners") or 0), a["name"]) for a in found
+                if normalize_name(a["name"]) == want and a["name"] != name]
+        best = max(same, default=None)
+        return best[1] if best and best[0] >= max(listeners, 1) * ALIAS_MIN_RATIO else None
 
     def similar(self, name: str) -> list[tuple[str, float]]:
         key = cache_key(name)
