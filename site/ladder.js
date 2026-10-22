@@ -10,6 +10,13 @@ const el = (tag, cls, text) => {
   return n;
 };
 const fmt = (n) => n.toLocaleString();
+// "YYYY-MM-DD" for a day in local time, n days from today. toISOString() is UTC, which is
+// already tomorrow on a Toronto evening.
+const localDay = (n = 0) => {
+  const d = new Date();
+  d.setDate(d.getDate() + n);
+  return [d.getFullYear(), d.getMonth() + 1, d.getDate()].map((x) => String(x).padStart(2, "0")).join("-");
+};
 const norm = (s) => s.toLowerCase().replace(/[’‘]/g, "'").normalize("NFKD").replace(/[^a-z0-9']+/g, " ").trim();
 const fmtListeners = (n) => `${new Intl.NumberFormat(undefined, { notation: "compact", maximumFractionDigits: 1 }).format(n)} listeners`;
 

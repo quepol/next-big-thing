@@ -33,9 +33,7 @@ function calendarRows(digest) {
 // Upcoming shows grouped by room key.
 function roomsByKey(digest) {
   const { rows, full } = calendarRows(digest);
-  // Today in local time: toISOString() is UTC, which is already tomorrow on a Toronto evening.
-  const now = new Date();
-  const today = [now.getFullYear(), now.getMonth() + 1, now.getDate()].map((n) => String(n).padStart(2, "0")).join("-");
+  const today = localDay();
   const byRoom = new Map();
   for (const r of rows) {
     if (r.starts_at.slice(0, 10) < today) continue;

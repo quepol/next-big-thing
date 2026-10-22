@@ -69,7 +69,7 @@ Other product decisions:
   - Committed: `history.json`, `exclude.txt`, `loves.txt`, `ledger.json`, `snapshots/` (daily events, with lineups headliner-first, and listener counts).
   - Not committed: `cache/` (kept in the CI cache).
 - `site/`: static, vanilla JS.
-  - `index.html` + `app.js`: the picks, in four tabs: the three tiers and **Your rooms** (shows at followed rooms, same cards and sort). Ledger and Attended moved off this page and will live on the data page.
+  - `index.html` + `app.js`: the picks, in five tabs: **Soon** (picks from all three tiers playing tonight or tomorrow, tonight first, then tier order), the three tiers, and **Your rooms** (shows at followed rooms, same cards and sort). Ledger and Attended moved off this page and will live on the data page.
   - `venues.html` + `venues.js`: the "SF overlap" research page (raw tables, with sticky section links).
   - `explore.html` + `explore.js`: Rooms (default) / The Climb tabs.
   - `ladder.js`: billing and ladder rules shared by the venue, explore and picks pages.

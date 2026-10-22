@@ -2,7 +2,7 @@ const VOTES_KEY = "nbt.votes";
 const TAB_KEY = "nbt.tab";
 const SORT_KEY = "nbt.sort";
 const TIERS = ["next_big_thing", "would_like", "know"];
-const TABS = [...TIERS, "rooms"];
+const TABS = ["soon", ...TIERS, "rooms"];
 const FOLLOWED = "__followed"; // the default view: every room you follow
 const EVERY = "__every"; // every room with upcoming shows, from the dropdown
 const ROOM_LIMIT = 25; // shows on the Your rooms tab before "Show all"
@@ -28,6 +28,7 @@ const EMPTY = {
   would_like: "Nothing here yet.",
   know: "None of your artists are playing nearby in the next 90 days.",
   rooms: "No upcoming shows found here.",
+  soon: "None of your picks are playing tonight or tomorrow.",
   ledger: "The ledger fills up as next-big-thing picks are flagged. Check back in a few months to see who blew up.",
   attended: "No attended shows found. Check that SETLISTFM_API_KEY is set and the setlist.fm user has logged shows.",
 };
@@ -159,10 +160,21 @@ function select(tier) {
   document.getElementById("roombar").hidden = tier !== "rooms";
   document.getElementById("follow").hidden = true;
   if (tier === "rooms") return renderRooms(list);
-  const picks = digest.picks?.[tier] || [];
+  const picks = tier === "soon" ? soonPicks() : digest.picks?.[tier] || [];
   document.getElementById("count").textContent = `${picks.length} pick${picks.length === 1 ? "" : "s"}`;
   if (!picks.length) return list.append(el("p", "empty", EMPTY[tier]));
   sorted(picks).forEach((p) => list.append(renderPick(p)));
+}
+
+// Soon: picks from all three tiers playing tonight or tomorrow. Tier scores are on
+// different scales, so "Best match" here means tonight first, then tier order, then score.
+function soonPicks() {
+  const days = [localDay(0), localDay(1)];
+  return TIERS.flatMap((tier) => digest.picks?.[tier] || [])
+    .filter((p) => days.includes(p.event.starts_at.slice(0, 10)))
+    .sort((a, b) => a.event.starts_at.slice(0, 10).localeCompare(b.event.starts_at.slice(0, 10))
+      || TIERS.indexOf(a.tier) - TIERS.indexOf(b.tier) || b.score - a.score)
+    .map((p) => ({ ...p, soon: true }));
 }
 
 function voteOf(p) {
@@ -233,8 +245,9 @@ function renderCard(p) {
   else if (others.length && ev.lineup[0] !== p.artist) where.append(` · opening for ${ev.lineup[0]}`);
   else if (others.length) where.append(` · with ${others.join(", ")}`);
 
-  // Chips: the scannable facts
+  // Chips: the scannable facts, led by the tier on Soon
   const chips = node.querySelector(".chips");
+  if (p.soon) chips.append(el("li", null, TIER_NAMES[p.tier]));
   const listeners = p.listeners ?? info.listeners;
   if (listeners != null && p.tier !== "know") chips.append(el("li", null, `${fmtCompact(listeners)} listeners`));
   for (const c of info.chips) chips.append(el("li", c.hot ? "hot" : null, c.text));

@@ -299,8 +299,7 @@ function closeSheet() {
 // Upcoming Toronto dates per artist, from the digest's calendar (or picks).
 function nextShows(digest) {
   const { rows } = calendarRows(digest);
-  const now = new Date(); // local, not UTC: see roomsByKey()
-  const today = [now.getFullYear(), now.getMonth() + 1, now.getDate()].map((n) => String(n).padStart(2, "0")).join("-");
+  const today = localDay();
   const next = new Map();
   for (const r of rows) {
     if (r.starts_at.slice(0, 10) < today) continue;
