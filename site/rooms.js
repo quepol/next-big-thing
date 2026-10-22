@@ -1,5 +1,5 @@
-// Shared by app.js (the Your rooms tab) and explore.js: the rooms you follow and how a show
-// in one of them is scored. Needs ladder.js (movingUp) loaded first.
+// The rooms you follow and how a show in one of them is scored, for app.js (the Your rooms
+// tab). explore.js uses only the calendar helpers. Needs ladder.js (movingUp) loaded first.
 // The calendar (every upcoming show with per-act taste scores) comes from the daily
 // pipeline; before its first run with that field, only shows that made the picks appear.
 

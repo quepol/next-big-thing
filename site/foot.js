@@ -1,9 +1,9 @@
-// Shared footer for every page: Picks and Explore, "Loaded <time> · Refresh", and the
+// Shared footer for every page: Picks and Backstage, "Loaded <time> · Refresh", and the
 // theme switch. Each page has <footer class="site-foot" data-page="…">. The SF overlap
-// page is research, so it's linked only from Explore.
+// page is research, so it's linked only from Backstage.
 
 (() => {
-  const PAGES = [["picks", "./", "Picks"], ["explore", "explore.html", "Explore"]];
+  const PAGES = [["picks", "./", "Picks"], ["explore", "explore.html", "Backstage"]];
   const THEME_KEY = "nbt.theme";
   const STALE_MS = 60 * 60 * 1000;
   const ICONS = {
@@ -30,7 +30,7 @@
 
   // Refresh: a home-screen app keeps the page alive and has no reload control. Reload
   // with a throwaway query so the page itself is refetched, not resumed from cache.
-  // The hash is kept, so Explore reopens on the same tab.
+  // The hash is kept, so Backstage reopens on the same tab.
   const loadedAt = Date.now();
   const refresh = () => location.replace(`${location.pathname}?r=${Date.now()}${location.hash}`);
   const row = document.createElement("div");

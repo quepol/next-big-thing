@@ -29,8 +29,6 @@ const EMPTY = {
   know: "None of your artists are playing nearby in the next 90 days.",
   rooms: "No upcoming shows found here.",
   soon: "None of your picks are playing tonight or tomorrow.",
-  ledger: "The ledger fills up as next-big-thing picks are flagged. Check back in a few months to see who blew up.",
-  attended: "No attended shows found. Check that SETLISTFM_API_KEY is set and the setlist.fm user has logged shows.",
 };
 
 // Strength labels per tab: each tier scores on its own scale (know = log(1 + days played)).
@@ -455,59 +453,6 @@ function renderShowCard(p) {
 
   fillFoot(node, p);
   return node;
-}
-
-function renderLedger(list) {
-  const rows = digest.ledger || [];
-  if (!rows.length) return list.append(el("p", "empty", EMPTY.ledger));
-  const wrap = document.createElement("div");
-  wrap.className = "ledger-wrap";
-  const t = document.createElement("table");
-  t.innerHTML = "<thead><tr><th>Artist</th><th>Flagged</th><th class=num>Listeners then</th><th class=num>Now</th><th class=num>Growth</th></tr></thead>";
-  const body = document.createElement("tbody");
-  for (const r of rows) {
-    const tr = document.createElement("tr");
-    const growth = r.listeners_at_flag && r.listeners_now ? `${(r.listeners_now / r.listeners_at_flag).toFixed(1)}×` : "—";
-    [r.artist, r.first_flagged, fmtNum(r.listeners_at_flag), fmtNum(r.listeners_now), growth].forEach((v, i) => {
-      const td = document.createElement("td");
-      td.textContent = v;
-      if (i >= 2) td.className = "num";
-      tr.append(td);
-    });
-    body.append(tr);
-  }
-  t.append(body);
-  wrap.append(t);
-  list.append(wrap);
-}
-
-function renderAttended(list) {
-  const rows = digest.attended_ledger || [];
-  if (!rows.length) return list.append(el("p", "empty", EMPTY.attended));
-  const wrap = document.createElement("div");
-  wrap.className = "ledger-wrap";
-  const t = document.createElement("table");
-  t.innerHTML = "<thead><tr><th>Artist</th><th>Date seen</th><th>Venue</th><th class=num>Listeners now</th></tr></thead>";
-  const body = document.createElement("tbody");
-  const fmtSlfDate = (s) => {
-    // setlist.fm uses DD-MM-YYYY. Build a local date: "YYYY-MM-DD" alone parses as UTC
-    // midnight, which shows as the previous day anywhere west of Greenwich.
-    const [d, m, y] = s.split("-").map(Number);
-    return new Date(y, m - 1, d).toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" });
-  };
-  for (const r of rows) {
-    const tr = document.createElement("tr");
-    [r.artist, fmtSlfDate(r.date), `${r.venue}, ${r.city}`, fmtNum(r.listeners_now)].forEach((v, i) => {
-      const td = document.createElement("td");
-      td.textContent = v;
-      if (i === 3) td.className = "num";
-      tr.append(td);
-    });
-    body.append(tr);
-  }
-  t.append(body);
-  wrap.append(t);
-  list.append(wrap);
 }
 
 const sortSel = document.getElementById("sort");

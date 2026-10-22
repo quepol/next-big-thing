@@ -224,6 +224,7 @@ main { padding-top: 12px; padding-bottom: 24px; display: grid; gap: 10px; }
 table { width: 100%; border-collapse: collapse; font-size: 14px; }
 th, td { text-align: left; padding: 8px 6px; border-bottom: 1px solid var(--line); }
 td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+td.date, th.date { white-space: nowrap; }
 .ledger-wrap { overflow-x: auto; }
 
 @media (max-width: 420px) {
