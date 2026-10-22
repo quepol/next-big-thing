@@ -1,11 +1,15 @@
 # Site design (picks page and shared styles)
 
-How the picks page looks and behaves, and why. The rules that matter every session (contrast split, pink kept rare, raw score visible, phone first) are summarised in `CLAUDE.md`. Backstage and the venue page are in `docs/research.md`.
+How the picks page looks and behaves, and why. The rules that matter every session (contrast split, pink kept rare, score visible, phone first) are summarised in `CLAUDE.md`. Backstage and the venue page are in `docs/research.md`.
 
 ## Cards (redesigned 2026-10-17)
 
 - a date tile
-- a strength badge: 3 pips, a label (Strong / Good / Worth a look) and the raw score, which the user wants kept visible. The thresholds are set per tab in `STRENGTH` in `site/app.js`.
+- a strength badge: 3 pips, a label (Strong / Good / Worth a look) and the score out of 10 with one decimal ("8.2"), which the user wants kept visible as a sanity check.
+  - Each tab's raw score is mapped onto 1–10 by `SCALES` in `site/ladder.js`. Four anchors per tab set 1.0, Good (5.0), Strong (8.0) and the 10 ceiling, with straight lines between them. The anchors come from the first 11 digests' score history.
+  - 8.0+ is Strong and 5.0+ is Good on every tab, and the label is worked out from the displayed number, so they always agree.
+  - The raw score is only in the badge's tooltip (from 2026-10-22, at the user's request).
+  - Recheck the next-big-thing ceiling (0.50) once velocity switches on (~Nov 14), since it can add up to +0.3.
 - an accent edge on Strong picks
 - fact chips parsed from the reason strings by `parseReasons()`. Unknown reasons fall back to plain text. **If reason wording changes in `nbt/scoring.py`, update the regexes there.**
 - similarity weights kept (the user uses them as a sanity check)

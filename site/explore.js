@@ -551,8 +551,8 @@ function showCard(name) {
     const st = el("span", "strength");
     const pips = el("span", "pips");
     for (let n = 0; n < 3; n++) pips.append(el("i", n < lvl.pips ? "on" : null));
-    st.append(pips, el("span", "label", lvl.label), el("span", "score", sc.score.toFixed(2)));
-    st.title = sc.live ? `Today's pick score ${sc.score.toFixed(3)}` : `Estimated ${sc.score.toFixed(3)}, without venue, bill and growth bonuses`;
+    st.append(pips, el("span", "label", lvl.label), el("span", "score", lvl.n.toFixed(1)));
+    st.title = sc.live ? `${lvl.n.toFixed(1)} out of 10 · today's pick score ${sc.score.toFixed(3)}` : `${lvl.n.toFixed(1)} out of 10, estimated from ${sc.score.toFixed(3)}, without venue, bill and growth bonuses`;
     head.append(st);
   } else card.classList.remove("strong");
   card.append(head);
@@ -602,24 +602,13 @@ function showCard(name) {
   openSheet(); // last: it moves focus, which can fire the search box's change event
 }
 
-// Strength, as on the picks page. Thresholds and levels mirror STRENGTH in app.js.
-const STRENGTH = {
-  next_big_thing: { strong: 0.35, good: 0.25 },
-  would_like: { strong: 0.55, good: 0.45 },
-  know: { strong: 2.5, good: 1.8 },
-};
-const LEVELS = [{ pips: 3, label: "Strong" }, { pips: 2, label: "Good" }, { pips: 1, label: "Worth a look" }];
-const strengthOf = (tier, score) => {
-  const t = STRENGTH[tier];
-  return !t ? LEVELS[2] : score >= t.strong ? LEVELS[0] : score >= t.good ? LEVELS[1] : LEVELS[2];
-};
 const NBT_CEILING = 100000; // CONFIG.nbt_max_listeners
 const smallness = (n) => (n <= 100 ? 1 : Math.max(0, 1 - Math.log(n / 100) / Math.log(NBT_CEILING / 100)));
 
 function scoreFor(k, sh) {
   const pick = D.picks.get(k);
   if (pick) return { tier: pick.tier, score: pick.score, why: pick.reasons, live: true };
-  if (!sh?.tier || !STRENGTH[sh.tier]) return null;
+  if (!sh?.tier || !SCALES[sh.tier]) return null;
   const why = sh.why ? [sh.why] : [];
   if (sh.tier === "know") return { tier: "know", score: Math.log1p(sh.days || 0), why, live: false };
   const aff = sh.affinity || 0;

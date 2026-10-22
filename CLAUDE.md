@@ -20,7 +20,7 @@ Where things stand right now is in `HANDOFF.md`. The backlog lives in **GitHub I
 - **"Ship it"** means: merge `origin/main` into the branch, run `python -m pytest -q`, push the branch, then push to `main` (a fast-forward).
   - A push to `main` that touches `site/**` deploys on its own in about a minute (deploy-only mode of `daily.yml`).
   - The data pipeline runs daily at about 6am Toronto: cron `17 5 * * *`, set ~5 hours early because GitHub starts it late. A backup cron (`47 9 * * *`, ~10:30am in practice) skips itself if today's digest is already on `main`.
-- **Pipeline or scoring changes** (`nbt/`, and the thresholds in `site/app.js`) change what shows up in the picks. Propose them first and get the user's OK.
+- **Pipeline or scoring changes** (`nbt/`, and the score scale in `site/ladder.js`) change what shows up in the picks. Propose them first and get the user's OK.
 - **Docs:** when a change alters how something works, update `CLAUDE.md` or `docs/` in the same commit. Update `HANDOFF.md` at the end of a working session. Put new ideas in Issues.
 - **Billing assumptions must be visible.** When the data doesn't say something (for example who headlined), the page labels it as an assumption ("likely support").
 
@@ -34,7 +34,7 @@ Three tiers in the daily digest:
    - Room size matters. A soft venue bonus (`0.15 × (1 − cap/1500)`) favours small rooms; it's not a hard cap.
 
 Other product decisions:
-- Every pick explains itself ("similar to X (0.62)"), and **the raw score and similarity weights stay visible**. The user uses them as a sanity check.
+- Every pick explains itself ("similar to X (0.62)"), and **the 1–10 score and similarity weights stay visible**. The user uses them as a sanity check. Each tab's raw score maps onto 1–10 (`SCALES` in `site/ladder.js`): 8.0+ is Strong, 5.0+ Good, below that Worth a look, on every tab. Since 2026-10-22 the raw score shows only in the badge's tooltip.
 - 👍/👎 votes are stored in the browser only for now (#3).
 - **Out-of-town alerts:** `loved` is the top 200 artists by days played (`loved_top_n`) plus every setlist.fm-attended artist. The user wants it narrowed toward their top ~50 seeds once they've used the site for a few weeks (#3). Leave it until then.
 - **Following:** following a band is a watchlist, not a love, and doesn't feed taste. Followed rooms filter and sort; they never add to a score (#5).
@@ -69,10 +69,10 @@ Other product decisions:
   - Committed: `history.json`, `exclude.txt`, `loves.txt`, `ledger.json`, `snapshots/` (daily events, with lineups headliner-first, and listener counts).
   - Not committed: `cache/` (kept in the CI cache).
 - `site/`: static, vanilla JS.
-  - `index.html` + `app.js`: the picks, in five tabs: **Soon** (picks from all three tiers playing tonight or tomorrow, tonight first, then tier order), the three tiers, and **Your rooms** (shows at followed rooms, same cards and sort).
+  - `index.html` + `app.js`: the picks, in five tabs: **Soon** (picks from all three tiers playing tonight or tomorrow, tonight first, then by 1–10 score), the three tiers, and **Your rooms** (shows at followed rooms, same cards and sort).
   - `venues.html` + `venues.js`: the "SF overlap" research page (raw tables, with sticky section links).
   - `explore.html` + `explore.js`: **Backstage**, the data behind the picks (was Explore; the file name stays). Tabs: The Climb (default), Rivers, Ledger, Attended.
-  - `ladder.js`: shared helpers (`el`, `norm`, `localDay()` for local dates) and the billing and ladder rules, used by every page.
+  - `ladder.js`: shared helpers (`el`, `norm`, `localDay()` for local dates), the 1–10 score scale (`SCALES`, `strengthOf()`), and the billing and ladder rules, used by every page.
   - `rooms.js`: followed rooms (`nbt.rooms`) and the show score (`WEIGHTS`), used by the picks page; Backstage uses its calendar helpers.
   - `foot.js`: the shared footer on every page (Picks/Backstage links, Refresh and auto-refresh, theme switch).
   - D3 7.9.0 is self-hosted in `site/vendor/`. Design detail is in `docs/design.md`.

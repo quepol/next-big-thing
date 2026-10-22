@@ -31,28 +31,6 @@ const EMPTY = {
   soon: "None of your picks are playing tonight or tomorrow.",
 };
 
-// Strength labels per tab: each tier scores on its own scale (know = log(1 + days played)).
-// Tune these here; the raw score is always shown next to the label.
-const STRENGTH = {
-  next_big_thing: { strong: 0.35, good: 0.25 },
-  would_like: { strong: 0.55, good: 0.45 },
-  know: { strong: 2.5, good: 1.8 },
-  // Your rooms: show score (rooms.js). It lists every show, quiet nights included, so
-  // below `look` gets no label at all. Oct 22: 10 of 104 followed-room shows were Strong.
-  rooms: { strong: 0.5, good: 0.3, look: 0.15 },
-};
-const LEVELS = [
-  { pips: 3, label: "Strong" },
-  { pips: 2, label: "Good" },
-  { pips: 1, label: "Worth a look" },
-];
-
-function strengthOf(tier, score) {
-  const t = STRENGTH[tier];
-  if (!t) return LEVELS[2];
-  score = Math.round(score * 100) / 100; // rate the score as shown: 0.2996 reads 0.30, so it's Good
-  return score >= t.strong ? LEVELS[0] : score >= t.good ? LEVELS[1] : LEVELS[2];
-}
 
 // Turn the pipeline's reason strings (nbt/scoring.py, nbt/taste.py) into structured
 // pieces. Anything unrecognised is kept verbatim in `other`, so new reasons still show.
@@ -174,8 +152,9 @@ function soonPicks() {
   const days = [localDay(0), localDay(1)];
   return TIERS.flatMap((tier) => digest.picks?.[tier] || [])
     .filter((p) => days.includes(p.event.starts_at.slice(0, 10)))
+    // Tonight first, then the 1–10 score, which means the same on every tier.
     .sort((a, b) => a.event.starts_at.slice(0, 10).localeCompare(b.event.starts_at.slice(0, 10))
-      || TIERS.indexOf(a.tier) - TIERS.indexOf(b.tier) || b.score - a.score)
+      || strengthOf(b.tier, b.score).n - strengthOf(a.tier, a.score).n)
     .map((p) => ({ ...p, soon: true }));
 }
 
@@ -233,8 +212,8 @@ function renderCard(p) {
   node.classList.toggle("strong", lvl.pips === 3);
   node.querySelectorAll(".pips i").forEach((i, n) => i.classList.toggle("on", n < lvl.pips));
   node.querySelector(".label").textContent = lvl.label;
-  node.querySelector(".score").textContent = p.score.toFixed(2);
-  node.querySelector(".strength").title = `Score ${p.score.toFixed(3)}`;
+  node.querySelector(".score").textContent = lvl.n.toFixed(1);
+  node.querySelector(".strength").title = `${lvl.n.toFixed(1)} out of 10 · raw score ${p.score.toFixed(3)}`;
 
   // Where: venue · capacity · region (if not Toronto) · lineup role
   const where = node.querySelector(".where");
@@ -410,10 +389,10 @@ function renderShowCard(p) {
   fillDate(node, ev.starts_at);
   node.querySelector(".artist").textContent = p.artist;
 
-  // Strength: the show score on its own scale (STRENGTH.rooms); weak matches get the number
+  // Strength: the show score on its own scale (SCALES.rooms in ladder.js); weak matches get the number
   // only. The pink edge stays a Strong *pick*'s, so pink keeps meaning the same thing.
-  if (Math.round(show.score * 100) / 100 >= STRENGTH.rooms.look) {
-    const lvl = strengthOf("rooms", show.score);
+  const lvl = strengthOf("rooms", show.score);
+  if (lvl.n >= 1) {
     node.querySelectorAll(".pips i").forEach((i, n) => i.classList.toggle("on", n < lvl.pips));
     node.querySelector(".label").textContent = lvl.label;
   } else {
@@ -422,8 +401,8 @@ function renderShowCard(p) {
   }
   node.classList.toggle("strong", !!pick && strengthOf(pick.tier, pick.score).pips === 3);
   const score = node.querySelector(".score");
-  score.textContent = show.score.toFixed(2);
-  node.querySelector(".strength").title = `Taste ${show.taste.toFixed(2)} + bonuses ${show.bonus.toFixed(2)}`;
+  score.textContent = lvl.n.toFixed(1);
+  node.querySelector(".strength").title = `${lvl.n.toFixed(1)} out of 10 · taste ${show.taste.toFixed(2)} + bonuses ${show.bonus.toFixed(2)}`;
 
   // Where: venue · capacity · region (if not Toronto) · the rest of the bill
   const where = node.querySelector(".where");

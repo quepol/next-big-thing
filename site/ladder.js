@@ -18,6 +18,40 @@ const localDay = (n = 0) => {
   return [d.getFullYear(), d.getMonth() + 1, d.getDate()].map((x) => String(x).padStart(2, "0")).join("-");
 };
 const norm = (s) => s.toLowerCase().replace(/[’‘]/g, "'").normalize("NFKD").replace(/[^a-z0-9']+/g, " ").trim();
+// Scores on one scale: every tab's raw score maps onto 1–10, so 8+ is Strong and 5+ is Good
+// everywhere. Each tab keeps its own raw scale (know = log(1 + days played)); these anchors
+// pin the raw values that become 1, 5, 8 and 10, with straight lines between them (0 → 0
+// below the floor) and 10 as a ceiling. Floors and ceilings are from the score history of
+// the first 11 digests (Oct 2026); recheck next big thing once velocity switches on.
+const SCALES = {
+  next_big_thing: [0.10, 0.25, 0.35, 0.50],
+  would_like: [0.35, 0.45, 0.55, 0.70],
+  know: [Math.log1p(3), 1.8, 2.5, Math.log1p(50)], // 3, ~5, ~11 and 50 days played
+  rooms: [0.15, 0.30, 0.50, 0.90], // Your rooms show score (rooms.js); below 1.0, no label
+};
+const SCALE_POINTS = [1, 5, 8, 10];
+const LEVELS = [{ pips: 3, label: "Strong" }, { pips: 2, label: "Good" }, { pips: 1, label: "Worth a look" }];
+
+// Raw score → 0.0–10.0, rounded to one decimal so the label always matches the number shown.
+function scoreOf10(tier, raw) {
+  const a = SCALES[tier];
+  if (!a) return null;
+  let n;
+  if (raw <= a[0]) n = Math.max(0, raw / a[0]);
+  else if (raw >= a[3]) n = 10;
+  else {
+    const i = raw < a[1] ? 0 : raw < a[2] ? 1 : 2;
+    n = SCALE_POINTS[i] + ((raw - a[i]) / (a[i + 1] - a[i])) * (SCALE_POINTS[i + 1] - SCALE_POINTS[i]);
+  }
+  return Math.round(n * 10) / 10;
+}
+
+// { pips, label, n } for a raw score; n is the 1–10 number to display.
+function strengthOf(tier, raw) {
+  const n = scoreOf10(tier, raw);
+  return { ...(n >= 8 ? LEVELS[0] : n >= 5 ? LEVELS[1] : LEVELS[2]), n };
+}
+
 const fmtListeners = (n) => `${new Intl.NumberFormat(undefined, { notation: "compact", maximumFractionDigits: 1 }).format(n)} listeners`;
 
 const SMALL_LISTENERS = 250000; // "next big thing" territory for the comeback list
