@@ -409,7 +409,14 @@ function renderShowCard(p) {
   where.append(el("span", "venue", ev.venue.name));
   if (ev.venue.capacity) where.append(` · ~${ev.venue.capacity.toLocaleString()} cap`);
   if (ev.region && ev.region !== "Toronto") where.append(" · ", el("span", "region", ev.region));
-  if (ev.lineup.length > 1) where.append(` · with ${ev.lineup.slice(1).join(", ")}`);
+  // When an opener drives the score, name it in bold: that's who to get there early for.
+  if (ev.lineup.length > 1) {
+    where.append(" · with ");
+    ev.lineup.slice(1).forEach((a, i) => {
+      if (i) where.append(", ");
+      where.append(a === show.best?.artist ? el("span", "lead", a) : a);
+    });
+  }
 
   // Chips: which tier picked it (if any), then listeners
   const chips = node.querySelector(".chips");
