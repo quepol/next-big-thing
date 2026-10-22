@@ -249,7 +249,7 @@ function renderCard(p) {
 
   // Chips: the scannable facts, led by the tier on Soon
   const chips = node.querySelector(".chips");
-  if (p.soon) chips.append(el("li", null, TIER_NAMES[p.tier]));
+  if (p.soon) chips.append(el("li", "hot", TIER_NAMES[p.tier]));
   const listeners = p.listeners ?? info.listeners;
   if (listeners != null && p.tier !== "know") chips.append(el("li", null, `${fmtCompact(listeners)} listeners`));
   for (const c of info.chips) chips.append(el("li", c.hot ? "hot" : null, c.text));
@@ -434,7 +434,7 @@ function renderShowCard(p) {
 
   // Chips: which tier picked it (if any), then listeners
   const chips = node.querySelector(".chips");
-  if (pick) chips.append(el("li", null, pick.artist === p.artist ? TIER_NAMES[pick.tier] : `${pick.artist}: ${TIER_NAMES[pick.tier]}`));
+  if (pick) chips.append(el("li", "hot", pick.artist === p.artist ? TIER_NAMES[pick.tier] : `${pick.artist}: ${TIER_NAMES[pick.tier]}`));
   if (p.listeners != null) chips.append(el("li", null, `${fmtCompact(p.listeners)} listeners`));
 
   // Why: the taste behind the score (with weights), then each bonus and its weight

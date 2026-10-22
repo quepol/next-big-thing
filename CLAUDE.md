@@ -44,7 +44,7 @@ Other product decisions:
 
 - The palette matches **OpenPublic.cc** (quepol/OpenPublic). Colours are tokens at the top of `site/style.css`, in light and dark. Body text is Inter; the title is Momo Trust Display, self-hosted.
 - **Contrast split:** `--accent-fill` `#FF1493` is for marks only (dots, edges, underlines, focus rings). Small pink text uses `--accent` (`#cc0077` in light, softer in dark), because `#FF1493` fails AA on white. Meet WCAG AA in both themes.
-- **Keep pink rare,** so it means something: strength marks, Strong picks, "Tonight", out-of-town, Tickets links. Fact chips are neutral grey; the user tried pink chips and a Tickets pill and dropped both.
+- **Keep pink rare,** so it means something: strength marks, Strong picks, "Tonight", out-of-town, Tickets links. Fact chips are neutral grey; the user tried pink fact chips and a Tickets pill and dropped both. The exception is pink pills (`.chips li.hot`) for a pick's tier (Next big thing, You'd probably like, Bands you know, on every card) and "Moving up". They mean "this is a pick", so they stay.
 - **Phone first,** with no sideways scrolling at 390px. Charts need labels a phone can read; the unlabelled Climb chart was replaced by a list for that reason.
 - Every page shares the saved theme (`nbt.theme`). All `localStorage` access is wrapped in try/catch.
 

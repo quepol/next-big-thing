@@ -561,7 +561,7 @@ function showCard(name) {
   const chips = el("ul", "chips");
   const chip = (text, hot) => chips.append(el("li", hot ? "hot" : null, text));
   const tierLabel = TIERS.find(([t]) => t === sc?.tier)?.[1];
-  if (tierLabel) chip(tierLabel, sc.tier === "next_big_thing");
+  if (tierLabel) chip(tierLabel, true); // every tier chip is pink, as on the picks page
   const listeners = rep?.listeners ?? sh?.listeners;
   if (listeners != null) chip(fmtListeners(listeners));
   if (sh?.days) chip(sh.days >= 3 ? `Played ${sh.days} days` : `Heard ${sh.days} day${sh.days > 1 ? "s" : ""}`);
