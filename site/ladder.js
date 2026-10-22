@@ -30,7 +30,7 @@ const SCALES = {
   rooms: [0.15, 0.30, 0.50, 0.90], // Your rooms show score (rooms.js); below 1.0, no label
 };
 const SCALE_POINTS = [1, 5, 8, 10];
-const LEVELS = [{ pips: 3, label: "Strong" }, { pips: 2, label: "Good" }, { pips: 1, label: "Worth a look" }];
+const LEVELS = [{ pips: 3, label: "Strong" }, { pips: 2, label: "Good" }, { pips: 1, label: "Worth a look" }, { pips: 0, label: "Long shot" }];
 
 // Raw score → 0.0–10.0, rounded to one decimal so the label always matches the number shown.
 function scoreOf10(tier, raw) {
@@ -49,7 +49,8 @@ function scoreOf10(tier, raw) {
 // { pips, label, n } for a raw score; n is the 1–10 number to display.
 function strengthOf(tier, raw) {
   const n = scoreOf10(tier, raw);
-  return { ...(n >= 8 ? LEVELS[0] : n >= 5 ? LEVELS[1] : LEVELS[2]), n };
+  // 8+ Strong, 5+ Good, 3+ Worth a look, below 3 Long shot (barely over a tab's entry bar).
+  return { ...(n >= 8 ? LEVELS[0] : n >= 5 ? LEVELS[1] : n >= 3 ? LEVELS[2] : LEVELS[3]), n };
 }
 
 const fmtListeners = (n) => `${new Intl.NumberFormat(undefined, { notation: "compact", maximumFractionDigits: 1 }).format(n)} listeners`;

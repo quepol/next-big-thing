@@ -34,7 +34,7 @@ Three tiers in the daily digest:
    - Room size matters. A soft venue bonus (`0.15 × (1 − cap/1500)`) favours small rooms; it's not a hard cap.
 
 Other product decisions:
-- Every pick explains itself ("similar to X (0.62)"), and **the 1–10 score and similarity weights stay visible**. The user uses them as a sanity check. Each tab's raw score maps onto 1–10 (`SCALES` in `site/ladder.js`): 8.0+ is Strong, 5.0+ Good, below that Worth a look, on every tab. Since 2026-10-22 the raw score shows only in the badge's tooltip.
+- Every pick explains itself ("similar to X (0.62)"), and **the 1–10 score and similarity weights stay visible**. The user uses them as a sanity check. Each tab's raw score maps onto 1–10 (`SCALES` in `site/ladder.js`): 8.0+ is Strong, 5.0+ Good, 3.0+ Worth a look, below that Long shot (no filled pips), on every tab. Since 2026-10-22 the raw score shows only in the badge's tooltip.
 - 👍/👎 votes are stored in the browser only for now (#3).
 - **Out-of-town alerts:** `loved` is the top 200 artists by days played (`loved_top_n`) plus every setlist.fm-attended artist. The user wants it narrowed toward their top ~50 seeds once they've used the site for a few weeks (#3). Leave it until then.
 - **Following:** following a band is a watchlist, not a love, and doesn't feed taste. Followed rooms filter and sort; they never add to a score (#5).

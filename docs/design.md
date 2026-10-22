@@ -7,7 +7,7 @@ How the picks page looks and behaves, and why. The rules that matter every sessi
 - a date tile
 - a strength badge: 3 pips, a label (Strong / Good / Worth a look) and the score out of 10 with one decimal ("8.2"), which the user wants kept visible as a sanity check.
   - Each tab's raw score is mapped onto 1–10 by `SCALES` in `site/ladder.js`. Four anchors per tab set 1.0, Good (5.0), Strong (8.0) and the 10 ceiling, with straight lines between them. The anchors come from the first 11 digests' score history.
-  - 8.0+ is Strong and 5.0+ is Good on every tab, and the label is worked out from the displayed number, so they always agree.
+  - On every tab: 8.0+ is Strong (3 pips), 5.0+ Good (2), 3.0+ Worth a look (1), and below 3.0 Long shot (0 filled pips; added 2026-10-22 because 1.0, barely over a tab's entry bar, isn't worth a look). The label is worked out from the displayed number, so they always agree.
   - The raw score is only in the badge's tooltip (from 2026-10-22, at the user's request).
   - Recheck the next-big-thing ceiling (0.50) once velocity switches on (~Nov 14), since it can add up to +0.3.
 - an accent edge on Strong picks
