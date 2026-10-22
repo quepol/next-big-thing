@@ -121,6 +121,15 @@ nav button[aria-selected="true"] { color: var(--text); border-bottom-color: var(
   border: 1px solid var(--line); border-radius: 4px; padding: 4px 6px;
 }
 
+.toolbar-left { display: inline-flex; align-items: center; gap: 10px; min-width: 0; }
+/* Your rooms: a line of help, then the followed rooms as wrapping chips under the tabs. */
+#roombar { max-width: 760px; margin: 0 auto; padding: 14px 16px 0; }
+#roombar[hidden] { display: none; }
+#roombar .muted { margin: 0 0 10px; font-size: 13px; }
+#roombar .roomchips { margin: 0; }
+main .muted.small { font-size: 13px; margin: 0; }
+.more { justify-self: center; background: none; border: 1px solid var(--line); border-radius: 999px; padding: 8px 16px; font: inherit; font-size: 14px; color: var(--accent); cursor: pointer; }
+
 main { padding-top: 12px; padding-bottom: 24px; display: grid; gap: 10px; }
 
 /* ---- Card ---- */

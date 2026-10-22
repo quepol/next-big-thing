@@ -69,10 +69,11 @@ Other product decisions:
   - Committed: `history.json`, `exclude.txt`, `loves.txt`, `ledger.json`, `snapshots/` (daily events, with lineups headliner-first, and listener counts).
   - Not committed: `cache/` (kept in the CI cache).
 - `site/`: static, vanilla JS.
-  - `index.html` + `app.js`: the picks.
+  - `index.html` + `app.js`: the picks, in four tabs: the three tiers and **Your rooms** (shows at followed rooms, same cards and sort). Ledger and Attended moved off this page and will live on the data page.
   - `venues.html` + `venues.js`: the "SF overlap" research page (raw tables, with sticky section links).
   - `explore.html` + `explore.js`: Rooms (default) / The Climb tabs.
-  - `ladder.js`: billing and ladder rules shared by the venue and explore pages.
+  - `ladder.js`: billing and ladder rules shared by the venue, explore and picks pages.
+  - `rooms.js`: followed rooms (`nbt.rooms`) and the show score (`WEIGHTS`), shared by the picks page and Explore.
   - `foot.js`: the shared footer on every page (Picks/Explore links, Refresh and auto-refresh, theme switch).
   - D3 7.9.0 is self-hosted in `site/vendor/`. Design detail is in `docs/design.md`.
 - `research/`: one-off setlist.fm studies, each run by its own workflow on pushes to the dev branch. See `docs/research.md`.

@@ -17,7 +17,6 @@ const store = {
   get(k, d) { try { const v = JSON.parse(localStorage.getItem(k)); return v ?? d; } catch { return d; } },
   set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} },
 };
-const norm = (s) => s.toLowerCase().replace(/[’‘]/g, "'").normalize("NFKD").replace(/[^a-z0-9']+/g, " ").trim();
 const parseDate = (iso) => new Date(`${iso}T12:00:00`);
 const monthYear = (d) => d.toLocaleDateString(undefined, { month: "short", year: "numeric" });
 const firstNumber = (s) => Number(String(s).replace(/,/g, "").match(/\d+/)?.[0] || 0);
@@ -300,7 +299,8 @@ function closeSheet() {
 // Upcoming Toronto dates per artist, from the digest's calendar (or picks).
 function nextShows(digest) {
   const { rows } = calendarRows(digest);
-  const today = new Date().toISOString().slice(0, 10);
+  const now = new Date(); // local, not UTC: see roomsByKey()
+  const today = [now.getFullYear(), now.getMonth() + 1, now.getDate()].map((n) => String(n).padStart(2, "0")).join("-");
   const next = new Map();
   for (const r of rows) {
     if (r.starts_at.slice(0, 10) < today) continue;
@@ -629,78 +629,13 @@ function cardActions(name) {
 
 // ---------- Your rooms ----------
 // Tap a Toronto room for its upcoming shows, ranked by a transparent blend of signals.
-// The calendar (every upcoming show with per-act taste scores) comes from the daily
-// pipeline; before its first run with that field, only shows that made the picks appear.
+// Room keys and show scoring are shared with the picks page (rooms.js).
 
-const ROOMS_KEY = "nbt.rooms";
-const DEFAULT_ROOMS = ["phoenix concert theatre", "mod club", "opera house", "horseshoe tavern",
-  "concert hall", "adelaide hall", "drake underground"];
-const ROOM_ALIASES = { "axis club": "mod club" }; // setlist.fm logs the Mod Club under both names
-// Show score = best act's taste fit plus these bonuses. Kept in one place to tune.
-const WEIGHTS = { know: 0.4, heard: 0.15, seen: 0.2, movingUp: 0.25, cameBack: 0.1, sfLink: 0.1 };
-const KNOW_DAYS = 3;
 const ALL = "__all";
 const ROOM_LIMIT = 20; // best N shows first; "show all" for the rest
 
-const roomKey = (name) => {
-  const k = name.toLowerCase().trim().replace(/^the /, "").replace(/[^a-z0-9']+/g, " ").trim();
-  return ROOM_ALIASES[k] || k;
-};
-
-function calendarRows(digest) {
-  if (digest.calendar) return { rows: digest.calendar, full: true };
-  // Fallback: rebuild what we can from the picks.
-  const byEvent = new Map();
-  for (const tier of Object.values(digest.picks || {})) for (const p of tier) {
-    const e = p.event;
-    if (!byEvent.has(e.id)) byEvent.set(e.id, { id: e.id, starts_at: e.starts_at, url: e.url, venue: e.venue, acts: e.lineup.map((a) => ({ artist: a })) });
-    const act = byEvent.get(e.id).acts.find((x) => x.artist === p.artist);
-    if (act) Object.assign(act, { affinity: p.tier === "know" ? 0 : p.score, listeners: p.listeners, why: p.reasons[0] });
-    if (act && p.tier === "know") act.days = Number(p.reasons[0].match(/on (\d+) days/)?.[1] || KNOW_DAYS);
-  }
-  return { rows: [...byEvent.values()], full: false };
-}
-
-function scoreShow(row) {
-  let taste = 0, bonus = 0;
-  const chips = [];
-  let best = null;
-  for (const act of row.acts) {
-    if (act.skipped) continue;
-    if ((act.affinity || 0) > taste) { taste = act.affinity; best = act; }
-  }
-  if (best?.why) {
-    const names = best.why.replace(/^similar to /, "").replace(/ \(\d\.\d+\)/g, "").split(", ");
-    chips.push(best.why.startsWith("similar to") ? `Like ${names.slice(0, 2).join(", ")}` : best.why.replace(/^tags match your taste: /, "Tags: "));
-  }
-  const add = (w, text) => { bonus += w; chips.push(text); };
-  // Chips about the headliner skip the name; chips about an opener lead with it.
-  const head = row.acts[0]?.artist;
-  const who = (a, text) => (a === head ? text : `${a}: ${text.charAt(0).toLowerCase()}${text.slice(1)}`);
-  const known = row.acts.find((a) => (a.days || 0) >= KNOW_DAYS);
-  const heard = row.acts.find((a) => a.days && a.days < KNOW_DAYS);
-  if (known) add(WEIGHTS.know, who(known.artist, `You know them · ${known.days} days`));
-  else if (heard) add(WEIGHTS.heard, who(heard.artist, "Heard before"));
-  const seen = row.acts.find((a) => D.seen.has(norm(a.artist)));
-  if (seen) add(WEIGHTS.seen, who(seen.artist, "You've seen them"));
-  const rep = row.acts.map((a) => D.repeat.get(norm(a.artist))).find(Boolean);
-  if (rep && movingUp(rep)) add(WEIGHTS.movingUp, who(rep.artist, "Moving up"));
-  else if (rep) add(WEIGHTS.cameBack, who(rep.artist, "Keeps coming back"));
-  const sf = row.acts.map((a) => D.shared.get(norm(a.artist))).find(Boolean);
-  if (sf) add(WEIGHTS.sfLink, who(sf.artist, `Played ${sf.sf[0]}${sf.sf.length > 1 ? ` +${sf.sf.length - 1}` : ""}`));
-  return { score: taste + bonus, taste, bonus, chips };
-}
-
 function setupRooms(digest) {
-  const { rows, full } = calendarRows(digest);
-  const today = new Date().toISOString().slice(0, 10);
-  const upcoming = rows.filter((r) => r.starts_at.slice(0, 10) >= today);
-  const byRoom = new Map();
-  for (const r of upcoming) {
-    const k = roomKey(r.venue.name);
-    if (!byRoom.has(k)) byRoom.set(k, { name: r.venue.name.trim(), cap: r.venue.capacity, rows: [] });
-    byRoom.get(k).rows.push(r);
-  }
+  const { byRoom, full } = roomsByKey(digest);
   D.rooms = { byRoom, full };
   state.rooms = store.get(ROOMS_KEY, DEFAULT_ROOMS);
   state.room = ALL;
@@ -798,7 +733,7 @@ function renderRoom() {
   if (!D.rooms.full) box.append(el("p", "muted small", "Showing only shows that made your picks. Every show at each room appears after the next daily update."));
   if (!rows.length) { box.append(el("p", "empty", "No upcoming shows found here.")); return; }
 
-  const scored = rows.map(({ r, k }) => ({ r, k, ...scoreShow(r) }))
+  const scored = rows.map(({ r, k }) => ({ r, k, ...scoreShow(r, D) }))
     .sort((a, b) => b.score - a.score || a.r.starts_at.localeCompare(b.r.starts_at));
   const list = el("ol", "roomlist");
   const shown = state.roomAll ? scored : scored.slice(0, ROOM_LIMIT);
