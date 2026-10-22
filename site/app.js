@@ -1,7 +1,11 @@
 const VOTES_KEY = "nbt.votes";
 const TAB_KEY = "nbt.tab";
 const SORT_KEY = "nbt.sort";
-const CARD_TIERS = ["next_big_thing", "would_like", "know"];
+const TIERS = ["next_big_thing", "would_like", "know"];
+const TABS = ["soon", ...TIERS, "rooms"];
+const FOLLOWED = "__followed"; // the default view: every room you follow
+const EVERY = "__every"; // every room with upcoming shows, from the dropdown
+const ROOM_LIMIT = 25; // shows on the Your rooms tab before "Show all"
 const tabs = document.getElementById("tabs");
 
 const GROWTH_DAYS = 28; // nbt/config.py velocity_min_weeks × 7
@@ -18,14 +22,13 @@ const fmtDate = (iso) => {
 const fmtNum = (n) => (n == null ? "—" : n.toLocaleString());
 const fmtCompact = (n) => new Intl.NumberFormat(undefined, { notation: "compact", maximumFractionDigits: 1 }).format(n);
 const keyOf = (name) => name.toLowerCase().normalize("NFKD").replace(/[^a-z0-9]+/g, " ").trim();
-const el = (tag, cls, text) => Object.assign(document.createElement(tag), cls ? { className: cls } : {}, text != null ? { textContent: text } : {});
 
 const EMPTY = {
   next_big_thing: "No up-and-comers flagged right now. Check back after the next daily run.",
   would_like: "Nothing here yet.",
   know: "None of your artists are playing nearby in the next 90 days.",
-  ledger: "The ledger fills up as next-big-thing picks are flagged. Check back in a few months to see who blew up.",
-  attended: "No attended shows found. Check that SETLISTFM_API_KEY is set and the setlist.fm user has logged shows.",
+  rooms: "No upcoming shows found here.",
+  soon: "None of your picks are playing tonight or tomorrow.",
 };
 
 // Strength labels per tab: each tier scores on its own scale (know = log(1 + days played)).
@@ -93,15 +96,27 @@ const ICONS = {
 };
 
 let digest;
+// Your rooms: shows at the rooms you follow, scored by rooms.js. Following filters; it never adds to a score.
+const rooms = { byRoom: new Map(), full: true, ctx: null, followed: [], room: FOLLOWED, all: false };
+
+async function getJSON(url, fallback) {
+  try { const r = await fetch(url, { cache: "no-store" }); return r.ok ? await r.json() : fallback; } catch { return fallback; }
+}
 
 async function load() {
   let demo = false;
-  let res = await fetch("data/digest.json", { cache: "no-store" }).catch(() => null);
-  if (!res || !res.ok) {
-    res = await fetch("data/demo.json");
+  const [real, research, caps] = await Promise.all([
+    getJSON("data/digest.json", null),
+    getJSON("data/venue_research.json", null),
+    getJSON("data/toronto_capacity.json", {}),
+  ]);
+  digest = real;
+  if (!digest) {
+    digest = await getJSON("data/demo.json", {});
     demo = true;
   }
-  digest = await res.json();
+  setCaps(caps);
+  Object.assign(rooms, roomsByKey(digest), { ctx: showContext(digest, research), followed: store.get(ROOMS_KEY, DEFAULT_ROOMS) });
   const s = digest.stats || {};
   // "Updated Mon 6:01 AM": the weekday says whether today's run has landed.
   const updated = new Date(digest.generated_at).toLocaleString(undefined, { weekday: "short", hour: "numeric", minute: "2-digit" });
@@ -114,8 +129,10 @@ async function load() {
     b.innerHTML = "<div>Showing <strong>demo data</strong> with made-up bands. The real digest appears after the first pipeline run.</div>";
     b.hidden = false;
   }
-  select(store.get(TAB_KEY, "next_big_thing"));
+  select(currentTab());
 }
+
+const currentTab = () => { const t = store.get(TAB_KEY, TIERS[0]); return TABS.includes(t) ? t : TIERS[0]; };
 
 function sorted(picks) {
   const by = store.get(SORT_KEY, "score");
@@ -137,13 +154,25 @@ function select(tier) {
   store.set(TAB_KEY, tier);
   const list = document.getElementById("list");
   list.replaceChildren();
-  document.getElementById("toolbar").hidden = !CARD_TIERS.includes(tier);
-  if (tier === "ledger") return renderLedger(list);
-  if (tier === "attended") return renderAttended(list);
-  const picks = digest.picks?.[tier] || [];
+  document.getElementById("toolbar").hidden = false;
+  document.getElementById("roombar").hidden = tier !== "rooms";
+  document.getElementById("follow").hidden = true;
+  if (tier === "rooms") return renderRooms(list);
+  const picks = tier === "soon" ? soonPicks() : digest.picks?.[tier] || [];
   document.getElementById("count").textContent = `${picks.length} pick${picks.length === 1 ? "" : "s"}`;
   if (!picks.length) return list.append(el("p", "empty", EMPTY[tier]));
   sorted(picks).forEach((p) => list.append(renderPick(p)));
+}
+
+// Soon: picks from all three tiers playing tonight or tomorrow. Tier scores are on
+// different scales, so "Best match" here means tonight first, then tier order, then score.
+function soonPicks() {
+  const days = [localDay(0), localDay(1)];
+  return TIERS.flatMap((tier) => digest.picks?.[tier] || [])
+    .filter((p) => days.includes(p.event.starts_at.slice(0, 10)))
+    .sort((a, b) => a.event.starts_at.slice(0, 10).localeCompare(b.event.starts_at.slice(0, 10))
+      || TIERS.indexOf(a.tier) - TIERS.indexOf(b.tier) || b.score - a.score)
+    .map((p) => ({ ...p, soon: true }));
 }
 
 function voteOf(p) {
@@ -159,7 +188,7 @@ function setVote(p, v) {
 }
 
 function renderPick(p) {
-  return voteOf(p) === "down" ? renderCollapsed(p) : renderCard(p);
+  return voteOf(p) === "down" ? renderCollapsed(p) : p.show ? renderShowCard(p) : renderCard(p);
 }
 
 function replaceWith(node, p) {
@@ -214,8 +243,9 @@ function renderCard(p) {
   else if (others.length && ev.lineup[0] !== p.artist) where.append(` · opening for ${ev.lineup[0]}`);
   else if (others.length) where.append(` · with ${others.join(", ")}`);
 
-  // Chips: the scannable facts
+  // Chips: the scannable facts, led by the tier on Soon
   const chips = node.querySelector(".chips");
+  if (p.soon) chips.append(el("li", null, TIER_NAMES[p.tier]));
   const listeners = p.listeners ?? info.listeners;
   if (listeners != null && p.tier !== "know") chips.append(el("li", null, `${fmtCompact(listeners)} listeners`));
   for (const c of info.chips) chips.append(el("li", c.hot ? "hot" : null, c.text));
@@ -242,7 +272,13 @@ function renderCard(p) {
   }
   for (const t of info.other) why.append(el("li", null, t));
 
-  // Footer: listen links, tickets, votes
+  fillFoot(node, p);
+  return node;
+}
+
+// Footer: listen links, tickets, votes
+function fillFoot(node, p) {
+  const ev = p.event;
   const enc = encodeURIComponent(p.artist);
   const listen = node.querySelector(".listen");
   for (const [href, icon, label] of [
@@ -267,72 +303,175 @@ function renderCard(p) {
       node.querySelectorAll(".vote button").forEach((x) => x.setAttribute("aria-pressed", voteOf(p) === x.dataset.v));
     });
   });
-  return node;
 }
 
-function renderLedger(list) {
-  const rows = digest.ledger || [];
-  if (!rows.length) return list.append(el("p", "empty", EMPTY.ledger));
-  const wrap = document.createElement("div");
-  wrap.className = "ledger-wrap";
-  const t = document.createElement("table");
-  t.innerHTML = "<thead><tr><th>Artist</th><th>Flagged</th><th class=num>Listeners then</th><th class=num>Now</th><th class=num>Growth</th></tr></thead>";
-  const body = document.createElement("tbody");
-  for (const r of rows) {
-    const tr = document.createElement("tr");
-    const growth = r.listeners_at_flag && r.listeners_now ? `${(r.listeners_now / r.listeners_at_flag).toFixed(1)}×` : "—";
-    [r.artist, r.first_flagged, fmtNum(r.listeners_at_flag), fmtNum(r.listeners_now), growth].forEach((v, i) => {
-      const td = document.createElement("td");
-      td.textContent = v;
-      if (i >= 2) td.className = "num";
-      tr.append(td);
-    });
-    body.append(tr);
+// ---------- Your rooms ----------
+// Every upcoming show at the rooms you follow, as the same cards as the tiers. A show is
+// scored by rooms.js (best act's taste + bonuses); when it is also one of today's picks,
+// the card says which tier, and a Strong pick keeps its pink edge.
+
+const TIER_NAMES = { next_big_thing: "Next big thing", would_like: "You'd probably like", know: "Bands you know" };
+let showPicks; // today's picks by event id + artist, best tier first
+
+function pickFor(row) {
+  if (!showPicks) {
+    showPicks = new Map();
+    for (const tier of TIERS) for (const p of digest.picks?.[tier] || []) {
+      const k = `${p.event.id}|${norm(p.artist)}`;
+      if (!showPicks.has(k)) showPicks.set(k, p);
+    }
   }
-  t.append(body);
-  wrap.append(t);
-  list.append(wrap);
+  const found = row.acts.map((a) => showPicks.get(`${row.id}|${norm(a.artist)}`)).filter(Boolean);
+  return found.sort((a, b) => TIERS.indexOf(a.tier) - TIERS.indexOf(b.tier))[0];
 }
 
-function renderAttended(list) {
-  const rows = digest.attended_ledger || [];
-  if (!rows.length) return list.append(el("p", "empty", EMPTY.attended));
-  const wrap = document.createElement("div");
-  wrap.className = "ledger-wrap";
-  const t = document.createElement("table");
-  t.innerHTML = "<thead><tr><th>Artist</th><th>Date seen</th><th>Venue</th><th class=num>Listeners now</th></tr></thead>";
-  const body = document.createElement("tbody");
-  const fmtSlfDate = (s) => {
-    // setlist.fm uses DD-MM-YYYY. Build a local date: "YYYY-MM-DD" alone parses as UTC
-    // midnight, which shows as the previous day anywhere west of Greenwich.
-    const [d, m, y] = s.split("-").map(Number);
-    return new Date(y, m - 1, d).toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" });
+// A calendar row as a pick-shaped object, so sorting, votes and the card footer work as on the tiers.
+function showItem(row) {
+  const head = row.acts[0];
+  return {
+    show: scoreShow(row, rooms.ctx), row, pick: pickFor(row),
+    artist: head.artist, listeners: head.listeners, tier: "rooms",
+    event: { id: row.id, starts_at: row.starts_at, url: row.url, venue: row.venue, region: row.region, lineup: row.acts.map((a) => a.artist) },
+    get score() { return this.show.score; },
   };
-  for (const r of rows) {
-    const tr = document.createElement("tr");
-    [r.artist, fmtSlfDate(r.date), `${r.venue}, ${r.city}`, fmtNum(r.listeners_now)].forEach((v, i) => {
-      const td = document.createElement("td");
-      td.textContent = v;
-      if (i === 3) td.className = "num";
-      tr.append(td);
-    });
-    body.append(tr);
+}
+
+function renderRooms(list) {
+  renderRoomChips();
+  const all = rooms.room === FOLLOWED;
+  const keys = all ? rooms.followed : rooms.room === EVERY ? [...rooms.byRoom.keys()] : [rooms.room];
+  const items = keys.flatMap((k) => rooms.byRoom.get(k)?.rows || []).map(showItem)
+    .sort((a, b) => b.score - a.score || a.event.starts_at.localeCompare(b.event.starts_at));
+  const count = document.getElementById("count");
+  count.textContent = `${items.length} show${items.length === 1 ? "" : "s"}`;
+  if (!all && rooms.room !== EVERY) {
+    const following = rooms.followed.includes(rooms.room);
+    const btn = document.getElementById("follow");
+    btn.hidden = false;
+    btn.textContent = following ? "★ Following" : "☆ Follow";
+    btn.setAttribute("aria-pressed", following);
   }
-  t.append(body);
-  wrap.append(t);
-  list.append(wrap);
+  if (!rooms.full) list.append(el("p", "muted small", "Showing only shows that made your picks. Every show at each room appears after the next daily update."));
+  if (!items.length) return list.append(el("p", "empty", all && !rooms.followed.length ? "You don't follow any rooms yet. Pick one under “Another room…” and follow it." : EMPTY.rooms));
+  const shown = sorted(items).slice(0, rooms.all ? Infinity : ROOM_LIMIT);
+  shown.forEach((p) => list.append(renderPick(p)));
+  if (items.length > shown.length) {
+    const more = el("button", "more", `Show all ${items.length} shows`);
+    more.type = "button";
+    more.addEventListener("click", () => { rooms.all = true; select("rooms"); });
+    list.append(more);
+  }
+}
+
+function renderRoomChips() {
+  const box = document.getElementById("roomchips");
+  box.replaceChildren();
+  const chip = (key, label, n) => {
+    const b = el("button", "roomchip", label);
+    b.type = "button";
+    b.setAttribute("aria-pressed", rooms.room === key);
+    b.append(el("span", "n", ` ${n}`));
+    b.addEventListener("click", () => pickRoom(key));
+    box.append(b);
+  };
+  const size = (k) => rooms.byRoom.get(k)?.rows.length || 0;
+  chip(FOLLOWED, "Followed rooms", rooms.followed.reduce((n, k) => n + size(k), 0));
+  for (const k of rooms.followed) {
+    const r = rooms.byRoom.get(k);
+    // Short names keep the chips to fewer lines on a phone: "Phoenix Concert Theatre" → "Phoenix".
+    chip(k, r ? r.name.trim().replace(/^The /, "").replace(/ (Concert Theatre|Tavern)$/, "") : k.replace(/\b\w/g, (c) => c.toUpperCase()), size(k));
+  }
+  // Every other room, with "All rooms" first. A room picked here shows as the select's value.
+  const sel = el("select", "roomadd");
+  sel.setAttribute("aria-label", "Another room");
+  sel.append(new Option("Another room…", ""));
+  sel.append(new Option(`All rooms (${[...rooms.byRoom.keys()].reduce((n, k) => n + size(k), 0)})`, EVERY));
+  [...rooms.byRoom.entries()].filter(([k]) => !rooms.followed.includes(k))
+    .sort((a, b) => a[1].name.localeCompare(b[1].name))
+    .forEach(([k, r]) => sel.append(new Option(`${r.name} (${r.rows.length})`, k)));
+  sel.addEventListener("change", () => { if (sel.value) pickRoom(sel.value); });
+  if (rooms.room !== FOLLOWED && !rooms.followed.includes(rooms.room)) sel.value = rooms.room;
+  box.append(sel);
+}
+
+function pickRoom(key) {
+  rooms.room = key;
+  rooms.all = false;
+  select("rooms");
+}
+
+function renderShowCard(p) {
+  const node = document.getElementById("card").content.firstElementChild.cloneNode(true);
+  const { show, pick, event: ev } = p;
+  fillDate(node, ev.starts_at);
+  node.querySelector(".artist").textContent = p.artist;
+
+  // Strength: the show score alone. Tier labels belong to the tier scores, so pips appear
+  // only through a pick: a Strong pick keeps its edge here.
+  node.querySelector(".pips").remove();
+  node.querySelector(".label").remove();
+  node.classList.toggle("strong", !!pick && strengthOf(pick.tier, pick.score).pips === 3);
+  const score = node.querySelector(".score");
+  score.textContent = show.score.toFixed(2);
+  node.querySelector(".strength").title = `Taste ${show.taste.toFixed(2)} + bonuses ${show.bonus.toFixed(2)}`;
+
+  // Where: venue · capacity · region (if not Toronto) · the rest of the bill
+  const where = node.querySelector(".where");
+  where.append(el("span", "venue", ev.venue.name));
+  if (ev.venue.capacity) where.append(` · ~${ev.venue.capacity.toLocaleString()} cap`);
+  if (ev.region && ev.region !== "Toronto") where.append(" · ", el("span", "region", ev.region));
+  if (ev.lineup.length > 1) where.append(` · with ${ev.lineup.slice(1).join(", ")}`);
+
+  // Chips: which tier picked it (if any), then listeners
+  const chips = node.querySelector(".chips");
+  if (pick) chips.append(el("li", null, pick.artist === p.artist ? TIER_NAMES[pick.tier] : `${pick.artist}: ${TIER_NAMES[pick.tier]}`));
+  if (p.listeners != null) chips.append(el("li", null, `${fmtCompact(p.listeners)} listeners`));
+
+  // Why: the taste behind the score (with weights), then each bonus and its weight
+  const why = node.querySelector(".why");
+  const best = show.best;
+  if (best?.why) {
+    const li = el("li");
+    const lead = best.artist === p.artist ? "" : `${best.artist}: `;
+    const w = parseReasons([best.why]).why[0];
+    if (w?.kind === "similar") {
+      li.append(el("span", "k", `${lead}Similar to `));
+      w.pairs.forEach((x, i) => { if (i) li.append(", "); li.append(x.name, el("span", "w", x.w)); });
+    } else if (w?.kind === "tags") {
+      li.append(el("span", "k", `${lead}Tags: `), w.tags.join(" · "));
+    } else {
+      li.append(lead + best.why);
+    }
+    why.append(li);
+  }
+  if (show.bonuses.length) {
+    const li = el("li");
+    li.append(el("span", "k", "Bonus: "));
+    show.bonuses.forEach((b, i) => { if (i) li.append(", "); li.append(b.text, el("span", "w", `+${b.w.toFixed(2)}`)); });
+    why.append(li);
+  }
+
+  fillFoot(node, p);
+  return node;
 }
 
 const sortSel = document.getElementById("sort");
 sortSel.value = store.get(SORT_KEY, "score");
 sortSel.addEventListener("change", () => {
   store.set(SORT_KEY, sortSel.value);
-  select(store.get(TAB_KEY, "next_big_thing"));
+  select(currentTab());
 });
 
 tabs.addEventListener("click", (e) => {
   const tier = e.target.closest("button")?.dataset.tier;
   if (tier) select(tier);
+});
+
+document.getElementById("follow").addEventListener("click", () => {
+  const k = rooms.room;
+  rooms.followed = rooms.followed.includes(k) ? rooms.followed.filter((x) => x !== k) : [...rooms.followed, k];
+  store.set(ROOMS_KEY, rooms.followed);
+  select("rooms");
 });
 
 // Fade + chevron on whichever side of the tab row has more tabs scrolled out of view.

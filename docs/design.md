@@ -1,6 +1,6 @@
 # Site design (picks page and shared styles)
 
-How the picks page looks and behaves, and why. The rules that matter every session (contrast split, pink kept rare, raw score visible, phone first) are summarised in `CLAUDE.md`. The explore and venue pages are in `docs/research.md`.
+How the picks page looks and behaves, and why. The rules that matter every session (contrast split, pink kept rare, raw score visible, phone first) are summarised in `CLAUDE.md`. Backstage and the venue page are in `docs/research.md`.
 
 ## Cards (redesigned 2026-10-17)
 
@@ -26,7 +26,7 @@ How the picks page looks and behaves, and why. The rules that matter every sessi
   - Body text is Inter (Google Fonts).
   - The title is Momo Trust Display, self-hosted in `site/fonts/` (Fontsource 5.3.0, OFL licence alongside). It isn't on Google Fonts and only has weight 400.
 
-Refresh: the user runs the site as a home-screen app, which resumes the old page and has no reload control. A footer shows "Loaded <time> · Refresh"; Refresh reloads with a throwaway `?r=` query, which is then stripped from the address. Reopening the app more than an hour after load reloads it automatically (`visibilitychange` / `pageshow`, `STALE_MS` in `foot.js`). Refresh keeps the URL hash, so Explore reopens on the same tab. The digest fetch was already `no-store`.
+Refresh: the user runs the site as a home-screen app, which resumes the old page and has no reload control. A footer shows "Loaded <time> · Refresh"; Refresh reloads with a throwaway `?r=` query, which is then stripped from the address. Reopening the app more than an hour after load reloads it automatically (`visibilitychange` / `pageshow`, `STALE_MS` in `foot.js`). Refresh keeps the URL hash, so Backstage reopens on the same tab. The digest fetch was already `no-store`.
 
 Dates: setlist.fm dates (`DD-MM-YYYY`) are built as local dates in `renderAttended`. Parsing a bare `YYYY-MM-DD` string reads it as UTC midnight, which showed every attended show a day early in Toronto (fixed 2026-10-18). Event `starts_at` values carry a time with no zone, so they already parse as local.
 
@@ -34,13 +34,13 @@ Preferences are saved in `localStorage` under `nbt.sort` and `nbt.theme`; votes 
 
 Footer (every page, built by `site/foot.js` into `<footer class="site-foot" data-page="…">`), top to bottom:
 - the site icon
-- two large links, Picks and Explore. The current page shows in text colour. SF overlap is research, so it's linked only from Explore.
+- two large links, Picks and Backstage. The current page shows in text colour. SF overlap is research, so it's linked only from Backstage.
 - "Loaded <time> · Refresh" and the theme switch. The switch moved here from the Picks header (2026-10-19), so every page can change the theme.
 - a muted "Code on GitHub" link.
 
 Picks header line: "Updated <weekday time> · N upcoming shows checked against N bands you know · Growth tracking: day N of 28". The weekday shows whether today's run has landed. The growth note counts up to the 4 weeks of snapshots velocity needs (`GROWTH_DAYS` in `app.js`, mirroring `velocity_min_weeks`), then disappears.
 
-Band sheet (explore page): in light mode it uses the page background over a 45% backdrop. In dark mode the page is black, so the sheet uses `--surface` with a border and a 72% backdrop. On phones it has a drag-handle bar.
+Band sheet (Backstage): in light mode it uses the page background over a 45% backdrop. In dark mode the page is black, so the sheet uses `--surface` with a border and a 72% backdrop. On phones it has a drag-handle bar.
 
 iOS text inflation: `html { -webkit-text-size-adjust: 100% }` in `style.css` stops iOS Safari enlarging text in content wider than the screen; it had blown up the show lists in the SF overlap tables. Show lists wrap on phones and stay on one line from 601px.
 

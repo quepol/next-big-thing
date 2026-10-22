@@ -26,17 +26,24 @@
     <p id="meta" class="muted"></p>
     <div class="tabs-wrap">
     <nav id="tabs" role="tablist">
+      <button role="tab" data-tier="soon">Soon</button>
       <button role="tab" data-tier="next_big_thing">Next big thing</button>
       <button role="tab" data-tier="would_like">You'd probably like</button>
       <button role="tab" data-tier="know">Bands you know</button>
-      <button role="tab" data-tier="ledger">Ledger</button>
-      <button role="tab" data-tier="attended">Attended</button>
+      <button role="tab" data-tier="rooms">Your rooms</button>
     </nav>
     </div>
   </header>
   <div id="banner" hidden></div>
+  <div id="roombar" hidden>
+    <p class="muted">Upcoming shows at the rooms you follow, ranked for you. Tap a room; ☆ follows or unfollows it.</p>
+    <div id="roomchips" class="roomchips"></div>
+  </div>
   <div id="toolbar" hidden>
-    <span id="count" class="muted"></span>
+    <span class="toolbar-left">
+      <span id="count" class="muted"></span>
+      <button type="button" id="follow" class="follow" hidden></button>
+    </span>
     <label class="sort">Sort
       <select id="sort">
         <option value="score">Best match</option>
@@ -86,6 +93,8 @@
     </article>
   </template>
   <script src="foot.js"></script>
+  <script src="ladder.js"></script>
+  <script src="rooms.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

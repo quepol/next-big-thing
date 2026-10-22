@@ -1,11 +1,13 @@
-// The Climb: an exploratory view of the venue research.
+// Backstage: the data behind the picks.
 //   - The Climb: each band's Toronto shows over time, by room size (log scale), with the
 //     user's aughts favourites as dashed "ghost" lines for pace when time is aligned.
-//   - Your rooms: upcoming shows at followed Toronto rooms, ranked by taste + bonuses.
 //   - Look up a band: its journey, billing, and whether the user has seen it.
-//   - Room rivers: SF rooms → Toronto rooms, stream width = shared bands.
+//   - Rivers: SF rooms → Toronto rooms, stream width = shared bands.
+//   - Ledger: next-big-thing picks, listeners when flagged and now.
+//   - Attended: every setlist.fm-logged show, with listeners now.
 // Data: data/venue_research.json, data/toronto_capacity.json, data/ladder_study.json
-// (optional) and data/digest.json (attended shows). Billing rules live in ladder.js.
+// (optional) and data/digest.json (ledgers, attended shows, calendar). Billing rules live
+// in ladder.js; the calendar helpers in rooms.js.
 
 const CAP_DOMAIN = [100, 20000];
 const ALIGN_MAX_YEARS = 10; // aughts climbs run longer; the interesting part is the start
@@ -17,7 +19,6 @@ const store = {
   get(k, d) { try { const v = JSON.parse(localStorage.getItem(k)); return v ?? d; } catch { return d; } },
   set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} },
 };
-const norm = (s) => s.toLowerCase().replace(/[’‘]/g, "'").normalize("NFKD").replace(/[^a-z0-9']+/g, " ").trim();
 const parseDate = (iso) => new Date(`${iso}T12:00:00`);
 const monthYear = (d) => d.toLocaleDateString(undefined, { month: "short", year: "numeric" });
 const firstNumber = (s) => Number(String(s).replace(/,/g, "").match(/\d+/)?.[0] || 0);
@@ -42,6 +43,9 @@ async function load() {
     getJSON("data/ladder_study.json", null),
     getJSON("data/digest.json", {}),
   ]);
+  renderLedger(digest);
+  renderAttended(digest);
+  setupTabs();
   if (!research) {
     document.getElementById("chart").append(el("p", "empty", "No research data yet."));
     return;
@@ -68,13 +72,12 @@ async function load() {
   renderClimb();
   document.getElementById("chartwrap").addEventListener("toggle", (e) => { if (e.target.open) renderChart(); });
   setupLookup();
-  setupRooms(digest);
   setupSheet();
-  setupTabs();
+  showTab(state.tab); // draw whatever needed the data
   let w = document.getElementById("chart").clientWidth;
   window.addEventListener("resize", () => {
     const nw = document.getElementById("chart").clientWidth;
-    if (nw !== w) { w = nw; renderClimb(); if (state.tab === "rooms") renderRivers(); }
+    if (nw !== w) { w = nw; renderClimb(); if (state.tab === "rivers") renderRivers(); }
   });
 }
 
@@ -247,20 +250,21 @@ function renderClimb() {
 }
 
 // ---------- Tabs and the band sheet ----------
-// Two tabs like the picks page: Rooms (your rooms + rivers), the default, and The Climb.
-// The tab is mirrored in the URL hash, so a link or home-screen bookmark can open either. Rivers are drawn when their tab first shows,
+// Tabs like the picks page: The Climb (the default), Rivers, Ledger and Attended.
+// The tab is mirrored in the URL hash, so a link or bookmark can open any of them. Rivers are drawn when their tab first shows,
 // since a hidden tab has no width to lay out in.
 
-const TABS_X = ["rooms", "climb"];
+const TABS_X = ["climb", "rivers", "ledger", "attended"];
+const OLD_HASH = { rooms: "rivers" }; // Rooms moved to the picks page; its rivers stayed here
 
 function setupTabs() {
-  const fromHash = location.hash.slice(1);
-  const initial = TABS_X.includes(fromHash) ? fromHash : "rooms";
+  const fromHash = () => OLD_HASH[location.hash.slice(1)] || location.hash.slice(1);
+  const initial = TABS_X.includes(fromHash()) ? fromHash() : "climb";
   document.getElementById("xtabs").addEventListener("click", (e) => {
     const t = e.target.closest("button")?.dataset.tab;
     if (t) showTab(t);
   });
-  window.addEventListener("hashchange", () => { const t = location.hash.slice(1); if (TABS_X.includes(t)) showTab(t); });
+  window.addEventListener("hashchange", () => { const t = fromHash(); if (TABS_X.includes(t)) showTab(t); });
   showTab(initial);
 }
 
@@ -269,10 +273,60 @@ function showTab(t) {
   if (location.hash.slice(1) !== t) history.replaceState(null, "", `#${t}`);
   document.querySelectorAll("#xtabs button").forEach((b) => b.setAttribute("aria-selected", b.dataset.tab === t));
   for (const id of TABS_X) document.getElementById(`tab-${id}`).hidden = id !== t;
-  if (t === "rooms") {
+  if (!D) return; // research still loading, or missing; load() calls back
+  if (t === "rivers") {
     const w = document.getElementById("rivers").clientWidth;
     if (w !== state.riversWidth) { state.riversWidth = w; renderRivers(); }
-  } else if (document.getElementById("chartwrap").open) renderChart();
+  } else if (t === "climb" && document.getElementById("chartwrap").open) renderChart();
+}
+
+// ---------- Ledger and Attended ----------
+// Plain tables from the digest. They need no research data, so they render first.
+
+// head: [label, kind] with kind "num" (right-aligned) or "date" (kept on one line).
+function table(head, rows) {
+  const wrap = el("div", "ledger-wrap");
+  const t = el("table");
+  const tr = el("tr");
+  for (const [label, kind] of head) tr.append(el("th", kind || null, label));
+  t.append(el("thead"));
+  t.tHead.append(tr);
+  const body = el("tbody");
+  for (const r of rows) {
+    const row = el("tr");
+    r.forEach((v, i) => row.append(el("td", head[i][1] || null, v)));
+    body.append(row);
+  }
+  t.append(body);
+  wrap.append(t);
+  return wrap;
+}
+
+const fmtMaybe = (n) => (n == null ? "—" : new Intl.NumberFormat(undefined, { notation: "compact", maximumFractionDigits: 1 }).format(n));
+// "Oct 19" this year, "Jul 2019" before: the day matters less as a show gets older, and it
+// keeps the column narrow on a phone. Built from local parts (see localDay).
+const shortDate = (y, m, d) => new Date(y, m - 1, d).toLocaleDateString(undefined,
+  y === new Date().getFullYear() ? { month: "short", day: "numeric" } : { month: "short", year: "numeric" });
+
+function renderLedger(digest) {
+  const box = document.getElementById("ledger");
+  const rows = digest.ledger || [];
+  if (!rows.length) return box.append(el("p", "empty", "The ledger fills up as next-big-thing picks are flagged. Check back in a few months to see who blew up."));
+  box.append(table([["Artist"], ["Flagged", "date"], ["Then", "num"], ["Now", "num"], ["Growth", "num"]], rows.map((r) => [
+    r.artist, shortDate(...r.first_flagged.split("-").map(Number)), fmtMaybe(r.listeners_at_flag), fmtMaybe(r.listeners_now),
+    r.listeners_at_flag && r.listeners_now ? `${(r.listeners_now / r.listeners_at_flag).toFixed(1)}×` : "—",
+  ])));
+}
+
+function renderAttended(digest) {
+  const box = document.getElementById("attended");
+  const rows = digest.attended_ledger || [];
+  if (!rows.length) return box.append(el("p", "empty", "No attended shows found. Check that SETLISTFM_API_KEY is set and the setlist.fm user has logged shows."));
+  // setlist.fm uses DD-MM-YYYY.
+  const slfDate = (s) => { const [d, m, y] = s.split("-").map(Number); return shortDate(y, m, d); };
+  box.append(table([["Artist"], ["Seen", "date"], ["Venue"], ["Now", "num"]], rows.map((r) => [
+    r.artist, slfDate(r.date), r.city === "Toronto" ? r.venue : `${r.venue}, ${r.city}`, fmtMaybe(r.listeners_now),
+  ])));
 }
 
 function setupSheet() {
@@ -300,7 +354,7 @@ function closeSheet() {
 // Upcoming Toronto dates per artist, from the digest's calendar (or picks).
 function nextShows(digest) {
   const { rows } = calendarRows(digest);
-  const today = new Date().toISOString().slice(0, 10);
+  const today = localDay();
   const next = new Map();
   for (const r of rows) {
     if (r.starts_at.slice(0, 10) < today) continue;
@@ -625,223 +679,6 @@ function cardActions(name) {
     foot.append(t);
   }
   return foot;
-}
-
-// ---------- Your rooms ----------
-// Tap a Toronto room for its upcoming shows, ranked by a transparent blend of signals.
-// The calendar (every upcoming show with per-act taste scores) comes from the daily
-// pipeline; before its first run with that field, only shows that made the picks appear.
-
-const ROOMS_KEY = "nbt.rooms";
-const DEFAULT_ROOMS = ["phoenix concert theatre", "mod club", "opera house", "horseshoe tavern",
-  "concert hall", "adelaide hall", "drake underground"];
-const ROOM_ALIASES = { "axis club": "mod club" }; // setlist.fm logs the Mod Club under both names
-// Show score = best act's taste fit plus these bonuses. Kept in one place to tune.
-const WEIGHTS = { know: 0.4, heard: 0.15, seen: 0.2, movingUp: 0.25, cameBack: 0.1, sfLink: 0.1 };
-const KNOW_DAYS = 3;
-const ALL = "__all";
-const ROOM_LIMIT = 20; // best N shows first; "show all" for the rest
-
-const roomKey = (name) => {
-  const k = name.toLowerCase().trim().replace(/^the /, "").replace(/[^a-z0-9']+/g, " ").trim();
-  return ROOM_ALIASES[k] || k;
-};
-
-function calendarRows(digest) {
-  if (digest.calendar) return { rows: digest.calendar, full: true };
-  // Fallback: rebuild what we can from the picks.
-  const byEvent = new Map();
-  for (const tier of Object.values(digest.picks || {})) for (const p of tier) {
-    const e = p.event;
-    if (!byEvent.has(e.id)) byEvent.set(e.id, { id: e.id, starts_at: e.starts_at, url: e.url, venue: e.venue, acts: e.lineup.map((a) => ({ artist: a })) });
-    const act = byEvent.get(e.id).acts.find((x) => x.artist === p.artist);
-    if (act) Object.assign(act, { affinity: p.tier === "know" ? 0 : p.score, listeners: p.listeners, why: p.reasons[0] });
-    if (act && p.tier === "know") act.days = Number(p.reasons[0].match(/on (\d+) days/)?.[1] || KNOW_DAYS);
-  }
-  return { rows: [...byEvent.values()], full: false };
-}
-
-function scoreShow(row) {
-  let taste = 0, bonus = 0;
-  const chips = [];
-  let best = null;
-  for (const act of row.acts) {
-    if (act.skipped) continue;
-    if ((act.affinity || 0) > taste) { taste = act.affinity; best = act; }
-  }
-  if (best?.why) {
-    const names = best.why.replace(/^similar to /, "").replace(/ \(\d\.\d+\)/g, "").split(", ");
-    chips.push(best.why.startsWith("similar to") ? `Like ${names.slice(0, 2).join(", ")}` : best.why.replace(/^tags match your taste: /, "Tags: "));
-  }
-  const add = (w, text) => { bonus += w; chips.push(text); };
-  // Chips about the headliner skip the name; chips about an opener lead with it.
-  const head = row.acts[0]?.artist;
-  const who = (a, text) => (a === head ? text : `${a}: ${text.charAt(0).toLowerCase()}${text.slice(1)}`);
-  const known = row.acts.find((a) => (a.days || 0) >= KNOW_DAYS);
-  const heard = row.acts.find((a) => a.days && a.days < KNOW_DAYS);
-  if (known) add(WEIGHTS.know, who(known.artist, `You know them · ${known.days} days`));
-  else if (heard) add(WEIGHTS.heard, who(heard.artist, "Heard before"));
-  const seen = row.acts.find((a) => D.seen.has(norm(a.artist)));
-  if (seen) add(WEIGHTS.seen, who(seen.artist, "You've seen them"));
-  const rep = row.acts.map((a) => D.repeat.get(norm(a.artist))).find(Boolean);
-  if (rep && movingUp(rep)) add(WEIGHTS.movingUp, who(rep.artist, "Moving up"));
-  else if (rep) add(WEIGHTS.cameBack, who(rep.artist, "Keeps coming back"));
-  const sf = row.acts.map((a) => D.shared.get(norm(a.artist))).find(Boolean);
-  if (sf) add(WEIGHTS.sfLink, who(sf.artist, `Played ${sf.sf[0]}${sf.sf.length > 1 ? ` +${sf.sf.length - 1}` : ""}`));
-  return { score: taste + bonus, taste, bonus, chips };
-}
-
-function setupRooms(digest) {
-  const { rows, full } = calendarRows(digest);
-  const today = new Date().toISOString().slice(0, 10);
-  const upcoming = rows.filter((r) => r.starts_at.slice(0, 10) >= today);
-  const byRoom = new Map();
-  for (const r of upcoming) {
-    const k = roomKey(r.venue.name);
-    if (!byRoom.has(k)) byRoom.set(k, { name: r.venue.name.trim(), cap: r.venue.capacity, rows: [] });
-    byRoom.get(k).rows.push(r);
-  }
-  D.rooms = { byRoom, full };
-  state.rooms = store.get(ROOMS_KEY, DEFAULT_ROOMS);
-  state.room = ALL;
-  renderRoomChips();
-  renderRoom();
-}
-
-function renderRoomChips() {
-  const box = document.getElementById("roomchips");
-  box.replaceChildren();
-  const chip = (key, label, count) => {
-    const b = el("button", "roomchip", label);
-    b.type = "button";
-    b.setAttribute("aria-pressed", state.room === key);
-    if (count != null) b.append(el("span", "n", ` ${count}`));
-    b.addEventListener("click", () => { state.room = key; state.roomAll = false; renderRoomChips(); renderRoom(); });
-    box.append(b);
-  };
-  const followed = state.rooms.map((k) => [k, D.rooms.byRoom.get(k)]);
-  chip(ALL, "All your rooms", followed.reduce((n, [, r]) => n + (r?.rows.length || 0), 0));
-  for (const [k, r] of followed) chip(k, r ? short(r.name, 22) : k.replace(/\b\w/g, (c) => c.toUpperCase()), r?.rows.length || 0);
-  // Any other room with upcoming shows
-  const sel = el("select", "roomadd");
-  sel.append(new Option("Another room…", ""));
-  [...D.rooms.byRoom.entries()].filter(([k]) => !state.rooms.includes(k))
-    .sort((a, b) => a[1].name.localeCompare(b[1].name))
-    .forEach(([k, r]) => sel.append(new Option(`${r.name} (${r.rows.length})`, k)));
-  sel.addEventListener("change", () => { if (sel.value) { state.room = sel.value; state.roomAll = false; renderRoomChips(); renderRoom(); } });
-  if (!state.rooms.includes(state.room) && state.room !== ALL) sel.value = state.room;
-  box.append(sel);
-}
-
-function roomProfile(key) {
-  // Twin SF rooms: how much more this room leans toward each SF room than a typical one.
-  const v = D.research.toronto_venues.find((x) => roomKey(x.name) === key);
-  const bits = [];
-  if (v) {
-    const reach = {};
-    for (const a of D.research.shared_artists) for (const s of a.sf) reach[s] = (reach[s] || 0) + 1;
-    const twins = Object.entries(v.by_sf_venue)
-      .filter(([, n]) => n >= 3)
-      .map(([s, n]) => ({ s, n, lift: n / v.artists / ((reach[s] || 1) / D.research.toronto.artists) }))
-      .sort((a, b) => b.lift - a.lift).slice(0, 2);
-    if (twins.length) bits.push(`Closest SF rooms: ${twins.map((t) => `${t.s} (${t.n} shared, ${t.lift.toFixed(1)}×)`).join(", ")}`);
-  }
-  // Launchpad: climbers whose first Toronto headline show was here.
-  const launched = D.research.repeat_artists.filter((a) => {
-    if (!movingUp(a)) return false;
-    const first = a.shows.find((sh) => !isSupport(sh));
-    return first && roomKey(first.venue) === key;
-  });
-  return { bits, launched };
-}
-
-function renderRoom() {
-  const box = document.getElementById("room");
-  box.replaceChildren();
-  const all = state.room === ALL;
-  const keys = all ? state.rooms : [state.room];
-  const rows = keys.flatMap((k) => (D.rooms.byRoom.get(k)?.rows || []).map((r) => ({ r, k })));
-  const r0 = !all && D.rooms.byRoom.get(state.room);
-
-  if (!all) {
-    const head = el("div", "roomhead");
-    const name = r0?.name || state.room;
-    head.append(el("h3", null, name));
-    const followed = state.rooms.includes(state.room);
-    const star = el("button", "follow", followed ? "★ Following" : "☆ Follow");
-    star.type = "button";
-    star.addEventListener("click", () => {
-      state.rooms = followed ? state.rooms.filter((k) => k !== state.room) : [...state.rooms, state.room];
-      store.set(ROOMS_KEY, state.rooms);
-      renderRoomChips(); renderRoom();
-    });
-    head.append(star);
-    box.append(head);
-    const cap = r0?.cap || CAPS[name.toLowerCase()];
-    const { bits, launched } = roomProfile(state.room);
-    if (typeof cap === "number") bits.unshift(`~${fmt(cap)} capacity`);
-    if (bits.length) box.append(el("p", "muted", bits.join(" · ")));
-    if (launched.length) {
-      const p = el("p", "launch");
-      p.append(el("strong", null, `First Toronto headline room for ${launched.length} climber${launched.length > 1 ? "s" : ""}: `));
-      launched.slice(0, 8).forEach((a, i) => {
-        const b = el("button", "linkbtn", a.artist);
-        b.type = "button";
-        b.addEventListener("click", () => select(a.artist));
-        p.append(b, i < Math.min(launched.length, 8) - 1 ? " · " : "");
-      });
-      if (launched.length > 8) p.append(` and ${launched.length - 8} more`);
-      box.append(p);
-    }
-  }
-
-  if (!D.rooms.full) box.append(el("p", "muted small", "Showing only shows that made your picks. Every show at each room appears after the next daily update."));
-  if (!rows.length) { box.append(el("p", "empty", "No upcoming shows found here.")); return; }
-
-  const scored = rows.map(({ r, k }) => ({ r, k, ...scoreShow(r) }))
-    .sort((a, b) => b.score - a.score || a.r.starts_at.localeCompare(b.r.starts_at));
-  const list = el("ol", "roomlist");
-  const shown = state.roomAll ? scored : scored.slice(0, ROOM_LIMIT);
-  for (const s of shown) {
-    // Same shape as the main page's cards: a date tile, then headliner, support, why.
-    const li = el("li", "rl");
-    const d = new Date(s.r.starts_at);
-    const tile = el("div", "when");
-    tile.append(el("span", "dow", d.toLocaleDateString(undefined, { weekday: "short" })),
-      el("span", "day", String(d.getDate())), el("span", "mon", d.toLocaleDateString(undefined, { month: "short" })));
-    const body = el("div", "rl-body");
-    const head = el("div", "rl-head");
-    const [first, ...rest] = s.r.acts.map((a) => a.artist);
-    head.append(el("span", "rl-bill", first));
-    const sc = el("span", "score", s.score.toFixed(2));
-    sc.title = `taste ${s.taste.toFixed(2)} + bonuses ${s.bonus.toFixed(2)}`;
-    head.append(sc);
-    body.append(head);
-    const meta = [];
-    if (rest.length) meta.push(`with ${rest.join(", ")}`);
-    if (all) meta.push(D.rooms.byRoom.get(s.k)?.name || s.k);
-    if (meta.length) body.append(el("p", "rl-meta", meta.join(" · ")));
-    const foot = el("div", "rl-foot");
-    for (const c of s.chips.slice(0, 3)) foot.append(el("span", "rl-chip", c));
-    const act = el("div", "rl-actions");
-    act.append(listenLinks(first));
-    if (s.r.url) {
-      const a = el("a", "tickets", "Tickets ↗");
-      Object.assign(a, { href: s.r.url, target: "_blank", rel: "noopener" });
-      act.append(a);
-    }
-    if (foot.childNodes.length) body.append(foot);
-    body.append(act);
-    li.append(tile, body);
-    list.append(li);
-  }
-  box.append(list);
-  if (scored.length > shown.length) {
-    const more = el("button", "linkbtn", `Show all ${scored.length} shows`);
-    more.type = "button";
-    more.addEventListener("click", () => { state.roomAll = true; renderRoom(); });
-    box.append(more);
-  }
 }
 
 // ---------- Room rivers ----------

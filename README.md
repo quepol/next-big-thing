@@ -37,7 +37,7 @@ Then tune it:
 
 What won't carry over:
 - The venue capacities in `nbt/sources/ticketmaster.py` are Toronto rooms. Elsewhere, picks still work but miss the small-room bonus.
-- The Explore and SF overlap pages are built on my research data (`site/data/venue_research.json`).
+- The Backstage and SF overlap pages are built on my research data (`site/data/venue_research.json`).
 
 > **Privacy:** on a free GitHub plan, Pages needs a public repo, which makes `data/` (your per-artist listening history) public.
 
