@@ -37,6 +37,9 @@ const STRENGTH = {
   next_big_thing: { strong: 0.35, good: 0.25 },
   would_like: { strong: 0.55, good: 0.45 },
   know: { strong: 2.5, good: 1.8 },
+  // Your rooms: show score (rooms.js). It lists every show, quiet nights included, so
+  // below `look` gets no label at all. Oct 22: 10 of 104 followed-room shows were Strong.
+  rooms: { strong: 0.5, good: 0.3, look: 0.15 },
 };
 const LEVELS = [
   { pips: 3, label: "Strong" },
@@ -47,6 +50,7 @@ const LEVELS = [
 function strengthOf(tier, score) {
   const t = STRENGTH[tier];
   if (!t) return LEVELS[2];
+  score = Math.round(score * 100) / 100; // rate the score as shown: 0.2996 reads 0.30, so it's Good
   return score >= t.strong ? LEVELS[0] : score >= t.good ? LEVELS[1] : LEVELS[2];
 }
 
@@ -406,10 +410,16 @@ function renderShowCard(p) {
   fillDate(node, ev.starts_at);
   node.querySelector(".artist").textContent = p.artist;
 
-  // Strength: the show score alone. Tier labels belong to the tier scores, so pips appear
-  // only through a pick: a Strong pick keeps its edge here.
-  node.querySelector(".pips").remove();
-  node.querySelector(".label").remove();
+  // Strength: the show score on its own scale (STRENGTH.rooms); weak matches get the number
+  // only. The pink edge stays a Strong *pick*'s, so pink keeps meaning the same thing.
+  if (Math.round(show.score * 100) / 100 >= STRENGTH.rooms.look) {
+    const lvl = strengthOf("rooms", show.score);
+    node.querySelectorAll(".pips i").forEach((i, n) => i.classList.toggle("on", n < lvl.pips));
+    node.querySelector(".label").textContent = lvl.label;
+  } else {
+    node.querySelector(".pips").remove();
+    node.querySelector(".label").remove();
+  }
   node.classList.toggle("strong", !!pick && strengthOf(pick.tier, pick.score).pips === 3);
   const score = node.querySelector(".score");
   score.textContent = show.score.toFixed(2);
