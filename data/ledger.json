@@ -346,27 +346,6 @@
     ],
     "score_at_flag": 0.2882
   },
-  "half alive": {
-    "artist": "half alive",
-    "checked": "2026-10-21",
-    "event": {
-      "starts_at": "2026-11-07T19:00:00",
-      "url": "https://www.ticketmaster.ca/half-alive-billions-tour-toronto-ontario-11-07-2026/event/1000651AC5E41624",
-      "venue": "The Mod Club"
-    },
-    "first_flagged": "2026-10-21",
-    "listeners_at_flag": 1141,
-    "listeners_now": 1141,
-    "reasons": [
-      "similar to Imagine Dragons (0.24), Young the Giant (0.42), Bastille (0.22)",
-      "you played them on 1 day back in 2023",
-      "only 1,141 listeners on Last.fm",
-      "small venue (~575 cap.)",
-      "you've never been to The Mod Club",
-      "+1 more date nearby"
-    ],
-    "score_at_flag": 0.2224
-  },
   "jonathan roy": {
     "artist": "Jonathan Roy",
     "checked": "2026-10-21",
