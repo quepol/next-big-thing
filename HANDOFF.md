@@ -10,6 +10,7 @@ _Last updated: 2026-10-22 (cloud session on the phone)._
 
 | When | Decision | Where |
 |---|---|---|
+| ~mid-Nov | Raise the "You'd probably like" entry bar from 0.35 to ~0.40 (3.0 on the scale)? On Oct 22, 10 of its 14 picks were Long shots. | #3 |
 | ~mid-Nov | Narrow the out-of-town `loved` list: top ~50 by depth × recency, plus `loves.txt` and setlist.fm-attended artists. Fix in the same change: attended artists still need 3+ days played to pass the out-of-town gate. | #3 |
 | Before the ledger redesign | Move votes and follows out of the browser. The proposal is a "Send" button that opens a pre-filled GitHub issue, which an Action commits; no token. | #5 |
 | ~mid-Dec | Ledger redesign around "Was I early, and did I go?" | #3 |
@@ -25,8 +26,9 @@ Already decided (2026-10-21), don't re-ask:
 1. **Did the earlier crons land near 6am Toronto?** The main cron is now `17 5` (was `17 10`, which started around 11am every day), and the backup is `47 9`. Check the "Daily snapshot" commit times.
 2. **Which artist did the kids' tag filter exclude?** The Oct 21 run logged "51 excluded (1 automatically)", where earlier runs logged 0. It's probably one of the four whose keeps were removed. Tell the user which one; it's their call, not a surprise.
 3. **half alive should be gone from next big thing** (the stylised-name fix, 5753e70). Its ledger entry was removed by hand on Oct 22.
-4. **Your rooms ratings after a week:** does Strong-from-bonuses (a known band with little taste fit, like TALK) feel right, or should Strong need a minimum taste fit?
-5. **The new layout on the phone:** Soon and Your rooms on Picks, plus Backstage. The user built it on a Mac; check how it feels on the home-screen app.
+4. **The 1–10 scale after a week:** do the 10 ceilings feel right? Next big thing tops out at a raw 0.50, which velocity (~Nov 14) may push many picks past. Bands you know is 10 from 50 days.
+5. **Your rooms ratings after a week:** does Strong-from-bonuses (a known band with little taste fit, like TALK) feel right, or should Strong need a minimum taste fit?
+6. **The new layout on the phone:** Soon and Your rooms on Picks, plus Backstage. The user built it on a Mac; check how it feels on the home-screen app.
 
 ## Watch list
 
@@ -41,7 +43,9 @@ Already decided (2026-10-21), don't re-ask:
   - **New layout** from the user's own experiment branch. The picks page has Soon (tonight and tomorrow, all tiers), the three tiers, and Your rooms. Explore became **Backstage**: The Climb, Rivers, Ledger and Attended.
   - half alive removed from the ledger (it was flagged from the wrong Last.fm page).
   - **Your rooms ratings:** Strong ≥ 0.50, Good ≥ 0.30, Worth a look ≥ 0.15 on the show score; below that, the number only. Strong there can come from bonuses alone (TALK).
-  - Ratings on every tab use the score as displayed (rounded), so 0.2996 reading 0.30 is Good.
+  - **Scores out of 10 on every tab** (`SCALES` in `site/ladder.js`): 8.0+ Strong, 5.0+ Good, 3.0+ Worth a look, under 3.0 **Long shot**. The label comes from the displayed number. The raw score is only in the tooltip now (the user's call); the 1–10 number is the sanity check.
+  - Soon sorts tonight first, then by the 1–10 score.
+  - Your rooms: the opener a show scored on is bold in the "with …" line.
   - **Tier chips are pink pills on every card** (picks, Soon, Your rooms, the Backstage band sheet). The design rule in `CLAUDE.md` now allows pink pills for a pick's tier and "Moving up" only.
 - **Oct 21:**
   - seeds weighted by listening depth √(days × plays) × recency
