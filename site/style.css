@@ -81,7 +81,7 @@ body {
 header, main, #banner, #toolbar { max-width: 760px; margin: 0 auto; padding: 0 16px; }
 /* The tab row scrolls up with the page, then stays at the top while the cards scroll under it. */
 .tabbar { position: sticky; top: 0; z-index: 10; background: var(--bg); padding: 0 16px; }
-.tabbar .tabs-wrap { max-width: 728px; margin: 0 auto; } /* 760px less the side padding, like header */
+.tabbar .tabs-wrap, .tabbar > nav { max-width: 728px; margin: 0 auto; } /* 760px less the side padding, like header */
 header { padding-top: 32px; }
 .title-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 h1 { margin: 0; font-family: "Momo Trust Display", "Inter", sans-serif; font-weight: 400; font-size: 28px; letter-spacing: -0.01em; }

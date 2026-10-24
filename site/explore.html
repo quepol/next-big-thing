@@ -25,13 +25,17 @@
       <input id="lookup" class="lookup" type="search" list="bands" placeholder="Look up a band…" autocomplete="off" aria-label="Look up a band">
       <datalist id="bands"></datalist>
     </div>
+  </header>
+  <!-- Outside <header> so it can stick to the top of the screen, as on the picks page. -->
+  <div id="tabbar-mark"></div>
+  <div id="tabbar" class="tabbar">
     <nav id="xtabs" role="tablist">
       <button role="tab" data-tab="climb">The Climb</button>
       <button role="tab" data-tab="rivers">Rivers</button>
       <button role="tab" data-tab="ledger">Ledger</button>
       <button role="tab" data-tab="attended">Attended</button>
     </nav>
-  </header>
+  </div>
   <main class="report">
     <div id="tab-climb" class="xtab" role="tabpanel">
       <section class="rsec climb">

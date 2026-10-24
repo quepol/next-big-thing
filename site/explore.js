@@ -262,7 +262,11 @@ function setupTabs() {
   const initial = TABS_X.includes(fromHash()) ? fromHash() : "climb";
   document.getElementById("xtabs").addEventListener("click", (e) => {
     const t = e.target.closest("button")?.dataset.tab;
-    if (t) showTab(t);
+    if (!t) return;
+    // As on the picks page: if the tab bar is frozen, start the new tab just under it.
+    const stuck = document.getElementById("tabbar").getBoundingClientRect().top <= 0;
+    showTab(t);
+    if (stuck) window.scrollTo({ top: document.getElementById("tabbar-mark").getBoundingClientRect().top + window.scrollY });
   });
   window.addEventListener("hashchange", () => { const t = fromHash(); if (TABS_X.includes(t)) showTab(t); });
   showTab(initial);
