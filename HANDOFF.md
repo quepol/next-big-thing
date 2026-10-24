@@ -2,7 +2,7 @@
 
 Where things stand, for the next session (on the Mac or the phone). Read `CLAUDE.md` first; it has everything that's always true. Update this file at the end of each working session.
 
-_Last updated: 2026-10-22 (cloud session on the phone)._
+_Last updated: 2026-10-24 (cloud session on the phone)._
 
 **Status:** the pipeline runs daily and the site is live. Nothing is half-built, and the dev branch matches `main`. The user is living with the site for a few weeks before deciding the bigger scoring questions below.
 
@@ -28,7 +28,8 @@ Already decided (2026-10-21), don't re-ask:
 3. **half alive should be gone from next big thing** (the stylised-name fix, 5753e70). Its ledger entry was removed by hand on Oct 22.
 4. **The 1–10 scale after a week:** do the 10 ceilings feel right? Next big thing tops out at a raw 0.50, which velocity (~Nov 14) may push many picks past. Bands you know is 10 from 50 days.
 5. **Your rooms ratings after a week:** does Strong-from-bonuses (a known band with little taste fit, like TALK) feel right, or should Strong need a minimum taste fit?
-6. **The new layout on the phone:** Soon and Your rooms on Picks, plus Backstage. The user built it on a Mac; check how it feels on the home-screen app.
+6. **Frozen tabs in the home-screen app:** does the bar sit just under the iPhone status bar, not behind it?
+7. **The new layout on the phone:** Soon and Your rooms on Picks, plus Backstage. The user built it on a Mac; check how it feels on the home-screen app.
 
 ## Watch list
 
@@ -39,6 +40,9 @@ Already decided (2026-10-21), don't re-ask:
 
 ## Recently shipped
 
+- **Oct 24:**
+  - **Frozen tab rows** on the picks page and Backstage: the tabs stick to the top while the cards scroll, and tapping a tab mid-scroll starts the new list under the bar.
+  - **SoundCloud links use the tracks search** (`/search/sounds`). The iOS app ignores search text on plain `/search`; the tracks route bounces to the browser with results. From the user's six-link test.
 - **Oct 22:**
   - **New layout** from the user's own experiment branch. The picks page has Soon (tonight and tomorrow, all tiers), the three tiers, and Your rooms. Explore became **Backstage**: The Climb, Rivers, Ledger and Attended.
   - half alive removed from the ledger (it was flagged from the wrong Last.fm page).
