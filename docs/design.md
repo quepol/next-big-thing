@@ -30,6 +30,8 @@ How the picks page looks and behaves, and why. The rules that matter every sessi
   - Body text is Inter (Google Fonts).
   - The title is Momo Trust Display, self-hosted in `site/fonts/` (Fontsource 5.3.0, OFL licence alongside). It isn't on Google Fonts and only has weight 400.
 
+Frozen tabs (2026-10-24): the picks page's tab row sits outside `<header>` in `#tabbar` (`position: sticky`), so it scrolls up with the page and then stays at the top while the cards scroll under it. Only the tabs freeze; the count and Sort bar scrolls with the cards. Tapping a tab while the bar is frozen scrolls to the empty `#tabbar-mark` just above it, so the new list starts under the bar. A sticky element inside `<header>` only sticks while the header is on screen, which is why it moved.
+
 Refresh: the user runs the site as a home-screen app, which resumes the old page and has no reload control. A footer shows "Loaded <time> · Refresh"; Refresh reloads with a throwaway `?r=` query, which is then stripped from the address. Reopening the app more than an hour after load reloads it automatically (`visibilitychange` / `pageshow`, `STALE_MS` in `foot.js`). Refresh keeps the URL hash, so Backstage reopens on the same tab. The digest fetch was already `no-store`.
 
 Dates: setlist.fm dates (`DD-MM-YYYY`) are built as local dates in `renderAttended`. Parsing a bare `YYYY-MM-DD` string reads it as UTC midnight, which showed every attended show a day early in Toronto (fixed 2026-10-18). Event `starts_at` values carry a time with no zone, so they already parse as local.

@@ -460,8 +460,16 @@ sortSel.addEventListener("change", () => {
 
 tabs.addEventListener("click", (e) => {
   const tier = e.target.closest("button")?.dataset.tier;
-  if (tier) select(tier);
+  if (!tier) return;
+  const stuck = tabbar.getBoundingClientRect().top <= 0;
+  select(tier);
+  // If the tab bar is frozen at the top, start the new tab's list just under it, not mid-way.
+  if (stuck) window.scrollTo({ top: tabbarMark.getBoundingClientRect().top + window.scrollY });
 });
+
+// Where the tab bar rests before it sticks: an empty marker just above it never moves.
+const tabbar = document.getElementById("tabbar");
+const tabbarMark = document.getElementById("tabbar-mark");
 
 document.getElementById("follow").addEventListener("click", () => {
   const k = rooms.room;
