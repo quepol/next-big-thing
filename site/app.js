@@ -265,7 +265,7 @@ function fillFoot(node, p) {
   const enc = encodeURIComponent(p.artist);
   const listen = node.querySelector(".listen");
   for (const [href, icon, label] of [
-    [`https://soundcloud.com/search?q=${enc}`, ICONS.music, "SoundCloud"],
+    [`https://soundcloud.com/search/sounds?q=${enc}`, ICONS.music, "SoundCloud"], // /search/sounds: the iOS app ignores ?q= but hands this route to the browser, which searches
     [`https://www.youtube.com/results?search_query=${enc}`, ICONS.youtube, "YouTube"],
   ]) {
     const a = el("a");
