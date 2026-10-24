@@ -1147,296 +1147,6 @@
       "acts": [
         {
           "affinity": 0.0,
-          "artist": "New Anthem w/ How Can We Save You, Sonic Scene Kids & DEC/EMBER"
-        }
-      ],
-      "id": "tm:rZ7HnEZ1AfGOo7",
-      "region": "Toronto",
-      "starts_at": "2026-10-23T19:00:00",
-      "url": "https://www.ticketweb.ca/event/new-anthem-w-how-can-supermarket-tickets/14320444",
-      "venue": {
-        "capacity": 200,
-        "name": "Supermarket"
-      }
-    },
-    {
-      "acts": [
-        {
-          "affinity": 0.0,
-          "artist": "Local Goblin w/ Struck Dead & TOGRASH"
-        }
-      ],
-      "id": "tm:rZ7HnEZ1Afud0f",
-      "region": "Toronto",
-      "starts_at": "2026-10-23T19:00:00",
-      "url": "https://www.ticketweb.ca/event/local-goblin-w-struck-dead-sneaky-dees-concert-venue-tickets/14343914",
-      "venue": {
-        "capacity": 300,
-        "name": "Sneaky Dee's Concert Venue"
-      }
-    },
-    {
-      "acts": [
-        {
-          "affinity": 0.0275,
-          "artist": "Autobahn",
-          "listeners": 12239,
-          "why": "tags match your taste: post-punk, alternative, punk rock"
-        },
-        {
-          "affinity": 0.0,
-          "artist": "Godstar Megamax",
-          "listeners": 410
-        }
-      ],
-      "id": "tm:rZ7HnEZ1AfGaF7",
-      "region": "Toronto",
-      "starts_at": "2026-10-23T19:00:00",
-      "url": "https://www.ticketweb.ca/event/autobahn-the-sound-garage-tickets/14309204",
-      "venue": {
-        "capacity": null,
-        "name": "The Sound Garage"
-      }
-    },
-    {
-      "acts": [
-        {
-          "affinity": 0.0229,
-          "artist": "MIKE.",
-          "listeners": 345434,
-          "why": "similar to Post Malone (0.20)"
-        }
-      ],
-      "id": "tm:1A8Zk3KGkdpWtv-",
-      "region": "Toronto",
-      "starts_at": "2026-10-23T19:00:00",
-      "url": "https://www.ticketmaster.ca/mike-toronto-ontario-10-23-2026/event/10006493D6F69061",
-      "venue": {
-        "capacity": 2500,
-        "name": "History Toronto"
-      }
-    },
-    {
-      "acts": [
-        {
-          "affinity": 0.0,
-          "artist": "The Ace Frehley Band Tribute To Ace Frehley"
-        }
-      ],
-      "id": "tm:rZ7HnEZ1AfPZQd",
-      "region": "Toronto",
-      "starts_at": "2026-10-23T19:00:00",
-      "url": "https://www.ticketweb.ca/event/the-ace-frehley-band-tribute-rockpile-rock-bar-tickets/14940683",
-      "venue": {
-        "capacity": 350,
-        "name": "Rockpile Rock Bar"
-      }
-    },
-    {
-      "acts": [
-        {
-          "affinity": 0.0,
-          "artist": "Hotel California - The Original Eagles Tribute"
-        }
-      ],
-      "id": "tm:1A8Zk8JGkeX4kIK",
-      "region": "Toronto",
-      "starts_at": "2026-10-23T19:30:00",
-      "url": "https://www.ticketmaster.ca/hotel-california-mississauga-ontario-10-23-2026/event/10006426BE546A13",
-      "venue": {
-        "capacity": 1800,
-        "name": "Living Arts Centre Auditorium"
-      }
-    },
-    {
-      "acts": [
-        {
-          "artist": "SIDEFX",
-          "skipped": true
-        }
-      ],
-      "id": "tm:rZ7HnEZ1Af0ZxK",
-      "region": "Toronto",
-      "starts_at": "2026-10-23T20:30:00",
-      "url": "https://www.ticketweb.ca/event/sidefx-spot-1-grill-music-tickets/14900893",
-      "venue": {
-        "capacity": 400,
-        "name": "Spot 1 Grill & Music Hall"
-      }
-    },
-    {
-      "acts": [
-        {
-          "affinity": 0.0,
-          "artist": "BLOODRAVE w/ PICTUREPLANE, NOWHERETORUN, REPULSIVE RADIO, VICIOUSWISHES, HOLLISGHOUL"
-        }
-      ],
-      "id": "tm:rZ7HnEZ1AfFMCf",
-      "region": "Toronto",
-      "starts_at": "2026-10-23T21:00:00",
-      "url": "https://www.ticketweb.ca/event/bloodrave-w-pictureplane-nowheretorun-repulsive-lees-palace-tickets/14237394",
-      "venue": {
-        "capacity": 700,
-        "name": "Lee's Palace"
-      }
-    },
-    {
-      "acts": [
-        {
-          "affinity": 0.0,
-          "artist": "CLOSER: Goth x Industrial x Dark EDM Night at Hard Luck Toronto on Oct 23 2026"
-        }
-      ],
-      "id": "tm:rZ7HnEZ1AfG0j7",
-      "region": "Toronto",
-      "starts_at": "2026-10-23T22:00:00",
-      "url": "https://www.ticketweb.ca/event/closer-goth-x-industrial-x-hard-luck-bar-tickets/14324704",
-      "venue": {
-        "capacity": 200,
-        "name": "Hard Luck Bar"
-      }
-    },
-    {
-      "acts": [
-        {
-          "affinity": 0.0,
-          "artist": "WISHING WELL: FANS"
-        }
-      ],
-      "id": "tm:rZ7HnEZ1AfG7A7",
-      "region": "Toronto",
-      "starts_at": "2026-10-23T22:00:00",
-      "url": "https://www.ticketweb.ca/event/wishing-well-fans-the-dance-cave-tickets/14304144",
-      "venue": {
-        "capacity": 400,
-        "name": "The Dance Cave"
-      }
-    },
-    {
-      "acts": [
-        {
-          "affinity": 0.0,
-          "artist": "Luuk Van Dijk | 4AM License"
-        }
-      ],
-      "id": "tm:rZ7HnEZ1AfGoGV",
-      "region": "Toronto",
-      "starts_at": "2026-10-23T22:00:00",
-      "url": "https://www.ticketweb.ca/event/luuk-van-dijk-4am-coda-tickets/14311334",
-      "venue": {
-        "capacity": 700,
-        "name": "CODA"
-      }
-    },
-    {
-      "acts": [
-        {
-          "affinity": 0.0239,
-          "artist": "Skepsis",
-          "listeners": 93541,
-          "why": "tags match your taste: electronic, alternative rock, garage"
-        }
-      ],
-      "id": "tm:rZ7HnEZ1AfaMG7",
-      "region": "Toronto",
-      "starts_at": "2026-10-23T22:00:00",
-      "url": "https://www.ticketweb.ca/event/crucast-noir-inside-rebel-tickets/14277304",
-      "venue": {
-        "capacity": null,
-        "name": "NOIR (inside REBEL)"
-      }
-    },
-    {
-      "acts": [
-        {
-          "affinity": 0.0,
-          "artist": "PLAYGRND SERIES",
-          "listeners": 142
-        }
-      ],
-      "id": "tm:16e0Z_3OoG7HYEX",
-      "region": "Toronto",
-      "starts_at": "2026-10-23T22:00:00",
-      "url": "https://www.ticketweb.ca/event/arkangel-masquerade-ball-the-opera-house-tickets/14308574?REFERRAL_ID=tmfeed",
-      "venue": {
-        "capacity": 900,
-        "name": "The Opera House"
-      }
-    },
-    {
-      "acts": [
-        {
-          "affinity": 0.0451,
-          "artist": "Young Franco",
-          "listeners": 309392,
-          "why": "similar to Mark Ronson (0.23), Anderson .Paak (0.24)"
-        }
-      ],
-      "id": "tm:1AvZZ_3GkRku3Pr",
-      "region": "Toronto",
-      "starts_at": "2026-10-23T22:00:00",
-      "url": "https://www.ticketmaster.ca/young-franco-toronto-ontario-10-23-2026/event/1000652BC635295E",
-      "venue": {
-        "capacity": 575,
-        "name": "The Mod Club"
-      }
-    },
-    {
-      "acts": [
-        {
-          "affinity": 0.3573,
-          "artist": "Arlo",
-          "listeners": 124417,
-          "why": "tags match your taste: indie, rock, indie rock"
-        }
-      ],
-      "id": "tm:1A8Zkf7Gkd7iq24",
-      "region": "Toronto",
-      "starts_at": "2026-10-23T22:00:00",
-      "url": "https://www.ticketmaster.ca/arlo-toronto-ontario-10-23-2026/event/10006504C4B1D3D5",
-      "venue": {
-        "capacity": null,
-        "name": "Longboat Hall"
-      }
-    },
-    {
-      "acts": [
-        {
-          "affinity": 0.0315,
-          "artist": "1tbsp",
-          "listeners": 212100,
-          "why": "tags match your taste: electronic, dance, house"
-        }
-      ],
-      "id": "tm:rZ7HnEZ1Af1_47",
-      "region": "Toronto",
-      "starts_at": "2026-10-23T22:00:00",
-      "url": "https://www.ticketweb.ca/event/1tbsp-oct-23-runnymede-hall-tickets/14299544",
-      "venue": {
-        "capacity": null,
-        "name": "Runnymede Hall"
-      }
-    },
-    {
-      "acts": [
-        {
-          "affinity": 0.0,
-          "artist": "Emo Night Toronto at Sneaky Dee's"
-        }
-      ],
-      "id": "tm:rZ7HnEZ1AfQdjd",
-      "region": "Toronto",
-      "starts_at": "2026-10-23T22:30:00",
-      "url": "https://www.ticketweb.ca/event/emo-night-toronto-at-sneaky-sneaky-dees-concert-venue-tickets/14683703",
-      "venue": {
-        "capacity": 300,
-        "name": "Sneaky Dee's Concert Venue"
-      }
-    },
-    {
-      "acts": [
-        {
-          "affinity": 0.0,
           "artist": "Dancehall At 9am"
         }
       ],
@@ -1452,7 +1162,7 @@
     {
       "acts": [
         {
-          "affinity": 0.089,
+          "affinity": 0.0889,
           "artist": "Isabel LaRosa",
           "listeners": 1172726,
           "why": "tags match your taste: pop, female vocalists, indie pop"
@@ -1544,7 +1254,7 @@
     {
       "acts": [
         {
-          "affinity": 0.2677,
+          "affinity": 0.2675,
           "artist": "Mr. Fantasy",
           "listeners": 68439,
           "why": "similar to Harry Styles (0.83), ZAYN (0.53)"
@@ -1585,7 +1295,7 @@
           "skipped": true
         },
         {
-          "affinity": 0.0339,
+          "affinity": 0.0338,
           "artist": "Magnus Ferrell",
           "listeners": 27196,
           "why": "similar to Charlie Puth (0.35), Carly Rae Jepsen (0.14)"
@@ -1763,7 +1473,7 @@
     {
       "acts": [
         {
-          "affinity": 0.382,
+          "affinity": 0.3819,
           "artist": "SIENNA SPIRO",
           "listeners": 680566,
           "why": "similar to Adele (0.66), Sam Smith (0.72), Amy Winehouse (0.53)"
@@ -1793,7 +1503,7 @@
           "why": "tags match your taste: electronic, house, techno"
         },
         {
-          "affinity": 0.1561,
+          "affinity": 0.156,
           "artist": "Alok",
           "listeners": 1345718,
           "why": "similar to Tiësto (0.46), David Guetta (0.45)"
@@ -1840,7 +1550,7 @@
     {
       "acts": [
         {
-          "affinity": 0.0738,
+          "affinity": 0.0737,
           "artist": "Chanpan",
           "listeners": 149828,
           "why": "similar to Ethan Bortnick (0.58)"
@@ -1900,13 +1610,13 @@
     {
       "acts": [
         {
-          "affinity": 0.4279,
+          "affinity": 0.4276,
           "artist": "Olivia Rodrigo",
           "listeners": 3391413,
           "why": "similar to Taylor Swift (0.96), Ariana Grande (0.87), Harry Styles (0.56)"
         },
         {
-          "affinity": 0.3642,
+          "affinity": 0.364,
           "artist": "Wolf Alice",
           "days": 2,
           "listeners": 1355258,
@@ -1955,7 +1665,7 @@
           "why": "similar to The Kid LAROI (0.10)"
         },
         {
-          "affinity": 0.1727,
+          "affinity": 0.1726,
           "artist": "DERBY",
           "days": 5,
           "listeners": 69419,
@@ -2005,13 +1715,13 @@
     {
       "acts": [
         {
-          "affinity": 0.4279,
+          "affinity": 0.4276,
           "artist": "Olivia Rodrigo",
           "listeners": 3391413,
           "why": "similar to Taylor Swift (0.96), Ariana Grande (0.87), Harry Styles (0.56)"
         },
         {
-          "affinity": 0.3642,
+          "affinity": 0.364,
           "artist": "Wolf Alice",
           "days": 2,
           "listeners": 1355258,
@@ -2072,7 +1782,7 @@
     {
       "acts": [
         {
-          "affinity": 0.0401,
+          "affinity": 0.04,
           "artist": "horsegiirL",
           "listeners": 248019,
           "why": "similar to Charli xcx (0.42)"
@@ -2144,7 +1854,7 @@
     {
       "acts": [
         {
-          "affinity": 0.1069,
+          "affinity": 0.1068,
           "artist": "She Wants Revenge",
           "listeners": 1492650,
           "why": "similar to The Cure (0.25), Depeche Mode (0.25), Joy Division (0.22)"
@@ -2209,7 +1919,7 @@
     {
       "acts": [
         {
-          "affinity": 0.1559,
+          "affinity": 0.1558,
           "artist": "The Sheepdogs",
           "days": 1,
           "listeners": 132265,
@@ -2283,7 +1993,7 @@
     {
       "acts": [
         {
-          "affinity": 0.1324,
+          "affinity": 0.1323,
           "artist": "RaiNao",
           "listeners": 53491,
           "why": "similar to Bad Bunny (0.39), J Balvin (0.19)"
@@ -2301,7 +2011,7 @@
     {
       "acts": [
         {
-          "affinity": 0.2093,
+          "affinity": 0.2092,
           "artist": "L7",
           "days": 2,
           "listeners": 718611,
@@ -2390,7 +2100,7 @@
     {
       "acts": [
         {
-          "affinity": 0.0798,
+          "affinity": 0.0797,
           "artist": "Big Wreck",
           "listeners": 100166,
           "why": "similar to The Tragically Hip (0.38), Sloan (0.31), Live (0.12)"
@@ -2453,7 +2163,7 @@
           "why": "tags match your taste: indie rock, rock, indie"
         },
         {
-          "affinity": 0.0943,
+          "affinity": 0.0942,
           "artist": "Kid Sistr",
           "listeners": 81289,
           "why": "similar to MUNA (0.49)"
@@ -2794,7 +2504,7 @@
     {
       "acts": [
         {
-          "affinity": 0.1673,
+          "affinity": 0.1672,
           "artist": "Cosmic Gate",
           "listeners": 477013,
           "why": "similar to Tiësto (0.58)"
@@ -2828,7 +2538,7 @@
     {
       "acts": [
         {
-          "affinity": 0.1213,
+          "affinity": 0.1212,
           "artist": "Gabriel & Dresden",
           "listeners": 245382,
           "why": "similar to Tiësto (0.42)"
@@ -2870,7 +2580,7 @@
     {
       "acts": [
         {
-          "affinity": 0.4508,
+          "affinity": 0.4507,
           "artist": "Blue October",
           "days": 1,
           "listeners": 844601,
@@ -3029,7 +2739,7 @@
     {
       "acts": [
         {
-          "affinity": 0.1071,
+          "affinity": 0.107,
           "artist": "Kaskade",
           "listeners": 1175884,
           "why": "similar to Tiësto (0.27), Avicii (0.24), David Guetta (0.34)"
@@ -3095,7 +2805,7 @@
     {
       "acts": [
         {
-          "affinity": 0.271,
+          "affinity": 0.2709,
           "artist": "Loreena McKennitt",
           "days": 8,
           "listeners": 605105,
@@ -3469,14 +3179,14 @@
     {
       "acts": [
         {
-          "affinity": 0.1989,
+          "affinity": 0.1988,
           "artist": "Geese",
           "days": 1,
           "listeners": 630427,
           "why": "similar to The Strokes (0.47), Water From Your Eyes (0.49), Modest Mouse (0.23)"
         },
         {
-          "affinity": 0.0536,
+          "affinity": 0.0535,
           "artist": "Gwenifer Raymond",
           "listeners": 33556,
           "why": "similar to Nick Drake (0.12), Leo Kottke (0.39), James Blackshaw (0.33)"
@@ -3523,7 +3233,7 @@
           "why": "tags match your taste: rock, singer-songwriter, hard rock"
         },
         {
-          "affinity": 0.136,
+          "affinity": 0.1359,
           "artist": "Eliza Niemi",
           "listeners": 5602,
           "why": "similar to Feist (0.23), The New Pornographers (0.21), The Tragically Hip (0.28)"
@@ -3637,14 +3347,14 @@
     {
       "acts": [
         {
-          "affinity": 0.1989,
+          "affinity": 0.1988,
           "artist": "Geese",
           "days": 1,
           "listeners": 630427,
           "why": "similar to The Strokes (0.47), Water From Your Eyes (0.49), Modest Mouse (0.23)"
         },
         {
-          "affinity": 0.0536,
+          "affinity": 0.0535,
           "artist": "Gwenifer Raymond",
           "listeners": 33556,
           "why": "similar to Nick Drake (0.12), Leo Kottke (0.39), James Blackshaw (0.33)"
@@ -3662,7 +3372,7 @@
     {
       "acts": [
         {
-          "affinity": 0.1647,
+          "affinity": 0.1646,
           "artist": "Journey",
           "days": 15,
           "listeners": 3380455,
@@ -3794,7 +3504,7 @@
     {
       "acts": [
         {
-          "affinity": 0.0792,
+          "affinity": 0.0791,
           "artist": "Econoline Crush",
           "listeners": 51281,
           "why": "similar to The Tragically Hip (0.38), Sloan (0.41)"
@@ -3885,7 +3595,7 @@
         {
           "affinity": 0.0421,
           "artist": "Angine de Poitrine",
-          "days": 2,
+          "days": 3,
           "listeners": 195026,
           "why": "similar to Pink Floyd (0.15), Porcupine Tree (0.14)"
         }
@@ -3980,7 +3690,7 @@
     {
       "acts": [
         {
-          "affinity": 0.0692,
+          "affinity": 0.0691,
           "artist": "Kottonmouth Kings",
           "listeners": 321070,
           "why": "similar to Atmosphere (0.46)"
@@ -4014,7 +3724,7 @@
     {
       "acts": [
         {
-          "affinity": 0.5096,
+          "affinity": 0.5095,
           "artist": "Justin Nozuka",
           "days": 23,
           "listeners": 505656,
@@ -4080,7 +3790,7 @@
     {
       "acts": [
         {
-          "affinity": 0.3649,
+          "affinity": 0.3647,
           "artist": "Jessica Lea Mayfield",
           "listeners": 208487,
           "why": "similar to Neko Case (0.97), Jesca Hoop (0.69), Waxahatchee (0.80)"
@@ -4202,7 +3912,7 @@
     {
       "acts": [
         {
-          "affinity": 0.0377,
+          "affinity": 0.0376,
           "artist": "Bad Waitress",
           "listeners": 62492,
           "why": "similar to Mannequin Pussy (0.30)"
@@ -4236,7 +3946,7 @@
     {
       "acts": [
         {
-          "affinity": 0.0217,
+          "affinity": 0.0216,
           "artist": "Jody Wisternoff",
           "listeners": 153251,
           "why": "tags match your taste: electronic, trance, house"
@@ -4270,7 +3980,7 @@
     {
       "acts": [
         {
-          "affinity": 0.1251,
+          "affinity": 0.125,
           "artist": "Matt Sassari",
           "listeners": 522480,
           "why": "similar to Tiësto (0.37), David Guetta (0.34)"
@@ -4390,7 +4100,7 @@
     {
       "acts": [
         {
-          "affinity": 0.1511,
+          "affinity": 0.151,
           "artist": "half alive",
           "days": 1,
           "listeners": 660072,
@@ -4654,7 +4364,7 @@
     {
       "acts": [
         {
-          "affinity": 0.102,
+          "affinity": 0.1019,
           "artist": "Pretty Sick",
           "listeners": 478881,
           "why": "similar to Mannequin Pussy (0.55), Blonde Redhead (0.22), Heatmiser (0.21)"
@@ -4702,7 +4412,7 @@
     {
       "acts": [
         {
-          "affinity": 0.1511,
+          "affinity": 0.151,
           "artist": "half alive",
           "days": 1,
           "listeners": 660072,
@@ -4790,7 +4500,7 @@
     {
       "acts": [
         {
-          "affinity": 0.1493,
+          "affinity": 0.1492,
           "artist": "Hovvdy",
           "listeners": 329703,
           "why": "similar to This is Lorelei (0.96), Kurt Vile (0.45), Jay Som (0.46)"
@@ -4838,7 +4548,7 @@
           "why": "similar to Noah Kahan (0.23), Gregory Alan Isakov (0.18), The Head and the Heart (0.13)"
         },
         {
-          "affinity": 0.2653,
+          "affinity": 0.2652,
           "artist": "Lily Kershaw",
           "listeners": 100620,
           "why": "similar to William Fitzsimmons (0.35), Brandi Carlile (0.37), Sara Bareilles (0.33)"
@@ -4904,7 +4614,7 @@
     {
       "acts": [
         {
-          "affinity": 0.1238,
+          "affinity": 0.1237,
           "artist": "Die Spitz",
           "listeners": 143924,
           "why": "similar to Mannequin Pussy (0.87), Sleater-Kinney (0.26)"
@@ -4928,7 +4638,7 @@
     {
       "acts": [
         {
-          "affinity": 0.3302,
+          "affinity": 0.3301,
           "artist": "Kate Nash",
           "days": 14,
           "listeners": 1535798,
@@ -4987,7 +4697,7 @@
           "why": "similar to Alkaline Trio (0.66)"
         },
         {
-          "affinity": 0.1377,
+          "affinity": 0.1376,
           "artist": "Hot Water Music",
           "listeners": 370797,
           "why": "similar to Alexisonfire (0.42), Alkaline Trio (0.49)"
@@ -5130,7 +4840,7 @@
           "why": "tags match your taste: hip-hop, rap, american"
         },
         {
-          "affinity": 0.1367,
+          "affinity": 0.1368,
           "artist": "comehelpglo",
           "listeners": 76820,
           "why": "tags match your taste: alternative, hip-hop, rap"
@@ -5291,7 +5001,7 @@
     {
       "acts": [
         {
-          "affinity": 0.2836,
+          "affinity": 0.2834,
           "artist": "The Afghan Whigs",
           "listeners": 170300,
           "why": "similar to R.E.M. (0.64), Shearwater (0.35), The Smashing Pumpkins (0.28)"
@@ -5363,7 +5073,7 @@
           "why": "similar to Dave Matthews Band (0.10), The Temper Trap (0.14), Silversun Pickups (0.09)"
         },
         {
-          "affinity": 0.0731,
+          "affinity": 0.073,
           "artist": "Common People",
           "listeners": 20911,
           "why": "similar to Young the Giant (0.33), Briston Maroney (0.44)"
@@ -5584,13 +5294,13 @@
     {
       "acts": [
         {
-          "affinity": 0.3332,
+          "affinity": 0.3331,
           "artist": "Hamilton Leithauser",
           "listeners": 238654,
           "why": "similar to The Walkmen (1.00), Spoon (0.43), The National (0.27)"
         },
         {
-          "affinity": 0.3613,
+          "affinity": 0.3611,
           "artist": "Rostam",
           "listeners": 268240,
           "why": "similar to Vampire Weekend (1.00), Broken Social Scene (0.50), The New Pornographers (0.36)"
@@ -5743,7 +5453,7 @@
     {
       "acts": [
         {
-          "affinity": 0.1006,
+          "affinity": 0.1005,
           "artist": "William Black",
           "listeners": 118288,
           "why": "similar to The Chainsmokers (0.34), Marshmello (0.15), Zedd (0.10)"
@@ -5899,7 +5609,7 @@
     {
       "acts": [
         {
-          "affinity": 0.1291,
+          "affinity": 0.129,
           "artist": "Sadurn",
           "listeners": 95494,
           "why": "similar to Waxahatchee (0.46), Big Thief (0.40), Julien Baker (0.24)"
@@ -5969,7 +5679,7 @@
     {
       "acts": [
         {
-          "affinity": 0.5675,
+          "affinity": 0.5674,
           "artist": "Half Moon Run",
           "days": 2,
           "listeners": 539526,
@@ -6296,7 +6006,7 @@
     {
       "acts": [
         {
-          "affinity": 0.3232,
+          "affinity": 0.323,
           "artist": "Julia Jacklin",
           "listeners": 631360,
           "why": "similar to Feist (0.58), Sufjan Stevens (0.34), Waxahatchee (0.56)"
@@ -6430,7 +6140,7 @@
     {
       "acts": [
         {
-          "affinity": 0.3276,
+          "affinity": 0.3274,
           "artist": "Sombr",
           "days": 1,
           "listeners": 2085400,
@@ -6477,14 +6187,14 @@
     {
       "acts": [
         {
-          "affinity": 0.1633,
+          "affinity": 0.1632,
           "artist": "Slow Pulp",
           "days": 2,
           "listeners": 958928,
           "why": "similar to Beach House (0.40), This is Lorelei (0.76), Jay Som (0.59)"
         },
         {
-          "affinity": 0.0267,
+          "affinity": 0.0268,
           "artist": "Her New Knife",
           "listeners": 126230,
           "why": "tags match your taste: shoegaze, alternative rock, alternative"
@@ -6572,7 +6282,7 @@
     {
       "acts": [
         {
-          "affinity": 0.1557,
+          "affinity": 0.1556,
           "artist": "Gene",
           "listeners": 210881,
           "why": "similar to James (0.58), The Verve (0.36), Pulp (0.56)"
@@ -6615,7 +6325,7 @@
           "why": "similar to Brandi Carlile (0.33), Dolly Parton (0.45), Neko Case (0.33)"
         },
         {
-          "affinity": 0.0492,
+          "affinity": 0.0491,
           "artist": "Abbie Callahan",
           "listeners": 11872,
           "why": "similar to The Highwomen (0.32)"
@@ -6673,7 +6383,7 @@
     {
       "acts": [
         {
-          "affinity": 0.0611,
+          "affinity": 0.061,
           "artist": "Trivium",
           "listeners": 1390115,
           "why": "similar to Metallica (0.24)"
@@ -6745,7 +6455,7 @@
     {
       "acts": [
         {
-          "affinity": 0.1671,
+          "affinity": 0.167,
           "artist": "Strawberry Guy",
           "listeners": 1872576,
           "why": "similar to Beach House (0.52), The Sundays (0.30), Mazzy Star (0.11)"
@@ -6829,7 +6539,7 @@
     {
       "acts": [
         {
-          "affinity": 0.0999,
+          "affinity": 0.0998,
           "artist": "Jorja Smith",
           "days": 1,
           "listeners": 1394062,
@@ -6855,7 +6565,7 @@
     {
       "acts": [
         {
-          "affinity": 0.0411,
+          "affinity": 0.041,
           "artist": "Too Many Zooz",
           "days": 7,
           "listeners": 99108,
@@ -6956,7 +6666,7 @@
     {
       "acts": [
         {
-          "affinity": 0.0884,
+          "affinity": 0.0883,
           "artist": "Madeon",
           "listeners": 813784,
           "why": "similar to Daft Punk (0.27), Zedd (0.25), The Chainsmokers (0.07)"
@@ -7098,7 +6808,7 @@
     {
       "acts": [
         {
-          "affinity": 0.0561,
+          "affinity": 0.056,
           "artist": "Missio",
           "days": 1,
           "listeners": 519906,
@@ -7146,7 +6856,7 @@
     {
       "acts": [
         {
-          "affinity": 0.2139,
+          "affinity": 0.2138,
           "artist": "Sloan",
           "days": 8,
           "listeners": 240824,
@@ -7226,7 +6936,7 @@
     {
       "acts": [
         {
-          "affinity": 0.2713,
+          "affinity": 0.2711,
           "artist": "GRYFFIN",
           "listeners": 732220,
           "why": "similar to The Chainsmokers (0.96), Marshmello (0.30), Zedd (0.35)"
@@ -7413,7 +7123,7 @@
     {
       "acts": [
         {
-          "affinity": 0.2139,
+          "affinity": 0.2138,
           "artist": "Sloan",
           "days": 8,
           "listeners": 240824,
@@ -7432,7 +7142,7 @@
     {
       "acts": [
         {
-          "affinity": 0.0565,
+          "affinity": 0.0564,
           "artist": "Protest the Hero",
           "listeners": 370829,
           "why": "similar to The Dillinger Escape Plan (0.48)"
@@ -7462,7 +7172,7 @@
     {
       "acts": [
         {
-          "affinity": 0.1629,
+          "affinity": 0.1628,
           "artist": "The Watchmen",
           "listeners": 39990,
           "why": "similar to The Tragically Hip (0.85), Sloan (0.50), Barenaked Ladies (0.28)"
@@ -7534,7 +7244,7 @@
     {
       "acts": [
         {
-          "affinity": 0.2505,
+          "affinity": 0.2503,
           "artist": "Victoria Monét",
           "listeners": 1101331,
           "why": "similar to Beyoncé (0.55), Ariana Grande (0.54), Lizzo (0.54)"
@@ -7552,7 +7262,7 @@
     {
       "acts": [
         {
-          "affinity": 0.2713,
+          "affinity": 0.2711,
           "artist": "GRYFFIN",
           "listeners": 732220,
           "why": "similar to The Chainsmokers (0.96), Marshmello (0.30), Zedd (0.35)"
@@ -7770,7 +7480,7 @@
           "why": "similar to The Roots (0.29), Mark Ronson (0.36), The Fugees (0.21)"
         },
         {
-          "affinity": 0.1224,
+          "affinity": 0.1223,
           "artist": "Duckwrth",
           "days": 2,
           "listeners": 802935,
@@ -7902,7 +7612,7 @@
     {
       "acts": [
         {
-          "affinity": 0.0686,
+          "affinity": 0.0685,
           "artist": "Allan Rayman",
           "listeners": 161287,
           "why": "similar to Teddy Swims (0.27), Rhye (0.46), The Revivalists (0.50)"
@@ -8006,7 +7716,7 @@
     {
       "acts": [
         {
-          "affinity": 0.0686,
+          "affinity": 0.0685,
           "artist": "Allan Rayman",
           "listeners": 161287,
           "why": "similar to Teddy Swims (0.27), Rhye (0.46), The Revivalists (0.50)"
@@ -8024,7 +7734,7 @@
     {
       "acts": [
         {
-          "affinity": 0.3615,
+          "affinity": 0.3613,
           "artist": "Doja Cat",
           "listeners": 3829533,
           "why": "similar to Ariana Grande (0.88), Beyoncé (0.70), Lizzo (0.84)"
@@ -8081,7 +7791,7 @@
     {
       "acts": [
         {
-          "affinity": 0.0423,
+          "affinity": 0.0422,
           "artist": "Takuya Nakamura",
           "listeners": 34186,
           "why": "similar to The Cinematic Orchestra (0.23)"
@@ -8118,7 +7828,7 @@
     {
       "acts": [
         {
-          "affinity": 0.1425,
+          "affinity": 0.1424,
           "artist": "Default",
           "listeners": 706613,
           "why": "similar to Tonic (0.67), Lifehouse (0.51)"
@@ -8160,7 +7870,7 @@
     {
       "acts": [
         {
-          "affinity": 0.1701,
+          "affinity": 0.1699,
           "artist": "Bonobo",
           "days": 5,
           "listeners": 2120188,
@@ -8185,7 +7895,7 @@
     {
       "acts": [
         {
-          "affinity": 0.2445,
+          "affinity": 0.2444,
           "artist": "Tyla",
           "listeners": 1602790,
           "why": "similar to Ariana Grande (0.68), Beyoncé (0.41), Janet Jackson (0.28)"
@@ -8219,7 +7929,7 @@
     {
       "acts": [
         {
-          "affinity": 0.3575,
+          "affinity": 0.3573,
           "artist": "Underoath",
           "listeners": 1118616,
           "why": "similar to Alexisonfire (0.97), Thrice (0.48), Thursday (0.62)"
@@ -8237,7 +7947,7 @@
           "why": "tags match your taste: rock, hardcore, screamo"
         },
         {
-          "affinity": 0.3131,
+          "affinity": 0.3129,
           "artist": "Emery",
           "days": 1,
           "listeners": 525929,
@@ -8313,7 +8023,7 @@
     {
       "acts": [
         {
-          "affinity": 0.0731,
+          "affinity": 0.073,
           "artist": "Father of Peace",
           "listeners": 79532,
           "why": "similar to Young the Giant (0.31), Cage the Elephant (0.30)"
@@ -8401,7 +8111,7 @@
     {
       "acts": [
         {
-          "affinity": 0.1323,
+          "affinity": 0.1322,
           "artist": "Temples",
           "listeners": 468145,
           "why": "similar to Tame Impala (0.56), MGMT (0.26), Black Mountain (0.25)"
@@ -8574,7 +8284,7 @@
     {
       "acts": [
         {
-          "affinity": 0.1788,
+          "affinity": 0.1786,
           "artist": "54-40",
           "listeners": 49251,
           "why": "similar to The Tragically Hip (0.88), Sloan (0.71), Barenaked Ladies (0.27)"
@@ -8615,7 +8325,7 @@
     {
       "acts": [
         {
-          "affinity": 0.2226,
+          "affinity": 0.2224,
           "artist": "Moneen",
           "listeners": 160391,
           "why": "similar to Jimmy Eat World (0.44), Brand New (0.49), Thrice (0.46)"
@@ -8633,7 +8343,7 @@
     {
       "acts": [
         {
-          "affinity": 0.0494,
+          "affinity": 0.0493,
           "artist": "A Boogie Wit Da Hoodie",
           "listeners": 1553280,
           "why": "similar to Drake (0.30), DJ Khaled (0.39)"
@@ -8919,7 +8629,7 @@
     {
       "acts": [
         {
-          "affinity": 0.0686,
+          "affinity": 0.0685,
           "artist": "Allan Rayman",
           "listeners": 161287,
           "why": "similar to Teddy Swims (0.27), Rhye (0.46), The Revivalists (0.50)"
@@ -9032,7 +8742,7 @@
     {
       "acts": [
         {
-          "affinity": 0.0322,
+          "affinity": 0.0321,
           "artist": "daine",
           "listeners": 225797,
           "why": "similar to Charli xcx (0.33)"
@@ -9068,7 +8778,7 @@
     {
       "acts": [
         {
-          "affinity": 0.0552,
+          "affinity": 0.0551,
           "artist": "Josie Edwards",
           "listeners": 53877,
           "why": "similar to Noah Kahan (0.32), Radical Face (0.21), Neoni (0.27)"
@@ -9122,7 +8832,7 @@
     {
       "acts": [
         {
-          "affinity": 0.2931,
+          "affinity": 0.293,
           "artist": "Jann Arden",
           "days": 1,
           "listeners": 166018,
@@ -9215,7 +8925,7 @@
     {
       "acts": [
         {
-          "affinity": 0.0788,
+          "affinity": 0.0787,
           "artist": "Sam Quealy",
           "listeners": 63208,
           "why": "similar to Robyn (0.37), Yelle (0.72), Ladytron (0.41)"
@@ -9233,7 +8943,7 @@
     {
       "acts": [
         {
-          "affinity": 0.2048,
+          "affinity": 0.2047,
           "artist": "6LACK",
           "listeners": 1063542,
           "why": "similar to The Weeknd (0.63), Jaden (0.55), J. Cole (0.57)"
@@ -9273,7 +8983,7 @@
     {
       "acts": [
         {
-          "affinity": 0.2272,
+          "affinity": 0.227,
           "artist": "Matt Dusk",
           "listeners": 179308,
           "why": "similar to Michael Buble (0.89), Frank Sinatra (0.68), Natori (0.25)"
@@ -9295,7 +9005,7 @@
     {
       "acts": [
         {
-          "affinity": 0.2931,
+          "affinity": 0.293,
           "artist": "Jann Arden",
           "days": 1,
           "listeners": 166018,
@@ -9394,7 +9104,7 @@
     {
       "acts": [
         {
-          "affinity": 0.374,
+          "affinity": 0.3737,
           "artist": "Little River Band",
           "days": 1,
           "listeners": 611592,
@@ -9509,7 +9219,7 @@
     {
       "acts": [
         {
-          "affinity": 0.2252,
+          "affinity": 0.2251,
           "artist": "The Trews",
           "listeners": 89201,
           "why": "similar to The Tragically Hip (1.00), Silversun Pickups (0.28), Sloan (0.54)"
@@ -9533,7 +9243,7 @@
     {
       "acts": [
         {
-          "affinity": 0.3685,
+          "affinity": 0.3684,
           "artist": "We Are Scientists",
           "days": 2,
           "listeners": 1438634,
@@ -9798,7 +9508,7 @@
     {
       "acts": [
         {
-          "affinity": 0.0592,
+          "affinity": 0.0591,
           "artist": "Gallant",
           "listeners": 408372,
           "why": "similar to Alicia Keys (0.33), Miguel (0.34)"
@@ -9816,7 +9526,7 @@
     {
       "acts": [
         {
-          "affinity": 0.2997,
+          "affinity": 0.2996,
           "artist": "Bedouine",
           "days": 1,
           "listeners": 233746,
@@ -10019,7 +9729,7 @@
     {
       "acts": [
         {
-          "affinity": 0.125,
+          "affinity": 0.1249,
           "artist": "Syd",
           "listeners": 373388,
           "why": "similar to James Blake (0.25), Frank Ocean (0.32), Solange (0.34)"
@@ -10037,7 +9747,7 @@
     {
       "acts": [
         {
-          "affinity": 0.125,
+          "affinity": 0.1249,
           "artist": "Syd",
           "listeners": 373388,
           "why": "similar to James Blake (0.25), Frank Ocean (0.32), Solange (0.34)"
@@ -10055,7 +9765,7 @@
     {
       "acts": [
         {
-          "affinity": 0.1592,
+          "affinity": 0.1591,
           "artist": "Montell Fish",
           "listeners": 1433333,
           "why": "similar to Frank Ocean (0.54), The Weeknd (0.29), SZA (0.23)"
@@ -10134,7 +9844,7 @@
           "why": "tags match your taste: post-hardcore, swedish, metalcore"
         },
         {
-          "affinity": 0.0661,
+          "affinity": 0.066,
           "artist": "Dying Wish",
           "listeners": 130806,
           "why": "similar to Spiritbox (0.47)"
@@ -10286,7 +9996,7 @@
     {
       "acts": [
         {
-          "affinity": 0.0603,
+          "affinity": 0.0602,
           "artist": "Tha Alkaholiks",
           "listeners": 119469,
           "why": "similar to Blackalicious (0.29)"
@@ -10338,7 +10048,7 @@
     {
       "acts": [
         {
-          "affinity": 0.2433,
+          "affinity": 0.2432,
           "artist": "Senses Fail",
           "listeners": 1004999,
           "why": "similar to Alexisonfire (0.54), Brand New (0.57), Thursday (0.58)"
@@ -10374,7 +10084,7 @@
           "why": "tags match your taste: canadian, male vocalists"
         },
         {
-          "affinity": 0.2211,
+          "affinity": 0.221,
           "artist": "Michigander",
           "listeners": 192752,
           "why": "similar to Manchester Orchestra (0.46), Young the Giant (0.43), The Airborne Toxic Event (0.28)"
@@ -10623,7 +10333,7 @@
     {
       "acts": [
         {
-          "affinity": 0.3661,
+          "affinity": 0.3658,
           "artist": "Unkle",
           "listeners": 1413058,
           "why": "similar to DJ Shadow (1.00), Massive Attack (0.74), Portishead (0.45)"
@@ -10641,7 +10351,7 @@
     {
       "acts": [
         {
-          "affinity": 0.1727,
+          "affinity": 0.1726,
           "artist": "Eliza McLamb",
           "listeners": 104494,
           "why": "similar to Julien Baker (0.56), Phoebe Bridgers (0.37), Waxahatchee (0.36)"
@@ -10659,7 +10369,7 @@
     {
       "acts": [
         {
-          "affinity": 0.1909,
+          "affinity": 0.1908,
           "artist": "Shakey Graves",
           "days": 9,
           "listeners": 502716,
@@ -10735,7 +10445,7 @@
           "why": "similar to The Tragically Hip (0.17), Tyler Shaw (0.39), Barenaked Ladies (0.13)"
         },
         {
-          "affinity": 0.026,
+          "affinity": 0.0259,
           "artist": "SonReal",
           "listeners": 128002,
           "why": "similar to Atmosphere (0.14), Macklemore & Ryan Lewis (0.12)"
@@ -10753,7 +10463,7 @@
     {
       "acts": [
         {
-          "affinity": 0.1707,
+          "affinity": 0.1706,
           "artist": "Good Lovelies",
           "listeners": 34446,
           "why": "similar to The Wailin' Jennys (1.00), The Secret Sisters (0.69), Basia Bulat (0.65)"
@@ -11037,7 +10747,7 @@
     {
       "acts": [
         {
-          "affinity": 0.1659,
+          "affinity": 0.1658,
           "artist": "Jordan Hart",
           "listeners": 27053,
           "why": "similar to William Fitzsimmons (0.24), José González (0.23), Ben Howard (0.23)"
@@ -11336,7 +11046,7 @@
     {
       "acts": [
         {
-          "affinity": 0.2718,
+          "affinity": 0.2717,
           "artist": "Jess Williamson",
           "listeners": 108964,
           "why": "similar to Waxahatchee (1.00), Allison Russell (0.49), Neko Case (0.31)"
@@ -11370,11 +11080,11 @@
       }
     }
   ],
-  "generated_at": "2026-10-23T10:11:12+00:00",
+  "generated_at": "2026-10-24T09:36:45+00:00",
   "ledger": [
     {
       "artist": "Jackie Evans",
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
       "event": {
         "starts_at": "2026-11-08T19:00:00",
         "url": "https://www.ticketmaster.ca/jackie-evans-toronto-ontario-11-08-2026/event/100064DEA887A585",
@@ -11393,7 +11103,7 @@
     },
     {
       "artist": "Adam Cohen",
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
       "event": {
         "starts_at": "2026-11-07T20:00:00",
         "url": "https://www.ticketmaster.ca/everybody-knows-leonard-cohen-10th-anniversary-toronto-ontario-11-07-2026/event/100064E1E1815048",
@@ -11411,7 +11121,7 @@
     },
     {
       "artist": "AHI",
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
       "event": {
         "starts_at": "2026-10-22T19:00:00",
         "url": "https://www.ticketmaster.ca/allison-russell-with-very-special-guest-toronto-ontario-10-22-2026/event/10006547B0205A80",
@@ -11429,7 +11139,7 @@
     },
     {
       "artist": "Allison Russell",
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
       "event": {
         "starts_at": "2026-10-22T19:00:00",
         "url": "https://www.ticketmaster.ca/allison-russell-with-very-special-guest-toronto-ontario-10-22-2026/event/10006547B0205A80",
@@ -11448,7 +11158,7 @@
     },
     {
       "artist": "Ally Salort",
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
       "event": {
         "starts_at": "2026-10-26T19:00:00",
         "url": "https://www.ticketmaster.ca/lexi-jayde-toronto-ontario-10-26-2026/event/1000651B953A7C3B",
@@ -11467,7 +11177,7 @@
     },
     {
       "artist": "ARK IDENTITY",
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
       "event": {
         "starts_at": "2026-11-12T19:00:00",
         "url": "https://www.ticketweb.ca/event/ark-identity-the-sound-garage-tickets/14367184",
@@ -11485,7 +11195,7 @@
     },
     {
       "artist": "Band Of Silver",
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
       "event": {
         "starts_at": "2026-10-24T18:30:00",
         "url": "https://www.ticketmaster.ca/judah-the-lion-toronto-ontario-10-24-2026/event/100064CAD5EF8D62",
@@ -11503,7 +11213,7 @@
     },
     {
       "artist": "Caity Gyorgy",
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
       "event": {
         "starts_at": "2026-12-12T19:30:00",
         "url": "https://www.ticketmaster.ca/swing-into-the-holidays-ft-caity-toronto-ontario-12-12-2026/event/100064B24B04DD11",
@@ -11521,7 +11231,7 @@
     },
     {
       "artist": "Charlotte Cornfield",
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
       "event": {
         "starts_at": "2026-12-03T20:00:00",
         "url": "https://www.ticketweb.ca/event/charlotte-cornfield-and-friendship-with-lees-palace-tickets/14903453",
@@ -11540,7 +11250,7 @@
     },
     {
       "artist": "Colorblind",
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
       "event": {
         "starts_at": "2026-11-19T18:00:00",
         "url": "https://www.ticketmaster.ca/catch-your-breath-not-broken-enough-toronto-ontario-11-19-2026/event/100064BAD77E4385",
@@ -11558,7 +11268,7 @@
     },
     {
       "artist": "Devon Gabriella",
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
       "event": {
         "starts_at": "2026-12-07T18:30:00",
         "url": "https://www.ticketmaster.ca/devon-gabriella-toronto-ontario-12-07-2026/event/100065302201E92B",
@@ -11577,7 +11287,7 @@
     },
     {
       "artist": "Field Guide",
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
       "event": {
         "starts_at": "2026-11-20T19:00:00",
         "url": "https://www.ticketmaster.ca/boy-golden-good-goddamn-another-tour-toronto-ontario-11-20-2026/event/100065168FDDA025",
@@ -11597,7 +11307,7 @@
     },
     {
       "artist": "Kes",
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
       "event": {
         "starts_at": "2026-12-18T20:00:00",
         "url": "https://www.ticketmaster.ca/kesmas-with-kes-the-band-toronto-ontario-12-18-2026/event/10006549E31674D3",
@@ -11615,7 +11325,7 @@
     },
     {
       "artist": "Loviet",
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
       "event": {
         "starts_at": "2026-11-09T19:00:00",
         "url": "https://www.ticketmaster.ca/the-wldlfe-toronto-ontario-11-09-2026/event/100064CF43BE63DC",
@@ -11634,7 +11344,7 @@
     },
     {
       "artist": "Mamas Gun",
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
       "event": {
         "starts_at": "2026-11-19T20:00:00",
         "url": "https://www.ticketweb.ca/event/mamas-gun-the-garrison-tickets/14816073",
@@ -11652,7 +11362,7 @@
     },
     {
       "artist": "Mr. Fantasy",
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
       "event": {
         "starts_at": "2026-10-24T19:00:00",
         "url": "https://www.ticketmaster.ca/mr-fantasy-sexy-saturday-nights-tour-toronto-ontario-10-24-2026/event/10006528BD1EB11E",
@@ -11671,7 +11381,7 @@
     },
     {
       "artist": "Sam Quealy",
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
       "event": {
         "starts_at": "2026-12-04T19:00:00",
         "url": "https://www.ticketmaster.ca/sam-quealy-north-america-tour-toronto-ontario-12-04-2026/event/100064E7D333B647",
@@ -11690,7 +11400,7 @@
     },
     {
       "artist": "The Trews",
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
       "event": {
         "starts_at": "2026-12-05T18:30:00",
         "url": "https://www.ticketmaster.ca/the-trews-toronto-ontario-12-05-2026/event/1000652BDABA8714",
@@ -11708,7 +11418,7 @@
     },
     {
       "artist": "Venus & The Flytraps",
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
       "event": {
         "starts_at": "2026-11-03T19:00:00",
         "url": "https://www.ticketmaster.ca/dev-lemons-eat-the-pavement-tour-toronto-ontario-11-03-2026/event/100064E8A8117AF2",
@@ -11727,7 +11437,7 @@
     },
     {
       "artist": "The 4411",
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
       "event": {
         "starts_at": "2026-11-11T19:00:00",
         "url": "https://www.ticketmaster.ca/west-22nd-places-to-be-toronto-ontario-11-11-2026/event/10006487E12C8BA5",
@@ -11745,7 +11455,7 @@
     },
     {
       "artist": "54-40",
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
       "event": {
         "starts_at": "2026-11-28T19:00:00",
         "url": "https://www.ticketmaster.ca/5440-toronto-ontario-11-28-2026/event/1000648FE5A3BC17",
@@ -11763,7 +11473,7 @@
     },
     {
       "artist": "Boy Golden",
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
       "event": {
         "starts_at": "2026-11-20T19:00:00",
         "url": "https://www.ticketmaster.ca/boy-golden-good-goddamn-another-tour-toronto-ontario-11-20-2026/event/100065168FDDA025",
@@ -11782,7 +11492,7 @@
     },
     {
       "artist": "Bradley Hale",
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
       "event": {
         "starts_at": "2026-11-12T19:00:00",
         "url": "https://www.ticketmaster.ca/sully-burrows-the-leave-you-lonely-toronto-ontario-11-12-2026/event/10006523B5E9A6C3",
@@ -11800,7 +11510,7 @@
     },
     {
       "artist": "Clerel",
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
       "event": {
         "starts_at": "2026-11-19T20:00:00",
         "url": "https://www.ticketweb.ca/event/mamas-gun-the-garrison-tickets/14816073",
@@ -11817,7 +11527,7 @@
     },
     {
       "artist": "Dominique Way",
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
       "event": {
         "starts_at": "2026-10-17T19:00:00",
         "url": "https://www.ticketmaster.ca/anna-graves-americas-greatest-burnout-tour-toronto-ontario-10-17-2026/event/100064C9F1B9E130",
@@ -11835,7 +11545,7 @@
     },
     {
       "artist": "Ella Woolsey",
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
       "event": {
         "starts_at": "2026-10-25T19:00:00",
         "url": "https://www.ticketmaster.ca/the-army-the-navy-the-fake-toronto-ontario-10-25-2026/event/100064CBC7977C87",
@@ -11853,7 +11563,7 @@
     },
     {
       "artist": "Good Lovelies",
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
       "event": {
         "starts_at": "2026-12-17T20:00:00",
         "url": "https://www.ticketmaster.ca/good-lovelies-holiday-concert-toronto-ontario-12-17-2026/event/100064C2DE8DACA5",
@@ -11870,7 +11580,7 @@
     },
     {
       "artist": "Jonathan Roy",
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
       "event": {
         "starts_at": "2026-10-16T20:00:00",
         "url": "https://www.ticketmaster.ca/collective-soul-pickering-ontario-10-16-2026/event/100064DE913C6FA0",
@@ -11887,7 +11597,7 @@
     },
     {
       "artist": "Jordan Hart",
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
       "event": {
         "starts_at": "2026-12-20T19:00:00",
         "url": "https://www.ticketweb.ca/event/jordan-hart-longboat-hall-tickets/14322014",
@@ -11905,7 +11615,7 @@
     },
     {
       "artist": "Julian Taylor",
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
       "event": {
         "starts_at": "2026-10-16T19:00:00",
         "url": "https://www.ticketmaster.ca/sanctuary-park-tour-celebrating-40-years-toronto-ontario-10-16-2026/event/100064D1D94E7213",
@@ -11923,7 +11633,7 @@
     },
     {
       "artist": "Macy Todd",
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
       "event": {
         "starts_at": "2026-11-29T19:00:00",
         "url": "https://www.ticketmaster.ca/an-evening-with-sasha-alex-sloan-toronto-ontario-11-29-2026/event/1000654196337229",
@@ -11941,7 +11651,7 @@
     },
     {
       "artist": "Mike D",
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
       "event": {
         "starts_at": "2026-10-20T19:00:00",
         "url": "https://www.ticketmaster.ca/mike-d-5d-toronto-ontario-10-20-2026/event/100064F08ADE5798",
@@ -11958,7 +11668,7 @@
     },
     {
       "artist": "the olllam",
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
       "event": {
         "starts_at": "2026-11-12T19:00:00",
         "url": "https://www.ticketmaster.ca/the-olllam-toronto-ontario-11-12-2026/event/1000650506F2B686",
@@ -11976,7 +11686,7 @@
     },
     {
       "artist": "Raine Maida",
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
       "event": {
         "starts_at": "2026-11-22T18:30:00",
         "url": "https://www.ticketmaster.ca/an-evening-with-raine-maida-chantal-toronto-ontario-11-22-2026/event/100064A1A468B69F",
@@ -11994,7 +11704,7 @@
     },
     {
       "artist": "Rett Madison",
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
       "event": {
         "starts_at": "2026-10-17T19:00:00",
         "url": "https://www.ticketweb.ca/event/rett-madison-the-sound-garage-tickets/15001533",
@@ -12011,7 +11721,7 @@
     },
     {
       "artist": "Salin",
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
       "event": {
         "starts_at": "2026-10-19T19:00:00",
         "url": "https://www.ticketweb.ca/event/salin-the-garrison-tickets/15012983",
@@ -12028,7 +11738,7 @@
     },
     {
       "artist": "Telescreens",
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
       "event": {
         "starts_at": "2026-10-21T19:00:00",
         "url": "https://www.ticketweb.ca/event/telescreens-why-the-the-sound-garage-tickets/14980963",
@@ -12045,7 +11755,7 @@
     },
     {
       "artist": "Twin Fin",
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
       "event": {
         "starts_at": "2026-10-20T19:00:00",
         "url": "https://www.ticketweb.ca/event/twin-fin-monarch-tavern-tickets/15001983",
@@ -12063,7 +11773,7 @@
     },
     {
       "artist": "The Watchmen",
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
       "event": {
         "starts_at": "2026-11-21T19:00:00",
         "url": "https://www.ticketmaster.ca/the-watchmen-toronto-ontario-11-21-2026/event/10006489D43D10C3",
@@ -12081,7 +11791,7 @@
     },
     {
       "artist": "Whitmer Thomas",
-      "checked": "2026-10-23",
+      "checked": "2026-10-24",
       "event": {
         "starts_at": "2026-12-08T19:00:00",
         "url": "https://www.ticketweb.ca/event/whitmer-thomas-the-great-hall-tickets/15032263",
@@ -12515,6 +12225,34 @@
         "tier": "know"
       },
       {
+        "artist": "Angine de Poitrine",
+        "event": {
+          "id": "tm:177Zv0G61Shy4ZE",
+          "lineup": [
+            "Angine de Poitrine"
+          ],
+          "region": "Toronto",
+          "source": "ticketmaster",
+          "starts_at": "2026-11-05T19:00:00",
+          "url": "https://www.ticketmaster.ca/angine-de-poitrine-toronto-ontario-11-05-2026/event/100064ACDBE55027",
+          "venue": {
+            "capacity": 2500,
+            "city": "Toronto",
+            "lat": 43.66684147,
+            "lon": -79.31351149,
+            "name": "History Toronto"
+          }
+        },
+        "heard_before": null,
+        "listeners": null,
+        "reasons": [
+          "played on 3 days since 2026 (13 plays)",
+          "one of your most-played artists"
+        ],
+        "score": 1.3863,
+        "tier": "know"
+      },
+      {
         "artist": "Born Ruffians",
         "event": {
           "id": "tm:rZ7HnEZ1AfrZxK",
@@ -12629,7 +12367,7 @@
           "small venue (~575 cap.)",
           "you've never been to The Mod Club"
         ],
-        "score": 0.3961,
+        "score": 0.396,
         "tier": "next_big_thing"
       },
       {
@@ -12658,7 +12396,7 @@
           "only 54,076 listeners on Last.fm",
           "you've never been to Meridian Hall"
         ],
-        "score": 0.354,
+        "score": 0.3539,
         "tier": "next_big_thing"
       },
       {
@@ -12750,7 +12488,7 @@
           "small venue (~575 cap.)",
           "you've never been to The Mod Club"
         ],
-        "score": 0.309,
+        "score": 0.3089,
         "tier": "next_big_thing"
       },
       {
@@ -12845,36 +12583,6 @@
         "tier": "next_big_thing"
       },
       {
-        "artist": "Mr. Fantasy",
-        "event": {
-          "id": "tm:1A8ZkfIGkeW6l7r",
-          "lineup": [
-            "Mr. Fantasy"
-          ],
-          "region": "Toronto",
-          "source": "ticketmaster",
-          "starts_at": "2026-10-24T19:00:00",
-          "url": "https://www.ticketmaster.ca/mr-fantasy-sexy-saturday-nights-tour-toronto-ontario-10-24-2026/event/10006528BD1EB11E",
-          "venue": {
-            "capacity": 900,
-            "city": "Toronto",
-            "lat": 43.6590002,
-            "lon": -79.3487743,
-            "name": "The Opera House"
-          }
-        },
-        "heard_before": null,
-        "listeners": 68439,
-        "reasons": [
-          "similar to Harry Styles (0.83), ZAYN (0.53)",
-          "only 68,439 listeners on Last.fm",
-          "small venue (~900 cap.)",
-          "you've never been to The Opera House"
-        ],
-        "score": 0.2265,
-        "tier": "next_big_thing"
-      },
-      {
         "artist": "Loviet",
         "event": {
           "id": "tm:177Zv0G6GWdRJ2j",
@@ -12904,6 +12612,36 @@
           "you've never been to The Mod Club"
         ],
         "score": 0.2265,
+        "tier": "next_big_thing"
+      },
+      {
+        "artist": "Mr. Fantasy",
+        "event": {
+          "id": "tm:1A8ZkfIGkeW6l7r",
+          "lineup": [
+            "Mr. Fantasy"
+          ],
+          "region": "Toronto",
+          "source": "ticketmaster",
+          "starts_at": "2026-10-24T19:00:00",
+          "url": "https://www.ticketmaster.ca/mr-fantasy-sexy-saturday-nights-tour-toronto-ontario-10-24-2026/event/10006528BD1EB11E",
+          "venue": {
+            "capacity": 900,
+            "city": "Toronto",
+            "lat": 43.6590002,
+            "lon": -79.3487743,
+            "name": "The Opera House"
+          }
+        },
+        "heard_before": null,
+        "listeners": 68439,
+        "reasons": [
+          "similar to Harry Styles (0.83), ZAYN (0.53)",
+          "only 68,439 listeners on Last.fm",
+          "small venue (~900 cap.)",
+          "you've never been to The Opera House"
+        ],
+        "score": 0.2264,
         "tier": "next_big_thing"
       },
       {
@@ -12964,7 +12702,7 @@
           "small venue (~500 cap.)",
           "you've never been to Longboat Hall"
         ],
-        "score": 0.2121,
+        "score": 0.212,
         "tier": "next_big_thing"
       },
       {
@@ -13024,7 +12762,7 @@
           "only 89,201 listeners on Last.fm",
           "small venue (~1,400 cap.)"
         ],
-        "score": 0.1466,
+        "score": 0.1465,
         "tier": "next_big_thing"
       },
       {
@@ -13086,7 +12824,7 @@
           "only 49,251 listeners on Last.fm",
           "small venue (~1,400 cap.)"
         ],
-        "score": 0.1246,
+        "score": 0.1245,
         "tier": "next_big_thing"
       },
       {
@@ -13116,7 +12854,7 @@
           "only 39,990 listeners on Last.fm",
           "small venue (~1,400 cap.)"
         ],
-        "score": 0.1164,
+        "score": 0.1163,
         "tier": "next_big_thing"
       },
       {
@@ -13237,7 +12975,7 @@
           "you played them on 2 days back in 2015",
           "you've never been to Meridian Hall"
         ],
-        "score": 0.5675,
+        "score": 0.5674,
         "tier": "would_like"
       },
       {
@@ -13296,7 +13034,7 @@
           "similar to Toad The Wet Sprocket (0.61), Snow Patrol (0.72), The Airborne Toxic Event (0.89)",
           "you played them on 1 day back in 2009"
         ],
-        "score": 0.4508,
+        "score": 0.4507,
         "tier": "would_like"
       },
       {
@@ -13325,7 +13063,7 @@
           "similar to Taylor Swift (0.96), Ariana Grande (0.87), Harry Styles (0.56)",
           "+1 more date nearby"
         ],
-        "score": 0.4279,
+        "score": 0.4276,
         "tier": "would_like"
       },
       {
@@ -13353,7 +13091,7 @@
         "reasons": [
           "similar to Adele (0.66), Sam Smith (0.72), Amy Winehouse (0.53)"
         ],
-        "score": 0.382,
+        "score": 0.3819,
         "tier": "would_like"
       },
       {
@@ -13385,7 +13123,7 @@
           "you played them on 1 day back in 2011",
           "you've never been to The Arena at Pickering Casino Resort"
         ],
-        "score": 0.374,
+        "score": 0.3737,
         "tier": "would_like"
       },
       {
@@ -13417,7 +13155,7 @@
           "you played them on 2 days back in 2008",
           "you've never been to Lee's Palace"
         ],
-        "score": 0.3685,
+        "score": 0.3684,
         "tier": "would_like"
       },
       {
@@ -13445,7 +13183,7 @@
           "similar to DJ Shadow (1.00), Massive Attack (0.74), Portishead (0.45)",
           "you've never been to The Mod Club"
         ],
-        "score": 0.3661,
+        "score": 0.3658,
         "tier": "would_like"
       },
       {
@@ -13474,7 +13212,7 @@
           "similar to Neko Case (0.97), Jesca Hoop (0.69), Waxahatchee (0.80)",
           "you've never been to The Sound Garage"
         ],
-        "score": 0.3649,
+        "score": 0.3647,
         "tier": "would_like"
       },
       {
@@ -13507,7 +13245,7 @@
           "you played them on 2 days back in 2022",
           "+1 more date nearby"
         ],
-        "score": 0.3642,
+        "score": 0.364,
         "tier": "would_like"
       },
       {
@@ -13535,7 +13273,7 @@
         "reasons": [
           "similar to Ariana Grande (0.88), Beyoncé (0.70), Lizzo (0.84)"
         ],
-        "score": 0.3615,
+        "score": 0.3613,
         "tier": "would_like"
       },
       {
@@ -13564,7 +13302,7 @@
           "similar to Vampire Weekend (1.00), Broken Social Scene (0.50), The New Pornographers (0.36)",
           "you've never been to The Concert Hall"
         ],
-        "score": 0.3613,
+        "score": 0.3611,
         "tier": "would_like"
       },
       {
@@ -13595,43 +13333,15 @@
           "similar to Alexisonfire (0.97), Thrice (0.48), Thursday (0.62)",
           "you've never been to The Theatre at Great Canadian Toronto"
         ],
-        "score": 0.3575,
-        "tier": "would_like"
-      },
-      {
-        "artist": "Arlo",
-        "event": {
-          "id": "tm:1A8Zkf7Gkd7iq24",
-          "lineup": [
-            "Arlo"
-          ],
-          "region": "Toronto",
-          "source": "ticketmaster",
-          "starts_at": "2026-10-23T22:00:00",
-          "url": "https://www.ticketmaster.ca/arlo-toronto-ontario-10-23-2026/event/10006504C4B1D3D5",
-          "venue": {
-            "capacity": null,
-            "city": "Toronto",
-            "lat": 43.64335,
-            "lon": -79.42202,
-            "name": "Longboat Hall"
-          }
-        },
-        "heard_before": null,
-        "listeners": 124417,
-        "reasons": [
-          "tags match your taste: indie, rock, indie rock",
-          "you've never been to Longboat Hall"
-        ],
         "score": 0.3573,
         "tier": "would_like"
       }
     ]
   },
   "stats": {
-    "events": 584,
-    "known_artists": 2015,
-    "snapshot_days": 8
+    "events": 565,
+    "known_artists": 2016,
+    "snapshot_days": 9
   },
   "user": "quepol"
 }
