@@ -3273,7 +3273,7 @@
         {
           "affinity": 0.042,
           "artist": "Angine de Poitrine",
-          "days": 4,
+          "days": 5,
           "listeners": 195026,
           "why": "similar to Pink Floyd (0.15), Porcupine Tree (0.14)"
         }
@@ -5131,7 +5131,7 @@
     {
       "acts": [
         {
-          "affinity": 0.1004,
+          "affinity": 0.0932,
           "artist": "William Black",
           "listeners": 118288,
           "why": "similar to The Chainsmokers (0.34), Marshmello (0.15), Zedd (0.10)"
@@ -6614,10 +6614,10 @@
     {
       "acts": [
         {
-          "affinity": 0.2709,
+          "affinity": 0.2582,
           "artist": "GRYFFIN",
           "listeners": 732220,
-          "why": "similar to The Chainsmokers (0.96), Marshmello (0.30), Zedd (0.35)"
+          "why": "similar to The Chainsmokers (0.96), Zedd (0.35), Marshmello (0.30)"
         }
       ],
       "id": "tm:177Zv0G65ReurkD",
@@ -6940,10 +6940,10 @@
     {
       "acts": [
         {
-          "affinity": 0.2709,
+          "affinity": 0.2582,
           "artist": "GRYFFIN",
           "listeners": 732220,
-          "why": "similar to The Chainsmokers (0.96), Marshmello (0.30), Zedd (0.35)"
+          "why": "similar to The Chainsmokers (0.96), Zedd (0.35), Marshmello (0.30)"
         }
       ],
       "id": "tm:177Zv0G65ReCC6a",
@@ -10928,7 +10928,7 @@
       }
     }
   ],
-  "generated_at": "2026-10-25T09:54:02+00:00",
+  "generated_at": "2026-10-25T22:10:44+00:00",
   "ledger": [
     {
       "artist": "Jackie Evans",
@@ -11962,6 +11962,34 @@
         "tier": "know"
       },
       {
+        "artist": "Angine de Poitrine",
+        "event": {
+          "id": "tm:177Zv0G61Shy4ZE",
+          "lineup": [
+            "Angine de Poitrine"
+          ],
+          "region": "Toronto",
+          "source": "ticketmaster",
+          "starts_at": "2026-11-05T19:00:00",
+          "url": "https://www.ticketmaster.ca/angine-de-poitrine-toronto-ontario-11-05-2026/event/100064ACDBE55027",
+          "venue": {
+            "capacity": 2500,
+            "city": "Toronto",
+            "lat": 43.66684147,
+            "lon": -79.31351149,
+            "name": "History Toronto"
+          }
+        },
+        "heard_before": null,
+        "listeners": null,
+        "reasons": [
+          "played on 5 days since 2026 (19 plays)",
+          "one of your most-played artists"
+        ],
+        "score": 1.7918,
+        "tier": "know"
+      },
+      {
         "artist": "TALK",
         "event": {
           "id": "tm:1AvZZ_3GkikqEil",
@@ -12015,34 +12043,6 @@
           "played on 5 days since 2010 (12 plays)"
         ],
         "score": 1.7918,
-        "tier": "know"
-      },
-      {
-        "artist": "Angine de Poitrine",
-        "event": {
-          "id": "tm:177Zv0G61Shy4ZE",
-          "lineup": [
-            "Angine de Poitrine"
-          ],
-          "region": "Toronto",
-          "source": "ticketmaster",
-          "starts_at": "2026-11-05T19:00:00",
-          "url": "https://www.ticketmaster.ca/angine-de-poitrine-toronto-ontario-11-05-2026/event/100064ACDBE55027",
-          "venue": {
-            "capacity": 2500,
-            "city": "Toronto",
-            "lat": 43.66684147,
-            "lon": -79.31351149,
-            "name": "History Toronto"
-          }
-        },
-        "heard_before": null,
-        "listeners": null,
-        "reasons": [
-          "played on 4 days since 2026 (18 plays)",
-          "one of your most-played artists"
-        ],
-        "score": 1.6094,
         "tier": "know"
       },
       {
@@ -13127,7 +13127,7 @@
     ]
   },
   "stats": {
-    "events": 554,
+    "events": 593,
     "known_artists": 2017,
     "snapshot_days": 10
   },

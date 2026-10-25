@@ -73,6 +73,23 @@
     }
   },
   {
+    "id": "tm:177Zv0G6CxzPtKk",
+    "lineup": [
+      "Stars & Stories Leonard Cohen and Joni Mitchell The Untold Love Story"
+    ],
+    "region": "Orillia",
+    "source": "ticketmaster",
+    "starts_at": "2026-10-25T19:00:00",
+    "url": "https://www.ticketmaster.ca/stars-stories-leonard-cohen-and-joni-rama-ontario-10-25-2026/event/100064E8B89694C6",
+    "venue": {
+      "capacity": null,
+      "city": "Rama",
+      "lat": 44.6268455,
+      "lon": -79.3518316,
+      "name": "Casino Rama Resort"
+    }
+  },
+  {
     "id": "tm:rZ7HnEZ1AfaOv7",
     "lineup": [
       "GTA LIVE FM Featuring Double Experience"
@@ -183,6 +200,23 @@
     }
   },
   {
+    "id": "tm:rZ7HnEZ1AfaOvf",
+    "lineup": [
+      "GTA LIVE FM Featuring Double Experience"
+    ],
+    "region": "Guelph",
+    "source": "ticketmaster",
+    "starts_at": "2026-10-26T20:00:00",
+    "url": "https://www.ticketweb.ca/event/gta-live-fm-featuring-double-sonic-hall-tickets/14260054",
+    "venue": {
+      "capacity": null,
+      "city": "Guelph",
+      "lat": 43.544806,
+      "lon": -80.248615,
+      "name": "Sonic Hall"
+    }
+  },
+  {
     "id": "tm:1AvZZ_aGkVCvOgJ",
     "lineup": [
       "Olivia Rodrigo",
@@ -250,6 +284,24 @@
       "lat": 43.66684147,
       "lon": -79.31351149,
       "name": "History Toronto"
+    }
+  },
+  {
+    "id": "tm:1AvZZ_8GkU1a9dL",
+    "lineup": [
+      "Waylon Wyatt",
+      "Noah James"
+    ],
+    "region": "London",
+    "source": "ticketmaster",
+    "starts_at": "2026-10-27T19:00:00",
+    "url": "https://www.ticketmaster.ca/waylon-wyatt-dustpiles-world-tour-london-ontario-10-27-2026/event/1000650D8A2570DF",
+    "venue": {
+      "capacity": null,
+      "city": "London",
+      "lat": 42.98399,
+      "lon": -81.2491481,
+      "name": "LONDON MUSIC HALL"
     }
   },
   {
@@ -573,6 +625,23 @@
     }
   },
   {
+    "id": "tm:rZ7HnEZ1AfJp-K",
+    "lineup": [
+      "Crown Lands"
+    ],
+    "region": "Kitchener",
+    "source": "ticketmaster",
+    "starts_at": "2026-10-29T20:00:00",
+    "url": "https://www.ticketweb.ca/event/crown-lands-farm-league-brewing-tickets/14996853",
+    "venue": {
+      "capacity": null,
+      "city": "Cambridge",
+      "lat": 43.35128,
+      "lon": -80.31318,
+      "name": "Farm League Brewing"
+    }
+  },
+  {
     "id": "tm:rZ7HnEZ1Afu4-7",
     "lineup": [
       "Rangarang Live Vol. 2: Halloween"
@@ -623,6 +692,26 @@
       "lat": 43.6590002,
       "lon": -79.3487743,
       "name": "The Opera House"
+    }
+  },
+  {
+    "id": "tm:177Zv0G6ud4J6Zb",
+    "lineup": [
+      "Hot Mulligan",
+      "One Step Closer",
+      "Riley!",
+      "Wakelee"
+    ],
+    "region": "London",
+    "source": "ticketmaster",
+    "starts_at": "2026-10-30T18:00:00",
+    "url": "https://www.ticketmaster.ca/hot-mulligan-north-american-fall-tour-london-ontario-10-30-2026/event/100064D0D5987018",
+    "venue": {
+      "capacity": null,
+      "city": "London",
+      "lat": 42.98399,
+      "lon": -81.2491481,
+      "name": "LONDON MUSIC HALL"
     }
   },
   {
@@ -850,6 +939,40 @@
     }
   },
   {
+    "id": "tm:rZ7HnEZ1AfFkZ7",
+    "lineup": [
+      "Crown Lands"
+    ],
+    "region": "Kitchener",
+    "source": "ticketmaster",
+    "starts_at": "2026-10-30T20:00:00",
+    "url": "https://www.ticketweb.ca/event/crown-lands-farm-league-brewing-tickets/14206004",
+    "venue": {
+      "capacity": null,
+      "city": "Cambridge",
+      "lat": 43.35128,
+      "lon": -80.31318,
+      "name": "Farm League Brewing"
+    }
+  },
+  {
+    "id": "tm:1A8Zk3kGkeXacWH",
+    "lineup": [
+      "Owen Riegling"
+    ],
+    "region": "London",
+    "source": "ticketmaster",
+    "starts_at": "2026-10-30T20:00:00",
+    "url": "https://tinyurl.com/442ssthr",
+    "venue": {
+      "capacity": null,
+      "city": "London",
+      "lat": 42.9891932,
+      "lon": -81.2466769,
+      "name": "Centennial Hall"
+    }
+  },
+  {
     "id": "tm:rZ7HnEZ1AfuvO7",
     "lineup": [
       "boom 97.3 Totally 80's Halloween Costume Party"
@@ -932,6 +1055,23 @@
       "lat": 43.665374,
       "lon": -79.41154,
       "name": "CODA"
+    }
+  },
+  {
+    "id": "tm:rZ7HnEZ1AfG7xf",
+    "lineup": [
+      "The Black Parade Halloween Emo Night Guelph at Sonic Hall - Oct 30 2026"
+    ],
+    "region": "Guelph",
+    "source": "ticketmaster",
+    "starts_at": "2026-10-30T22:00:00",
+    "url": "https://www.ticketweb.ca/event/the-black-parade-halloween-emo-sonic-hall-tickets/14304894",
+    "venue": {
+      "capacity": null,
+      "city": "Guelph",
+      "lat": 43.544806,
+      "lon": -80.248615,
+      "name": "Sonic Hall"
     }
   },
   {
@@ -1107,6 +1247,23 @@
     }
   },
   {
+    "id": "tm:1A8Zk3kGkeWnuyc",
+    "lineup": [
+      "Owen Riegling"
+    ],
+    "region": "Kitchener",
+    "source": "ticketmaster",
+    "starts_at": "2026-10-31T20:00:00",
+    "url": "https://kwtickets.evenue.net/events/ORIEGLING",
+    "venue": {
+      "capacity": null,
+      "city": "Kitchener",
+      "lat": 43.454274,
+      "lon": -80.48466,
+      "name": "Centre in The Square"
+    }
+  },
+  {
     "id": "tm:rZ7HnEZ1AfGV_0",
     "lineup": [
       "HALLOWEEN DPRTMNT 2026"
@@ -1223,6 +1380,23 @@
       "lat": 43.2498,
       "lon": -79.86433,
       "name": "Corktown Pub"
+    }
+  },
+  {
+    "id": "tm:16tZk4kZ-ZA2vae2",
+    "lineup": [
+      "Marie Vaunt"
+    ],
+    "region": "London",
+    "source": "ticketmaster",
+    "starts_at": "2026-10-31T22:00:00",
+    "url": "https://www.ticketweb.ca/event/halloween-night-marie-vaunt-london-music-hall-tickets/14365424?REFERRAL_ID=tmfeed",
+    "venue": {
+      "capacity": null,
+      "city": "London",
+      "lat": 42.98399,
+      "lon": -81.2491481,
+      "name": "LONDON MUSIC HALL"
     }
   },
   {
@@ -1403,6 +1577,23 @@
       "lat": 43.6551655,
       "lon": -79.4190636,
       "name": "The Mod Club"
+    }
+  },
+  {
+    "id": "tm:177Zv0G6Cxz9toO",
+    "lineup": [
+      "The Story of Merle Haggard"
+    ],
+    "region": "Orillia",
+    "source": "ticketmaster",
+    "starts_at": "2026-11-01T19:00:00",
+    "url": "https://www.ticketmaster.ca/stars-and-stories-the-story-of-rama-ontario-11-01-2026/event/100064E8B85E9460",
+    "venue": {
+      "capacity": null,
+      "city": "Rama",
+      "lat": 44.6268455,
+      "lon": -79.3518316,
+      "name": "Casino Rama Resort"
     }
   },
   {
@@ -2361,6 +2552,23 @@
     }
   },
   {
+    "id": "tm:177Zv0G6CxR-b_H",
+    "lineup": [
+      "Mitchell Tenpenny"
+    ],
+    "region": "Orillia",
+    "source": "ticketmaster",
+    "starts_at": "2026-11-06T21:00:00",
+    "url": "https://www.ticketmaster.ca/mitchell-tenpenny-speed-of-light-tour-rama-ontario-11-06-2026/event/100064E8AF85867C",
+    "venue": {
+      "capacity": null,
+      "city": "Rama",
+      "lat": 44.6268455,
+      "lon": -79.3518316,
+      "name": "Casino Rama Resort"
+    }
+  },
+  {
     "id": "tm:rZ7HnEZ1Af1baV",
     "lineup": [
       "Jody Wisternoff"
@@ -2700,6 +2908,23 @@
       "lat": 42.856098,
       "lon": -78.864403,
       "name": "Buffalo Iron Works"
+    }
+  },
+  {
+    "id": "tm:1k7Zv0xpGACL3El",
+    "lineup": [
+      "Loverboy"
+    ],
+    "region": "Orillia",
+    "source": "ticketmaster",
+    "starts_at": "2026-11-07T20:00:00",
+    "url": "https://www.ticketmaster.ca/loverboy-rama-ontario-11-07-2026/event/100064896E7D29EB",
+    "venue": {
+      "capacity": null,
+      "city": "Rama",
+      "lat": 44.6268455,
+      "lon": -79.3518316,
+      "name": "Casino Rama Resort"
     }
   },
   {
@@ -3849,6 +4074,23 @@
     }
   },
   {
+    "id": "tm:1AvZZ_7GkUyMuls",
+    "lineup": [
+      "Josh Ross"
+    ],
+    "region": "Orillia",
+    "source": "ticketmaster",
+    "starts_at": "2026-11-13T21:00:00",
+    "url": "https://www.ticketmaster.ca/josh-ross-later-tonight-tour-rama-ontario-11-13-2026/event/1000644DB9DCDAF1",
+    "venue": {
+      "capacity": null,
+      "city": "Rama",
+      "lat": 44.6268455,
+      "lon": -79.3518316,
+      "name": "Casino Rama Resort"
+    }
+  },
+  {
     "id": "tm:rZ7HnEZ1AfaM-0",
     "lineup": [
       "DJ Tennis"
@@ -4104,6 +4346,24 @@
       "lat": 42.874941,
       "lon": -78.8762239,
       "name": "KeyBank Center"
+    }
+  },
+  {
+    "id": "tm:177Zv0G6GCnZH9j",
+    "lineup": [
+      "Wheeler Walker Jr.",
+      "Channing Wilson"
+    ],
+    "region": "London",
+    "source": "ticketmaster",
+    "starts_at": "2026-11-14T19:00:00",
+    "url": "https://www.ticketmaster.ca/wheeler-walker-jr-pullin-out-the-london-ontario-11-14-2026/event/100064C3AA03C5DC",
+    "venue": {
+      "capacity": null,
+      "city": "London",
+      "lat": 42.98399,
+      "lon": -81.2491481,
+      "name": "LONDON MUSIC HALL"
     }
   },
   {
@@ -4539,6 +4799,23 @@
       "lat": 43.62942,
       "lon": -79.548931,
       "name": "Rockpile Rock Bar"
+    }
+  },
+  {
+    "id": "tm:1AvZZ_oGkmgcc2X",
+    "lineup": [
+      "Trooper"
+    ],
+    "region": "London",
+    "source": "ticketmaster",
+    "starts_at": "2026-11-15T19:00:00",
+    "url": "https://www.ticketmaster.ca/trooper-london-ontario-11-15-2026/event/1000651BB5B6D3FE",
+    "venue": {
+      "capacity": null,
+      "city": "London",
+      "lat": 42.98399,
+      "lon": -81.2491481,
+      "name": "LONDON MUSIC HALL"
     }
   },
   {
@@ -5352,6 +5629,24 @@
     }
   },
   {
+    "id": "tm:177Zv0G6u62ifUq",
+    "lineup": [
+      "Lee Brice",
+      "Grace Tyler"
+    ],
+    "region": "Orillia",
+    "source": "ticketmaster",
+    "starts_at": "2026-11-20T21:00:00",
+    "url": "https://www.ticketmaster.ca/lee-brice-sunriser-tour-rama-ontario-11-20-2026/event/100064D1CFB14D9D",
+    "venue": {
+      "capacity": null,
+      "city": "Rama",
+      "lat": 44.6268455,
+      "lon": -79.3518316,
+      "name": "Casino Rama Resort"
+    }
+  },
+  {
     "id": "tm:rZ7HnEZ1AfuzGf",
     "lineup": [
       "RAVE CAVE"
@@ -5678,6 +5973,23 @@
     }
   },
   {
+    "id": "tm:1ae0Z_Kj6OYZdu5u",
+    "lineup": [
+      "Wing Night: the Band"
+    ],
+    "region": "London",
+    "source": "ticketmaster",
+    "starts_at": "2026-11-21T20:00:00",
+    "url": "https://www.ticketweb.ca/event/wing-night-the-band-london-music-hall-tickets/14339424?REFERRAL_ID=tmfeed",
+    "venue": {
+      "capacity": null,
+      "city": "London",
+      "lat": 42.98399,
+      "lon": -81.2491481,
+      "name": "LONDON MUSIC HALL"
+    }
+  },
+  {
     "id": "tm:rZ7HnEZ1Afu-kf",
     "lineup": [
       "BRYAN ADAMS plus ALANIS MORISSETTE Tributes"
@@ -5884,6 +6196,23 @@
     }
   },
   {
+    "id": "tm:1AvZZ_8GknsDR8z",
+    "lineup": [
+      "Protest the Hero"
+    ],
+    "region": "London",
+    "source": "ticketmaster",
+    "starts_at": "2026-11-22T19:00:00",
+    "url": "https://www.ticketmaster.ca/protest-the-hero-london-ontario-11-22-2026/event/1000650AB1EEF438",
+    "venue": {
+      "capacity": null,
+      "city": "London",
+      "lat": 42.98399,
+      "lon": -81.2491481,
+      "name": "LONDON MUSIC HALL"
+    }
+  },
+  {
     "id": "tm:177Zv0G6G2_mkrp",
     "lineup": [
       "Little Big Town",
@@ -6010,6 +6339,25 @@
     }
   },
   {
+    "id": "tm:177Zv0G618ZOzQs",
+    "lineup": [
+      "Dean Brody & The Reklaws",
+      "Dean Brody",
+      "The Reklaws"
+    ],
+    "region": "London",
+    "source": "ticketmaster",
+    "starts_at": "2026-11-24T19:30:00",
+    "url": "https://www.eventbrite.ca/e/dean-brody-the-reklaws-tickets-1988635065012?aff=oddtdtcreator",
+    "venue": {
+      "capacity": null,
+      "city": "London",
+      "lat": 42.9891932,
+      "lon": -81.2466769,
+      "name": "Centennial Hall"
+    }
+  },
+  {
     "id": "tm:1k7ZvPAaGAuBa1M",
     "lineup": [
       "Jessie Reyez"
@@ -6111,6 +6459,23 @@
       "lat": 43.6431078,
       "lon": -79.4246457,
       "name": "The Drake Hotel"
+    }
+  },
+  {
+    "id": "tm:rZ7HnEZ1AfG7x7",
+    "lineup": [
+      "Bradley Hale"
+    ],
+    "region": "Kitchener",
+    "source": "ticketmaster",
+    "starts_at": "2026-11-25T19:00:00",
+    "url": "https://www.ticketweb.ca/event/sully-burrows-bradley-hale-haley-farm-league-brewing-tickets/14304884",
+    "venue": {
+      "capacity": null,
+      "city": "Cambridge",
+      "lat": 43.35128,
+      "lon": -80.31318,
+      "name": "Farm League Brewing"
     }
   },
   {
@@ -6444,6 +6809,23 @@
     }
   },
   {
+    "id": "tm:177Zv0G6u6Lmbru",
+    "lineup": [
+      "Dwayne Gretzky"
+    ],
+    "region": "London",
+    "source": "ticketmaster",
+    "starts_at": "2026-11-27T19:00:00",
+    "url": "https://www.ticketmaster.ca/dwayne-gretzky-london-ontario-11-27-2026/event/100064D1DFB9878D",
+    "venue": {
+      "capacity": null,
+      "city": "London",
+      "lat": 42.98399,
+      "lon": -81.2491481,
+      "name": "LONDON MUSIC HALL"
+    }
+  },
+  {
     "id": "tm:1AvZZ_KGkDInbSQ",
     "lineup": [
       "ZULAN"
@@ -6475,6 +6857,23 @@
       "lat": 43.665249,
       "lon": -79.409447,
       "name": "Lee's Palace"
+    }
+  },
+  {
+    "id": "tm:15vZZ_o4P7S_-",
+    "lineup": [
+      "Jesse Cook"
+    ],
+    "region": "Orillia",
+    "source": "ticketmaster",
+    "starts_at": "2026-11-27T21:00:00",
+    "url": "https://www.ticketmaster.ca/jesse-cook-forever-live-2026-rama-ontario-11-27-2026/event/1000651565133661",
+    "venue": {
+      "capacity": null,
+      "city": "Rama",
+      "lat": 44.6268455,
+      "lon": -79.3518316,
+      "name": "Casino Rama Resort"
     }
   },
   {
@@ -6663,6 +7062,41 @@
       "lat": 43.6431078,
       "lon": -79.4246457,
       "name": "The Drake Hotel"
+    }
+  },
+  {
+    "id": "tm:177Zv0G6GCW_REF",
+    "lineup": [
+      "Default",
+      "Limblifter"
+    ],
+    "region": "London",
+    "source": "ticketmaster",
+    "starts_at": "2026-11-28T19:00:00",
+    "url": "https://www.ticketmaster.ca/default-the-fallout-25th-anniversary-tour-london-ontario-11-28-2026/event/100064C3BD66F9C8",
+    "venue": {
+      "capacity": null,
+      "city": "London",
+      "lat": 42.98399,
+      "lon": -81.2491481,
+      "name": "LONDON MUSIC HALL"
+    }
+  },
+  {
+    "id": "tm:1k7ZvPaZGACFqcd",
+    "lineup": [
+      "Jann Arden"
+    ],
+    "region": "Kitchener",
+    "source": "ticketmaster",
+    "starts_at": "2026-11-28T19:30:00",
+    "url": "https://kwtickets.evenue.net/events/JA",
+    "venue": {
+      "capacity": null,
+      "city": "Kitchener",
+      "lat": 43.454274,
+      "lon": -80.48466,
+      "name": "Centre in The Square"
     }
   },
   {
@@ -6960,6 +7394,40 @@
     }
   },
   {
+    "id": "tm:177Zv0G6G4Nceie",
+    "lineup": [
+      "I Pooh"
+    ],
+    "region": "Orillia",
+    "source": "ticketmaster",
+    "starts_at": "2026-11-29T19:00:00",
+    "url": "https://www.ticketmaster.ca/i-pooh-rama-ontario-11-29-2026/event/100064C563B42B02",
+    "venue": {
+      "capacity": null,
+      "city": "Rama",
+      "lat": 44.6268455,
+      "lon": -79.3518316,
+      "name": "Casino Rama Resort"
+    }
+  },
+  {
+    "id": "tm:1k7ZvPFxGAu4Kva",
+    "lineup": [
+      "Jann Arden"
+    ],
+    "region": "London",
+    "source": "ticketmaster",
+    "starts_at": "2026-11-29T19:30:00",
+    "url": "https://www.ticketmaster.ca/jann-arden-and-her-holiday-orchestra-london-ontario-11-29-2026/event/100065222D553049",
+    "venue": {
+      "capacity": null,
+      "city": "London",
+      "lat": 42.982341,
+      "lon": -81.251879,
+      "name": "Canada Life Place"
+    }
+  },
+  {
     "id": "tm:1A8ZkfAGkdAcz9m",
     "lineup": [
       "Jubin Nautiyal"
@@ -6974,6 +7442,23 @@
       "lat": 43.712525,
       "lon": -79.602042,
       "name": "The Theatre at Great Canadian Toronto"
+    }
+  },
+  {
+    "id": "tm:16e0Z_KfzG7RvlX",
+    "lineup": [
+      "Layton Giordani"
+    ],
+    "region": "London",
+    "source": "ticketmaster",
+    "starts_at": "2026-11-29T21:00:00",
+    "url": "https://www.ticketweb.ca/event/layton-giordani-london-music-hall-tickets/14335304?REFERRAL_ID=tmfeed",
+    "venue": {
+      "capacity": null,
+      "city": "London",
+      "lat": 42.98399,
+      "lon": -81.2491481,
+      "name": "LONDON MUSIC HALL"
     }
   },
   {
@@ -7165,6 +7650,23 @@
       "lat": 42.856098,
       "lon": -78.864403,
       "name": "Town Ballroom"
+    }
+  },
+  {
+    "id": "tm:177Zv0G6urC39lT",
+    "lineup": [
+      "Amanda Marshall"
+    ],
+    "region": "Kitchener",
+    "source": "ticketmaster",
+    "starts_at": "2026-12-02T19:30:00",
+    "url": "https://kwtickets.evenue.net/events/AM",
+    "venue": {
+      "capacity": null,
+      "city": "Kitchener",
+      "lat": 43.454274,
+      "lon": -80.48466,
+      "name": "Centre in The Square"
     }
   },
   {
@@ -7479,6 +7981,23 @@
     }
   },
   {
+    "id": "tm:rZ7HnEZ1AfGVq7",
+    "lineup": [
+      "Daniel Romano’s Outfit"
+    ],
+    "region": "Kitchener",
+    "source": "ticketmaster",
+    "starts_at": "2026-12-04T20:00:00",
+    "url": "https://www.ticketweb.ca/event/daniel-romanos-outfit-farm-league-brewing-tickets/14334744",
+    "venue": {
+      "capacity": null,
+      "city": "Cambridge",
+      "lat": 43.35128,
+      "lon": -80.31318,
+      "name": "Farm League Brewing"
+    }
+  },
+  {
     "id": "tm:rZ7HnEZ1A4Z9_K",
     "lineup": [
       "Hello Oasis with CRISIS CTRL CLUB"
@@ -7493,6 +8012,23 @@
       "lat": 43.665244,
       "lon": -79.409452,
       "name": "The Dance Cave"
+    }
+  },
+  {
+    "id": "tm:1k7ZvPApGAG4fpj",
+    "lineup": [
+      "Righteous Brothers"
+    ],
+    "region": "Orillia",
+    "source": "ticketmaster",
+    "starts_at": "2026-12-04T21:00:00",
+    "url": "https://www.ticketmaster.ca/the-righteous-brothers-bill-medley-bucky-rama-ontario-12-04-2026/event/100065156C55459C",
+    "venue": {
+      "capacity": null,
+      "city": "Rama",
+      "lat": 44.6268455,
+      "lon": -79.3518316,
+      "name": "Casino Rama Resort"
     }
   },
   {
@@ -7755,6 +8291,40 @@
     }
   },
   {
+    "id": "tm:1k7ZvPApGACBfIW",
+    "lineup": [
+      "Colin James"
+    ],
+    "region": "Orillia",
+    "source": "ticketmaster",
+    "starts_at": "2026-12-05T20:00:00",
+    "url": "https://www.ticketmaster.ca/colin-james-rama-ontario-12-05-2026/event/100065156EE94A3D",
+    "venue": {
+      "capacity": null,
+      "city": "Rama",
+      "lat": 44.6268455,
+      "lon": -79.3518316,
+      "name": "Casino Rama Resort"
+    }
+  },
+  {
+    "id": "tm:177Zv0G61NqECIF",
+    "lineup": [
+      "Marianas Trench"
+    ],
+    "region": "Kitchener",
+    "source": "ticketmaster",
+    "starts_at": "2026-12-05T20:00:00",
+    "url": "https://kwtickets.evenue.net/events/MT",
+    "venue": {
+      "capacity": null,
+      "city": "Kitchener",
+      "lat": 43.454274,
+      "lon": -80.48466,
+      "name": "Centre in The Square"
+    }
+  },
+  {
     "id": "tm:rZ7HnEZ1AfGVe7",
     "lineup": [
       "Loukeman"
@@ -7803,6 +8373,23 @@
       "lat": 43.641095,
       "lon": -79.354705,
       "name": "NOIR (inside REBEL)"
+    }
+  },
+  {
+    "id": "tm:177Zv0G61kvm4gI",
+    "lineup": [
+      "Elvis Christmas"
+    ],
+    "region": "Orillia",
+    "source": "ticketmaster",
+    "starts_at": "2026-12-06T14:00:00",
+    "url": "https://www.ticketmaster.ca/elvis-a-christmas-special-rama-ontario-12-06-2026/event/100064A181B95D68",
+    "venue": {
+      "capacity": null,
+      "city": "Rama",
+      "lat": 44.6268455,
+      "lon": -79.3518316,
+      "name": "Casino Rama Resort"
     }
   },
   {
@@ -8582,6 +9169,23 @@
     }
   },
   {
+    "id": "tm:1avZZ_o4YO7ZdC7k",
+    "lineup": [
+      "Celtic Tenors"
+    ],
+    "region": "Orillia",
+    "source": "ticketmaster",
+    "starts_at": "2026-12-12T20:00:00",
+    "url": "https://www.ticketmaster.ca/the-celtic-tenors-a-celtic-christmas-rama-ontario-12-12-2026/event/1000651570804D35",
+    "venue": {
+      "capacity": null,
+      "city": "Rama",
+      "lat": 44.6268455,
+      "lon": -79.3518316,
+      "name": "Casino Rama Resort"
+    }
+  },
+  {
     "id": "tm:rZ7HnEZ1Afu0O7",
     "lineup": [
       "ORANGEMAN"
@@ -8732,6 +9336,24 @@
       "lat": 43.650019,
       "lon": -79.435404,
       "name": "The Baby G"
+    }
+  },
+  {
+    "id": "tm:1A8Zk4FGkei2ujf",
+    "lineup": [
+      "Down With Webster",
+      "SonReal"
+    ],
+    "region": "London",
+    "source": "ticketmaster",
+    "starts_at": "2026-12-16T19:00:00",
+    "url": "https://www.ticketmaster.ca/down-with-webster-london-ontario-12-16-2026/event/10006548AC3CD714",
+    "venue": {
+      "capacity": null,
+      "city": "London",
+      "lat": 42.98399,
+      "lon": -81.2491481,
+      "name": "LONDON MUSIC HALL"
     }
   },
   {
@@ -9057,6 +9679,24 @@
       "lat": 42.856098,
       "lon": -78.864403,
       "name": "Buffalo Iron Works"
+    }
+  },
+  {
+    "id": "tm:16vZZ_fftG7mHss",
+    "lineup": [
+      "Triumph",
+      "April Wine"
+    ],
+    "region": "London",
+    "source": "ticketmaster",
+    "starts_at": "2026-12-19T20:00:00",
+    "url": "https://www.ticketmaster.ca/triumph-rock-roll-machine-reloaded-tour-london-ontario-12-19-2026/event/1000654529BBCC71",
+    "venue": {
+      "capacity": null,
+      "city": "London",
+      "lat": 42.982341,
+      "lon": -81.251879,
+      "name": "Canada Life Place"
     }
   },
   {
@@ -9403,6 +10043,23 @@
     }
   },
   {
+    "id": "tm:1718v0G62hPhZJd",
+    "lineup": [
+      "Parabolus: the Complete Tool Experience"
+    ],
+    "region": "London",
+    "source": "ticketmaster",
+    "starts_at": "2027-01-16T19:00:00",
+    "url": "https://www.ticketweb.ca/event/parabolus-the-complete-tool-experience-london-music-hall-tickets/14275134?REFERRAL_ID=tmfeed",
+    "venue": {
+      "capacity": null,
+      "city": "London",
+      "lat": 42.98399,
+      "lon": -81.2491481,
+      "name": "LONDON MUSIC HALL"
+    }
+  },
+  {
     "id": "tm:rZ7HnEZ1AfJ_fN",
     "lineup": [
       "Annisokay"
@@ -9434,6 +10091,24 @@
       "lat": 43.66684147,
       "lon": -79.31351149,
       "name": "History Toronto"
+    }
+  },
+  {
+    "id": "tm:1AvZZ_3GknpJFrH",
+    "lineup": [
+      "Trooper",
+      "Northern Pikes"
+    ],
+    "region": "Orillia",
+    "source": "ticketmaster",
+    "starts_at": "2027-01-16T20:00:00",
+    "url": "https://www.ticketmaster.ca/trooper-with-special-guest-the-northern-rama-ontario-01-16-2027/event/1000652A969887BC",
+    "venue": {
+      "capacity": null,
+      "city": "Rama",
+      "lat": 44.6268455,
+      "lon": -79.3518316,
+      "name": "Casino Rama Resort"
     }
   },
   {
