@@ -4,7 +4,7 @@ Shows coming to Toronto, scored against 20 years of Last.fm scrobbles, in three 
 
 1. **Next big thing.** Small artists (≤100K Last.fm listeners) close to your taste. Small rooms score a little higher. This is the one worth checking daily: catching a future-big band in a small room.
 2. **You'd probably like.** Artists close to your taste, at any size, including ones you've heard of but don't play.
-3. **Bands you know.** Artists you've played on 3 or more distinct days. Hamilton and Buffalo shows count too, but only for your top 200 artists and bands you've seen live.
+3. **Bands you know.** Artists you've played on 3 or more distinct days. Out-of-town shows (Hamilton, Buffalo, Kitchener-Waterloo, Guelph, London, Orillia) count too, but only for your top 200 artists and bands you've seen live.
 
 Every pick explains itself ("similar to X 0.62"). The **ledger** records each next-big-thing artist's listener count on the day it was first flagged, so over time it shows who actually blew up.
 

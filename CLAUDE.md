@@ -8,7 +8,7 @@ Where things stand right now is in `HANDOFF.md`. The backlog lives in **GitHub I
 
 - The product owner. Claude builds. Give a recommendation, not a menu of options.
 - They want no sugar-coating, pushback on their thinking, connected dots and a sharp chief of staff.
-- Last.fm user `quepol`; setlist.fm user `quepol`. They live in **Toronto** and travel to **Hamilton or Buffalo** only for bands they love.
+- Last.fm user `quepol`; setlist.fm user `quepol`. They live in **Toronto** and travel to **Hamilton, Buffalo, Kitchener-Waterloo, Guelph, London or Orillia** only for bands they love.
 - **They love musicals.** Cast recordings and musical theatre are their taste, not kids' noise.
 - **Kids share the Last.fm account.** Kids' and kid-franchise artists are excluded (see Taste rules).
 - They switch between a Mac and a phone. The site runs as a **home-screen app on the phone**, so design for phones first.
@@ -62,7 +62,7 @@ Other product decisions:
 - `nbt/scoring.py`: tiers, the next-big-thing score `affinity × (0.6 + 0.4 × smallness) + bill_bonus + venue_bonus (+ velocity once 4+ weeks of snapshots)`, `calendar()`.
 - `nbt/taste.py`: seeds, affinity, `is_noise`. `nbt/exclusions.py`: kids and game rules, loves.
 - `nbt/sources/`:
-  - `ticketmaster.py`: **the only event feed**, including TicketWeb, queried for every region (Hamilton and Buffalo too; scoring keeps only loved bands there). It holds a capacity table keyed by Ticketmaster venue ID.
+  - `ticketmaster.py`: **the only event feed**, including TicketWeb, queried for every region in `nbt/config.py` (Toronto, plus Hamilton, Buffalo, Orillia, Kitchener, Guelph and London, where scoring keeps only loved bands). It holds a capacity table keyed by Ticketmaster venue ID.
   - `setlistfm.py`: attended shows.
   - Bandsintown was removed (2026-10-19): its city feed got 403 and its app ID 401. Out-of-town shows had silently depended on it.
 - `data/`:

@@ -34,6 +34,13 @@ class Config:
         Region("Toronto", 43.6532, -79.3832, 40),
         Region("Hamilton", 43.2557, -79.8711, 20, tiers="loved"),
         Region("Buffalo", 42.8864, -78.8784, 25, tiers="loved"),
+        # Added 2026-10-24, after seeing loved bands play there. Kitchener's circle
+        # covers Waterloo and Cambridge; Orillia's covers Casino Rama. Kitchener comes
+        # before Guelph (22 km apart) so the few venues in both get labelled Kitchener.
+        Region("Orillia", 44.6082, -79.4197, 15, tiers="loved"),
+        Region("Kitchener", 43.4516, -80.4925, 20, tiers="loved"),
+        Region("Guelph", 43.5448, -80.2482, 12, tiers="loved"),
+        Region("London", 42.9849, -81.2453, 20, tiers="loved"),
     )
 
     # An artist counts as "known" once played on this many distinct days.
