@@ -90,6 +90,7 @@ Other product decisions:
 - **Changing an `actions/cache` step's `path` changes the cache version.** The old cache silently stops restoring. Give new files their own cache step.
 - **Typographic quotes** ("Arm’s Length") make Last.fm return near-empty pages. `nbt/lastfm.py` looks names up with straight quotes (`lastfm_name()`), and names with quotes use a `q:` cache key so answers cached before the fix aren't reused.
 - **Stylised names** ("half•alive") have the same problem: the plain spelling lands on a near-empty page, so an established band looks like a next big thing. Artists under 20K listeners also get an `artist.search`; a same-name match (punctuation aside) with 10× the listeners wins (`_stylised_match()` in `nbt/lastfm.py`).
+- **`days_by_year` was missing for almost everyone until a rebuild** (Oct 2026: only 16 of 6,442 artists had it, and only for 2026). The taste model trusts it whenever it exists, so partial data under-weights an artist. To rebuild, commit `data/rebuild-history`. The next daily run re-downloads every scrobble, keeps the old history unless the new one is complete (`scripts/check_rebuild.py`), and deletes the flag on success.
 - **Dates:** a bare `YYYY-MM-DD` string parses as UTC midnight and shows the day before in Toronto. Build local dates from their parts.
 - **`parseReasons()` in `site/app.js`** parses the pipeline's reason strings with regexes. Changing reason wording in `nbt/scoring.py` means updating those regexes.
 - **`site/data/digest.json` must stay committed.** Deploy-only runs publish whatever copy is on `main`.

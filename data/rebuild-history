@@ -1,0 +1,3 @@
+Request for a one-time history rebuild (see the "Run pipeline" step in daily.yml).
+The next daily run re-downloads every scrobble so each artist gets days_by_year,
+checks the result against the old history, and deletes this file once it succeeds.

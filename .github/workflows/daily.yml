@@ -75,7 +75,21 @@ jobs:
           # Repository variables; unset means the defaults in nbt/config.py.
           LASTFM_USER: ${{ vars.LASTFM_USER }}
           SETLISTFM_USER: ${{ vars.SETLISTFM_USER }}
-        run: python -m nbt run
+        run: |
+          # One-time history rebuild, requested by committing data/rebuild-history. It
+          # re-downloads every scrobble so each artist gets days_by_year. The old history is
+          # kept unless the new one is complete (at least as many play days), so a failed
+          # or partial rebuild can never reach the digest; the flag then stays for a retry.
+          if [ -f data/rebuild-history ]; then
+            cp data/history.json "$RUNNER_TEMP/history.bak"
+            if python -m nbt rebuild-history && python scripts/check_rebuild.py "$RUNNER_TEMP/history.bak" data/history.json; then
+              git rm -q data/rebuild-history
+            else
+              echo "::warning::History rebuild failed or came back short; kept the old history."
+              cp "$RUNNER_TEMP/history.bak" data/history.json
+            fi
+          fi
+          python -m nbt run
       # Rebase onto whatever landed on main during the run, so the push isn't
       # rejected and the deploy below carries the latest site files.
       - name: Commit snapshots and digest
