@@ -254,6 +254,25 @@
     ],
     "score_at_flag": 0.1124
   },
+  "comehelpglo": {
+    "artist": "comehelpglo",
+    "checked": "2026-10-25",
+    "event": {
+      "starts_at": "2026-11-10T19:00:00",
+      "url": "https://www.ticketmaster.ca/pouya-the-forever-glades-tour-toronto-ontario-11-10-2026/event/100064C9B042E9DF",
+      "venue": "The Mod Club"
+    },
+    "first_flagged": "2026-10-25",
+    "listeners_at_flag": 76820,
+    "listeners_now": 76820,
+    "reasons": [
+      "tags match your taste: alternative, hip-hop, rap",
+      "only 76,820 listeners on Last.fm",
+      "small venue (~575 cap.)",
+      "you've never been to The Mod Club"
+    ],
+    "score_at_flag": 0.1904
+  },
   "devon gabriella": {
     "artist": "Devon Gabriella",
     "checked": "2026-10-25",
