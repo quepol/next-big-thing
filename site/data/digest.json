@@ -1142,6 +1142,5193 @@
       "venue": "Kemper Arena"
     }
   ],
+  "bands": [
+    {
+      "artist": "City and Colour",
+      "days": 476,
+      "last": "2026-06-20",
+      "plays": 1502,
+      "recent": 53,
+      "seed": 1,
+      "top": 1,
+      "travel": [
+        "rotation",
+        "heavy",
+        "love",
+        "live"
+      ],
+      "weight": 1.0
+    },
+    {
+      "artist": "William Fitzsimmons",
+      "days": 347,
+      "last": "2026-02-02",
+      "plays": 1534,
+      "recent": 1,
+      "seed": 144,
+      "top": 2,
+      "travel": [
+        "rotation"
+      ],
+      "weight": 0.362
+    },
+    {
+      "artist": "Joshua Radin",
+      "days": 305,
+      "last": "2021-12-07",
+      "plays": 1088,
+      "recent": 0,
+      "seed": 200,
+      "top": 3,
+      "travel": [],
+      "weight": 0.283
+    },
+    {
+      "artist": "Radiohead",
+      "days": 296,
+      "last": "2026-10-20",
+      "plays": 1268,
+      "recent": 88,
+      "seed": 2,
+      "top": 4,
+      "travel": [
+        "rotation",
+        "heavy",
+        "love",
+        "live"
+      ],
+      "weight": 0.952
+    },
+    {
+      "artist": "Hunter Parrish",
+      "days": 267,
+      "last": "2018-03-06",
+      "plays": 522,
+      "recent": 0,
+      "seed": 221,
+      "top": 5,
+      "travel": [],
+      "weight": 0.264
+    },
+    {
+      "artist": "Iron & Wine",
+      "days": 222,
+      "last": "2025-09-06",
+      "plays": 709,
+      "recent": 1,
+      "seed": 164,
+      "top": 6,
+      "travel": [
+        "rotation",
+        "live"
+      ],
+      "weight": 0.329
+    },
+    {
+      "artist": "The Weepies",
+      "days": 179,
+      "last": "2017-07-01",
+      "plays": 277,
+      "recent": 0,
+      "seed": 261,
+      "top": 7,
+      "travel": [],
+      "weight": 0.241
+    },
+    {
+      "artist": "Bon Iver",
+      "days": 177,
+      "last": "2025-12-04",
+      "plays": 563,
+      "recent": 6,
+      "seed": 5,
+      "top": 8,
+      "travel": [
+        "rotation",
+        "love",
+        "live"
+      ],
+      "weight": 0.854
+    },
+    {
+      "artist": "Elliott Smith",
+      "days": 172,
+      "last": "2026-04-04",
+      "plays": 603,
+      "recent": 17,
+      "seed": 4,
+      "top": 9,
+      "travel": [
+        "rotation",
+        "heavy",
+        "love"
+      ],
+      "weight": 0.857
+    },
+    {
+      "artist": "Sarah McLachlan",
+      "days": 171,
+      "last": "2024-06-19",
+      "plays": 249,
+      "recent": 4,
+      "seed": 13,
+      "top": 10,
+      "travel": [
+        "rotation",
+        "love",
+        "live"
+      ],
+      "weight": 0.791
+    },
+    {
+      "artist": "Coldplay",
+      "days": 167,
+      "last": "2026-01-17",
+      "plays": 393,
+      "recent": 8,
+      "seed": 42,
+      "top": 11,
+      "travel": [
+        "rotation",
+        "heavy"
+      ],
+      "weight": 0.708
+    },
+    {
+      "artist": "The Decemberists",
+      "days": 161,
+      "last": "2026-10-14",
+      "plays": 687,
+      "recent": 36,
+      "seed": 3,
+      "top": 12,
+      "travel": [
+        "rotation",
+        "heavy",
+        "love",
+        "live"
+      ],
+      "weight": 0.862
+    },
+    {
+      "artist": "Sufjan Stevens",
+      "days": 160,
+      "last": "2026-07-05",
+      "plays": 429,
+      "recent": 10,
+      "seed": 7,
+      "top": 13,
+      "travel": [
+        "rotation",
+        "heavy",
+        "love",
+        "live"
+      ],
+      "weight": 0.827
+    },
+    {
+      "artist": "Death Cab for Cutie",
+      "days": 157,
+      "last": "2026-06-04",
+      "plays": 296,
+      "recent": 12,
+      "seed": 40,
+      "top": 14,
+      "travel": [
+        "rotation",
+        "heavy",
+        "live"
+      ],
+      "weight": 0.798
+    },
+    {
+      "artist": "The Arcade Fire",
+      "days": 156,
+      "last": "2026-03-31",
+      "plays": 584,
+      "recent": 19,
+      "seed": 6,
+      "top": 15,
+      "travel": [
+        "rotation",
+        "heavy",
+        "love",
+        "live"
+      ],
+      "weight": 0.848
+    },
+    {
+      "artist": "The Shins",
+      "days": 143,
+      "last": "2026-09-26",
+      "plays": 335,
+      "recent": 6,
+      "seed": 8,
+      "top": 16,
+      "travel": [
+        "rotation",
+        "love",
+        "live"
+      ],
+      "weight": 0.8
+    },
+    {
+      "artist": "Toad The Wet Sprocket",
+      "days": 140,
+      "last": "2026-01-31",
+      "plays": 326,
+      "recent": 6,
+      "seed": 11,
+      "top": 17,
+      "travel": [
+        "rotation",
+        "love"
+      ],
+      "weight": 0.796
+    },
+    {
+      "artist": "The Beatles",
+      "days": 138,
+      "last": "2026-04-22",
+      "plays": 528,
+      "recent": 11,
+      "seed": 39,
+      "top": 18,
+      "travel": [
+        "rotation",
+        "heavy"
+      ],
+      "weight": 0.831
+    },
+    {
+      "artist": "José González",
+      "days": 133,
+      "last": "2025-09-06",
+      "plays": 230,
+      "recent": 7,
+      "seed": 55,
+      "top": 19,
+      "travel": [
+        "rotation",
+        "live"
+      ],
+      "weight": 0.606
+    },
+    {
+      "artist": "Ray LaMontagne",
+      "days": 128,
+      "last": "2022-01-29",
+      "plays": 233,
+      "recent": 0,
+      "seed": 275,
+      "top": 20,
+      "travel": [],
+      "weight": 0.23
+    },
+    {
+      "artist": "Mumford & Sons",
+      "days": 123,
+      "last": "2026-07-14",
+      "plays": 380,
+      "recent": 10,
+      "seed": 10,
+      "top": 21,
+      "travel": [
+        "rotation",
+        "heavy",
+        "love",
+        "live"
+      ],
+      "weight": 0.798
+    },
+    {
+      "artist": "Spoon",
+      "days": 118,
+      "last": "2026-04-01",
+      "plays": 384,
+      "recent": 26,
+      "seed": 12,
+      "top": 22,
+      "travel": [
+        "rotation",
+        "heavy",
+        "love",
+        "live"
+      ],
+      "weight": 0.796
+    },
+    {
+      "artist": "Yo-Yo Ma",
+      "days": 114,
+      "last": "2018-06-15",
+      "plays": 2086,
+      "recent": 0,
+      "seed": 208,
+      "top": 23,
+      "travel": [],
+      "weight": 0.276
+    },
+    {
+      "artist": "Band of Horses",
+      "days": 109,
+      "last": "2024-08-08",
+      "plays": 229,
+      "recent": 6,
+      "seed": 70,
+      "top": 24,
+      "travel": [
+        "rotation",
+        "live"
+      ],
+      "weight": 0.541
+    },
+    {
+      "artist": "Jack Johnson",
+      "days": 108,
+      "last": "2023-03-22",
+      "plays": 231,
+      "recent": 1,
+      "seed": 206,
+      "top": 25,
+      "travel": [
+        "rotation"
+      ],
+      "weight": 0.278
+    },
+    {
+      "artist": "Jeff Buckley",
+      "days": 104,
+      "last": "2026-07-10",
+      "plays": 389,
+      "recent": 38,
+      "seed": 14,
+      "top": 26,
+      "travel": [
+        "rotation",
+        "heavy",
+        "love"
+      ],
+      "weight": 0.788
+    },
+    {
+      "artist": "Nine Inch Nails",
+      "days": 97,
+      "last": "2026-07-09",
+      "plays": 483,
+      "recent": 56,
+      "seed": 9,
+      "top": 27,
+      "travel": [
+        "rotation",
+        "heavy",
+        "love",
+        "live"
+      ],
+      "weight": 0.798
+    },
+    {
+      "artist": "Silversun Pickups",
+      "days": 93,
+      "last": "2026-10-22",
+      "plays": 273,
+      "recent": 34,
+      "seed": 19,
+      "top": 29,
+      "travel": [
+        "rotation",
+        "heavy",
+        "love",
+        "live"
+      ],
+      "weight": 0.753
+    },
+    {
+      "artist": "The National",
+      "days": 93,
+      "last": "2026-04-28",
+      "plays": 304,
+      "recent": 25,
+      "seed": 18,
+      "top": 28,
+      "travel": [
+        "rotation",
+        "heavy",
+        "love",
+        "live"
+      ],
+      "weight": 0.761
+    },
+    {
+      "artist": "Frightened Rabbit",
+      "days": 91,
+      "last": "2026-07-09",
+      "plays": 413,
+      "recent": 9,
+      "seed": 15,
+      "top": 30,
+      "travel": [
+        "rotation",
+        "heavy",
+        "love",
+        "live"
+      ],
+      "weight": 0.782
+    },
+    {
+      "artist": "Fleet Foxes",
+      "days": 89,
+      "last": "2026-06-04",
+      "plays": 289,
+      "recent": 3,
+      "seed": 130,
+      "top": 31,
+      "travel": [
+        "rotation",
+        "live"
+      ],
+      "weight": 0.385
+    },
+    {
+      "artist": "Kelly Clarkson",
+      "days": 87,
+      "last": "2026-07-19",
+      "plays": 232,
+      "recent": 20,
+      "seed": 22,
+      "top": 33,
+      "travel": [
+        "rotation",
+        "heavy",
+        "love",
+        "live"
+      ],
+      "weight": 0.736
+    },
+    {
+      "artist": "Nick Drake",
+      "days": 87,
+      "last": "2025-12-16",
+      "plays": 161,
+      "recent": 8,
+      "seed": 53,
+      "top": 34,
+      "travel": [
+        "rotation",
+        "heavy"
+      ],
+      "weight": 0.61
+    },
+    {
+      "artist": "Sia",
+      "days": 87,
+      "last": "2026-07-09",
+      "plays": 285,
+      "recent": 23,
+      "seed": 20,
+      "top": 32,
+      "travel": [
+        "rotation",
+        "heavy",
+        "love"
+      ],
+      "weight": 0.751
+    },
+    {
+      "artist": "Imagine Dragons",
+      "days": 86,
+      "last": "2026-06-20",
+      "plays": 235,
+      "recent": 26,
+      "seed": 41,
+      "top": 35,
+      "travel": [
+        "rotation",
+        "heavy"
+      ],
+      "weight": 0.736
+    },
+    {
+      "artist": "Adele",
+      "days": 83,
+      "last": "2025-10-23",
+      "plays": 349,
+      "recent": 9,
+      "seed": 17,
+      "top": 36,
+      "travel": [
+        "rotation",
+        "heavy",
+        "love"
+      ],
+      "weight": 0.763
+    },
+    {
+      "artist": "Michael Jackson",
+      "days": 82,
+      "last": "2026-04-15",
+      "plays": 203,
+      "recent": 6,
+      "seed": 24,
+      "top": 37,
+      "travel": [
+        "rotation",
+        "love"
+      ],
+      "weight": 0.722
+    },
+    {
+      "artist": "Julie Andrews",
+      "days": 81,
+      "last": "2014-04-04",
+      "plays": 133,
+      "recent": 0,
+      "seed": null,
+      "top": 38,
+      "travel": [],
+      "weight": null
+    },
+    {
+      "artist": "Andrew Bird",
+      "days": 78,
+      "last": "2024-03-22",
+      "plays": 211,
+      "recent": 2,
+      "seed": 171,
+      "top": 40,
+      "travel": [
+        "rotation",
+        "live"
+      ],
+      "weight": 0.317
+    },
+    {
+      "artist": "Ani DiFranco",
+      "days": 78,
+      "last": "2026-10-20",
+      "plays": 384,
+      "recent": 21,
+      "seed": 16,
+      "top": 39,
+      "travel": [
+        "rotation",
+        "heavy",
+        "love",
+        "live"
+      ],
+      "weight": 0.765
+    },
+    {
+      "artist": "John Mayer",
+      "days": 78,
+      "last": "2022-06-06",
+      "plays": 148,
+      "recent": 0,
+      "seed": null,
+      "top": 41,
+      "travel": [],
+      "weight": null
+    },
+    {
+      "artist": "Bastille",
+      "days": 77,
+      "last": "2025-06-18",
+      "plays": 270,
+      "recent": 5,
+      "seed": 97,
+      "top": 42,
+      "travel": [
+        "rotation",
+        "live"
+      ],
+      "weight": 0.48
+    },
+    {
+      "artist": "alt-J",
+      "days": 75,
+      "last": "2026-01-16",
+      "plays": 328,
+      "recent": 15,
+      "seed": 21,
+      "top": 43,
+      "travel": [
+        "rotation",
+        "heavy",
+        "love",
+        "live"
+      ],
+      "weight": 0.751
+    },
+    {
+      "artist": "Natalie Merchant",
+      "days": 75,
+      "last": "2024-02-27",
+      "plays": 103,
+      "recent": 3,
+      "seed": 157,
+      "top": 44,
+      "travel": [
+        "rotation",
+        "live"
+      ],
+      "weight": 0.339
+    },
+    {
+      "artist": "Explosions in the Sky",
+      "days": 72,
+      "last": "2025-06-17",
+      "plays": 121,
+      "recent": 1,
+      "seed": 30,
+      "top": 45,
+      "travel": [
+        "rotation",
+        "love"
+      ],
+      "weight": 0.674
+    },
+    {
+      "artist": "Kanye West",
+      "days": 70,
+      "last": "2026-06-29",
+      "plays": 193,
+      "recent": 4,
+      "seed": 120,
+      "top": 46,
+      "travel": [
+        "rotation"
+      ],
+      "weight": 0.41
+    },
+    {
+      "artist": "Ben Harper",
+      "days": 68,
+      "last": "2016-09-17",
+      "plays": 135,
+      "recent": 0,
+      "seed": null,
+      "top": 48,
+      "travel": [
+        "live"
+      ],
+      "weight": null
+    },
+    {
+      "artist": "Dave Matthews Band",
+      "days": 68,
+      "last": "2026-10-16",
+      "plays": 227,
+      "recent": 13,
+      "seed": 25,
+      "top": 47,
+      "travel": [
+        "rotation",
+        "heavy",
+        "love",
+        "live"
+      ],
+      "weight": 0.717
+    },
+    {
+      "artist": "The White Stripes",
+      "days": 67,
+      "last": "2025-11-05",
+      "plays": 161,
+      "recent": 11,
+      "seed": 27,
+      "top": 49,
+      "travel": [
+        "rotation",
+        "heavy",
+        "love"
+      ],
+      "weight": 0.69
+    },
+    {
+      "artist": "Jason Mraz",
+      "days": 66,
+      "last": "2019-03-25",
+      "plays": 109,
+      "recent": 0,
+      "seed": null,
+      "top": 50,
+      "travel": [],
+      "weight": null
+    },
+    {
+      "artist": "Snow Patrol",
+      "days": 65,
+      "last": "2026-09-23",
+      "plays": 100,
+      "recent": 2,
+      "seed": 194,
+      "top": 51,
+      "travel": [
+        "rotation"
+      ],
+      "weight": 0.287
+    },
+    {
+      "artist": "Amos Lee",
+      "days": 64,
+      "last": "2017-06-30",
+      "plays": 117,
+      "recent": 0,
+      "seed": null,
+      "top": 53,
+      "travel": [],
+      "weight": null
+    },
+    {
+      "artist": "Sara Bareilles",
+      "days": 64,
+      "last": "2026-09-23",
+      "plays": 123,
+      "recent": 26,
+      "seed": 31,
+      "top": 52,
+      "travel": [
+        "rotation",
+        "heavy",
+        "love",
+        "live"
+      ],
+      "weight": 0.667
+    },
+    {
+      "artist": "Alison Krauss",
+      "days": 63,
+      "last": "2018-01-02",
+      "plays": 226,
+      "recent": 0,
+      "seed": null,
+      "top": 54,
+      "travel": [],
+      "weight": null
+    },
+    {
+      "artist": "Green Day",
+      "days": 61,
+      "last": "2026-06-20",
+      "plays": 278,
+      "recent": 28,
+      "seed": 23,
+      "top": 55,
+      "travel": [
+        "rotation",
+        "heavy",
+        "love",
+        "live"
+      ],
+      "weight": 0.723
+    },
+    {
+      "artist": "Norah Jones",
+      "days": 61,
+      "last": "2024-05-16",
+      "plays": 122,
+      "recent": 1,
+      "seed": 253,
+      "top": 56,
+      "travel": [
+        "rotation"
+      ],
+      "weight": 0.245
+    },
+    {
+      "artist": "Tori Amos",
+      "days": 59,
+      "last": "2026-10-20",
+      "plays": 238,
+      "recent": 23,
+      "seed": 26,
+      "top": 57,
+      "travel": [
+        "rotation",
+        "heavy",
+        "love",
+        "live"
+      ],
+      "weight": 0.71
+    },
+    {
+      "artist": "The New Pornographers",
+      "days": 58,
+      "last": "2026-03-30",
+      "plays": 152,
+      "recent": 28,
+      "seed": 29,
+      "top": 58,
+      "travel": [
+        "rotation",
+        "heavy",
+        "love",
+        "live"
+      ],
+      "weight": 0.675
+    },
+    {
+      "artist": "Alison Krauss & Union Station",
+      "days": 57,
+      "last": "2017-07-21",
+      "plays": 191,
+      "recent": 0,
+      "seed": null,
+      "top": 59,
+      "travel": [
+        "live"
+      ],
+      "weight": null
+    },
+    {
+      "artist": "Ryan Adams",
+      "days": 57,
+      "last": "2026-04-01",
+      "plays": 180,
+      "recent": 4,
+      "seed": 126,
+      "top": 60,
+      "travel": [
+        "rotation",
+        "live"
+      ],
+      "weight": 0.398
+    },
+    {
+      "artist": "Damien Rice",
+      "days": 56,
+      "last": "2017-04-22",
+      "plays": 90,
+      "recent": 0,
+      "seed": null,
+      "top": 64,
+      "travel": [],
+      "weight": null
+    },
+    {
+      "artist": "James Taylor",
+      "days": 56,
+      "last": "2024-03-28",
+      "plays": 142,
+      "recent": 1,
+      "seed": 249,
+      "top": 62,
+      "travel": [
+        "rotation"
+      ],
+      "weight": 0.247
+    },
+    {
+      "artist": "Modest Mouse",
+      "days": 56,
+      "last": "2026-05-11",
+      "plays": 75,
+      "recent": 5,
+      "seed": 125,
+      "top": 66,
+      "travel": [
+        "rotation",
+        "live"
+      ],
+      "weight": 0.404
+    },
+    {
+      "artist": "Phoenix",
+      "days": 56,
+      "last": "2026-03-28",
+      "plays": 85,
+      "recent": 5,
+      "seed": 122,
+      "top": 65,
+      "travel": [
+        "rotation"
+      ],
+      "weight": 0.41
+    },
+    {
+      "artist": "PJ Harvey",
+      "days": 56,
+      "last": "2025-11-02",
+      "plays": 188,
+      "recent": 16,
+      "seed": 28,
+      "top": 61,
+      "travel": [
+        "rotation",
+        "heavy",
+        "love",
+        "live"
+      ],
+      "weight": 0.688
+    },
+    {
+      "artist": "The Smashing Pumpkins",
+      "days": 56,
+      "last": "2026-09-28",
+      "plays": 114,
+      "recent": 28,
+      "seed": 33,
+      "top": 63,
+      "travel": [
+        "rotation",
+        "heavy",
+        "love",
+        "live"
+      ],
+      "weight": 0.652
+    },
+    {
+      "artist": "Regina Spektor",
+      "days": 55,
+      "last": "2017-07-23",
+      "plays": 84,
+      "recent": 0,
+      "seed": null,
+      "top": 68,
+      "travel": [],
+      "weight": null
+    },
+    {
+      "artist": "The Roots",
+      "days": 55,
+      "last": "2026-09-23",
+      "plays": 106,
+      "recent": 16,
+      "seed": 35,
+      "top": 67,
+      "travel": [
+        "rotation",
+        "heavy",
+        "love",
+        "live"
+      ],
+      "weight": 0.645
+    },
+    {
+      "artist": "Ingrid Michaelson",
+      "days": 54,
+      "last": "2023-08-23",
+      "plays": 162,
+      "recent": 1,
+      "seed": 246,
+      "top": 69,
+      "travel": [
+        "rotation"
+      ],
+      "weight": 0.25
+    },
+    {
+      "artist": "Simon & Garfunkel",
+      "days": 53,
+      "last": "2024-10-24",
+      "plays": 102,
+      "recent": 1,
+      "seed": 266,
+      "top": 70,
+      "travel": [
+        "rotation"
+      ],
+      "weight": 0.237
+    },
+    {
+      "artist": "Brandi Carlile",
+      "days": 52,
+      "last": "2026-10-20",
+      "plays": 150,
+      "recent": 27,
+      "seed": 32,
+      "top": 72,
+      "travel": [
+        "rotation",
+        "heavy",
+        "love",
+        "live"
+      ],
+      "weight": 0.666
+    },
+    {
+      "artist": "David Gray",
+      "days": 52,
+      "last": "2025-06-21",
+      "plays": 58,
+      "recent": 2,
+      "seed": 222,
+      "top": 75,
+      "travel": [
+        "rotation"
+      ],
+      "weight": 0.263
+    },
+    {
+      "artist": "Feist",
+      "days": 52,
+      "last": "2026-10-13",
+      "plays": 122,
+      "recent": 4,
+      "seed": 136,
+      "top": 73,
+      "travel": [
+        "rotation"
+      ],
+      "weight": 0.378
+    },
+    {
+      "artist": "Jimmy Eat World",
+      "days": 52,
+      "last": "2026-04-18",
+      "plays": 169,
+      "recent": 21,
+      "seed": 44,
+      "top": 71,
+      "travel": [
+        "rotation",
+        "heavy"
+      ],
+      "weight": 0.675
+    },
+    {
+      "artist": "Weezer",
+      "days": 52,
+      "last": "2026-03-31",
+      "plays": 87,
+      "recent": 15,
+      "seed": 51,
+      "top": 74,
+      "travel": [
+        "rotation",
+        "heavy",
+        "live"
+      ],
+      "weight": 0.626
+    },
+    {
+      "artist": "Beastie Boys",
+      "days": 51,
+      "last": "2026-01-21",
+      "plays": 121,
+      "recent": 21,
+      "seed": 34,
+      "top": 77,
+      "travel": [
+        "rotation",
+        "heavy",
+        "love"
+      ],
+      "weight": 0.649
+    },
+    {
+      "artist": "Mat Kearney",
+      "days": 51,
+      "last": "2017-06-30",
+      "plays": 78,
+      "recent": 0,
+      "seed": null,
+      "top": 79,
+      "travel": [],
+      "weight": null
+    },
+    {
+      "artist": "The Lumineers",
+      "days": 51,
+      "last": "2024-02-27",
+      "plays": 100,
+      "recent": 5,
+      "seed": 117,
+      "top": 78,
+      "travel": [
+        "rotation"
+      ],
+      "weight": 0.413
+    },
+    {
+      "artist": "The Wailin' Jennys",
+      "days": 51,
+      "last": "2017-07-21",
+      "plays": 131,
+      "recent": 0,
+      "seed": null,
+      "top": 76,
+      "travel": [],
+      "weight": null
+    },
+    {
+      "artist": "Cat Stevens",
+      "days": 49,
+      "last": "2018-11-04",
+      "plays": 120,
+      "recent": 0,
+      "seed": null,
+      "top": 81,
+      "travel": [],
+      "weight": null
+    },
+    {
+      "artist": "Fleetwood Mac",
+      "days": 49,
+      "last": "2025-12-14",
+      "plays": 127,
+      "recent": 10,
+      "seed": 46,
+      "top": 80,
+      "travel": [
+        "rotation",
+        "heavy"
+      ],
+      "weight": 0.65
+    },
+    {
+      "artist": "The Postal Service",
+      "days": 49,
+      "last": "2026-04-25",
+      "plays": 85,
+      "recent": 8,
+      "seed": 73,
+      "top": 82,
+      "travel": [
+        "rotation",
+        "heavy"
+      ],
+      "weight": 0.534
+    },
+    {
+      "artist": "Beck",
+      "days": 48,
+      "last": "2026-03-20",
+      "plays": 116,
+      "recent": 11,
+      "seed": 47,
+      "top": 83,
+      "travel": [
+        "rotation",
+        "heavy",
+        "live"
+      ],
+      "weight": 0.642
+    },
+    {
+      "artist": "Manchester Orchestra",
+      "days": 48,
+      "last": "2026-10-13",
+      "plays": 102,
+      "recent": 15,
+      "seed": 49,
+      "top": 84,
+      "travel": [
+        "rotation",
+        "heavy"
+      ],
+      "weight": 0.632
+    },
+    {
+      "artist": "Van Morrison",
+      "days": 48,
+      "last": "2026-04-15",
+      "plays": 87,
+      "recent": 2,
+      "seed": 211,
+      "top": 85,
+      "travel": [
+        "rotation"
+      ],
+      "weight": 0.273
+    },
+    {
+      "artist": "Dixie Chicks",
+      "days": 47,
+      "last": "2017-07-21",
+      "plays": 114,
+      "recent": 0,
+      "seed": null,
+      "top": 87,
+      "travel": [],
+      "weight": null
+    },
+    {
+      "artist": "Florence + the Machine",
+      "days": 47,
+      "last": "2026-04-17",
+      "plays": 129,
+      "recent": 6,
+      "seed": 102,
+      "top": 86,
+      "travel": [
+        "rotation",
+        "live"
+      ],
+      "weight": 0.467
+    },
+    {
+      "artist": "The Fray",
+      "days": 47,
+      "last": "2022-10-22",
+      "plays": 63,
+      "recent": 0,
+      "seed": null,
+      "top": 88,
+      "travel": [],
+      "weight": null
+    },
+    {
+      "artist": "The Police",
+      "days": 46,
+      "last": "2023-10-20",
+      "plays": 95,
+      "recent": 1,
+      "seed": 274,
+      "top": 89,
+      "travel": [
+        "rotation"
+      ],
+      "weight": 0.231
+    },
+    {
+      "artist": "Aimee Mann",
+      "days": 44,
+      "last": "2025-09-29",
+      "plays": 188,
+      "recent": 6,
+      "seed": 95,
+      "top": 91,
+      "travel": [
+        "rotation"
+      ],
+      "weight": 0.483
+    },
+    {
+      "artist": "Local Natives",
+      "days": 44,
+      "last": "2026-10-20",
+      "plays": 190,
+      "recent": 9,
+      "seed": 52,
+      "top": 90,
+      "travel": [
+        "rotation",
+        "heavy",
+        "live"
+      ],
+      "weight": 0.624
+    },
+    {
+      "artist": "Maroon 5",
+      "days": 44,
+      "last": "2024-03-25",
+      "plays": 86,
+      "recent": 8,
+      "seed": 76,
+      "top": 92,
+      "travel": [
+        "rotation",
+        "heavy"
+      ],
+      "weight": 0.528
+    },
+    {
+      "artist": "Frédéric Chopin",
+      "days": 43,
+      "last": "2025-12-03",
+      "plays": 205,
+      "recent": 14,
+      "seed": 43,
+      "top": 93,
+      "travel": [
+        "rotation",
+        "heavy"
+      ],
+      "weight": 0.675
+    },
+    {
+      "artist": "Israel 'Iz' Kamakawiwo'ole",
+      "days": 43,
+      "last": "2017-06-30",
+      "plays": 51,
+      "recent": 0,
+      "seed": null,
+      "top": 97,
+      "travel": [],
+      "weight": null
+    },
+    {
+      "artist": "Nirvana",
+      "days": 43,
+      "last": "2026-05-11",
+      "plays": 133,
+      "recent": 19,
+      "seed": 37,
+      "top": 95,
+      "travel": [
+        "rotation",
+        "heavy",
+        "love"
+      ],
+      "weight": 0.644
+    },
+    {
+      "artist": "Paramore",
+      "days": 43,
+      "last": "2026-07-09",
+      "plays": 135,
+      "recent": 35,
+      "seed": 36,
+      "top": 94,
+      "travel": [
+        "rotation",
+        "heavy",
+        "love"
+      ],
+      "weight": 0.645
+    },
+    {
+      "artist": "The Temper Trap",
+      "days": 43,
+      "last": "2026-04-02",
+      "plays": 65,
+      "recent": 1,
+      "seed": 291,
+      "top": 96,
+      "travel": [
+        "rotation"
+      ],
+      "weight": 0.219
+    },
+    {
+      "artist": "Heatmiser",
+      "days": 42,
+      "last": "2022-04-27",
+      "plays": 100,
+      "recent": 0,
+      "seed": null,
+      "top": 99,
+      "travel": [],
+      "weight": null
+    },
+    {
+      "artist": "John Williams",
+      "days": 42,
+      "last": "2024-12-25",
+      "plays": 128,
+      "recent": 4,
+      "seed": 142,
+      "top": 98,
+      "travel": [
+        "rotation"
+      ],
+      "weight": 0.371
+    },
+    {
+      "artist": "M. Ward",
+      "days": 42,
+      "last": "2015-03-31",
+      "plays": 98,
+      "recent": 0,
+      "seed": null,
+      "top": 100,
+      "travel": [],
+      "weight": null
+    },
+    {
+      "artist": "Nickel Creek",
+      "days": 42,
+      "last": "2017-07-15",
+      "plays": 86,
+      "recent": 0,
+      "seed": null,
+      "top": 101,
+      "travel": [],
+      "weight": null
+    },
+    {
+      "artist": "Taylor Swift",
+      "days": 42,
+      "last": "2026-01-16",
+      "plays": 86,
+      "recent": 12,
+      "seed": 54,
+      "top": 102,
+      "travel": [
+        "rotation",
+        "heavy"
+      ],
+      "weight": 0.61
+    },
+    {
+      "artist": "Cloud Cult",
+      "days": 41,
+      "last": "2026-06-20",
+      "plays": 203,
+      "recent": 6,
+      "seed": 94,
+      "top": 103,
+      "travel": [
+        "rotation",
+        "live"
+      ],
+      "weight": 0.483
+    },
+    {
+      "artist": "Grizzly Bear",
+      "days": 41,
+      "last": "2026-01-15",
+      "plays": 104,
+      "recent": 2,
+      "seed": 210,
+      "top": 105,
+      "travel": [
+        "rotation"
+      ],
+      "weight": 0.274
+    },
+    {
+      "artist": "Justin Timberlake",
+      "days": 41,
+      "last": "2025-09-29",
+      "plays": 181,
+      "recent": 8,
+      "seed": 61,
+      "top": 104,
+      "travel": [
+        "rotation",
+        "heavy"
+      ],
+      "weight": 0.57
+    },
+    {
+      "artist": "Red Hot Chili Peppers",
+      "days": 41,
+      "last": "2025-03-21",
+      "plays": 75,
+      "recent": 4,
+      "seed": 153,
+      "top": 107,
+      "travel": [
+        "rotation"
+      ],
+      "weight": 0.347
+    },
+    {
+      "artist": "Rogue Wave",
+      "days": 41,
+      "last": "2017-10-20",
+      "plays": 47,
+      "recent": 0,
+      "seed": null,
+      "top": 109,
+      "travel": [],
+      "weight": null
+    },
+    {
+      "artist": "Sea Wolf",
+      "days": 41,
+      "last": "2022-01-13",
+      "plays": 60,
+      "recent": 0,
+      "seed": null,
+      "top": 108,
+      "travel": [],
+      "weight": null
+    },
+    {
+      "artist": "U2",
+      "days": 41,
+      "last": "2026-02-20",
+      "plays": 85,
+      "recent": 5,
+      "seed": 128,
+      "top": 106,
+      "travel": [
+        "rotation"
+      ],
+      "weight": 0.395
+    },
+    {
+      "artist": "Bob Dylan",
+      "days": 40,
+      "last": "2016-01-24",
+      "plays": 61,
+      "recent": 0,
+      "seed": null,
+      "top": 113,
+      "travel": [],
+      "weight": null
+    },
+    {
+      "artist": "Matt Nathanson",
+      "days": 40,
+      "last": "2017-07-01",
+      "plays": 76,
+      "recent": 0,
+      "seed": null,
+      "top": 111,
+      "travel": [],
+      "weight": null
+    },
+    {
+      "artist": "R.E.M.",
+      "days": 40,
+      "last": "2026-04-01",
+      "plays": 98,
+      "recent": 7,
+      "seed": 90,
+      "top": 110,
+      "travel": [
+        "rotation"
+      ],
+      "weight": 0.487
+    },
+    {
+      "artist": "The Black Keys",
+      "days": 40,
+      "last": "2025-06-21",
+      "plays": 74,
+      "recent": 8,
+      "seed": 80,
+      "top": 112,
+      "travel": [
+        "rotation",
+        "heavy"
+      ],
+      "weight": 0.512
+    },
+    {
+      "artist": "Björk",
+      "days": 39,
+      "last": "2026-09-21",
+      "plays": 123,
+      "recent": 21,
+      "seed": 50,
+      "top": 116,
+      "travel": [
+        "rotation",
+        "heavy"
+      ],
+      "weight": 0.631
+    },
+    {
+      "artist": "Broken Bells",
+      "days": 39,
+      "last": "2026-01-15",
+      "plays": 160,
+      "recent": 4,
+      "seed": 138,
+      "top": 115,
+      "travel": [
+        "rotation"
+      ],
+      "weight": 0.377
+    },
+    {
+      "artist": "Paul Simon",
+      "days": 39,
+      "last": "2019-07-11",
+      "plays": 61,
+      "recent": 0,
+      "seed": null,
+      "top": 118,
+      "travel": [],
+      "weight": null
+    },
+    {
+      "artist": "The xx",
+      "days": 39,
+      "last": "2026-01-16",
+      "plays": 95,
+      "recent": 4,
+      "seed": 148,
+      "top": 117,
+      "travel": [
+        "rotation"
+      ],
+      "weight": 0.355
+    },
+    {
+      "artist": "Tune-Yards",
+      "days": 39,
+      "last": "2026-06-11",
+      "plays": 208,
+      "recent": 11,
+      "seed": 45,
+      "top": 114,
+      "travel": [
+        "rotation",
+        "heavy",
+        "live"
+      ],
+      "weight": 0.669
+    },
+    {
+      "artist": "Belle and Sebastian",
+      "days": 38,
+      "last": "2025-06-17",
+      "plays": 43,
+      "recent": 1,
+      "seed": null,
+      "top": 121,
+      "travel": [
+        "rotation"
+      ],
+      "weight": null
+    },
+    {
+      "artist": "Beyoncé",
+      "days": 38,
+      "last": "2026-01-15",
+      "plays": 66,
+      "recent": 13,
+      "seed": 59,
+      "top": 119,
+      "travel": [
+        "rotation",
+        "heavy"
+      ],
+      "weight": 0.583
+    },
+    {
+      "artist": "The Killers",
+      "days": 38,
+      "last": "2024-06-27",
+      "plays": 65,
+      "recent": 1,
+      "seed": 298,
+      "top": 120,
+      "travel": [
+        "rotation"
+      ],
+      "weight": 0.215
+    },
+    {
+      "artist": "Elton John",
+      "days": 37,
+      "last": "2026-04-15",
+      "plays": 73,
+      "recent": 8,
+      "seed": 82,
+      "top": 124,
+      "travel": [
+        "rotation",
+        "heavy"
+      ],
+      "weight": 0.506
+    },
+    {
+      "artist": "Gregory Alan Isakov",
+      "days": 37,
+      "last": "2026-10-20",
+      "plays": 55,
+      "recent": 7,
+      "seed": 107,
+      "top": 127,
+      "travel": [
+        "rotation"
+      ],
+      "weight": 0.449
+    },
+    {
+      "artist": "Jonathan Groff",
+      "days": 37,
+      "last": "2025-01-25",
+      "plays": 63,
+      "recent": 1,
+      "seed": null,
+      "top": 125,
+      "travel": [
+        "rotation"
+      ],
+      "weight": null
+    },
+    {
+      "artist": "My Morning Jacket",
+      "days": 37,
+      "last": "2015-12-09",
+      "plays": 76,
+      "recent": 0,
+      "seed": null,
+      "top": 122,
+      "travel": [],
+      "weight": null
+    },
+    {
+      "artist": "Wilco",
+      "days": 37,
+      "last": "2024-05-17",
+      "plays": 75,
+      "recent": 1,
+      "seed": 292,
+      "top": 123,
+      "travel": [
+        "rotation"
+      ],
+      "weight": 0.219
+    },
+    {
+      "artist": "Yeah Yeah Yeahs",
+      "days": 37,
+      "last": "2025-10-04",
+      "plays": 57,
+      "recent": 6,
+      "seed": 119,
+      "top": 126,
+      "travel": [
+        "rotation"
+      ],
+      "weight": 0.411
+    },
+    {
+      "artist": "Ben Howard",
+      "days": 36,
+      "last": "2026-01-26",
+      "plays": 55,
+      "recent": 2,
+      "seed": 248,
+      "top": 130,
+      "travel": [
+        "rotation"
+      ],
+      "weight": 0.249
+    },
+    {
+      "artist": "George Winston",
+      "days": 36,
+      "last": "2018-01-03",
+      "plays": 128,
+      "recent": 0,
+      "seed": null,
+      "top": 129,
+      "travel": [],
+      "weight": null
+    },
+    {
+      "artist": "Keane",
+      "days": 36,
+      "last": "2025-10-05",
+      "plays": 52,
+      "recent": 1,
+      "seed": null,
+      "top": 131,
+      "travel": [
+        "rotation"
+      ],
+      "weight": null
+    },
+    {
+      "artist": "Shearwater",
+      "days": 36,
+      "last": "2026-06-20",
+      "plays": 169,
+      "recent": 1,
+      "seed": 264,
+      "top": 128,
+      "travel": [
+        "rotation",
+        "live"
+      ],
+      "weight": 0.24
+    },
+    {
+      "artist": "Bright Eyes",
+      "days": 35,
+      "last": "2024-12-25",
+      "plays": 38,
+      "recent": 1,
+      "seed": null,
+      "top": 139,
+      "travel": [
+        "rotation"
+      ],
+      "weight": null
+    },
+    {
+      "artist": "Cake",
+      "days": 35,
+      "last": "2025-07-09",
+      "plays": 73,
+      "recent": 11,
+      "seed": 58,
+      "top": 134,
+      "travel": [
+        "rotation",
+        "heavy"
+      ],
+      "weight": 0.585
+    },
+    {
+      "artist": "Counting Crows",
+      "days": 35,
+      "last": "2025-03-16",
+      "plays": 39,
+      "recent": 1,
+      "seed": null,
+      "top": 138,
+      "travel": [
+        "rotation"
+      ],
+      "weight": null
+    },
+    {
+      "artist": "George Michael",
+      "days": 35,
+      "last": "2026-10-23",
+      "plays": 37,
+      "recent": 6,
+      "seed": 129,
+      "top": 140,
+      "travel": [
+        "rotation"
+      ],
+      "weight": 0.386
+    },
+    {
+      "artist": "Harry Styles",
+      "days": 35,
+      "last": "2026-03-27",
+      "plays": 90,
+      "recent": 9,
+      "seed": 65,
+      "top": 133,
+      "travel": [
+        "rotation",
+        "heavy"
+      ],
+      "weight": 0.558
+    },
+    {
+      "artist": "Margot & The Nuclear So & So's",
+      "days": 35,
+      "last": "2016-09-17",
+      "plays": 43,
+      "recent": 0,
+      "seed": null,
+      "top": 137,
+      "travel": [],
+      "weight": null
+    },
+    {
+      "artist": "Radical Face",
+      "days": 35,
+      "last": "2022-08-13",
+      "plays": 55,
+      "recent": 0,
+      "seed": null,
+      "top": 136,
+      "travel": [],
+      "weight": null
+    },
+    {
+      "artist": "Robert Plant & Alison Krauss",
+      "days": 35,
+      "last": "2017-07-21",
+      "plays": 61,
+      "recent": 0,
+      "seed": null,
+      "top": 135,
+      "travel": [],
+      "weight": null
+    },
+    {
+      "artist": "Stars",
+      "days": 35,
+      "last": "2022-12-24",
+      "plays": 125,
+      "recent": 0,
+      "seed": null,
+      "top": 132,
+      "travel": [
+        "live"
+      ],
+      "weight": null
+    },
+    {
+      "artist": "Edward Sharpe & The Magnetic Zeros",
+      "days": 34,
+      "last": "2022-01-30",
+      "plays": 70,
+      "recent": 0,
+      "seed": null,
+      "top": 142,
+      "travel": [],
+      "weight": null
+    },
+    {
+      "artist": "Kings of Leon",
+      "days": 34,
+      "last": "2025-02-01",
+      "plays": 46,
+      "recent": 1,
+      "seed": null,
+      "top": 143,
+      "travel": [
+        "rotation"
+      ],
+      "weight": null
+    },
+    {
+      "artist": "Midlake",
+      "days": 34,
+      "last": "2025-06-17",
+      "plays": 86,
+      "recent": 1,
+      "seed": 290,
+      "top": 141,
+      "travel": [
+        "rotation"
+      ],
+      "weight": 0.22
+    },
+    {
+      "artist": "Angus and Julia Stone",
+      "days": 33,
+      "last": "2022-05-30",
+      "plays": 64,
+      "recent": 0,
+      "seed": null,
+      "top": 145,
+      "travel": [],
+      "weight": null
+    },
+    {
+      "artist": "Ed Sheeran",
+      "days": 33,
+      "last": "2025-01-16",
+      "plays": 54,
+      "recent": 3,
+      "seed": 196,
+      "top": 147,
+      "travel": [
+        "rotation"
+      ],
+      "weight": 0.285
+    },
+    {
+      "artist": "Eva Cassidy",
+      "days": 33,
+      "last": "2017-07-21",
+      "plays": 64,
+      "recent": 0,
+      "seed": null,
+      "top": 146,
+      "travel": [],
+      "weight": null
+    },
+    {
+      "artist": "Hayley Williams",
+      "days": 33,
+      "last": "2026-10-13",
+      "plays": 165,
+      "recent": 33,
+      "seed": 48,
+      "top": 144,
+      "travel": [
+        "rotation",
+        "heavy",
+        "live"
+      ],
+      "weight": 0.64
+    },
+    {
+      "artist": "Cat Power",
+      "days": 32,
+      "last": "2015-12-07",
+      "plays": 70,
+      "recent": 0,
+      "seed": null,
+      "top": 153,
+      "travel": [
+        "live"
+      ],
+      "weight": null
+    },
+    {
+      "artist": "Leslie Odom, Jr.",
+      "days": 32,
+      "last": "2024-12-25",
+      "plays": 83,
+      "recent": 8,
+      "seed": 85,
+      "top": 151,
+      "travel": [
+        "rotation",
+        "heavy"
+      ],
+      "weight": 0.505
+    },
+    {
+      "artist": "Of Monsters and Men",
+      "days": 32,
+      "last": "2025-11-14",
+      "plays": 62,
+      "recent": 3,
+      "seed": 191,
+      "top": 154,
+      "travel": [
+        "rotation"
+      ],
+      "weight": 0.289
+    },
+    {
+      "artist": "Pete Yorn",
+      "days": 32,
+      "last": "2018-06-01",
+      "plays": 113,
+      "recent": 0,
+      "seed": null,
+      "top": 149,
+      "travel": [],
+      "weight": null
+    },
+    {
+      "artist": "Rufus Wainwright",
+      "days": 32,
+      "last": "2023-08-29",
+      "plays": 48,
+      "recent": 1,
+      "seed": null,
+      "top": 155,
+      "travel": [
+        "rotation"
+      ],
+      "weight": null
+    },
+    {
+      "artist": "Shawn Mendes",
+      "days": 32,
+      "last": "2025-06-17",
+      "plays": 90,
+      "recent": 14,
+      "seed": 56,
+      "top": 150,
+      "travel": [
+        "rotation",
+        "heavy"
+      ],
+      "weight": 0.594
+    },
+    {
+      "artist": "Sigur Rós",
+      "days": 32,
+      "last": "2025-12-16",
+      "plays": 75,
+      "recent": 2,
+      "seed": 236,
+      "top": 152,
+      "travel": [
+        "rotation",
+        "live"
+      ],
+      "weight": 0.255
+    },
+    {
+      "artist": "Yo La Tengo",
+      "days": 32,
+      "last": "2015-10-29",
+      "plays": 157,
+      "recent": 0,
+      "seed": null,
+      "top": 148,
+      "travel": [],
+      "weight": null
+    },
+    {
+      "artist": "Bloc Party",
+      "days": 31,
+      "last": "2025-06-17",
+      "plays": 84,
+      "recent": 1,
+      "seed": 295,
+      "top": 157,
+      "travel": [
+        "rotation"
+      ],
+      "weight": 0.217
+    },
+    {
+      "artist": "Oasis",
+      "days": 31,
+      "last": "2025-04-21",
+      "plays": 55,
+      "recent": 3,
+      "seed": 199,
+      "top": 158,
+      "travel": [
+        "rotation"
+      ],
+      "weight": 0.283
+    },
+    {
+      "artist": "The Polyphonic Spree",
+      "days": 31,
+      "last": "2013-12-19",
+      "plays": 176,
+      "recent": 0,
+      "seed": null,
+      "top": 156,
+      "travel": [
+        "live"
+      ],
+      "weight": null
+    },
+    {
+      "artist": "Calexico",
+      "days": 30,
+      "last": "2026-04-01",
+      "plays": 84,
+      "recent": 4,
+      "seed": 158,
+      "top": 160,
+      "travel": [
+        "rotation",
+        "live"
+      ],
+      "weight": 0.339
+    },
+    {
+      "artist": "Damien Jurado",
+      "days": 30,
+      "last": "2016-05-11",
+      "plays": 32,
+      "recent": 0,
+      "seed": null,
+      "top": 166,
+      "travel": [],
+      "weight": null
+    },
+    {
+      "artist": "Glen Hansard and Marketa Irglova",
+      "days": 30,
+      "last": "2016-05-15",
+      "plays": 53,
+      "recent": 0,
+      "seed": null,
+      "top": 164,
+      "travel": [],
+      "weight": null
+    },
+    {
+      "artist": "Idina Menzel",
+      "days": 30,
+      "last": "2025-12-24",
+      "plays": 79,
+      "recent": 3,
+      "seed": 188,
+      "top": 161,
+      "travel": [
+        "rotation"
+      ],
+      "weight": 0.295
+    },
+    {
+      "artist": "JAY-Z",
+      "days": 30,
+      "last": "2025-06-17",
+      "plays": 67,
+      "recent": 10,
+      "seed": 63,
+      "top": 162,
+      "travel": [
+        "rotation",
+        "heavy"
+      ],
+      "weight": 0.567
+    },
+    {
+      "artist": "LCD Soundsystem",
+      "days": 30,
+      "last": "2026-03-30",
+      "plays": 40,
+      "recent": 6,
+      "seed": 132,
+      "top": 165,
+      "travel": [
+        "rotation"
+      ],
+      "weight": 0.382
+    },
+    {
+      "artist": "MGMT",
+      "days": 30,
+      "last": "2023-12-16",
+      "plays": 59,
+      "recent": 2,
+      "seed": 251,
+      "top": 163,
+      "travel": [
+        "rotation",
+        "live"
+      ],
+      "weight": 0.246
+    },
+    {
+      "artist": "The Frames",
+      "days": 30,
+      "last": "2015-04-07",
+      "plays": 123,
+      "recent": 0,
+      "seed": null,
+      "top": 159,
+      "travel": [],
+      "weight": null
+    },
+    {
+      "artist": "A Fine Frenzy",
+      "days": 29,
+      "last": "2017-07-01",
+      "plays": 44,
+      "recent": 0,
+      "seed": null,
+      "top": 168,
+      "travel": [],
+      "weight": null
+    },
+    {
+      "artist": "Chris & Thomas",
+      "days": 29,
+      "last": "2017-05-10",
+      "plays": 34,
+      "recent": 0,
+      "seed": null,
+      "top": 171,
+      "travel": [],
+      "weight": null
+    },
+    {
+      "artist": "The Flaming Lips",
+      "days": 29,
+      "last": "2025-07-10",
+      "plays": 38,
+      "recent": 4,
+      "seed": 181,
+      "top": 170,
+      "travel": [
+        "rotation"
+      ],
+      "weight": 0.304
+    },
+    {
+      "artist": "The Rolling Stones",
+      "days": 29,
+      "last": "2018-07-07",
+      "plays": 42,
+      "recent": 0,
+      "seed": null,
+      "top": 169,
+      "travel": [],
+      "weight": null
+    },
+    {
+      "artist": "Zooey Deschanel & M. Ward",
+      "days": 29,
+      "last": "2015-11-24",
+      "plays": 53,
+      "recent": 0,
+      "seed": null,
+      "top": 167,
+      "travel": [],
+      "weight": null
+    },
+    {
+      "artist": "Brett Dennen",
+      "days": 28,
+      "last": "2018-02-22",
+      "plays": 37,
+      "recent": 0,
+      "seed": null,
+      "top": 173,
+      "travel": [],
+      "weight": null
+    },
+    {
+      "artist": "Cary Brothers",
+      "days": 28,
+      "last": "2015-12-14",
+      "plays": 30,
+      "recent": 0,
+      "seed": null,
+      "top": 175,
+      "travel": [],
+      "weight": null
+    },
+    {
+      "artist": "Greg Laswell",
+      "days": 28,
+      "last": "2017-07-22",
+      "plays": 32,
+      "recent": 0,
+      "seed": null,
+      "top": 174,
+      "travel": [],
+      "weight": null
+    },
+    {
+      "artist": "Vampire Weekend",
+      "days": 28,
+      "last": "2025-12-03",
+      "plays": 55,
+      "recent": 3,
+      "seed": 205,
+      "top": 172,
+      "travel": [
+        "rotation"
+      ],
+      "weight": 0.28
+    },
+    {
+      "artist": "Alexi Murdoch",
+      "days": 27,
+      "last": "2017-03-14",
+      "plays": 41,
+      "recent": 0,
+      "seed": null,
+      "top": 182,
+      "travel": [],
+      "weight": null
+    },
+    {
+      "artist": "Aloe Blacc",
+      "days": 27,
+      "last": "2017-08-26",
+      "plays": 88,
+      "recent": 0,
+      "seed": null,
+      "top": 177,
+      "travel": [],
+      "weight": null
+    },
+    {
+      "artist": "Interpol",
+      "days": 27,
+      "last": "2026-03-28",
+      "plays": 56,
+      "recent": 4,
+      "seed": 172,
+      "top": 179,
+      "travel": [
+        "rotation"
+      ],
+      "weight": 0.317
+    },
+    {
+      "artist": "Lin-Manuel Miranda",
+      "days": 27,
+      "last": "2024-11-10",
+      "plays": 68,
+      "recent": 3,
+      "seed": 195,
+      "top": 178,
+      "travel": [
+        "rotation"
+      ],
+      "weight": 0.286
+    },
+    {
+      "artist": "Pernice Brothers",
+      "days": 27,
+      "last": "2017-03-06",
+      "plays": 96,
+      "recent": 0,
+      "seed": null,
+      "top": 176,
+      "travel": [],
+      "weight": null
+    },
+    {
+      "artist": "The Cure",
+      "days": 27,
+      "last": "2026-07-09",
+      "plays": 50,
+      "recent": 11,
+      "seed": 72,
+      "top": 181,
+      "travel": [
+        "rotation",
+        "heavy"
+      ],
+      "weight": 0.539
+    },
+    {
+      "artist": "The Mountain Goats",
+      "days": 27,
+      "last": "2023-08-29",
+      "plays": 36,
+      "recent": 2,
+      "seed": 283,
+      "top": 184,
+      "travel": [
+        "rotation"
+      ],
+      "weight": 0.227
+    },
+    {
+      "artist": "The Strokes",
+      "days": 27,
+      "last": "2026-04-24",
+      "plays": 41,
+      "recent": 6,
+      "seed": 137,
+      "top": 183,
+      "travel": [
+        "rotation"
+      ],
+      "weight": 0.377
+    },
+    {
+      "artist": "Tiësto",
+      "days": 27,
+      "last": "2026-07-14",
+      "plays": 52,
+      "recent": 3,
+      "seed": 207,
+      "top": 180,
+      "travel": [
+        "rotation"
+      ],
+      "weight": 0.276
+    },
+    {
+      "artist": "Alexisonfire",
+      "days": 26,
+      "last": "2026-09-29",
+      "plays": 55,
+      "recent": 19,
+      "seed": 69,
+      "top": 189,
+      "travel": [
+        "rotation",
+        "heavy"
+      ],
+      "weight": 0.543
+    },
+    {
+      "artist": "Bob Marley",
+      "days": 26,
+      "last": "2017-06-06",
+      "plays": 34,
+      "recent": 0,
+      "seed": null,
+      "top": 192,
+      "travel": [],
+      "weight": null
+    },
+    {
+      "artist": "Bobby McFerrin",
+      "days": 26,
+      "last": "2017-06-06",
+      "plays": 50,
+      "recent": 0,
+      "seed": null,
+      "top": 190,
+      "travel": [],
+      "weight": null
+    },
+    {
+      "artist": "Broken Social Scene",
+      "days": 26,
+      "last": "2026-03-28",
+      "plays": 81,
+      "recent": 5,
+      "seed": 141,
+      "top": 186,
+      "travel": [
+        "rotation"
+      ],
+      "weight": 0.371
+    },
+    {
+      "artist": "Eric Hutchinson",
+      "days": 26,
+      "last": "2017-06-30",
+      "plays": 31,
+      "recent": 0,
+      "seed": null,
+      "top": 193,
+      "travel": [],
+      "weight": null
+    },
+    {
+      "artist": "Gary Jules",
+      "days": 26,
+      "last": "2017-03-14",
+      "plays": 26,
+      "recent": 0,
+      "seed": null,
+      "top": 196,
+      "travel": [],
+      "weight": null
+    },
+    {
+      "artist": "Hole",
+      "days": 26,
+      "last": "2026-01-21",
+      "plays": 80,
+      "recent": 17,
+      "seed": 62,
+      "top": 187,
+      "travel": [
+        "rotation",
+        "heavy"
+      ],
+      "weight": 0.57
+    },
+    {
+      "artist": "Joe Purdy",
+      "days": 26,
+      "last": "2015-12-05",
+      "plays": 31,
+      "recent": 0,
+      "seed": null,
+      "top": 194,
+      "travel": [],
+      "weight": null
+    },
+    {
+      "artist": "Johann Sebastian Bach",
+      "days": 26,
+      "last": "2025-10-23",
+      "plays": 154,
+      "recent": 9,
+      "seed": 60,
+      "top": 185,
+      "travel": [
+        "rotation",
+        "heavy"
+      ],
+      "weight": 0.574
+    },
+    {
+      "artist": "Landon Pigg",
+      "days": 26,
+      "last": "2017-07-23",
+      "plays": 27,
+      "recent": 0,
+      "seed": null,
+      "top": 195,
+      "travel": [],
+      "weight": null
+    },
+    {
+      "artist": "Matt Pond PA",
+      "days": 26,
+      "last": "2017-01-18",
+      "plays": 45,
+      "recent": 0,
+      "seed": null,
+      "top": 191,
+      "travel": [],
+      "weight": null
+    },
+    {
+      "artist": "Yeasayer",
+      "days": 26,
+      "last": "2024-01-22",
+      "plays": 64,
+      "recent": 1,
+      "seed": null,
+      "top": 188,
+      "travel": [
+        "rotation"
+      ],
+      "weight": null
+    },
+    {
+      "artist": "Aloha",
+      "days": 25,
+      "last": "2011-04-04",
+      "plays": 114,
+      "recent": 0,
+      "seed": null,
+      "top": 198,
+      "travel": [],
+      "weight": null
+    },
+    {
+      "artist": "Gorillaz",
+      "days": 25,
+      "last": "2026-03-05",
+      "plays": 29,
+      "recent": 11,
+      "seed": 87,
+      "top": null,
+      "travel": [
+        "heavy"
+      ],
+      "weight": 0.494
+    },
+    {
+      "artist": "Miles Davis",
+      "days": 25,
+      "last": "2025-06-09",
+      "plays": 207,
+      "recent": 1,
+      "seed": 267,
+      "top": 197,
+      "travel": [
+        "rotation"
+      ],
+      "weight": 0.235
+    },
+    {
+      "artist": "Muse",
+      "days": 25,
+      "last": "2026-07-09",
+      "plays": 41,
+      "recent": 13,
+      "seed": 77,
+      "top": null,
+      "travel": [
+        "heavy"
+      ],
+      "weight": 0.519
+    },
+    {
+      "artist": "Otis Redding",
+      "days": 25,
+      "last": "2018-12-24",
+      "plays": 75,
+      "recent": 0,
+      "seed": null,
+      "top": 199,
+      "travel": [],
+      "weight": null
+    },
+    {
+      "artist": "Pearl Jam",
+      "days": 25,
+      "last": "2026-01-20",
+      "plays": 47,
+      "recent": 5,
+      "seed": 156,
+      "top": null,
+      "travel": [],
+      "weight": 0.344
+    },
+    {
+      "artist": "Pixies",
+      "days": 25,
+      "last": "2025-06-17",
+      "plays": 40,
+      "recent": 7,
+      "seed": 123,
+      "top": null,
+      "travel": [
+        "live"
+      ],
+      "weight": 0.408
+    },
+    {
+      "artist": "Stone Temple Pilots",
+      "days": 25,
+      "last": "2026-01-26",
+      "plays": 58,
+      "recent": 17,
+      "seed": 67,
+      "top": 200,
+      "travel": [
+        "rotation",
+        "heavy"
+      ],
+      "weight": 0.544
+    },
+    {
+      "artist": "M83",
+      "days": 24,
+      "last": "2025-10-06",
+      "plays": 37,
+      "recent": 3,
+      "seed": 229,
+      "top": null,
+      "travel": [],
+      "weight": 0.259
+    },
+    {
+      "artist": "Massive Attack",
+      "days": 24,
+      "last": "2026-06-08",
+      "plays": 51,
+      "recent": 13,
+      "seed": 75,
+      "top": null,
+      "travel": [
+        "heavy"
+      ],
+      "weight": 0.532
+    },
+    {
+      "artist": "Michael Buble",
+      "days": 24,
+      "last": "2024-12-25",
+      "plays": 48,
+      "recent": 3,
+      "seed": 216,
+      "top": null,
+      "travel": [],
+      "weight": 0.269
+    },
+    {
+      "artist": "P!nk",
+      "days": 24,
+      "last": "2026-01-31",
+      "plays": 83,
+      "recent": 22,
+      "seed": 64,
+      "top": null,
+      "travel": [
+        "heavy",
+        "live"
+      ],
+      "weight": 0.567
+    },
+    {
+      "artist": "The Raconteurs",
+      "days": 24,
+      "last": "2025-11-02",
+      "plays": 48,
+      "recent": 4,
+      "seed": 180,
+      "top": null,
+      "travel": [],
+      "weight": 0.306
+    },
+    {
+      "artist": "Boards of Canada",
+      "days": 23,
+      "last": "2025-06-21",
+      "plays": 72,
+      "recent": 3,
+      "seed": 201,
+      "top": null,
+      "travel": [],
+      "weight": 0.282
+    },
+    {
+      "artist": "Daft Punk",
+      "days": 23,
+      "last": "2025-07-25",
+      "plays": 183,
+      "recent": 3,
+      "seed": 173,
+      "top": null,
+      "travel": [],
+      "weight": 0.317
+    },
+    {
+      "artist": "David Bowie",
+      "days": 23,
+      "last": "2026-04-15",
+      "plays": 50,
+      "recent": 7,
+      "seed": 115,
+      "top": null,
+      "travel": [],
+      "weight": 0.416
+    },
+    {
+      "artist": "Ellie Goulding",
+      "days": 23,
+      "last": "2025-04-18",
+      "plays": 64,
+      "recent": 4,
+      "seed": 174,
+      "top": null,
+      "travel": [
+        "live"
+      ],
+      "weight": 0.316
+    },
+    {
+      "artist": "Hozier",
+      "days": 23,
+      "last": "2025-12-04",
+      "plays": 35,
+      "recent": 7,
+      "seed": 127,
+      "top": null,
+      "travel": [],
+      "weight": 0.396
+    },
+    {
+      "artist": "Madonna",
+      "days": 23,
+      "last": "2025-06-21",
+      "plays": 89,
+      "recent": 8,
+      "seed": 89,
+      "top": null,
+      "travel": [
+        "heavy"
+      ],
+      "weight": 0.489
+    },
+    {
+      "artist": "Portishead",
+      "days": 23,
+      "last": "2026-06-05",
+      "plays": 43,
+      "recent": 10,
+      "seed": 78,
+      "top": null,
+      "travel": [
+        "heavy"
+      ],
+      "weight": 0.516
+    },
+    {
+      "artist": "The Hold Steady",
+      "days": 23,
+      "last": "2022-03-20",
+      "plays": 69,
+      "recent": 0,
+      "seed": null,
+      "top": null,
+      "travel": [
+        "live"
+      ],
+      "weight": null
+    },
+    {
+      "artist": "The Joy Formidable",
+      "days": 23,
+      "last": "2026-04-01",
+      "plays": 76,
+      "recent": 20,
+      "seed": 66,
+      "top": null,
+      "travel": [
+        "heavy",
+        "live"
+      ],
+      "weight": 0.557
+    },
+    {
+      "artist": "The Weeknd",
+      "days": 23,
+      "last": "2025-12-24",
+      "plays": 60,
+      "recent": 14,
+      "seed": 71,
+      "top": null,
+      "travel": [
+        "heavy"
+      ],
+      "weight": 0.54
+    },
+    {
+      "artist": "Thom Yorke",
+      "days": 23,
+      "last": "2025-06-17",
+      "plays": 72,
+      "recent": 2,
+      "seed": 256,
+      "top": null,
+      "travel": [],
+      "weight": 0.243
+    },
+    {
+      "artist": "Vance Joy",
+      "days": 23,
+      "last": "2026-05-15",
+      "plays": 25,
+      "recent": 5,
+      "seed": 177,
+      "top": null,
+      "travel": [],
+      "weight": 0.31
+    },
+    {
+      "artist": "A Tribe Called Quest",
+      "days": 22,
+      "last": "2026-01-21",
+      "plays": 29,
+      "recent": 14,
+      "seed": 92,
+      "top": null,
+      "travel": [
+        "heavy"
+      ],
+      "weight": 0.485
+    },
+    {
+      "artist": "Blonde Redhead",
+      "days": 22,
+      "last": "2025-06-17",
+      "plays": 71,
+      "recent": 3,
+      "seed": 204,
+      "top": null,
+      "travel": [],
+      "weight": 0.28
+    },
+    {
+      "artist": "Franz Ferdinand",
+      "days": 22,
+      "last": "2025-11-02",
+      "plays": 66,
+      "recent": 9,
+      "seed": 83,
+      "top": null,
+      "travel": [
+        "heavy"
+      ],
+      "weight": 0.506
+    },
+    {
+      "artist": "Guster",
+      "days": 22,
+      "last": "2024-12-06",
+      "plays": 45,
+      "recent": 6,
+      "seed": 140,
+      "top": null,
+      "travel": [
+        "live"
+      ],
+      "weight": 0.372
+    },
+    {
+      "artist": "Incubus",
+      "days": 22,
+      "last": "2026-04-17",
+      "plays": 40,
+      "recent": 11,
+      "seed": 81,
+      "top": null,
+      "travel": [
+        "heavy"
+      ],
+      "weight": 0.508
+    },
+    {
+      "artist": "Pink Floyd",
+      "days": 22,
+      "last": "2026-01-06",
+      "plays": 36,
+      "recent": 4,
+      "seed": 189,
+      "top": null,
+      "travel": [],
+      "weight": 0.29
+    },
+    {
+      "artist": "Rihanna",
+      "days": 22,
+      "last": "2024-07-02",
+      "plays": 44,
+      "recent": 8,
+      "seed": 108,
+      "top": null,
+      "travel": [
+        "heavy"
+      ],
+      "weight": 0.443
+    },
+    {
+      "artist": "Tegan and Sara",
+      "days": 22,
+      "last": "2026-02-27",
+      "plays": 31,
+      "recent": 3,
+      "seed": 247,
+      "top": null,
+      "travel": [],
+      "weight": 0.25
+    },
+    {
+      "artist": "Bad Bunny",
+      "days": 21,
+      "last": "2026-06-05",
+      "plays": 122,
+      "recent": 21,
+      "seed": 57,
+      "top": null,
+      "travel": [
+        "heavy"
+      ],
+      "weight": 0.585
+    },
+    {
+      "artist": "Bill Withers",
+      "days": 21,
+      "last": "2026-06-02",
+      "plays": 47,
+      "recent": 2,
+      "seed": 280,
+      "top": null,
+      "travel": [],
+      "weight": 0.227
+    },
+    {
+      "artist": "James Blake",
+      "days": 21,
+      "last": "2026-09-23",
+      "plays": 69,
+      "recent": 14,
+      "seed": 68,
+      "top": null,
+      "travel": [
+        "heavy",
+        "live"
+      ],
+      "weight": 0.544
+    },
+    {
+      "artist": "Stevie Wonder",
+      "days": 21,
+      "last": "2026-09-29",
+      "plays": 79,
+      "recent": 9,
+      "seed": 79,
+      "top": null,
+      "travel": [
+        "heavy"
+      ],
+      "weight": 0.515
+    },
+    {
+      "artist": "The Chainsmokers",
+      "days": 21,
+      "last": "2026-04-02",
+      "plays": 34,
+      "recent": 9,
+      "seed": 105,
+      "top": null,
+      "travel": [
+        "heavy"
+      ],
+      "weight": 0.458
+    },
+    {
+      "artist": "The Fugees",
+      "days": 21,
+      "last": "2026-06-29",
+      "plays": 33,
+      "recent": 5,
+      "seed": 170,
+      "top": null,
+      "travel": [],
+      "weight": 0.319
+    },
+    {
+      "artist": "TV on the Radio",
+      "days": 21,
+      "last": "2025-11-05",
+      "plays": 87,
+      "recent": 2,
+      "seed": 250,
+      "top": null,
+      "travel": [],
+      "weight": 0.247
+    },
+    {
+      "artist": "Arctic Monkeys",
+      "days": 20,
+      "last": "2025-06-21",
+      "plays": 62,
+      "recent": 2,
+      "seed": 269,
+      "top": null,
+      "travel": [],
+      "weight": 0.234
+    },
+    {
+      "artist": "Depeche Mode",
+      "days": 20,
+      "last": "2025-11-28",
+      "plays": 66,
+      "recent": 9,
+      "seed": 86,
+      "top": null,
+      "travel": [
+        "heavy"
+      ],
+      "weight": 0.499
+    },
+    {
+      "artist": "Justin Bieber",
+      "days": 20,
+      "last": "2023-07-05",
+      "plays": 36,
+      "recent": 3,
+      "seed": 241,
+      "top": null,
+      "travel": [],
+      "weight": 0.252
+    },
+    {
+      "artist": "The Books",
+      "days": 20,
+      "last": "2023-03-26",
+      "plays": 77,
+      "recent": 1,
+      "seed": null,
+      "top": null,
+      "travel": [
+        "live"
+      ],
+      "weight": null
+    },
+    {
+      "artist": "Beach House",
+      "days": 19,
+      "last": "2026-04-16",
+      "plays": 49,
+      "recent": 4,
+      "seed": 187,
+      "top": null,
+      "travel": [],
+      "weight": 0.297
+    },
+    {
+      "artist": "Billy Joel",
+      "days": 19,
+      "last": "2024-12-25",
+      "plays": 47,
+      "recent": 3,
+      "seed": 227,
+      "top": null,
+      "travel": [],
+      "weight": 0.26
+    },
+    {
+      "artist": "Janet Jackson",
+      "days": 19,
+      "last": "2026-04-24",
+      "plays": 56,
+      "recent": 9,
+      "seed": 91,
+      "top": null,
+      "travel": [
+        "heavy"
+      ],
+      "weight": 0.485
+    },
+    {
+      "artist": "Linkin Park",
+      "days": 19,
+      "last": "2026-06-20",
+      "plays": 45,
+      "recent": 19,
+      "seed": 84,
+      "top": null,
+      "travel": [
+        "heavy"
+      ],
+      "weight": 0.506
+    },
+    {
+      "artist": "Ludwig van Beethoven",
+      "days": 19,
+      "last": "2026-04-01",
+      "plays": 31,
+      "recent": 7,
+      "seed": 135,
+      "top": null,
+      "travel": [],
+      "weight": 0.378
+    },
+    {
+      "artist": "The Cranberries",
+      "days": 19,
+      "last": "2025-09-04",
+      "plays": 42,
+      "recent": 9,
+      "seed": 103,
+      "top": null,
+      "travel": [
+        "heavy"
+      ],
+      "weight": 0.466
+    },
+    {
+      "artist": "The Sundays",
+      "days": 19,
+      "last": "2025-04-03",
+      "plays": 29,
+      "recent": 8,
+      "seed": 124,
+      "top": null,
+      "travel": [
+        "heavy"
+      ],
+      "weight": 0.408
+    },
+    {
+      "artist": "Tripping Daisy",
+      "days": 19,
+      "last": "2025-09-04",
+      "plays": 121,
+      "recent": 2,
+      "seed": 240,
+      "top": null,
+      "travel": [],
+      "weight": 0.254
+    },
+    {
+      "artist": "Wolfgang Amadeus Mozart",
+      "days": 19,
+      "last": "2026-09-28",
+      "plays": 65,
+      "recent": 12,
+      "seed": 74,
+      "top": null,
+      "travel": [
+        "heavy"
+      ],
+      "weight": 0.532
+    },
+    {
+      "artist": "Central Park Cast",
+      "days": 18,
+      "last": "2026-03-06",
+      "plays": 144,
+      "recent": 6,
+      "seed": 113,
+      "top": null,
+      "travel": [],
+      "weight": 0.422
+    },
+    {
+      "artist": "Christopher Jackson",
+      "days": 18,
+      "last": "2023-03-01",
+      "plays": 41,
+      "recent": 2,
+      "seed": 293,
+      "top": null,
+      "travel": [],
+      "weight": 0.218
+    },
+    {
+      "artist": "DJ Shadow",
+      "days": 18,
+      "last": "2026-01-07",
+      "plays": 38,
+      "recent": 15,
+      "seed": 88,
+      "top": null,
+      "travel": [
+        "heavy"
+      ],
+      "weight": 0.49
+    },
+    {
+      "artist": "Eminem",
+      "days": 18,
+      "last": "2025-01-17",
+      "plays": 40,
+      "recent": 6,
+      "seed": 147,
+      "top": null,
+      "travel": [],
+      "weight": 0.355
+    },
+    {
+      "artist": "Fitz & The Tantrums",
+      "days": 18,
+      "last": "2023-11-27",
+      "plays": 66,
+      "recent": 3,
+      "seed": 214,
+      "top": null,
+      "travel": [],
+      "weight": 0.27
+    },
+    {
+      "artist": "INXS",
+      "days": 18,
+      "last": "2026-01-06",
+      "plays": 38,
+      "recent": 8,
+      "seed": 114,
+      "top": null,
+      "travel": [
+        "heavy"
+      ],
+      "weight": 0.421
+    },
+    {
+      "artist": "Metric",
+      "days": 18,
+      "last": "2026-05-11",
+      "plays": 20,
+      "recent": 7,
+      "seed": 151,
+      "top": null,
+      "travel": [],
+      "weight": 0.351
+    },
+    {
+      "artist": "Ms. Lauryn Hill",
+      "days": 18,
+      "last": "2026-09-23",
+      "plays": 35,
+      "recent": 14,
+      "seed": 93,
+      "top": null,
+      "travel": [
+        "heavy"
+      ],
+      "weight": 0.484
+    },
+    {
+      "artist": "The Avett Brothers",
+      "days": 18,
+      "last": "2021-09-30",
+      "plays": 66,
+      "recent": 0,
+      "seed": null,
+      "top": null,
+      "travel": [
+        "live"
+      ],
+      "weight": null
+    },
+    {
+      "artist": "Zero 7",
+      "days": 18,
+      "last": "2025-04-18",
+      "plays": 26,
+      "recent": 4,
+      "seed": 217,
+      "top": null,
+      "travel": [],
+      "weight": 0.268
+    },
+    {
+      "artist": "Air",
+      "days": 17,
+      "last": "2026-05-30",
+      "plays": 27,
+      "recent": 5,
+      "seed": 182,
+      "top": null,
+      "travel": [],
+      "weight": 0.3
+    },
+    {
+      "artist": "Bruno Mars",
+      "days": 17,
+      "last": "2026-04-01",
+      "plays": 30,
+      "recent": 12,
+      "seed": 101,
+      "top": null,
+      "travel": [
+        "heavy"
+      ],
+      "weight": 0.469
+    },
+    {
+      "artist": "Lizzo",
+      "days": 17,
+      "last": "2025-08-08",
+      "plays": 50,
+      "recent": 8,
+      "seed": 110,
+      "top": null,
+      "travel": [
+        "heavy"
+      ],
+      "weight": 0.435
+    },
+    {
+      "artist": "Mazzy Star",
+      "days": 17,
+      "last": "2025-07-09",
+      "plays": 18,
+      "recent": 3,
+      "seed": 287,
+      "top": null,
+      "travel": [],
+      "weight": 0.221
+    },
+    {
+      "artist": "Passion Pit",
+      "days": 17,
+      "last": "2024-03-28",
+      "plays": 21,
+      "recent": 6,
+      "seed": 169,
+      "top": null,
+      "travel": [],
+      "weight": 0.319
+    },
+    {
+      "artist": "Portugal. The Man",
+      "days": 17,
+      "last": "2024-05-16",
+      "plays": 41,
+      "recent": 6,
+      "seed": 149,
+      "top": null,
+      "travel": [],
+      "weight": 0.354
+    },
+    {
+      "artist": "Queen",
+      "days": 17,
+      "last": "2026-04-01",
+      "plays": 21,
+      "recent": 4,
+      "seed": 233,
+      "top": null,
+      "travel": [],
+      "weight": 0.257
+    },
+    {
+      "artist": "Stevie Nicks",
+      "days": 17,
+      "last": "2026-04-25",
+      "plays": 30,
+      "recent": 4,
+      "seed": 213,
+      "top": null,
+      "travel": [],
+      "weight": 0.272
+    },
+    {
+      "artist": "Alice in Chains",
+      "days": 16,
+      "last": "2025-12-24",
+      "plays": 27,
+      "recent": 7,
+      "seed": 145,
+      "top": null,
+      "travel": [],
+      "weight": 0.361
+    },
+    {
+      "artist": "Andrew Garfield",
+      "days": 16,
+      "last": "2026-02-11",
+      "plays": 59,
+      "recent": 2,
+      "seed": 284,
+      "top": null,
+      "travel": [],
+      "weight": 0.226
+    },
+    {
+      "artist": "Evanescence",
+      "days": 16,
+      "last": "2026-06-12",
+      "plays": 32,
+      "recent": 6,
+      "seed": 159,
+      "top": null,
+      "travel": [],
+      "weight": 0.338
+    },
+    {
+      "artist": "Foo Fighters",
+      "days": 16,
+      "last": "2026-04-23",
+      "plays": 19,
+      "recent": 8,
+      "seed": 139,
+      "top": null,
+      "travel": [
+        "heavy"
+      ],
+      "weight": 0.372
+    },
+    {
+      "artist": "Jack White",
+      "days": 16,
+      "last": "2026-09-28",
+      "plays": 41,
+      "recent": 11,
+      "seed": 38,
+      "top": null,
+      "travel": [
+        "heavy",
+        "love",
+        "live"
+      ],
+      "weight": 0.487
+    },
+    {
+      "artist": "Jane's Addiction",
+      "days": 16,
+      "last": "2026-04-01",
+      "plays": 28,
+      "recent": 7,
+      "seed": 143,
+      "top": null,
+      "travel": [],
+      "weight": 0.363
+    },
+    {
+      "artist": "Josh Rouse",
+      "days": 16,
+      "last": "2011-05-25",
+      "plays": 43,
+      "recent": 0,
+      "seed": null,
+      "top": null,
+      "travel": [
+        "live"
+      ],
+      "weight": null
+    },
+    {
+      "artist": "Mates of State",
+      "days": 16,
+      "last": "2011-10-06",
+      "plays": 40,
+      "recent": 0,
+      "seed": null,
+      "top": null,
+      "travel": [
+        "live"
+      ],
+      "weight": null
+    },
+    {
+      "artist": "Renée Elise Goldsberry",
+      "days": 16,
+      "last": "2026-04-02",
+      "plays": 24,
+      "recent": 4,
+      "seed": 226,
+      "top": null,
+      "travel": [],
+      "weight": 0.26
+    },
+    {
+      "artist": "Talking Heads",
+      "days": 16,
+      "last": "2026-04-04",
+      "plays": 115,
+      "recent": 8,
+      "seed": 96,
+      "top": null,
+      "travel": [
+        "heavy"
+      ],
+      "weight": 0.482
+    },
+    {
+      "artist": "Bad Lip Reading",
+      "days": 15,
+      "last": "2025-02-01",
+      "plays": 46,
+      "recent": 6,
+      "seed": 150,
+      "top": null,
+      "travel": [],
+      "weight": 0.353
+    },
+    {
+      "artist": "Ben Platt",
+      "days": 15,
+      "last": "2026-02-11",
+      "plays": 27,
+      "recent": 4,
+      "seed": 223,
+      "top": null,
+      "travel": [],
+      "weight": 0.262
+    },
+    {
+      "artist": "Chicago",
+      "days": 15,
+      "last": "2026-04-15",
+      "plays": 45,
+      "recent": 2,
+      "seed": 300,
+      "top": null,
+      "travel": [],
+      "weight": 0.215
+    },
+    {
+      "artist": "Fink",
+      "days": 15,
+      "last": "2026-09-23",
+      "plays": 21,
+      "recent": 2,
+      "seed": null,
+      "top": null,
+      "travel": [
+        "live"
+      ],
+      "weight": null
+    },
+    {
+      "artist": "Lady Gaga",
+      "days": 15,
+      "last": "2026-04-23",
+      "plays": 18,
+      "recent": 7,
+      "seed": 161,
+      "top": null,
+      "travel": [],
+      "weight": 0.335
+    },
+    {
+      "artist": "Milli Hughes",
+      "days": 15,
+      "last": "2025-02-13",
+      "plays": 19,
+      "recent": 12,
+      "seed": 111,
+      "top": null,
+      "travel": [
+        "heavy"
+      ],
+      "weight": 0.428
+    },
+    {
+      "artist": "Mos Def",
+      "days": 15,
+      "last": "2026-03-17",
+      "plays": 50,
+      "recent": 4,
+      "seed": 193,
+      "top": null,
+      "travel": [],
+      "weight": 0.288
+    },
+    {
+      "artist": "Neko Case",
+      "days": 15,
+      "last": "2026-10-14",
+      "plays": 26,
+      "recent": 4,
+      "seed": 225,
+      "top": null,
+      "travel": [],
+      "weight": 0.261
+    },
+    {
+      "artist": "Pentatonix",
+      "days": 15,
+      "last": "2025-11-28",
+      "plays": 78,
+      "recent": 4,
+      "seed": 179,
+      "top": null,
+      "travel": [],
+      "weight": 0.306
+    },
+    {
+      "artist": "The Knife",
+      "days": 15,
+      "last": "2025-04-18",
+      "plays": 29,
+      "recent": 3,
+      "seed": 270,
+      "top": null,
+      "travel": [],
+      "weight": 0.233
+    },
+    {
+      "artist": "The Stills",
+      "days": 15,
+      "last": "2025-06-17",
+      "plays": 37,
+      "recent": 4,
+      "seed": 209,
+      "top": null,
+      "travel": [],
+      "weight": 0.275
+    },
+    {
+      "artist": "Third Eye Blind",
+      "days": 15,
+      "last": "2025-07-24",
+      "plays": 16,
+      "recent": 4,
+      "seed": 260,
+      "top": null,
+      "travel": [
+        "live"
+      ],
+      "weight": 0.241
+    },
+    {
+      "artist": "Ariana Grande",
+      "days": 14,
+      "last": "2026-06-11",
+      "plays": 39,
+      "recent": 12,
+      "seed": 99,
+      "top": null,
+      "travel": [
+        "heavy"
+      ],
+      "weight": 0.474
+    },
+    {
+      "artist": "Britney Spears",
+      "days": 14,
+      "last": "2024-03-28",
+      "plays": 34,
+      "recent": 4,
+      "seed": 215,
+      "top": null,
+      "travel": [],
+      "weight": 0.269
+    },
+    {
+      "artist": "Dolly Parton",
+      "days": 14,
+      "last": "2026-04-15",
+      "plays": 26,
+      "recent": 3,
+      "seed": 281,
+      "top": null,
+      "travel": [],
+      "weight": 0.227
+    },
+    {
+      "artist": "Foster the People",
+      "days": 14,
+      "last": "2024-08-08",
+      "plays": 26,
+      "recent": 4,
+      "seed": 231,
+      "top": null,
+      "travel": [],
+      "weight": 0.258
+    },
+    {
+      "artist": "French Kicks",
+      "days": 14,
+      "last": "2008-10-16",
+      "plays": 76,
+      "recent": 0,
+      "seed": null,
+      "top": null,
+      "travel": [
+        "live"
+      ],
+      "weight": null
+    },
+    {
+      "artist": "St. Vincent",
+      "days": 14,
+      "last": "2026-05-11",
+      "plays": 30,
+      "recent": 3,
+      "seed": 271,
+      "top": null,
+      "travel": [
+        "live"
+      ],
+      "weight": 0.232
+    },
+    {
+      "artist": "The Doobie Brothers",
+      "days": 14,
+      "last": "2026-04-02",
+      "plays": 32,
+      "recent": 5,
+      "seed": 184,
+      "top": null,
+      "travel": [],
+      "weight": 0.299
+    },
+    {
+      "artist": "Young the Giant",
+      "days": 14,
+      "last": "2025-04-16",
+      "plays": 40,
+      "recent": 5,
+      "seed": 178,
+      "top": null,
+      "travel": [],
+      "weight": 0.309
+    },
+    {
+      "artist": "10,000 Maniacs",
+      "days": 13,
+      "last": "2026-04-15",
+      "plays": 29,
+      "recent": 6,
+      "seed": 168,
+      "top": null,
+      "travel": [],
+      "weight": 0.322
+    },
+    {
+      "artist": "Billie Holiday",
+      "days": 13,
+      "last": "2026-04-04",
+      "plays": 25,
+      "recent": 3,
+      "seed": 285,
+      "top": null,
+      "travel": [],
+      "weight": 0.223
+    },
+    {
+      "artist": "CHVRCHES",
+      "days": 13,
+      "last": "2026-10-25",
+      "plays": 44,
+      "recent": 12,
+      "seed": 98,
+      "top": null,
+      "travel": [
+        "heavy"
+      ],
+      "weight": 0.477
+    },
+    {
+      "artist": "Katy Perry",
+      "days": 13,
+      "last": "2025-06-17",
+      "plays": 17,
+      "recent": 4,
+      "seed": 265,
+      "top": null,
+      "travel": [],
+      "weight": 0.238
+    },
+    {
+      "artist": "Lo Moon",
+      "days": 13,
+      "last": "2026-01-26",
+      "plays": 40,
+      "recent": 4,
+      "seed": 212,
+      "top": null,
+      "travel": [],
+      "weight": 0.273
+    },
+    {
+      "artist": "Major Lazer",
+      "days": 13,
+      "last": "2025-10-05",
+      "plays": 23,
+      "recent": 6,
+      "seed": 176,
+      "top": null,
+      "travel": [],
+      "weight": 0.31
+    },
+    {
+      "artist": "Metallica",
+      "days": 13,
+      "last": "2026-10-02",
+      "plays": 33,
+      "recent": 10,
+      "seed": 106,
+      "top": null,
+      "travel": [
+        "heavy",
+        "live"
+      ],
+      "weight": 0.457
+    },
+    {
+      "artist": "Morcheeba",
+      "days": 13,
+      "last": "2025-06-21",
+      "plays": 35,
+      "recent": 5,
+      "seed": 183,
+      "top": null,
+      "travel": [
+        "live"
+      ],
+      "weight": 0.299
+    },
+    {
+      "artist": "Phoebe Bridgers",
+      "days": 13,
+      "last": "2025-10-08",
+      "plays": 29,
+      "recent": 3,
+      "seed": 278,
+      "top": null,
+      "travel": [],
+      "weight": 0.228
+    },
+    {
+      "artist": "Prince",
+      "days": 13,
+      "last": "2026-04-15",
+      "plays": 15,
+      "recent": 8,
+      "seed": 155,
+      "top": null,
+      "travel": [
+        "heavy"
+      ],
+      "weight": 0.345
+    },
+    {
+      "artist": "Robert Schumann",
+      "days": 13,
+      "last": "2026-04-02",
+      "plays": 47,
+      "recent": 7,
+      "seed": 134,
+      "top": null,
+      "travel": [],
+      "weight": 0.381
+    },
+    {
+      "artist": "Sharon Jones and the Dap-Kings",
+      "days": 13,
+      "last": "2026-04-15",
+      "plays": 26,
+      "recent": 4,
+      "seed": 237,
+      "top": null,
+      "travel": [
+        "live"
+      ],
+      "weight": 0.255
+    },
+    {
+      "artist": "Stealers Wheel",
+      "days": 13,
+      "last": "2025-11-28",
+      "plays": 13,
+      "recent": 4,
+      "seed": 279,
+      "top": null,
+      "travel": [],
+      "weight": 0.227
+    },
+    {
+      "artist": "Sugar",
+      "days": 13,
+      "last": "2026-07-19",
+      "plays": 40,
+      "recent": 10,
+      "seed": 100,
+      "top": null,
+      "travel": [
+        "heavy"
+      ],
+      "weight": 0.47
+    },
+    {
+      "artist": "Tonic",
+      "days": 13,
+      "last": "2026-04-01",
+      "plays": 13,
+      "recent": 8,
+      "seed": 160,
+      "top": null,
+      "travel": [
+        "heavy"
+      ],
+      "weight": 0.337
+    },
+    {
+      "artist": "Black Gryph0n",
+      "days": 12,
+      "last": "2024-12-07",
+      "plays": 30,
+      "recent": 5,
+      "seed": 192,
+      "top": null,
+      "travel": [],
+      "weight": 0.289
+    },
+    {
+      "artist": "Drake",
+      "days": 12,
+      "last": "2024-01-22",
+      "plays": 30,
+      "recent": 4,
+      "seed": 232,
+      "top": null,
+      "travel": [],
+      "weight": 0.258
+    },
+    {
+      "artist": "James",
+      "days": 12,
+      "last": "2026-04-04",
+      "plays": 12,
+      "recent": 8,
+      "seed": 165,
+      "top": null,
+      "travel": [
+        "heavy"
+      ],
+      "weight": 0.327
+    },
+    {
+      "artist": "John Legend",
+      "days": 12,
+      "last": "2025-04-16",
+      "plays": 28,
+      "recent": 4,
+      "seed": 239,
+      "top": null,
+      "travel": [],
+      "weight": 0.255
+    },
+    {
+      "artist": "Kendrick Lamar",
+      "days": 12,
+      "last": "2026-04-16",
+      "plays": 22,
+      "recent": 10,
+      "seed": 112,
+      "top": null,
+      "travel": [
+        "heavy"
+      ],
+      "weight": 0.422
+    },
+    {
+      "artist": "Lorde",
+      "days": 12,
+      "last": "2026-01-16",
+      "plays": 27,
+      "recent": 5,
+      "seed": 197,
+      "top": null,
+      "travel": [],
+      "weight": 0.284
+    },
+    {
+      "artist": "My Brightest Diamond",
+      "days": 12,
+      "last": "2023-03-28",
+      "plays": 23,
+      "recent": 3,
+      "seed": 294,
+      "top": null,
+      "travel": [],
+      "weight": 0.217
+    },
+    {
+      "artist": "Sneaker Pimps",
+      "days": 12,
+      "last": "2024-03-27",
+      "plays": 17,
+      "recent": 4,
+      "seed": 268,
+      "top": null,
+      "travel": [],
+      "weight": 0.235
+    },
+    {
+      "artist": "Alessia Cara",
+      "days": 11,
+      "last": "2024-07-02",
+      "plays": 22,
+      "recent": 4,
+      "seed": 258,
+      "top": null,
+      "travel": [],
+      "weight": 0.241
+    },
+    {
+      "artist": "Amy Winehouse",
+      "days": 11,
+      "last": "2026-04-15",
+      "plays": 24,
+      "recent": 3,
+      "seed": 299,
+      "top": null,
+      "travel": [],
+      "weight": 0.215
+    },
+    {
+      "artist": "Childish Gambino",
+      "days": 11,
+      "last": "2026-04-17",
+      "plays": 53,
+      "recent": 8,
+      "seed": 118,
+      "top": null,
+      "travel": [
+        "heavy"
+      ],
+      "weight": 0.411
+    },
+    {
+      "artist": "Danger Mouse",
+      "days": 11,
+      "last": "2026-06-20",
+      "plays": 32,
+      "recent": 8,
+      "seed": 133,
+      "top": null,
+      "travel": [
+        "heavy"
+      ],
+      "weight": 0.381
+    },
+    {
+      "artist": "George Ezra",
+      "days": 11,
+      "last": "2024-02-27",
+      "plays": 58,
+      "recent": 4,
+      "seed": 202,
+      "top": null,
+      "travel": [],
+      "weight": 0.281
+    },
+    {
+      "artist": "Molecualar Binary",
+      "days": 11,
+      "last": "2025-02-13",
+      "plays": 15,
+      "recent": 6,
+      "seed": 203,
+      "top": null,
+      "travel": [],
+      "weight": 0.281
+    },
+    {
+      "artist": "Sam Smith",
+      "days": 11,
+      "last": "2026-01-16",
+      "plays": 14,
+      "recent": 5,
+      "seed": 244,
+      "top": null,
+      "travel": [],
+      "weight": 0.25
+    },
+    {
+      "artist": "The Smile",
+      "days": 11,
+      "last": "2026-01-19",
+      "plays": 21,
+      "recent": 9,
+      "seed": 131,
+      "top": null,
+      "travel": [
+        "heavy"
+      ],
+      "weight": 0.384
+    },
+    {
+      "artist": "Alanis Morissette",
+      "days": 10,
+      "last": "2026-03-31",
+      "plays": 37,
+      "recent": 9,
+      "seed": 116,
+      "top": null,
+      "travel": [
+        "heavy"
+      ],
+      "weight": 0.415
+    },
+    {
+      "artist": "Backstreet Boys",
+      "days": 10,
+      "last": "2026-04-15",
+      "plays": 11,
+      "recent": 8,
+      "seed": 175,
+      "top": null,
+      "travel": [
+        "heavy"
+      ],
+      "weight": 0.311
+    },
+    {
+      "artist": "Mark Ronson",
+      "days": 10,
+      "last": "2025-10-27",
+      "plays": 13,
+      "recent": 9,
+      "seed": 152,
+      "top": null,
+      "travel": [
+        "heavy"
+      ],
+      "weight": 0.347
+    },
+    {
+      "artist": "The Airborne Toxic Event",
+      "days": 10,
+      "last": "2025-08-08",
+      "plays": 41,
+      "recent": 3,
+      "seed": 273,
+      "top": null,
+      "travel": [
+        "live"
+      ],
+      "weight": 0.231
+    },
+    {
+      "artist": "Waxahatchee",
+      "days": 10,
+      "last": "2026-01-15",
+      "plays": 22,
+      "recent": 10,
+      "seed": 121,
+      "top": null,
+      "travel": [
+        "heavy"
+      ],
+      "weight": 0.41
+    },
+    {
+      "artist": "Woodkid",
+      "days": 10,
+      "last": "2025-12-29",
+      "plays": 44,
+      "recent": 10,
+      "seed": 104,
+      "top": null,
+      "travel": [
+        "heavy"
+      ],
+      "weight": 0.458
+    },
+    {
+      "artist": "Alicia Keys",
+      "days": 9,
+      "last": "2025-11-14",
+      "plays": 10,
+      "recent": 6,
+      "seed": 242,
+      "top": null,
+      "travel": [],
+      "weight": 0.251
+    },
+    {
+      "artist": "Billie Eilish",
+      "days": 9,
+      "last": "2026-09-21",
+      "plays": 15,
+      "recent": 7,
+      "seed": 186,
+      "top": null,
+      "travel": [],
+      "weight": 0.297
+    },
+    {
+      "artist": "Bob Mould",
+      "days": 9,
+      "last": "2021-12-04",
+      "plays": 40,
+      "recent": 0,
+      "seed": null,
+      "top": null,
+      "travel": [
+        "live"
+      ],
+      "weight": null
+    },
+    {
+      "artist": "Calvin Harris",
+      "days": 9,
+      "last": "2024-03-25",
+      "plays": 21,
+      "recent": 5,
+      "seed": 228,
+      "top": null,
+      "travel": [],
+      "weight": 0.259
+    },
+    {
+      "artist": "Dave Matthews",
+      "days": 9,
+      "last": "2026-10-13",
+      "plays": 17,
+      "recent": 3,
+      "seed": null,
+      "top": null,
+      "travel": [
+        "live"
+      ],
+      "weight": null
+    },
+    {
+      "artist": "Kate Bush",
+      "days": 9,
+      "last": "2026-04-24",
+      "plays": 22,
+      "recent": 6,
+      "seed": 190,
+      "top": null,
+      "travel": [],
+      "weight": 0.29
+    },
+    {
+      "artist": "Live",
+      "days": 9,
+      "last": "2026-10-01",
+      "plays": 18,
+      "recent": 8,
+      "seed": 162,
+      "top": null,
+      "travel": [
+        "heavy"
+      ],
+      "weight": 0.334
+    },
+    {
+      "artist": "Marshmello",
+      "days": 9,
+      "last": "2026-10-25",
+      "plays": 16,
+      "recent": 8,
+      "seed": 166,
+      "top": null,
+      "travel": [
+        "heavy"
+      ],
+      "weight": 0.327
+    },
+    {
+      "artist": "OR3O",
+      "days": 9,
+      "last": "2024-04-24",
+      "plays": 19,
+      "recent": 5,
+      "seed": 238,
+      "top": null,
+      "travel": [],
+      "weight": 0.255
+    },
+    {
+      "artist": "OutKast",
+      "days": 9,
+      "last": "2026-05-13",
+      "plays": 11,
+      "recent": 6,
+      "seed": 235,
+      "top": null,
+      "travel": [],
+      "weight": 0.256
+    },
+    {
+      "artist": "Shakey Graves",
+      "days": 9,
+      "last": "2023-10-30",
+      "plays": 15,
+      "recent": 5,
+      "seed": 255,
+      "top": null,
+      "travel": [],
+      "weight": 0.244
+    },
+    {
+      "artist": "Shovels & Rope",
+      "days": 9,
+      "last": "2023-11-21",
+      "plays": 31,
+      "recent": 1,
+      "seed": null,
+      "top": null,
+      "travel": [
+        "live"
+      ],
+      "weight": null
+    },
+    {
+      "artist": "Sinead O'Connor",
+      "days": 9,
+      "last": "2025-07-24",
+      "plays": 26,
+      "recent": 7,
+      "seed": 167,
+      "top": null,
+      "travel": [
+        "live"
+      ],
+      "weight": 0.327
+    },
+    {
+      "artist": "Teddy Swims",
+      "days": 9,
+      "last": "2026-04-01",
+      "plays": 17,
+      "recent": 9,
+      "seed": 146,
+      "top": null,
+      "travel": [
+        "heavy"
+      ],
+      "weight": 0.358
+    },
+    {
+      "artist": "The Breeders",
+      "days": 9,
+      "last": "2025-11-02",
+      "plays": 29,
+      "recent": 7,
+      "seed": 163,
+      "top": null,
+      "travel": [],
+      "weight": 0.333
+    },
+    {
+      "artist": "Wye Oak",
+      "days": 9,
+      "last": "2016-06-12",
+      "plays": 44,
+      "recent": 0,
+      "seed": null,
+      "top": null,
+      "travel": [
+        "live"
+      ],
+      "weight": null
+    },
+    {
+      "artist": "Avicii",
+      "days": 8,
+      "last": "2025-06-03",
+      "plays": 18,
+      "recent": 4,
+      "seed": 288,
+      "top": null,
+      "travel": [],
+      "weight": 0.221
+    },
+    {
+      "artist": "Brittany Howard",
+      "days": 8,
+      "last": "2026-06-27",
+      "plays": 10,
+      "recent": 6,
+      "seed": 252,
+      "top": null,
+      "travel": [],
+      "weight": 0.245
+    },
+    {
+      "artist": "Erasure",
+      "days": 8,
+      "last": "2025-04-18",
+      "plays": 16,
+      "recent": 5,
+      "seed": 257,
+      "top": null,
+      "travel": [],
+      "weight": 0.242
+    },
+    {
+      "artist": "HAIM",
+      "days": 8,
+      "last": "2026-06-27",
+      "plays": 19,
+      "recent": 5,
+      "seed": 245,
+      "top": null,
+      "travel": [],
+      "weight": 0.25
+    },
+    {
+      "artist": "Ludvig Forssell",
+      "days": 8,
+      "last": "2026-10-09",
+      "plays": 111,
+      "recent": 8,
+      "seed": 109,
+      "top": null,
+      "travel": [
+        "heavy"
+      ],
+      "weight": 0.437
+    },
+    {
+      "artist": "MUNA",
+      "days": 8,
+      "last": "2026-04-17",
+      "plays": 18,
+      "recent": 4,
+      "seed": 289,
+      "top": null,
+      "travel": [],
+      "weight": 0.221
+    },
+    {
+      "artist": "Panic at the Disco",
+      "days": 8,
+      "last": "2025-11-02",
+      "plays": 29,
+      "recent": 6,
+      "seed": 185,
+      "top": null,
+      "travel": [],
+      "weight": 0.298
+    },
+    {
+      "artist": "Tame Impala",
+      "days": 8,
+      "last": "2026-04-16",
+      "plays": 17,
+      "recent": 5,
+      "seed": 254,
+      "top": null,
+      "travel": [],
+      "weight": 0.245
+    },
+    {
+      "artist": "Tenacious D",
+      "days": 8,
+      "last": "2024-06-25",
+      "plays": 12,
+      "recent": 5,
+      "seed": 276,
+      "top": null,
+      "travel": [],
+      "weight": 0.229
+    },
+    {
+      "artist": "The Beach Boys",
+      "days": 8,
+      "last": "2025-06-17",
+      "plays": 23,
+      "recent": 5,
+      "seed": 230,
+      "top": null,
+      "travel": [],
+      "weight": 0.258
+    },
+    {
+      "artist": "Tracy Bonham",
+      "days": 8,
+      "last": "2025-12-03",
+      "plays": 9,
+      "recent": 6,
+      "seed": 262,
+      "top": null,
+      "travel": [],
+      "weight": 0.24
+    },
+    {
+      "artist": "Tufts Beelzebubs",
+      "days": 8,
+      "last": "2026-04-01",
+      "plays": 27,
+      "recent": 5,
+      "seed": 218,
+      "top": null,
+      "travel": [],
+      "weight": 0.265
+    },
+    {
+      "artist": "BoyWithUke",
+      "days": 7,
+      "last": "2025-08-14",
+      "plays": 15,
+      "recent": 7,
+      "seed": 198,
+      "top": null,
+      "travel": [
+        "live"
+      ],
+      "weight": 0.284
+    },
+    {
+      "artist": "exoa",
+      "days": 7,
+      "last": "2026-10-23",
+      "plays": 28,
+      "recent": 5,
+      "seed": 224,
+      "top": null,
+      "travel": [],
+      "weight": 0.261
+    },
+    {
+      "artist": "Harry Callaghan",
+      "days": 7,
+      "last": "2025-04-07",
+      "plays": 8,
+      "recent": 7,
+      "seed": 243,
+      "top": null,
+      "travel": [],
+      "weight": 0.251
+    },
+    {
+      "artist": "Low Roar",
+      "days": 7,
+      "last": "2025-11-06",
+      "plays": 47,
+      "recent": 7,
+      "seed": 154,
+      "top": null,
+      "travel": [],
+      "weight": 0.346
+    },
+    {
+      "artist": "The Black Ghosts",
+      "days": 7,
+      "last": "2025-11-04",
+      "plays": 9,
+      "recent": 7,
+      "seed": 234,
+      "top": null,
+      "travel": [],
+      "weight": 0.257
+    },
+    {
+      "artist": "The War on Drugs",
+      "days": 7,
+      "last": "2026-10-22",
+      "plays": 10,
+      "recent": 2,
+      "seed": null,
+      "top": null,
+      "travel": [
+        "live"
+      ],
+      "weight": null
+    },
+    {
+      "artist": "TOO MANY ZOOZ",
+      "days": 7,
+      "last": "2023-06-27",
+      "plays": 24,
+      "recent": 4,
+      "seed": 282,
+      "top": null,
+      "travel": [],
+      "weight": 0.227
+    },
+    {
+      "artist": "boygenius",
+      "days": 6,
+      "last": "2024-02-26",
+      "plays": 20,
+      "recent": 6,
+      "seed": 219,
+      "top": null,
+      "travel": [],
+      "weight": 0.265
+    },
+    {
+      "artist": "Frank Ocean",
+      "days": 6,
+      "last": "2026-04-24",
+      "plays": 45,
+      "recent": 3,
+      "seed": 296,
+      "top": null,
+      "travel": [],
+      "weight": 0.216
+    },
+    {
+      "artist": "Grouplove",
+      "days": 6,
+      "last": "2024-03-28",
+      "plays": 13,
+      "recent": 4,
+      "seed": null,
+      "top": null,
+      "travel": [
+        "live"
+      ],
+      "weight": null
+    },
+    {
+      "artist": "Indigo Girls",
+      "days": 6,
+      "last": "2023-10-20",
+      "plays": 21,
+      "recent": 1,
+      "seed": null,
+      "top": null,
+      "travel": [
+        "live"
+      ],
+      "weight": null
+    },
+    {
+      "artist": "Magnolian",
+      "days": 6,
+      "last": "2025-12-03",
+      "plays": 10,
+      "recent": 6,
+      "seed": 272,
+      "top": null,
+      "travel": [],
+      "weight": 0.232
+    },
+    {
+      "artist": "Moderat",
+      "days": 6,
+      "last": "2026-10-19",
+      "plays": 35,
+      "recent": 5,
+      "seed": 220,
+      "top": null,
+      "travel": [],
+      "weight": 0.264
+    },
+    {
+      "artist": "Rusted Root",
+      "days": 6,
+      "last": "2011-06-09",
+      "plays": 6,
+      "recent": 0,
+      "seed": null,
+      "top": null,
+      "travel": [
+        "live"
+      ],
+      "weight": null
+    },
+    {
+      "artist": "Sam Fender",
+      "days": 6,
+      "last": "2026-06-27",
+      "plays": 21,
+      "recent": 5,
+      "seed": 259,
+      "top": null,
+      "travel": [],
+      "weight": 0.241
+    },
+    {
+      "artist": "Stephen Schwartz",
+      "days": 6,
+      "last": "2026-01-02",
+      "plays": 8,
+      "recent": 6,
+      "seed": 286,
+      "top": null,
+      "travel": [],
+      "weight": 0.221
+    },
+    {
+      "artist": "Sylvan Esso",
+      "days": 6,
+      "last": "2026-10-22",
+      "plays": 35,
+      "recent": 2,
+      "seed": null,
+      "top": null,
+      "travel": [
+        "live"
+      ],
+      "weight": null
+    },
+    {
+      "artist": "The Cinematic Orchestra",
+      "days": 6,
+      "last": "2025-10-23",
+      "plays": 39,
+      "recent": 4,
+      "seed": 263,
+      "top": null,
+      "travel": [],
+      "weight": 0.24
+    },
+    {
+      "artist": "Angine de poitrine",
+      "days": 5,
+      "last": "2026-10-25",
+      "plays": 19,
+      "recent": 5,
+      "seed": 277,
+      "top": null,
+      "travel": [
+        "live"
+      ],
+      "weight": 0.229
+    },
+    {
+      "artist": "The Highwomen",
+      "days": 5,
+      "last": "2025-11-14",
+      "plays": 14,
+      "recent": 5,
+      "seed": 297,
+      "top": null,
+      "travel": [],
+      "weight": 0.216
+    },
+    {
+      "artist": "Meshell Ndegeocello",
+      "days": 4,
+      "last": "2023-12-16",
+      "plays": 10,
+      "recent": 3,
+      "seed": null,
+      "top": null,
+      "travel": [
+        "live"
+      ],
+      "weight": null
+    },
+    {
+      "artist": "Charlie Hunter",
+      "days": 3,
+      "last": "2025-12-25",
+      "plays": 10,
+      "recent": 1,
+      "seed": null,
+      "top": null,
+      "travel": [
+        "live"
+      ],
+      "weight": null
+    },
+    {
+      "artist": "Lucius",
+      "days": 3,
+      "last": "2025-11-14",
+      "plays": 13,
+      "recent": 2,
+      "seed": null,
+      "top": null,
+      "travel": [
+        "live"
+      ],
+      "weight": null
+    },
+    {
+      "artist": "Mavis Staples",
+      "days": 3,
+      "last": "2026-04-04",
+      "plays": 3,
+      "recent": 2,
+      "seed": null,
+      "top": null,
+      "travel": [
+        "live"
+      ],
+      "weight": null
+    },
+    {
+      "artist": "Other Lives",
+      "days": 3,
+      "last": "2013-08-08",
+      "plays": 16,
+      "recent": 0,
+      "seed": null,
+      "top": null,
+      "travel": [
+        "live"
+      ],
+      "weight": null
+    },
+    {
+      "artist": "Patti Smith",
+      "days": 3,
+      "last": "2022-10-30",
+      "plays": 4,
+      "recent": 0,
+      "seed": null,
+      "top": null,
+      "travel": [
+        "live"
+      ],
+      "weight": null
+    },
+    {
+      "artist": "Wallpaper.",
+      "days": 3,
+      "last": "2013-05-13",
+      "plays": 11,
+      "recent": 0,
+      "seed": null,
+      "top": null,
+      "travel": [
+        "live"
+      ],
+      "weight": null
+    },
+    {
+      "artist": "Allison Russell",
+      "days": 2,
+      "last": "2024-05-16",
+      "plays": 2,
+      "recent": 2,
+      "seed": 309,
+      "top": null,
+      "travel": [
+        "live"
+      ],
+      "weight": 0.4
+    },
+    {
+      "artist": "Boys Noize",
+      "days": 2,
+      "last": "2011-06-13",
+      "plays": 2,
+      "recent": 0,
+      "seed": 306,
+      "top": null,
+      "travel": [
+        "live"
+      ],
+      "weight": 0.4
+    },
+    {
+      "artist": "Girl Talk",
+      "days": 2,
+      "last": "2014-08-03",
+      "plays": 26,
+      "recent": 0,
+      "seed": 310,
+      "top": null,
+      "travel": [
+        "live"
+      ],
+      "weight": 0.4
+    },
+    {
+      "artist": "Water From Your Eyes",
+      "days": 2,
+      "last": "2026-04-14",
+      "plays": 2,
+      "recent": 2,
+      "seed": 304,
+      "top": null,
+      "travel": [
+        "live"
+      ],
+      "weight": 0.4
+    },
+    {
+      "artist": "Honeybear, the Band",
+      "days": 1,
+      "last": "2026-06-11",
+      "plays": 6,
+      "recent": 1,
+      "seed": 303,
+      "top": null,
+      "travel": [
+        "live"
+      ],
+      "weight": 0.4
+    },
+    {
+      "artist": "Iron Maiden",
+      "days": 1,
+      "last": "2022-09-20",
+      "plays": 1,
+      "recent": 0,
+      "seed": 308,
+      "top": null,
+      "travel": [
+        "live"
+      ],
+      "weight": 0.4
+    },
+    {
+      "artist": "Manu Chao",
+      "days": 1,
+      "last": "2008-12-30",
+      "plays": 8,
+      "recent": 0,
+      "seed": 318,
+      "top": null,
+      "travel": [
+        "live"
+      ],
+      "weight": 0.4
+    },
+    {
+      "artist": "Sister 7",
+      "days": 1,
+      "last": "2022-01-29",
+      "plays": 1,
+      "recent": 0,
+      "seed": 322,
+      "top": null,
+      "travel": [
+        "live"
+      ],
+      "weight": 0.4
+    },
+    {
+      "artist": "The Spinto Band",
+      "days": 1,
+      "last": "2009-04-20",
+      "plays": 1,
+      "recent": 0,
+      "seed": 314,
+      "top": null,
+      "travel": [
+        "live"
+      ],
+      "weight": 0.4
+    },
+    {
+      "artist": "Ben Harper & The Innocent Criminals",
+      "days": 0,
+      "last": null,
+      "plays": 0,
+      "recent": 0,
+      "seed": 317,
+      "top": null,
+      "travel": [
+        "live"
+      ],
+      "weight": 0.4
+    },
+    {
+      "artist": "Ben Harper and Relentless7",
+      "days": 0,
+      "last": null,
+      "plays": 0,
+      "recent": 0,
+      "seed": 312,
+      "top": null,
+      "travel": [
+        "live"
+      ],
+      "weight": 0.4
+    },
+    {
+      "artist": "Billy Corgan",
+      "days": 0,
+      "last": null,
+      "plays": 0,
+      "recent": 0,
+      "seed": 307,
+      "top": null,
+      "travel": [
+        "live"
+      ],
+      "weight": 0.4
+    },
+    {
+      "artist": "Electrelane",
+      "days": 0,
+      "last": null,
+      "plays": 0,
+      "recent": 0,
+      "seed": 320,
+      "top": null,
+      "travel": [
+        "live"
+      ],
+      "weight": 0.4
+    },
+    {
+      "artist": "haley williams",
+      "days": 0,
+      "last": null,
+      "plays": 0,
+      "recent": 0,
+      "seed": null,
+      "top": null,
+      "travel": [
+        "love"
+      ],
+      "weight": null
+    },
+    {
+      "artist": "Jesca Hoop",
+      "days": 0,
+      "last": null,
+      "plays": 0,
+      "recent": 0,
+      "seed": 319,
+      "top": null,
+      "travel": [
+        "live"
+      ],
+      "weight": 0.4
+    },
+    {
+      "artist": "John Cameron Mitchell",
+      "days": 0,
+      "last": null,
+      "plays": 0,
+      "recent": 0,
+      "seed": 302,
+      "top": null,
+      "travel": [
+        "live"
+      ],
+      "weight": 0.4
+    },
+    {
+      "artist": "Mark Eitzel",
+      "days": 0,
+      "last": null,
+      "plays": 0,
+      "recent": 0,
+      "seed": 321,
+      "top": null,
+      "travel": [
+        "live"
+      ],
+      "weight": 0.4
+    },
+    {
+      "artist": "Parachutes",
+      "days": 0,
+      "last": null,
+      "plays": 0,
+      "recent": 0,
+      "seed": 315,
+      "top": null,
+      "travel": [
+        "live"
+      ],
+      "weight": 0.4
+    },
+    {
+      "artist": "Peelander‐Z",
+      "days": 0,
+      "last": null,
+      "plays": 0,
+      "recent": 0,
+      "seed": 313,
+      "top": null,
+      "travel": [
+        "live"
+      ],
+      "weight": 0.4
+    },
+    {
+      "artist": "PJ Harvey & John Parish",
+      "days": 0,
+      "last": null,
+      "plays": 0,
+      "recent": 0,
+      "seed": 311,
+      "top": null,
+      "travel": [
+        "live"
+      ],
+      "weight": 0.4
+    },
+    {
+      "artist": "Rachel Bobbitt",
+      "days": 0,
+      "last": null,
+      "plays": 0,
+      "recent": 0,
+      "seed": 301,
+      "top": null,
+      "travel": [
+        "live"
+      ],
+      "weight": 0.4
+    },
+    {
+      "artist": "Tiny Habits",
+      "days": 0,
+      "last": null,
+      "plays": 0,
+      "recent": 0,
+      "seed": 305,
+      "top": null,
+      "travel": [
+        "live"
+      ],
+      "weight": 0.4
+    },
+    {
+      "artist": "Toots & The Maytals",
+      "days": 0,
+      "last": null,
+      "plays": 0,
+      "recent": 0,
+      "seed": 316,
+      "top": null,
+      "travel": [
+        "live"
+      ],
+      "weight": 0.4
+    }
+  ],
   "calendar": [
     {
       "acts": [
@@ -10827,7 +16014,7 @@
       }
     }
   ],
-  "generated_at": "2026-10-26T00:35:39+00:00",
+  "generated_at": "2026-10-26T09:17:47+00:00",
   "ledger": [
     {
       "artist": "comehelpglo",
