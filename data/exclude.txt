@@ -51,6 +51,9 @@ CircusP						# vocaloid
 Flavor Foley					# vocaloid
 Heaven Pierce Her				# ULTRAKILL
 Powerglove						# metal covers of game music (not orchestral)
+The Chalkeaters					# game parody songs
+Longestsoloever					# game song covers
+Jake Daniels
 Natori
 King Gnu
 Kenshi Yonezu
@@ -142,3 +145,4 @@ White Noise Sleeping Aid
 + Ludvig Forssell				# Death Stranding: orchestral, the user's
 + Jamie Christopherson			# Metal Gear Rising: probably the user's
 + Bad Bunny
++ Marshmello

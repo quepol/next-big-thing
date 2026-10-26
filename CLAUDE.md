@@ -54,7 +54,7 @@ Other product decisions:
 - Affinity comes from three sources: forward (the candidate is in a seed's similar-artist list), reverse (a known artist is in the candidate's list), and tags (cosine similarity to the user's tag profile, capped at 0.6, as the fallback for tiny artists).
 - "Heard once" artists (1–2 days) count as unknown for next big thing; the pick says "you played them on 1 day back in 2019".
 - **Kids' exclusion is automatic:** `exclusions.effective()` drops known artists with kids' or kid-franchise tags (ULTRAKILL, Deltarune, FNAF, Roblox, Vocaloid…). `data/exclude.txt` handles what tags miss; a `+` line keeps an artist. Orchestral game scores are the user's own (`+ Ludvig Forssell`, `+ Jamie Christopherson`). Generic game tags are flagged for review only.
-- Confirmed keeps (`+` lines): Ludvig Forssell, Jamie Christopherson, Bad Bunny. On 2026-10-21 the user removed the keeps for Hunter Parrish, Julie Andrews, Selena Gomez and Central Park Cast, knowing the kids' tag filter may now exclude them. Excluded on purpose: Alan Menken.
+- Confirmed keeps (`+` lines): Ludvig Forssell, Jamie Christopherson, Bad Bunny, Marshmello. Also the user's, unlisted: Linkin Park, Backstreet Boys, Ariana Grande, Teddy Swims. On 2026-10-21 the user removed the keeps for Hunter Parrish, Julie Andrews, Selena Gomez and Central Park Cast, knowing the kids' tag filter may now exclude them. Excluded on purpose: Alan Menken.
 
 ## Architecture
 
