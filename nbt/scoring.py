@@ -91,10 +91,14 @@ def score_events(
                     continue
                 reasons = [f"played on {row['days']} days since {row['first'][:4]} ({row['plays']} plays)"]
                 if key in loved:
-                    reasons.append("one of your most-played artists")
+                    reasons.append("one of your favourites")
                 picks.append(Pick("know", artist, ev, score=math.log1p(row["days"]), reasons=reasons))
                 continue
             if loved_only:
+                # Seen live (setlist.fm) but played on too few days to be known: still worth the trip.
+                if key in loved:
+                    picks.append(Pick("know", artist, ev, score=math.log1p(row["days"] if row else 0),
+                                      reasons=["you've seen them live"]))
                 continue
 
             if is_noise(artist):

@@ -8,7 +8,7 @@ only if its date is later than the artist's last recorded day.
 
 from __future__ import annotations
 
-from datetime import datetime, timezone
+from datetime import date, datetime, timezone
 from typing import Iterable
 from zoneinfo import ZoneInfo
 
@@ -96,6 +96,28 @@ def known(history: dict, min_days: int = CONFIG.known_min_days,
     return {k: v for k, v in history["artists"].items() if v["days"] >= min_days and k not in excluded}
 
 
-def loved(history: dict, top_n: int = CONFIG.loved_top_n, excluded: set[str] | None = None) -> set[str]:
-    rows = sorted(known(history, excluded=excluded).items(), key=lambda kv: (-kv[1]["days"], -kv[1]["plays"]))
-    return {k for k, _ in rows[:top_n]}
+def recent_days(row: dict, since_year: int) -> int:
+    """Distinct days played from `since_year` on. Without days_by_year, only the last play is known."""
+    if row.get("days_by_year"):
+        return sum(n for y, n in row["days_by_year"].items() if int(y) >= since_year)
+    return 1 if row.get("last", "0")[:4] >= str(since_year) else 0
+
+
+def loved(history: dict, top_n: int = CONFIG.loved_top_n, excluded: set[str] | None = None,
+          loves: set[str] | None = None, today: date | None = None) -> set[str]:
+    """Bands worth travelling for: favourites still in rotation, current heavy rotation, and loves.
+
+    - the top `top_n` by days played, if played at all in the recent window
+    - anyone with `loved_hot_days` days in the recent window, however few all-time
+    - loves.txt (setlist.fm-attended artists are added by the pipeline)
+
+    The window is the last `loved_recent_years` calendar years plus this one, as for seed recency.
+    """
+    excluded = exclusions.load() if excluded is None else excluded
+    loves = {normalize_name(n) for n in (exclusions.load_loves() if loves is None else loves)}
+    since = (today or date.today()).year - CONFIG.loved_recent_years
+    rows = known(history, excluded=excluded)
+    ranked = sorted(rows.items(), key=lambda kv: (-kv[1]["days"], -kv[1]["plays"]))
+    rotation = {k for k, v in ranked[:top_n] if recent_days(v, since) >= 1}
+    hot = {k for k, v in rows.items() if recent_days(v, since) >= CONFIG.loved_hot_days}
+    return rotation | hot | (loves - excluded)

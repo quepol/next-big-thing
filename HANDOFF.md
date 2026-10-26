@@ -2,7 +2,7 @@
 
 What a new session needs to pick up. Read `CLAUDE.md` first; it has everything that's always true, and `docs/` has the detail. Keep this file short: open decisions, open checks, dates to watch. Shipped work lives in the commit log, not here.
 
-_Last updated: 2026-10-24 (cloud session on the phone)._
+_Last updated: 2026-10-26 (cloud session on the phone)._
 
 **Status:** the site is live and the daily run lands around 6am Toronto. Nothing is half-built, and the dev branch matches `main`. The user is living with the site for a few weeks before deciding the scoring questions below, so don't change cutoffs unasked.
 
@@ -11,7 +11,6 @@ _Last updated: 2026-10-24 (cloud session on the phone)._
 | When | Decision | Where |
 |---|---|---|
 | ~mid-Nov | Raise the "You'd probably like" entry bar from 0.35 to ~0.40 (3.0 on the 1–10 scale)? On Oct 22, 10 of its 14 picks were Long shots. | #3 |
-| ~mid-Nov | Narrow the out-of-town `loved` list to the top ~50 by depth × recency, plus `loves.txt` and setlist.fm-attended artists. In the same change, let attended artists pass the out-of-town gate without 3+ days played. | #3 |
 | Before the ledger redesign | Move votes and follows out of the browser. Proposal: a "Send" button that opens a pre-filled GitHub issue, which an Action commits; no token. | #5 |
 | ~mid-Dec | Ledger redesign around "Was I early, and did I go?" | #3 |
 | After using Backstage a while | Momentum in the picks; flagging side projects (Matt Berninger, Adam Cohen) | #4 |
@@ -23,6 +22,8 @@ Already decided, don't re-ask:
 - The raw score stays off the cards; the 1–10 number is the sanity check.
 
 ## Check next session
+
+0. **Possible kids' artists** that came in with the recency-based loved list (Oct 26): The Chalkeaters, Longestsoloever, Jake Daniels, Marshmello. The user hasn't said; ask once. (Linkin Park, Backstreet Boys, Ariana Grande and Teddy Swims are theirs.)
 
 1. **Which artist did the kids' tag filter exclude?** Since Oct 21 the run logs "51 excluded (1 automatically)", where it used to log 0. It's probably one of the four whose keeps were removed. Tell the user which one; it's their call, not a surprise.
 2. **Ask the user how these feel after a week of use:**

@@ -45,8 +45,12 @@ class Config:
 
     # An artist counts as "known" once played on this many distinct days.
     known_min_days: int = 3
-    # Top-N known artists (by distinct days) count as "loved" for out-of-town alerts.
+    # "Loved" (out-of-town alerts): the top-N known artists by distinct days that you've
+    # played at all in the recent window, plus anyone with loved_hot_days days in it.
+    # The window is this calendar year and the loved_recent_years before it.
     loved_top_n: int = 200
+    loved_recent_years: int = 3
+    loved_hot_days: int = 8
     # Seeds for the taste graph: top-N known artists by distinct days.
     taste_seeds: int = 300
     similar_limit: int = 50

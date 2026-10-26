@@ -165,7 +165,7 @@ def run_scoring(events, cfg=Config(lastfm_user="u", lastfm_api_key="k")):
     h = make_history()
     lfm = FakeLastFM()
     taste = Taste(h, lfm, log=lambda *_: None, loves=_TEST_LOVES)
-    return score_events(events, h, hist.loved(h), taste.affinity, lfm.artist_info,
+    return score_events(events, h, hist.loved(h, loves=_TEST_LOVES), taste.affinity, lfm.artist_info,
                         velocity=lambda k, n: None, regions={"Toronto": "all", "Buffalo": "loved"}, cfg=cfg)
 
 
@@ -208,6 +208,32 @@ def test_calendar_keeps_every_show_and_act():
 def test_out_of_town_only_for_loved_artists():
     picks = run_scoring([ev(["Big Thief", "Tiny Newcomer"], region="Buffalo")])
     assert [p.artist for p in picks] == ["Big Thief"]
+
+
+def test_loved_blends_rotation_heavy_rotation_and_loves():
+    h = hist.empty_history()
+    plays = [{"artist": "Old Favourite", "uts": uts(2005 + i, 1, 1)} for i in range(15)]  # last 2019
+    plays += [{"artist": "Still Around", "uts": uts(2010 + i, 1, 1, h=21)} for i in range(10)]
+    plays += [{"artist": "Still Around", "uts": uts(2025, 5, 1)}]
+    plays += [{"artist": "New Obsession", "uts": uts(2025, 1, 1 + i)} for i in range(8)]
+    plays += [{"artist": "Dabbling", "uts": uts(2025, 2, 1 + i)} for i in range(7)]
+    hist.ingest(h, sorted(plays, key=lambda p: p["uts"]))
+    today = date(2026, 10, 26)
+    loved = hist.loved(h, top_n=2, excluded=set(), loves=set(), today=today)
+    # Top 2 by days: Old Favourite (not played since 2019, out) and Still Around (in).
+    # New Obsession has 8 recent days (in); Dabbling has 7 and isn't top 2 (out).
+    assert loved == {"still around", "new obsession"}
+    assert "old favourite" in hist.loved(h, top_n=2, excluded=set(), loves={"Old Favourite"}, today=today)
+
+
+def test_out_of_town_attended_artist_needs_no_play_days():
+    h = make_history()
+    lfm = FakeLastFM()
+    taste = Taste(h, lfm, log=lambda *_: None, loves=_TEST_LOVES)
+    picks = score_events([ev(["Seen Once Live", "Tiny Newcomer"], region="Buffalo")], h,
+                         {"seen once live"}, taste.affinity, lfm.artist_info, velocity=lambda k, n: None,
+                         regions={"Buffalo": "loved"}, excluded=set())
+    assert [(p.artist, p.tier, p.reasons) for p in picks] == [("Seen Once Live", "know", ["you've seen them live"])]
 
 
 def test_dedupe_keeps_earliest_and_counts_dates():

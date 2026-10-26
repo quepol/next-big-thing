@@ -53,8 +53,10 @@ function parseReasons(reasons) {
       out.chips.push({ text: "New venue for you" });
     } else if ((m = r.match(/^played on (\d+) days since (\d{4}) \((\d+) plays\)$/))) {
       out.chips.push({ text: `${m[1]} days since ${m[2]} · ${Number(m[3]).toLocaleString()} plays` });
-    } else if (r === "one of your most-played artists") {
-      out.chips.push({ text: "Most-played", hot: true });
+    } else if (r === "one of your favourites" || r === "one of your most-played artists") {
+      out.chips.push({ text: "Favourite", hot: true });
+    } else if (r === "you've seen them live") {
+      out.chips.push({ text: "Seen live" });
     } else if ((m = r.match(/^you played them on (\d+) days? back in (\d{4})$/))) {
       out.chips.push({ text: `Heard ${m[1]} day${m[1] === "1" ? "" : "s"} · ${m[2]}` });
     } else if ((m = r.match(/^sharing the bill with (.+) \((\d+) days played\)$/))) {

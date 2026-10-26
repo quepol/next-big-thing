@@ -51,6 +51,25 @@ CircusP						# vocaloid
 Flavor Foley					# vocaloid
 Heaven Pierce Her				# ULTRAKILL
 Powerglove						# metal covers of game music (not orchestral)
+Natori
+King Gnu
+Kenshi Yonezu
+inabakumori						# vocaloid
+Kikuo							# vocaloid
+Mili
+imase
+マサラダ
+カタカナで水色
+
+# Kids: lullabies and Halloween sounds
+Caspar Babypants (Children's)
+Baby Lullaby
+Lullaby Themes (Children's)
+Rockabye Baby!
+Snow White & The Seven Dwarfs (Children's)
+Walt Disney's Sleeping Beauty (Children's)
+Halloween Sound Machine
+Sounds Of Horror
 
 # Random - do not include:
 B.J. Thomas, Burt Bacharach
@@ -58,7 +77,66 @@ Glee Cast
 Us								# radio stations
 On								# radio stations
 Rob Sheffield					# audiobook (Love Is a Mix Tape)
-Dream Supplier					# white noise
+
+# White noise: sleep, focus and nature sounds
+Dream Supplier
+Fall Asleep Machine
+Sleep Sleep Sleep
+Relaxed Minds
+Chrome Details Noise
+Noise Factory
+Scandinavian White Noise
+Scientists of Noise
+Sleep Alphabet
+The Art of Nature
+Fans & White Noise
+Focus Noise
+Librarical Nature
+Naturelle
+Noise Library Samples Bank
+Noise Retreat
+Sleep Sound Factory
+Water Sound Natural White Noise
+The White Noise Travelers
+XL Noise Factory
+Alpha Noise
+Atmosphere of Calm
+Dreams Noises
+Epic Noises
+Fabricants of Noise
+Flows of Sleep
+Focus Finders
+Lettere a Sleepnes
+Noise Chillantro
+Noisenoisenoise
+Noises Of Life
+Pro Sounds of Nature
+Relaxatron
+Relaxing Noises
+Sounds of Nature White Noise for Mindfulness Meditation and Relaxation
+White Noise Fellahs
+Best Noise
+Birger Jarl White Noise
+Noise Makers
+Noise Project
+Power of Noise
+Scientific Sleep
+Sleep FX-Aufnahmen
+Thoughts of Calm
+White Noise Therapy
+White Textures
+Green Noise Therapy
+NatuREM
+Noise Library
+Ocean Sounds, Ocean Waves for Sleep, Ocean Sounds Spa, Sounds of Nature Whi
+Only Noise Machine
+Rain Sounds
+The Relaxation Masters
+Relaxing Pianos
+Sleeping Ocean
+Sleeping Voyage
+Spa Relaxation & Spa
+White Noise Sleeping Aid
 
 # Confirmed as the user's own: never excluded, never re-flagged
 + Ludvig Forssell				# Death Stranding: orchestral, the user's
