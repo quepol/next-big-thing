@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from datetime import date, datetime, timezone
 
-from . import exclusions
+from . import bands, exclusions
 from . import history as hist
 from . import ledger as led
 from . import snapshots
@@ -63,9 +63,9 @@ def run(log=print) -> dict:
     history = hist.sync(lastfm, log=log)
     excluded, auto = exclusions.effective(history, lastfm, CONFIG.known_min_days)
     log(f"excluded: {len(excluded)} artists ({len(auto)} automatically by kids' tags)")
-    loved = hist.loved(history, excluded=excluded)
+    travel = hist.travel_reasons(history, excluded=excluded)
 
-    # setlist.fm: attended artists count as loved (can't be polluted by kids' scrobbles)
+    # setlist.fm: attended artists are worth the trip (can't be polluted by kids' scrobbles)
     # and are injected as taste seeds so their neighbours surface as recommendations.
     slm = SetlistFM()
     attended: dict[str, str] = {}
@@ -76,9 +76,10 @@ def run(log=print) -> dict:
             attended_venues = slm.attended_venue_names()
             slm.save()
             log(f"setlist.fm: {len(attended)} attended artists, {len(attended_venues)} venues")
-            # Merge attended artists into loved so they trigger out-of-town alerts
-            # and bill_bonus, regardless of scrobble count.
-            loved = loved | set(attended.keys())
+            # Attended artists are worth the trip, regardless of scrobble count.
+            for key in attended:
+                if key not in excluded:
+                    travel.setdefault(key, []).append("live")
         except Exception as e:
             log(f"setlist.fm: {e} (skipping)")
     else:
@@ -101,7 +102,7 @@ def run(log=print) -> dict:
         return snapshots.velocity(key, today, listeners)
 
     picks = score_events(
-        events, history, loved,
+        events, history, set(travel),
         affinity=taste.affinity, artist_info=info, velocity=velocity,
         regions={r.name: r.tiers for r in CONFIG.regions},
         is_noise=taste.is_noise,
@@ -142,6 +143,9 @@ def run(log=print) -> dict:
         "calendar": calendar([e for e in events if e.region in home_regions], history, taste.affinity, info,
                              excluded=excluded, is_noise=taste.is_noise),
         "ledger": sorted(ledger.values(), key=lambda r: r["first_flagged"], reverse=True),
+        # Backstage "Your bands": who's worth the trip, who seeds your taste, and why.
+        "bands": bands.table(history, travel, taste.seeds, taste.weights,
+                             {k: v["name"] for k, v in taste.known.items()}, excluded, today),
         "attended_ledger": slm.attended_ledger(current_listeners=listeners) if CONFIG.setlistfm_api_key else [],
     }
     write_json(DIGEST_PATH, digest)

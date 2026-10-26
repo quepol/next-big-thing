@@ -36,7 +36,7 @@ Three tiers in the daily digest:
 Other product decisions:
 - Every pick explains itself ("similar to X (0.62)"), and **the 1–10 score and similarity weights stay visible**. The user uses them as a sanity check. Each tab's raw score maps onto 1–10 (`SCALES` in `site/ladder.js`): 8.0+ is Strong, 5.0+ Good, 3.0+ Worth a look, below that Long shot (no filled pips), on every tab. Since 2026-10-22 the raw score shows only in the badge's tooltip.
 - 👍/👎 votes are stored in the browser only for now (#3).
-- **Out-of-town alerts:** `loved` (`hist.loved()`, since 2026-10-26) is the top 200 by days played *if played at all since 2023*, plus anyone with 8+ days since 2023 (`loved_hot_days`), plus `loves.txt`, plus setlist.fm-attended artists, who need no play days ("you've seen them live"). The window matches seed recency: this year and the 3 before. The user chose this blend over a top-50 cut and over a pure recency cut, which dropped bursty favourites (William Fitzsimmons, Iron & Wine). Old favourites with no recent plays are out unless they're in `loves.txt`.
+- **Out-of-town alerts ("worth the trip"):** `loved` (`hist.loved()`, reasons from `hist.travel_reasons()`, since 2026-10-26; `loves.txt` is only one way in) is the top 200 by days played *if played at all since 2023*, plus anyone with 8+ days since 2023 (`loved_hot_days`), plus `loves.txt`, plus setlist.fm-attended artists, who need no play days ("you've seen them live"). The window matches seed recency: this year and the 3 before. The user chose this blend over a top-50 cut and over a pure recency cut, which dropped bursty favourites (William Fitzsimmons, Iron & Wine). Old favourites with no recent plays are out unless they're in `loves.txt`.
 - **Following:** following a band is a watchlist, not a love, and doesn't feed taste. Followed rooms filter and sort; they never add to a score (#5).
 - **Momentum** (moving up the venue ladder) may boost next big thing and add a timing chip to "you'd probably like". It must never create a pick on its own. Taste stays the gate (#4).
 
@@ -71,13 +71,13 @@ Other product decisions:
 - `site/`: static, vanilla JS.
   - `index.html` + `app.js`: the picks, in five tabs: **Soon** (picks from all three tiers playing tonight or tomorrow, tonight first, then by 1–10 score), the three tiers, and **Your rooms** (shows at followed rooms, same cards and sort).
   - `venues.html` + `venues.js`: the "SF overlap" research page (raw tables, with sticky section links).
-  - `explore.html` + `explore.js`: **Backstage**, the data behind the picks (was Explore; the file name stays). Tabs: The Climb (default), Rivers, Ledger, Attended.
+  - `explore.html` + `explore.js`: **Backstage**, the data behind the picks (was Explore; the file name stays). Tabs: The Climb (default), Rivers, Ledger, Attended, Bands. **Bands** shows the worth-the-trip list (out-of-town alerts) and the taste seeds, with why each band is on them, from the digest's `bands` section (`nbt/bands.py`).
   - `ladder.js`: shared helpers (`el`, `norm`, `localDay()` for local dates), the 1–10 score scale (`SCALES`, `strengthOf()`), and the billing and ladder rules, used by every page.
   - `rooms.js`: followed rooms (`nbt.rooms`) and the show score (`WEIGHTS`), used by the picks page; Backstage uses its calendar helpers.
   - `foot.js`: the shared footer on every page (Picks/Backstage links, Refresh and auto-refresh, theme switch).
   - D3 7.9.0 is self-hosted in `site/vendor/`. Design detail is in `docs/design.md`.
 - `research/`: one-off setlist.fm studies, each run by its own workflow on pushes to the dev branch. See `docs/research.md`.
-- Tests: `python -m pytest -q`; 38 pass.
+- Tests: `python -m pytest -q`; 39 pass.
 
 ## Gotchas that have bitten us
 

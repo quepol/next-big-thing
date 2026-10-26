@@ -34,6 +34,7 @@
       <button role="tab" data-tab="rivers">Rivers</button>
       <button role="tab" data-tab="ledger">Ledger</button>
       <button role="tab" data-tab="attended">Attended</button>
+      <button role="tab" data-tab="bands">Bands</button>
     </nav>
   </div>
   <main class="report">
@@ -94,6 +95,16 @@
       <section class="rsec">
         <p class="muted">Every show you've logged on setlist.fm, newest first, with each band's Last.fm listeners now. Venues are in Toronto unless a city is named.</p>
         <div id="attended"></div>
+      </section>
+    </div>
+
+    <div id="tab-bands" class="xtab" role="tabpanel" hidden>
+      <section class="rsec">
+        <p class="muted"><b>Worth the trip</b> bands trigger out-of-town alerts: your top 200 if you've played them since <span class="since">2023</span>, anyone you've played on 8+ days since then, your <code>loves.txt</code>, and bands you've seen live. <b>Seeds</b> shape what you'd probably like; the weight is listening depth × recency. <b>Dropped</b> are top-200 favourites you haven't played since then. Add one to <code>loves.txt</code> to bring it back.</p>
+        <div class="controls">
+          <div class="seg" id="bandmode" role="radiogroup" aria-label="Which bands"></div>
+        </div>
+        <div id="bandlist"></div>
       </section>
     </div>
   </main>

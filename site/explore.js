@@ -5,6 +5,7 @@
 //   - Rivers: SF rooms → Toronto rooms, stream width = shared bands.
 //   - Ledger: next-big-thing picks, listeners when flagged and now.
 //   - Attended: every setlist.fm-logged show, with listeners now.
+//   - Your bands: who's worth the trip (out-of-town alerts), who seeds your taste, and why.
 // Data: data/venue_research.json, data/toronto_capacity.json, data/ladder_study.json
 // (optional) and data/digest.json (ledgers, attended shows, calendar). Billing rules live
 // in ladder.js; the calendar helpers in rooms.js.
@@ -45,6 +46,7 @@ async function load() {
   ]);
   renderLedger(digest);
   renderAttended(digest);
+  renderBands(digest);
   setupTabs();
   if (!research) {
     document.getElementById("chart").append(el("p", "empty", "No research data yet."));
@@ -250,11 +252,11 @@ function renderClimb() {
 }
 
 // ---------- Tabs and the band sheet ----------
-// Tabs like the picks page: The Climb (the default), Rivers, Ledger and Attended.
+// Tabs like the picks page: The Climb (the default), Rivers, Ledger, Attended and Your bands.
 // The tab is mirrored in the URL hash, so a link or bookmark can open any of them. Rivers are drawn when their tab first shows,
 // since a hidden tab has no width to lay out in.
 
-const TABS_X = ["climb", "rivers", "ledger", "attended"];
+const TABS_X = ["climb", "rivers", "ledger", "attended", "bands"];
 const OLD_HASH = { rooms: "rivers" }; // Rooms moved to the picks page; its rivers stayed here
 
 function setupTabs() {
@@ -298,7 +300,11 @@ function table(head, rows) {
   const body = el("tbody");
   for (const r of rows) {
     const row = el("tr");
-    r.forEach((v, i) => row.append(el("td", head[i][1] || null, v)));
+    r.forEach((v, i) => {
+      const td = el("td", head[i][1] || null, v instanceof Node ? null : v);
+      if (v instanceof Node) td.append(v);
+      row.append(td);
+    });
     body.append(row);
   }
   t.append(body);
@@ -331,6 +337,64 @@ function renderAttended(digest) {
   box.append(table([["Artist"], ["Seen", "date"], ["Venue"], ["Now", "num"]], rows.map((r) => [
     r.artist, slfDate(r.date), r.city === "Toronto" ? r.venue : `${r.venue}, ${r.city}`, fmtMaybe(r.listeners_now),
   ])));
+}
+
+// ---------- Your bands ----------
+// From digest.bands (nbt/bands.py). Filters: worth the trip, seeds, dropped, all.
+
+const TRAVEL_LABELS = { rotation: "In rotation", heavy: "Heavy rotation", love: "loves.txt", live: "Seen live" };
+const BAND_MODES = [
+  ["travel", "Worth the trip", "Trip", (r) => r.travel.length],
+  ["seeds", "Seeds", "Seeds", (r) => r.seed],
+  ["dropped", "Dropped", "Dropped", (r) => r.top && !r.travel.length],
+  ["all", "All", "All", () => true],
+];
+
+function renderBands(digest) {
+  const box = document.getElementById("bandlist");
+  const rows = digest.bands || [];
+  if (!rows.length) return box.append(el("p", "empty", "Your bands appear after the next daily run."));
+  const since = new Date(digest.generated_at || Date.now()).getFullYear() - 3;
+  document.querySelector("#tab-bands .since").textContent = since;
+  const seg = document.getElementById("bandmode");
+  let mode = store.get("nbt.bands.mode", "travel");
+  if (!BAND_MODES.some(([k]) => k === mode)) mode = "travel";
+  for (const [key, long, shortLabel, keep] of BAND_MODES) {
+    const b = el("button");
+    b.type = "button";
+    b.setAttribute("role", "radio");
+    b.dataset.v = key;
+    const n = rows.filter(keep).length;
+    b.append(el("span", "long", `${long} ${n}`), el("span", "short", `${shortLabel} ${n}`));
+    seg.append(b);
+  }
+  const draw = () => {
+    seg.querySelectorAll("button").forEach((b) => b.setAttribute("aria-checked", b.dataset.v === mode));
+    const keep = BAND_MODES.find(([k]) => k === mode)[3];
+    const list = rows.filter(keep);
+    if (mode === "seeds") list.sort((a, b) => a.seed - b.seed);
+    const name = (r) => {
+      const f = document.createDocumentFragment();
+      f.append(el("span", "bname", r.artist));
+      const why = r.travel.map((t) => TRAVEL_LABELS[t] || t);
+      if (!r.travel.length && r.top) why.push(r.last ? `Last played ${r.last.slice(0, 4)}` : "Not played lately");
+      if (why.length) f.append(el("span", "bwhy", why.join(" · ")));
+      return f;
+    };
+    box.replaceChildren(table(
+      [["Artist"], ["Days", "num"], [`Since ’${String(since).slice(2)}`, "num"], ["Seed", "num"]],
+      list.map((r) => [name(r), r.days ? fmt(r.days) : "—", r.recent ? fmt(r.recent) : "—",
+        r.seed ? r.weight.toFixed(2) : "—"]),
+    ));
+  };
+  seg.addEventListener("click", (e) => {
+    const b = e.target.closest("button");
+    if (!b) return;
+    mode = b.dataset.v;
+    store.set("nbt.bands.mode", mode);
+    draw();
+  });
+  draw();
 }
 
 function setupSheet() {

@@ -103,13 +103,13 @@ def recent_days(row: dict, since_year: int) -> int:
     return 1 if row.get("last", "0")[:4] >= str(since_year) else 0
 
 
-def loved(history: dict, top_n: int = CONFIG.loved_top_n, excluded: set[str] | None = None,
-          loves: set[str] | None = None, today: date | None = None) -> set[str]:
-    """Bands worth travelling for: favourites still in rotation, current heavy rotation, and loves.
+def travel_reasons(history: dict, top_n: int = CONFIG.loved_top_n, excluded: set[str] | None = None,
+                   loves: set[str] | None = None, today: date | None = None) -> dict[str, list[str]]:
+    """Why each band is worth the trip (out-of-town alerts): artist key -> reasons.
 
-    - the top `top_n` by days played, if played at all in the recent window
-    - anyone with `loved_hot_days` days in the recent window, however few all-time
-    - loves.txt (setlist.fm-attended artists are added by the pipeline)
+    - "rotation": in the top `top_n` by days played, and played at all in the recent window
+    - "heavy": `loved_hot_days` days in the recent window, however few all-time
+    - "love": in loves.txt (setlist.fm-attended artists are added by the pipeline)
 
     The window is the last `loved_recent_years` calendar years plus this one, as for seed recency.
     """
@@ -118,6 +118,19 @@ def loved(history: dict, top_n: int = CONFIG.loved_top_n, excluded: set[str] | N
     since = (today or date.today()).year - CONFIG.loved_recent_years
     rows = known(history, excluded=excluded)
     ranked = sorted(rows.items(), key=lambda kv: (-kv[1]["days"], -kv[1]["plays"]))
-    rotation = {k for k, v in ranked[:top_n] if recent_days(v, since) >= 1}
-    hot = {k for k, v in rows.items() if recent_days(v, since) >= CONFIG.loved_hot_days}
-    return rotation | hot | (loves - excluded)
+    why: dict[str, list[str]] = {}
+    for k, v in ranked[:top_n]:
+        if recent_days(v, since) >= 1:
+            why.setdefault(k, []).append("rotation")
+    for k, v in rows.items():
+        if recent_days(v, since) >= CONFIG.loved_hot_days:
+            why.setdefault(k, []).append("heavy")
+    for k in loves - excluded:
+        why.setdefault(k, []).append("love")
+    return why
+
+
+def loved(history: dict, top_n: int = CONFIG.loved_top_n, excluded: set[str] | None = None,
+          loves: set[str] | None = None, today: date | None = None) -> set[str]:
+    """Bands worth the trip: every artist with a travel reason (see travel_reasons)."""
+    return set(travel_reasons(history, top_n, excluded, loves, today))

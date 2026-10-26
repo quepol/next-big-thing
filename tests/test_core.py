@@ -579,3 +579,21 @@ def test_stylised_names_resolve_to_the_real_artist(tmp_path, monkeypatch):
     # A wrong small answer cached before the check gets re-checked once.
     client.info_cache.set(lf.cache_key("half alive"), {"name": "half alive", "listeners": 1_141})
     assert client.artist_info("half alive")["listeners"] == 1_050_000
+
+
+def test_bands_table_lists_travel_seeds_and_dropped_favourites():
+    from nbt import bands
+    h = hist.empty_history()
+    plays = [{"artist": "Old Favourite", "uts": uts(2005 + i, 1, 1)} for i in range(15)]  # last 2019
+    plays += [{"artist": "New Obsession", "uts": uts(2025, 1, 1 + i)} for i in range(8)]
+    hist.ingest(h, sorted(plays, key=lambda p: p["uts"]))
+    today = date(2026, 10, 26)
+    why = hist.travel_reasons(h, excluded=set(), loves=set(), today=today)
+    why["seen live"] = ["live"]
+    rows = {r["artist"]: r for r in bands.table(h, why, ["new obsession"], {"new obsession": 0.5},
+                                                  {"seen live": "Seen Live"}, set(), today)}
+    assert rows["Old Favourite"]["travel"] == [] and rows["Old Favourite"]["top"] == 1  # dropped off
+    assert rows["New Obsession"] == {"artist": "New Obsession", "days": 8, "plays": 8, "recent": 8,
+                                     "last": "2025-01-08", "top": 2, "travel": ["rotation", "heavy"],
+                                     "seed": 1, "weight": 0.5}
+    assert rows["Seen Live"]["travel"] == ["live"] and rows["Seen Live"]["days"] == 0
