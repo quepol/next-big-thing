@@ -38,7 +38,7 @@ Other product decisions:
 - 👍/👎 votes are stored in the browser only for now (#5).
 - **Out-of-town alerts ("worth the trip"):** `loved` (`hist.loved()`, reasons from `hist.travel_reasons()`, since 2026-10-26; `loves.txt` is only one way in) is the top 200 by days played *if played at all since 2023*, plus anyone with 8+ days since 2023 (`loved_hot_days`), plus `loves.txt`, plus setlist.fm-attended artists, who need no play days ("you've seen them live"). The window matches seed recency: this year and the 3 before. The user chose this blend over a top-50 cut and over a pure recency cut, which dropped bursty favourites (William Fitzsimmons, Iron & Wine). Old favourites with no recent plays are out unless they're in `loves.txt`.
 - **Following:** following a band is a watchlist, not a love, and doesn't feed taste. Followed rooms filter and sort; they never add to a score (#5).
-- **Momentum** (moving up the venue ladder) may boost next big thing and add a timing chip to "you'd probably like". It must never create a pick on its own. Taste stays the gate (#4).
+- **Momentum** (moving up the venue ladder) may boost next big thing and add a timing chip to "you'd probably like". It must never create a pick on its own. Taste stays the gate (#11, after a weekly research refresh).
 
 ## Design rules (detail in `docs/design.md`)
 

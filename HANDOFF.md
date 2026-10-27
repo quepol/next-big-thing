@@ -10,10 +10,9 @@ _Last updated: 2026-10-27 (cloud session on the phone)._
 
 | When | Decision | Where |
 |---|---|---|
-| ~mid-Nov | Scoring tune-up: the "You'd probably like" entry bar (0.35 → ~0.40) and listener ceiling, the next-big-thing ceiling, re-anchoring the 1–10 scale, the velocity check. | #11 |
+| ~mid-Nov | Scoring tune-up: the "You'd probably like" entry bar (0.35 → ~0.40) and listener ceiling, the next-big-thing ceiling, re-anchoring the 1–10 scale, the velocity check. Momentum in the picks too, in order: a weekly research refresh, a side-project flag (Matt Berninger, Adam Cohen), then the boost. | #11 |
 | Before the ledger redesign | Move votes and follows out of the browser. Proposal: a "Send" button that opens a pre-filled GitHub issue, which an Action commits; no token. | #5 |
 | ~mid-Dec | Ledger redesign around "Was I early, and did I go?" | #12 |
-| After using Backstage a while | Momentum in the picks; flagging side projects (Matt Berninger, Adam Cohen) | #4 |
 
 Already decided, don't re-ask:
 - Keep the routes that bring in Doja Cat and Little River Band.
@@ -38,14 +37,13 @@ Already decided, don't re-ask:
 
 ## Background, low priority
 
-- Research data (SF overlap, The Climb) is a snapshot until a weekly refresh exists (#4).
+- Research data (SF overlap, The Climb) is an Oct 18 snapshot until a weekly refresh exists (#11, the first momentum step).
 - One Node 20 warning remains, from `upload-pages-artifact`.
 
 ## Active issues
 
 - **#10:** bug: event titles used as artist names (~70 small-room acts never scored). Next up.
-- **#11:** scoring tune-up, mid-November.
+- **#11:** scoring tune-up and momentum, mid-November.
 - **#12:** ledger redesign, mid-December (needs #5 first).
-- **#4:** venue overlap and the ladder: side projects, momentum, a weekly research refresh.
 - **#5:** follows, the watchlist and alerts; moving votes and follows out of the browser.
 - **#7:** bigger feature ideas.
