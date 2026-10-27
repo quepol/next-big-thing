@@ -20,4 +20,4 @@ jobs:
       - run: pip install -r requirements.txt
       - env:
           LASTFM_API_KEY: ${{ secrets.LASTFM_API_KEY }}
-        run: python -u scripts/lastfm_probe.py
+        run: PYTHONPATH=. python -u scripts/lastfm_probe.py
