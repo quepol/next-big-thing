@@ -2,7 +2,7 @@
 
 What a new session needs to pick up. Read `CLAUDE.md` first; it has everything that's always true, and `docs/` has the detail. Keep this file short: open decisions, open checks, dates to watch. Shipped work lives in the commit log, not here.
 
-_Last updated: 2026-10-26 (cloud session on the phone)._
+_Last updated: 2026-10-27 (cloud session on the phone)._
 
 **Status:** the site is live and the daily run lands around 6am Toronto. Nothing is half-built, and the dev branch matches `main`. The user is living with the site for a few weeks before deciding the scoring questions below, so don't change cutoffs unasked.
 
@@ -10,9 +10,9 @@ _Last updated: 2026-10-26 (cloud session on the phone)._
 
 | When | Decision | Where |
 |---|---|---|
-| ~mid-Nov | Raise the "You'd probably like" entry bar from 0.35 to ~0.40 (3.0 on the 1–10 scale)? On Oct 22, 10 of its 14 picks were Long shots. | #3 |
+| ~mid-Nov | Scoring tune-up: the "You'd probably like" entry bar (0.35 → ~0.40) and listener ceiling, the next-big-thing ceiling, re-anchoring the 1–10 scale, the velocity check. | #11 |
 | Before the ledger redesign | Move votes and follows out of the browser. Proposal: a "Send" button that opens a pre-filled GitHub issue, which an Action commits; no token. | #5 |
-| ~mid-Dec | Ledger redesign around "Was I early, and did I go?" | #3 |
+| ~mid-Dec | Ledger redesign around "Was I early, and did I go?" | #12 |
 | After using Backstage a while | Momentum in the picks; flagging side projects (Matt Berninger, Adam Cohen) | #4 |
 
 Already decided, don't re-ask:
@@ -23,12 +23,13 @@ Already decided, don't re-ask:
 
 ## Check next session
 
-
 1. **Which artist did the kids' tag filter exclude?** Since Oct 21 the run logs "51 excluded (1 automatically)", where it used to log 0. It's probably one of the four whose keeps were removed. Tell the user which one; it's their call, not a surprise.
 2. **Ask the user how these feel after a week of use:**
    - the 1–10 ceilings (next big thing 10 = raw 0.50; Bands you know 10 = 50 days)
    - Strong-from-bonuses on Your rooms (TALK: a known band with little taste fit)
    - the frozen tab bar in the home-screen app (it should sit just under the iPhone status bar)
+   - the Backstage Bands tab (new Oct 26), and whether Florence + the Machine should go in `loves.txt`: since the #8 fix she's a seed at only 0.47 (6 days since 2023)
+3. **Check the daily run log for a `loves.txt` warning** (names that match nothing in the history; "Haley Williams" was one).
 
 ## Dates to watch
 
@@ -42,7 +43,9 @@ Already decided, don't re-ask:
 
 ## Active issues
 
-- **#3:** scoring and UX: the out-of-town list, the "You'd probably like" bar, the ledger redesign, depth-weighting notes.
+- **#10:** bug: event titles used as artist names (~70 small-room acts never scored). Next up.
+- **#11:** scoring tune-up, mid-November.
+- **#12:** ledger redesign, mid-December (needs #5 first).
 - **#4:** venue overlap and the ladder: side projects, momentum, a weekly research refresh.
 - **#5:** follows, the watchlist and alerts; moving votes and follows out of the browser.
 - **#7:** bigger feature ideas.

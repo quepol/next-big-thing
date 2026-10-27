@@ -28,14 +28,14 @@ Where things stand right now is in `HANDOFF.md`. The backlog lives in **GitHub I
 
 Three tiers in the daily digest:
 1. **Know:** played on 3 or more distinct days, ever. No recency weighting, by request.
-2. **You'd probably like:** close to their taste, including artists they've heard of but don't play. No listener cap yet (a soft cap is in #3).
+2. **You'd probably like:** close to their taste, including artists they've heard of but don't play. No listener cap yet (a soft cap is in #11).
 3. **Next big thing (the MVP priority):** at most **100K** Last.fm listeners and close to their taste.
    - The goal is the "Northampton feeling": catching a future-big band in a small room.
    - Room size matters. A soft venue bonus (`0.15 × (1 − cap/1500)`) favours small rooms; it's not a hard cap.
 
 Other product decisions:
 - Every pick explains itself ("similar to X (0.62)"), and **the 1–10 score and similarity weights stay visible**. The user uses them as a sanity check. Each tab's raw score maps onto 1–10 (`SCALES` in `site/ladder.js`): 8.0+ is Strong, 5.0+ Good, 3.0+ Worth a look, below that Long shot (no filled pips), on every tab. Since 2026-10-22 the raw score shows only in the badge's tooltip.
-- 👍/👎 votes are stored in the browser only for now (#3).
+- 👍/👎 votes are stored in the browser only for now (#5).
 - **Out-of-town alerts ("worth the trip"):** `loved` (`hist.loved()`, reasons from `hist.travel_reasons()`, since 2026-10-26; `loves.txt` is only one way in) is the top 200 by days played *if played at all since 2023*, plus anyone with 8+ days since 2023 (`loved_hot_days`), plus `loves.txt`, plus setlist.fm-attended artists, who need no play days ("you've seen them live"). The window matches seed recency: this year and the 3 before. The user chose this blend over a top-50 cut and over a pure recency cut, which dropped bursty favourites (William Fitzsimmons, Iron & Wine). Old favourites with no recent plays are out unless they're in `loves.txt`.
 - **Following:** following a band is a watchlist, not a love, and doesn't feed taste. Followed rooms filter and sort; they never add to a score (#5).
 - **Momentum** (moving up the venue ladder) may boost next big thing and add a timing chip to "you'd probably like". It must never create a pick on its own. Taste stays the gate (#4).
