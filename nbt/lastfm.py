@@ -20,10 +20,13 @@ RATE_LIMITED = 29
 # Typographic quotes ("Arm’s Length") and Unicode dashes (setlist.fm's "alt‐J", U+2010)
 # make Last.fm land on a near-empty page, so an established band looks tiny. Look names
 # up with straight quotes and plain hyphens.
+# Last.fm also decodes the artist parameter twice, so a "+" arrives as a space: "Florence
+# + the Machine" landed on "Florence   The Machine" (19,924 listeners, and the same page
+# by mbid). Sent as "%2B", it survives the second decode and reaches the real one (4M).
 CURLY = str.maketrans({"’": "'", "‘": "'", "“": '"', "”": '"'})
 QUOTES = set("'\"’‘“”")
 DASHES = set("\u2010\u2011\u2012\u2013\u2014\u2015\u2212")
-PLAIN = str.maketrans({**{c: "-" for c in DASHES}, "’": "'", "‘": "'", "“": '"', "”": '"'})
+PLAIN = str.maketrans({**{c: "-" for c in DASHES}, "’": "'", "‘": "'", "“": '"', "”": '"', "+": "%2B"})
 
 
 def lastfm_name(name: str) -> str:
@@ -31,14 +34,16 @@ def lastfm_name(name: str) -> str:
 
 
 def cache_key(name: str) -> str:
-    """normalize_name() drops quotes and dashes, so "Arm’s Length" and "Arm's Length" share
-    a key, and answers fetched before each fix are cached under it. Names with a quote get
-    their own key (q:…), names with a Unicode dash d:…, which refetches just those once;
+    """normalize_name() drops quotes, dashes and "+", so "Arm’s Length" and "Arm's Length"
+    share a key, and answers fetched before each fix are cached under it. Names with a quote
+    get their own key (q:…), a Unicode dash d:…, a "+" p:…, which refetches just those once;
     every other entry stays warm."""
     key = normalize_name(name)
     if QUOTES & set(name):
         return f"q:{key}"
-    return f"d:{key}" if DASHES & set(name) else key
+    if DASHES & set(name):
+        return f"d:{key}"
+    return f"p:{key}" if "+" in name else key
 
 
 # Below this many listeners, check whether a stylised spelling ("half•alive") is the
@@ -46,8 +51,7 @@ def cache_key(name: str) -> str:
 ALIAS_CHECK_BELOW = 20_000
 ALIAS_MIN_RATIO = 10
 # Bumped when the check improves, so small answers checked by an older version get one
-# re-check. 2: search with the plain name, and accept a match spelled exactly like ours
-# (Last.fm's own name page for "Florence + the Machine" is the wrong, near-empty one).
+# re-check. 2: search with the plain name, and accept a match spelled exactly like ours.
 ALIAS_VERSION = 2
 
 
@@ -155,11 +159,10 @@ class LastFM:
         if not info or info["listeners"] < ALIAS_CHECK_BELOW:
             better = self._stylised_match(name, info["listeners"] if info else 0)
             if better:
-                # By ID where Last.fm has one: the name page is what went wrong.
-                found = self._getinfo(better["name"], mbid=better.get("mbid", ""))
+                found = self._getinfo(better["name"])
                 if found:
                     info = found
-                    info["via"] = {"mbid": better["mbid"]} if better.get("mbid") else {"artist": found["name"]}
+                    info["via"] = found["name"]  # similar artists and tags come from this page too
             if info:
                 info["alias_checked"] = ALIAS_VERSION
         self.info_cache.set(key, info or {})
@@ -174,13 +177,12 @@ class LastFM:
         # for tags of every known artist, and a lookup each would add thousands of calls.
         info = self.artist_info(name) if not _plain(name) else self.info_cache.get(key)
         via = (info or {}).get("via")
-        if via:
-            return via, f"{key}@{via.get('mbid') or via.get('artist')}"
+        if isinstance(via, str):
+            return {"artist": lastfm_name(via)}, f"{key}@{normalize_name(via)}"
         return {"artist": lastfm_name(name)}, key
 
-    def _getinfo(self, name: str, mbid: str = "") -> dict:
-        who = {"mbid": mbid} if mbid else {"artist": lastfm_name(name)}
-        body = self.call("artist.getinfo", **who, autocorrect=1)
+    def _getinfo(self, name: str) -> dict:
+        body = self.call("artist.getinfo", artist=lastfm_name(name), autocorrect=1)
         if not body or "artist" not in body:
             return {}
         a = body["artist"]
@@ -198,12 +200,12 @@ class LastFM:
 
     def _stylised_match(self, name: str, listeners: int) -> dict | None:
         """A far bigger artist whose name only differs in punctuation, if there is one:
-        the search result {"name", "mbid", "listeners"}.
+        the search result {"name", "listeners", ...}.
 
         Ticketmaster writes "half alive"; the band is "half•alive" on Last.fm (~1M
         listeners), and the plain spelling lands on a 1,141-listener page, which made an
-        established band look like a next big thing. "Florence + the Machine" is the same
-        problem with the exact spelling, so a match can be spelled exactly like ours.
+        established band look like a next big thing. A match may be spelled exactly like
+        ours: the name page can be the wrong one even when the spelling is right.
 
         Search is fuzzy, so it gets the plain name ("florence the machine"). It ranks
         popular artists first, so a match must have the same name, punctuation aside, and

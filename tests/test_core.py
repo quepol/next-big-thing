@@ -587,39 +587,45 @@ def test_unicode_dashes_and_plus_resolve_to_the_real_artist(tmp_path, monkeypatc
 
     monkeypatch.setattr(lf, "DATA_DIR", tmp_path)
     client = lf.LastFM(api_key="x")
-    # Last.fm's name pages: "alt‐J" (U+2010) and "Florence + the Machine" are near-empty;
-    # Florence's real page is only reachable by ID.
-    by_name = {"alt-J": 3_100_000, "alt‐J": 6_239, "Florence + the Machine": 19_880,
-               "Lens": 900, "Lenny": 2_000_000}
-    by_mbid = {"flo-mbid": ("Florence + the Machine", 4_500_000)}
-    search = {"florence the machine": [("Florence + the Machine", 4_500_000, "flo-mbid")],
-              "lens": [("Lenny", 2_000_000, "lenny-mbid"), ("Lens", 900, "")]}
+    # Last.fm's name pages as the API sees them. It decodes "+" to a space, so only
+    # "%2B" reaches Florence (probe of 2026-10-27); "alt‐J" (U+2010) is near-empty.
+    by_name = {"alt-J": 3_100_000, "alt‐J": 6_239, "Florence %2B the Machine": 4_011_768,
+               "Florence + the Machine": 19_924, "Lens": 900, "Lenny": 2_000_000, "half alive": 1_141,
+               "half•alive": 1_050_000}
+    search = {"lens": [("Lenny", 2_000_000), ("Lens", 900)], "half alive": [("half•alive", 1_050_000)]}
     asked = []
 
     def call(method, **p):
-        asked.append((method, p.get("mbid") or p.get("artist")))
+        asked.append((method, p["artist"]))
         if method == "artist.getinfo":
-            name, n = by_mbid[p["mbid"]] if "mbid" in p else (p["artist"], by_name.get(p["artist"]))
-            return {"artist": {"name": name, "stats": {"listeners": n, "playcount": 1}}} if n else None
+            n = by_name.get(p["artist"])
+            return {"artist": {"name": p["artist"].replace("%2B", "+"), "stats": {"listeners": n, "playcount": 1}}} if n else None
         if method == "artist.search":
-            hits = [{"name": a, "listeners": str(n), "mbid": m} for a, n, m in search.get(p["artist"], [])]
+            hits = [{"name": a, "listeners": str(n)} for a, n in search.get(p["artist"], [])]
             return {"results": {"artistmatches": {"artist": hits}}}
         if method == "artist.getsimilar":
-            return {"similarartists": {"artist": [{"name": "Daughter", "match": "0.8"}]}} if p.get("mbid") == "flo-mbid" else None
+            ok = p["artist"] in ("Florence %2B the Machine", "half•alive")
+            return {"similarartists": {"artist": [{"name": "Hozier", "match": "0.7"}]}} if ok else None
         return None
 
     client.call = call
     assert lf.lastfm_name("alt‐J") == "alt-J"
     assert lf.cache_key("alt‐J") == "d:alt j" != lf.cache_key("alt-J")  # fresh key: old answers were wrong
     assert client.artist_info("alt‐J")["listeners"] == 3_100_000
-    assert client.artist_info("Florence + the Machine")["listeners"] == 4_500_000  # by ID
-    assert ("artist.search", "florence the machine") in asked  # plain name to search
-    assert client.similar("Florence + the Machine") == [("Daughter", 0.8)]  # similar by ID too
+    assert lf.cache_key("Florence + the Machine") == "p:florence the machine"
+    assert client.artist_info("Florence + the Machine")["listeners"] == 4_011_768
+    assert client.similar("Florence + the Machine") == [("Hozier", 0.7)]  # same page for similar
     assert client.artist_info("Lens")["listeners"] == 900  # a similar, bigger name never wins
-    # Answers checked by the old version get one re-check.
-    client.info_cache.set(lf.cache_key("Florence + the Machine"),
-                          {"name": "Florence + the Machine", "listeners": 19_880, "alias_checked": True})
-    assert client.artist_info("Florence + the Machine")["listeners"] == 4_500_000
+    # A stylised match is used for similar artists and tags too, once its info is cached
+    # (plain names don't trigger an info lookup from similar/tags).
+    assert client.similar("half alive") == []
+    assert client.artist_info("half alive")["listeners"] == 1_050_000
+    assert client.similar("half alive") == [("Hozier", 0.7)]  # new key, so not the stale []
+    # Answers checked by the old version get one re-check...
+    client.info_cache.set(lf.cache_key("Sigur Rós"), {"name": "Sigur Rós", "listeners": 50, "alias_checked": True})
+    asked.clear()
+    client.artist_info("Sigur Rós")
+    assert ("artist.search", "sigur ros") in asked
     # ...but only names with punctuation or symbols: plain ones couldn't have gone wrong.
     client.info_cache.set(lf.cache_key("Tiny Band"), {"name": "Tiny Band", "listeners": 50, "alias_checked": True})
     asked.clear()
