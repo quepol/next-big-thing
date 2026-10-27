@@ -17,28 +17,43 @@ NOT_FOUND = 6
 RATE_LIMITED = 29
 
 
-# Typographic quotes ("Arm’s Length") make Last.fm land on a near-empty page, so an
-# established band looks tiny. Look names up with straight quotes.
+# Typographic quotes ("Arm’s Length") and Unicode dashes (setlist.fm's "alt‐J", U+2010)
+# make Last.fm land on a near-empty page, so an established band looks tiny. Look names
+# up with straight quotes and plain hyphens.
 CURLY = str.maketrans({"’": "'", "‘": "'", "“": '"', "”": '"'})
 QUOTES = set("'\"’‘“”")
+DASHES = set("\u2010\u2011\u2012\u2013\u2014\u2015\u2212")
+PLAIN = str.maketrans({**{c: "-" for c in DASHES}, "’": "'", "‘": "'", "“": '"', "”": '"'})
 
 
 def lastfm_name(name: str) -> str:
-    return name.translate(CURLY)
+    return name.translate(PLAIN)
 
 
 def cache_key(name: str) -> str:
-    """normalize_name() drops quotes, so "Arm’s Length" and "Arm's Length" share a key, and
-    answers fetched before the quote fix are cached under it. Names with any quote get
-    their own key (q:…), which refetches just those once; every other entry stays warm."""
+    """normalize_name() drops quotes and dashes, so "Arm’s Length" and "Arm's Length" share
+    a key, and answers fetched before each fix are cached under it. Names with a quote get
+    their own key (q:…), names with a Unicode dash d:…, which refetches just those once;
+    every other entry stays warm."""
     key = normalize_name(name)
-    return f"q:{key}" if QUOTES & set(name) else key
+    if QUOTES & set(name):
+        return f"q:{key}"
+    return f"d:{key}" if DASHES & set(name) else key
 
 
 # Below this many listeners, check whether a stylised spelling ("half•alive") is the
 # real artist; it has to be at least ALIAS_MIN_RATIO times bigger to win.
 ALIAS_CHECK_BELOW = 20_000
 ALIAS_MIN_RATIO = 10
+# Bumped when the check improves, so small answers checked by an older version get one
+# re-check. 2: search with the plain name, and accept a match spelled exactly like ours
+# (Last.fm's own name page for "Florence + the Machine" is the wrong, near-empty one).
+ALIAS_VERSION = 2
+
+
+def _plain(name: str) -> bool:
+    """Only ASCII letters, digits and spaces."""
+    return name.isascii() and name.replace(" ", "").isalnum()
 
 
 class LastFMError(RuntimeError):
@@ -130,20 +145,42 @@ class LastFM:
         """{"name", "listeners", "playcount", "tags"} or None if unknown to Last.fm."""
         key = cache_key(name)
         cached = self.info_cache.get(key)
-        # Small answers cached before the stylised-name check get one re-check.
-        if cached is not None and (not cached or cached.get("alias_checked") or cached["listeners"] >= ALIAS_CHECK_BELOW):
+        # Small answers cached before the current stylised-name check get one re-check.
+        # Version 2 only changed names with punctuation or symbols, so plain ones skip it.
+        if cached is not None and (not cached or cached["listeners"] >= ALIAS_CHECK_BELOW
+                                   or cached.get("alias_checked") == ALIAS_VERSION
+                                   or (cached.get("alias_checked") and _plain(name))):
             return cached or None
         info = self._getinfo(name)
         if not info or info["listeners"] < ALIAS_CHECK_BELOW:
             better = self._stylised_match(name, info["listeners"] if info else 0)
-            info = (self._getinfo(better) or info) if better else info
+            if better:
+                # By ID where Last.fm has one: the name page is what went wrong.
+                found = self._getinfo(better["name"], mbid=better.get("mbid", ""))
+                if found:
+                    info = found
+                    info["via"] = {"mbid": better["mbid"]} if better.get("mbid") else {"artist": found["name"]}
             if info:
-                info["alias_checked"] = True
+                info["alias_checked"] = ALIAS_VERSION
         self.info_cache.set(key, info or {})
         return info or None
 
-    def _getinfo(self, name: str) -> dict:
-        body = self.call("artist.getinfo", artist=lastfm_name(name), autocorrect=1)
+    def _lookup(self, name: str) -> tuple[dict, str]:
+        """Request params for similar/tags, and their cache key. An artist resolved to a
+        different page by the stylised-name check is looked up the same way, under its own key."""
+        key = cache_key(name)
+        # Names with punctuation or symbols are the ones that land on wrong pages, so they
+        # are resolved first. Plain names use whatever is cached: the kids' tag check asks
+        # for tags of every known artist, and a lookup each would add thousands of calls.
+        info = self.artist_info(name) if not _plain(name) else self.info_cache.get(key)
+        via = (info or {}).get("via")
+        if via:
+            return via, f"{key}@{via.get('mbid') or via.get('artist')}"
+        return {"artist": lastfm_name(name)}, key
+
+    def _getinfo(self, name: str, mbid: str = "") -> dict:
+        who = {"mbid": mbid} if mbid else {"artist": lastfm_name(name)}
+        body = self.call("artist.getinfo", **who, autocorrect=1)
         if not body or "artist" not in body:
             return {}
         a = body["artist"]
@@ -159,29 +196,36 @@ class LastFM:
             "url": a.get("url", ""),
         }
 
-    def _stylised_match(self, name: str, listeners: int) -> str | None:
-        """A far bigger artist whose name only differs in punctuation, if there is one.
+    def _stylised_match(self, name: str, listeners: int) -> dict | None:
+        """A far bigger artist whose name only differs in punctuation, if there is one:
+        the search result {"name", "mbid", "listeners"}.
 
         Ticketmaster writes "half alive"; the band is "half•alive" on Last.fm (~1M
         listeners), and the plain spelling lands on a 1,141-listener page, which made an
-        established band look like a next big thing.
+        established band look like a next big thing. "Florence + the Machine" is the same
+        problem with the exact spelling, so a match can be spelled exactly like ours.
+
+        Search is fuzzy, so it gets the plain name ("florence the machine"). It ranks
+        popular artists first, so a match must have the same name, punctuation aside, and
+        10x the listeners: a tiny band must never turn into a big one with a similar name.
         """
-        body = self.call("artist.search", artist=lastfm_name(name), limit=10)
+        body = self.call("artist.search", artist=normalize_name(name), limit=10)
         found = (body or {}).get("results", {}).get("artistmatches", {}).get("artist", [])
         if isinstance(found, dict):
             found = [found]
         want = normalize_name(name)
-        same = [(int(a.get("listeners") or 0), a["name"]) for a in found
-                if normalize_name(a["name"]) == want and a["name"] != name]
-        best = max(same, default=None)
-        return best[1] if best and best[0] >= max(listeners, 1) * ALIAS_MIN_RATIO else None
+        same = [a for a in found if normalize_name(a["name"]) == want]
+        best = max(same, key=lambda a: int(a.get("listeners") or 0), default=None)
+        if best and int(best.get("listeners") or 0) >= max(listeners, 1) * ALIAS_MIN_RATIO:
+            return best
+        return None
 
     def similar(self, name: str) -> list[tuple[str, float]]:
-        key = cache_key(name)
+        who, key = self._lookup(name)
         cached = self.similar_cache.get(key)
         if cached is not None:
             return [tuple(x) for x in cached]
-        body = self.call("artist.getsimilar", artist=lastfm_name(name), autocorrect=1, limit=CONFIG.similar_limit)
+        body = self.call("artist.getsimilar", **who, autocorrect=1, limit=CONFIG.similar_limit)
         items = body.get("similarartists", {}).get("artist", []) if body else []
         if isinstance(items, dict):
             items = [items]
@@ -190,11 +234,11 @@ class LastFM:
         return result
 
     def top_tags(self, name: str) -> dict[str, int]:
-        key = cache_key(name)
+        who, key = self._lookup(name)
         cached = self.tags_cache.get(key)
         if cached is not None:
             return cached
-        body = self.call("artist.gettoptags", artist=lastfm_name(name), autocorrect=1)
+        body = self.call("artist.gettoptags", **who, autocorrect=1)
         items = body.get("toptags", {}).get("tag", []) if body else []
         if isinstance(items, dict):
             items = [items]

@@ -507,11 +507,12 @@ def test_lastfm_lookups_use_straight_quotes_and_a_fresh_cache_key(tmp_path, monk
     monkeypatch.setattr(lf, "DATA_DIR", tmp_path)
     client = lf.LastFM(api_key="x")
     asked = []
-    client.call = lambda method, **p: asked.append(p["artist"]) or None
+    client.call = lambda method, **p: asked.append((method, p["artist"])) or None
     # A wrong answer cached before the fix, under the quote-less key both spellings share.
     client.info_cache.set(lf.normalize_name("Arm’s Length"), {"name": "Arm’s Length", "listeners": 12})
     assert client.artist_info("Arm’s Length") is None  # refetched, not the stale entry
-    assert asked and set(asked) == {"Arm's Length"}  # getinfo (and search) use straight quotes
+    # getinfo uses straight quotes; search gets the plain name.
+    assert asked == [("artist.getinfo", "Arm's Length"), ("artist.search", "arm s length")]
     assert lf.cache_key("Arm’s Length") == lf.cache_key("Arm's Length") == "q:" + lf.normalize_name("Arm's Length")
     assert lf.cache_key("Big Thief") == "big thief"
 
@@ -579,6 +580,50 @@ def test_stylised_names_resolve_to_the_real_artist(tmp_path, monkeypatch):
     # A wrong small answer cached before the check gets re-checked once.
     client.info_cache.set(lf.cache_key("half alive"), {"name": "half alive", "listeners": 1_141})
     assert client.artist_info("half alive")["listeners"] == 1_050_000
+
+
+def test_unicode_dashes_and_plus_resolve_to_the_real_artist(tmp_path, monkeypatch):
+    from nbt import lastfm as lf
+
+    monkeypatch.setattr(lf, "DATA_DIR", tmp_path)
+    client = lf.LastFM(api_key="x")
+    # Last.fm's name pages: "alt‐J" (U+2010) and "Florence + the Machine" are near-empty;
+    # Florence's real page is only reachable by ID.
+    by_name = {"alt-J": 3_100_000, "alt‐J": 6_239, "Florence + the Machine": 19_880,
+               "Lens": 900, "Lenny": 2_000_000}
+    by_mbid = {"flo-mbid": ("Florence + the Machine", 4_500_000)}
+    search = {"florence the machine": [("Florence + the Machine", 4_500_000, "flo-mbid")],
+              "lens": [("Lenny", 2_000_000, "lenny-mbid"), ("Lens", 900, "")]}
+    asked = []
+
+    def call(method, **p):
+        asked.append((method, p.get("mbid") or p.get("artist")))
+        if method == "artist.getinfo":
+            name, n = by_mbid[p["mbid"]] if "mbid" in p else (p["artist"], by_name.get(p["artist"]))
+            return {"artist": {"name": name, "stats": {"listeners": n, "playcount": 1}}} if n else None
+        if method == "artist.search":
+            hits = [{"name": a, "listeners": str(n), "mbid": m} for a, n, m in search.get(p["artist"], [])]
+            return {"results": {"artistmatches": {"artist": hits}}}
+        if method == "artist.getsimilar":
+            return {"similarartists": {"artist": [{"name": "Daughter", "match": "0.8"}]}} if p.get("mbid") == "flo-mbid" else None
+        return None
+
+    client.call = call
+    assert lf.lastfm_name("alt‐J") == "alt-J"
+    assert lf.cache_key("alt‐J") == "d:alt j" != lf.cache_key("alt-J")  # fresh key: old answers were wrong
+    assert client.artist_info("alt‐J")["listeners"] == 3_100_000
+    assert client.artist_info("Florence + the Machine")["listeners"] == 4_500_000  # by ID
+    assert ("artist.search", "florence the machine") in asked  # plain name to search
+    assert client.similar("Florence + the Machine") == [("Daughter", 0.8)]  # similar by ID too
+    assert client.artist_info("Lens")["listeners"] == 900  # a similar, bigger name never wins
+    # Answers checked by the old version get one re-check.
+    client.info_cache.set(lf.cache_key("Florence + the Machine"),
+                          {"name": "Florence + the Machine", "listeners": 19_880, "alias_checked": True})
+    assert client.artist_info("Florence + the Machine")["listeners"] == 4_500_000
+    # ...but only names with punctuation or symbols: plain ones couldn't have gone wrong.
+    client.info_cache.set(lf.cache_key("Tiny Band"), {"name": "Tiny Band", "listeners": 50, "alias_checked": True})
+    asked.clear()
+    assert client.artist_info("Tiny Band")["listeners"] == 50 and asked == []
 
 
 def test_bands_table_lists_travel_seeds_and_dropped_favourites():
