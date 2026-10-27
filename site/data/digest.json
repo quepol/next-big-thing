@@ -1734,7 +1734,7 @@
       "last": "2025-06-18",
       "plays": 270,
       "recent": 5,
-      "seed": 97,
+      "seed": 98,
       "top": 42,
       "travel": [
         "rotation",
@@ -2386,7 +2386,7 @@
       "last": "2025-09-29",
       "plays": 188,
       "recent": 6,
-      "seed": 95,
+      "seed": 96,
       "top": 91,
       "travel": [
         "rotation"
@@ -2556,7 +2556,7 @@
       "last": "2026-06-20",
       "plays": 203,
       "recent": 6,
-      "seed": 94,
+      "seed": 95,
       "top": 103,
       "travel": [
         "rotation",
@@ -4036,7 +4036,7 @@
       "last": "2026-01-21",
       "plays": 29,
       "recent": 14,
-      "seed": 92,
+      "seed": 93,
       "top": null,
       "travel": [
         "heavy"
@@ -4290,7 +4290,7 @@
       "last": "2026-04-24",
       "plays": 56,
       "recent": 9,
-      "seed": 91,
+      "seed": 92,
       "top": null,
       "travel": [
         "heavy"
@@ -4458,7 +4458,7 @@
       "last": "2026-09-23",
       "plays": 35,
       "recent": 14,
-      "seed": 93,
+      "seed": 94,
       "top": null,
       "travel": [
         "heavy"
@@ -4696,7 +4696,7 @@
       "last": "2026-04-04",
       "plays": 115,
       "recent": 8,
-      "seed": 96,
+      "seed": 97,
       "top": null,
       "travel": [
         "heavy"
@@ -4853,6 +4853,19 @@
       "weight": 0.269
     },
     {
+      "artist": "CHVRCHES",
+      "days": 14,
+      "last": "2026-10-26",
+      "plays": 46,
+      "recent": 13,
+      "seed": 91,
+      "top": null,
+      "travel": [
+        "heavy"
+      ],
+      "weight": 0.485
+    },
+    {
       "artist": "Dolly Parton",
       "days": 14,
       "last": "2026-04-15",
@@ -4943,19 +4956,6 @@
       "top": null,
       "travel": [],
       "weight": 0.223
-    },
-    {
-      "artist": "CHVRCHES",
-      "days": 13,
-      "last": "2026-10-25",
-      "plays": 44,
-      "recent": 12,
-      "seed": 98,
-      "top": null,
-      "travel": [
-        "heavy"
-      ],
-      "weight": 0.477
     },
     {
       "artist": "Katy Perry",
@@ -6068,12 +6068,12 @@
       "weight": 0.4
     },
     {
-      "artist": "Water From Your Eyes",
+      "artist": "Honeybear, the Band",
       "days": 2,
-      "last": "2026-04-14",
-      "plays": 2,
+      "last": "2026-10-26",
+      "plays": 7,
       "recent": 2,
-      "seed": 304,
+      "seed": 303,
       "top": null,
       "travel": [
         "live"
@@ -6081,12 +6081,12 @@
       "weight": 0.4
     },
     {
-      "artist": "Honeybear, the Band",
-      "days": 1,
-      "last": "2026-06-11",
-      "plays": 6,
-      "recent": 1,
-      "seed": 303,
+      "artist": "Water From Your Eyes",
+      "days": 2,
+      "last": "2026-04-14",
+      "plays": 2,
+      "recent": 2,
+      "seed": 304,
       "top": null,
       "travel": [
         "live"
@@ -6575,7 +6575,7 @@
           "listeners": 2
         },
         {
-          "affinity": 0.0023,
+          "affinity": 0.0024,
           "artist": "Dulce",
           "listeners": 32535,
           "why": "tags match your taste: indie, chillout"
@@ -6965,7 +6965,7 @@
     {
       "acts": [
         {
-          "affinity": 0.0528,
+          "affinity": 0.0529,
           "artist": "KETTAMA",
           "listeners": 288773,
           "why": "tags match your taste: electronic, house, techno"
@@ -7095,7 +7095,7 @@
     {
       "acts": [
         {
-          "affinity": 0.0505,
+          "affinity": 0.0506,
           "artist": "Classmatic",
           "listeners": 18519,
           "why": "tags match your taste: electronic, techno, house"
@@ -7258,7 +7258,7 @@
     {
       "acts": [
         {
-          "affinity": 0.0528,
+          "affinity": 0.0529,
           "artist": "KETTAMA",
           "listeners": 288773,
           "why": "tags match your taste: electronic, house, techno"
@@ -7770,7 +7770,7 @@
           "why": "similar to This is Lorelei (0.43), Tennis (0.34), Willow (0.35)"
         },
         {
-          "affinity": 0.204,
+          "affinity": 0.2039,
           "artist": "Venus & The Flytraps",
           "listeners": 59696,
           "why": "tags match your taste: indie rock, indie, female vocalists"
@@ -7813,7 +7813,7 @@
     {
       "acts": [
         {
-          "affinity": 0.0608,
+          "affinity": 0.0607,
           "artist": "Owen Riegling",
           "listeners": 34400,
           "why": "tags match your taste: singer-songwriter, country, canadian"
@@ -8555,7 +8555,7 @@
     {
       "acts": [
         {
-          "affinity": 0.0274,
+          "affinity": 0.0275,
           "artist": "Jody Wisternoff",
           "listeners": 153251,
           "why": "tags match your taste: electronic, house, british"
@@ -9470,7 +9470,7 @@
           "why": "tags match your taste: hip-hop, rap, american"
         },
         {
-          "affinity": 0.161,
+          "affinity": 0.1609,
           "artist": "comehelpglo",
           "listeners": 76820,
           "why": "tags match your taste: alternative, hip-hop, rap"
@@ -10029,7 +10029,7 @@
           "why": "tags match your taste: electronic, dance, house"
         },
         {
-          "affinity": 0.0673,
+          "affinity": 0.0674,
           "artist": "Nils Hoffmann",
           "listeners": 164200,
           "why": "tags match your taste: electronic, lo-fi, jazz"
@@ -10101,7 +10101,7 @@
     {
       "acts": [
         {
-          "affinity": 0.0551,
+          "affinity": 0.0552,
           "artist": "Tobiahs",
           "listeners": 140848,
           "why": "tags match your taste: electronic, dance, house"
@@ -10119,7 +10119,7 @@
     {
       "acts": [
         {
-          "affinity": 0.0753,
+          "affinity": 0.0754,
           "artist": "Nostalgix",
           "listeners": 44533,
           "why": "tags match your taste: electronic, folk, dance"
@@ -10356,7 +10356,7 @@
           "why": "tags match your taste: electronic, dance, house"
         },
         {
-          "affinity": 0.0673,
+          "affinity": 0.0674,
           "artist": "Nils Hoffmann",
           "listeners": 164200,
           "why": "tags match your taste: electronic, lo-fi, jazz"
@@ -11343,7 +11343,7 @@
     {
       "acts": [
         {
-          "affinity": 0.0256,
+          "affinity": 0.0257,
           "artist": "Fox Stevenson",
           "listeners": 302593,
           "why": "tags match your taste: electronic, dubstep, british"
@@ -11672,7 +11672,7 @@
     {
       "acts": [
         {
-          "affinity": 0.0218,
+          "affinity": 0.0219,
           "artist": "Anna",
           "listeners": 288273,
           "why": "tags match your taste: electronic, pop, female vocalists"
@@ -12012,7 +12012,7 @@
     {
       "acts": [
         {
-          "affinity": 0.0502,
+          "affinity": 0.0503,
           "artist": "VOLKODER",
           "listeners": 37896,
           "why": "tags match your taste: electronic, house, uk"
@@ -12803,7 +12803,7 @@
     {
       "acts": [
         {
-          "affinity": 0.0272,
+          "affinity": 0.0273,
           "artist": "Carl Cox",
           "listeners": 282814,
           "why": "tags match your taste: electronic, dance, british"
@@ -13699,7 +13699,7 @@
     {
       "acts": [
         {
-          "affinity": 0.0755,
+          "affinity": 0.0756,
           "artist": "Starjunk 95",
           "listeners": 358656,
           "why": "tags match your taste: electronic, house"
@@ -14133,7 +14133,7 @@
     {
       "acts": [
         {
-          "affinity": 0.0549,
+          "affinity": 0.055,
           "artist": "GorillaT",
           "listeners": 13998,
           "why": "tags match your taste: electronic, dubstep, usa"
@@ -14992,7 +14992,7 @@
     {
       "acts": [
         {
-          "affinity": 0.0511,
+          "affinity": 0.0512,
           "artist": "Jamback",
           "listeners": 63667,
           "why": "tags match your taste: electronic, house"
@@ -15299,7 +15299,7 @@
     {
       "acts": [
         {
-          "affinity": 0.0512,
+          "affinity": 0.0513,
           "artist": "Twin Diplomacy",
           "listeners": 77595,
           "why": "tags match your taste: electronic, house, usa"
@@ -15440,7 +15440,7 @@
     {
       "acts": [
         {
-          "affinity": 0.0583,
+          "affinity": 0.0584,
           "artist": "Amtrac",
           "listeners": 228094,
           "why": "tags match your taste: electronic, synthpop, dance"
@@ -15514,7 +15514,7 @@
     {
       "acts": [
         {
-          "affinity": 0.0353,
+          "affinity": 0.0352,
           "artist": "Night Lovell",
           "listeners": 598865,
           "why": "tags match your taste: hip-hop, rap, trap"
@@ -15723,7 +15723,7 @@
     {
       "acts": [
         {
-          "affinity": 0.0143,
+          "affinity": 0.0142,
           "artist": "Evnne",
           "listeners": 98838,
           "why": "tags match your taste: pop"
@@ -16024,7 +16024,7 @@
       }
     }
   ],
-  "generated_at": "2026-10-27T02:47:26+00:00",
+  "generated_at": "2026-10-27T10:40:17+00:00",
   "ledger": [
     {
       "artist": "comehelpglo",
@@ -17653,7 +17653,7 @@
           "only 90,348 listeners on Last.fm",
           "small venue (~1,400 cap.)"
         ],
-        "score": 0.1591,
+        "score": 0.159,
         "tier": "next_big_thing"
       },
       {
@@ -17682,7 +17682,7 @@
           "only 7,651 listeners on Last.fm",
           "you've never been to The Sound Garage"
         ],
-        "score": 0.1251,
+        "score": 0.125,
         "tier": "next_big_thing"
       },
       {
