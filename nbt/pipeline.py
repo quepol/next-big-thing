@@ -87,6 +87,10 @@ def run(log=print) -> dict:
 
     loves = exclusions.load_loves()
     log(f"loves: {len(loves)} artists bypass recency decay")
+    # A misspelt line ("Haley Williams") matches nothing and silently does nothing.
+    unmatched = sorted(n for n in loves if n not in history["artists"])
+    if unmatched:
+        log(f"::warning::loves.txt names not in your history (check the spelling): {', '.join(unmatched)}")
     log("building taste graph")
     taste = Taste(history, lastfm, log=log, excluded=excluded, attended=attended, loves=loves)
     lastfm.save()
