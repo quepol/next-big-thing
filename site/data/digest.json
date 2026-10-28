@@ -6319,127 +6319,6 @@
     {
       "acts": [
         {
-          "affinity": 0.4955,
-          "artist": "Olivia Rodrigo",
-          "listeners": 3391413,
-          "why": "similar to Taylor Swift (0.96), Ariana Grande (0.87), Harry Styles (0.56)"
-        },
-        {
-          "affinity": 0.3568,
-          "artist": "Wolf Alice",
-          "days": 2,
-          "listeners": 1355258,
-          "why": "similar to Hayley Williams (0.60), The National (0.44), Florence + the Machine (0.65)"
-        }
-      ],
-      "id": "tm:1AvZZ_aGkVCvOgJ",
-      "region": "Toronto",
-      "starts_at": "2026-10-27T19:00:00",
-      "url": "https://www.ticketmaster.ca/olivia-rodrigo-the-unraveled-tour-toronto-ontario-10-27-2026/event/1000649D0E060D66",
-      "venue": {
-        "capacity": 19800,
-        "name": "Scotiabank Arena"
-      }
-    },
-    {
-      "acts": [
-        {
-          "affinity": 0.1527,
-          "artist": "Tommy Lefroy",
-          "listeners": 328399,
-          "why": "similar to Tiny Habits (0.51), Rachel Bobbitt (0.25), Maggie Rogers (0.55)"
-        }
-      ],
-      "id": "tm:rZ7HnEZ1AfJ_Pd",
-      "region": "Toronto",
-      "starts_at": "2026-10-27T19:00:00",
-      "url": "https://www.ticketweb.ca/event/tommy-lefroy-sneaky-dees-concert-venue-tickets/14999943",
-      "venue": {
-        "capacity": 300,
-        "name": "Sneaky Dee's Concert Venue"
-      }
-    },
-    {
-      "acts": [
-        {
-          "affinity": 0.016,
-          "artist": "Tyler Braden",
-          "listeners": 94188,
-          "why": "tags match your taste: american, country, usa"
-        },
-        {
-          "affinity": 0.0088,
-          "artist": "Steven Lee Olsen",
-          "listeners": 18209,
-          "why": "tags match your taste: country, country pop, taylor swift"
-        }
-      ],
-      "id": "tm:177Zv0G62rbNJR6",
-      "region": "Toronto",
-      "starts_at": "2026-10-27T19:00:00",
-      "url": "https://www.ticketmaster.ca/tyler-braden-days-of-gold-tour-toronto-ontario-10-27-2026/event/100064F7988E6BC7",
-      "venue": {
-        "capacity": 900,
-        "name": "The Opera House"
-      }
-    },
-    {
-      "acts": [
-        {
-          "affinity": 0.0307,
-          "artist": "horsegiirL",
-          "listeners": 248019,
-          "why": "similar to Charli xcx (0.42)"
-        }
-      ],
-      "id": "tm:1AvZZ_aGkwqfD2H",
-      "region": "Toronto",
-      "starts_at": "2026-10-27T19:00:00",
-      "url": "https://www.ticketmaster.ca/horsegiirl-nature-is-healing-tour-toronto-ontario-10-27-2026/event/1000649C9D53B3FC",
-      "venue": {
-        "capacity": 2500,
-        "name": "History Toronto"
-      }
-    },
-    {
-      "acts": [
-        {
-          "affinity": 0.014,
-          "artist": "Silly Goose",
-          "listeners": 41157,
-          "why": "tags match your taste: nu metal, alternative, rock"
-        }
-      ],
-      "id": "tm:rZ7HnEZ1AfP9jN",
-      "region": "Toronto",
-      "starts_at": "2026-10-27T20:00:00",
-      "url": "https://www.ticketweb.ca/event/silly-goose-with-cheem-the-dance-cave-tickets/14957723",
-      "venue": {
-        "capacity": 400,
-        "name": "The Dance Cave"
-      }
-    },
-    {
-      "acts": [
-        {
-          "affinity": 0.015,
-          "artist": "Rawayana",
-          "listeners": 171835,
-          "why": "tags match your taste: indie, folk, latin"
-        }
-      ],
-      "id": "tm:1AvZZ_kGkRrQVTC",
-      "region": "Toronto",
-      "starts_at": "2026-10-27T20:00:00",
-      "url": "https://www.ticketmaster.ca/rawayana-donde-es-el-after-world-toronto-ontario-10-27-2026/event/1000646BDE6B4FCE",
-      "venue": {
-        "capacity": 8000,
-        "name": "Coca-Cola Coliseum"
-      }
-    },
-    {
-      "acts": [
-        {
           "affinity": 0.0271,
           "artist": "The Story So Far",
           "listeners": 483558,
@@ -7000,10 +6879,10 @@
           "listeners": 148
         }
       ],
-      "id": "tm:177Zv0G65a5FuVi",
+      "id": "tm:1A8Zk4AGkeB7OS6",
       "region": "Toronto",
       "starts_at": "2026-10-30T20:00:00",
-      "url": "https://www.ticketmaster.ca/mali-obomsawin-and-ahmed-moneka-toronto-ontario-10-30-2026/event/100064B24B20DD2C",
+      "url": "https://www.ticketmaster.ca/mali-obomsawin-and-ahmed-moneka-toronto-ontario-10-30-2026/event/10006545BA120CC7",
       "venue": {
         "capacity": 1800,
         "name": "Meridian Arts Centre: George Weston"
@@ -10979,13 +10858,13 @@
       "acts": [
         {
           "affinity": 0.0,
-          "artist": "Ecce Shnak with Special Guests"
+          "artist": "Ecce Shnak with The City Gates"
         }
       ],
       "id": "tm:rZ7HnEZ1AfGyo7",
       "region": "Toronto",
       "starts_at": "2026-11-17T20:00:00",
-      "url": "https://www.ticketweb.ca/event/ecce-shnak-with-special-guests-the-dance-cave-tickets/14339444",
+      "url": "https://www.ticketweb.ca/event/ecce-shnak-with-the-city-the-dance-cave-tickets/14339444",
       "venue": {
         "capacity": 400,
         "name": "The Dance Cave"
@@ -12049,6 +11928,22 @@
       "acts": [
         {
           "affinity": 0.0,
+          "artist": "Bangerz Only: 2010s Dance Party at Sneaky Dee's - Nov 21 2026"
+        }
+      ],
+      "id": "tm:rZ7HnEZ1AKPtPf",
+      "region": "Toronto",
+      "starts_at": "2026-11-21T22:30:00",
+      "url": "https://www.ticketweb.ca/event/bangerz-only-2010s-dance-party-sneaky-dees-concert-venue-tickets/13969954",
+      "venue": {
+        "capacity": 300,
+        "name": "Sneaky Dee's Concert Venue"
+      }
+    },
+    {
+      "acts": [
+        {
+          "affinity": 0.0,
           "artist": "Mississauga Symphony Orchestra"
         }
       ],
@@ -12187,6 +12082,22 @@
       "venue": {
         "capacity": 2765,
         "name": "Massey Hall"
+      }
+    },
+    {
+      "acts": [
+        {
+          "affinity": 0.0,
+          "artist": "XANNYWAXPARTY | Performances by JSKO, Kindapopping, Kennxdy, sm01 + special guests"
+        }
+      ],
+      "id": "tm:rZ7HnEZ1Af87Cf",
+      "region": "Toronto",
+      "starts_at": "2026-11-22T20:00:00",
+      "url": "https://www.ticketweb.ca/event/xannywaxparty-performances-by-jsko-the-dance-cave-tickets/14404394",
+      "venue": {
+        "capacity": 400,
+        "name": "The Dance Cave"
       }
     },
     {
@@ -12469,6 +12380,12 @@
           "artist": "Takuya Nakamura",
           "listeners": 34186,
           "why": "similar to The Cinematic Orchestra (0.23)"
+        },
+        {
+          "affinity": 0.0859,
+          "artist": "Ciel",
+          "listeners": 119164,
+          "why": "tags match your taste: electronic, female vocalists, house"
         }
       ],
       "id": "tm:1A8Zkf0GkdfDseQ",
@@ -13182,7 +13099,23 @@
       "acts": [
         {
           "affinity": 0.0,
-          "artist": "Flesh Prison w/ Pneumonia Breath, Volate, Qwan & Knifetalk"
+          "artist": "Sneaky 2000s Dance Party at Sneaky Dee's - Nov 28 2026"
+        }
+      ],
+      "id": "tm:rZ7HnEZ1AKPYZ0",
+      "region": "Toronto",
+      "starts_at": "2026-11-28T22:30:00",
+      "url": "https://www.ticketweb.ca/event/sneaky-2000s-dance-party-at-sneaky-dees-concert-venue-tickets/13970024",
+      "venue": {
+        "capacity": 300,
+        "name": "Sneaky Dee's Concert Venue"
+      }
+    },
+    {
+      "acts": [
+        {
+          "affinity": 0.0,
+          "artist": "Flesh Prison w/ Pneumonia Breath, Volcate, Qwan & Knifetalk"
         }
       ],
       "id": "tm:rZ7HnEZ1AfGkGV",
@@ -13932,6 +13865,24 @@
       "venue": {
         "capacity": 700,
         "name": "Lee's Palace"
+      }
+    },
+    {
+      "acts": [
+        {
+          "affinity": 0.0005,
+          "artist": "The Halluci Nation",
+          "listeners": 58872,
+          "why": "similar to TOO MANY ZOOZ (0.00), DJ Shub (0.00)"
+        }
+      ],
+      "id": "tm:1A8Zk44GkdcmTnp",
+      "region": "Toronto",
+      "starts_at": "2026-12-05T19:00:00",
+      "url": "https://www.ticketmaster.ca/the-halluci-nation-toronto-ontario-12-05-2026/event/10006555EDBBFA96",
+      "venue": {
+        "capacity": 575,
+        "name": "The Mod Club"
       }
     },
     {
@@ -16024,11 +15975,11 @@
       }
     }
   ],
-  "generated_at": "2026-10-27T10:40:17+00:00",
+  "generated_at": "2026-10-28T11:24:51+00:00",
   "ledger": [
     {
       "artist": "comehelpglo",
-      "checked": "2026-10-27",
+      "checked": "2026-10-28",
       "event": {
         "starts_at": "2026-11-10T19:00:00",
         "url": "https://www.ticketmaster.ca/pouya-the-forever-glades-tour-toronto-ontario-11-10-2026/event/100064C9B042E9DF",
@@ -16047,7 +15998,7 @@
     },
     {
       "artist": "Jackie Evans",
-      "checked": "2026-10-27",
+      "checked": "2026-10-28",
       "event": {
         "starts_at": "2026-11-08T19:00:00",
         "url": "https://www.ticketmaster.ca/jackie-evans-toronto-ontario-11-08-2026/event/100064DEA887A585",
@@ -16066,7 +16017,7 @@
     },
     {
       "artist": "Adam Cohen",
-      "checked": "2026-10-27",
+      "checked": "2026-10-28",
       "event": {
         "starts_at": "2026-11-07T20:00:00",
         "url": "https://www.ticketmaster.ca/everybody-knows-leonard-cohen-10th-anniversary-toronto-ontario-11-07-2026/event/100064E1E1815048",
@@ -16084,7 +16035,7 @@
     },
     {
       "artist": "AHI",
-      "checked": "2026-10-27",
+      "checked": "2026-10-28",
       "event": {
         "starts_at": "2026-10-22T19:00:00",
         "url": "https://www.ticketmaster.ca/allison-russell-with-very-special-guest-toronto-ontario-10-22-2026/event/10006547B0205A80",
@@ -16102,7 +16053,7 @@
     },
     {
       "artist": "Allison Russell",
-      "checked": "2026-10-27",
+      "checked": "2026-10-28",
       "event": {
         "starts_at": "2026-10-22T19:00:00",
         "url": "https://www.ticketmaster.ca/allison-russell-with-very-special-guest-toronto-ontario-10-22-2026/event/10006547B0205A80",
@@ -16121,7 +16072,7 @@
     },
     {
       "artist": "Ally Salort",
-      "checked": "2026-10-27",
+      "checked": "2026-10-28",
       "event": {
         "starts_at": "2026-10-26T19:00:00",
         "url": "https://www.ticketmaster.ca/lexi-jayde-toronto-ontario-10-26-2026/event/1000651B953A7C3B",
@@ -16140,7 +16091,7 @@
     },
     {
       "artist": "ARK IDENTITY",
-      "checked": "2026-10-27",
+      "checked": "2026-10-28",
       "event": {
         "starts_at": "2026-11-12T19:00:00",
         "url": "https://www.ticketweb.ca/event/ark-identity-the-sound-garage-tickets/14367184",
@@ -16158,7 +16109,7 @@
     },
     {
       "artist": "Band Of Silver",
-      "checked": "2026-10-27",
+      "checked": "2026-10-28",
       "event": {
         "starts_at": "2026-10-24T18:30:00",
         "url": "https://www.ticketmaster.ca/judah-the-lion-toronto-ontario-10-24-2026/event/100064CAD5EF8D62",
@@ -16176,7 +16127,7 @@
     },
     {
       "artist": "Caity Gyorgy",
-      "checked": "2026-10-27",
+      "checked": "2026-10-28",
       "event": {
         "starts_at": "2026-12-12T19:30:00",
         "url": "https://www.ticketmaster.ca/swing-into-the-holidays-ft-caity-toronto-ontario-12-12-2026/event/100064B24B04DD11",
@@ -16194,7 +16145,7 @@
     },
     {
       "artist": "Charlotte Cornfield",
-      "checked": "2026-10-27",
+      "checked": "2026-10-28",
       "event": {
         "starts_at": "2026-12-03T20:00:00",
         "url": "https://www.ticketweb.ca/event/charlotte-cornfield-and-friendship-with-lees-palace-tickets/14903453",
@@ -16213,7 +16164,7 @@
     },
     {
       "artist": "Colorblind",
-      "checked": "2026-10-27",
+      "checked": "2026-10-28",
       "event": {
         "starts_at": "2026-11-19T18:00:00",
         "url": "https://www.ticketmaster.ca/catch-your-breath-not-broken-enough-toronto-ontario-11-19-2026/event/100064BAD77E4385",
@@ -16231,7 +16182,7 @@
     },
     {
       "artist": "Devon Gabriella",
-      "checked": "2026-10-27",
+      "checked": "2026-10-28",
       "event": {
         "starts_at": "2026-12-07T18:30:00",
         "url": "https://www.ticketmaster.ca/devon-gabriella-toronto-ontario-12-07-2026/event/100065302201E92B",
@@ -16250,7 +16201,7 @@
     },
     {
       "artist": "Field Guide",
-      "checked": "2026-10-27",
+      "checked": "2026-10-28",
       "event": {
         "starts_at": "2026-11-20T19:00:00",
         "url": "https://www.ticketmaster.ca/boy-golden-good-goddamn-another-tour-toronto-ontario-11-20-2026/event/100065168FDDA025",
@@ -16270,7 +16221,7 @@
     },
     {
       "artist": "Kes",
-      "checked": "2026-10-27",
+      "checked": "2026-10-28",
       "event": {
         "starts_at": "2026-12-18T20:00:00",
         "url": "https://www.ticketmaster.ca/kesmas-with-kes-the-band-toronto-ontario-12-18-2026/event/10006549E31674D3",
@@ -16288,7 +16239,7 @@
     },
     {
       "artist": "Loviet",
-      "checked": "2026-10-27",
+      "checked": "2026-10-28",
       "event": {
         "starts_at": "2026-11-09T19:00:00",
         "url": "https://www.ticketmaster.ca/the-wldlfe-toronto-ontario-11-09-2026/event/100064CF43BE63DC",
@@ -16307,7 +16258,7 @@
     },
     {
       "artist": "Mamas Gun",
-      "checked": "2026-10-27",
+      "checked": "2026-10-28",
       "event": {
         "starts_at": "2026-11-19T20:00:00",
         "url": "https://www.ticketweb.ca/event/mamas-gun-the-garrison-tickets/14816073",
@@ -16325,7 +16276,7 @@
     },
     {
       "artist": "Mr. Fantasy",
-      "checked": "2026-10-27",
+      "checked": "2026-10-28",
       "event": {
         "starts_at": "2026-10-24T19:00:00",
         "url": "https://www.ticketmaster.ca/mr-fantasy-sexy-saturday-nights-tour-toronto-ontario-10-24-2026/event/10006528BD1EB11E",
@@ -16344,7 +16295,7 @@
     },
     {
       "artist": "Sam Quealy",
-      "checked": "2026-10-27",
+      "checked": "2026-10-28",
       "event": {
         "starts_at": "2026-12-04T19:00:00",
         "url": "https://www.ticketmaster.ca/sam-quealy-north-america-tour-toronto-ontario-12-04-2026/event/100064E7D333B647",
@@ -16363,7 +16314,7 @@
     },
     {
       "artist": "The Trews",
-      "checked": "2026-10-27",
+      "checked": "2026-10-28",
       "event": {
         "starts_at": "2026-12-05T18:30:00",
         "url": "https://www.ticketmaster.ca/the-trews-toronto-ontario-12-05-2026/event/1000652BDABA8714",
@@ -16381,7 +16332,7 @@
     },
     {
       "artist": "Venus & The Flytraps",
-      "checked": "2026-10-27",
+      "checked": "2026-10-28",
       "event": {
         "starts_at": "2026-11-03T19:00:00",
         "url": "https://www.ticketmaster.ca/dev-lemons-eat-the-pavement-tour-toronto-ontario-11-03-2026/event/100064E8A8117AF2",
@@ -16400,7 +16351,7 @@
     },
     {
       "artist": "The 4411",
-      "checked": "2026-10-27",
+      "checked": "2026-10-28",
       "event": {
         "starts_at": "2026-11-11T19:00:00",
         "url": "https://www.ticketmaster.ca/west-22nd-places-to-be-toronto-ontario-11-11-2026/event/10006487E12C8BA5",
@@ -16418,7 +16369,7 @@
     },
     {
       "artist": "54-40",
-      "checked": "2026-10-27",
+      "checked": "2026-10-28",
       "event": {
         "starts_at": "2026-11-28T19:00:00",
         "url": "https://www.ticketmaster.ca/5440-toronto-ontario-11-28-2026/event/1000648FE5A3BC17",
@@ -16436,7 +16387,7 @@
     },
     {
       "artist": "Boy Golden",
-      "checked": "2026-10-27",
+      "checked": "2026-10-28",
       "event": {
         "starts_at": "2026-11-20T19:00:00",
         "url": "https://www.ticketmaster.ca/boy-golden-good-goddamn-another-tour-toronto-ontario-11-20-2026/event/100065168FDDA025",
@@ -16455,7 +16406,7 @@
     },
     {
       "artist": "Bradley Hale",
-      "checked": "2026-10-27",
+      "checked": "2026-10-28",
       "event": {
         "starts_at": "2026-11-12T19:00:00",
         "url": "https://www.ticketmaster.ca/sully-burrows-the-leave-you-lonely-toronto-ontario-11-12-2026/event/10006523B5E9A6C3",
@@ -16473,7 +16424,7 @@
     },
     {
       "artist": "Clerel",
-      "checked": "2026-10-27",
+      "checked": "2026-10-28",
       "event": {
         "starts_at": "2026-11-19T20:00:00",
         "url": "https://www.ticketweb.ca/event/mamas-gun-the-garrison-tickets/14816073",
@@ -16490,7 +16441,7 @@
     },
     {
       "artist": "Dominique Way",
-      "checked": "2026-10-27",
+      "checked": "2026-10-28",
       "event": {
         "starts_at": "2026-10-17T19:00:00",
         "url": "https://www.ticketmaster.ca/anna-graves-americas-greatest-burnout-tour-toronto-ontario-10-17-2026/event/100064C9F1B9E130",
@@ -16508,7 +16459,7 @@
     },
     {
       "artist": "Ella Woolsey",
-      "checked": "2026-10-27",
+      "checked": "2026-10-28",
       "event": {
         "starts_at": "2026-10-25T19:00:00",
         "url": "https://www.ticketmaster.ca/the-army-the-navy-the-fake-toronto-ontario-10-25-2026/event/100064CBC7977C87",
@@ -16526,7 +16477,7 @@
     },
     {
       "artist": "Good Lovelies",
-      "checked": "2026-10-27",
+      "checked": "2026-10-28",
       "event": {
         "starts_at": "2026-12-17T20:00:00",
         "url": "https://www.ticketmaster.ca/good-lovelies-holiday-concert-toronto-ontario-12-17-2026/event/100064C2DE8DACA5",
@@ -16543,7 +16494,7 @@
     },
     {
       "artist": "Jonathan Roy",
-      "checked": "2026-10-27",
+      "checked": "2026-10-28",
       "event": {
         "starts_at": "2026-10-16T20:00:00",
         "url": "https://www.ticketmaster.ca/collective-soul-pickering-ontario-10-16-2026/event/100064DE913C6FA0",
@@ -16560,7 +16511,7 @@
     },
     {
       "artist": "Jordan Hart",
-      "checked": "2026-10-27",
+      "checked": "2026-10-28",
       "event": {
         "starts_at": "2026-12-20T19:00:00",
         "url": "https://www.ticketweb.ca/event/jordan-hart-longboat-hall-tickets/14322014",
@@ -16578,7 +16529,7 @@
     },
     {
       "artist": "Julian Taylor",
-      "checked": "2026-10-27",
+      "checked": "2026-10-28",
       "event": {
         "starts_at": "2026-10-16T19:00:00",
         "url": "https://www.ticketmaster.ca/sanctuary-park-tour-celebrating-40-years-toronto-ontario-10-16-2026/event/100064D1D94E7213",
@@ -16596,7 +16547,7 @@
     },
     {
       "artist": "Macy Todd",
-      "checked": "2026-10-27",
+      "checked": "2026-10-28",
       "event": {
         "starts_at": "2026-11-29T19:00:00",
         "url": "https://www.ticketmaster.ca/an-evening-with-sasha-alex-sloan-toronto-ontario-11-29-2026/event/1000654196337229",
@@ -16614,7 +16565,7 @@
     },
     {
       "artist": "Mike D",
-      "checked": "2026-10-27",
+      "checked": "2026-10-28",
       "event": {
         "starts_at": "2026-10-20T19:00:00",
         "url": "https://www.ticketmaster.ca/mike-d-5d-toronto-ontario-10-20-2026/event/100064F08ADE5798",
@@ -16631,7 +16582,7 @@
     },
     {
       "artist": "the olllam",
-      "checked": "2026-10-27",
+      "checked": "2026-10-28",
       "event": {
         "starts_at": "2026-11-12T19:00:00",
         "url": "https://www.ticketmaster.ca/the-olllam-toronto-ontario-11-12-2026/event/1000650506F2B686",
@@ -16649,7 +16600,7 @@
     },
     {
       "artist": "Raine Maida",
-      "checked": "2026-10-27",
+      "checked": "2026-10-28",
       "event": {
         "starts_at": "2026-11-22T18:30:00",
         "url": "https://www.ticketmaster.ca/an-evening-with-raine-maida-chantal-toronto-ontario-11-22-2026/event/100064A1A468B69F",
@@ -16667,7 +16618,7 @@
     },
     {
       "artist": "Rett Madison",
-      "checked": "2026-10-27",
+      "checked": "2026-10-28",
       "event": {
         "starts_at": "2026-10-17T19:00:00",
         "url": "https://www.ticketweb.ca/event/rett-madison-the-sound-garage-tickets/15001533",
@@ -16684,7 +16635,7 @@
     },
     {
       "artist": "Salin",
-      "checked": "2026-10-27",
+      "checked": "2026-10-28",
       "event": {
         "starts_at": "2026-10-19T19:00:00",
         "url": "https://www.ticketweb.ca/event/salin-the-garrison-tickets/15012983",
@@ -16701,7 +16652,7 @@
     },
     {
       "artist": "Telescreens",
-      "checked": "2026-10-27",
+      "checked": "2026-10-28",
       "event": {
         "starts_at": "2026-10-21T19:00:00",
         "url": "https://www.ticketweb.ca/event/telescreens-why-the-the-sound-garage-tickets/14980963",
@@ -16718,7 +16669,7 @@
     },
     {
       "artist": "Twin Fin",
-      "checked": "2026-10-27",
+      "checked": "2026-10-28",
       "event": {
         "starts_at": "2026-10-20T19:00:00",
         "url": "https://www.ticketweb.ca/event/twin-fin-monarch-tavern-tickets/15001983",
@@ -16736,7 +16687,7 @@
     },
     {
       "artist": "The Watchmen",
-      "checked": "2026-10-27",
+      "checked": "2026-10-28",
       "event": {
         "starts_at": "2026-11-21T19:00:00",
         "url": "https://www.ticketmaster.ca/the-watchmen-toronto-ontario-11-21-2026/event/10006489D43D10C3",
@@ -16754,7 +16705,7 @@
     },
     {
       "artist": "Whitmer Thomas",
-      "checked": "2026-10-27",
+      "checked": "2026-10-28",
       "event": {
         "starts_at": "2026-12-08T19:00:00",
         "url": "https://www.ticketweb.ca/event/whitmer-thomas-the-great-hall-tickets/15032263",
@@ -17780,34 +17731,6 @@
         "tier": "would_like"
       },
       {
-        "artist": "Olivia Rodrigo",
-        "event": {
-          "id": "tm:1AvZZ_aGkVCvOgJ",
-          "lineup": [
-            "Olivia Rodrigo",
-            "Wolf Alice"
-          ],
-          "region": "Toronto",
-          "source": "ticketmaster",
-          "starts_at": "2026-10-27T19:00:00",
-          "url": "https://www.ticketmaster.ca/olivia-rodrigo-the-unraveled-tour-toronto-ontario-10-27-2026/event/1000649D0E060D66",
-          "venue": {
-            "capacity": 19800,
-            "city": "Toronto",
-            "lat": 43.6439254,
-            "lon": -79.3783234,
-            "name": "Scotiabank Arena"
-          }
-        },
-        "heard_before": null,
-        "listeners": 3391413,
-        "reasons": [
-          "similar to Taylor Swift (0.96), Ariana Grande (0.87), Harry Styles (0.56)"
-        ],
-        "score": 0.4955,
-        "tier": "would_like"
-      },
-      {
         "artist": "Chantal Kreviazuk",
         "event": {
           "id": "tm:177Zv0G61k0Q5QL",
@@ -17955,38 +17878,6 @@
         "tier": "would_like"
       },
       {
-        "artist": "Wolf Alice",
-        "event": {
-          "id": "tm:1AvZZ_aGkVCvOgJ",
-          "lineup": [
-            "Olivia Rodrigo",
-            "Wolf Alice"
-          ],
-          "region": "Toronto",
-          "source": "ticketmaster",
-          "starts_at": "2026-10-27T19:00:00",
-          "url": "https://www.ticketmaster.ca/olivia-rodrigo-the-unraveled-tour-toronto-ontario-10-27-2026/event/1000649D0E060D66",
-          "venue": {
-            "capacity": 19800,
-            "city": "Toronto",
-            "lat": 43.6439254,
-            "lon": -79.3783234,
-            "name": "Scotiabank Arena"
-          }
-        },
-        "heard_before": {
-          "days": 2,
-          "first": "2022-05-30"
-        },
-        "listeners": 1355258,
-        "reasons": [
-          "similar to Hayley Williams (0.60), The National (0.44), Florence + the Machine (0.65)",
-          "you played them on 2 days back in 2022"
-        ],
-        "score": 0.3568,
-        "tier": "would_like"
-      },
-      {
         "artist": "Palace",
         "event": {
           "id": "tm:16vZZ_ak8G7y9JW",
@@ -18017,9 +17908,9 @@
     ]
   },
   "stats": {
-    "events": 590,
+    "events": 589,
     "known_artists": 1973,
-    "snapshot_days": 12
+    "snapshot_days": 13
   },
   "user": "quepol"
 }
