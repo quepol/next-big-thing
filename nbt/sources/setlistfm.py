@@ -79,6 +79,16 @@ class SetlistFM:
             result[normalize_name(name)] = name
         return result
 
+    def attended_seen(self, user: str = CONFIG.setlistfm_user) -> dict[str, tuple[int, int]]:
+        """Normalized key -> (shows seen, last year seen), for the seen-live seed floor."""
+        seen: dict[str, tuple[int, int]] = {}
+        for s in self.attended(user):
+            key = normalize_name(s["artist"]["name"])
+            year = int(s["eventDate"][-4:])  # DD-MM-YYYY
+            shows, last = seen.get(key, (0, 0))
+            seen[key] = (shows + 1, max(last, year))
+        return seen
+
     def attended_venue_names(self, user: str = CONFIG.setlistfm_user) -> set[str]:
         """Lowercased venue names — used to detect when a show is at a new-to-you venue."""
         return {s["venue"]["name"].lower() for s in self.attended(user)}

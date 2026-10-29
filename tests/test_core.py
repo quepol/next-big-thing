@@ -437,6 +437,29 @@ def test_attended_artists_do_not_override_known_weight():
     assert taste_no_att.weights.get("big thief") == taste_with_att.weights.get("big thief")
 
 
+def test_seen_live_is_a_floor_that_fades():
+    """Seen live is a floor on seed weight: playing a band a little never lowers it."""
+    h = hist.empty_history()
+    plays = [{"artist": "Big Thief", "uts": uts(2026, 1, 1 + i)} for i in range(30)]  # the max-depth seed
+    plays += [{"artist": "Played A Bit", "uts": uts(2014, 1, 1 + i, h=21)} for i in range(4)]
+    hist.ingest(h, sorted(plays, key=lambda p: p["uts"]))
+    attended = {"played a bit": "Played A Bit", "never played": "Never Played",
+                "old one off": "Old One Off", "old repeat": "Old Repeat", "big thief": "Big Thief"}
+    seen = {"played a bit": (1, 2025), "never played": (1, 2024), "old one off": (1, 2008),
+            "old repeat": (2, 2009), "big thief": (1, 2010)}
+    t = Taste(h, FakeLastFM(), log=lambda *_: None, loves=set(), attended=attended,
+              attended_seen=seen, _today=date(2026, 10, 29))
+    loved = Taste(h, FakeLastFM(), log=lambda *_: None, loves={"old one off"}, attended=attended,
+                  attended_seen=seen, _today=date(2026, 10, 29))
+    assert loved.weights["old one off"] == 0.4  # loves.txt keeps an old one-off at full strength
+    w = t.weights
+    assert w["played a bit"] == w["never played"] == 0.4  # recent show: the floor, played or not
+    assert w["old one off"] == 0.25  # one show before the window fades
+    assert w["old repeat"] == 0.4  # seen twice: still strong
+    assert w["big thief"] == 1.0  # a heavier listening weight is kept
+    assert set(attended) <= set(t.seeds)  # everyone seen live is a seed
+
+
 def test_venue_novelty_reason_added_for_new_venue():
     h = make_history()
     lfm = FakeLastFM()

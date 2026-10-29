@@ -23,9 +23,13 @@ TAG_ONLY_CAP = 0.6
 # bounded and discriminating. Summing every link saturated near 1.0 for popular "hub"
 # artists that appear in many seeds' similar lists (history check #1).
 LINK_WEIGHTS = (1.0, 0.5, 0.25)
-# Seed weight for live-attended artists not already in known history. Equivalent to
-# a moderate but not dominant habit — less than someone played 100+ days, but real.
+# Seen live (setlist.fm) is a floor on an artist's seed weight, whatever they've played,
+# and every artist seen live is a seed. It fades like listening does: a show in the
+# recency window, or seeing them twice or more, is worth real rotation (about seed #125,
+# like Hozier); one show before that is worth a faded favourite, just above the seed cut,
+# unless they're in loves.txt.
 ATTENDED_SEED_WEIGHT = 0.4
+ATTENDED_OLD_SEED_WEIGHT = 0.25
 # Recency: seed weight is scaled by how much you've listened in the last RECENCY_YEARS.
 # At RECENCY_SCALE recent days, full weight. At 0 recent days, RECENCY_FLOOR weight.
 # Artists in loves.txt bypass recency entirely.
@@ -53,6 +57,7 @@ def depth(row: dict) -> float:
 class Taste:
     def __init__(self, history: dict, lastfm, *, log=print, excluded: set[str] | None = None,
                  attended: dict[str, str] | None = None, loves: set[str] | None = None,
+                 attended_seen: dict[str, tuple[int, int]] | None = None,
                  _today: date | None = None):
         self.lastfm = lastfm
         self.excluded = exclusions.load() if excluded is None else excluded
@@ -89,14 +94,23 @@ class Taste:
         top = ranked[: CONFIG.taste_seeds]
         self.seeds = [k for k, _ in top]
 
-        # Inject live-attended artists as additional seeds. These are uncontaminated by
-        # kids' scrobbles. Artists already in known keep their existing seed weight.
+        # Artists seen live are seeds, uncontaminated by kids' scrobbles, at their listening
+        # weight or the seen-live floor, whichever is higher. Seeing a band shouldn't count
+        # for less because you also played them a little. attended_seen: key -> (shows,
+        # last year seen); without it, the recent floor.
         if attended:
+            seen = attended_seen or {}
             for key, name in attended.items():
-                if key not in self.known and key not in self.excluded:
+                if key in self.excluded:
+                    continue
+                shows, last_year = seen.get(key, (1, today.year))
+                strong = shows >= 2 or last_year >= cutoff_year or key in loves
+                floor = ATTENDED_SEED_WEIGHT if strong else ATTENDED_OLD_SEED_WEIGHT
+                if key not in self.known:
                     # Synthetic known entry so seed lookups (self.known[seed]["name"]) work.
                     self.known[key] = {"name": name, "days": 0, "plays": 0, "first": "", "last": ""}
-                    self.weights[key] = ATTENDED_SEED_WEIGHT
+                self.weights[key] = max(self.weights.get(key, 0.0), floor)
+                if key not in self.seeds:
                     self.seeds.append(key)
 
         self.forward: dict[str, dict[str, float]] = defaultdict(dict)  # candidate -> seed -> match

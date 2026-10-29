@@ -50,7 +50,7 @@ Other product decisions:
 
 ## Taste rules (from the history checks; detail in `docs/history-checks.md`)
 
-- Seeds: known artists weighted by log of listening depth, √(distinct days × plays), times recency, with `data/loves.txt` loves first. Depth ranks an artist played album-deep (The Civil Wars, 24 days, 110 plays) above one song on shuffle (Gary Jules, 26 days, 26 plays). Old favourites with no recent plays can fall out of the 300 seeds (Joshua Radin, Hunter Parrish); add any that still matter to `loves.txt`, which skips recency. setlist.fm-attended artists not already known are added as seeds at weight 0.4.
+- Seeds: known artists weighted by log of listening depth, √(distinct days × plays), times recency, with `data/loves.txt` loves first. Depth ranks an artist played album-deep (The Civil Wars, 24 days, 110 plays) above one song on shuffle (Gary Jules, 26 days, 26 plays). Old favourites with no recent plays can fall out of the 300 seeds (Joshua Radin, Hunter Parrish); add any that still matter to `loves.txt`, which skips recency. **Seen live (setlist.fm) is a floor:** every artist seen live is a seed, at its listening weight or the floor, whichever is higher. The floor is 0.40 (about seed #125) if seen since 2023, seen 2+ times, or in `loves.txt`, and 0.25 (just above the seed cut) for one show before that (`ATTENDED_SEED_WEIGHT`, `ATTENDED_OLD_SEED_WEIGHT` in `nbt/taste.py`, since 2026-10-29). Before, a band seen live and played on 3+ days got no credit for the show, so it could rank below one never played.
 - Affinity comes from three sources: forward (the candidate is in a seed's similar-artist list), reverse (a known artist is in the candidate's list), and tags (cosine similarity to the user's tag profile, capped at 0.6, as the fallback for tiny artists).
 - "Heard once" artists (1–2 days) count as unknown for next big thing; the pick says "you played them on 1 day back in 2019".
 - **Kids' exclusion is automatic:** `exclusions.effective()` drops known artists with kids' or kid-franchise tags (ULTRAKILL, Deltarune, FNAF, Roblox, Vocaloid…). `data/exclude.txt` handles what tags miss; a `+` line keeps an artist. Orchestral game scores are the user's own (`+ Ludvig Forssell`, `+ Jamie Christopherson`). Generic game tags are flagged for review only.
@@ -77,7 +77,7 @@ Other product decisions:
   - `foot.js`: the shared footer on every page (Picks/Backstage links, Refresh and auto-refresh, theme switch).
   - D3 7.9.0 is self-hosted in `site/vendor/`. Design detail is in `docs/design.md`.
 - `research/`: one-off setlist.fm studies, each run by its own workflow on pushes to the dev branch. See `docs/research.md`.
-- Tests: `python -m pytest -q`; 40 pass.
+- Tests: `python -m pytest -q`; 41 pass.
 
 ## Gotchas that have bitten us
 

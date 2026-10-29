@@ -69,10 +69,12 @@ def run(log=print) -> dict:
     # and are injected as taste seeds so their neighbours surface as recommendations.
     slm = SetlistFM()
     attended: dict[str, str] = {}
+    attended_seen: dict[str, tuple[int, int]] = {}
     attended_venues: set[str] = set()
     if CONFIG.setlistfm_api_key:
         try:
             attended = slm.attended_artists()
+            attended_seen = slm.attended_seen()
             attended_venues = slm.attended_venue_names()
             slm.save()
             log(f"setlist.fm: {len(attended)} attended artists, {len(attended_venues)} venues")
@@ -92,7 +94,8 @@ def run(log=print) -> dict:
     if unmatched:
         log(f"::warning::loves.txt names not in your history (check the spelling): {', '.join(unmatched)}")
     log("building taste graph")
-    taste = Taste(history, lastfm, log=log, excluded=excluded, attended=attended, loves=loves)
+    taste = Taste(history, lastfm, log=log, excluded=excluded, attended=attended, loves=loves,
+                  attended_seen=attended_seen)
     lastfm.save()
 
     tm = Ticketmaster()

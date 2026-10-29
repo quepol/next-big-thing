@@ -19,7 +19,7 @@ The `nbt/sources/ticketmaster.py` module includes a 50-venue capacity lookup tab
 `nbt/sources/setlistfm.py` fetches all attended setlists (111 total, 6 pages) for user `quepol`. 7-day cache; 1s between pages; 3× retry on 429s.
 
 Three uses:
-1. **Attended artists as seeds** — 11 artists seen live but with <3 scrobble-days (Billy Corgan, Iron Maiden, PJ Harvey, John Cameron Mitchell, etc.) are injected into the taste graph at seed weight 0.4. Uncontaminated by kids' listening.
+1. **Attended artists as seeds** — 11 artists seen live but with <3 scrobble-days (Billy Corgan, Iron Maiden, PJ Harvey, John Cameron Mitchell, etc.) were injected into the taste graph at seed weight 0.4. Since 2026-10-29 seen live is a floor for every attended artist instead (0.40 if recent, repeated or loved, 0.25 for one old show); see CLAUDE.md, Taste rules.
 2. **Attended artists as loved** — merged into the `loved` set, so they trigger out-of-town alerts (Hamilton, Buffalo, Orillia, Kitchener, Guelph, London) and bill_bonus. Since 2026-10-26 `loved` blends recency: the top 200 by days played if still played since 2023, plus 8+ days since 2023, plus loves and every attended artist (attended artists need no play days). See CLAUDE.md, Product.
 3. **Venue novelty** — picks at venues the user has never attended get a "you've never been to X" reason. Matching is fuzzy: TM adds "The " prefixes and city suffixes ("The Danforth Music Hall", "History Toronto"); setlist.fm uses shorter names ("Danforth Music Hall", "History"). The `_venue_attended()` helper in `scoring.py` handles this with substring containment on the core name.
 
