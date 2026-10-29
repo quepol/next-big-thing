@@ -51,6 +51,7 @@ CircusP						# vocaloid
 Flavor Foley					# vocaloid
 Heaven Pierce Her				# ULTRAKILL
 Powerglove						# metal covers of game music (not orchestral)
+BoyWithUke
 The Chalkeaters					# game parody songs
 Longestsoloever					# game song covers
 Jake Daniels
