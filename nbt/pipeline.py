@@ -63,6 +63,8 @@ def run(log=print) -> dict:
     history = hist.sync(lastfm, log=log)
     excluded, auto = exclusions.effective(history, lastfm, CONFIG.known_min_days)
     log(f"excluded: {len(excluded)} artists ({len(auto)} automatically by kids' tags)")
+    for key, tags in sorted(auto.items()):
+        log(f"  auto-excluded: {history['artists'][key]['name']} ({', '.join(tags)})")
     travel = hist.travel_reasons(history, excluded=excluded)
 
     # setlist.fm: attended artists are worth the trip (can't be polluted by kids' scrobbles)

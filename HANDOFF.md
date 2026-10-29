@@ -22,7 +22,7 @@ Already decided, don't re-ask:
 
 ## Check next session
 
-1. **Which artist did the kids' tag filter exclude?** Since Oct 21 the run logs "51 excluded (1 automatically)", where it used to log 0. It's probably one of the four whose keeps were removed. Tell the user which one; it's their call, not a surprise.
+1. **Which artist did the kids' tag filter exclude?** Since Oct 21 one artist is excluded automatically. Since Oct 29 the run log names it ("auto-excluded: …"). Tell the user which one; it's their call, not a surprise.
 2. **Ask the user how these feel after a week of use:**
    - the 1–10 ceilings (next big thing 10 = raw 0.50; Bands you know 10 = 50 days)
    - Strong-from-bonuses on Your rooms (TALK: a known band with little taste fit)

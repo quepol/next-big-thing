@@ -52,6 +52,29 @@ Flavor Foley					# vocaloid
 Heaven Pierce Her				# ULTRAKILL
 Powerglove						# metal covers of game music (not orchestral)
 BoyWithUke
+
+# Kids: YouTube, game and fandom songs (confirmed 2026-10-29)
+The Living Tombstone
+Black Gryph0n
+SMG4
+Gooseworx
+Gamingly
+Shavs Media Music
+justan oval
+Bad Lip Reading
+Ethan Bortnick
+The Gregory Brothers
+Will Wood and the Tapeworms
+Harry Callaghan
+Shirobon
+AZALI
+redseas07
+[[LUCA]]
+Aguamenti
+Shadrow
+NateWantsToBattle
+Caleb Hyles
+LilDeuceDeuce
 The Chalkeaters					# game parody songs
 Longestsoloever					# game song covers
 Jake Daniels
@@ -145,6 +168,148 @@ Sleeping Voyage
 Spa Relaxation & Spa
 White Noise Sleeping Aid
 exoa
+
+# A sleep playlist: started the week of 2022-10-25, played on and off until 2025
+A Dreaming Machine
+A.I.C 83
+Aileron
+All Night Chill Makers
+Ambi Val
+Ardeon
+Aska Mill
+Audio signaal
+AuDIOSE
+Aum Balti
+BCCF
+Blazerod
+Brain Men
+Chen Pa
+Citys Of Collides
+Crafting Audio
+Crossing Sounx
+Crystal Slowdown
+Day Nappers
+Deep Horizon Waves
+Doctor Sleep
+Dormant Clouds
+Dozy FX
+Dream Fuzz
+Dream Storms
+Dreaq Lost
+Ecstatix
+ENHANCED AUDIO
+Equantos
+Evomin
+exodar
+Fizzonaut
+Fluffy Duffy
+Freq Molecule
+FX Soundtrap
+GLXO
+Granular
+Heavenly Fluff
+High Res Lo Fi
+Holistik
+hovar
+Hybrid Treasure
+Hypnotic Frequencies
+Hz Catchers
+Indika
+Jaded Birds
+Jim Efforts
+Karmatico
+Kilo Herz
+Klangspiel
+Leanna Woo
+Libronics
+Likko Sol
+Lilly Almberg
+Limone M
+Linus Xio
+Magia Blanca
+Mentatranque
+Misa Bee
+Molec
+Molecualar Binary
+Natura Ferox
+Natural Sample Makers
+Natural Sound Makers
+night time sounds
+nite sky
+No Shapes Island
+Noyze Freq
+Nylana
+Octobas
+Ozeanus
+Panoramia
+Parcel
+Passeggiate Al Chiaro
+Peaceful Me
+Reality Sound
+Recordings From Earth
+Rocket FX
+Ruido Blanco Tranquilo
+Sampling Specialists
+Skiez
+Sky Travis
+Somnography
+Somnolence
+Sonhos De Aviao
+Soundstars
+State of Waves
+Static Harmony
+StyccO
+Synthetic Architect
+Tenuous
+The Clear Mind
+The Mindful
+The Noisy Outdoors
+Trap Of Sounds
+Trapture
+TX Phoenix
+universal waves
+Universe Collectors
+Valdervande
+Vectorix
+Vizzionz
+Water Science
+Wax Walls
+Worry Less
+X.L.T
+Xella Machina
+Xiskko
+XY Clouds
+XYK east
+Year of the Deer
+Zendium
+Zero Oto
+멀리 이동하려면
+
+# A lofi study playlist from March 2022 (Atoms for Peace, also first played then, is real)
+Analog Sunset
+Bogomolove
+Boztown
+c e c e l i e
+Corduroy Egg
+Elffire
+Franz
+Grmmr.126
+Guustavv
+Lasya
+Los Bosques
+Made in M
+No Spirit
+Ozoyo
+PANTōNE VU
+Purrple Cat
+Raouf Beats
+Ruth de las Plantas
+Sam Cross
+Seaspray
+Strehlow
+sōne
+Uevo
+UKDD
 
 # Confirmed as the user's own: never excluded, never re-flagged
 + Ludvig Forssell				# Death Stranding: orchestral, the user's
