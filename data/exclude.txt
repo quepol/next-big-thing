@@ -54,6 +54,8 @@ Powerglove						# metal covers of game music (not orchestral)
 The Chalkeaters					# game parody songs
 Longestsoloever					# game song covers
 Jake Daniels
+TOO MANY ZOOZ
+OR3O
 Natori
 King Gnu
 Kenshi Yonezu
@@ -141,6 +143,7 @@ Sleeping Ocean
 Sleeping Voyage
 Spa Relaxation & Spa
 White Noise Sleeping Aid
+exoa
 
 # Confirmed as the user's own: never excluded, never re-flagged
 + Ludvig Forssell				# Death Stranding: orchestral, the user's
