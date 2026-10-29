@@ -14,6 +14,7 @@ Alan Menken						# Disney scores
 Alan Menken (Children's)			# Disney
 Elizabeth Mitchell (Children's)
 Elizabeth Mitchell
+Sharon, Lois & Bram
 Tigger
 Dan Zanes & Friends
 Sweet Little Band
@@ -32,8 +33,13 @@ Neal Hefti						# Batman theme song
 Various Musique					# Spider-Man theme song
 Riders in the Sky				# Toy Story
 Parry Gripp						# kids' YouTube songs
+Noam Kaniel
+Power Rangers [feat. Noam Kaniel]
+Pirate Cast
+Greg Whipple, Chris Parnell, Max Charles
+Dora the Explorer
 
-# Kids: YouTube game-music creators
+# Kids: YouTube & game-music creators
 Kyle Allen Music
 Tryhardninja
 Horror Skunx
@@ -43,6 +49,7 @@ NoLongerNull
 Jaze Cinema
 jacksepticeye
 DHeusta
+DAGames
 CG5
 Jakeneutron					# FNF
 Mike Geno					# FNF
@@ -52,6 +59,9 @@ Flavor Foley					# vocaloid
 Heaven Pierce Her				# ULTRAKILL
 Powerglove						# metal covers of game music (not orchestral)
 BoyWithUke
+Jon Cozart
+Rockit Gaming
+Random Encounters
 
 # Kids: YouTube, game and fandom songs (confirmed 2026-10-29)
 The Living Tombstone
@@ -80,6 +90,7 @@ Longestsoloever					# game song covers
 Jake Daniels
 TOO MANY ZOOZ
 OR3O
+Neoni
 Natori
 King Gnu
 Kenshi Yonezu
