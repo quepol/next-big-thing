@@ -29,7 +29,7 @@ Already decided, don't re-ask:
 - **Known = 3+ days played, everywhere.** 1–2 days counts as unknown on every tab; the Your rooms "Heard before" bonus is gone. A band seen live but played on fewer than 3 days counts for nothing.
 - "Similar to" lists its three bands by similarity, highest first. That stays even if scores are ever hidden.
 - Keep the routes that bring in Doja Cat and Little River Band.
-- Don't add old favourites (Joshua Radin, Hunter Parrish) to `loves.txt`. Leave out the keeps for Hunter Parrish, Julie Andrews, Selena Gomez and Central Park Cast. The kids' tag filter excludes Selena Gomez ("disney"), and the user knows.
+- Don't add old favourites (Joshua Radin, Hunter Parrish) or Florence + the Machine to `loves.txt`. Leave out the keeps for Hunter Parrish, Julie Andrews, Selena Gomez and Central Park Cast. The kids' tag filter excludes Selena Gomez ("disney"), and the user knows.
 - The raw score stays off the cards; the 1–10 number is the sanity check.
 
 ## Check next session
@@ -37,7 +37,7 @@ Already decided, don't re-ask:
 1. **Next big thing count.** Expect about 4–8 picks a day. Zero, or back to 15, means something broke.
 2. **Run time.** The first runs after the cron move should land around 6am Toronto. The evening before means GitHub's delay shrank; 8am or later means it grew again.
 3. **Kids and white noise.** The user keeps finding more and edits `exclude.txt` directly. If a new kids' or sleep-playlist name turns up in the picks or the seeds, flag it. Sleep-playlist names look like 2022 first plays, ~1 play a day, generic ambient names.
-4. **Ask the user, if it hasn't come up:** do the 1–10 ceilings feel right (next big thing 10 = raw 0.50; Bands you know 10 = 50 days)? Should Florence + the Machine go in `loves.txt` (seed weight 0.47 on 6 recent days)?
+4. **1–10 ceilings:** no decision needed from the user; bring numbers to #11. Watch for Bands you know saturating at 10 (anything over 50 days), and for velocity pushing next big thing past 10.
 
 ## Dates to watch
 
