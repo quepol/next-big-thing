@@ -382,7 +382,8 @@ function renderRoomChips() {
   sel.setAttribute("aria-label", "Another room");
   sel.append(new Option("Another room…", ""));
   sel.append(new Option(`All rooms (${[...rooms.byRoom.keys()].reduce((n, k) => n + size(k), 0)})`, EVERY));
-  [...rooms.byRoom.entries()].filter(([k]) => !rooms.followed.includes(k))
+  // "Venue TBA" is Ticketmaster's placeholder, not a room: its shows still count in All rooms.
+  [...rooms.byRoom.entries()].filter(([k]) => !rooms.followed.includes(k) && !/^venue tba\b/.test(k))
     .sort((a, b) => a[1].name.localeCompare(b[1].name))
     .forEach(([k, r]) => sel.append(new Option(`${r.name} (${r.rows.length})`, k)));
   const quiet = [...rooms.names].filter(([k]) => !rooms.byRoom.has(k) && !rooms.followed.includes(k))
