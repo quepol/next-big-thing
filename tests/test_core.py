@@ -226,14 +226,16 @@ def test_loved_blends_rotation_heavy_rotation_and_loves():
     assert "old favourite" in hist.loved(h, top_n=2, excluded=set(), loves={"Old Favourite"}, today=today)
 
 
-def test_out_of_town_attended_artist_needs_no_play_days():
+def test_out_of_town_loves_artist_needs_no_play_days():
     h = make_history()
     lfm = FakeLastFM()
     taste = Taste(h, lfm, log=lambda *_: None, loves=_TEST_LOVES)
     picks = score_events([ev(["Seen Once Live", "Tiny Newcomer"], region="Buffalo")], h,
                          {"seen once live"}, taste.affinity, lfm.artist_info, velocity=lambda k, n: None,
                          regions={"Buffalo": "loved"}, excluded=set())
-    assert [(p.artist, p.tier, p.reasons) for p in picks] == [("Seen Once Live", "know", ["you've seen them live"])]
+    # loved holds a loves.txt artist played on too few days to be known (seen-live-only
+    # artists no longer reach loved: the pipeline drops ones you never followed up on).
+    assert [(p.artist, p.tier, p.reasons) for p in picks] == [("Seen Once Live", "know", ["one of your favourites"])]
 
 
 def test_dedupe_keeps_earliest_and_counts_dates():
@@ -409,8 +411,8 @@ def test_effective_exclusions_auto_exclude_kids_tags_but_honour_keeps(tmp_path, 
 # setlist.fm integration
 # ---------------------------------------------------------------------------
 
-def test_attended_artists_boost_taste_seeds():
-    """An attended artist not in known history is injected as a seed."""
+def test_attended_artists_never_played_are_not_seeds_unless_loved():
+    """Seen live but never followed up on: no influence, unless it's in loves.txt."""
     h = make_history()
     lfm = FakeLastFM()
     # "Live Only Band" was never scrobbled but seen live; assume it's similar to Tiny Newcomer
@@ -421,9 +423,11 @@ def test_attended_artists_boost_taste_seeds():
         }
 
     taste = Taste(h, LiveLastFM(), log=lambda *_: None, attended={"live only band": "Live Only Band"})
-    assert "live only band" in taste.seeds
-    # Tiny Newcomer should have affinity via the attended seed
-    aff, reasons = taste.affinity("Tiny Newcomer")
+    assert "live only band" not in taste.seeds
+    loved = Taste(h, LiveLastFM(), log=lambda *_: None, attended={"live only band": "Live Only Band"},
+                  loves={"live only band"})
+    assert "live only band" in loved.seeds
+    aff, _ = loved.affinity("Tiny Newcomer")  # its neighbours now count
     assert aff > 0
 
 
@@ -442,6 +446,8 @@ def test_seen_live_is_a_floor_that_fades():
     h = hist.empty_history()
     plays = [{"artist": "Big Thief", "uts": uts(2026, 1, 1 + i)} for i in range(30)]  # the max-depth seed
     plays += [{"artist": "Played A Bit", "uts": uts(2014, 1, 1 + i, h=21)} for i in range(4)]
+    plays += [{"artist": "Old One Off", "uts": uts(2012, 1, 1 + i, h=22)} for i in range(3)]
+    plays += [{"artist": "Old Repeat", "uts": uts(2012, 2, 1 + i, h=22)} for i in range(3)]
     hist.ingest(h, sorted(plays, key=lambda p: p["uts"]))
     attended = {"played a bit": "Played A Bit", "never played": "Never Played",
                 "old one off": "Old One Off", "old repeat": "Old Repeat", "big thief": "Big Thief"}
@@ -451,13 +457,14 @@ def test_seen_live_is_a_floor_that_fades():
               attended_seen=seen, _today=date(2026, 10, 29))
     loved = Taste(h, FakeLastFM(), log=lambda *_: None, loves={"old one off"}, attended=attended,
                   attended_seen=seen, _today=date(2026, 10, 29))
-    assert loved.weights["old one off"] == 0.4  # loves.txt keeps an old one-off at full strength
+    assert loved.weights["old one off"] >= 0.4  # loves.txt keeps an old one-off at full strength
     w = t.weights
-    assert w["played a bit"] == w["never played"] == 0.4  # recent show: the floor, played or not
+    assert w["played a bit"] == 0.4  # recent show: the floor
+    assert "never played" not in t.seeds  # seen live but never followed up on: no influence
     assert w["old one off"] == 0.25  # one show before the window fades
     assert w["old repeat"] == 0.4  # seen twice: still strong
     assert w["big thief"] == 1.0  # a heavier listening weight is kept
-    assert set(attended) <= set(t.seeds)  # everyone seen live is a seed
+    assert set(attended) - {"never played"} <= set(t.seeds)
 
 
 def test_venue_novelty_reason_added_for_new_venue():

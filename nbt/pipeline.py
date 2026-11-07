@@ -66,9 +66,12 @@ def run(log=print) -> dict:
     for key, tags in sorted(auto.items()):
         log(f"  auto-excluded: {history['artists'][key]['name']} ({', '.join(tags)})")
     travel = hist.travel_reasons(history, excluded=excluded)
+    loves = exclusions.load_loves()
 
-    # setlist.fm: attended artists are worth the trip (can't be polluted by kids' scrobbles)
-    # and are injected as taste seeds so their neighbours surface as recommendations.
+    # setlist.fm: artists seen live are worth the trip (can't be polluted by kids' scrobbles)
+    # and get a seed-weight floor, so their neighbours surface as recommendations. Only
+    # those you followed up on (known: 3+ days played) or put in loves.txt: an opener or a
+    # festival set you never went back to says nothing about your taste.
     slm = SetlistFM()
     attended: dict[str, str] = {}
     attended_seen: dict[str, tuple[int, int]] = {}
@@ -79,8 +82,11 @@ def run(log=print) -> dict:
             attended_seen = slm.attended_seen()
             attended_venues = slm.attended_venue_names()
             slm.save()
-            log(f"setlist.fm: {len(attended)} attended artists, {len(attended_venues)} venues")
-            # Attended artists are worth the trip, regardless of scrobble count.
+            known = hist.known(history, excluded=excluded)
+            seen_all = len(attended)
+            attended = {k: v for k, v in attended.items() if k in known or k in loves}
+            log(f"setlist.fm: {seen_all} attended artists ({len(attended)} you also play), "
+                f"{len(attended_venues)} venues")
             for key in attended:
                 if key not in excluded:
                     travel.setdefault(key, []).append("live")
@@ -89,7 +95,6 @@ def run(log=print) -> dict:
     else:
         log("SETLISTFM_API_KEY not set: skipping setlist.fm")
 
-    loves = exclusions.load_loves()
     log(f"loves: {len(loves)} artists bypass recency decay")
     # A misspelt line ("Haley Williams") matches nothing and silently does nothing.
     unmatched = sorted(n for n in loves if n not in history["artists"])

@@ -95,10 +95,10 @@ def score_events(
                 picks.append(Pick("know", artist, ev, score=math.log1p(row["days"]), reasons=reasons))
                 continue
             if loved_only:
-                # Seen live (setlist.fm) but played on too few days to be known: still worth the trip.
+                # In loves.txt but played on too few days to be known: still worth the trip.
                 if key in loved:
                     picks.append(Pick("know", artist, ev, score=math.log1p(row["days"] if row else 0),
-                                      reasons=["you've seen them live"]))
+                                      reasons=["one of your favourites"]))
                 continue
 
             if is_noise(artist):

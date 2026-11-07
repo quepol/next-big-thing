@@ -96,12 +96,13 @@ class Taste:
 
         # Artists seen live are seeds, uncontaminated by kids' scrobbles, at their listening
         # weight or the seen-live floor, whichever is higher. Seeing a band shouldn't count
-        # for less because you also played them a little. attended_seen: key -> (shows,
-        # last year seen); without it, the recent floor.
+        # for less because you also played them a little. But only if you followed up (known)
+        # or they're in loves.txt: a show you never went back to says nothing about taste.
+        # attended_seen: key -> (shows, last year seen); without it, the recent floor.
         if attended:
             seen = attended_seen or {}
             for key, name in attended.items():
-                if key in self.excluded:
+                if key in self.excluded or (key not in self.known and key not in loves):
                     continue
                 shows, last_year = seen.get(key, (1, today.year))
                 strong = shows >= 2 or last_year >= cutoff_year or key in loves
