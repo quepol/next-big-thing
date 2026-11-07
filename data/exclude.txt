@@ -61,6 +61,7 @@ Powerglove						# metal covers of game music (not orchestral)
 BoyWithUke
 Jon Cozart
 Rockit Gaming
+Rockit Music
 Random Encounters
 
 # Kids: YouTube, game and fandom songs (confirmed 2026-10-29)
