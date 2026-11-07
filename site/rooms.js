@@ -85,14 +85,14 @@ function scoreShow(row, ctx) {
   const head = row.acts[0]?.artist;
   const who = (a, text) => (a === head ? text : `${a}: ${text.charAt(0).toLowerCase()}${text.slice(1)}`);
   const known = row.acts.find((a) => (a.days || 0) >= KNOW_DAYS);
-  if (known) add(WEIGHTS.know, who(known.artist, `You know them · ${known.days} days`));
+  if (known) add(WEIGHTS.know, who(known.artist, `${known.days} days played`));
   const seen = row.acts.find((a) => ctx.seen.has(norm(a.artist)));
-  if (seen) add(WEIGHTS.seen, who(seen.artist, "You've seen them"));
+  if (seen) add(WEIGHTS.seen, who(seen.artist, "Seen live"));
   const rep = row.acts.map((a) => ctx.repeat.get(norm(a.artist))).find(Boolean);
   if (rep && movingUp(rep)) add(WEIGHTS.movingUp, who(rep.artist, "Moving up"));
   else if (rep) add(WEIGHTS.cameBack, who(rep.artist, "Keeps coming back"));
   const sf = row.acts.map((a) => ctx.shared.get(norm(a.artist))).find(Boolean);
-  if (sf) add(WEIGHTS.sfLink, who(sf.artist, `Played ${sf.sf[0]}${sf.sf.length > 1 ? ` +${sf.sf.length - 1}` : ""}`));
+  if (sf) add(WEIGHTS.sfLink, who(sf.artist, `Played ${sf.sf[0]} (SF)${sf.sf.length > 1 ? ` +${sf.sf.length - 1}` : ""}`));
   const bonus = bonuses.reduce((n, b) => n + b.w, 0);
   return { score: taste + bonus, taste, bonus, best, bonuses, chips };
 }

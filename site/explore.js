@@ -632,10 +632,10 @@ function showCard(name) {
   if (tierLabel) chip(tierLabel, true); // every tier chip is pink, as on the picks page
   const listeners = rep?.listeners ?? sh?.listeners;
   if (listeners != null) chip(fmtListeners(listeners));
-  if (sh?.days) chip(sh.days >= 3 ? `Played ${sh.days} days` : `Heard ${sh.days} day${sh.days > 1 ? "s" : ""}`);
+  if (sh?.days) chip(sh.days >= 3 ? `${sh.days} days played` : `Played ${sh.days} day${sh.days > 1 ? "s" : ""}`);
   if (rep && movingUp(rep)) chip("Moving up", true);
   else if (rep) chip("Came back");
-  if (seen) chip("★ You've seen them");
+  if (seen) chip("★ Seen live");
   const nx = D.next.get(k);
   if (nx) chip(`${new Date(nx.starts_at).toLocaleDateString(undefined, { month: "short", day: "numeric" })} · ${short(nx.venue.name.trim(), 22)}`, true);
   if (chips.childNodes.length) card.append(chips);

@@ -46,21 +46,23 @@ function parseReasons(reasons) {
     } else if ((m = r.match(/^only ([\d,]+) listeners on Last\.fm$/))) {
       out.listeners = Number(m[1].replace(/,/g, ""));
     } else if (r === "no Last.fm footprint yet") {
-      out.chips.push({ text: "No Last.fm footprint", hot: true });
+      out.chips.push({ text: "Not on Last.fm yet", hot: true });
     } else if ((m = r.match(/^small venue \(~([\d,]+) cap\.\)$/))) {
       out.venueCap = Number(m[1].replace(/,/g, ""));
     } else if (/^you've never been to /.test(r)) {
       out.chips.push({ text: "New venue for you" });
     } else if ((m = r.match(/^played on (\d+) days since (\d{4}) \((\d+) plays\)$/))) {
-      out.chips.push({ text: `${m[1]} days since ${m[2]} · ${Number(m[3]).toLocaleString()} plays` });
+      out.chips.push({ text: `${m[1]} days played · since ${m[2]} · ${Number(m[3]).toLocaleString()} plays` });
     } else if (r === "one of your favourites" || r === "one of your most-played artists") {
       out.chips.push({ text: "Favourite", hot: true });
     } else if (r === "you've seen them live") {
       out.chips.push({ text: "Seen live" });
     } else if ((m = r.match(/^you played them on (\d+) days? back in (\d{4})$/))) {
-      out.chips.push({ text: `Heard ${m[1]} day${m[1] === "1" ? "" : "s"} · ${m[2]}` });
+      out.chips.push({ text: `Played ${m[1]} day${m[1] === "1" ? "" : "s"}, in ${m[2]}` });
     } else if ((m = r.match(/^sharing the bill with (.+) \((\d+) days played\)$/))) {
       out.billShare = { name: m[1], days: m[2] };
+    } else if ((m = r.match(/^played (.+) in SF$/))) {
+      out.chips.push({ text: `Played ${m[1]} (SF)` });
     } else if ((m = r.match(/^\+(\d+) more dates? nearby$/))) {
       out.chips.push({ text: `+${m[1]} more date${m[1] === "1" ? "" : "s"}` });
     } else if ((m = r.match(/^listeners growing ([+-][\d.]+%)\/week over (\d+) weeks$/))) {
@@ -237,7 +239,7 @@ function renderCard(p) {
   if (cap) where.append(` · ~${cap.toLocaleString()} cap`);
   if (ev.region && ev.region !== "Toronto") where.append(" · ", el("span", "region", ev.region));
   const others = ev.lineup.filter((a) => a !== p.artist);
-  if (info.billShare) where.append(` · with ${info.billShare.name}`);
+  if (info.billShare) where.append(` · with ${info.billShare.name} (you've played them ${info.billShare.days} days)`);
   else if (others.length && ev.lineup[0] !== p.artist) where.append(` · opening for ${ev.lineup[0]}`);
   else if (others.length) where.append(` · with ${others.join(", ")}`);
 
@@ -264,9 +266,6 @@ function renderCard(p) {
       li.textContent = w.text;
     }
     why.append(li);
-  }
-  if (info.billShare) {
-    why.append(el("li", null, `Sharing the bill with ${info.billShare.name}, who you've played on ${info.billShare.days} days`));
   }
   for (const t of info.other) why.append(el("li", null, t));
 
