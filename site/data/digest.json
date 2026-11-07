@@ -6164,7 +6164,17 @@
       "acts": [
         {
           "affinity": 0.0,
-          "artist": "Ryan Maguire w/ Block Warmers & KILSEN"
+          "artist": "Ryan Maguire",
+          "listeners": 128
+        },
+        {
+          "affinity": 0.0,
+          "artist": "Block Warmers",
+          "listeners": 1
+        },
+        {
+          "affinity": 0.0,
+          "artist": "KILSEN"
         }
       ],
       "id": "tm:rZ7HnEZ1AfuI4f",
@@ -6350,8 +6360,22 @@
     {
       "acts": [
         {
-          "affinity": 0.0,
-          "artist": "SYDNEY with Shotgun Rules & Sky Caught Fire"
+          "affinity": 0.0234,
+          "artist": "SYDNEY",
+          "listeners": 30725,
+          "why": "tags match your taste: pop punk, post-hardcore, emo"
+        },
+        {
+          "affinity": 0.0095,
+          "artist": "Shotgun Rules",
+          "listeners": 3295,
+          "why": "tags match your taste: post-hardcore, pop punk, emo"
+        },
+        {
+          "affinity": 0.0001,
+          "artist": "Sky Caught Fire",
+          "listeners": 1259,
+          "why": "tags match your taste: metalcore, melodic hardcore"
         }
       ],
       "id": "tm:rZ7HnEZ1Af0K_S",
@@ -6383,8 +6407,25 @@
     {
       "acts": [
         {
+          "affinity": 0.0331,
+          "artist": "Soft Set",
+          "listeners": 153,
+          "why": "tags match your taste: indie pop, jangle pop"
+        },
+        {
           "affinity": 0.0,
-          "artist": "Soft Set w/ Swiims, Away Forward & Seaver"
+          "artist": "Swiims",
+          "listeners": 1472
+        },
+        {
+          "affinity": 0.0,
+          "artist": "Away Forward",
+          "listeners": 1318
+        },
+        {
+          "affinity": 0.0,
+          "artist": "Seaver",
+          "listeners": 169
         }
       ],
       "id": "tm:rZ7HnEZ1AfuKff",
@@ -6431,8 +6472,10 @@
     {
       "acts": [
         {
-          "affinity": 0.0,
-          "artist": "Malugi | 4AM License"
+          "affinity": 0.001,
+          "artist": "Malugi",
+          "listeners": 68228,
+          "why": "tags match your taste: techno, trance, house"
         }
       ],
       "id": "tm:rZ7HnEZ1AfGPf7",
@@ -6617,7 +6660,8 @@
       "acts": [
         {
           "affinity": 0.0,
-          "artist": "Ho99o9 & N8NOFACE - Sincerely___ The Void"
+          "artist": "Ho99o9 & N8NOFACE",
+          "listeners": 1
         }
       ],
       "id": "tm:rZ7HnEZ1AfFFjf",
@@ -6811,8 +6855,12 @@
     {
       "acts": [
         {
+          "artist": "P.E.E",
+          "skipped": true
+        },
+        {
           "affinity": 0.0,
-          "artist": "P.E.E. with Gapyear and The Ritornello Form"
+          "artist": "Gapyear and The Ritornello Form"
         }
       ],
       "id": "tm:rZ7HnEZ1AfaMq7",
@@ -7426,7 +7474,21 @@
       "acts": [
         {
           "affinity": 0.0,
-          "artist": "Centraal w/ Nate Northfield, Qualisonic & JJFA"
+          "artist": "Centraal",
+          "listeners": 35
+        },
+        {
+          "affinity": 0.0,
+          "artist": "Nate Northfield",
+          "listeners": 55
+        },
+        {
+          "affinity": 0.0,
+          "artist": "Qualisonic"
+        },
+        {
+          "affinity": 0.0,
+          "artist": "JJFA"
         }
       ],
       "id": "tm:rZ7HnEZ1AfCvvV",
@@ -7691,7 +7753,7 @@
       "acts": [
         {
           "affinity": 0.0,
-          "artist": "Bed By 10pm - Toronto"
+          "artist": "Bed By 10pm"
         }
       ],
       "id": "tm:1718v0G6GiIh-dE",
@@ -7723,7 +7785,24 @@
       "acts": [
         {
           "affinity": 0.0,
-          "artist": "Lloyd Andrews w/ The Chillers, Ruby Veil & Synchronicity"
+          "artist": "Lloyd Andrews",
+          "listeners": 4
+        },
+        {
+          "affinity": 0.0324,
+          "artist": "The Chillers",
+          "listeners": 1118,
+          "why": "similar to The District (0.41)"
+        },
+        {
+          "affinity": 0.0,
+          "artist": "Ruby Veil",
+          "listeners": 4
+        },
+        {
+          "affinity": 0.0,
+          "artist": "Synchronicity",
+          "listeners": 2539
         }
       ],
       "id": "tm:rZ7HnEZ1AfuyZV",
@@ -7739,7 +7818,23 @@
       "acts": [
         {
           "affinity": 0.0,
-          "artist": "Class of 91 w/ Nerima, Crowd Surf & Steve Tidy & the Unkempt"
+          "artist": "Class of 91",
+          "listeners": 155
+        },
+        {
+          "affinity": 0.0053,
+          "artist": "Nerima",
+          "listeners": 1327,
+          "why": "similar to Panic at the Disco (0.03)"
+        },
+        {
+          "affinity": 0.0,
+          "artist": "Crowd Surf",
+          "listeners": 27
+        },
+        {
+          "affinity": 0.0,
+          "artist": "Steve Tidy & the Unkempt"
         }
       ],
       "id": "tm:rZ7HnEZ1AfG370",
@@ -8367,8 +8462,21 @@
     {
       "acts": [
         {
+          "affinity": 0.0119,
+          "artist": "Knats",
+          "listeners": 17997,
+          "why": "tags match your taste: jazz, experimental"
+        },
+        {
+          "affinity": 0.0451,
+          "artist": "Luge",
+          "listeners": 8091,
+          "why": "similar to Angine de poitrine (0.20)"
+        },
+        {
           "affinity": 0.0,
-          "artist": "Knats  with Luge and diskarte"
+          "artist": "diskarte",
+          "listeners": 89
         }
       ],
       "id": "tm:rZ7HnEZ1Af1p77",
@@ -8739,7 +8847,24 @@
       "acts": [
         {
           "affinity": 0.0,
-          "artist": "In All Fairness w/ Clovercast, The Pressures & JRD"
+          "artist": "In All Fairness",
+          "listeners": 644
+        },
+        {
+          "affinity": 0.0,
+          "artist": "Clovercast",
+          "listeners": 19
+        },
+        {
+          "affinity": 0.0,
+          "artist": "The Pressures",
+          "listeners": 694
+        },
+        {
+          "affinity": 0.0009,
+          "artist": "JRD",
+          "listeners": 121826,
+          "why": "tags match your taste: instrumental, instrumental hip-hop, lo-fi"
         }
       ],
       "id": "tm:rZ7HnEZ1AfCoOf",
@@ -8907,7 +9032,23 @@
       "acts": [
         {
           "affinity": 0.0,
-          "artist": "Necrodios w/ Human Compost, Ubruxum & Vesication"
+          "artist": "Necrodios",
+          "listeners": 292
+        },
+        {
+          "affinity": 0.0,
+          "artist": "Human Compost",
+          "listeners": 964
+        },
+        {
+          "affinity": 0.0,
+          "artist": "Ubruxum",
+          "listeners": 104
+        },
+        {
+          "affinity": 0.0,
+          "artist": "Vesication",
+          "listeners": 421
         }
       ],
       "id": "tm:rZ7HnEZ1AfC7of",
@@ -9118,7 +9259,25 @@
       "acts": [
         {
           "affinity": 0.0,
-          "artist": "Around The Corner Presents: Man Is Five, Mad Iris, Mellow Casualty and Hockey Academy"
+          "artist": "Man Is Five",
+          "listeners": 1262
+        },
+        {
+          "affinity": 0.161,
+          "artist": "Mad Iris",
+          "listeners": 18721,
+          "why": "similar to Mannequin Pussy (0.98), Alice in Chains (0.52), Mad Season (0.51)"
+        },
+        {
+          "affinity": 0.0,
+          "artist": "Mellow Casualty",
+          "listeners": 1069
+        },
+        {
+          "affinity": 0.1507,
+          "artist": "Hockey Academy",
+          "listeners": 2803,
+          "why": "tags match your taste: indie rock, indie pop, jangle pop"
         }
       ],
       "id": "tm:rZ7HnEZ1AfC4bf",
@@ -9218,7 +9377,22 @@
       "acts": [
         {
           "affinity": 0.0,
-          "artist": "Stuntman Down w/ Mixed Signal, Kippers & Dust Guide"
+          "artist": "Stuntman Down"
+        },
+        {
+          "affinity": 0.0,
+          "artist": "Mixed Signal",
+          "listeners": 66
+        },
+        {
+          "affinity": 0.0,
+          "artist": "Kippers",
+          "listeners": 39
+        },
+        {
+          "affinity": 0.0,
+          "artist": "Dust Guide",
+          "listeners": 1
         }
       ],
       "id": "tm:rZ7HnEZ1AfCoAV",
@@ -9323,7 +9497,18 @@
       "acts": [
         {
           "affinity": 0.0,
-          "artist": "John’s Cottage w/ Afterrain & Always Found"
+          "artist": "John’s Cottage",
+          "listeners": 881
+        },
+        {
+          "affinity": 0.0,
+          "artist": "Afterrain",
+          "listeners": 41
+        },
+        {
+          "affinity": 0.0,
+          "artist": "Always Found",
+          "listeners": 60
         }
       ],
       "id": "tm:rZ7HnEZ1AfCoef",
@@ -9456,7 +9641,8 @@
       "acts": [
         {
           "affinity": 0.0,
-          "artist": "AEREA (live) @ VENUE TBA"
+          "artist": "AEREA",
+          "listeners": 21806
         }
       ],
       "id": "tm:rZ7HnEZ1A4ZJoK",
@@ -9687,7 +9873,7 @@
       "acts": [
         {
           "affinity": 0.0,
-          "artist": "XANNYWAXPARTY | Performances by JSKO, Kindapopping, Kennxdy, sm01 + special guests"
+          "artist": "XANNYWAXPARTY"
         }
       ],
       "id": "tm:rZ7HnEZ1Af87Cf",
@@ -9979,8 +10165,21 @@
     {
       "acts": [
         {
+          "affinity": 0.1097,
+          "artist": "STACKS",
+          "listeners": 25168,
+          "why": "tags match your taste: indie rock, new wave"
+        },
+        {
+          "affinity": 0.0502,
+          "artist": "Lia Pappas-Kemps",
+          "listeners": 58401,
+          "why": "similar to Maggie Rogers (0.41), MUNA (0.32)"
+        },
+        {
           "affinity": 0.0,
-          "artist": "NOISE MACHINE Album Release Show - STACKS with Lia Pappas-Kemps and Lila Ravelle"
+          "artist": "Lila Ravelle",
+          "listeners": 19524
         }
       ],
       "id": "tm:rZ7HnEZ1AfCv_f",
@@ -9996,7 +10195,8 @@
       "acts": [
         {
           "affinity": 0.0,
-          "artist": "Mack Geiger - When It's Pouring 2026 Tour"
+          "artist": "Mack Geiger",
+          "listeners": 27988
         }
       ],
       "id": "tm:1AvZZ_8GkRNUAJF",
@@ -10096,11 +10296,11 @@
     {
       "acts": [
         {
-          "affinity": 0.1824,
+          "affinity": 0.1917,
           "artist": "Bonobo",
           "days": 6,
           "listeners": 2120188,
-          "why": "similar to The Cinematic Orchestra (0.78), Tricky (0.65), Zero 7 (0.64)"
+          "why": "similar to The Cinematic Orchestra (0.81), Zero 7 (0.66), RJD2 (0.64)"
         },
         {
           "affinity": 0.0008,
@@ -10156,7 +10356,23 @@
       "acts": [
         {
           "affinity": 0.0,
-          "artist": "Spring Colours w/ Red Output, Mighty Machines & Chris Ma"
+          "artist": "Spring Colours",
+          "listeners": 179
+        },
+        {
+          "affinity": 0.0,
+          "artist": "Red Output",
+          "listeners": 1256
+        },
+        {
+          "affinity": 0.0,
+          "artist": "Mighty Machines",
+          "listeners": 60
+        },
+        {
+          "affinity": 0.0,
+          "artist": "Chris Ma",
+          "listeners": 18
         }
       ],
       "id": "tm:rZ7HnEZ1A4vaqd",
@@ -10172,7 +10388,23 @@
       "acts": [
         {
           "affinity": 0.0,
-          "artist": "Allegion w/ DevilPlan, EBIRAH & Magna Ire"
+          "artist": "Allegion",
+          "listeners": 2
+        },
+        {
+          "affinity": 0.0,
+          "artist": "DevilPlan",
+          "listeners": 2
+        },
+        {
+          "affinity": 0.0,
+          "artist": "EBIRAH",
+          "listeners": 47
+        },
+        {
+          "affinity": 0.0,
+          "artist": "Magna Ire",
+          "listeners": 3
         }
       ],
       "id": "tm:rZ7HnEZ1Af8eG7",
@@ -10243,7 +10475,23 @@
       "acts": [
         {
           "affinity": 0.0,
-          "artist": "GEN NEXT LIVE with Mountain Head, Avora Veil, Avalon Stone & More"
+          "artist": "GEN NEXT LIVE"
+        },
+        {
+          "affinity": 0.0647,
+          "artist": "Mountain Head",
+          "listeners": 3632,
+          "why": "tags match your taste: indie pop, indie rock, psychedelic rock"
+        },
+        {
+          "affinity": 0.0,
+          "artist": "Avora Veil",
+          "listeners": 245
+        },
+        {
+          "affinity": 0.0,
+          "artist": "Avalon Stone",
+          "listeners": 7925
         }
       ],
       "id": "tm:rZ7HnEZ1AfuAef",
@@ -10259,7 +10507,23 @@
       "acts": [
         {
           "affinity": 0.0,
-          "artist": "Don Valley Mallard w/ Honeycomb, Lost Astronaut & low midi"
+          "artist": "Don Valley Mallard",
+          "listeners": 14
+        },
+        {
+          "affinity": 0.0,
+          "artist": "Honeycomb",
+          "listeners": 3194
+        },
+        {
+          "affinity": 0.0,
+          "artist": "Lost Astronaut",
+          "listeners": 7753
+        },
+        {
+          "affinity": 0.0,
+          "artist": "low midi",
+          "listeners": 1
         }
       ],
       "id": "tm:rZ7HnEZ1Af8ae7",
@@ -10443,7 +10707,8 @@
       "acts": [
         {
           "affinity": 0.0,
-          "artist": "Nitepunk @ Runnymede Hall - Nov 27"
+          "artist": "Nitepunk",
+          "listeners": 50431
         }
       ],
       "id": "tm:rZ7HnEZ1AfAzf0",
@@ -10842,7 +11107,8 @@
       "acts": [
         {
           "affinity": 0.0,
-          "artist": "FYE Ultraclub Presents: FRANKY RIZARDO"
+          "artist": "FRANKY RIZARDO",
+          "listeners": 167416
         }
       ],
       "id": "tm:rZ7HnEZ1Af0UFd",
@@ -10873,8 +11139,31 @@
     {
       "acts": [
         {
+          "affinity": 0.003,
+          "artist": "Flesh Prison",
+          "listeners": 2808,
+          "why": "tags match your taste: punk, hardcore, ambient"
+        },
+        {
+          "affinity": 0.0016,
+          "artist": "Pneumonia Breath",
+          "listeners": 1321,
+          "why": "tags match your taste: hardcore, metalcore"
+        },
+        {
           "affinity": 0.0,
-          "artist": "Flesh Prison w/ Pneumonia Breath, Volcate, Qwan & Knifetalk"
+          "artist": "Volcate",
+          "listeners": 151
+        },
+        {
+          "affinity": 0.0,
+          "artist": "Qwan",
+          "listeners": 3920
+        },
+        {
+          "affinity": 0.0,
+          "artist": "Knifetalk",
+          "listeners": 11
         }
       ],
       "id": "tm:rZ7HnEZ1AfGkGV",
@@ -11237,8 +11526,15 @@
     {
       "acts": [
         {
+          "affinity": 0.1035,
+          "artist": "Bodywash",
+          "listeners": 24291,
+          "why": "similar to Film School (1.00), Wild Nothing (0.59)"
+        },
+        {
           "affinity": 0.0,
-          "artist": "Mother Tongues' Rock 'n' Roll Runway with: Bodywash (MTL) and Uncaught ( in Promise)"
+          "artist": "Uncaught",
+          "listeners": 23
         }
       ],
       "id": "tm:rZ7HnEZ1AfCK70",
@@ -11489,7 +11785,12 @@
       "acts": [
         {
           "affinity": 0.0,
-          "artist": "Hello Oasis with CRISIS CTRL CLUB"
+          "artist": "Hello Oasis"
+        },
+        {
+          "affinity": 0.0,
+          "artist": "CRISIS CTRL CLUB",
+          "listeners": 19
         }
       ],
       "id": "tm:rZ7HnEZ1A4Z9_K",
@@ -11538,8 +11839,10 @@
     {
       "acts": [
         {
-          "affinity": 0.0,
-          "artist": "Lens - North American Tour"
+          "affinity": 0.0563,
+          "artist": "Lens",
+          "listeners": 61469,
+          "why": "similar to Tiësto (0.36)"
         }
       ],
       "id": "tm:rZ7HnEZ1A4Z60S",
@@ -11617,7 +11920,23 @@
       "acts": [
         {
           "affinity": 0.0,
-          "artist": "A Little Leverage w/ Down For Down, Hollowsound & Punch The Camel"
+          "artist": "A Little Leverage",
+          "listeners": 15
+        },
+        {
+          "affinity": 0.0,
+          "artist": "Down For Down",
+          "listeners": 1
+        },
+        {
+          "affinity": 0.0,
+          "artist": "Hollowsound",
+          "listeners": 61
+        },
+        {
+          "affinity": 0.0,
+          "artist": "Punch The Camel",
+          "listeners": 7
         }
       ],
       "id": "tm:rZ7HnEZ1Af8kqf",
@@ -12456,7 +12775,8 @@
       "acts": [
         {
           "affinity": 0.0,
-          "artist": "Tim Polecat with Special Guests"
+          "artist": "Tim Polecat",
+          "listeners": 553
         }
       ],
       "id": "tm:rZ7HnEZ1Afu3x7",
@@ -12506,8 +12826,10 @@
     {
       "acts": [
         {
-          "affinity": 0.0,
-          "artist": "Eelke Kleijn (Live)"
+          "affinity": 0.0002,
+          "artist": "Eelke Kleijn",
+          "listeners": 224511,
+          "why": "tags match your taste: house, techno"
         }
       ],
       "id": "tm:rZ7HnEZ1Af1b17",
@@ -12806,7 +13128,19 @@
       "acts": [
         {
           "affinity": 0.0,
-          "artist": "Westridge with F!TH and Desire Path"
+          "artist": "Westridge",
+          "listeners": 1704
+        },
+        {
+          "affinity": 0.0,
+          "artist": "F!TH",
+          "listeners": 1014
+        },
+        {
+          "affinity": 0.0168,
+          "artist": "Desire Path",
+          "listeners": 2208,
+          "why": "tags match your taste: shoegaze, emo"
         }
       ],
       "id": "tm:rZ7HnEZ1Af1ZCf",
@@ -13104,8 +13438,11 @@
     {
       "acts": [
         {
-          "affinity": 0.0,
-          "artist": "Delaney Jane - No Place Like Home"
+          "affinity": 0.029,
+          "artist": "Delaney Jane",
+          "days": 1,
+          "listeners": 55385,
+          "why": "similar to Tyler Shaw (0.57)"
         }
       ],
       "id": "tm:rZ7HnEZ1AfCKuV",
@@ -13475,8 +13812,10 @@
     {
       "acts": [
         {
-          "affinity": 0.0,
-          "artist": "ØTTA | Boxing Day Special"
+          "affinity": 0.0019,
+          "artist": "ØTTA",
+          "listeners": 16604,
+          "why": "tags match your taste: hardcore, techno, trance"
         }
       ],
       "id": "tm:rZ7HnEZ1Af8kP0",
@@ -14252,8 +14591,10 @@
     {
       "acts": [
         {
-          "affinity": 0.0,
-          "artist": "Proleter with Special Guests"
+          "affinity": 0.0235,
+          "artist": "Proleter",
+          "listeners": 170239,
+          "why": "similar to RJD2 (0.30)"
         }
       ],
       "id": "tm:rZ7HnEZ1AfuFkf",
@@ -14433,7 +14774,7 @@
       }
     }
   ],
-  "generated_at": "2026-11-07T17:51:00+00:00",
+  "generated_at": "2026-11-07T22:41:08+00:00",
   "ledger": [
     {
       "artist": "Compagnie Yoann Bourgeois",
@@ -14469,6 +14810,44 @@
         "you've never been to The Opera House"
       ],
       "score_at_flag": 0.1853
+    },
+    {
+      "artist": "Hockey Academy",
+      "checked": "2026-11-07",
+      "event": {
+        "starts_at": "2026-11-20T21:00:00",
+        "url": "https://www.ticketweb.ca/event/around-the-corner-presents-man-lees-palace-tickets/14395614",
+        "venue": "Lee's Palace"
+      },
+      "first_flagged": "2026-11-07",
+      "listeners_at_flag": 2803,
+      "listeners_now": 2803,
+      "reasons": [
+        "tags match your taste: indie rock, indie pop, jangle pop",
+        "only 2,803 listeners on Last.fm",
+        "small venue (~700 cap.)",
+        "you've never been to Lee's Palace"
+      ],
+      "score_at_flag": 0.2016
+    },
+    {
+      "artist": "Mad Iris",
+      "checked": "2026-11-07",
+      "event": {
+        "starts_at": "2026-11-20T21:00:00",
+        "url": "https://www.ticketweb.ca/event/around-the-corner-presents-man-lees-palace-tickets/14395614",
+        "venue": "Lee's Palace"
+      },
+      "first_flagged": "2026-11-07",
+      "listeners_at_flag": 18721,
+      "listeners_now": 18721,
+      "reasons": [
+        "similar to Mannequin Pussy (0.98), Alice in Chains (0.52), Mad Season (0.51)",
+        "only 18,721 listeners on Last.fm",
+        "small venue (~700 cap.)",
+        "you've never been to Lee's Palace"
+      ],
+      "score_at_flag": 0.1922
     },
     {
       "artist": "comehelpglo",
@@ -15645,6 +16024,72 @@
           "you've never been to Lee's Palace"
         ],
         "score": 0.2828,
+        "tier": "next_big_thing"
+      },
+      {
+        "artist": "Hockey Academy",
+        "event": {
+          "id": "tm:rZ7HnEZ1AfC4bf",
+          "lineup": [
+            "Man Is Five",
+            "Mad Iris",
+            "Mellow Casualty",
+            "Hockey Academy"
+          ],
+          "region": "Toronto",
+          "source": "ticketmaster",
+          "starts_at": "2026-11-20T21:00:00",
+          "url": "https://www.ticketweb.ca/event/around-the-corner-presents-man-lees-palace-tickets/14395614",
+          "venue": {
+            "capacity": 700,
+            "city": "Toronto",
+            "lat": 43.665249,
+            "lon": -79.409447,
+            "name": "Lee's Palace"
+          }
+        },
+        "heard_before": null,
+        "listeners": 2803,
+        "reasons": [
+          "tags match your taste: indie rock, indie pop, jangle pop",
+          "only 2,803 listeners on Last.fm",
+          "small venue (~700 cap.)",
+          "you've never been to Lee's Palace"
+        ],
+        "score": 0.2016,
+        "tier": "next_big_thing"
+      },
+      {
+        "artist": "Mad Iris",
+        "event": {
+          "id": "tm:rZ7HnEZ1AfC4bf",
+          "lineup": [
+            "Man Is Five",
+            "Mad Iris",
+            "Mellow Casualty",
+            "Hockey Academy"
+          ],
+          "region": "Toronto",
+          "source": "ticketmaster",
+          "starts_at": "2026-11-20T21:00:00",
+          "url": "https://www.ticketweb.ca/event/around-the-corner-presents-man-lees-palace-tickets/14395614",
+          "venue": {
+            "capacity": 700,
+            "city": "Toronto",
+            "lat": 43.665249,
+            "lon": -79.409447,
+            "name": "Lee's Palace"
+          }
+        },
+        "heard_before": null,
+        "listeners": 18721,
+        "reasons": [
+          "similar to Mannequin Pussy (0.98), Alice in Chains (0.52), Mad Season (0.51)",
+          "only 18,721 listeners on Last.fm",
+          "small venue (~700 cap.)",
+          "you've never been to Lee's Palace"
+        ],
+        "score": 0.1922,
         "tier": "next_big_thing"
       },
       {

@@ -381,6 +381,25 @@
     ],
     "score_at_flag": 0.2882
   },
+  "hockey academy": {
+    "artist": "Hockey Academy",
+    "checked": "2026-11-07",
+    "event": {
+      "starts_at": "2026-11-20T21:00:00",
+      "url": "https://www.ticketweb.ca/event/around-the-corner-presents-man-lees-palace-tickets/14395614",
+      "venue": "Lee's Palace"
+    },
+    "first_flagged": "2026-11-07",
+    "listeners_at_flag": 2803,
+    "listeners_now": 2803,
+    "reasons": [
+      "tags match your taste: indie rock, indie pop, jangle pop",
+      "only 2,803 listeners on Last.fm",
+      "small venue (~700 cap.)",
+      "you've never been to Lee's Palace"
+    ],
+    "score_at_flag": 0.2016
+  },
   "jackie evans": {
     "artist": "Jackie Evans",
     "checked": "2026-11-07",
@@ -507,6 +526,25 @@
       "small venue (~575 cap.)"
     ],
     "score_at_flag": 0.3833
+  },
+  "mad iris": {
+    "artist": "Mad Iris",
+    "checked": "2026-11-07",
+    "event": {
+      "starts_at": "2026-11-20T21:00:00",
+      "url": "https://www.ticketweb.ca/event/around-the-corner-presents-man-lees-palace-tickets/14395614",
+      "venue": "Lee's Palace"
+    },
+    "first_flagged": "2026-11-07",
+    "listeners_at_flag": 18721,
+    "listeners_now": 18721,
+    "reasons": [
+      "similar to Mannequin Pussy (0.98), Alice in Chains (0.52), Mad Season (0.51)",
+      "only 18,721 listeners on Last.fm",
+      "small venue (~700 cap.)",
+      "you've never been to Lee's Palace"
+    ],
+    "score_at_flag": 0.1922
   },
   "mamas gun": {
     "artist": "Mamas Gun",
