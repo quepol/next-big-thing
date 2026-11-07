@@ -580,6 +580,25 @@
     ],
     "score_at_flag": 0.1889
   },
+  "otnes": {
+    "artist": "OTNES",
+    "checked": "2026-11-07",
+    "event": {
+      "starts_at": "2026-11-10T19:00:00",
+      "url": "https://www.ticketmaster.ca/donny-benet-toronto-ontario-11-10-2026/event/1000648604E0EC43",
+      "venue": "The Opera House"
+    },
+    "first_flagged": "2026-11-07",
+    "listeners_at_flag": 9321,
+    "listeners_now": 9321,
+    "reasons": [
+      "tags match your taste: indie rock, indie pop",
+      "only 9,321 listeners on Last.fm",
+      "small venue (~900 cap.)",
+      "you've never been to The Opera House"
+    ],
+    "score_at_flag": 0.1853
+  },
   "raine maida": {
     "artist": "Raine Maida",
     "checked": "2026-11-07",
