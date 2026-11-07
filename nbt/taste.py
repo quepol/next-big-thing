@@ -185,7 +185,9 @@ class Taste:
                 per_seed[k] = max(per_seed.get(k, 0.0), match)
 
         if per_seed:
-            top = self._links(per_seed)[:3]
+            # The three seeds that contribute most (weight × similarity), listed by the
+            # similarity shown, highest first, so the order matches the numbers.
+            top = sorted(self._links(per_seed)[:3], key=lambda x: -x[1])
             reasons = ["similar to " + ", ".join(f"{self.known[k]['name']} ({m:.2f})" for k, m, _ in top)]
             return self._combine(per_seed), reasons
 

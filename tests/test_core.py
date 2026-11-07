@@ -441,6 +441,15 @@ def test_attended_artists_do_not_override_known_weight():
     assert taste_no_att.weights.get("big thief") == taste_with_att.weights.get("big thief")
 
 
+def test_similar_to_lists_the_top_seeds_by_shown_similarity():
+    class Fm(FakeLastFM):
+        SIMILAR = {"big thief": [("Cand", 0.5)], "adrianne lenker": [("Cand", 0.7)]}
+    t = Taste(make_history(), Fm(), log=lambda *_: None, loves=_TEST_LOVES)
+    # Big Thief contributes more (heavier listening × 0.50), but 0.70 reads first.
+    assert t._links(t.forward["cand"])[0][0] == "big thief"
+    assert t.affinity("Cand")[1] == ["similar to Adrianne Lenker (0.70), Big Thief (0.50)"]
+
+
 def test_seen_live_is_a_floor_that_fades():
     """Seen live is a floor on seed weight: playing a band a little never lowers it."""
     h = hist.empty_history()
