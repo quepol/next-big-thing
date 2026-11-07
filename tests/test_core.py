@@ -282,7 +282,9 @@ def test_sf_rooms_add_a_small_bonus():
                                     sf_rooms=sf)[0]
     plain, linked = score(None), score({"tiny newcomer": ["Bottom of the Hill"]})
     assert round(linked.score - plain.score, 3) == 0.05
-    assert "played your SF rooms: Bottom of the Hill" in linked.reasons
+    assert "played Bottom of the Hill in SF" in linked.reasons
+    two = score({"tiny newcomer": ["Bottom of the Hill", "Café du Nord"]})
+    assert "played Bottom of the Hill and Café du Nord in SF" in two.reasons
 
 
 def test_dedupe_keeps_earliest_and_counts_dates():

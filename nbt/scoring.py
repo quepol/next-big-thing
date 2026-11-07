@@ -137,7 +137,8 @@ def score_events(
                 sf = (sf_rooms or {}).get(key)
                 if sf:
                     score += SF_BONUS
-                    reasons.append(f"played your SF rooms: {', '.join(sf)}")
+                    rooms = sf[0] if len(sf) == 1 else f"{', '.join(sf[:-1])} and {sf[-1]}"
+                    reasons.append(f"played {rooms} in SF")
                 if listeners is None:
                     reasons.append("no Last.fm footprint yet")
                 else:
