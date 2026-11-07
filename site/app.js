@@ -81,7 +81,8 @@ const ICONS = {
 
 let digest;
 // Your rooms: shows at the rooms you follow, scored by rooms.js. Following filters; it never adds to a score.
-const rooms = { byRoom: new Map(), full: true, ctx: null, followed: [], room: FOLLOWED, all: false };
+const rooms = { byRoom: new Map(), full: true, ctx: null, followed: [], room: FOLLOWED, all: false, names: new Map() };
+const titleCase = (s) => s.replace(/\b\w/g, (c) => c.toUpperCase());
 
 async function getJSON(url, fallback) {
   try { const r = await fetch(url, { cache: "no-store" }); return r.ok ? await r.json() : fallback; } catch { return fallback; }
@@ -101,6 +102,16 @@ async function load() {
   }
   setCaps(caps);
   Object.assign(rooms, roomsByKey(digest), { ctx: showContext(digest, research), followed: store.get(ROOMS_KEY, DEFAULT_ROOMS) });
+  // Rooms with no upcoming shows still need to be findable, or one unfollowed while it's quiet
+  // can never be followed again: the starter rooms, every Toronto room with a known capacity,
+  // and every room ever followed.
+  // Names come lowercased from those lists, so take the real spelling ("RBC Amphitheatre")
+  // from the research data where it has one.
+  const spelled = new Map((research?.toronto_venues || []).map((v) => [roomKey(v.name), v.name.trim()]));
+  for (const name of [...DEFAULT_ROOMS, ...Object.keys(caps || {}), ...store.get(ROOMS_KNOWN_KEY, []), ...rooms.followed]) {
+    const k = roomKey(name);
+    if (!rooms.names.has(k)) rooms.names.set(k, spelled.get(k) || titleCase(name.trim()));
+  }
   const s = digest.stats || {};
   // "Updated Mon 6:01 AM": the weekday says whether today's run has landed.
   const updated = new Date(digest.generated_at).toLocaleString(undefined, { weekday: "short", hour: "numeric", minute: "2-digit" });
@@ -364,7 +375,7 @@ function renderRoomChips() {
   for (const k of rooms.followed) {
     const r = rooms.byRoom.get(k);
     // Short names keep the chips to fewer lines on a phone: "Phoenix Concert Theatre" → "Phoenix".
-    chip(k, r ? r.name.trim().replace(/^The /, "").replace(/ (Concert Theatre|Tavern)$/, "") : k.replace(/\b\w/g, (c) => c.toUpperCase()), size(k));
+    chip(k, (r ? r.name.trim() : rooms.names.get(k) || titleCase(k)).replace(/^The /, "").replace(/ (Concert Theatre|Tavern)$/, ""), size(k));
   }
   // Every other room, with "All rooms" first. A room picked here shows as the select's value.
   const sel = el("select", "roomadd");
@@ -374,6 +385,14 @@ function renderRoomChips() {
   [...rooms.byRoom.entries()].filter(([k]) => !rooms.followed.includes(k))
     .sort((a, b) => a[1].name.localeCompare(b[1].name))
     .forEach(([k, r]) => sel.append(new Option(`${r.name} (${r.rows.length})`, k)));
+  const quiet = [...rooms.names].filter(([k]) => !rooms.byRoom.has(k) && !rooms.followed.includes(k))
+    .sort((a, b) => a[1].replace(/^The /, "").localeCompare(b[1].replace(/^The /, "")));
+  if (quiet.length) {
+    const group = el("optgroup");
+    group.label = "No shows right now";
+    quiet.forEach(([k, name]) => group.append(new Option(name, k)));
+    sel.append(group);
+  }
   sel.addEventListener("change", () => { if (sel.value) pickRoom(sel.value); });
   if (rooms.room !== FOLLOWED && !rooms.followed.includes(rooms.room)) sel.value = rooms.room;
   box.append(sel);
@@ -477,6 +496,8 @@ document.getElementById("follow").addEventListener("click", () => {
   const k = rooms.room;
   rooms.followed = rooms.followed.includes(k) ? rooms.followed.filter((x) => x !== k) : [...rooms.followed, k];
   store.set(ROOMS_KEY, rooms.followed);
+  const known = store.get(ROOMS_KNOWN_KEY, []);
+  if (!known.includes(k)) store.set(ROOMS_KNOWN_KEY, [...known, k]);
   select("rooms");
 });
 

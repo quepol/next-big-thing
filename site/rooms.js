@@ -4,6 +4,7 @@
 // pipeline; before its first run with that field, only shows that made the picks appear.
 
 const ROOMS_KEY = "nbt.rooms";
+const ROOMS_KNOWN_KEY = "nbt.rooms.known"; // every room ever followed, so a quiet one can be found again
 const DEFAULT_ROOMS = ["phoenix concert theatre", "mod club", "opera house", "horseshoe tavern",
   "concert hall", "adelaide hall", "drake underground"];
 const ROOM_ALIASES = { "axis club": "mod club" }; // setlist.fm logs the Mod Club under both names
