@@ -93,6 +93,32 @@ def test_parse_tm_event_no_attractions_falls_back_to_event_name():
     assert ev.venue.capacity == 200
 
 
+def test_event_titles_split_into_acts():
+    from nbt.titles import split_title
+    cases = {
+        "Soft Set w/ Swiims, Away Forward & Seaver": ["Soft Set", "Swiims", "Away Forward", "Seaver"],
+        "Class of 91 w/ Nerima, Crowd Surf & Steve Tidy & the Unkempt":
+            ["Class of 91", "Nerima", "Crowd Surf", "Steve Tidy & the Unkempt"],
+        "SELFISH THINGS (LAST SHOW) with Special Guests Jules is Dead & Seas": ["SELFISH THINGS", "Jules is Dead", "Seas"],
+        "Shitkid with Special Guests": ["Shitkid"],
+        "Around The Corner Presents: Man Is Five, Mad Iris, Mellow Casualty and Hockey Academy":
+            ["Man Is Five", "Mad Iris", "Mellow Casualty", "Hockey Academy"],
+        "Mack Geiger - When It's Pouring 2026 Tour": ["Mack Geiger"],
+        "Sevalynn Fall Tour 2026 Toronto - Rune, Sevalynn, Afraid.,": ["Rune", "Sevalynn", "Afraid"],
+        "NOISE MACHINE Album Release Show - STACKS with Lia Pappas-Kemps and Lila Ravelle":
+            ["STACKS", "Lia Pappas-Kemps", "Lila Ravelle"],
+        "Aj Christou | 4AM License": ["Aj Christou"],
+        "Nitepunk @ Runnymede Hall - Nov 27": ["Nitepunk"],
+        "Eelke Kleijn (Live)": ["Eelke Kleijn"],
+    }
+    for title, acts in cases.items():
+        assert split_title(title) == acts, title
+    # Left alone: band names with "&", "+" or commas, and things that aren't a lineup.
+    for title in ["Shovels & Rope", "Florence + the Machine", "Earth, Wind & Fire", "Dancing with the Stars",
+                  "Rock with Love 5 featuring Dwayne Gretzky", "PRACTICALLY HIP TRAGICALLY HIP TRIBUTE SHOW"]:
+        assert split_title(title) == [title], title
+
+
 def test_venue_bonus():
     from nbt.scoring import VENUE_BONUS_MAX, VENUE_BONUS_THRESHOLD
     assert venue_bonus(None) == 0.0

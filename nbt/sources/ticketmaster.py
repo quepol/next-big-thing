@@ -16,6 +16,7 @@ import requests
 from ..config import CONFIG, Region, DATA_DIR
 from ..models import Event, Venue
 from ..store import Cache
+from ..titles import split_title
 
 BASE = "https://app.ticketmaster.com/discovery/v2"
 
@@ -132,7 +133,8 @@ def _parse_event(e: dict) -> Event:
     starts_at = f"{local_date}T{local_time}" if local_date else ""
 
     attractions = e.get("_embedded", {}).get("attractions", [])
-    lineup = [a["name"] for a in attractions] if attractions else ([e["name"]] if e.get("name") else [])
+    # No attraction list (usual for TicketWeb): the acts are in the title, "X w/ Y & Z".
+    lineup = [a["name"] for a in attractions] if attractions else (split_title(e["name"]) if e.get("name") else [])
 
     venue_id = v.get("id", "")
     return Event(
