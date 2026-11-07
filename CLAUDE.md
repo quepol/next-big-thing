@@ -31,7 +31,8 @@ Three tiers in the daily digest:
 2. **You'd probably like:** close to their taste, including artists they've heard of but don't play. No listener cap yet (a soft cap is in #11).
 3. **Next big thing (the MVP priority):** at most **100K** Last.fm listeners and close to their taste.
    - The goal is the "Northampton feeling": catching a future-big band in a small room.
-   - Room size matters. A soft venue bonus (`0.15 × (1 − cap/1500)`) favours small rooms; it's not a hard cap.
+   - Room size matters. A venue bonus (`0.15 × (1 − cap/1500)`) favours small rooms, and since 2026-11-07 rooms over 1,500 (`nbt_max_capacity`) are a hard cap: a band there has arrived, so it can only be "you'd probably like". Unknown capacity is allowed.
+   - It needs taste evidence (affinity ≥ 0.15). Sharing a bill alone no longer qualifies (2026-11-07). Bands that played the user's SF rooms get +0.05 (`SF_BONUS`), a tiebreaker: only ~5% of small acts have.
 
 Other product decisions:
 - Every pick explains itself ("similar to X (0.62)"), and **the 1–10 score and similarity weights stay visible**. The user uses them as a sanity check. Each tab's raw score maps onto 1–10 (`SCALES` in `site/ladder.js`): 8.0+ is Strong, 5.0+ Good, 3.0+ Worth a look, below that Long shot (no filled pips), on every tab. Since 2026-10-22 the raw score shows only in the badge's tooltip.
@@ -51,7 +52,7 @@ Other product decisions:
 ## Taste rules (from the history checks; detail in `docs/history-checks.md`)
 
 - Seeds: known artists weighted by log of listening depth, √(distinct days × plays), times recency, with `data/loves.txt` loves first. Depth ranks an artist played album-deep (The Civil Wars, 24 days, 110 plays) above one song on shuffle (Gary Jules, 26 days, 26 plays). Old favourites with no recent plays can fall out of the 300 seeds (Joshua Radin, Hunter Parrish); add any that still matter to `loves.txt`, which skips recency. **Seen live (setlist.fm) is a floor:** every artist seen live *and played on 3+ days* (or in `loves.txt`) is a seed, at its listening weight or the floor, whichever is higher. Seen live but never followed up on counts for nothing (the user's call, 2026-11-07). The floor is 0.40 (about seed #125) if seen since 2023, seen 2+ times, or in `loves.txt`, and 0.25 (just above the seed cut) for one show before that (`ATTENDED_SEED_WEIGHT`, `ATTENDED_OLD_SEED_WEIGHT` in `nbt/taste.py`, since 2026-10-29). Before, a band seen live and played on 3+ days got no credit for the show, so it could rank below one never played.
-- Affinity comes from three sources: forward (the candidate is in a seed's similar-artist list), reverse (a known artist is in the candidate's list), and tags (cosine similarity to the user's tag profile, capped at 0.6, as the fallback for tiny artists). A pick's "similar to" reason names the three seeds that contribute most (seed weight × similarity), listed by the similarity shown, highest first (since 2026-11-07).
+- Affinity comes from three sources: forward (the candidate is in a seed's similar-artist list), reverse (a known artist is in the candidate's list), and tags (cosine similarity to the user's tag profile, capped at 0.3 since 2026-11-07, as the fallback for tiny artists; generic tags such as indie, rock, pop, alternative, places and decades are ignored, `GENERIC_TAGS` in `nbt/taste.py`). On 2026-11-07, 8 of 15 next-big-thing picks came in on tags alone, one on "indie". A pick's "similar to" reason names the three seeds that contribute most (seed weight × similarity), listed by the similarity shown, highest first (since 2026-11-07).
 - "Heard once" artists (1–2 days) count as unknown for next big thing; the pick says "you played them on 1 day back in 2019".
 - **Kids' exclusion is automatic:** `exclusions.effective()` drops known artists with kids' or kid-franchise tags (ULTRAKILL, Deltarune, FNAF, Roblox, Vocaloid…). `data/exclude.txt` handles what tags miss; a `+` line keeps an artist. Orchestral game scores are the user's own (`+ Ludvig Forssell`, `+ Jamie Christopherson`). Generic game tags are flagged for review only.
 - Confirmed keeps (`+` lines): Ludvig Forssell, Jamie Christopherson, Bad Bunny, Marshmello. Also the user's, unlisted: Linkin Park, Backstreet Boys, Ariana Grande, Teddy Swims. On 2026-10-21 the user removed the keeps for Hunter Parrish, Julie Andrews, Selena Gomez and Central Park Cast, knowing the kids' tag filter may now exclude them. Excluded on purpose: Alan Menken.
@@ -59,7 +60,7 @@ Other product decisions:
 ## Architecture
 
 - `nbt/pipeline.py` `run()`: syncs Last.fm history → exclusions → setlist.fm attended → `Taste` → Ticketmaster events → `score_events()` (picks) and `calendar()` (every upcoming Toronto show, per-act affinity, for the room view) → ledger and snapshots → `site/data/digest.json`.
-- `nbt/scoring.py`: tiers, the next-big-thing score `affinity × (0.6 + 0.4 × smallness) + bill_bonus + venue_bonus (+ velocity once 4+ weeks of snapshots)`, `calendar()`.
+- `nbt/scoring.py`: tiers, the next-big-thing score `affinity × (0.6 + 0.4 × smallness) + bill_bonus + venue_bonus + sf_bonus (+ velocity once 4+ weeks of snapshots)`, `calendar()`.
 - `nbt/taste.py`: seeds, affinity, `is_noise`. `nbt/exclusions.py`: kids and game rules, loves.
 - `nbt/sources/`:
   - `ticketmaster.py`: **the only event feed**, including TicketWeb, queried for every region in `nbt/config.py` (Toronto, plus Hamilton, Buffalo, Orillia, Kitchener, Guelph and London, where scoring keeps only loved bands). It holds a capacity table keyed by Ticketmaster venue ID.
@@ -77,7 +78,7 @@ Other product decisions:
   - `foot.js`: the shared footer on every page (Picks/Backstage links, Refresh and auto-refresh, theme switch).
   - D3 7.9.0 is self-hosted in `site/vendor/`. Design detail is in `docs/design.md`.
 - `research/`: one-off setlist.fm studies, each run by its own workflow on pushes to the dev branch. See `docs/research.md`.
-- Tests: `python -m pytest -q`; 42 pass.
+- Tests: `python -m pytest -q`; 45 pass.
 
 ## Gotchas that have bitten us
 

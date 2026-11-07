@@ -238,6 +238,41 @@ def test_out_of_town_loves_artist_needs_no_play_days():
     assert [(p.artist, p.tier, p.reasons) for p in picks] == [("Seen Once Live", "know", ["one of your favourites"])]
 
 
+def test_generic_tags_alone_match_nothing():
+    class Fm(FakeLastFM):
+        TAGS = {**FakeLastFM.TAGS, "big thief": {"indie folk": 100, "indie": 90, "folk": 80},
+                "just indie": {"indie": 100, "rock": 60}}
+        INFO = {**FakeLastFM.INFO, "just indie": 382}
+    t = Taste(make_history(), Fm(), log=lambda *_: None, loves=_TEST_LOVES)
+    assert t.affinity("Just Indie") == (0.0, [])  # "indie" is true of half of everything
+    aff, why = t.affinity("Tag Only Kid")  # a specific shared tag still counts, capped low
+    assert 0 < aff <= 0.3 and why == ["tags match your taste: indie folk"]
+
+
+def test_next_big_thing_needs_a_small_room_and_taste_evidence():
+    from dataclasses import replace
+    big = ev(["Tiny Newcomer"])
+    big = replace(big, venue=Venue("Meridian Hall", "Toronto", capacity=3191))
+    small = replace(ev(["Tiny Newcomer"], day="2026-11-02"), id="e2", venue=Venue("Rivoli", "Toronto", capacity=200))
+    picks = run_scoring([big, small])
+    tiers = {p.event.venue.name: p.tier for p in picks if p.artist == "Tiny Newcomer"}
+    assert tiers == {"Rivoli": "next_big_thing", "Meridian Hall": "would_like"}  # big room: arrived
+    # No Last.fm footprint and no taste match: sharing a bill with a known band isn't enough.
+    assert "No Footprint" not in {p.artist for p in run_scoring([ev(["Big Thief", "No Footprint"])])}
+
+
+def test_sf_rooms_add_a_small_bonus():
+    h = make_history()
+    lfm = FakeLastFM()
+    taste = Taste(h, lfm, log=lambda *_: None, loves=_TEST_LOVES)
+    score = lambda sf: score_events([ev(["Tiny Newcomer"])], h, set(), taste.affinity, lfm.artist_info,
+                                    velocity=lambda k, n: None, regions={"Toronto": "all"}, excluded=set(),
+                                    sf_rooms=sf)[0]
+    plain, linked = score(None), score({"tiny newcomer": ["Bottom of the Hill"]})
+    assert round(linked.score - plain.score, 3) == 0.05
+    assert "played your SF rooms: Bottom of the Hill" in linked.reasons
+
+
 def test_dedupe_keeps_earliest_and_counts_dates():
     picks = run_scoring([ev(["Big Thief"], day="2026-12-01"), ev(["Big Thief"], day="2026-11-01")])
     assert len(picks) == 1

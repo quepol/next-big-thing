@@ -18,7 +18,11 @@ from .config import CONFIG
 from .history import known
 from .models import normalize_name
 
-TAG_ONLY_CAP = 0.6
+# A tags-only match is the weakest evidence (no seed lists the artist as similar), so it
+# stays well below a real similarity match: 0.3 can reach next big thing but never
+# "you'd probably like" (0.35). It was 0.6, and 8 of 15 next-big-thing picks on
+# 2026-11-07 came in on tags alone, one on the single tag "indie".
+TAG_ONLY_CAP = 0.3
 # Affinity uses only the strongest few seed links, with decaying weights, so it stays
 # bounded and discriminating. Summing every link saturated near 1.0 for popular "hub"
 # artists that appear in many seeds' similar lists (history check #1).
@@ -42,6 +46,15 @@ ALIAS_MIN_MATCH = 0.9
 ALIAS_SIZE_RATIO = 100  # tag overlap alone is weak evidence; never let it look like a strong match
 TAG_PROFILE_SEEDS = 100
 NOISE_TAGS = {"seen live", "favorites", "favourite", "favorite", "my favorites", "awesome", "love"}
+# Umbrella genres, places, decades and voices: true of half of everything, so they say
+# nothing about whether an artist is close to your taste. Left out of tag matching.
+GENERIC_TAGS = {
+    "rock", "pop", "indie", "alternative", "indie rock", "alternative rock", "pop rock", "indie pop",
+    "folk", "singer-songwriter", "electronic", "electronica", "dance", "hip-hop", "hip hop", "rap",
+    "acoustic", "female vocalists", "female vocalist", "male vocalists", "male vocalist",
+    "american", "usa", "british", "uk", "english", "canadian", "canada", "australian",
+    "60s", "70s", "80s", "90s", "00s", "10s", "2000s", "2010s", "2020s",
+}
 
 
 def depth(row: dict) -> float:
@@ -130,7 +143,7 @@ class Taste:
         prof: dict[str, float] = defaultdict(float)
         for key, row in rows:
             for tag, count in self.lastfm.top_tags(row["name"]).items():
-                if tag not in NOISE_TAGS:
+                if tag not in NOISE_TAGS and tag not in GENERIC_TAGS:
                     prof[tag] += self.weights[key] * count / 100
         return _unit(prof)
 
@@ -191,7 +204,8 @@ class Taste:
             reasons = ["similar to " + ", ".join(f"{self.known[k]['name']} ({m:.2f})" for k, m, _ in top)]
             return self._combine(per_seed), reasons
 
-        tags = {t: c for t, c in self.lastfm.top_tags(artist).items() if t not in NOISE_TAGS}
+        tags = {t: c for t, c in self.lastfm.top_tags(artist).items()
+                if t not in NOISE_TAGS and t not in GENERIC_TAGS}
         if tags and self.tag_profile:
             vec = _unit({t: c / 100 for t, c in tags.items()})
             cos = sum(vec[t] * self.tag_profile.get(t, 0) for t in vec)

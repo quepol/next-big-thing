@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import json
 from datetime import date, datetime, timezone
 
 from . import bands, exclusions
@@ -18,6 +19,16 @@ from .store import write_json
 from .taste import Taste
 
 DIGEST_PATH = SITE_DIR / "data" / "digest.json"
+RESEARCH_PATH = SITE_DIR / "data" / "venue_research.json"
+
+
+def sf_rooms() -> dict[str, list[str]]:
+    """Artist key -> the user's SF rooms it has played, from the venue research (if present)."""
+    try:
+        research = json.loads(RESEARCH_PATH.read_text())
+    except (OSError, ValueError):
+        return {}
+    return {normalize_name(a["artist"]): a["sf"] for a in research.get("shared_artists", []) if a.get("sf")}
 
 
 def assign_region(ev: Event) -> str | None:
@@ -122,6 +133,7 @@ def run(log=print) -> dict:
         is_noise=taste.is_noise,
         excluded=excluded,
         attended_venues=attended_venues or None,
+        sf_rooms=sf_rooms(),
     )
 
     ledger = led.load()

@@ -14,6 +14,9 @@ BILL_BONUS = 0.15
 VELOCITY_BONUS_CAP = 0.3
 VENUE_BONUS_MAX = 0.15
 VENUE_BONUS_THRESHOLD = 1500  # capacity above which no bonus is awarded
+# Played one of the user's SF rooms (venue research, site/data/venue_research.json). Small,
+# because only ~5% of small acts on the calendar have played them: a tiebreaker, not an engine.
+SF_BONUS = 0.05
 
 
 def venue_bonus(capacity: int | None) -> float:
@@ -70,6 +73,7 @@ def score_events(
     excluded: set[str] | None = None,
     is_noise: Callable[[str], bool] = lambda name: False,
     attended_venues: set[str] | None = None,  # lowercased venue names user has attended
+    sf_rooms: dict[str, list[str]] | None = None,  # artist key -> the user's SF rooms it played
 ) -> list[Pick]:
     artists = history["artists"]
     excluded = exclusions.load() if excluded is None else excluded
@@ -123,10 +127,17 @@ def score_events(
             )
 
             is_small = listeners is None or listeners <= cfg.nbt_max_listeners
-            if is_small and (aff >= cfg.nbt_min_affinity or (listeners is None and co)):
+            small_room = ev.venue.capacity is None or ev.venue.capacity <= cfg.nbt_max_capacity
+            # Taste evidence is required: sharing a bill alone, with no similarity or tag
+            # match, let in acts with nothing to go on (a dance company at Meridian Hall).
+            if is_small and small_room and aff >= cfg.nbt_min_affinity:
                 small = smallness(listeners or 0, cfg.nbt_max_listeners)
                 vb = venue_bonus(ev.venue.capacity)
                 score = aff * (0.6 + 0.4 * small) + bonus + vb
+                sf = (sf_rooms or {}).get(key)
+                if sf:
+                    score += SF_BONUS
+                    reasons.append(f"played your SF rooms: {', '.join(sf)}")
                 if listeners is None:
                     reasons.append("no Last.fm footprint yet")
                 else:

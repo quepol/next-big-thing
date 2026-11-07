@@ -58,6 +58,10 @@ class Config:
     # Next-big-thing thresholds.
     nbt_max_listeners: int = 100_000
     nbt_min_affinity: float = 0.15
+    # A band playing a bigger room has already arrived in Toronto: it can be "you'd probably
+    # like", not a next big thing. Unknown capacity is allowed. (2026-11-07; before, a big
+    # room only missed the small-venue bonus, and Meridian Hall acts topped the tier.)
+    nbt_max_capacity: int = 1500
     would_like_min_affinity: float = 0.35
     # Weeks of listener snapshots needed before velocity is trusted.
     velocity_min_weeks: int = 4
