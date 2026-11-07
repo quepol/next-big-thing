@@ -129,7 +129,8 @@ class FakeLastFM:
         "tiny newcomer": [],
         "mid band": [("Big Thief", 0.7)],
     }
-    TAGS = {"big thief": {"indie folk": 100, "folk": 80}, "tag only kid": {"indie folk": 100}}
+    TAGS = {"big thief": {"indie folk": 100, "freak folk": 80, "folk": 70},
+            "tag only kid": {"indie folk": 100, "freak folk": 60}}
     INFO = {"tiny newcomer": 2_400, "mid band": 300_000, "big thief": 900_000, "tag only kid": 150, "heard once": 8_000}
 
     def similar(self, name):
@@ -245,8 +246,19 @@ def test_generic_tags_alone_match_nothing():
         INFO = {**FakeLastFM.INFO, "just indie": 382}
     t = Taste(make_history(), Fm(), log=lambda *_: None, loves=_TEST_LOVES)
     assert t.affinity("Just Indie") == (0.0, [])  # "indie" is true of half of everything
-    aff, why = t.affinity("Tag Only Kid")  # a specific shared tag still counts, capped low
-    assert 0 < aff <= 0.3 and why == ["tags match your taste: indie folk"]
+    class One(Fm):
+        TAGS = {**Fm.TAGS, "one tag": {"indie folk": 100}}
+    assert Taste(make_history(), One(), log=lambda *_: None, loves=_TEST_LOVES).affinity("One Tag") == (0.0, [])
+
+
+def test_tags_only_match_needs_two_specific_tags_and_stays_low():
+    class Fm(FakeLastFM):
+        TAGS = {**FakeLastFM.TAGS, "big thief": {"indie folk": 100, "freak folk": 80, "indie": 90},
+                "two tags": {"indie folk": 100, "freak folk": 70, "indie": 100}}
+        INFO = {**FakeLastFM.INFO, "two tags": 500}
+    t = Taste(make_history(), Fm(), log=lambda *_: None, loves=_TEST_LOVES)
+    aff, why = t.affinity("Two Tags")
+    assert 0 < aff <= 0.3 and why == ["tags match your taste: indie folk, freak folk"]
 
 
 def test_next_big_thing_needs_a_small_room_and_taste_evidence():

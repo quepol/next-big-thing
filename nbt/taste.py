@@ -23,6 +23,7 @@ from .models import normalize_name
 # "you'd probably like" (0.35). It was 0.6, and 8 of 15 next-big-thing picks on
 # 2026-11-07 came in on tags alone, one on the single tag "indie".
 TAG_ONLY_CAP = 0.3
+MIN_TAG_MATCHES = 2  # specific tags shared with your profile before a tags-only match counts
 # Affinity uses only the strongest few seed links, with decaying weights, so it stays
 # bounded and discriminating. Summing every link saturated near 1.0 for popular "hub"
 # artists that appear in many seeds' similar lists (history check #1).
@@ -206,7 +207,10 @@ class Taste:
 
         tags = {t: c for t, c in self.lastfm.top_tags(artist).items()
                 if t not in NOISE_TAGS and t not in GENERIC_TAGS}
-        if tags and self.tag_profile:
+        # One matching tag is one person's opinion (Bradley Hale, a country singer, had only
+        # "indie"), and with one tag the cosine is just that tag's share of your profile.
+        # Two or more specific tags that are also in your profile are a signal.
+        if self.tag_profile and sum(1 for t in tags if self.tag_profile.get(t)) >= MIN_TAG_MATCHES:
             vec = _unit({t: c / 100 for t, c in tags.items()})
             cos = sum(vec[t] * self.tag_profile.get(t, 0) for t in vec)
             if cos > 0:
