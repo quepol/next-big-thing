@@ -50,8 +50,10 @@ NOISE_TAGS = {"seen live", "favorites", "favourite", "favorite", "my favorites",
 # Umbrella genres, places, decades and voices: true of half of everything, so they say
 # nothing about whether an artist is close to your taste. Left out of tag matching.
 GENERIC_TAGS = {
-    "rock", "pop", "indie", "alternative", "indie rock", "alternative rock", "pop rock", "indie pop",
-    "folk", "singer-songwriter", "electronic", "electronica", "dance", "hip-hop", "hip hop", "rap",
+    # "indie rock", "indie pop" and "singer-songwriter" are narrower and still count (2026-11-07).
+    # A hand list is a stopgap: weighting tags by rarity replaces it (#11).
+    "rock", "pop", "indie", "alternative", "alternative rock", "pop rock",
+    "folk", "electronic", "electronica", "dance", "hip-hop", "hip hop", "rap",
     "acoustic", "female vocalists", "female vocalist", "male vocalists", "male vocalist",
     "american", "usa", "british", "uk", "english", "canadian", "canada", "australian",
     "60s", "70s", "80s", "90s", "00s", "10s", "2000s", "2010s", "2020s",
