@@ -107,10 +107,12 @@ async function load() {
   // and every room ever followed.
   // Names come lowercased from those lists, so take the real spelling ("RBC Amphitheatre")
   // from the research data where it has one.
-  const spelled = new Map((research?.toronto_venues || []).map((v) => [roomKey(v.name), v.name.trim()]));
+  // Old names (Budweiser Stage) map to the current key, but never lend it their spelling.
+  const spelled = new Map((research?.toronto_venues || []).filter((v) => baseKey(v.name) === roomKey(v.name))
+    .map((v) => [roomKey(v.name), v.name.trim()]));
   for (const name of [...DEFAULT_ROOMS, ...Object.keys(caps || {}), ...store.get(ROOMS_KNOWN_KEY, []), ...rooms.followed]) {
     const k = roomKey(name);
-    if (!rooms.names.has(k)) rooms.names.set(k, spelled.get(k) || titleCase(name.trim()));
+    if (!rooms.names.has(k)) rooms.names.set(k, spelled.get(k) || titleCase(baseKey(name) === k ? name.trim() : k));
   }
   const s = digest.stats || {};
   // "Updated Mon 6:01 AM": the weekday says whether today's run has landed.

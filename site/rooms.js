@@ -7,15 +7,20 @@ const ROOMS_KEY = "nbt.rooms";
 const ROOMS_KNOWN_KEY = "nbt.rooms.known"; // every room ever followed, so a quiet one can be found again
 const DEFAULT_ROOMS = ["phoenix concert theatre", "mod club", "opera house", "horseshoe tavern",
   "concert hall", "adelaide hall", "drake underground"];
-const ROOM_ALIASES = { "axis club": "mod club" }; // setlist.fm logs the Mod Club under both names
+// One key per room under its current name: setlist.fm logs the Mod Club as both, and older
+// names (Budweiser Stage) or short ones (History) count toward the room as it's billed now.
+const ROOM_ALIASES = {
+  "axis club": "mod club",
+  "budweiser stage": "rbc amphitheatre",
+  "history": "history toronto",
+  "theatre": "theatre at great canadian toronto",
+};
 // Show score = best act's taste fit plus these bonuses. Kept in one place to tune.
 const WEIGHTS = { know: 0.4, heard: 0.15, seen: 0.2, movingUp: 0.25, cameBack: 0.1, sfLink: 0.1 };
 const KNOW_DAYS = 3;
 
-const roomKey = (name) => {
-  const k = name.toLowerCase().trim().replace(/^the /, "").replace(/[^a-z0-9']+/g, " ").trim();
-  return ROOM_ALIASES[k] || k;
-};
+const baseKey = (name) => name.toLowerCase().trim().replace(/^the /, "").replace(/[^a-z0-9']+/g, " ").trim();
+const roomKey = (name) => { const k = baseKey(name); return ROOM_ALIASES[k] || k; };
 
 function calendarRows(digest) {
   if (digest.calendar) return { rows: digest.calendar, full: true };
