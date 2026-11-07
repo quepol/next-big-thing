@@ -16,7 +16,8 @@ const ROOM_ALIASES = {
   "theatre": "theatre at great canadian toronto",
 };
 // Show score = best act's taste fit plus these bonuses. Kept in one place to tune.
-const WEIGHTS = { know: 0.4, heard: 0.15, seen: 0.2, movingUp: 0.25, cameBack: 0.1, sfLink: 0.1 };
+// No bonus for a band played on 1–2 days: as everywhere else, that counts as unknown (2026-11-07).
+const WEIGHTS = { know: 0.4, seen: 0.2, movingUp: 0.25, cameBack: 0.1, sfLink: 0.1 };
 const KNOW_DAYS = 3;
 
 const baseKey = (name) => name.toLowerCase().trim().replace(/^the /, "").replace(/[^a-z0-9']+/g, " ").trim();
@@ -84,9 +85,7 @@ function scoreShow(row, ctx) {
   const head = row.acts[0]?.artist;
   const who = (a, text) => (a === head ? text : `${a}: ${text.charAt(0).toLowerCase()}${text.slice(1)}`);
   const known = row.acts.find((a) => (a.days || 0) >= KNOW_DAYS);
-  const heard = row.acts.find((a) => a.days && a.days < KNOW_DAYS);
   if (known) add(WEIGHTS.know, who(known.artist, `You know them · ${known.days} days`));
-  else if (heard) add(WEIGHTS.heard, who(heard.artist, "Heard before"));
   const seen = row.acts.find((a) => ctx.seen.has(norm(a.artist)));
   if (seen) add(WEIGHTS.seen, who(seen.artist, "You've seen them"));
   const rep = row.acts.map((a) => ctx.repeat.get(norm(a.artist))).find(Boolean);
