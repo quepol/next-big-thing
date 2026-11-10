@@ -762,3 +762,46 @@ def test_bands_table_lists_travel_seeds_and_dropped_favourites():
                                      "last": "2025-01-08", "top": 2, "travel": ["rotation", "heavy"],
                                      "seed": 1, "weight": 0.5}
     assert rows["Seen Live"]["travel"] == ["live"] and rows["Seen Live"]["days"] == 0
+
+
+def test_listen_links_from_musicbrainz(tmp_path, monkeypatch):
+    from nbt import links as lk
+    from nbt.pipeline import add_listen_links
+
+    monkeypatch.setattr(lk, "DATA_DIR", tmp_path)
+    monkeypatch.setattr(lk, "MIN_INTERVAL", 0)
+    rels = {"mbid-otnes": [
+        {"url": {"resource": "https://otnes.bandcamp.com/"}},
+        {"url": {"resource": "https://www.youtube.com/@otnes"}},
+        {"url": {"resource": "https://open.spotify.com/artist/x"}},  # never used: it scrobbles
+        {"url": {"resource": "https://soundcloud.com/old-otnes"}, "ended": True},
+    ]}
+    asked = []
+
+    def call(path, **p):
+        asked.append(path)
+        if path == "artist":  # name search for artists without an MBID from Last.fm
+            return {"artists": [{"name": "Hockey Academy", "score": 100, "id": "mbid-ha"}]} if "Hockey" in p["query"] else {"artists": []}
+        if path == "artist/mbid-down":
+            return None  # MusicBrainz didn't answer
+        return {"relations": rels.get(path.split("/")[1], [])}
+
+    mb = lk.MusicBrainz()
+    mb.call = call
+    assert mb.links("OTNES", "mbid-otnes") == {"bandcamp": "https://otnes.bandcamp.com/",
+                                                 "youtube": "https://www.youtube.com/@otnes"}
+    assert mb.links("Hockey Academy") == {}  # found by name, but no pages on MusicBrainz
+    assert mb.links("Nobody Knows") == {}
+    assert mb.links("Down Band", "mbid-down") == {}
+    n = len(asked)
+    assert mb.links("OTNES", "mbid-otnes") and len(asked) == n  # cached
+    mb.links("Down Band", "mbid-down")
+    assert len(asked) == n + 1  # an outage isn't cached: asked again
+
+    class Fm:
+        def artist_info(self, name):
+            return {"mbid": "mbid-otnes"} if name == "OTNES" else {}
+    digest = {"picks": {"next_big_thing": [{"artist": "OTNES"}, {"artist": "Nobody Knows"}]}}
+    add_listen_links(digest, Fm(), log=lambda *_: None, mb=mb)
+    assert digest["picks"]["next_big_thing"][0]["listen"]["bandcamp"] == "https://otnes.bandcamp.com/"
+    assert "listen" not in digest["picks"]["next_big_thing"][1]

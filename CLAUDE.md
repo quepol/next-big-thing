@@ -65,6 +65,7 @@ Other product decisions:
 - `nbt/sources/`:
   - `ticketmaster.py`: **the only event feed**, including TicketWeb, queried for every region in `nbt/config.py` (Toronto, plus Hamilton, Buffalo, Orillia, Kitchener, Guelph and London, where scoring keeps only loved bands). It holds a capacity table keyed by Ticketmaster venue ID. Events with no attraction list (usual for TicketWeb) get their acts from the title (`nbt/titles.py`, #10): "X w/ Y & Z", "Presents: …", " - … Tour", "| club night". It splits only on billing markers, keeps "& the" and top-level "&", "+" and commas whole (Shovels & Rope, Earth, Wind & Fire), and leaves tribute nights, parties and "featuring" titles alone.
   - `setlistfm.py`: attended shows.
+- `nbt/links.py`: each pick's Bandcamp, SoundCloud and YouTube pages from MusicBrainz (`pick.listen` in the digest), cached 30 days in `data/cache/`. The site's listen links prefer them over searches (no Spotify: it scrobbles). On 2026-11-10, 18 of 24 picks had a Bandcamp or SoundCloud page. MusicBrainz allows 1 request a second and wants an identifying User-Agent.
   - Bandsintown was removed (2026-10-19): its city feed got 403 and its app ID 401. Out-of-town shows had silently depended on it.
 - `data/`:
   - Committed: `history.json`, `exclude.txt`, `loves.txt`, `ledger.json`, `snapshots/` (daily events, with lineups headliner-first, and listener counts).
@@ -78,7 +79,7 @@ Other product decisions:
   - `foot.js`: the shared footer on every page (Picks/Backstage links, Refresh and auto-refresh, theme switch).
   - D3 7.9.0 is self-hosted in `site/vendor/`. Design detail is in `docs/design.md`.
 - `research/`: one-off setlist.fm studies, each run by its own workflow on pushes to the dev branch. See `docs/research.md`.
-- Tests: `python -m pytest -q`; 47 pass.
+- Tests: `python -m pytest -q`; 48 pass.
 
 ## Gotchas that have bitten us
 

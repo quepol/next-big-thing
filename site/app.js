@@ -273,15 +273,27 @@ function renderCard(p) {
   return node;
 }
 
+// Listen links. The artist's own page when MusicBrainz knows it (pick.listen, nbt/links.py):
+// Bandcamp, then SoundCloud, then a SoundCloud search; a page opens straight in the SoundCloud
+// app, a search bounces through Safari. YouTube: the channel, else a search. Never Spotify:
+// it scrobbles, and sampling a band would make it "known".
+function listenTargets(artist, listen) {
+  const L = listen || {};
+  const enc = encodeURIComponent(artist);
+  const music = L.bandcamp ? [L.bandcamp, "Bandcamp"]
+    : L.soundcloud ? [L.soundcloud, "SoundCloud"]
+    : [`https://soundcloud.com/search/sounds?q=${enc}`, "SoundCloud"]; // /search/sounds: the app hands it to the browser, which searches
+  return [
+    [music[0], ICONS.music, music[1]],
+    [L.youtube || `https://www.youtube.com/results?search_query=${enc}`, ICONS.youtube, "YouTube"],
+  ];
+}
+
 // Footer: listen links, tickets, votes
 function fillFoot(node, p) {
   const ev = p.event;
-  const enc = encodeURIComponent(p.artist);
   const listen = node.querySelector(".listen");
-  for (const [href, icon, label] of [
-    [`https://soundcloud.com/search/sounds?q=${enc}`, ICONS.music, "SoundCloud"], // /search/sounds: the iOS app ignores ?q= but hands this route to the browser, which searches
-    [`https://www.youtube.com/results?search_query=${enc}`, ICONS.youtube, "YouTube"],
-  ]) {
+  for (const [href, icon, label] of listenTargets(p.artist, p.listen || (p.pick && norm(p.pick.artist) === norm(p.artist) ? p.pick.listen : null))) {
     const a = el("a");
     Object.assign(a, { href, target: "_blank", rel: "noopener", title: `${p.artist} on ${label}` });
     a.innerHTML = icon;

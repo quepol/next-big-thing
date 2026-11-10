@@ -11,6 +11,7 @@ from . import ledger as led
 from . import snapshots
 from .config import CONFIG, SITE_DIR
 from .lastfm import LastFM
+from .links import MusicBrainz
 from .models import Event, haversine_km, normalize_name
 from .scoring import calendar, is_upcoming, score_events
 from .sources.setlistfm import SetlistFM
@@ -20,6 +21,23 @@ from .taste import Taste
 
 DIGEST_PATH = SITE_DIR / "data" / "digest.json"
 RESEARCH_PATH = SITE_DIR / "data" / "venue_research.json"
+
+
+def add_listen_links(digest: dict, lastfm, log=print, mb: MusicBrainz | None = None) -> None:
+    """Give each pick its Bandcamp, SoundCloud and YouTube pages when MusicBrainz knows them
+    (pick["listen"]). The site links there instead of a search. Cached for 30 days, and a
+    MusicBrainz outage just means search links for a day."""
+    mb = mb or MusicBrainz()
+    found = 0
+    picks = [p for tier in digest["picks"].values() for p in tier]
+    for p in picks:
+        info = lastfm.artist_info(p["artist"]) or {}
+        links = mb.links(p["artist"], info.get("mbid", ""))
+        if links:
+            p["listen"] = links
+            found += 1
+    mb.save()
+    log(f"listen links: {found} of {len(picks)} picks have a Bandcamp, SoundCloud or YouTube page")
 
 
 def sf_rooms() -> dict[str, list[str]]:
@@ -174,6 +192,7 @@ def run(log=print) -> dict:
                              {k: v["name"] for k, v in taste.known.items()}, excluded, today),
         "attended_ledger": slm.attended_ledger(current_listeners=listeners) if CONFIG.setlistfm_api_key else [],
     }
+    add_listen_links(digest, lastfm, log=log)
     write_json(DIGEST_PATH, digest)
     log(f"digest: " + ", ".join(f"{t}={len(v)}" for t, v in digest["picks"].items()))
     return digest

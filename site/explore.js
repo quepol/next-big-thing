@@ -713,15 +713,20 @@ const LISTEN = [
   ["https://www.youtube.com/results?search_query=", "YouTube", '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M15.2 4.3a2 2 0 0 0-1.4-1.4C12.6 2.6 8 2.6 8 2.6s-4.6 0-5.8.3A2 2 0 0 0 .8 4.3 21 21 0 0 0 .5 8a21 21 0 0 0 .3 3.7 2 2 0 0 0 1.4 1.4c1.2.3 5.8.3 5.8.3s4.6 0 5.8-.3a2 2 0 0 0 1.4-1.4A21 21 0 0 0 15.5 8a21 21 0 0 0-.3-3.7zM6.5 10.3V5.7L10.4 8z"/></svg>'],
 ];
 
+// A band in today's picks may have its own pages (pick.listen): Bandcamp, then SoundCloud,
+// then a search, as on the picks page; YouTube: the channel, else a search.
 function listenLinks(name) {
   const listen = el("span", "listen");
-  for (const [base, label, icon] of LISTEN) {
+  const L = D.picks.get(norm(name))?.listen || {};
+  const own = [L.bandcamp ? [L.bandcamp, "Bandcamp"] : L.soundcloud ? [L.soundcloud, "SoundCloud"] : null, L.youtube ? [L.youtube, "YouTube"] : null];
+  LISTEN.forEach(([base, label, icon], i) => {
+    const [href, site] = own[i] || [base + encodeURIComponent(name), label];
     const a = el("a");
-    Object.assign(a, { href: base + encodeURIComponent(name), target: "_blank", rel: "noopener", title: `${name} on ${label}` });
+    Object.assign(a, { href, target: "_blank", rel: "noopener", title: `${name} on ${site}` });
     a.innerHTML = icon;
-    a.append(el("span", "txt", label));
+    a.append(el("span", "txt", site));
     listen.append(a);
-  }
+  });
   return listen;
 }
 
