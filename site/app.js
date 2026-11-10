@@ -74,6 +74,9 @@ function parseReasons(reasons) {
 }
 
 const ICONS = {
+  star: '<svg viewBox="0 0 16 16" aria-hidden="true"><path style="fill:none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" d="M8 1.6l1.9 4.1 4.5.5-3.4 3 1 4.4L8 11.4l-4 2.2 1-4.4-3.4-3 4.5-.5z"/></svg>',
+  starOn: '<svg viewBox="0 0 16 16" aria-hidden="true"><path stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" d="M8 1.6l1.9 4.1 4.5.5-3.4 3 1 4.4L8 11.4l-4 2.2 1-4.4-3.4-3 4.5-.5z"/></svg>',
+  hide: '<svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6" style="fill:none" stroke="currentColor" stroke-width="1.4"/><path stroke="currentColor" stroke-width="1.4" stroke-linecap="round" d="M3.8 12.2l8.4-8.4"/></svg>',
   music: '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 2.5v7.8a2.5 2.5 0 1 0 1.5 2.3V5.2l5-1.1v4.7a2.5 2.5 0 1 0 1.5 2.3V1.6z"/></svg>',
   youtube: '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M15.2 4.3a2 2 0 0 0-1.4-1.4C12.6 2.6 8 2.6 8 2.6s-4.6 0-5.8.3A2 2 0 0 0 .8 4.3 21 21 0 0 0 .5 8a21 21 0 0 0 .3 3.7 2 2 0 0 0 1.4 1.4c1.2.3 5.8.3 5.8.3s4.6 0 5.8-.3a2 2 0 0 0 1.4-1.4A21 21 0 0 0 15.5 8a21 21 0 0 0-.3-3.7zM6.5 10.3V5.7L10.4 8z"/></svg>',
 };
@@ -308,19 +311,44 @@ function fillFoot(node, p) {
   const tickets = node.querySelector(".tickets");
   if (ev.url) tickets.href = ev.url; else tickets.remove();
 
-  const followLabel = (b) => { b.textContent = voteOf(p) === "follow" ? "★ Following" : "☆ Follow"; };
-  node.querySelectorAll(".vote button").forEach((b) => {
+  // Icons, with the word beside them on wider screens (as the listen links do). A short
+  // message says what Follow did; Hide's "Hidden · Undo" row says what it did.
+  const label = (b) => {
+    const following = voteOf(p) === "follow";
+    const [icon, text] = b.dataset.v === "follow"
+      ? [following ? ICONS.starOn : ICONS.star, following ? "Following" : "Follow"]
+      : [ICONS.hide, "Hide"];
+    b.innerHTML = icon;
+    b.append(el("span", "txt", text));
+    b.setAttribute("aria-label", `${text} ${p.artist}`);
+    b.title = b.dataset.v === "follow" ? (following ? `Following ${p.artist}` : `Follow ${p.artist}`) : `Hide ${p.artist}`;
     b.setAttribute("aria-pressed", voteOf(p) === b.dataset.v);
-    if (b.dataset.v === "follow") followLabel(b);
+  };
+  node.querySelectorAll(".vote button").forEach((b) => {
+    label(b);
     b.addEventListener("click", () => {
       setVote(p, b.dataset.v);
       if (voteOf(p) === "hide") return replaceWith(node, p);
-      node.querySelectorAll(".vote button").forEach((x) => {
-        x.setAttribute("aria-pressed", voteOf(p) === x.dataset.v);
-        if (x.dataset.v === "follow") followLabel(x);
-      });
+      node.querySelectorAll(".vote button").forEach(label);
+      if (b.dataset.v === "follow") toast(voteOf(p) === "follow" ? `★ Following ${p.artist} · see Yours` : `No longer following ${p.artist}`);
     });
   });
+}
+
+// A short message at the bottom of the screen.
+let toastTimer;
+function toast(text) {
+  let t = document.getElementById("toast");
+  if (!t) {
+    t = el("div", "toast");
+    t.id = "toast";
+    t.setAttribute("role", "status");
+    document.body.append(t);
+  }
+  t.textContent = text;
+  t.classList.add("on");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove("on"), 2600);
 }
 
 // ---------- Your rooms ----------
