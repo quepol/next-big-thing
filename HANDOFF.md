@@ -58,6 +58,7 @@ Already decided, don't re-ask:
 
 - Research data (SF overlap, The Climb) is an Oct 18 snapshot until a weekly refresh exists (#11, the first momentum step).
 - One Node 20 warning remains, from `upload-pages-artifact`.
+- **Stale scripts in some browsers:** DuckDuckGo kept an old `app.js` after the Nov 10 tab-address change, until the user opened `#rooms` directly. The fix is a per-deploy version tag on script and style URLs (`app.js?v=<commit>`, one `sed` in the deploy step of `daily.yml`). The user chose to save it for when the site gets real versioning; if stale behaviour after a change comes up again, suggest it.
 - **One-off Last.fm or MusicBrainz questions:** a probe workflow on the dev branch answers them in about a minute, since the sandbox can't reach either site. See commit 5114d0c (Last.fm tags) or 3c14380 (MusicBrainz links) for `scripts/lastfm_probe.py` plus `.github/workflows/lastfm-probe.yml`. Delete it afterwards.
 
 ## Active issues
