@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Yours</title>
+  <script>
+    // Same saved theme as the main page, applied before first paint.
+    try { const t = JSON.parse(localStorage.getItem("nbt.theme")); if (t === "light" || t === "dark") document.documentElement.dataset.theme = t; } catch {}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="icon" href="icons/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-title" content="NBT">
+</head>
+<body class="research yours">
+  <header>
+    <p class="crumb"><a href="./">← Picks</a></p>
+    <h1>Yours</h1>
+  </header>
+  <main class="report">
+    <section class="rsec">
+      <h2>Following <span class="n" id="n-follow"></span></h2>
+      <p class="muted">A watchlist: following a band doesn't change any score.</p>
+      <ul class="ylist" id="follow"></ul>
+    </section>
+    <section class="rsec">
+      <h2>Hidden <span class="n" id="n-hide"></span></h2>
+      <p class="muted">Never shown as a pick again. Hiding a band doesn't affect any other band.</p>
+      <ul class="ylist" id="hide"></ul>
+    </section>
+    <section class="rsec">
+      <h2>Rooms you follow</h2>
+      <p class="muted">Change them on the <a href="./">Your rooms</a> tab.</p>
+      <ul class="ylist" id="rooms"></ul>
+    </section>
+    <section class="rsec">
+      <h2>Saving</h2>
+      <p class="ystatus" id="status"></p>
+      <details id="keybox" class="keybox">
+        <summary>GitHub key for this device</summary>
+        <ol class="muted small steps">
+          <li>On GitHub, open <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">a new fine-grained token</a>.</li>
+          <li>Repository access: <b>Only select repositories</b>, then <b>quepol/next-big-thing</b>.</li>
+          <li>Permissions: <b>Contents</b>, <b>Read and write</b>. Nothing else.</li>
+          <li>Expiration: up to a year. Generate, copy it, and paste it here.</li>
+        </ol>
+        <div class="keyrow">
+          <input id="key" type="password" autocomplete="off" placeholder="github_pat_…" aria-label="GitHub key">
+          <button type="button" id="savekey">Save key</button>
+        </div>
+        <p class="muted small">Kept in this browser only. Each device needs it once to save; every device can see your lists without it. <button type="button" id="forget" class="linkish">Remove the key from this device</button></p>
+      </details>
+    </section>
+  </main>
+  <footer class="site-foot" data-page="yours"></footer>
+  <script src="foot.js"></script>
+  <script src="yours.js"></script>
+  <script src="ladder.js"></script>
+  <script src="rooms.js"></script>
+  <script src="yours-page.js"></script>
+</body>
+</html>

@@ -1,4 +1,3 @@
-const VOTES_KEY = "nbt.votes";
 const TAB_KEY = "nbt.tab";
 const SORT_KEY = "nbt.sort";
 const TIERS = ["next_big_thing", "would_like", "know"];
@@ -77,8 +76,6 @@ function parseReasons(reasons) {
 const ICONS = {
   music: '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 2.5v7.8a2.5 2.5 0 1 0 1.5 2.3V5.2l5-1.1v4.7a2.5 2.5 0 1 0 1.5 2.3V1.6z"/></svg>',
   youtube: '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M15.2 4.3a2 2 0 0 0-1.4-1.4C12.6 2.6 8 2.6 8 2.6s-4.6 0-5.8.3A2 2 0 0 0 .8 4.3 21 21 0 0 0 .5 8a21 21 0 0 0 .3 3.7 2 2 0 0 0 1.4 1.4c1.2.3 5.8.3 5.8.3s4.6 0 5.8-.3a2 2 0 0 0 1.4-1.4A21 21 0 0 0 15.5 8a21 21 0 0 0-.3-3.7zM6.5 10.3V5.7L10.4 8z"/></svg>',
-  up: '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 7h2.5v7H2zm3.5 7V7.4L8.6 1.5c.9 0 1.6.8 1.4 1.7L9.5 6H13a1.5 1.5 0 0 1 1.5 1.8l-1.1 5A1.5 1.5 0 0 1 12 14z"/></svg>',
-  down: '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M14 9h-2.5V2H14zm-3.5-7v6.6L7.4 14.5c-.9 0-1.6-.8-1.4-1.7L6.5 10H3a1.5 1.5 0 0 1-1.5-1.8l1.1-5A1.5 1.5 0 0 1 4 2z"/></svg>',
 };
 
 let digest;
@@ -103,7 +100,7 @@ async function load() {
     demo = true;
   }
   setCaps(caps);
-  Object.assign(rooms, roomsByKey(digest), { ctx: showContext(digest, research), followed: store.get(ROOMS_KEY, DEFAULT_ROOMS) });
+  Object.assign(rooms, roomsByKey(digest), { ctx: showContext(digest, research), followed: Yours.rooms(store.get(ROOMS_KEY, DEFAULT_ROOMS)) });
   // Rooms with no upcoming shows still need to be findable, or one unfollowed while it's quiet
   // can never be followed again: the starter rooms, every Toronto room with a known capacity,
   // and every room ever followed.
@@ -129,6 +126,11 @@ async function load() {
     b.hidden = false;
   }
   select(currentTab());
+  // The shared copy may differ from this browser's last one (another device saved since).
+  Yours.load().then(() => {
+    rooms.followed = Yours.rooms(rooms.followed);
+    select(currentTab());
+  });
 }
 
 const currentTab = () => { const t = store.get(TAB_KEY, TIERS[0]); return TABS.includes(t) ? t : TIERS[0]; };
@@ -157,7 +159,7 @@ function select(tier) {
   document.getElementById("roombar").hidden = tier !== "rooms";
   document.getElementById("follow").hidden = true;
   if (tier === "rooms") return renderRooms(list);
-  const picks = tier === "soon" ? soonPicks() : digest.picks?.[tier] || [];
+  const picks = (tier === "soon" ? soonPicks() : digest.picks?.[tier] || []).filter(visible);
   document.getElementById("count").textContent = `${picks.length} pick${picks.length === 1 ? "" : "s"}`;
   if (!picks.length) return list.append(el("p", "empty", EMPTY[tier]));
   sorted(picks).forEach((p) => list.append(renderPick(p)));
@@ -175,20 +177,23 @@ function soonPicks() {
     .map((p) => ({ ...p, soon: true }));
 }
 
+// Follow / Hide, shared across devices through yours.js. Follow is a watchlist; Hide is for good.
 function voteOf(p) {
-  return store.get(VOTES_KEY, {})[keyOf(p.artist)]?.v;
+  return Yours.band(p.artist);
 }
 
+// A band hidden in this visit stays as a one-line "Hidden · Undo" row until the page is
+// reloaded, so a mis-tap can be undone; after that it's gone (undo on the Yours page).
+const justHidden = new Set();
+const visible = (p) => voteOf(p) !== "hide" || justHidden.has(keyOf(p.artist));
+
 function setVote(p, v) {
-  const all = store.get(VOTES_KEY, {});
-  const k = keyOf(p.artist);
-  if (!v || all[k]?.v === v) delete all[k];
-  else all[k] = { v, artist: p.artist, tier: p.tier, at: new Date().toISOString() };
-  store.set(VOTES_KEY, all);
+  Yours.setBand(p.artist, v, p.tier === "rooms" ? undefined : p.tier);
+  if (voteOf(p) === "hide") justHidden.add(keyOf(p.artist));
 }
 
 function renderPick(p) {
-  return voteOf(p) === "down" ? renderCollapsed(p) : p.show ? renderShowCard(p) : renderCard(p);
+  return voteOf(p) === "hide" ? renderCollapsed(p) : p.show ? renderShowCard(p) : renderCard(p);
 }
 
 function replaceWith(node, p) {
@@ -303,13 +308,17 @@ function fillFoot(node, p) {
   const tickets = node.querySelector(".tickets");
   if (ev.url) tickets.href = ev.url; else tickets.remove();
 
+  const followLabel = (b) => { b.textContent = voteOf(p) === "follow" ? "★ Following" : "☆ Follow"; };
   node.querySelectorAll(".vote button").forEach((b) => {
-    b.innerHTML = ICONS[b.dataset.v];
     b.setAttribute("aria-pressed", voteOf(p) === b.dataset.v);
+    if (b.dataset.v === "follow") followLabel(b);
     b.addEventListener("click", () => {
       setVote(p, b.dataset.v);
-      if (voteOf(p) === "down") return replaceWith(node, p);
-      node.querySelectorAll(".vote button").forEach((x) => x.setAttribute("aria-pressed", voteOf(p) === x.dataset.v));
+      if (voteOf(p) === "hide") return replaceWith(node, p);
+      node.querySelectorAll(".vote button").forEach((x) => {
+        x.setAttribute("aria-pressed", voteOf(p) === x.dataset.v);
+        if (x.dataset.v === "follow") followLabel(x);
+      });
     });
   });
 }
@@ -349,7 +358,7 @@ function renderRooms(list) {
   renderRoomChips();
   const all = rooms.room === FOLLOWED;
   const keys = all ? rooms.followed : rooms.room === EVERY ? [...rooms.byRoom.keys()] : [rooms.room];
-  const items = keys.flatMap((k) => rooms.byRoom.get(k)?.rows || []).map(showItem)
+  const items = keys.flatMap((k) => rooms.byRoom.get(k)?.rows || []).map(showItem).filter(visible)
     .sort((a, b) => b.score - a.score || a.event.starts_at.localeCompare(b.event.starts_at));
   const count = document.getElementById("count");
   count.textContent = `${items.length} show${items.length === 1 ? "" : "s"}`;
@@ -509,7 +518,7 @@ const tabbarMark = document.getElementById("tabbar-mark");
 document.getElementById("follow").addEventListener("click", () => {
   const k = rooms.room;
   rooms.followed = rooms.followed.includes(k) ? rooms.followed.filter((x) => x !== k) : [...rooms.followed, k];
-  store.set(ROOMS_KEY, rooms.followed);
+  Yours.setRooms(rooms.followed);
   const known = store.get(ROOMS_KNOWN_KEY, []);
   if (!known.includes(k)) store.set(ROOMS_KNOWN_KEY, [...known, k]);
   select("rooms");

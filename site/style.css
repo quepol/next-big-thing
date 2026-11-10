@@ -198,12 +198,12 @@ main { padding-top: 12px; padding-bottom: 24px; display: grid; gap: 10px; }
 .vote button {
   display: inline-flex; align-items: center; justify-content: center;
   background: none; border: 1px solid var(--line); border-radius: 4px; padding: 4px 8px;
-  color: var(--muted); cursor: pointer;
+  color: var(--muted); cursor: pointer; font: inherit; font-size: 13px; white-space: nowrap;
 }
 .vote button:hover { color: var(--text); }
 .vote button[aria-pressed="true"] { background: var(--accent-soft); border-color: var(--accent-fill); color: var(--accent); }
 
-/* Down-voted: one quiet row with an undo. */
+/* Hidden: one quiet row with an undo. */
 .card.collapsed {
   display: flex; align-items: center; gap: 10px; padding: 8px 14px; font-size: 14px;
   background: transparent; color: var(--muted);
@@ -426,3 +426,19 @@ body.sheet-open { overflow: hidden; }
 .jump a { flex: 0 0 auto; font-size: 13px; padding: 4px 10px; border: 1px solid var(--line); border-radius: 999px; color: var(--text); text-decoration: none; white-space: nowrap; }
 .jump a:hover { border-color: var(--accent-fill); }
 .research .rsec, .research .findings { scroll-margin-top: 52px; }
+
+/* Yours: follows, hides, rooms, and this device's key. */
+.yours .rsec h2 .n { color: var(--muted); font-weight: 500; margin-left: 4px; }
+.ylist { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.ylist li { display: flex; align-items: baseline; gap: 10px; padding: 9px 2px; border-bottom: 1px solid var(--line); font-size: 15px; }
+.ylist li.empty { color: var(--muted); font-size: 14px; }
+.ylist .yname { min-width: 0; overflow-wrap: anywhere; }
+.ylist .ywhen { color: var(--muted); font-size: 12px; white-space: nowrap; }
+.ylist .linkish { margin-left: auto; }
+.linkish { background: none; border: 0; padding: 2px 4px; font: inherit; font-size: 13px; color: var(--accent); cursor: pointer; }
+.ystatus { margin: 0 0 8px; font-size: 14px; }
+.keybox summary { cursor: pointer; font-size: 14px; color: var(--accent); }
+.keybox .steps { padding-left: 20px; margin: 8px 0; line-height: 1.5; }
+.keyrow { display: flex; gap: 8px; margin: 8px 0; }
+.keyrow input { flex: 1; min-width: 0; font: inherit; font-size: 15px; padding: 7px 9px; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); color: var(--text); }
+.keyrow button { font: inherit; font-size: 14px; padding: 7px 12px; border: 1px solid var(--line); border-radius: 6px; background: var(--surface-2); color: var(--text); cursor: pointer; }

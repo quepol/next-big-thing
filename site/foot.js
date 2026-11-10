@@ -3,7 +3,7 @@
 // page is research, so it's linked only from Backstage.
 
 (() => {
-  const PAGES = [["picks", "./", "Picks"], ["explore", "explore.html", "Backstage"]];
+  const PAGES = [["picks", "./", "Picks"], ["yours", "yours.html", "Yours"], ["explore", "explore.html", "Backstage"]];
   const THEME_KEY = "nbt.theme";
   const STALE_MS = 60 * 60 * 1000;
   const ICONS = {
