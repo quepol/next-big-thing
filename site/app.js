@@ -136,7 +136,14 @@ async function load() {
   });
 }
 
-const currentTab = () => { const t = store.get(TAB_KEY, TIERS[0]); return TABS.includes(t) ? t : TIERS[0]; };
+// The tab is in the address (#rooms), so a link can open one; otherwise the last tab used.
+const currentTab = () => {
+  const h = location.hash.slice(1);
+  if (TABS.includes(h)) return h;
+  const t = store.get(TAB_KEY, TIERS[0]);
+  return TABS.includes(t) ? t : TIERS[0];
+};
+window.addEventListener("hashchange", () => { if (TABS.includes(location.hash.slice(1)) && digest) select(location.hash.slice(1)); });
 
 function sorted(picks) {
   const by = store.get(SORT_KEY, "score");
@@ -156,6 +163,7 @@ function select(tier) {
     if (on) b.scrollIntoView({ block: "nearest", inline: "nearest" });
   }
   store.set(TAB_KEY, tier);
+  if (location.hash.slice(1) !== tier) history.replaceState(null, "", `#${tier}`);
   const list = document.getElementById("list");
   list.replaceChildren();
   document.getElementById("toolbar").hidden = false;
