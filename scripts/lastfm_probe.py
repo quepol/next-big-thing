@@ -51,7 +51,7 @@ for name, tier in artists:
                     sites.setdefault(k, url)
             if r.get("type") == "official homepage":
                 sites.setdefault("homepage", url)
-    kinds.update(sites)
+    kinds.update(sites.keys())
     found += bool(sites)
     print(f"{tier:15} {name[:28]:28} {str(info.get('listeners')):>8} mbid={'y' if mbid else 'n'}({how}) {sorted(sites)}")
 print(f"\n{found} of {len(artists)} picks have at least one listening link; by site: {dict(kinds)}")
