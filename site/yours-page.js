@@ -61,6 +61,25 @@
     Yours.setKey(v).then(draw);
   });
   $("forget").addEventListener("click", () => Yours.setKey("").then(draw));
+  // Tabs, as on Picks and Backstage: one section at a time, kept in the address (#hidden).
+  const TABS = ["following", "hidden", "rooms", "saving"];
+  function showTab(t) {
+    if (!TABS.includes(t)) t = TABS[0];
+    document.querySelectorAll("#ytabs button").forEach((b) => b.setAttribute("aria-selected", b.dataset.tab === t));
+    for (const id of TABS) $(`tab-${id}`).hidden = id !== t;
+    if (location.hash.slice(1) !== t) history.replaceState(null, "", `#${t}`);
+  }
+  $("ytabs").addEventListener("click", (e) => {
+    const t = e.target.closest("button")?.dataset.tab;
+    if (!t) return;
+    // As on the other pages: if the bar is frozen, start the new tab just under it.
+    const stuck = $("tabbar").getBoundingClientRect().top <= 0;
+    showTab(t);
+    if (stuck) window.scrollTo({ top: $("tabbar-mark").getBoundingClientRect().top + window.scrollY });
+  });
+  window.addEventListener("hashchange", () => showTab(location.hash.slice(1)));
+  showTab(location.hash.slice(1));
+
   Yours.onChange(draw);
   draw();
   Yours.load();
