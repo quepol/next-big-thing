@@ -250,7 +250,7 @@ function renderCard(p) {
 
   // Where: venue · capacity · region (if not Toronto) · lineup role
   const where = node.querySelector(".where");
-  where.append(el("span", "venue", ev.venue.name));
+  where.append(el("span", "venue", venueName(ev.venue.name)));
   const cap = info.venueCap ?? ev.venue.capacity;
   if (cap) where.append(` · ~${cap.toLocaleString()} cap`);
   if (ev.region && ev.region !== "Toronto") where.append(" · ", el("span", "region", ev.region));
@@ -417,6 +417,17 @@ function renderRooms(list) {
   }
 }
 
+// A venue as billed, unless that name is an alias for a room ("Sneaky Dee's Concert Venue").
+const venueName = (name) => { const k = roomKey(name); return (k !== baseKey(name) && rooms.names.get(k)) || name; };
+
+// A room's display name: as Ticketmaster bills it, unless that name is an alias for the room
+// ("Sneaky Dee's Concert Venue"), in which case the room's own name.
+function roomName(k) {
+  const r = rooms.byRoom.get(k);
+  if (r && baseKey(r.name) === k) return r.name.trim();
+  return rooms.names.get(k) || (r ? r.name.trim() : titleCase(k));
+}
+
 function renderRoomChips() {
   const box = document.getElementById("roomchips");
   box.replaceChildren();
@@ -433,7 +444,7 @@ function renderRoomChips() {
   for (const k of rooms.followed) {
     const r = rooms.byRoom.get(k);
     // Short names keep the chips to fewer lines on a phone: "Phoenix Concert Theatre" → "Phoenix".
-    chip(k, (r ? r.name.trim() : rooms.names.get(k) || titleCase(k)).replace(/^The /, "").replace(/ (Concert Theatre|Tavern)$/, ""), size(k));
+    chip(k, roomName(k).replace(/^The /, "").replace(/ (Concert Theatre|Tavern)$/, ""), size(k));
   }
   // Every other room, with "All rooms" first. A room picked here shows as the select's value.
   const sel = el("select", "roomadd");
@@ -443,7 +454,7 @@ function renderRoomChips() {
   // "Venue TBA" is Ticketmaster's placeholder, not a room: its shows still count in All rooms.
   [...rooms.byRoom.entries()].filter(([k]) => !rooms.followed.includes(k) && !/^venue tba\b/.test(k))
     .sort((a, b) => a[1].name.localeCompare(b[1].name))
-    .forEach(([k, r]) => sel.append(new Option(`${r.name} (${r.rows.length})`, k)));
+    .forEach(([k, r]) => sel.append(new Option(`${roomName(k)} (${r.rows.length})`, k)));
   const quiet = [...rooms.names].filter(([k]) => !rooms.byRoom.has(k) && !rooms.followed.includes(k))
     .sort((a, b) => a[1].replace(/^The /, "").localeCompare(b[1].replace(/^The /, "")));
   if (quiet.length) {
@@ -486,7 +497,7 @@ function renderShowCard(p) {
 
   // Where: venue · capacity · region (if not Toronto) · the rest of the bill
   const where = node.querySelector(".where");
-  where.append(el("span", "venue", ev.venue.name));
+  where.append(el("span", "venue", venueName(ev.venue.name)));
   if (ev.venue.capacity) where.append(` · ~${ev.venue.capacity.toLocaleString()} cap`);
   if (ev.region && ev.region !== "Toronto") where.append(" · ", el("span", "region", ev.region));
   // When an opener drives the score, name it in bold: that's who to get there early for.

@@ -14,6 +14,7 @@ const ROOM_ALIASES = {
   "budweiser stage": "rbc amphitheatre",
   "history": "history toronto",
   "theatre": "theatre at great canadian toronto",
+  "sneaky dee's concert venue": "sneaky dee's", // Ticketmaster's name for it
 };
 // Show score = best act's taste fit plus these bonuses. Kept in one place to tune.
 // No bonus for a band played on 1–2 days: as everywhere else, that counts as unknown (2026-11-07).
