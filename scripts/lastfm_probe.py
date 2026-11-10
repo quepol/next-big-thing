@@ -1,4 +1,4 @@
-"""One-off: how many of today's picks have a SoundCloud profile on MusicBrainz?
+"""One-off: which listening links does MusicBrainz have for today's picks?
 
 Run by .github/workflows/lastfm-probe.yml; commits nothing. For each pick: the MBID from
 Last.fm (or an exact-name MusicBrainz search), then MusicBrainz url-rels for soundcloud.com.
@@ -31,6 +31,8 @@ def mb(path, **params):
     return r.json() if r.ok else {}
 
 
+import collections
+kinds = collections.Counter()
 found = 0
 for name, tier in artists:
     info = fm.artist_info(name) or {}
@@ -39,10 +41,17 @@ for name, tier in artists:
         hits = mb("artist", query=f'artist:"{name}"', limit=5).get("artists", [])
         exact = [a for a in hits if normalize_name(a["name"]) == normalize_name(name) and int(a.get("score", 0)) >= 95]
         mbid, how = (exact[0]["id"], "mb search") if len(exact) == 1 else ("", "none" if not exact else "ambiguous")
-    sc = []
+    sites = {}
     if mbid:
-        rels = mb(f"artist/{mbid}", inc="url-rels").get("relations", [])
-        sc = [r["url"]["resource"] for r in rels if "soundcloud.com" in r.get("url", {}).get("resource", "")]
-    found += bool(sc)
-    print(f"{tier:15} {name[:30]:30} listeners={info.get('listeners')} mbid={'yes' if mbid else 'no'}({how}) soundcloud={sc[:1]}")
-print(f"\n{found} of {len(artists)} picks have a SoundCloud URL on MusicBrainz")
+        for r in mb(f"artist/{mbid}", inc="url-rels").get("relations", []):
+            url = r.get("url", {}).get("resource", "")
+            host = urllib.parse.urlparse(url).netloc.replace("www.", "")
+            for k in ("soundcloud.com", "bandcamp.com", "spotify.com", "music.apple.com", "youtube.com", "deezer.com", "tidal.com"):
+                if host.endswith(k):
+                    sites.setdefault(k, url)
+            if r.get("type") == "official homepage":
+                sites.setdefault("homepage", url)
+    kinds.update(sites)
+    found += bool(sites)
+    print(f"{tier:15} {name[:28]:28} {str(info.get('listeners')):>8} mbid={'y' if mbid else 'n'}({how}) {sorted(sites)}")
+print(f"\n{found} of {len(artists)} picks have at least one listening link; by site: {dict(kinds)}")
