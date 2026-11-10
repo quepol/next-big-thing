@@ -22,23 +22,29 @@
     <p class="crumb"><a href="./">← Picks</a></p>
     <h1>Yours</h1>
   </header>
+  <nav class="jump" aria-label="Sections">
+    <a href="#following">Following</a>
+    <a href="#hidden">Hidden</a>
+    <a href="#rooms-sec">Rooms</a>
+    <a href="#saving">Saving</a>
+  </nav>
   <main class="report">
-    <section class="rsec">
+    <section class="rsec" id="following">
       <h2>Following <span class="n" id="n-follow"></span></h2>
       <p class="muted">A watchlist: following a band doesn't change any score.</p>
       <ul class="ylist" id="follow"></ul>
     </section>
-    <section class="rsec">
+    <section class="rsec" id="hidden">
       <h2>Hidden <span class="n" id="n-hide"></span></h2>
       <p class="muted">Never shown as a pick again. Hiding a band doesn't affect any other band.</p>
       <ul class="ylist" id="hide"></ul>
     </section>
-    <section class="rsec">
+    <section class="rsec" id="rooms-sec">
       <h2>Rooms you follow</h2>
       <p class="muted">Change them on the <a href="./">Your rooms</a> tab.</p>
       <ul class="ylist" id="rooms"></ul>
     </section>
-    <section class="rsec">
+    <section class="rsec" id="saving">
       <h2>Saving</h2>
       <p class="ystatus" id="status"></p>
       <details id="keybox" class="keybox">
