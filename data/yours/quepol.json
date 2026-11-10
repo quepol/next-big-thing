@@ -39,14 +39,13 @@
     }
   },
   "rooms": [
-    "phoenix concert theatre",
     "mod club",
     "opera house",
     "horseshoe tavern",
     "concert hall",
-    "drake underground",
     "massey hall",
     "history toronto",
-    "danforth music hall"
+    "danforth music hall",
+    "drake hotel"
   ]
 }
