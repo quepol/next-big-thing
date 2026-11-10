@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "bands": {
+    "bradley hale": {
+      "artist": "Bradley Hale",
+      "state": "hide",
+      "at": "2026-10-18T22:43:57.048Z",
+      "tier": "next_big_thing"
+    },
+    "sylvan esso": {
+      "artist": "Sylvan Esso",
+      "state": "follow",
+      "at": "2026-10-19T01:12:33.208Z",
+      "tier": "know"
+    },
+    "angine de poitrine": {
+      "artist": "Angine de Poitrine",
+      "state": "follow",
+      "at": "2026-10-22T03:49:43.569Z",
+      "tier": "rooms"
+    },
+    "orville peck": {
+      "artist": "Orville Peck",
+      "state": "hide",
+      "at": "2026-11-03T23:45:23.354Z",
+      "tier": "rooms"
+    },
+    "we are scientists": {
+      "artist": "We Are Scientists",
+      "state": "follow",
+      "at": "2026-11-08T07:16:03.596Z",
+      "tier": "rooms"
+    }
+  },
+  "rooms": [
+    "phoenix concert theatre",
+    "mod club",
+    "opera house",
+    "horseshoe tavern",
+    "concert hall",
+    "drake underground",
+    "massey hall",
+    "history toronto",
+    "danforth music hall"
+  ]
+}
