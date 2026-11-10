@@ -9,7 +9,7 @@
     if (text != null) n.textContent = text;
     return n;
   };
-  const titleCase = (s) => s.replace(/\b\w/g, (c) => c.toUpperCase());
+  const titleCase = (s) => s.replace(/(^|\s)\w/g, (c) => c.toUpperCase()); // "lee's palace" -> "Lee's Palace"
   const STATUS = {
     synced: "Saved to GitHub. Every device sees these lists.",
     saving: "Saving…",

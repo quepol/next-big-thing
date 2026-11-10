@@ -81,7 +81,7 @@ const ICONS = {
 let digest;
 // Your rooms: shows at the rooms you follow, scored by rooms.js. Following filters; it never adds to a score.
 const rooms = { byRoom: new Map(), full: true, ctx: null, followed: [], room: FOLLOWED, all: false, names: new Map() };
-const titleCase = (s) => s.replace(/\b\w/g, (c) => c.toUpperCase());
+const titleCase = (s) => s.replace(/(^|\s)\w/g, (c) => c.toUpperCase()); // "lee's palace" -> "Lee's Palace"
 
 async function getJSON(url, fallback) {
   try { const r = await fetch(url, { cache: "no-store" }); return r.ok ? await r.json() : fallback; } catch { return fallback; }
