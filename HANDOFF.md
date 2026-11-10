@@ -24,7 +24,7 @@ _Last updated: 2026-11-10 (cloud session on the phone)._
 | When | Decision | Where |
 |---|---|---|
 | ~Nov 14 | Scoring tune-up: rarity-weighted tags (replaces `GENERIC_TAGS`), the "you'd probably like" bar (only ~7 picks now, so maybe leave it) and ceiling, re-anchoring the 1–10 scale, the velocity check. Momentum in order: weekly research refresh, then side projects (rule decided: include them when the user knows the parent band, as with Mike D of the Beastie Boys; not when they don't, as with Raine Maida of Our Lady Peace), then the boost. | #11 |
-| Before the ledger redesign | Move votes and follows out of the browser. **Talk to the user before building anything:** they have their own ideas. It's also a prerequisite for the public version (#7). | #5 |
+| Later | Should Follow feed taste lightly (e.g. a 0.25 seed)? The user chose a pure watchlist for now, Nov 10; revisit, since Bandcamp sampling doesn't scrobble. Watchlist alerts ("they're back in town") are still to build. | #5 |
 | Hypothetical | A public version for any Last.fm user: username + location (+ optional setlist.fm), automatic cleanup with a preview, room sizes inferred from bookings, a simpler front-end. **Talk to the user before building the front-end or #5.** | #7 |
 | ~mid-Dec | Ledger redesign around "Was I early, and did I go?" | #12 |
 
@@ -39,6 +39,8 @@ Already decided, don't re-ask:
 - **Public version (#7):** one engine with two front-ends in one repo, not a fork. Inputs are a Last.fm username and a location, plus an optional setlist.fm username (not Songkick or Bandsintown). Cleanup is offered as sign-up checkboxes backed by tags plus patterns, with a preview.
 
 ## Check next session
+
+0. **Follow / Hide shipped Nov 10.** Has the user pasted the GitHub key on the phone's home-screen app and the Mac (Yours → Saving)? Until a device has it, that device's old votes aren't in the shared file. `data/yours/quepol.json` appearing on `main` means the first save worked.
 
 1. **Next big thing count.** Expect about 4–8 picks a day. Zero, or back to 15, means something broke.
 2. **Run time.** The first runs after the cron move should land around 6am Toronto. The evening before means GitHub's delay shrank; 8am or later means it grew again.
