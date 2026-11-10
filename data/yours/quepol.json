@@ -30,6 +30,12 @@
       "state": "follow",
       "at": "2026-11-08T07:16:03.596Z",
       "tier": "rooms"
+    },
+    "mike d": {
+      "artist": "Mike D",
+      "state": "follow",
+      "at": "2026-10-17T20:38:57.003Z",
+      "tier": "next_big_thing"
     }
   },
   "rooms": [
