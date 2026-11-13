@@ -1256,7 +1256,7 @@
       "last": "2026-02-02",
       "plays": 1534,
       "recent": 1,
-      "seed": 148,
+      "seed": 149,
       "top": 2,
       "travel": [
         "rotation"
@@ -1269,17 +1269,17 @@
       "last": "2021-12-07",
       "plays": 1088,
       "recent": 0,
-      "seed": 199,
+      "seed": 200,
       "top": 3,
       "travel": [],
       "weight": 0.283
     },
     {
       "artist": "Radiohead",
-      "days": 300,
-      "last": "2026-11-11",
-      "plays": 1300,
-      "recent": 92,
+      "days": 301,
+      "last": "2026-11-12",
+      "plays": 1301,
+      "recent": 93,
       "seed": 2,
       "top": 4,
       "travel": [
@@ -1296,7 +1296,7 @@
       "last": "2018-03-06",
       "plays": 522,
       "recent": 0,
-      "seed": 224,
+      "seed": 225,
       "top": 5,
       "travel": [],
       "weight": 0.264
@@ -1307,7 +1307,7 @@
       "last": "2025-09-06",
       "plays": 709,
       "recent": 1,
-      "seed": 163,
+      "seed": 164,
       "top": 6,
       "travel": [
         "rotation",
@@ -1321,7 +1321,7 @@
       "last": "2017-07-01",
       "plays": 277,
       "recent": 0,
-      "seed": 261,
+      "seed": 263,
       "top": 7,
       "travel": [],
       "weight": 0.241
@@ -1510,7 +1510,7 @@
       "last": "2022-01-29",
       "plays": 233,
       "recent": 0,
-      "seed": 272,
+      "seed": 274,
       "top": 20,
       "travel": [],
       "weight": 0.229
@@ -1552,7 +1552,7 @@
       "last": "2018-06-15",
       "plays": 2086,
       "recent": 0,
-      "seed": 208,
+      "seed": 209,
       "top": 23,
       "travel": [],
       "weight": 0.275
@@ -1577,7 +1577,7 @@
       "last": "2023-03-22",
       "plays": 231,
       "recent": 1,
-      "seed": 204,
+      "seed": 205,
       "top": 25,
       "travel": [
         "rotation"
@@ -1617,19 +1617,19 @@
     },
     {
       "artist": "Silversun Pickups",
-      "days": 93,
-      "last": "2026-10-22",
-      "plays": 273,
-      "recent": 34,
+      "days": 94,
+      "last": "2026-11-12",
+      "plays": 274,
+      "recent": 35,
       "seed": 16,
-      "top": 29,
+      "top": 28,
       "travel": [
         "rotation",
         "heavy",
         "love",
         "live"
       ],
-      "weight": 0.753
+      "weight": 0.754
     },
     {
       "artist": "The National",
@@ -1638,7 +1638,7 @@
       "plays": 304,
       "recent": 25,
       "seed": 15,
-      "top": 28,
+      "top": 29,
       "travel": [
         "rotation",
         "heavy",
@@ -1776,10 +1776,10 @@
     },
     {
       "artist": "Ani DiFranco",
-      "days": 79,
-      "last": "2026-10-30",
-      "plays": 387,
-      "recent": 22,
+      "days": 80,
+      "last": "2026-11-11",
+      "plays": 391,
+      "recent": 23,
       "seed": 14,
       "top": 39,
       "travel": [
@@ -1788,7 +1788,7 @@
         "love",
         "live"
       ],
-      "weight": 0.767
+      "weight": 0.768
     },
     {
       "artist": "Andrew Bird",
@@ -1821,7 +1821,7 @@
       "last": "2025-06-18",
       "plays": 270,
       "recent": 5,
-      "seed": 98,
+      "seed": 99,
       "top": 42,
       "travel": [
         "rotation",
@@ -1864,7 +1864,7 @@
       "last": "2025-06-17",
       "plays": 121,
       "recent": 1,
-      "seed": 247,
+      "seed": 248,
       "top": 45,
       "travel": [
         "rotation"
@@ -1877,7 +1877,7 @@
       "last": "2026-06-29",
       "plays": 193,
       "recent": 4,
-      "seed": 121,
+      "seed": 122,
       "top": 46,
       "travel": [
         "rotation"
@@ -1890,7 +1890,7 @@
       "last": "2026-11-03",
       "plays": 140,
       "recent": 1,
-      "seed": 240,
+      "seed": 241,
       "top": 47,
       "travel": [
         "rotation",
@@ -1946,7 +1946,7 @@
       "last": "2026-09-23",
       "plays": 100,
       "recent": 2,
-      "seed": 193,
+      "seed": 194,
       "top": 51,
       "travel": [
         "rotation"
@@ -1985,7 +1985,7 @@
       "last": "2018-01-02",
       "plays": 226,
       "recent": 0,
-      "seed": 299,
+      "seed": 300,
       "top": 54,
       "travel": [],
       "weight": 0.213
@@ -2012,7 +2012,7 @@
       "last": "2024-05-16",
       "plays": 122,
       "recent": 1,
-      "seed": 253,
+      "seed": 254,
       "top": 56,
       "travel": [
         "rotation"
@@ -2056,7 +2056,7 @@
       "last": "2017-07-21",
       "plays": 191,
       "recent": 0,
-      "seed": 330,
+      "seed": 331,
       "top": 59,
       "travel": [
         "live"
@@ -2069,7 +2069,7 @@
       "last": "2026-11-03",
       "plays": 91,
       "recent": 1,
-      "seed": 265,
+      "seed": 267,
       "top": 62,
       "travel": [
         "rotation"
@@ -2082,7 +2082,7 @@
       "last": "2026-04-01",
       "plays": 180,
       "recent": 4,
-      "seed": 128,
+      "seed": 129,
       "top": 60,
       "travel": [
         "rotation",
@@ -2111,7 +2111,7 @@
       "last": "2024-03-28",
       "plays": 142,
       "recent": 1,
-      "seed": 249,
+      "seed": 250,
       "top": 64,
       "travel": [
         "rotation"
@@ -2124,7 +2124,7 @@
       "last": "2026-05-11",
       "plays": 75,
       "recent": 5,
-      "seed": 126,
+      "seed": 127,
       "top": 66,
       "travel": [
         "rotation",
@@ -2138,7 +2138,7 @@
       "last": "2026-03-28",
       "plays": 85,
       "recent": 5,
-      "seed": 123,
+      "seed": 124,
       "top": 65,
       "travel": [
         "rotation"
@@ -2162,13 +2162,29 @@
       "weight": 0.688
     },
     {
+      "artist": "Brandi Carlile",
+      "days": 55,
+      "last": "2026-11-12",
+      "plays": 153,
+      "recent": 30,
+      "seed": 24,
+      "top": 67,
+      "travel": [
+        "rotation",
+        "heavy",
+        "love",
+        "live"
+      ],
+      "weight": 0.672
+    },
+    {
       "artist": "Regina Spektor",
       "days": 55,
       "last": "2017-07-23",
       "plays": 84,
       "recent": 0,
       "seed": null,
-      "top": 68,
+      "top": 69,
       "travel": [],
       "weight": null
     },
@@ -2179,7 +2195,7 @@
       "plays": 106,
       "recent": 16,
       "seed": 27,
-      "top": 67,
+      "top": 68,
       "travel": [
         "rotation",
         "heavy",
@@ -2194,28 +2210,12 @@
       "last": "2023-08-23",
       "plays": 162,
       "recent": 1,
-      "seed": 245,
-      "top": 69,
+      "seed": 246,
+      "top": 70,
       "travel": [
         "rotation"
       ],
       "weight": 0.25
-    },
-    {
-      "artist": "Brandi Carlile",
-      "days": 53,
-      "last": "2026-11-03",
-      "plays": 151,
-      "recent": 28,
-      "seed": 24,
-      "top": 70,
-      "travel": [
-        "rotation",
-        "heavy",
-        "love",
-        "live"
-      ],
-      "weight": 0.668
     },
     {
       "artist": "Feist",
@@ -2223,7 +2223,7 @@
       "last": "2026-11-03",
       "plays": 123,
       "recent": 5,
-      "seed": 113,
+      "seed": 114,
       "top": 71,
       "travel": [
         "rotation"
@@ -2236,7 +2236,7 @@
       "last": "2024-10-24",
       "plays": 102,
       "recent": 1,
-      "seed": 264,
+      "seed": 266,
       "top": 72,
       "travel": [
         "rotation"
@@ -2249,7 +2249,7 @@
       "last": "2025-06-21",
       "plays": 58,
       "recent": 2,
-      "seed": 225,
+      "seed": 226,
       "top": 75,
       "travel": [
         "rotation"
@@ -2291,7 +2291,7 @@
       "last": "2026-01-21",
       "plays": 121,
       "recent": 21,
-      "seed": 25,
+      "seed": 26,
       "top": 77,
       "travel": [
         "rotation",
@@ -2317,7 +2317,7 @@
       "last": "2024-02-27",
       "plays": 100,
       "recent": 5,
-      "seed": 118,
+      "seed": 119,
       "top": 78,
       "travel": [
         "rotation"
@@ -2395,7 +2395,7 @@
       "plays": 116,
       "recent": 11,
       "seed": 47,
-      "top": 84,
+      "top": 85,
       "travel": [
         "rotation",
         "heavy",
@@ -2404,13 +2404,27 @@
       "weight": 0.642
     },
     {
+      "artist": "Florence + the Machine",
+      "days": 48,
+      "last": "2026-11-11",
+      "plays": 130,
+      "recent": 7,
+      "seed": 80,
+      "top": 84,
+      "travel": [
+        "rotation",
+        "live"
+      ],
+      "weight": 0.513
+    },
+    {
       "artist": "Van Morrison",
       "days": 48,
       "last": "2026-04-15",
       "plays": 87,
       "recent": 2,
-      "seed": 211,
-      "top": 85,
+      "seed": 212,
+      "top": 86,
       "travel": [
         "rotation"
       ],
@@ -2426,20 +2440,6 @@
       "top": 87,
       "travel": [],
       "weight": null
-    },
-    {
-      "artist": "Florence + the Machine",
-      "days": 47,
-      "last": "2026-04-17",
-      "plays": 129,
-      "recent": 6,
-      "seed": 104,
-      "top": 86,
-      "travel": [
-        "rotation",
-        "live"
-      ],
-      "weight": 0.466
     },
     {
       "artist": "The Fray",
@@ -2458,7 +2458,7 @@
       "last": "2023-10-20",
       "plays": 95,
       "recent": 1,
-      "seed": 271,
+      "seed": 273,
       "top": 89,
       "travel": [
         "rotation"
@@ -2466,13 +2466,28 @@
       "weight": 0.231
     },
     {
+      "artist": "Paramore",
+      "days": 45,
+      "last": "2026-11-12",
+      "plays": 139,
+      "recent": 37,
+      "seed": 25,
+      "top": 90,
+      "travel": [
+        "rotation",
+        "heavy",
+        "love"
+      ],
+      "weight": 0.65
+    },
+    {
       "artist": "Aimee Mann",
       "days": 44,
       "last": "2025-09-29",
       "plays": 188,
       "recent": 6,
-      "seed": 96,
-      "top": 91,
+      "seed": 97,
+      "top": 92,
       "travel": [
         "rotation"
       ],
@@ -2485,7 +2500,7 @@
       "plays": 190,
       "recent": 9,
       "seed": 52,
-      "top": 90,
+      "top": 91,
       "travel": [
         "rotation",
         "heavy",
@@ -2506,21 +2521,6 @@
         "heavy"
       ],
       "weight": 0.527
-    },
-    {
-      "artist": "Paramore",
-      "days": 44,
-      "last": "2026-11-11",
-      "plays": 137,
-      "recent": 36,
-      "seed": 26,
-      "top": 92,
-      "travel": [
-        "rotation",
-        "heavy",
-        "love"
-      ],
-      "weight": 0.647
     },
     {
       "artist": "Frédéric Chopin",
@@ -2568,7 +2568,7 @@
       "last": "2026-04-02",
       "plays": 65,
       "recent": 1,
-      "seed": 286,
+      "seed": 287,
       "top": 96,
       "travel": [
         "rotation"
@@ -2641,7 +2641,7 @@
       "last": "2026-06-20",
       "plays": 203,
       "recent": 6,
-      "seed": 95,
+      "seed": 96,
       "top": 104,
       "travel": [
         "rotation",
@@ -2655,7 +2655,7 @@
       "last": "2026-01-15",
       "plays": 104,
       "recent": 2,
-      "seed": 210,
+      "seed": 211,
       "top": 106,
       "travel": [
         "rotation"
@@ -2682,7 +2682,7 @@
       "last": "2025-03-21",
       "plays": 75,
       "recent": 4,
-      "seed": 154,
+      "seed": 155,
       "top": 108,
       "travel": [
         "rotation"
@@ -2732,7 +2732,7 @@
       "last": "2026-02-20",
       "plays": 85,
       "recent": 5,
-      "seed": 130,
+      "seed": 131,
       "top": 107,
       "travel": [
         "rotation"
@@ -2756,7 +2756,7 @@
       "last": "2017-07-01",
       "plays": 76,
       "recent": 0,
-      "seed": 329,
+      "seed": 330,
       "top": 112,
       "travel": [
         "live"
@@ -2769,7 +2769,7 @@
       "last": "2026-04-01",
       "plays": 98,
       "recent": 7,
-      "seed": 92,
+      "seed": 93,
       "top": 111,
       "travel": [
         "rotation"
@@ -2782,7 +2782,7 @@
       "last": "2025-06-21",
       "plays": 74,
       "recent": 8,
-      "seed": 80,
+      "seed": 81,
       "top": 113,
       "travel": [
         "rotation",
@@ -2834,7 +2834,7 @@
       "last": "2026-01-16",
       "plays": 95,
       "recent": 4,
-      "seed": 151,
+      "seed": 152,
       "top": 117,
       "travel": [
         "rotation"
@@ -2874,7 +2874,7 @@
       "last": "2026-10-30",
       "plays": 56,
       "recent": 8,
-      "seed": 89,
+      "seed": 90,
       "top": 121,
       "travel": [
         "rotation",
@@ -2888,7 +2888,7 @@
       "last": "2024-06-27",
       "plays": 65,
       "recent": 1,
-      "seed": 293,
+      "seed": 294,
       "top": 120,
       "travel": [
         "rotation"
@@ -2901,7 +2901,7 @@
       "last": "2026-04-15",
       "plays": 73,
       "recent": 8,
-      "seed": 82,
+      "seed": 83,
       "top": 126,
       "travel": [
         "rotation",
@@ -2915,7 +2915,7 @@
       "last": "2025-01-25",
       "plays": 63,
       "recent": 1,
-      "seed": 298,
+      "seed": 299,
       "top": 127,
       "travel": [
         "rotation"
@@ -2939,7 +2939,7 @@
       "last": "2026-11-07",
       "plays": 170,
       "recent": 2,
-      "seed": 194,
+      "seed": 195,
       "top": 123,
       "travel": [
         "rotation",
@@ -2953,7 +2953,7 @@
       "last": "2024-05-17",
       "plays": 75,
       "recent": 1,
-      "seed": 287,
+      "seed": 288,
       "top": 125,
       "travel": [
         "rotation"
@@ -2966,7 +2966,7 @@
       "last": "2025-10-04",
       "plays": 57,
       "recent": 6,
-      "seed": 120,
+      "seed": 121,
       "top": 128,
       "travel": [
         "rotation"
@@ -2979,7 +2979,7 @@
       "last": "2026-01-26",
       "plays": 55,
       "recent": 2,
-      "seed": 248,
+      "seed": 249,
       "top": 130,
       "travel": [
         "rotation"
@@ -3116,7 +3116,7 @@
       "last": "2022-12-24",
       "plays": 125,
       "recent": 0,
-      "seed": 321,
+      "seed": 322,
       "top": 132,
       "travel": [
         "live"
@@ -3153,7 +3153,7 @@
       "last": "2025-06-17",
       "plays": 86,
       "recent": 1,
-      "seed": 285,
+      "seed": 286,
       "top": 141,
       "travel": [
         "rotation"
@@ -3177,7 +3177,7 @@
       "last": "2025-01-16",
       "plays": 54,
       "recent": 3,
-      "seed": 196,
+      "seed": 197,
       "top": 147,
       "travel": [
         "rotation"
@@ -3212,13 +3212,26 @@
       "weight": 0.64
     },
     {
+      "artist": "Rufus Wainwright",
+      "days": 33,
+      "last": "2026-11-11",
+      "plays": 49,
+      "recent": 2,
+      "seed": 258,
+      "top": 148,
+      "travel": [
+        "rotation"
+      ],
+      "weight": 0.243
+    },
+    {
       "artist": "Cat Power",
       "days": 32,
       "last": "2015-12-07",
       "plays": 70,
       "recent": 0,
-      "seed": 304,
-      "top": 153,
+      "seed": 305,
+      "top": 154,
       "travel": [
         "live"
       ],
@@ -3230,7 +3243,7 @@
       "last": "2026-11-10",
       "plays": 42,
       "recent": 8,
-      "seed": 107,
+      "seed": 108,
       "top": 156,
       "travel": [
         "rotation",
@@ -3244,8 +3257,8 @@
       "last": "2024-12-25",
       "plays": 83,
       "recent": 8,
-      "seed": 85,
-      "top": 151,
+      "seed": 86,
+      "top": 152,
       "travel": [
         "rotation",
         "heavy"
@@ -3258,8 +3271,8 @@
       "last": "2025-11-14",
       "plays": 62,
       "recent": 3,
-      "seed": 191,
-      "top": 154,
+      "seed": 192,
+      "top": 155,
       "travel": [
         "rotation"
       ],
@@ -3272,21 +3285,8 @@
       "plays": 113,
       "recent": 0,
       "seed": null,
-      "top": 149,
+      "top": 150,
       "travel": [],
-      "weight": null
-    },
-    {
-      "artist": "Rufus Wainwright",
-      "days": 32,
-      "last": "2023-08-29",
-      "plays": 48,
-      "recent": 1,
-      "seed": null,
-      "top": 155,
-      "travel": [
-        "rotation"
-      ],
       "weight": null
     },
     {
@@ -3296,7 +3296,7 @@
       "plays": 90,
       "recent": 14,
       "seed": 58,
-      "top": 150,
+      "top": 151,
       "travel": [
         "rotation",
         "heavy"
@@ -3309,8 +3309,8 @@
       "last": "2025-12-16",
       "plays": 75,
       "recent": 2,
-      "seed": 237,
-      "top": 152,
+      "seed": 238,
+      "top": 153,
       "travel": [
         "rotation",
         "live"
@@ -3323,8 +3323,8 @@
       "last": "2015-10-29",
       "plays": 157,
       "recent": 0,
-      "seed": 316,
-      "top": 148,
+      "seed": 317,
+      "top": 149,
       "travel": [
         "live"
       ],
@@ -3336,7 +3336,7 @@
       "last": "2025-06-17",
       "plays": 84,
       "recent": 1,
-      "seed": 290,
+      "seed": 291,
       "top": 158,
       "travel": [
         "rotation"
@@ -3349,7 +3349,7 @@
       "last": "2025-04-21",
       "plays": 55,
       "recent": 3,
-      "seed": 198,
+      "seed": 199,
       "top": 159,
       "travel": [
         "rotation"
@@ -3362,7 +3362,7 @@
       "last": "2013-12-19",
       "plays": 176,
       "recent": 0,
-      "seed": 322,
+      "seed": 323,
       "top": 157,
       "travel": [
         "live"
@@ -3375,7 +3375,7 @@
       "last": "2026-04-01",
       "plays": 84,
       "recent": 4,
-      "seed": 157,
+      "seed": 158,
       "top": 161,
       "travel": [
         "rotation",
@@ -3411,7 +3411,7 @@
       "last": "2025-12-24",
       "plays": 79,
       "recent": 3,
-      "seed": 188,
+      "seed": 189,
       "top": 162,
       "travel": [
         "rotation"
@@ -3438,7 +3438,7 @@
       "last": "2023-12-16",
       "plays": 59,
       "recent": 2,
-      "seed": 251,
+      "seed": 252,
       "top": 164,
       "travel": [
         "rotation",
@@ -3485,7 +3485,7 @@
       "last": "2025-07-10",
       "plays": 38,
       "recent": 4,
-      "seed": 179,
+      "seed": 180,
       "top": 170,
       "travel": [
         "rotation"
@@ -3553,7 +3553,7 @@
       "last": "2025-12-03",
       "plays": 55,
       "recent": 3,
-      "seed": 203,
+      "seed": 204,
       "top": 172,
       "travel": [
         "rotation"
@@ -3567,9 +3567,23 @@
       "plays": 41,
       "recent": 0,
       "seed": null,
-      "top": 182,
+      "top": 183,
       "travel": [],
       "weight": null
+    },
+    {
+      "artist": "Alexisonfire",
+      "days": 27,
+      "last": "2026-11-12",
+      "plays": 57,
+      "recent": 20,
+      "seed": 69,
+      "top": 179,
+      "travel": [
+        "rotation",
+        "heavy"
+      ],
+      "weight": 0.548
     },
     {
       "artist": "Aloe Blacc",
@@ -3589,7 +3603,7 @@
       "plays": 56,
       "recent": 4,
       "seed": 170,
-      "top": 179,
+      "top": 180,
       "travel": [
         "rotation"
       ],
@@ -3601,7 +3615,7 @@
       "last": "2024-11-10",
       "plays": 68,
       "recent": 3,
-      "seed": 195,
+      "seed": 196,
       "top": 178,
       "travel": [
         "rotation"
@@ -3626,7 +3640,7 @@
       "plays": 50,
       "recent": 11,
       "seed": 72,
-      "top": 181,
+      "top": 182,
       "travel": [
         "rotation",
         "heavy"
@@ -3639,8 +3653,8 @@
       "last": "2023-08-29",
       "plays": 36,
       "recent": 2,
-      "seed": 278,
-      "top": 184,
+      "seed": 279,
+      "top": 185,
       "travel": [
         "rotation"
       ],
@@ -3653,7 +3667,7 @@
       "plays": 41,
       "recent": 6,
       "seed": 141,
-      "top": 183,
+      "top": 184,
       "travel": [
         "rotation"
       ],
@@ -3665,26 +3679,12 @@
       "last": "2026-07-14",
       "plays": 52,
       "recent": 3,
-      "seed": 207,
-      "top": 180,
+      "seed": 208,
+      "top": 181,
       "travel": [
         "rotation"
       ],
       "weight": 0.276
-    },
-    {
-      "artist": "Alexisonfire",
-      "days": 26,
-      "last": "2026-09-29",
-      "plays": 55,
-      "recent": 19,
-      "seed": 70,
-      "top": 190,
-      "travel": [
-        "rotation",
-        "heavy"
-      ],
-      "weight": 0.543
     },
     {
       "artist": "Bob Marley",
@@ -3715,7 +3715,7 @@
       "plays": 81,
       "recent": 5,
       "seed": 145,
-      "top": 186,
+      "top": 187,
       "travel": [
         "rotation"
       ],
@@ -3750,7 +3750,7 @@
       "plays": 80,
       "recent": 17,
       "seed": 63,
-      "top": 187,
+      "top": 188,
       "travel": [
         "rotation",
         "heavy"
@@ -3775,7 +3775,7 @@
       "plays": 154,
       "recent": 9,
       "seed": 61,
-      "top": 185,
+      "top": 186,
       "travel": [
         "rotation",
         "heavy"
@@ -3810,8 +3810,8 @@
       "last": "2026-10-30",
       "plays": 59,
       "recent": 18,
-      "seed": 69,
-      "top": 189,
+      "seed": 70,
+      "top": 190,
       "travel": [
         "rotation",
         "heavy"
@@ -3825,7 +3825,7 @@
       "plays": 64,
       "recent": 1,
       "seed": null,
-      "top": 188,
+      "top": 189,
       "travel": [
         "rotation"
       ],
@@ -3848,7 +3848,7 @@
       "last": "2026-03-05",
       "plays": 29,
       "recent": 11,
-      "seed": 88,
+      "seed": 89,
       "top": null,
       "travel": [
         "heavy"
@@ -3861,7 +3861,7 @@
       "last": "2026-11-07",
       "plays": 38,
       "recent": 4,
-      "seed": 183,
+      "seed": 184,
       "top": null,
       "travel": [],
       "weight": 0.298
@@ -3872,7 +3872,7 @@
       "last": "2025-06-09",
       "plays": 207,
       "recent": 1,
-      "seed": 266,
+      "seed": 268,
       "top": 198,
       "travel": [
         "rotation"
@@ -3909,7 +3909,7 @@
       "last": "2026-01-20",
       "plays": 47,
       "recent": 5,
-      "seed": 156,
+      "seed": 157,
       "top": null,
       "travel": [],
       "weight": 0.343
@@ -3920,7 +3920,7 @@
       "last": "2025-06-17",
       "plays": 40,
       "recent": 7,
-      "seed": 124,
+      "seed": 125,
       "top": null,
       "travel": [
         "live"
@@ -3946,7 +3946,7 @@
       "last": "2024-12-25",
       "plays": 48,
       "recent": 3,
-      "seed": 217,
+      "seed": 218,
       "top": null,
       "travel": [],
       "weight": 0.269
@@ -3971,7 +3971,7 @@
       "last": "2025-11-02",
       "plays": 48,
       "recent": 4,
-      "seed": 178,
+      "seed": 179,
       "top": null,
       "travel": [],
       "weight": 0.306
@@ -3995,7 +3995,7 @@
       "last": "2025-06-21",
       "plays": 72,
       "recent": 3,
-      "seed": 200,
+      "seed": 201,
       "top": null,
       "travel": [],
       "weight": 0.282
@@ -4017,7 +4017,7 @@
       "last": "2026-04-15",
       "plays": 50,
       "recent": 7,
-      "seed": 116,
+      "seed": 117,
       "top": null,
       "travel": [],
       "weight": 0.416
@@ -4041,7 +4041,7 @@
       "last": "2025-12-04",
       "plays": 35,
       "recent": 7,
-      "seed": 129,
+      "seed": 130,
       "top": null,
       "travel": [],
       "weight": 0.396
@@ -4066,7 +4066,7 @@
       "last": "2025-06-21",
       "plays": 89,
       "recent": 8,
-      "seed": 91,
+      "seed": 92,
       "top": null,
       "travel": [
         "heavy"
@@ -4092,7 +4092,7 @@
       "last": "2022-03-20",
       "plays": 69,
       "recent": 0,
-      "seed": 320,
+      "seed": 321,
       "top": null,
       "travel": [
         "live"
@@ -4132,7 +4132,7 @@
       "last": "2025-06-17",
       "plays": 72,
       "recent": 2,
-      "seed": 256,
+      "seed": 257,
       "top": null,
       "travel": [],
       "weight": 0.243
@@ -4143,7 +4143,7 @@
       "last": "2026-05-15",
       "plays": 25,
       "recent": 5,
-      "seed": 175,
+      "seed": 176,
       "top": null,
       "travel": [],
       "weight": 0.31
@@ -4154,7 +4154,7 @@
       "last": "2026-01-21",
       "plays": 29,
       "recent": 14,
-      "seed": 94,
+      "seed": 95,
       "top": null,
       "travel": [
         "heavy"
@@ -4167,7 +4167,7 @@
       "last": "2026-11-11",
       "plays": 48,
       "recent": 3,
-      "seed": 220,
+      "seed": 221,
       "top": null,
       "travel": [],
       "weight": 0.266
@@ -4178,7 +4178,7 @@
       "last": "2025-06-17",
       "plays": 71,
       "recent": 3,
-      "seed": 202,
+      "seed": 203,
       "top": null,
       "travel": [],
       "weight": 0.28
@@ -4189,7 +4189,7 @@
       "last": "2025-11-02",
       "plays": 66,
       "recent": 9,
-      "seed": 83,
+      "seed": 84,
       "top": null,
       "travel": [
         "heavy"
@@ -4215,7 +4215,7 @@
       "last": "2026-04-17",
       "plays": 40,
       "recent": 11,
-      "seed": 81,
+      "seed": 82,
       "top": null,
       "travel": [
         "heavy"
@@ -4228,7 +4228,7 @@
       "last": "2026-01-06",
       "plays": 36,
       "recent": 4,
-      "seed": 189,
+      "seed": 190,
       "top": null,
       "travel": [],
       "weight": 0.29
@@ -4252,7 +4252,7 @@
       "last": "2026-02-27",
       "plays": 31,
       "recent": 3,
-      "seed": 246,
+      "seed": 247,
       "top": null,
       "travel": [],
       "weight": 0.25
@@ -4301,7 +4301,7 @@
       "last": "2025-11-05",
       "plays": 87,
       "recent": 2,
-      "seed": 250,
+      "seed": 251,
       "top": null,
       "travel": [],
       "weight": 0.247
@@ -4312,7 +4312,7 @@
       "last": "2025-06-21",
       "plays": 62,
       "recent": 2,
-      "seed": 268,
+      "seed": 270,
       "top": null,
       "travel": [],
       "weight": 0.234
@@ -4323,7 +4323,7 @@
       "last": "2025-11-28",
       "plays": 66,
       "recent": 9,
-      "seed": 86,
+      "seed": 88,
       "top": null,
       "travel": [
         "heavy"
@@ -4336,7 +4336,7 @@
       "last": "2023-07-05",
       "plays": 36,
       "recent": 3,
-      "seed": 241,
+      "seed": 242,
       "top": null,
       "travel": [],
       "weight": 0.252
@@ -4347,7 +4347,7 @@
       "last": "2023-03-26",
       "plays": 77,
       "recent": 1,
-      "seed": 314,
+      "seed": 315,
       "top": null,
       "travel": [
         "live"
@@ -4360,7 +4360,7 @@
       "last": "2026-10-30",
       "plays": 122,
       "recent": 3,
-      "seed": 187,
+      "seed": 188,
       "top": null,
       "travel": [],
       "weight": 0.296
@@ -4371,7 +4371,7 @@
       "last": "2026-04-16",
       "plays": 49,
       "recent": 4,
-      "seed": 186,
+      "seed": 187,
       "top": null,
       "travel": [],
       "weight": 0.297
@@ -4382,7 +4382,7 @@
       "last": "2024-12-25",
       "plays": 47,
       "recent": 3,
-      "seed": 229,
+      "seed": 230,
       "top": null,
       "travel": [],
       "weight": 0.259
@@ -4393,7 +4393,7 @@
       "last": "2026-11-03",
       "plays": 42,
       "recent": 9,
-      "seed": 106,
+      "seed": 107,
       "top": null,
       "travel": [
         "heavy"
@@ -4406,7 +4406,7 @@
       "last": "2026-04-24",
       "plays": 56,
       "recent": 9,
-      "seed": 93,
+      "seed": 94,
       "top": null,
       "travel": [
         "heavy"
@@ -4419,7 +4419,7 @@
       "last": "2026-06-20",
       "plays": 45,
       "recent": 19,
-      "seed": 84,
+      "seed": 85,
       "top": null,
       "travel": [
         "heavy"
@@ -4456,7 +4456,7 @@
       "last": "2025-09-04",
       "plays": 42,
       "recent": 9,
-      "seed": 105,
+      "seed": 106,
       "top": null,
       "travel": [
         "heavy"
@@ -4469,7 +4469,7 @@
       "last": "2025-04-03",
       "plays": 29,
       "recent": 8,
-      "seed": 125,
+      "seed": 126,
       "top": null,
       "travel": [
         "heavy"
@@ -4495,7 +4495,7 @@
       "last": "2026-03-06",
       "plays": 144,
       "recent": 6,
-      "seed": 115,
+      "seed": 116,
       "top": null,
       "travel": [],
       "weight": 0.422
@@ -4506,7 +4506,7 @@
       "last": "2023-03-01",
       "plays": 41,
       "recent": 2,
-      "seed": 288,
+      "seed": 289,
       "top": null,
       "travel": [],
       "weight": 0.218
@@ -4517,7 +4517,7 @@
       "last": "2026-01-07",
       "plays": 38,
       "recent": 15,
-      "seed": 90,
+      "seed": 91,
       "top": null,
       "travel": [
         "heavy"
@@ -4530,7 +4530,7 @@
       "last": "2025-01-17",
       "plays": 40,
       "recent": 6,
-      "seed": 150,
+      "seed": 151,
       "top": null,
       "travel": [],
       "weight": 0.355
@@ -4541,7 +4541,7 @@
       "last": "2023-11-27",
       "plays": 66,
       "recent": 3,
-      "seed": 214,
+      "seed": 215,
       "top": null,
       "travel": [],
       "weight": 0.27
@@ -4552,7 +4552,7 @@
       "last": "2026-11-03",
       "plays": 46,
       "recent": 9,
-      "seed": 103,
+      "seed": 104,
       "top": null,
       "travel": [
         "heavy"
@@ -4565,7 +4565,7 @@
       "last": "2026-11-11",
       "plays": 51,
       "recent": 9,
-      "seed": 99,
+      "seed": 100,
       "top": null,
       "travel": [
         "heavy"
@@ -4592,7 +4592,7 @@
       "last": "2021-09-30",
       "plays": 66,
       "recent": 0,
-      "seed": 319,
+      "seed": 320,
       "top": null,
       "travel": [
         "live"
@@ -4605,7 +4605,7 @@
       "last": "2025-04-18",
       "plays": 26,
       "recent": 4,
-      "seed": 218,
+      "seed": 219,
       "top": null,
       "travel": [],
       "weight": 0.268
@@ -4616,7 +4616,7 @@
       "last": "2026-05-30",
       "plays": 27,
       "recent": 5,
-      "seed": 180,
+      "seed": 181,
       "top": null,
       "travel": [],
       "weight": 0.3
@@ -4627,7 +4627,7 @@
       "last": "2026-10-30",
       "plays": 28,
       "recent": 8,
-      "seed": 127,
+      "seed": 128,
       "top": null,
       "travel": [
         "heavy"
@@ -4640,7 +4640,7 @@
       "last": "2026-04-01",
       "plays": 30,
       "recent": 12,
-      "seed": 102,
+      "seed": 103,
       "top": null,
       "travel": [
         "heavy"
@@ -4648,12 +4648,25 @@
       "weight": 0.469
     },
     {
+      "artist": "CHVRCHES",
+      "days": 17,
+      "last": "2026-11-12",
+      "plays": 49,
+      "recent": 16,
+      "seed": 87,
+      "top": null,
+      "travel": [
+        "heavy"
+      ],
+      "weight": 0.504
+    },
+    {
       "artist": "Fink",
       "days": 17,
       "last": "2026-11-07",
       "plays": 34,
       "recent": 4,
-      "seed": 206,
+      "seed": 207,
       "top": null,
       "travel": [
         "live"
@@ -4666,7 +4679,7 @@
       "last": "2025-07-09",
       "plays": 18,
       "recent": 3,
-      "seed": 282,
+      "seed": 283,
       "top": null,
       "travel": [],
       "weight": 0.221
@@ -4690,7 +4703,7 @@
       "last": "2024-05-16",
       "plays": 41,
       "recent": 6,
-      "seed": 152,
+      "seed": 153,
       "top": null,
       "travel": [],
       "weight": 0.354
@@ -4701,7 +4714,7 @@
       "last": "2026-04-01",
       "plays": 21,
       "recent": 4,
-      "seed": 234,
+      "seed": 235,
       "top": null,
       "travel": [],
       "weight": 0.257
@@ -4712,7 +4725,7 @@
       "last": "2026-04-25",
       "plays": 30,
       "recent": 4,
-      "seed": 213,
+      "seed": 214,
       "top": null,
       "travel": [],
       "weight": 0.272
@@ -4723,23 +4736,10 @@
       "last": "2026-02-11",
       "plays": 59,
       "recent": 2,
-      "seed": 279,
+      "seed": 280,
       "top": null,
       "travel": [],
       "weight": 0.226
-    },
-    {
-      "artist": "CHVRCHES",
-      "days": 16,
-      "last": "2026-11-08",
-      "plays": 48,
-      "recent": 15,
-      "seed": 87,
-      "top": null,
-      "travel": [
-        "heavy"
-      ],
-      "weight": 0.498
     },
     {
       "artist": "Evanescence",
@@ -4747,7 +4747,7 @@
       "last": "2026-06-12",
       "plays": 32,
       "recent": 6,
-      "seed": 158,
+      "seed": 159,
       "top": null,
       "travel": [],
       "weight": 0.338
@@ -4786,7 +4786,7 @@
       "last": "2011-05-25",
       "plays": 43,
       "recent": 0,
-      "seed": 327,
+      "seed": 328,
       "top": null,
       "travel": [
         "live"
@@ -4799,7 +4799,7 @@
       "last": "2011-10-06",
       "plays": 40,
       "recent": 0,
-      "seed": 326,
+      "seed": 327,
       "top": null,
       "travel": [
         "live"
@@ -4812,7 +4812,7 @@
       "last": "2025-06-21",
       "plays": 41,
       "recent": 2,
-      "seed": 297,
+      "seed": 298,
       "top": null,
       "travel": [],
       "weight": 0.214
@@ -4823,7 +4823,7 @@
       "last": "2026-04-02",
       "plays": 24,
       "recent": 4,
-      "seed": 228,
+      "seed": 229,
       "top": null,
       "travel": [],
       "weight": 0.26
@@ -4834,7 +4834,7 @@
       "last": "2026-04-04",
       "plays": 115,
       "recent": 8,
-      "seed": 97,
+      "seed": 98,
       "top": null,
       "travel": [
         "heavy"
@@ -4847,7 +4847,7 @@
       "last": "2026-11-07",
       "plays": 30,
       "recent": 4,
-      "seed": 215,
+      "seed": 216,
       "top": null,
       "travel": [],
       "weight": 0.269
@@ -4858,7 +4858,7 @@
       "last": "2026-02-11",
       "plays": 27,
       "recent": 4,
-      "seed": 226,
+      "seed": 227,
       "top": null,
       "travel": [],
       "weight": 0.262
@@ -4869,7 +4869,7 @@
       "last": "2026-04-15",
       "plays": 45,
       "recent": 2,
-      "seed": 295,
+      "seed": 296,
       "top": null,
       "travel": [],
       "weight": 0.215
@@ -4880,7 +4880,7 @@
       "last": "2026-04-23",
       "plays": 18,
       "recent": 7,
-      "seed": 160,
+      "seed": 161,
       "top": null,
       "travel": [],
       "weight": 0.335
@@ -4891,7 +4891,7 @@
       "last": "2026-03-17",
       "plays": 50,
       "recent": 4,
-      "seed": 192,
+      "seed": 193,
       "top": null,
       "travel": [],
       "weight": 0.288
@@ -4902,7 +4902,7 @@
       "last": "2026-10-14",
       "plays": 26,
       "recent": 4,
-      "seed": 227,
+      "seed": 228,
       "top": null,
       "travel": [],
       "weight": 0.261
@@ -4913,7 +4913,7 @@
       "last": "2025-11-28",
       "plays": 78,
       "recent": 4,
-      "seed": 177,
+      "seed": 178,
       "top": null,
       "travel": [],
       "weight": 0.306
@@ -4924,7 +4924,7 @@
       "last": "2026-11-07",
       "plays": 31,
       "recent": 4,
-      "seed": 219,
+      "seed": 220,
       "top": null,
       "travel": [
         "live"
@@ -4937,7 +4937,7 @@
       "last": "2025-06-17",
       "plays": 37,
       "recent": 4,
-      "seed": 209,
+      "seed": 210,
       "top": null,
       "travel": [],
       "weight": 0.275
@@ -4948,7 +4948,7 @@
       "last": "2025-07-24",
       "plays": 16,
       "recent": 4,
-      "seed": 260,
+      "seed": 262,
       "top": null,
       "travel": [
         "live"
@@ -4961,7 +4961,7 @@
       "last": "2026-06-11",
       "plays": 39,
       "recent": 12,
-      "seed": 100,
+      "seed": 101,
       "top": null,
       "travel": [
         "heavy"
@@ -4974,7 +4974,7 @@
       "last": "2024-03-28",
       "plays": 34,
       "recent": 4,
-      "seed": 216,
+      "seed": 217,
       "top": null,
       "travel": [],
       "weight": 0.269
@@ -4985,7 +4985,7 @@
       "last": "2026-04-15",
       "plays": 26,
       "recent": 3,
-      "seed": 277,
+      "seed": 278,
       "top": null,
       "travel": [],
       "weight": 0.227
@@ -4996,7 +4996,7 @@
       "last": "2024-08-08",
       "plays": 26,
       "recent": 4,
-      "seed": 232,
+      "seed": 233,
       "top": null,
       "travel": [],
       "weight": 0.258
@@ -5007,7 +5007,7 @@
       "last": "2008-10-16",
       "plays": 76,
       "recent": 0,
-      "seed": 325,
+      "seed": 326,
       "top": null,
       "travel": [
         "live"
@@ -5015,12 +5015,23 @@
       "weight": 0.25
     },
     {
+      "artist": "Phoebe Bridgers",
+      "days": 14,
+      "last": "2026-11-11",
+      "plays": 30,
+      "recent": 4,
+      "seed": 224,
+      "top": null,
+      "travel": [],
+      "weight": 0.264
+    },
+    {
       "artist": "The Doobie Brothers",
       "days": 14,
       "last": "2026-04-02",
       "plays": 32,
       "recent": 5,
-      "seed": 182,
+      "seed": 183,
       "top": null,
       "travel": [],
       "weight": 0.299
@@ -5031,7 +5042,7 @@
       "last": "2025-04-16",
       "plays": 40,
       "recent": 5,
-      "seed": 176,
+      "seed": 177,
       "top": null,
       "travel": [],
       "weight": 0.309
@@ -5053,7 +5064,7 @@
       "last": "2026-04-04",
       "plays": 25,
       "recent": 3,
-      "seed": 280,
+      "seed": 281,
       "top": null,
       "travel": [],
       "weight": 0.223
@@ -5064,7 +5075,7 @@
       "last": "2026-10-31",
       "plays": 13,
       "recent": 9,
-      "seed": 147,
+      "seed": 148,
       "top": null,
       "travel": [
         "heavy"
@@ -5077,7 +5088,7 @@
       "last": "2025-06-17",
       "plays": 17,
       "recent": 4,
-      "seed": 263,
+      "seed": 265,
       "top": null,
       "travel": [],
       "weight": 0.238
@@ -5088,7 +5099,7 @@
       "last": "2026-01-26",
       "plays": 40,
       "recent": 4,
-      "seed": 212,
+      "seed": 213,
       "top": null,
       "travel": [],
       "weight": 0.273
@@ -5099,7 +5110,7 @@
       "last": "2025-10-05",
       "plays": 23,
       "recent": 6,
-      "seed": 174,
+      "seed": 175,
       "top": null,
       "travel": [],
       "weight": 0.31
@@ -5124,7 +5135,7 @@
       "last": "2025-06-21",
       "plays": 35,
       "recent": 5,
-      "seed": 181,
+      "seed": 182,
       "top": null,
       "travel": [
         "live"
@@ -5132,23 +5143,12 @@
       "weight": 0.299
     },
     {
-      "artist": "Phoebe Bridgers",
-      "days": 13,
-      "last": "2025-10-08",
-      "plays": 29,
-      "recent": 3,
-      "seed": 275,
-      "top": null,
-      "travel": [],
-      "weight": 0.228
-    },
-    {
       "artist": "Prince",
       "days": 13,
       "last": "2026-04-15",
       "plays": 15,
       "recent": 8,
-      "seed": 155,
+      "seed": 156,
       "top": null,
       "travel": [
         "heavy"
@@ -5172,7 +5172,7 @@
       "last": "2026-04-15",
       "plays": 26,
       "recent": 4,
-      "seed": 238,
+      "seed": 239,
       "top": null,
       "travel": [
         "live"
@@ -5185,7 +5185,7 @@
       "last": "2025-11-28",
       "plays": 13,
       "recent": 4,
-      "seed": 276,
+      "seed": 277,
       "top": null,
       "travel": [],
       "weight": 0.227
@@ -5196,7 +5196,7 @@
       "last": "2026-07-19",
       "plays": 40,
       "recent": 10,
-      "seed": 101,
+      "seed": 102,
       "top": null,
       "travel": [
         "heavy"
@@ -5209,7 +5209,7 @@
       "last": "2026-04-01",
       "plays": 13,
       "recent": 8,
-      "seed": 159,
+      "seed": 160,
       "top": null,
       "travel": [
         "heavy"
@@ -5222,7 +5222,7 @@
       "last": "2024-01-22",
       "plays": 30,
       "recent": 4,
-      "seed": 233,
+      "seed": 234,
       "top": null,
       "travel": [],
       "weight": 0.258
@@ -5233,7 +5233,7 @@
       "last": "2025-04-16",
       "plays": 28,
       "recent": 4,
-      "seed": 239,
+      "seed": 240,
       "top": null,
       "travel": [],
       "weight": 0.255
@@ -5244,7 +5244,7 @@
       "last": "2026-04-16",
       "plays": 22,
       "recent": 10,
-      "seed": 114,
+      "seed": 115,
       "top": null,
       "travel": [
         "heavy"
@@ -5257,7 +5257,7 @@
       "last": "2026-01-16",
       "plays": 27,
       "recent": 5,
-      "seed": 197,
+      "seed": 198,
       "top": null,
       "travel": [],
       "weight": 0.284
@@ -5268,7 +5268,7 @@
       "last": "2023-03-28",
       "plays": 23,
       "recent": 3,
-      "seed": 289,
+      "seed": 290,
       "top": null,
       "travel": [],
       "weight": 0.217
@@ -5279,7 +5279,7 @@
       "last": "2022-04-25",
       "plays": 35,
       "recent": 0,
-      "seed": 313,
+      "seed": 314,
       "top": null,
       "travel": [
         "live"
@@ -5292,7 +5292,7 @@
       "last": "2024-03-27",
       "plays": 17,
       "recent": 4,
-      "seed": 267,
+      "seed": 269,
       "top": null,
       "travel": [],
       "weight": 0.235
@@ -5303,7 +5303,7 @@
       "last": "2024-07-02",
       "plays": 22,
       "recent": 4,
-      "seed": 258,
+      "seed": 260,
       "top": null,
       "travel": [],
       "weight": 0.241
@@ -5314,7 +5314,7 @@
       "last": "2026-04-15",
       "plays": 24,
       "recent": 3,
-      "seed": 294,
+      "seed": 295,
       "top": null,
       "travel": [],
       "weight": 0.215
@@ -5325,7 +5325,7 @@
       "last": "2026-04-17",
       "plays": 53,
       "recent": 8,
-      "seed": 119,
+      "seed": 120,
       "top": null,
       "travel": [
         "heavy"
@@ -5351,7 +5351,7 @@
       "last": "2024-02-27",
       "plays": 58,
       "recent": 4,
-      "seed": 201,
+      "seed": 202,
       "top": null,
       "travel": [],
       "weight": 0.281
@@ -5362,7 +5362,7 @@
       "last": "2026-01-16",
       "plays": 14,
       "recent": 5,
-      "seed": 243,
+      "seed": 244,
       "top": null,
       "travel": [],
       "weight": 0.25
@@ -5381,12 +5381,25 @@
       "weight": 0.384
     },
     {
+      "artist": "Woodkid",
+      "days": 11,
+      "last": "2026-11-12",
+      "plays": 45,
+      "recent": 11,
+      "seed": 105,
+      "top": null,
+      "travel": [
+        "heavy"
+      ],
+      "weight": 0.467
+    },
+    {
       "artist": "Alanis Morissette",
       "days": 10,
       "last": "2026-03-31",
       "plays": 37,
       "recent": 9,
-      "seed": 117,
+      "seed": 118,
       "top": null,
       "travel": [
         "heavy"
@@ -5394,12 +5407,26 @@
       "weight": 0.415
     },
     {
+      "artist": "Angine de poitrine",
+      "days": 10,
+      "last": "2026-11-12",
+      "plays": 30,
+      "recent": 10,
+      "seed": 113,
+      "top": null,
+      "travel": [
+        "heavy",
+        "live"
+      ],
+      "weight": 0.431
+    },
+    {
       "artist": "Backstreet Boys",
       "days": 10,
       "last": "2026-04-15",
       "plays": 11,
       "recent": 8,
-      "seed": 173,
+      "seed": 174,
       "top": null,
       "travel": [
         "heavy"
@@ -5412,7 +5439,7 @@
       "last": "2025-10-27",
       "plays": 13,
       "recent": 9,
-      "seed": 153,
+      "seed": 154,
       "top": null,
       "travel": [
         "heavy"
@@ -5420,12 +5447,26 @@
       "weight": 0.347
     },
     {
+      "artist": "Sinead O'Connor",
+      "days": 10,
+      "last": "2026-11-11",
+      "plays": 27,
+      "recent": 8,
+      "seed": 147,
+      "top": null,
+      "travel": [
+        "heavy",
+        "live"
+      ],
+      "weight": 0.365
+    },
+    {
       "artist": "The Airborne Toxic Event",
       "days": 10,
       "last": "2025-08-08",
       "plays": 41,
       "recent": 3,
-      "seed": 270,
+      "seed": 272,
       "top": null,
       "travel": [
         "live"
@@ -5438,7 +5479,7 @@
       "last": "2026-01-15",
       "plays": 22,
       "recent": 10,
-      "seed": 122,
+      "seed": 123,
       "top": null,
       "travel": [
         "heavy"
@@ -5446,25 +5487,12 @@
       "weight": 0.41
     },
     {
-      "artist": "Woodkid",
-      "days": 10,
-      "last": "2025-12-29",
-      "plays": 44,
-      "recent": 10,
-      "seed": 108,
-      "top": null,
-      "travel": [
-        "heavy"
-      ],
-      "weight": 0.458
-    },
-    {
       "artist": "Wye Oak",
       "days": 10,
       "last": "2026-11-07",
       "plays": 45,
       "recent": 1,
-      "seed": 311,
+      "seed": 312,
       "top": null,
       "travel": [
         "live"
@@ -5477,24 +5505,10 @@
       "last": "2025-11-14",
       "plays": 10,
       "recent": 6,
-      "seed": 242,
+      "seed": 243,
       "top": null,
       "travel": [],
       "weight": 0.251
-    },
-    {
-      "artist": "Angine de poitrine",
-      "days": 9,
-      "last": "2026-11-08",
-      "plays": 28,
-      "recent": 9,
-      "seed": 131,
-      "top": null,
-      "travel": [
-        "heavy",
-        "live"
-      ],
-      "weight": 0.4
     },
     {
       "artist": "Billie Eilish",
@@ -5502,7 +5516,7 @@
       "last": "2026-09-21",
       "plays": 15,
       "recent": 7,
-      "seed": 185,
+      "seed": 186,
       "top": null,
       "travel": [],
       "weight": 0.297
@@ -5513,7 +5527,7 @@
       "last": "2021-12-04",
       "plays": 40,
       "recent": 0,
-      "seed": 317,
+      "seed": 318,
       "top": null,
       "travel": [
         "live"
@@ -5526,7 +5540,7 @@
       "last": "2024-03-25",
       "plays": 21,
       "recent": 5,
-      "seed": 230,
+      "seed": 231,
       "top": null,
       "travel": [],
       "weight": 0.259
@@ -5537,7 +5551,7 @@
       "last": "2026-10-13",
       "plays": 17,
       "recent": 3,
-      "seed": 328,
+      "seed": 329,
       "top": null,
       "travel": [
         "live"
@@ -5550,7 +5564,7 @@
       "last": "2026-04-24",
       "plays": 22,
       "recent": 6,
-      "seed": 190,
+      "seed": 191,
       "top": null,
       "travel": [],
       "weight": 0.29
@@ -5561,7 +5575,7 @@
       "last": "2026-10-01",
       "plays": 18,
       "recent": 8,
-      "seed": 161,
+      "seed": 162,
       "top": null,
       "travel": [
         "heavy"
@@ -5574,7 +5588,7 @@
       "last": "2026-10-25",
       "plays": 16,
       "recent": 8,
-      "seed": 164,
+      "seed": 165,
       "top": null,
       "travel": [
         "heavy"
@@ -5587,7 +5601,7 @@
       "last": "2026-05-13",
       "plays": 11,
       "recent": 6,
-      "seed": 236,
+      "seed": 237,
       "top": null,
       "travel": [],
       "weight": 0.256
@@ -5598,7 +5612,7 @@
       "last": "2023-10-30",
       "plays": 15,
       "recent": 5,
-      "seed": 255,
+      "seed": 256,
       "top": null,
       "travel": [],
       "weight": 0.244
@@ -5609,7 +5623,7 @@
       "last": "2023-11-21",
       "plays": 31,
       "recent": 1,
-      "seed": 308,
+      "seed": 309,
       "top": null,
       "travel": [
         "live"
@@ -5617,25 +5631,12 @@
       "weight": 0.25
     },
     {
-      "artist": "Sinead O'Connor",
-      "days": 9,
-      "last": "2025-07-24",
-      "plays": 26,
-      "recent": 7,
-      "seed": 165,
-      "top": null,
-      "travel": [
-        "live"
-      ],
-      "weight": 0.327
-    },
-    {
       "artist": "Teddy Swims",
       "days": 9,
       "last": "2026-04-01",
       "plays": 17,
       "recent": 9,
-      "seed": 149,
+      "seed": 150,
       "top": null,
       "travel": [
         "heavy"
@@ -5648,7 +5649,7 @@
       "last": "2025-11-02",
       "plays": 29,
       "recent": 7,
-      "seed": 162,
+      "seed": 163,
       "top": null,
       "travel": [],
       "weight": 0.333
@@ -5659,7 +5660,7 @@
       "last": "2025-06-03",
       "plays": 18,
       "recent": 4,
-      "seed": 283,
+      "seed": 284,
       "top": null,
       "travel": [],
       "weight": 0.221
@@ -5670,7 +5671,7 @@
       "last": "2026-06-27",
       "plays": 10,
       "recent": 6,
-      "seed": 252,
+      "seed": 253,
       "top": null,
       "travel": [],
       "weight": 0.245
@@ -5681,7 +5682,7 @@
       "last": "2025-04-18",
       "plays": 16,
       "recent": 5,
-      "seed": 257,
+      "seed": 259,
       "top": null,
       "travel": [],
       "weight": 0.242
@@ -5692,7 +5693,7 @@
       "last": "2026-06-27",
       "plays": 19,
       "recent": 5,
-      "seed": 244,
+      "seed": 245,
       "top": null,
       "travel": [],
       "weight": 0.25
@@ -5729,7 +5730,7 @@
       "last": "2026-04-17",
       "plays": 18,
       "recent": 4,
-      "seed": 284,
+      "seed": 285,
       "top": null,
       "travel": [],
       "weight": 0.221
@@ -5740,7 +5741,7 @@
       "last": "2025-11-02",
       "plays": 29,
       "recent": 6,
-      "seed": 184,
+      "seed": 185,
       "top": null,
       "travel": [],
       "weight": 0.298
@@ -5751,7 +5752,7 @@
       "last": "2026-04-16",
       "plays": 17,
       "recent": 5,
-      "seed": 254,
+      "seed": 255,
       "top": null,
       "travel": [],
       "weight": 0.245
@@ -5762,7 +5763,7 @@
       "last": "2024-06-25",
       "plays": 12,
       "recent": 5,
-      "seed": 273,
+      "seed": 275,
       "top": null,
       "travel": [],
       "weight": 0.229
@@ -5773,7 +5774,7 @@
       "last": "2025-06-17",
       "plays": 23,
       "recent": 5,
-      "seed": 231,
+      "seed": 232,
       "top": null,
       "travel": [],
       "weight": 0.258
@@ -5784,7 +5785,7 @@
       "last": "2026-11-11",
       "plays": 22,
       "recent": 4,
-      "seed": 274,
+      "seed": 276,
       "top": null,
       "travel": [],
       "weight": 0.229
@@ -5795,7 +5796,7 @@
       "last": "2025-12-03",
       "plays": 9,
       "recent": 6,
-      "seed": 262,
+      "seed": 264,
       "top": null,
       "travel": [],
       "weight": 0.24
@@ -5806,10 +5807,21 @@
       "last": "2026-04-01",
       "plays": 27,
       "recent": 5,
-      "seed": 221,
+      "seed": 222,
       "top": null,
       "travel": [],
       "weight": 0.265
+    },
+    {
+      "artist": "boygenius",
+      "days": 7,
+      "last": "2026-11-11",
+      "plays": 26,
+      "recent": 7,
+      "seed": 173,
+      "top": null,
+      "travel": [],
+      "weight": 0.313
     },
     {
       "artist": "The Black Ghosts",
@@ -5817,7 +5829,7 @@
       "last": "2025-11-04",
       "plays": 9,
       "recent": 7,
-      "seed": 235,
+      "seed": 236,
       "top": null,
       "travel": [],
       "weight": 0.257
@@ -5828,7 +5840,7 @@
       "last": "2026-11-07",
       "plays": 40,
       "recent": 5,
-      "seed": 205,
+      "seed": 206,
       "top": null,
       "travel": [],
       "weight": 0.277
@@ -5847,23 +5859,12 @@
       "weight": 0.4
     },
     {
-      "artist": "boygenius",
-      "days": 6,
-      "last": "2024-02-26",
-      "plays": 20,
-      "recent": 6,
-      "seed": 222,
-      "top": null,
-      "travel": [],
-      "weight": 0.265
-    },
-    {
       "artist": "Frank Ocean",
       "days": 6,
       "last": "2026-04-24",
       "plays": 45,
       "recent": 3,
-      "seed": 291,
+      "seed": 292,
       "top": null,
       "travel": [],
       "weight": 0.216
@@ -5874,7 +5875,7 @@
       "last": "2024-03-28",
       "plays": 13,
       "recent": 4,
-      "seed": 306,
+      "seed": 307,
       "top": null,
       "travel": [
         "live"
@@ -5887,7 +5888,7 @@
       "last": "2023-10-20",
       "plays": 21,
       "recent": 1,
-      "seed": 324,
+      "seed": 325,
       "top": null,
       "travel": [
         "live"
@@ -5900,7 +5901,7 @@
       "last": "2025-12-03",
       "plays": 10,
       "recent": 6,
-      "seed": 269,
+      "seed": 271,
       "top": null,
       "travel": [],
       "weight": 0.232
@@ -5922,7 +5923,7 @@
       "last": "2011-06-09",
       "plays": 6,
       "recent": 0,
-      "seed": 333,
+      "seed": 334,
       "top": null,
       "travel": [
         "live"
@@ -5935,7 +5936,7 @@
       "last": "2026-06-27",
       "plays": 21,
       "recent": 5,
-      "seed": 259,
+      "seed": 261,
       "top": null,
       "travel": [],
       "weight": 0.241
@@ -5946,7 +5947,7 @@
       "last": "2026-01-02",
       "plays": 8,
       "recent": 6,
-      "seed": 281,
+      "seed": 282,
       "top": null,
       "travel": [],
       "weight": 0.221
@@ -5970,7 +5971,7 @@
       "last": "2016-02-18",
       "plays": 33,
       "recent": 0,
-      "seed": 315,
+      "seed": 316,
       "top": null,
       "travel": [
         "live"
@@ -5983,21 +5984,10 @@
       "last": "2026-05-12",
       "plays": 7,
       "recent": 6,
-      "seed": 296,
+      "seed": 297,
       "top": null,
       "travel": [],
       "weight": 0.215
-    },
-    {
-      "artist": "Talk",
-      "days": 5,
-      "last": "2024-03-23",
-      "plays": 13,
-      "recent": 5,
-      "seed": 300,
-      "top": null,
-      "travel": [],
-      "weight": 0.212
     },
     {
       "artist": "The Highwomen",
@@ -6005,7 +5995,7 @@
       "last": "2025-11-14",
       "plays": 14,
       "recent": 5,
-      "seed": 292,
+      "seed": 293,
       "top": null,
       "travel": [],
       "weight": 0.216
@@ -6016,7 +6006,7 @@
       "last": "2023-12-16",
       "plays": 10,
       "recent": 3,
-      "seed": 331,
+      "seed": 332,
       "top": null,
       "travel": [
         "live"
@@ -6029,7 +6019,7 @@
       "last": "2023-03-26",
       "plays": 7,
       "recent": 2,
-      "seed": 318,
+      "seed": 319,
       "top": null,
       "travel": [
         "live"
@@ -6037,12 +6027,25 @@
       "weight": 0.25
     },
     {
+      "artist": "Allison Russell",
+      "days": 3,
+      "last": "2026-11-11",
+      "plays": 3,
+      "recent": 3,
+      "seed": 304,
+      "top": null,
+      "travel": [
+        "live"
+      ],
+      "weight": 0.4
+    },
+    {
       "artist": "Charlie Hunter",
       "days": 3,
       "last": "2025-12-25",
       "plays": 10,
       "recent": 1,
-      "seed": 323,
+      "seed": 324,
       "top": null,
       "travel": [
         "live"
@@ -6068,7 +6071,7 @@
       "last": "2025-11-14",
       "plays": 13,
       "recent": 2,
-      "seed": 307,
+      "seed": 308,
       "top": null,
       "travel": [
         "live"
@@ -6081,7 +6084,7 @@
       "last": "2026-04-04",
       "plays": 3,
       "recent": 2,
-      "seed": 312,
+      "seed": 313,
       "top": null,
       "travel": [
         "live"
@@ -6094,7 +6097,7 @@
       "last": "2013-08-08",
       "plays": 16,
       "recent": 0,
-      "seed": 310,
+      "seed": 311,
       "top": null,
       "travel": [
         "live"
@@ -6107,7 +6110,7 @@
       "last": "2022-10-30",
       "plays": 4,
       "recent": 0,
-      "seed": 305,
+      "seed": 306,
       "top": null,
       "travel": [
         "live"
@@ -6120,7 +6123,7 @@
       "last": "2013-05-13",
       "plays": 11,
       "recent": 0,
-      "seed": 309,
+      "seed": 310,
       "top": null,
       "travel": [
         "live"
@@ -6133,7 +6136,7 @@
       "last": "2022-01-29",
       "plays": 1,
       "recent": 0,
-      "seed": 332,
+      "seed": 333,
       "top": null,
       "travel": [
         "love",
@@ -6143,157 +6146,6 @@
     }
   ],
   "calendar": [
-    {
-      "acts": [
-        {
-          "affinity": 0.0,
-          "artist": "Sully Burrows",
-          "listeners": 2035
-        },
-        {
-          "affinity": 0.0,
-          "artist": "Bradley Hale",
-          "listeners": 382
-        }
-      ],
-      "id": "tm:1A8ZkfNGkegBQhd",
-      "region": "Toronto",
-      "starts_at": "2026-11-12T19:00:00",
-      "url": "https://www.ticketmaster.ca/sully-burrows-the-leave-you-lonely-toronto-ontario-11-12-2026/event/10006523B5E9A6C3",
-      "venue": {
-        "capacity": 200,
-        "name": "Rivoli"
-      }
-    },
-    {
-      "acts": [
-        {
-          "affinity": 0.0108,
-          "artist": "Stella Lefty",
-          "listeners": 212874,
-          "why": "tags match your taste: country, indie pop, sexy"
-        }
-      ],
-      "id": "tm:177Zv0G61MkyTJO",
-      "region": "Toronto",
-      "starts_at": "2026-11-12T19:00:00",
-      "url": "https://www.ticketmaster.ca/stella-lefty-lefty-live-toronto-ontario-11-12-2026/event/100064ADC6E7F9A0",
-      "venue": {
-        "capacity": 900,
-        "name": "The Opera House"
-      }
-    },
-    {
-      "acts": [
-        {
-          "affinity": 0.0002,
-          "artist": "the olllam",
-          "listeners": 26717,
-          "why": "tags match your taste: jazz, instrumental, folktronica"
-        }
-      ],
-      "id": "tm:16vZZ_8fkG7HlQk",
-      "region": "Toronto",
-      "starts_at": "2026-11-12T19:00:00",
-      "url": "https://www.ticketmaster.ca/the-olllam-toronto-ontario-11-12-2026/event/1000650506F2B686",
-      "venue": {
-        "capacity": 575,
-        "name": "The Mod Club"
-      }
-    },
-    {
-      "acts": [
-        {
-          "affinity": 0.0356,
-          "artist": "Madra Salach",
-          "listeners": 18201,
-          "why": "similar to The Frames (0.25), Glen Hansard (0.18), The Pogues (0.17)"
-        }
-      ],
-      "id": "tm:rZ7HnEZ1A4vk0S",
-      "region": "Toronto",
-      "starts_at": "2026-11-12T19:00:00",
-      "url": "https://www.ticketweb.ca/event/madra-salach-the-garrison-tickets/15046933",
-      "venue": {
-        "capacity": null,
-        "name": "The Garrison"
-      }
-    },
-    {
-      "acts": [
-        {
-          "affinity": 0.0246,
-          "artist": "ARK IDENTITY",
-          "listeners": 7651,
-          "why": "tags match your taste: indie pop, dream pop"
-        }
-      ],
-      "id": "tm:rZ7HnEZ1AfuEk7",
-      "region": "Toronto",
-      "starts_at": "2026-11-12T19:00:00",
-      "url": "https://www.ticketweb.ca/event/ark-identity-the-sound-garage-tickets/14367184",
-      "venue": {
-        "capacity": null,
-        "name": "The Sound Garage"
-      }
-    },
-    {
-      "acts": [
-        {
-          "affinity": 0.0,
-          "artist": "School Night",
-          "listeners": 27
-        }
-      ],
-      "id": "tm:rZ7HnEZ1AfCZqf",
-      "region": "Toronto",
-      "starts_at": "2026-11-12T19:30:00",
-      "url": "https://www.ticketweb.ca/event/school-night-the-dance-cave-tickets/14380754",
-      "venue": {
-        "capacity": 400,
-        "name": "The Dance Cave"
-      }
-    },
-    {
-      "acts": [
-        {
-          "affinity": 0.0,
-          "artist": "Bryce Alakai",
-          "listeners": 9571
-        }
-      ],
-      "id": "tm:177Zv0G62T63o81",
-      "region": "Toronto",
-      "starts_at": "2026-11-12T20:00:00",
-      "url": "https://www.ticketmaster.ca/bryce-alakai-toronto-ontario-11-12-2026/event/100064FFC749140A",
-      "venue": {
-        "capacity": 2500,
-        "name": "History Toronto"
-      }
-    },
-    {
-      "acts": [
-        {
-          "affinity": 0.0381,
-          "artist": "Josh Ross",
-          "listeners": 91365,
-          "why": "tags match your taste: singer-songwriter, country, country pop"
-        },
-        {
-          "affinity": 0.0,
-          "artist": "Just Jayne",
-          "listeners": 6295
-        }
-      ],
-      "id": "tm:1A8ZkobGketPpyz",
-      "region": "Toronto",
-      "starts_at": "2026-11-12T20:00:00",
-      "url": "https://www.ticketmaster.ca/josh-ross-later-tonight-tour-pickering-ontario-11-12-2026/event/10006458A9956E78",
-      "venue": {
-        "capacity": null,
-        "name": "The Arena at Pickering Casino Resort"
-      }
-    },
     {
       "acts": [
         {
@@ -6374,10 +6226,10 @@
     {
       "acts": [
         {
-          "affinity": 0.0541,
+          "affinity": 0.0543,
           "artist": "Mary In the Junkyard",
           "listeners": 128766,
-          "why": "similar to Courtney Barnett (0.17), The Smile (0.17), Broken Social Scene (0.14)"
+          "why": "similar to The Smile (0.17), Florence Road (0.15), Broken Social Scene (0.14)"
         }
       ],
       "id": "tm:rZ7HnEZ1Af0Okd",
@@ -6672,10 +6524,10 @@
     {
       "acts": [
         {
-          "affinity": 0.133,
+          "affinity": 0.1335,
           "artist": "Sadurn",
           "listeners": 95494,
-          "why": "similar to Waxahatchee (0.46), Big Thief (0.40), Julien Baker (0.24)"
+          "why": "similar to Waxahatchee (0.46), Big Thief (0.40), boygenius (0.17)"
         }
       ],
       "id": "tm:rZ7HnEZ1A4ZbuN",
@@ -6983,7 +6835,7 @@
     {
       "acts": [
         {
-          "affinity": 0.0229,
+          "affinity": 0.0238,
           "artist": "Alyssa Grace",
           "listeners": 104687,
           "why": "similar to Noah Kahan (0.22), Phoebe Bridgers (0.08)"
@@ -7040,10 +6892,10 @@
     {
       "acts": [
         {
-          "affinity": 0.0697,
+          "affinity": 0.0672,
           "artist": "Matt Hansen",
           "listeners": 227736,
-          "why": "similar to Ed Sheeran (0.35), James Arthur (0.31), Talk (0.09)"
+          "why": "similar to Ed Sheeran (0.35), James Arthur (0.31)"
         },
         {
           "affinity": 0.0,
@@ -7086,7 +6938,7 @@
     {
       "acts": [
         {
-          "affinity": 0.0148,
+          "affinity": 0.0144,
           "artist": "Memphis LK",
           "listeners": 57522,
           "why": "tags match your taste: rnb, indie pop, electropop"
@@ -7165,7 +7017,7 @@
           "why": "tags match your taste: post-hardcore, hardcore, metalcore"
         },
         {
-          "affinity": 0.0096,
+          "affinity": 0.0097,
           "artist": "We Came As Romans",
           "listeners": 842743,
           "why": "tags match your taste: post-hardcore, screamo, hardcore"
@@ -7267,10 +7119,10 @@
     {
       "acts": [
         {
-          "affinity": 0.0472,
+          "affinity": 0.0691,
           "artist": "Francis of Delirium",
           "listeners": 139626,
-          "why": "similar to Courtney Barnett (0.33), Phoebe Bridgers (0.30)"
+          "why": "similar to Florence Road (0.67), Courtney Barnett (0.33), Phoebe Bridgers (0.30)"
         }
       ],
       "id": "tm:rZ7HnEZ1Af-O0S",
@@ -7291,7 +7143,7 @@
           "why": "tags match your taste: jazz, experimental"
         },
         {
-          "affinity": 0.0451,
+          "affinity": 0.0486,
           "artist": "Luge",
           "listeners": 8091,
           "why": "similar to Angine de poitrine (0.20)"
@@ -7314,7 +7166,7 @@
     {
       "acts": [
         {
-          "affinity": 0.0331,
+          "affinity": 0.0335,
           "artist": "Prateek Kuhad",
           "listeners": 146940,
           "why": "tags match your taste: singer-songwriter, indie pop"
@@ -7391,7 +7243,7 @@
     {
       "acts": [
         {
-          "affinity": 0.1541,
+          "affinity": 0.1547,
           "artist": "Orville Peck",
           "days": 4,
           "listeners": 530818,
@@ -7639,7 +7491,7 @@
           "why": "tags match your taste: post-hardcore, hardcore, metalcore"
         },
         {
-          "affinity": 0.022,
+          "affinity": 0.0221,
           "artist": "TX2",
           "listeners": 162627,
           "why": "tags match your taste: pop punk, emo, post-hardcore"
@@ -7651,7 +7503,7 @@
           "why": "tags match your taste: alternative metal, metalcore"
         },
         {
-          "affinity": 0.0106,
+          "affinity": 0.0107,
           "artist": "Colorblind",
           "listeners": 90348,
           "why": "tags match your taste: post-hardcore, nu metal, hard rock"
@@ -8097,7 +7949,7 @@
           "listeners": 1069
         },
         {
-          "affinity": 0.1503,
+          "affinity": 0.1518,
           "artist": "Hockey Academy",
           "listeners": 2803,
           "why": "tags match your taste: indie rock, indie pop, jangle pop"
@@ -8261,7 +8113,7 @@
           "why": "tags match your taste: punk rock, hardcore, punk"
         },
         {
-          "affinity": 0.0045,
+          "affinity": 0.0046,
           "artist": "Kaonashi",
           "listeners": 73365,
           "why": "tags match your taste: post-hardcore, hardcore, screamo"
@@ -8512,7 +8364,7 @@
     {
       "acts": [
         {
-          "affinity": 0.0261,
+          "affinity": 0.0274,
           "artist": "Distant Matter",
           "listeners": 41397,
           "why": "tags match your taste: indie pop, electropop"
@@ -8562,7 +8414,7 @@
     {
       "acts": [
         {
-          "affinity": 0.1719,
+          "affinity": 0.1722,
           "artist": "Raine Maida",
           "listeners": 29283,
           "why": "tags match your taste: singer-songwriter, indie rock, piano rock"
@@ -8586,10 +8438,10 @@
     {
       "acts": [
         {
-          "affinity": 0.0239,
+          "affinity": 0.0241,
           "artist": "Basht.",
           "listeners": 50803,
-          "why": "similar to Sam Fender (0.12), Interpol (0.07), The Kooks (0.06)"
+          "why": "similar to Sam Fender (0.12), Florence Road (0.09), Interpol (0.07)"
         }
       ],
       "id": "tm:rZ7HnEZ1AfCA07",
@@ -8837,7 +8689,7 @@
           "listeners": 4614
         },
         {
-          "affinity": 0.0613,
+          "affinity": 0.0592,
           "artist": "Adria Kain",
           "listeners": 19922,
           "why": "tags match your taste: soul, rnb"
@@ -8854,7 +8706,7 @@
           "listeners": 6218
         },
         {
-          "affinity": 0.0663,
+          "affinity": 0.0618,
           "artist": "Savannah Ré",
           "listeners": 56770,
           "why": "tags match your taste: rnb, soul"
@@ -8987,7 +8839,7 @@
     {
       "acts": [
         {
-          "affinity": 0.1094,
+          "affinity": 0.1096,
           "artist": "STACKS",
           "listeners": 25168,
           "why": "tags match your taste: indie rock, new wave"
@@ -9295,7 +9147,7 @@
     {
       "acts": [
         {
-          "affinity": 0.3357,
+          "affinity": 0.3386,
           "artist": "Underoath",
           "listeners": 1118616,
           "why": "similar to Alexisonfire (0.97), Thursday (0.62), Thrice (0.48)"
@@ -9313,7 +9165,7 @@
           "why": "tags match your taste: hardcore, screamo, post-hardcore"
         },
         {
-          "affinity": 0.2861,
+          "affinity": 0.2885,
           "artist": "Emery",
           "days": 1,
           "listeners": 525929,
@@ -9354,7 +9206,7 @@
           "artist": "GEN NEXT LIVE"
         },
         {
-          "affinity": 0.0645,
+          "affinity": 0.0665,
           "artist": "Mountain Head",
           "listeners": 3632,
           "why": "tags match your taste: indie pop, indie rock, psychedelic rock"
@@ -9382,7 +9234,7 @@
     {
       "acts": [
         {
-          "affinity": 0.0651,
+          "affinity": 0.0673,
           "artist": "Tiny Habits",
           "listeners": 172650,
           "why": "similar to MUNA (0.35), Phoebe Bridgers (0.22), Bleachers (0.21)"
@@ -9486,7 +9338,7 @@
           "listeners": 110987
         },
         {
-          "affinity": 0.15,
+          "affinity": 0.1503,
           "artist": "Sophie Gray",
           "listeners": 20661,
           "why": "tags match your taste: singer-songwriter, colorado"
@@ -9737,7 +9589,7 @@
     {
       "acts": [
         {
-          "affinity": 0.0124,
+          "affinity": 0.0125,
           "artist": "Lost",
           "listeners": 99698,
           "why": "tags match your taste: dubstep, post-hardcore, punk"
@@ -9862,13 +9714,13 @@
     {
       "acts": [
         {
-          "affinity": 0.0122,
+          "affinity": 0.0123,
           "artist": "Kingdom of Giants",
           "listeners": 136776,
           "why": "tags match your taste: post-hardcore, experimental, hardcore"
         },
         {
-          "affinity": 0.0192,
+          "affinity": 0.0237,
           "artist": "Deadlands",
           "listeners": 41815,
           "why": "similar to Spiritbox (0.23)"
@@ -9935,7 +9787,7 @@
           "listeners": 43
         },
         {
-          "affinity": 0.041,
+          "affinity": 0.0415,
           "artist": "Addy",
           "listeners": 20965,
           "why": "tags match your taste: indie rock, indie pop"
@@ -10041,13 +9893,13 @@
     {
       "acts": [
         {
-          "affinity": 0.0731,
+          "affinity": 0.0733,
           "artist": "Turnover",
           "listeners": 536193,
           "why": "tags match your taste: indie rock, pop punk, emo"
         },
         {
-          "affinity": 0.0143,
+          "affinity": 0.0144,
           "artist": "Nothing",
           "listeners": 437914,
           "why": "tags match your taste: shoegaze, hardcore, post-punk"
@@ -10106,7 +9958,7 @@
     {
       "acts": [
         {
-          "affinity": 0.0154,
+          "affinity": 0.0162,
           "artist": "Sasha Alex Sloan",
           "listeners": 705614,
           "why": "tags match your taste: indie pop, singer-songwriter"
@@ -10293,7 +10145,7 @@
     {
       "acts": [
         {
-          "affinity": 0.0408,
+          "affinity": 0.0439,
           "artist": "Josie Edwards",
           "listeners": 53877,
           "why": "similar to Noah Kahan (0.32), Annabelle Dinda (0.27), Radical Face (0.21)"
@@ -10876,7 +10728,7 @@
     {
       "acts": [
         {
-          "affinity": 0.178,
+          "affinity": 0.1782,
           "artist": "The Trews",
           "listeners": 89201,
           "why": "similar to The Tragically Hip (1.00), Sloan (0.54), Silversun Pickups (0.28)"
@@ -10900,7 +10752,7 @@
     {
       "acts": [
         {
-          "affinity": 0.3658,
+          "affinity": 0.3661,
           "artist": "We Are Scientists",
           "days": 2,
           "listeners": 1438634,
@@ -10995,7 +10847,7 @@
     {
       "acts": [
         {
-          "affinity": 0.2436,
+          "affinity": 0.2439,
           "artist": "Amanda Marshall",
           "listeners": 156143,
           "why": "similar to Sheryl Crow (0.40), Sarah McLachlan (0.39), Brandi Carlile (0.30)"
@@ -11216,11 +11068,11 @@
     {
       "acts": [
         {
-          "affinity": 0.2094,
+          "affinity": 0.2407,
           "artist": "Bedouine",
           "days": 1,
           "listeners": 233746,
-          "why": "similar to Kevin Morby (0.76), Waxahatchee (0.70), Sharon Van Etten (0.65)"
+          "why": "similar to Waxahatchee (0.70), Sharon Van Etten (0.65), Allison Russell (0.51)"
         }
       ],
       "id": "tm:rZ7HnEZ1Af-dFd",
@@ -11235,7 +11087,7 @@
     {
       "acts": [
         {
-          "affinity": 0.2436,
+          "affinity": 0.2439,
           "artist": "Amanda Marshall",
           "listeners": 156143,
           "why": "similar to Sheryl Crow (0.40), Sarah McLachlan (0.39), Brandi Carlile (0.30)"
@@ -11312,10 +11164,10 @@
     {
       "acts": [
         {
-          "affinity": 0.0348,
+          "affinity": 0.0792,
           "artist": "Angela Autumn",
           "listeners": 29893,
-          "why": "similar to Gillian Welch (0.35), Punch Brothers (0.27)"
+          "why": "similar to Gillian Welch (0.35), Allison Russell (0.27), Punch Brothers (0.27)"
         }
       ],
       "id": "tm:rZ7HnEZ1AfFy-V",
@@ -11336,7 +11188,7 @@
           "why": "tags match your taste: psychedelic rock, space rock, psychedelic"
         },
         {
-          "affinity": 0.0165,
+          "affinity": 0.0166,
           "artist": "Handsome Jack",
           "listeners": 8017,
           "why": "tags match your taste: blues rock, blues"
@@ -11396,10 +11248,10 @@
     {
       "acts": [
         {
-          "affinity": 0.0746,
+          "affinity": 0.0713,
           "artist": "Thee Sinseers",
           "listeners": 350700,
-          "why": "tags match your taste: rnb, soul, los angeles"
+          "why": "tags match your taste: soul, rnb, los angeles"
         },
         {
           "affinity": 0.0,
@@ -11443,7 +11295,7 @@
           "why": "similar to Solange (0.34), Frank Ocean (0.32), James Blake (0.25)"
         },
         {
-          "affinity": 0.068,
+          "affinity": 0.0664,
           "artist": "Hojean",
           "listeners": 366551,
           "why": "tags match your taste: soul, rnb, alternative rnb"
@@ -11540,7 +11392,7 @@
           "why": "tags match your taste: post-hardcore, swedish, metalcore"
         },
         {
-          "affinity": 0.039,
+          "affinity": 0.0481,
           "artist": "Dying Wish",
           "listeners": 130806,
           "why": "similar to Spiritbox (0.47)"
@@ -11839,7 +11691,7 @@
     {
       "acts": [
         {
-          "affinity": 0.1986,
+          "affinity": 0.2002,
           "artist": "Senses Fail",
           "listeners": 1004999,
           "why": "similar to Thursday (0.58), Alexisonfire (0.54), Brand New (0.40)"
@@ -11851,7 +11703,7 @@
           "why": "tags match your taste: pop punk, punk rock, emo"
         },
         {
-          "affinity": 0.002,
+          "affinity": 0.0021,
           "artist": "Initiate",
           "listeners": 28992,
           "why": "tags match your taste: hardcore, punk rock, hardcore punk"
@@ -12184,7 +12036,7 @@
     {
       "acts": [
         {
-          "affinity": 0.1319,
+          "affinity": 0.1344,
           "artist": "Eliza McLamb",
           "listeners": 104494,
           "why": "similar to Julien Baker (0.56), Waxahatchee (0.36), boygenius (0.36)"
@@ -13083,7 +12935,7 @@
     {
       "acts": [
         {
-          "affinity": 0.055,
+          "affinity": 0.0504,
           "artist": "Alan Vuong",
           "listeners": 360446,
           "why": "tags match your taste: rnb, california"
@@ -13101,7 +12953,7 @@
     {
       "acts": [
         {
-          "affinity": 0.0108,
+          "affinity": 0.0109,
           "artist": "Stella Lefty",
           "listeners": 212874,
           "why": "tags match your taste: country, indie pop, sexy"
@@ -13119,7 +12971,7 @@
     {
       "acts": [
         {
-          "affinity": 0.0108,
+          "affinity": 0.0109,
           "artist": "Stella Lefty",
           "listeners": 212874,
           "why": "tags match your taste: country, indie pop, sexy"
@@ -13187,7 +13039,7 @@
     {
       "acts": [
         {
-          "affinity": 0.0096,
+          "affinity": 0.0097,
           "artist": "Annisokay",
           "listeners": 161105,
           "why": "tags match your taste: post-hardcore, emo, german"
@@ -13241,10 +13093,10 @@
     {
       "acts": [
         {
-          "affinity": 0.2791,
+          "affinity": 0.3066,
           "artist": "Jess Williamson",
           "listeners": 108964,
-          "why": "similar to Waxahatchee (1.00), Lucius (0.46), Sharon Van Etten (0.41)"
+          "why": "similar to Waxahatchee (1.00), Allison Russell (0.49), Lucius (0.46)"
         }
       ],
       "id": "tm:rZ7HnEZ1AfupZ0",
@@ -13613,13 +13465,13 @@
     {
       "acts": [
         {
-          "affinity": 0.1175,
+          "affinity": 0.1205,
           "artist": "Jake Minch",
           "listeners": 73378,
           "why": "similar to Julien Baker (0.45), Phoebe Bridgers (0.38), Gregory Alan Isakov (0.28)"
         },
         {
-          "affinity": 0.0431,
+          "affinity": 0.0499,
           "artist": "Alix Page",
           "listeners": 65794,
           "why": "similar to boygenius (0.24), Maggie Rogers (0.24)"
@@ -13816,7 +13668,7 @@
     {
       "acts": [
         {
-          "affinity": 0.2441,
+          "affinity": 0.2461,
           "artist": "La Roux",
           "days": 2,
           "listeners": 2358824,
@@ -13855,7 +13707,7 @@
         {
           "affinity": 0.5303,
           "artist": "Ani DiFranco",
-          "days": 79,
+          "days": 80,
           "listeners": 621809,
           "why": "similar to Indigo Girls (0.89), Tori Amos (0.88), Sarah McLachlan (0.54)"
         }
@@ -14048,7 +13900,7 @@
     {
       "acts": [
         {
-          "affinity": 0.0497,
+          "affinity": 0.0455,
           "artist": "Girl Ultra",
           "listeners": 139964,
           "why": "tags match your taste: rnb, alternative rnb, latin"
@@ -14260,7 +14112,7 @@
       }
     }
   ],
-  "generated_at": "2026-11-12T11:23:37+00:00",
+  "generated_at": "2026-11-13T11:06:30+00:00",
   "ledger": [
     {
       "artist": "Compagnie Yoann Bourgeois",
@@ -14280,7 +14132,7 @@
     },
     {
       "artist": "Hockey Academy",
-      "checked": "2026-11-12",
+      "checked": "2026-11-13",
       "event": {
         "starts_at": "2026-11-20T21:00:00",
         "url": "https://www.ticketweb.ca/event/around-the-corner-presents-man-lees-palace-tickets/14395614",
@@ -14299,7 +14151,7 @@
     },
     {
       "artist": "Mad Iris",
-      "checked": "2026-11-12",
+      "checked": "2026-11-13",
       "event": {
         "starts_at": "2026-11-20T21:00:00",
         "url": "https://www.ticketweb.ca/event/around-the-corner-presents-man-lees-palace-tickets/14395614",
@@ -14318,7 +14170,7 @@
     },
     {
       "artist": "OTNES",
-      "checked": "2026-11-12",
+      "checked": "2026-11-13",
       "event": {
         "starts_at": "2026-11-10T19:00:00",
         "url": "https://www.ticketmaster.ca/donny-benet-toronto-ontario-11-10-2026/event/1000648604E0EC43",
@@ -14337,7 +14189,7 @@
     },
     {
       "artist": "comehelpglo",
-      "checked": "2026-11-12",
+      "checked": "2026-11-13",
       "event": {
         "starts_at": "2026-11-10T19:00:00",
         "url": "https://www.ticketmaster.ca/pouya-the-forever-glades-tour-toronto-ontario-11-10-2026/event/100064C9B042E9DF",
@@ -14356,7 +14208,7 @@
     },
     {
       "artist": "Jackie Evans",
-      "checked": "2026-11-12",
+      "checked": "2026-11-13",
       "event": {
         "starts_at": "2026-11-08T19:00:00",
         "url": "https://www.ticketmaster.ca/jackie-evans-toronto-ontario-11-08-2026/event/100064DEA887A585",
@@ -14375,7 +14227,7 @@
     },
     {
       "artist": "Adam Cohen",
-      "checked": "2026-11-12",
+      "checked": "2026-11-13",
       "event": {
         "starts_at": "2026-11-07T20:00:00",
         "url": "https://www.ticketmaster.ca/everybody-knows-leonard-cohen-10th-anniversary-toronto-ontario-11-07-2026/event/100064E1E1815048",
@@ -14393,7 +14245,7 @@
     },
     {
       "artist": "AHI",
-      "checked": "2026-11-12",
+      "checked": "2026-11-13",
       "event": {
         "starts_at": "2026-10-22T19:00:00",
         "url": "https://www.ticketmaster.ca/allison-russell-with-very-special-guest-toronto-ontario-10-22-2026/event/10006547B0205A80",
@@ -14411,7 +14263,7 @@
     },
     {
       "artist": "Allison Russell",
-      "checked": "2026-11-12",
+      "checked": "2026-11-13",
       "event": {
         "starts_at": "2026-10-22T19:00:00",
         "url": "https://www.ticketmaster.ca/allison-russell-with-very-special-guest-toronto-ontario-10-22-2026/event/10006547B0205A80",
@@ -14430,7 +14282,7 @@
     },
     {
       "artist": "Ally Salort",
-      "checked": "2026-11-12",
+      "checked": "2026-11-13",
       "event": {
         "starts_at": "2026-10-26T19:00:00",
         "url": "https://www.ticketmaster.ca/lexi-jayde-toronto-ontario-10-26-2026/event/1000651B953A7C3B",
@@ -14449,7 +14301,7 @@
     },
     {
       "artist": "ARK IDENTITY",
-      "checked": "2026-11-12",
+      "checked": "2026-11-13",
       "event": {
         "starts_at": "2026-11-12T19:00:00",
         "url": "https://www.ticketweb.ca/event/ark-identity-the-sound-garage-tickets/14367184",
@@ -14467,7 +14319,7 @@
     },
     {
       "artist": "Band Of Silver",
-      "checked": "2026-11-12",
+      "checked": "2026-11-13",
       "event": {
         "starts_at": "2026-10-24T18:30:00",
         "url": "https://www.ticketmaster.ca/judah-the-lion-toronto-ontario-10-24-2026/event/100064CAD5EF8D62",
@@ -14485,7 +14337,7 @@
     },
     {
       "artist": "Caity Gyorgy",
-      "checked": "2026-11-12",
+      "checked": "2026-11-13",
       "event": {
         "starts_at": "2026-12-12T19:30:00",
         "url": "https://www.ticketmaster.ca/swing-into-the-holidays-ft-caity-toronto-ontario-12-12-2026/event/100064B24B04DD11",
@@ -14503,7 +14355,7 @@
     },
     {
       "artist": "Charlotte Cornfield",
-      "checked": "2026-11-12",
+      "checked": "2026-11-13",
       "event": {
         "starts_at": "2026-12-03T20:00:00",
         "url": "https://www.ticketweb.ca/event/charlotte-cornfield-and-friendship-with-lees-palace-tickets/14903453",
@@ -14522,7 +14374,7 @@
     },
     {
       "artist": "Colorblind",
-      "checked": "2026-11-12",
+      "checked": "2026-11-13",
       "event": {
         "starts_at": "2026-11-19T18:00:00",
         "url": "https://www.ticketmaster.ca/catch-your-breath-not-broken-enough-toronto-ontario-11-19-2026/event/100064BAD77E4385",
@@ -14540,7 +14392,7 @@
     },
     {
       "artist": "Devon Gabriella",
-      "checked": "2026-11-12",
+      "checked": "2026-11-13",
       "event": {
         "starts_at": "2026-12-07T18:30:00",
         "url": "https://www.ticketmaster.ca/devon-gabriella-toronto-ontario-12-07-2026/event/100065302201E92B",
@@ -14559,7 +14411,7 @@
     },
     {
       "artist": "Field Guide",
-      "checked": "2026-11-12",
+      "checked": "2026-11-13",
       "event": {
         "starts_at": "2026-11-20T19:00:00",
         "url": "https://www.ticketmaster.ca/boy-golden-good-goddamn-another-tour-toronto-ontario-11-20-2026/event/100065168FDDA025",
@@ -14579,7 +14431,7 @@
     },
     {
       "artist": "Kes",
-      "checked": "2026-11-12",
+      "checked": "2026-11-13",
       "event": {
         "starts_at": "2026-12-18T20:00:00",
         "url": "https://www.ticketmaster.ca/kesmas-with-kes-the-band-toronto-ontario-12-18-2026/event/10006549E31674D3",
@@ -14597,7 +14449,7 @@
     },
     {
       "artist": "Loviet",
-      "checked": "2026-11-12",
+      "checked": "2026-11-13",
       "event": {
         "starts_at": "2026-11-09T19:00:00",
         "url": "https://www.ticketmaster.ca/the-wldlfe-toronto-ontario-11-09-2026/event/100064CF43BE63DC",
@@ -14616,7 +14468,7 @@
     },
     {
       "artist": "Mamas Gun",
-      "checked": "2026-11-12",
+      "checked": "2026-11-13",
       "event": {
         "starts_at": "2026-11-19T20:00:00",
         "url": "https://www.ticketweb.ca/event/mamas-gun-the-garrison-tickets/14816073",
@@ -14634,7 +14486,7 @@
     },
     {
       "artist": "Mr. Fantasy",
-      "checked": "2026-11-12",
+      "checked": "2026-11-13",
       "event": {
         "starts_at": "2026-10-24T19:00:00",
         "url": "https://www.ticketmaster.ca/mr-fantasy-sexy-saturday-nights-tour-toronto-ontario-10-24-2026/event/10006528BD1EB11E",
@@ -14653,7 +14505,7 @@
     },
     {
       "artist": "Sam Quealy",
-      "checked": "2026-11-12",
+      "checked": "2026-11-13",
       "event": {
         "starts_at": "2026-12-04T19:00:00",
         "url": "https://www.ticketmaster.ca/sam-quealy-north-america-tour-toronto-ontario-12-04-2026/event/100064E7D333B647",
@@ -14672,7 +14524,7 @@
     },
     {
       "artist": "The Trews",
-      "checked": "2026-11-12",
+      "checked": "2026-11-13",
       "event": {
         "starts_at": "2026-12-05T18:30:00",
         "url": "https://www.ticketmaster.ca/the-trews-toronto-ontario-12-05-2026/event/1000652BDABA8714",
@@ -14690,7 +14542,7 @@
     },
     {
       "artist": "Venus & The Flytraps",
-      "checked": "2026-11-12",
+      "checked": "2026-11-13",
       "event": {
         "starts_at": "2026-11-03T19:00:00",
         "url": "https://www.ticketmaster.ca/dev-lemons-eat-the-pavement-tour-toronto-ontario-11-03-2026/event/100064E8A8117AF2",
@@ -14709,7 +14561,7 @@
     },
     {
       "artist": "The 4411",
-      "checked": "2026-11-12",
+      "checked": "2026-11-13",
       "event": {
         "starts_at": "2026-11-11T19:00:00",
         "url": "https://www.ticketmaster.ca/west-22nd-places-to-be-toronto-ontario-11-11-2026/event/10006487E12C8BA5",
@@ -14727,7 +14579,7 @@
     },
     {
       "artist": "54-40",
-      "checked": "2026-11-12",
+      "checked": "2026-11-13",
       "event": {
         "starts_at": "2026-11-28T19:00:00",
         "url": "https://www.ticketmaster.ca/5440-toronto-ontario-11-28-2026/event/1000648FE5A3BC17",
@@ -14745,7 +14597,7 @@
     },
     {
       "artist": "Boy Golden",
-      "checked": "2026-11-12",
+      "checked": "2026-11-13",
       "event": {
         "starts_at": "2026-11-20T19:00:00",
         "url": "https://www.ticketmaster.ca/boy-golden-good-goddamn-another-tour-toronto-ontario-11-20-2026/event/100065168FDDA025",
@@ -14764,7 +14616,7 @@
     },
     {
       "artist": "Bradley Hale",
-      "checked": "2026-11-12",
+      "checked": "2026-11-13",
       "event": {
         "starts_at": "2026-11-12T19:00:00",
         "url": "https://www.ticketmaster.ca/sully-burrows-the-leave-you-lonely-toronto-ontario-11-12-2026/event/10006523B5E9A6C3",
@@ -14782,7 +14634,7 @@
     },
     {
       "artist": "Clerel",
-      "checked": "2026-11-12",
+      "checked": "2026-11-13",
       "event": {
         "starts_at": "2026-11-19T20:00:00",
         "url": "https://www.ticketweb.ca/event/mamas-gun-the-garrison-tickets/14816073",
@@ -14799,7 +14651,7 @@
     },
     {
       "artist": "Dominique Way",
-      "checked": "2026-11-12",
+      "checked": "2026-11-13",
       "event": {
         "starts_at": "2026-10-17T19:00:00",
         "url": "https://www.ticketmaster.ca/anna-graves-americas-greatest-burnout-tour-toronto-ontario-10-17-2026/event/100064C9F1B9E130",
@@ -14817,7 +14669,7 @@
     },
     {
       "artist": "Ella Woolsey",
-      "checked": "2026-11-12",
+      "checked": "2026-11-13",
       "event": {
         "starts_at": "2026-10-25T19:00:00",
         "url": "https://www.ticketmaster.ca/the-army-the-navy-the-fake-toronto-ontario-10-25-2026/event/100064CBC7977C87",
@@ -14835,7 +14687,7 @@
     },
     {
       "artist": "Good Lovelies",
-      "checked": "2026-11-12",
+      "checked": "2026-11-13",
       "event": {
         "starts_at": "2026-12-17T20:00:00",
         "url": "https://www.ticketmaster.ca/good-lovelies-holiday-concert-toronto-ontario-12-17-2026/event/100064C2DE8DACA5",
@@ -14852,7 +14704,7 @@
     },
     {
       "artist": "Jonathan Roy",
-      "checked": "2026-11-12",
+      "checked": "2026-11-13",
       "event": {
         "starts_at": "2026-10-16T20:00:00",
         "url": "https://www.ticketmaster.ca/collective-soul-pickering-ontario-10-16-2026/event/100064DE913C6FA0",
@@ -14869,7 +14721,7 @@
     },
     {
       "artist": "Jordan Hart",
-      "checked": "2026-11-12",
+      "checked": "2026-11-13",
       "event": {
         "starts_at": "2026-12-20T19:00:00",
         "url": "https://www.ticketweb.ca/event/jordan-hart-longboat-hall-tickets/14322014",
@@ -14887,7 +14739,7 @@
     },
     {
       "artist": "Julian Taylor",
-      "checked": "2026-11-12",
+      "checked": "2026-11-13",
       "event": {
         "starts_at": "2026-10-16T19:00:00",
         "url": "https://www.ticketmaster.ca/sanctuary-park-tour-celebrating-40-years-toronto-ontario-10-16-2026/event/100064D1D94E7213",
@@ -14905,7 +14757,7 @@
     },
     {
       "artist": "Macy Todd",
-      "checked": "2026-11-12",
+      "checked": "2026-11-13",
       "event": {
         "starts_at": "2026-11-29T19:00:00",
         "url": "https://www.ticketmaster.ca/an-evening-with-sasha-alex-sloan-toronto-ontario-11-29-2026/event/1000654196337229",
@@ -14923,7 +14775,7 @@
     },
     {
       "artist": "Mike D",
-      "checked": "2026-11-12",
+      "checked": "2026-11-13",
       "event": {
         "starts_at": "2026-10-20T19:00:00",
         "url": "https://www.ticketmaster.ca/mike-d-5d-toronto-ontario-10-20-2026/event/100064F08ADE5798",
@@ -14940,7 +14792,7 @@
     },
     {
       "artist": "the olllam",
-      "checked": "2026-11-12",
+      "checked": "2026-11-13",
       "event": {
         "starts_at": "2026-11-12T19:00:00",
         "url": "https://www.ticketmaster.ca/the-olllam-toronto-ontario-11-12-2026/event/1000650506F2B686",
@@ -14958,7 +14810,7 @@
     },
     {
       "artist": "Raine Maida",
-      "checked": "2026-11-12",
+      "checked": "2026-11-13",
       "event": {
         "starts_at": "2026-11-22T18:30:00",
         "url": "https://www.ticketmaster.ca/an-evening-with-raine-maida-chantal-toronto-ontario-11-22-2026/event/100064A1A468B69F",
@@ -14976,7 +14828,7 @@
     },
     {
       "artist": "Rett Madison",
-      "checked": "2026-11-12",
+      "checked": "2026-11-13",
       "event": {
         "starts_at": "2026-10-17T19:00:00",
         "url": "https://www.ticketweb.ca/event/rett-madison-the-sound-garage-tickets/15001533",
@@ -14993,7 +14845,7 @@
     },
     {
       "artist": "Salin",
-      "checked": "2026-11-12",
+      "checked": "2026-11-13",
       "event": {
         "starts_at": "2026-10-19T19:00:00",
         "url": "https://www.ticketweb.ca/event/salin-the-garrison-tickets/15012983",
@@ -15010,7 +14862,7 @@
     },
     {
       "artist": "Telescreens",
-      "checked": "2026-11-12",
+      "checked": "2026-11-13",
       "event": {
         "starts_at": "2026-10-21T19:00:00",
         "url": "https://www.ticketweb.ca/event/telescreens-why-the-the-sound-garage-tickets/14980963",
@@ -15027,7 +14879,7 @@
     },
     {
       "artist": "Twin Fin",
-      "checked": "2026-11-12",
+      "checked": "2026-11-13",
       "event": {
         "starts_at": "2026-10-20T19:00:00",
         "url": "https://www.ticketweb.ca/event/twin-fin-monarch-tavern-tickets/15001983",
@@ -15045,7 +14897,7 @@
     },
     {
       "artist": "The Watchmen",
-      "checked": "2026-11-12",
+      "checked": "2026-11-13",
       "event": {
         "starts_at": "2026-11-21T19:00:00",
         "url": "https://www.ticketmaster.ca/the-watchmen-toronto-ontario-11-21-2026/event/10006489D43D10C3",
@@ -15063,7 +14915,7 @@
     },
     {
       "artist": "Whitmer Thomas",
-      "checked": "2026-11-12",
+      "checked": "2026-11-13",
       "event": {
         "starts_at": "2026-12-08T19:00:00",
         "url": "https://www.ticketweb.ca/event/whitmer-thomas-the-great-hall-tickets/15032263",
@@ -15107,10 +14959,10 @@
         },
         "listeners": null,
         "reasons": [
-          "played on 79 days since 2005 (387 plays)",
+          "played on 80 days since 2005 (391 plays)",
           "one of your favourites"
         ],
-        "score": 4.382,
+        "score": 4.3944,
         "tier": "know"
       },
       {
@@ -15527,7 +15379,7 @@
           "small venue (~700 cap.)",
           "you've never been to Lee's Palace"
         ],
-        "score": 0.2013,
+        "score": 0.2025,
         "tier": "next_big_thing"
       },
       {
@@ -15635,7 +15487,7 @@
           "only 29,283 listeners on Last.fm",
           "small venue (~1,400 cap.)"
         ],
-        "score": 0.1253,
+        "score": 0.1255,
         "tier": "next_big_thing"
       },
       {
@@ -15668,7 +15520,7 @@
           "only 89,201 listeners on Last.fm",
           "small venue (~1,400 cap.)"
         ],
-        "score": 0.118,
+        "score": 0.1181,
         "tier": "next_big_thing"
       }
     ],
@@ -15837,15 +15689,15 @@
           "you played them on 2 days back in 2008",
           "you've never been to Lee's Palace"
         ],
-        "score": 0.3658,
+        "score": 0.3661,
         "tier": "would_like"
       }
     ]
   },
   "stats": {
-    "events": 490,
-    "known_artists": 1804,
-    "snapshot_days": 28
+    "events": 480,
+    "known_artists": 1807,
+    "snapshot_days": 29
   },
   "user": "quepol"
 }
