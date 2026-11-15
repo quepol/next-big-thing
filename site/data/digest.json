@@ -6164,398 +6164,6 @@
           "artist": "K-Pop Infinity"
         }
       ],
-      "id": "tm:1AvZZ_kGknI6_NL",
-      "region": "Toronto",
-      "starts_at": "2026-11-14T13:00:00",
-      "url": "https://www.ticketmaster.ca/kpop-dreamworld-toronto-ontario-11-14-2026/event/1000646AA81D98DF",
-      "venue": {
-        "capacity": null,
-        "name": "Meridian Arts Centre: Lyric Theatre"
-      }
-    },
-    {
-      "acts": [
-        {
-          "affinity": 0.0,
-          "artist": "Bed By 10pm"
-        }
-      ],
-      "id": "tm:1718v0G6GiIh-dE",
-      "region": "Toronto",
-      "starts_at": "2026-11-14T16:00:00",
-      "url": "https://www.ticketweb.ca/event/bed-by-10pm-rebel-tickets/14192174?REFERRAL_ID=tmfeed",
-      "venue": {
-        "capacity": 5000,
-        "name": "REBEL"
-      }
-    },
-    {
-      "acts": [
-        {
-          "affinity": 0.0,
-          "artist": "K-Pop Infinity"
-        }
-      ],
-      "id": "tm:1AvZZ_kGknIFtNP",
-      "region": "Toronto",
-      "starts_at": "2026-11-14T17:00:00",
-      "url": "https://www.ticketmaster.ca/kpop-dreamworld-toronto-ontario-11-14-2026/event/1000646AA82298E5",
-      "venue": {
-        "capacity": null,
-        "name": "Meridian Arts Centre: Lyric Theatre"
-      }
-    },
-    {
-      "acts": [
-        {
-          "affinity": 0.0,
-          "artist": "Lloyd Andrews",
-          "listeners": 4
-        },
-        {
-          "affinity": 0.0324,
-          "artist": "The Chillers",
-          "listeners": 1118,
-          "why": "similar to The District (0.41)"
-        },
-        {
-          "affinity": 0.0,
-          "artist": "Ruby Veil",
-          "listeners": 4
-        },
-        {
-          "affinity": 0.0,
-          "artist": "Synchronicity",
-          "listeners": 2539
-        }
-      ],
-      "id": "tm:rZ7HnEZ1AfuyZV",
-      "region": "Toronto",
-      "starts_at": "2026-11-14T18:30:00",
-      "url": "https://www.ticketweb.ca/event/lloyd-andrews-w-the-chillers-sneaky-dees-concert-venue-tickets/14379034",
-      "venue": {
-        "capacity": 300,
-        "name": "Sneaky Dee's Concert Venue"
-      }
-    },
-    {
-      "acts": [
-        {
-          "affinity": 0.0,
-          "artist": "Class of 91",
-          "listeners": 155
-        },
-        {
-          "affinity": 0.0053,
-          "artist": "Nerima",
-          "listeners": 1327,
-          "why": "similar to Panic at the Disco (0.03)"
-        },
-        {
-          "affinity": 0.0,
-          "artist": "Crowd Surf",
-          "listeners": 27
-        },
-        {
-          "affinity": 0.0,
-          "artist": "Steve Tidy & the Unkempt"
-        }
-      ],
-      "id": "tm:rZ7HnEZ1AfG370",
-      "region": "Toronto",
-      "starts_at": "2026-11-14T19:00:00",
-      "url": "https://www.ticketweb.ca/event/class-of-91-w-nerima-supermarket-tickets/14312124",
-      "venue": {
-        "capacity": 200,
-        "name": "Supermarket"
-      }
-    },
-    {
-      "acts": [
-        {
-          "affinity": 0.1335,
-          "artist": "Sadurn",
-          "listeners": 95494,
-          "why": "similar to Waxahatchee (0.46), Big Thief (0.40), boygenius (0.17)"
-        }
-      ],
-      "id": "tm:rZ7HnEZ1A4ZbuN",
-      "region": "Toronto",
-      "starts_at": "2026-11-14T19:00:00",
-      "url": "https://www.ticketweb.ca/event/sadurn-the-garrison-tickets/15018363",
-      "venue": {
-        "capacity": null,
-        "name": "The Garrison"
-      }
-    },
-    {
-      "acts": [
-        {
-          "affinity": 0.0098,
-          "artist": "Daniel James McFadyen",
-          "listeners": 4079,
-          "why": "similar to Hillsburn (0.12)"
-        }
-      ],
-      "id": "tm:rZ7HnEZ1AfGZGV",
-      "region": "Toronto",
-      "starts_at": "2026-11-14T19:00:00",
-      "url": "https://www.ticketweb.ca/event/daniel-james-mcfadyen-longboat-hall-tickets/14300334",
-      "venue": {
-        "capacity": 500,
-        "name": "Longboat Hall"
-      }
-    },
-    {
-      "acts": [
-        {
-          "affinity": 0.0222,
-          "artist": "Resavoir",
-          "listeners": 250782,
-          "why": "tags match your taste: experimental, jazz, piano"
-        }
-      ],
-      "id": "tm:rZ7HnEZ1A4ZKAd",
-      "region": "Toronto",
-      "starts_at": "2026-11-14T19:00:00",
-      "url": "https://www.ticketweb.ca/event/resavoir-the-sound-garage-tickets/15013143",
-      "venue": {
-        "capacity": null,
-        "name": "The Sound Garage"
-      }
-    },
-    {
-      "acts": [
-        {
-          "affinity": 0.0,
-          "artist": "Message In A Bottle - The Police Tribute"
-        }
-      ],
-      "id": "tm:rZ7HnEZ1AfG7kf",
-      "region": "Toronto",
-      "starts_at": "2026-11-14T19:00:00",
-      "url": "https://www.ticketweb.ca/event/message-in-a-bottle-rockpile-rock-bar-tickets/14304194",
-      "venue": {
-        "capacity": 350,
-        "name": "Rockpile Rock Bar"
-      }
-    },
-    {
-      "acts": [
-        {
-          "affinity": 0.5691,
-          "artist": "Half Moon Run",
-          "days": 2,
-          "listeners": 539526,
-          "why": "similar to Manchester Orchestra (0.89), The National (0.71), City and Colour (0.58)"
-        },
-        {
-          "affinity": 0.0,
-          "artist": "FILMharmonic Orchestra",
-          "listeners": 78
-        }
-      ],
-      "id": "tm:1A8Zku0GkeU0aeB",
-      "region": "Toronto",
-      "starts_at": "2026-11-14T20:00:00",
-      "url": "https://www.ticketmaster.ca/half-moon-run-the-filmharmonique-orchestra-toronto-ontario-11-14-2026/event/10006364B69090BA",
-      "venue": {
-        "capacity": 3191,
-        "name": "Meridian Hall"
-      }
-    },
-    {
-      "acts": [
-        {
-          "affinity": 0.0,
-          "artist": "Mars Hotel",
-          "listeners": 99
-        }
-      ],
-      "id": "tm:177Zv0G6uQUNHKu",
-      "region": "Toronto",
-      "starts_at": "2026-11-14T20:00:00",
-      "url": "https://www.ticketmaster.ca/mars-hotel-one-more-sat-night-toronto-ontario-11-14-2026/event/100064D6B68FC4CD",
-      "venue": {
-        "capacity": 575,
-        "name": "The Mod Club"
-      }
-    },
-    {
-      "acts": [
-        {
-          "affinity": 0.0,
-          "artist": "it's murph",
-          "days": 1,
-          "listeners": 266110
-        },
-        {
-          "affinity": 0.0807,
-          "artist": "Nils Hoffmann",
-          "listeners": 164200,
-          "why": "similar to RÜFÜS DU SOL (0.48)"
-        }
-      ],
-      "id": "tm:1A8ZkfxGkeSzHEQ",
-      "region": "Toronto",
-      "starts_at": "2026-11-14T20:00:00",
-      "url": "https://www.ticketmaster.ca/its-murph-fade-into-nothing-tour-toronto-ontario-11-14-2026/event/10006522B3E3C9DA",
-      "venue": {
-        "capacity": 2500,
-        "name": "History Toronto"
-      }
-    },
-    {
-      "acts": [
-        {
-          "affinity": 0.0,
-          "artist": "Sepideh Raissadat",
-          "listeners": 752
-        }
-      ],
-      "id": "tm:177Zv0G65a5uqgF",
-      "region": "Toronto",
-      "starts_at": "2026-11-14T20:00:00",
-      "url": "https://www.ticketmaster.ca/canadian-golha-orchestra-and-sepideh-raissadat-toronto-ontario-11-14-2026/event/100064B24B35DD48",
-      "venue": {
-        "capacity": 1800,
-        "name": "Meridian Arts Centre: George Weston"
-      }
-    },
-    {
-      "acts": [
-        {
-          "affinity": 0.0,
-          "artist": "Henry Lau",
-          "listeners": 8312
-        }
-      ],
-      "id": "tm:177Zv0G6ueKjFmc",
-      "region": "Toronto",
-      "starts_at": "2026-11-14T20:00:00",
-      "url": "https://www.ticketmaster.ca/henry-lau-toronto-ontario-11-14-2026/event/100064D093708BAD",
-      "venue": {
-        "capacity": 2000,
-        "name": "The Theatre at Great Canadian Toronto"
-      }
-    },
-    {
-      "acts": [
-        {
-          "affinity": 0.0,
-          "artist": "ENCORE: 20 Years of Taylor Swift Dance Party"
-        }
-      ],
-      "id": "tm:rZ7HnEZ1Afue47",
-      "region": "Toronto",
-      "starts_at": "2026-11-14T21:00:00",
-      "url": "https://www.ticketweb.ca/event/encore-20-years-of-taylor-lees-palace-tickets/14342544",
-      "venue": {
-        "capacity": 700,
-        "name": "Lee's Palace"
-      }
-    },
-    {
-      "acts": [
-        {
-          "affinity": 0.0,
-          "artist": "PRACTICALLY HIP TRAGICALLY HIP TRIBUTE SHOW"
-        }
-      ],
-      "id": "tm:rZ7HnEZ1Af13Z0",
-      "region": "Toronto",
-      "starts_at": "2026-11-14T21:00:00",
-      "url": "https://www.ticketweb.ca/event/practically-hip-tragically-hip-tribute-spot-1-grill-music-tickets/14292024",
-      "venue": {
-        "capacity": 400,
-        "name": "Spot 1 Grill & Music Hall"
-      }
-    },
-    {
-      "acts": [
-        {
-          "affinity": 0.0,
-          "artist": "Biscits",
-          "listeners": 196193
-        }
-      ],
-      "id": "tm:rZ7HnEZ1A4v6pd",
-      "region": "Toronto",
-      "starts_at": "2026-11-14T22:00:00",
-      "url": "https://www.ticketweb.ca/event/biscits-4am-license-coda-tickets/15047583",
-      "venue": {
-        "capacity": 700,
-        "name": "CODA"
-      }
-    },
-    {
-      "acts": [
-        {
-          "affinity": 0.0127,
-          "artist": "BARELY ALIVE",
-          "listeners": 120442,
-          "why": "tags match your taste: dubstep, trap"
-        }
-      ],
-      "id": "tm:rZ7HnEZ1A4vkfS",
-      "region": "Toronto",
-      "starts_at": "2026-11-14T22:00:00",
-      "url": "https://www.ticketweb.ca/event/barely-alive-reconnect-noir-inside-rebel-tickets/15046533",
-      "venue": {
-        "capacity": null,
-        "name": "NOIR (inside REBEL)"
-      }
-    },
-    {
-      "acts": [
-        {
-          "affinity": 0.0,
-          "artist": "Ben Nicky",
-          "listeners": 99764
-        },
-        {
-          "affinity": 0.0,
-          "artist": "Vini Vici",
-          "listeners": 151582
-        },
-        {
-          "affinity": 0.0,
-          "artist": "FOVOS",
-          "listeners": 117768
-        }
-      ],
-      "id": "tm:rZ7HnEZ1Af1FZV",
-      "region": "Toronto",
-      "starts_at": "2026-11-14T22:00:00",
-      "url": "https://www.ticketweb.ca/event/ben-nicky-x-vini-vici-rebel-tickets/14288034",
-      "venue": {
-        "capacity": null,
-        "name": "REBEL"
-      }
-    },
-    {
-      "acts": [
-        {
-          "affinity": 0.0,
-          "artist": "Sneaky 2000s Dance Party at Sneaky Dee's - Nov 14 2026 - LOW TICKETS"
-        }
-      ],
-      "id": "tm:rZ7HnEZ1AKPt-0",
-      "region": "Toronto",
-      "starts_at": "2026-11-14T22:30:00",
-      "url": "https://www.ticketweb.ca/event/sneaky-2000s-dance-party-at-sneaky-dees-concert-venue-tickets/13969864",
-      "venue": {
-        "capacity": 300,
-        "name": "Sneaky Dee's Concert Venue"
-      }
-    },
-    {
-      "acts": [
-        {
-          "affinity": 0.0,
-          "artist": "K-Pop Infinity"
-        }
-      ],
       "id": "tm:1AvZZ_kGknIatNc",
       "region": "Toronto",
       "starts_at": "2026-11-15T13:00:00",
@@ -7768,13 +7376,13 @@
       "acts": [
         {
           "affinity": 0.0,
-          "artist": "Emo Night Toronto at Sneaky Dee's"
+          "artist": "Emo Night Toronto: Underoath Edition at Sneaky Dee's - WIN TICKETS TO SEE UNDEROATH IN TORONTO"
         }
       ],
       "id": "tm:rZ7HnEZ1AfQdjS",
       "region": "Toronto",
       "starts_at": "2026-11-20T22:30:00",
-      "url": "https://www.ticketweb.ca/event/emo-night-toronto-at-sneaky-sneaky-dees-concert-venue-tickets/14683733",
+      "url": "https://www.ticketweb.ca/event/emo-night-toronto-underoath-edition-sneaky-dees-concert-venue-tickets/14683733",
       "venue": {
         "capacity": 300,
         "name": "Sneaky Dee's Concert Venue"
@@ -14178,9 +13786,165 @@
         "capacity": 8000,
         "name": "Coca-Cola Coliseum"
       }
+    },
+    {
+      "acts": [
+        {
+          "affinity": 0.017,
+          "artist": "Meshuggah",
+          "listeners": 748498,
+          "why": "similar to Tool (0.23)"
+        },
+        {
+          "affinity": 0.1014,
+          "artist": "Testament",
+          "listeners": 1093371,
+          "why": "similar to Metallica (0.39)"
+        },
+        {
+          "affinity": 0.0001,
+          "artist": "Blood Incantation",
+          "listeners": 159873,
+          "why": "tags match your taste: metal, ambient"
+        }
+      ],
+      "id": "tm:1A8Zk4fGkePJPTE",
+      "region": "Toronto",
+      "starts_at": "2027-02-12T19:00:00",
+      "url": "https://www.ticketmaster.ca/meshuggah-the-fortyyear-anomaly-w-testament-toronto-ontario-02-12-2027/event/10006554A59A5FE7",
+      "venue": {
+        "capacity": 8000,
+        "name": "Coca-Cola Coliseum"
+      }
+    },
+    {
+      "acts": [
+        {
+          "affinity": 0.0,
+          "artist": "NieR: Orchestra Concert",
+          "listeners": 2
+        }
+      ],
+      "id": "tm:1k7Zv0qFGAusgrE",
+      "region": "Toronto",
+      "starts_at": "2027-02-12T19:30:00",
+      "url": "https://www.ticketmaster.ca/nier-orchestra-concert-12026-yorha-toronto-ontario-02-12-2027/event/100064748DC757A7",
+      "venue": {
+        "capacity": 3191,
+        "name": "Meridian Hall"
+      }
+    },
+    {
+      "acts": [
+        {
+          "affinity": 0.1214,
+          "artist": "Backstreet Boys",
+          "days": 10,
+          "listeners": 3184264,
+          "why": "similar to *NSYNC (0.88), Britney Spears (0.16), Justin Timberlake (0.16)"
+        }
+      ],
+      "id": "tm:1AvZZ_KGkz7jcQ4",
+      "region": "Toronto",
+      "starts_at": "2027-02-12T20:00:00",
+      "url": "https://www.ticketmaster.ca/backstreet-boys-into-the-millennium-homecoming-toronto-ontario-02-12-2027/event/1000653E0472D695",
+      "venue": {
+        "capacity": 50000,
+        "name": "Rogers Centre"
+      }
+    },
+    {
+      "acts": [
+        {
+          "affinity": 0.0,
+          "artist": "Riordan",
+          "listeners": 102814
+        },
+        {
+          "affinity": 0.0,
+          "artist": "IDEMI",
+          "listeners": 61985
+        },
+        {
+          "affinity": 0.0,
+          "artist": "Boss Priester",
+          "listeners": 5152
+        }
+      ],
+      "id": "tm:168Zk46aJZACC66k",
+      "region": "Toronto",
+      "starts_at": "2027-02-12T20:00:00",
+      "url": "https://www.ticketmaster.ca/riordan-presents-remapped-toronto-toronto-ontario-02-12-2027/event/10006547266DD665",
+      "venue": {
+        "capacity": 2500,
+        "name": "History Toronto"
+      }
+    },
+    {
+      "acts": [
+        {
+          "affinity": 0.0005,
+          "artist": "Warrant",
+          "listeners": 804930,
+          "why": "tags match your taste: hard rock, metal"
+        },
+        {
+          "affinity": 0.0006,
+          "artist": "Lee Aaron",
+          "listeners": 29101,
+          "why": "tags match your taste: hard rock, jazz, metal"
+        }
+      ],
+      "id": "tm:1A8ZkftGkeB-GjS",
+      "region": "Toronto",
+      "starts_at": "2027-02-12T20:00:00",
+      "url": "https://www.ticketmaster.ca/warrant-pickering-ontario-02-12-2027/event/10006529BA84C733",
+      "venue": {
+        "capacity": null,
+        "name": "The Arena at Pickering Casino Resort"
+      }
+    },
+    {
+      "acts": [
+        {
+          "affinity": 0.0,
+          "artist": "Tape B",
+          "listeners": 28197
+        }
+      ],
+      "id": "tm:rZ7HnEZ1Af888f",
+      "region": "Toronto",
+      "starts_at": "2027-02-12T22:00:00",
+      "url": "https://www.ticketweb.ca/event/tape-b-rebel-tickets/14410414",
+      "venue": {
+        "capacity": null,
+        "name": "REBEL"
+      }
+    },
+    {
+      "acts": [
+        {
+          "affinity": 0.0,
+          "artist": "Richard Finger",
+          "listeners": 943
+        },
+        {
+          "affinity": 0.0,
+          "artist": "Dr. Ushūu",
+          "listeners": 11197
+        }
+      ],
+      "id": "tm:1A8Zkf0GkdFucjj",
+      "region": "Toronto",
+      "starts_at": "2027-02-12T22:00:00",
+      "url": "https://www.ticketmaster.ca/richard-finger-toronto-ontario-02-12-2027/event/10006524C836D71C",
+      "venue": {
+        "capacity": 575,
+        "name": "The Mod Club"
+      }
     }
   ],
-  "generated_at": "2026-11-14T10:33:43+00:00",
+  "generated_at": "2026-11-15T11:02:16+00:00",
   "ledger": [
     {
       "artist": "Compagnie Yoann Bourgeois",
@@ -14200,7 +13964,7 @@
     },
     {
       "artist": "Hockey Academy",
-      "checked": "2026-11-14",
+      "checked": "2026-11-15",
       "event": {
         "starts_at": "2026-11-20T21:00:00",
         "url": "https://www.ticketweb.ca/event/around-the-corner-presents-man-lees-palace-tickets/14395614",
@@ -14219,7 +13983,7 @@
     },
     {
       "artist": "Mad Iris",
-      "checked": "2026-11-14",
+      "checked": "2026-11-15",
       "event": {
         "starts_at": "2026-11-20T21:00:00",
         "url": "https://www.ticketweb.ca/event/around-the-corner-presents-man-lees-palace-tickets/14395614",
@@ -14238,7 +14002,7 @@
     },
     {
       "artist": "OTNES",
-      "checked": "2026-11-14",
+      "checked": "2026-11-15",
       "event": {
         "starts_at": "2026-11-10T19:00:00",
         "url": "https://www.ticketmaster.ca/donny-benet-toronto-ontario-11-10-2026/event/1000648604E0EC43",
@@ -14257,7 +14021,7 @@
     },
     {
       "artist": "comehelpglo",
-      "checked": "2026-11-14",
+      "checked": "2026-11-15",
       "event": {
         "starts_at": "2026-11-10T19:00:00",
         "url": "https://www.ticketmaster.ca/pouya-the-forever-glades-tour-toronto-ontario-11-10-2026/event/100064C9B042E9DF",
@@ -14276,7 +14040,7 @@
     },
     {
       "artist": "Jackie Evans",
-      "checked": "2026-11-14",
+      "checked": "2026-11-15",
       "event": {
         "starts_at": "2026-11-08T19:00:00",
         "url": "https://www.ticketmaster.ca/jackie-evans-toronto-ontario-11-08-2026/event/100064DEA887A585",
@@ -14295,7 +14059,7 @@
     },
     {
       "artist": "Adam Cohen",
-      "checked": "2026-11-14",
+      "checked": "2026-11-15",
       "event": {
         "starts_at": "2026-11-07T20:00:00",
         "url": "https://www.ticketmaster.ca/everybody-knows-leonard-cohen-10th-anniversary-toronto-ontario-11-07-2026/event/100064E1E1815048",
@@ -14313,7 +14077,7 @@
     },
     {
       "artist": "AHI",
-      "checked": "2026-11-14",
+      "checked": "2026-11-15",
       "event": {
         "starts_at": "2026-10-22T19:00:00",
         "url": "https://www.ticketmaster.ca/allison-russell-with-very-special-guest-toronto-ontario-10-22-2026/event/10006547B0205A80",
@@ -14331,7 +14095,7 @@
     },
     {
       "artist": "Allison Russell",
-      "checked": "2026-11-14",
+      "checked": "2026-11-15",
       "event": {
         "starts_at": "2026-10-22T19:00:00",
         "url": "https://www.ticketmaster.ca/allison-russell-with-very-special-guest-toronto-ontario-10-22-2026/event/10006547B0205A80",
@@ -14350,7 +14114,7 @@
     },
     {
       "artist": "Ally Salort",
-      "checked": "2026-11-14",
+      "checked": "2026-11-15",
       "event": {
         "starts_at": "2026-10-26T19:00:00",
         "url": "https://www.ticketmaster.ca/lexi-jayde-toronto-ontario-10-26-2026/event/1000651B953A7C3B",
@@ -14369,7 +14133,7 @@
     },
     {
       "artist": "ARK IDENTITY",
-      "checked": "2026-11-14",
+      "checked": "2026-11-15",
       "event": {
         "starts_at": "2026-11-12T19:00:00",
         "url": "https://www.ticketweb.ca/event/ark-identity-the-sound-garage-tickets/14367184",
@@ -14387,7 +14151,7 @@
     },
     {
       "artist": "Band Of Silver",
-      "checked": "2026-11-14",
+      "checked": "2026-11-15",
       "event": {
         "starts_at": "2026-10-24T18:30:00",
         "url": "https://www.ticketmaster.ca/judah-the-lion-toronto-ontario-10-24-2026/event/100064CAD5EF8D62",
@@ -14405,7 +14169,7 @@
     },
     {
       "artist": "Caity Gyorgy",
-      "checked": "2026-11-14",
+      "checked": "2026-11-15",
       "event": {
         "starts_at": "2026-12-12T19:30:00",
         "url": "https://www.ticketmaster.ca/swing-into-the-holidays-ft-caity-toronto-ontario-12-12-2026/event/100064B24B04DD11",
@@ -14423,7 +14187,7 @@
     },
     {
       "artist": "Charlotte Cornfield",
-      "checked": "2026-11-14",
+      "checked": "2026-11-15",
       "event": {
         "starts_at": "2026-12-03T20:00:00",
         "url": "https://www.ticketweb.ca/event/charlotte-cornfield-and-friendship-with-lees-palace-tickets/14903453",
@@ -14442,7 +14206,7 @@
     },
     {
       "artist": "Colorblind",
-      "checked": "2026-11-14",
+      "checked": "2026-11-15",
       "event": {
         "starts_at": "2026-11-19T18:00:00",
         "url": "https://www.ticketmaster.ca/catch-your-breath-not-broken-enough-toronto-ontario-11-19-2026/event/100064BAD77E4385",
@@ -14460,7 +14224,7 @@
     },
     {
       "artist": "Devon Gabriella",
-      "checked": "2026-11-14",
+      "checked": "2026-11-15",
       "event": {
         "starts_at": "2026-12-07T18:30:00",
         "url": "https://www.ticketmaster.ca/devon-gabriella-toronto-ontario-12-07-2026/event/100065302201E92B",
@@ -14479,7 +14243,7 @@
     },
     {
       "artist": "Field Guide",
-      "checked": "2026-11-14",
+      "checked": "2026-11-15",
       "event": {
         "starts_at": "2026-11-20T19:00:00",
         "url": "https://www.ticketmaster.ca/boy-golden-good-goddamn-another-tour-toronto-ontario-11-20-2026/event/100065168FDDA025",
@@ -14499,7 +14263,7 @@
     },
     {
       "artist": "Kes",
-      "checked": "2026-11-14",
+      "checked": "2026-11-15",
       "event": {
         "starts_at": "2026-12-18T20:00:00",
         "url": "https://www.ticketmaster.ca/kesmas-with-kes-the-band-toronto-ontario-12-18-2026/event/10006549E31674D3",
@@ -14517,7 +14281,7 @@
     },
     {
       "artist": "Loviet",
-      "checked": "2026-11-14",
+      "checked": "2026-11-15",
       "event": {
         "starts_at": "2026-11-09T19:00:00",
         "url": "https://www.ticketmaster.ca/the-wldlfe-toronto-ontario-11-09-2026/event/100064CF43BE63DC",
@@ -14536,7 +14300,7 @@
     },
     {
       "artist": "Mamas Gun",
-      "checked": "2026-11-14",
+      "checked": "2026-11-15",
       "event": {
         "starts_at": "2026-11-19T20:00:00",
         "url": "https://www.ticketweb.ca/event/mamas-gun-the-garrison-tickets/14816073",
@@ -14554,7 +14318,7 @@
     },
     {
       "artist": "Mr. Fantasy",
-      "checked": "2026-11-14",
+      "checked": "2026-11-15",
       "event": {
         "starts_at": "2026-10-24T19:00:00",
         "url": "https://www.ticketmaster.ca/mr-fantasy-sexy-saturday-nights-tour-toronto-ontario-10-24-2026/event/10006528BD1EB11E",
@@ -14573,7 +14337,7 @@
     },
     {
       "artist": "Sam Quealy",
-      "checked": "2026-11-14",
+      "checked": "2026-11-15",
       "event": {
         "starts_at": "2026-12-04T19:00:00",
         "url": "https://www.ticketmaster.ca/sam-quealy-north-america-tour-toronto-ontario-12-04-2026/event/100064E7D333B647",
@@ -14592,7 +14356,7 @@
     },
     {
       "artist": "The Trews",
-      "checked": "2026-11-14",
+      "checked": "2026-11-15",
       "event": {
         "starts_at": "2026-12-05T18:30:00",
         "url": "https://www.ticketmaster.ca/the-trews-toronto-ontario-12-05-2026/event/1000652BDABA8714",
@@ -14610,7 +14374,7 @@
     },
     {
       "artist": "Venus & The Flytraps",
-      "checked": "2026-11-14",
+      "checked": "2026-11-15",
       "event": {
         "starts_at": "2026-11-03T19:00:00",
         "url": "https://www.ticketmaster.ca/dev-lemons-eat-the-pavement-tour-toronto-ontario-11-03-2026/event/100064E8A8117AF2",
@@ -14629,7 +14393,7 @@
     },
     {
       "artist": "The 4411",
-      "checked": "2026-11-14",
+      "checked": "2026-11-15",
       "event": {
         "starts_at": "2026-11-11T19:00:00",
         "url": "https://www.ticketmaster.ca/west-22nd-places-to-be-toronto-ontario-11-11-2026/event/10006487E12C8BA5",
@@ -14647,7 +14411,7 @@
     },
     {
       "artist": "54-40",
-      "checked": "2026-11-14",
+      "checked": "2026-11-15",
       "event": {
         "starts_at": "2026-11-28T19:00:00",
         "url": "https://www.ticketmaster.ca/5440-toronto-ontario-11-28-2026/event/1000648FE5A3BC17",
@@ -14665,7 +14429,7 @@
     },
     {
       "artist": "Boy Golden",
-      "checked": "2026-11-14",
+      "checked": "2026-11-15",
       "event": {
         "starts_at": "2026-11-20T19:00:00",
         "url": "https://www.ticketmaster.ca/boy-golden-good-goddamn-another-tour-toronto-ontario-11-20-2026/event/100065168FDDA025",
@@ -14684,7 +14448,7 @@
     },
     {
       "artist": "Bradley Hale",
-      "checked": "2026-11-14",
+      "checked": "2026-11-15",
       "event": {
         "starts_at": "2026-11-12T19:00:00",
         "url": "https://www.ticketmaster.ca/sully-burrows-the-leave-you-lonely-toronto-ontario-11-12-2026/event/10006523B5E9A6C3",
@@ -14702,7 +14466,7 @@
     },
     {
       "artist": "Clerel",
-      "checked": "2026-11-14",
+      "checked": "2026-11-15",
       "event": {
         "starts_at": "2026-11-19T20:00:00",
         "url": "https://www.ticketweb.ca/event/mamas-gun-the-garrison-tickets/14816073",
@@ -14719,7 +14483,7 @@
     },
     {
       "artist": "Dominique Way",
-      "checked": "2026-11-14",
+      "checked": "2026-11-15",
       "event": {
         "starts_at": "2026-10-17T19:00:00",
         "url": "https://www.ticketmaster.ca/anna-graves-americas-greatest-burnout-tour-toronto-ontario-10-17-2026/event/100064C9F1B9E130",
@@ -14737,7 +14501,7 @@
     },
     {
       "artist": "Ella Woolsey",
-      "checked": "2026-11-14",
+      "checked": "2026-11-15",
       "event": {
         "starts_at": "2026-10-25T19:00:00",
         "url": "https://www.ticketmaster.ca/the-army-the-navy-the-fake-toronto-ontario-10-25-2026/event/100064CBC7977C87",
@@ -14755,7 +14519,7 @@
     },
     {
       "artist": "Good Lovelies",
-      "checked": "2026-11-14",
+      "checked": "2026-11-15",
       "event": {
         "starts_at": "2026-12-17T20:00:00",
         "url": "https://www.ticketmaster.ca/good-lovelies-holiday-concert-toronto-ontario-12-17-2026/event/100064C2DE8DACA5",
@@ -14772,7 +14536,7 @@
     },
     {
       "artist": "Jonathan Roy",
-      "checked": "2026-11-14",
+      "checked": "2026-11-15",
       "event": {
         "starts_at": "2026-10-16T20:00:00",
         "url": "https://www.ticketmaster.ca/collective-soul-pickering-ontario-10-16-2026/event/100064DE913C6FA0",
@@ -14789,7 +14553,7 @@
     },
     {
       "artist": "Jordan Hart",
-      "checked": "2026-11-14",
+      "checked": "2026-11-15",
       "event": {
         "starts_at": "2026-12-20T19:00:00",
         "url": "https://www.ticketweb.ca/event/jordan-hart-longboat-hall-tickets/14322014",
@@ -14807,7 +14571,7 @@
     },
     {
       "artist": "Julian Taylor",
-      "checked": "2026-11-14",
+      "checked": "2026-11-15",
       "event": {
         "starts_at": "2026-10-16T19:00:00",
         "url": "https://www.ticketmaster.ca/sanctuary-park-tour-celebrating-40-years-toronto-ontario-10-16-2026/event/100064D1D94E7213",
@@ -14825,7 +14589,7 @@
     },
     {
       "artist": "Macy Todd",
-      "checked": "2026-11-14",
+      "checked": "2026-11-15",
       "event": {
         "starts_at": "2026-11-29T19:00:00",
         "url": "https://www.ticketmaster.ca/an-evening-with-sasha-alex-sloan-toronto-ontario-11-29-2026/event/1000654196337229",
@@ -14843,7 +14607,7 @@
     },
     {
       "artist": "Mike D",
-      "checked": "2026-11-14",
+      "checked": "2026-11-15",
       "event": {
         "starts_at": "2026-10-20T19:00:00",
         "url": "https://www.ticketmaster.ca/mike-d-5d-toronto-ontario-10-20-2026/event/100064F08ADE5798",
@@ -14860,7 +14624,7 @@
     },
     {
       "artist": "the olllam",
-      "checked": "2026-11-14",
+      "checked": "2026-11-15",
       "event": {
         "starts_at": "2026-11-12T19:00:00",
         "url": "https://www.ticketmaster.ca/the-olllam-toronto-ontario-11-12-2026/event/1000650506F2B686",
@@ -14878,7 +14642,7 @@
     },
     {
       "artist": "Raine Maida",
-      "checked": "2026-11-14",
+      "checked": "2026-11-15",
       "event": {
         "starts_at": "2026-11-22T18:30:00",
         "url": "https://www.ticketmaster.ca/an-evening-with-raine-maida-chantal-toronto-ontario-11-22-2026/event/100064A1A468B69F",
@@ -14896,7 +14660,7 @@
     },
     {
       "artist": "Rett Madison",
-      "checked": "2026-11-14",
+      "checked": "2026-11-15",
       "event": {
         "starts_at": "2026-10-17T19:00:00",
         "url": "https://www.ticketweb.ca/event/rett-madison-the-sound-garage-tickets/15001533",
@@ -14913,7 +14677,7 @@
     },
     {
       "artist": "Salin",
-      "checked": "2026-11-14",
+      "checked": "2026-11-15",
       "event": {
         "starts_at": "2026-10-19T19:00:00",
         "url": "https://www.ticketweb.ca/event/salin-the-garrison-tickets/15012983",
@@ -14930,7 +14694,7 @@
     },
     {
       "artist": "Telescreens",
-      "checked": "2026-11-14",
+      "checked": "2026-11-15",
       "event": {
         "starts_at": "2026-10-21T19:00:00",
         "url": "https://www.ticketweb.ca/event/telescreens-why-the-the-sound-garage-tickets/14980963",
@@ -14947,7 +14711,7 @@
     },
     {
       "artist": "Twin Fin",
-      "checked": "2026-11-14",
+      "checked": "2026-11-15",
       "event": {
         "starts_at": "2026-10-20T19:00:00",
         "url": "https://www.ticketweb.ca/event/twin-fin-monarch-tavern-tickets/15001983",
@@ -14965,7 +14729,7 @@
     },
     {
       "artist": "The Watchmen",
-      "checked": "2026-11-14",
+      "checked": "2026-11-15",
       "event": {
         "starts_at": "2026-11-21T19:00:00",
         "url": "https://www.ticketmaster.ca/the-watchmen-toronto-ontario-11-21-2026/event/10006489D43D10C3",
@@ -14983,7 +14747,7 @@
     },
     {
       "artist": "Whitmer Thomas",
-      "checked": "2026-11-14",
+      "checked": "2026-11-15",
       "event": {
         "starts_at": "2026-12-08T19:00:00",
         "url": "https://www.ticketweb.ca/event/whitmer-thomas-the-great-hall-tickets/15032263",
@@ -15094,6 +14858,38 @@
           "played on 11 days since 2006 (53 plays)"
         ],
         "score": 2.4849,
+        "tier": "know"
+      },
+      {
+        "artist": "Backstreet Boys",
+        "event": {
+          "id": "tm:1AvZZ_KGkz7jcQ4",
+          "lineup": [
+            "Backstreet Boys"
+          ],
+          "region": "Toronto",
+          "source": "ticketmaster",
+          "starts_at": "2027-02-12T20:00:00",
+          "url": "https://www.ticketmaster.ca/backstreet-boys-into-the-millennium-homecoming-toronto-ontario-02-12-2027/event/1000653E0472D695",
+          "venue": {
+            "capacity": 50000,
+            "city": "Toronto",
+            "lat": 43.6417384,
+            "lon": -79.3917447,
+            "name": "Rogers Centre"
+          }
+        },
+        "heard_before": null,
+        "listen": {
+          "soundcloud": "https://soundcloud.com/thebackstreetboys",
+          "youtube": "https://www.youtube.com/channel/UC1OR2YNQLZJYFdQjFrPWvVw"
+        },
+        "listeners": null,
+        "reasons": [
+          "played on 10 days since 2009 (11 plays)",
+          "one of your favourites"
+        ],
+        "score": 2.3979,
         "tier": "know"
       },
       {
@@ -15594,44 +15390,6 @@
     ],
     "would_like": [
       {
-        "artist": "Half Moon Run",
-        "event": {
-          "id": "tm:1A8Zku0GkeU0aeB",
-          "lineup": [
-            "Half Moon Run",
-            "FILMharmonic Orchestra"
-          ],
-          "region": "Toronto",
-          "source": "ticketmaster",
-          "starts_at": "2026-11-14T20:00:00",
-          "url": "https://www.ticketmaster.ca/half-moon-run-the-filmharmonique-orchestra-toronto-ontario-11-14-2026/event/10006364B69090BA",
-          "venue": {
-            "capacity": 3191,
-            "city": "Toronto",
-            "lat": 43.6468182,
-            "lon": -79.3766657,
-            "name": "Meridian Hall"
-          }
-        },
-        "heard_before": {
-          "days": 2,
-          "first": "2015-12-07"
-        },
-        "listen": {
-          "bandcamp": "https://halfmoonrun.bandcamp.com/",
-          "soundcloud": "https://soundcloud.com/halfmoonrun",
-          "youtube": "https://www.youtube.com/user/halfmoonrunning"
-        },
-        "listeners": 539526,
-        "reasons": [
-          "similar to Manchester Orchestra (0.89), The National (0.71), City and Colour (0.58)",
-          "you played them on 2 days back in 2015",
-          "you've never been to Meridian Hall"
-        ],
-        "score": 0.5691,
-        "tier": "would_like"
-      },
-      {
         "artist": "Chantal Kreviazuk",
         "event": {
           "id": "tm:177Zv0G61k0Q5QL",
@@ -15763,9 +15521,9 @@
     ]
   },
   "stats": {
-    "events": 480,
+    "events": 462,
     "known_artists": 1808,
-    "snapshot_days": 30
+    "snapshot_days": 31
   },
   "user": "quepol"
 }
