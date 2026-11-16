@@ -48,7 +48,16 @@
       $(`n-${which}`).textContent = items.length || "";
       list(which, items, which === "follow" ? "Unfollow" : "Unhide", (b) => Yours.setBand(b.artist, null));
     }
-    list("rooms", Yours.rooms(DEFAULT_ROOMS).map((k) => ({ label: titleCase(k) })));
+    const followed = Yours.rooms(DEFAULT_ROOMS);
+    list("rooms", followed.map((k) => ({ label: titleCase(k), key: k })), "Unfollow",
+      (r) => {
+        Yours.setRooms(Yours.rooms(DEFAULT_ROOMS).filter((k) => k !== r.key));
+        // Remember it, so a quiet room can still be found and followed again on Picks.
+        try {
+          const known = JSON.parse(localStorage.getItem(ROOMS_KNOWN_KEY)) || [];
+          if (!known.includes(r.key)) localStorage.setItem(ROOMS_KNOWN_KEY, JSON.stringify([...known, r.key]));
+        } catch {}
+      });
     $("status").textContent = STATUS[Yours.status] || "";
     $("keybox").open = !Yours.hasKey;
     $("forget").hidden = !Yours.hasKey;
