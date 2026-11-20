@@ -1256,12 +1256,28 @@
       "last": "2026-02-02",
       "plays": 1534,
       "recent": 1,
-      "seed": 150,
+      "seed": 151,
       "top": 2,
       "travel": [
         "rotation"
       ],
       "weight": 0.362
+    },
+    {
+      "artist": "Radiohead",
+      "days": 306,
+      "last": "2026-11-19",
+      "plays": 1322,
+      "recent": 98,
+      "seed": 2,
+      "top": 3,
+      "travel": [
+        "rotation",
+        "heavy",
+        "love",
+        "live"
+      ],
+      "weight": 0.958
     },
     {
       "artist": "Joshua Radin",
@@ -1273,22 +1289,6 @@
       "top": 4,
       "travel": [],
       "weight": 0.283
-    },
-    {
-      "artist": "Radiohead",
-      "days": 305,
-      "last": "2026-11-18",
-      "plays": 1317,
-      "recent": 97,
-      "seed": 2,
-      "top": 3,
-      "travel": [
-        "rotation",
-        "heavy",
-        "love",
-        "live"
-      ],
-      "weight": 0.957
     },
     {
       "artist": "Hunter Parrish",
@@ -1699,7 +1699,7 @@
       "last": "2025-12-16",
       "plays": 161,
       "recent": 8,
-      "seed": 53,
+      "seed": 54,
       "top": 34,
       "travel": [
         "rotation",
@@ -2122,13 +2122,29 @@
       "weight": 0.4
     },
     {
+      "artist": "Brandi Carlile",
+      "days": 56,
+      "last": "2026-11-19",
+      "plays": 154,
+      "recent": 31,
+      "seed": 24,
+      "top": 64,
+      "travel": [
+        "rotation",
+        "heavy",
+        "love",
+        "live"
+      ],
+      "weight": 0.674
+    },
+    {
       "artist": "James Taylor",
       "days": 56,
       "last": "2024-03-28",
       "plays": 142,
       "recent": 1,
       "seed": 251,
-      "top": 64,
+      "top": 65,
       "travel": [
         "rotation"
       ],
@@ -2141,7 +2157,7 @@
       "plays": 75,
       "recent": 5,
       "seed": 127,
-      "top": 66,
+      "top": 67,
       "travel": [
         "rotation",
         "live"
@@ -2155,27 +2171,11 @@
       "plays": 85,
       "recent": 5,
       "seed": 124,
-      "top": 65,
+      "top": 66,
       "travel": [
         "rotation"
       ],
       "weight": 0.41
-    },
-    {
-      "artist": "Brandi Carlile",
-      "days": 55,
-      "last": "2026-11-12",
-      "plays": 153,
-      "recent": 30,
-      "seed": 24,
-      "top": 67,
-      "travel": [
-        "rotation",
-        "heavy",
-        "love",
-        "live"
-      ],
-      "weight": 0.672
     },
     {
       "artist": "Regina Spektor",
@@ -2486,7 +2486,7 @@
       "last": "2025-09-29",
       "plays": 188,
       "recent": 6,
-      "seed": 98,
+      "seed": 99,
       "top": 92,
       "travel": [
         "rotation"
@@ -2592,7 +2592,7 @@
       "last": "2024-12-25",
       "plays": 128,
       "recent": 4,
-      "seed": 147,
+      "seed": 148,
       "top": 98,
       "travel": [
         "rotation"
@@ -2627,7 +2627,7 @@
       "last": "2026-01-16",
       "plays": 86,
       "recent": 12,
-      "seed": 54,
+      "seed": 55,
       "top": 102,
       "travel": [
         "rotation",
@@ -2641,7 +2641,7 @@
       "last": "2026-06-20",
       "plays": 203,
       "recent": 6,
-      "seed": 97,
+      "seed": 98,
       "top": 104,
       "travel": [
         "rotation",
@@ -2696,7 +2696,7 @@
       "last": "2025-03-21",
       "plays": 75,
       "recent": 4,
-      "seed": 156,
+      "seed": 157,
       "top": 109,
       "travel": [
         "rotation"
@@ -2835,7 +2835,7 @@
       "last": "2026-01-16",
       "plays": 95,
       "recent": 4,
-      "seed": 154,
+      "seed": 155,
       "top": 117,
       "travel": [
         "rotation"
@@ -3376,7 +3376,7 @@
       "last": "2026-04-01",
       "plays": 84,
       "recent": 4,
-      "seed": 160,
+      "seed": 161,
       "top": 161,
       "travel": [
         "rotation",
@@ -3453,7 +3453,7 @@
       "last": "2026-11-15",
       "plays": 39,
       "recent": 5,
-      "seed": 159,
+      "seed": 160,
       "top": 166,
       "travel": [
         "rotation"
@@ -3568,7 +3568,7 @@
       "last": "2026-11-15",
       "plays": 57,
       "recent": 5,
-      "seed": 151,
+      "seed": 152,
       "top": 173,
       "travel": [
         "rotation"
@@ -3688,13 +3688,27 @@
       "weight": 0.276
     },
     {
+      "artist": "Bad Bunny",
+      "days": 26,
+      "last": "2026-11-19",
+      "plays": 140,
+      "recent": 26,
+      "seed": 53,
+      "top": 187,
+      "travel": [
+        "rotation",
+        "heavy"
+      ],
+      "weight": 0.61
+    },
+    {
       "artist": "Bob Marley",
       "days": 26,
       "last": "2017-06-06",
       "plays": 34,
       "recent": 0,
       "seed": null,
-      "top": 193,
+      "top": 194,
       "travel": [],
       "weight": null
     },
@@ -3705,7 +3719,7 @@
       "plays": 50,
       "recent": 0,
       "seed": null,
-      "top": 191,
+      "top": 192,
       "travel": [],
       "weight": null
     },
@@ -3715,8 +3729,8 @@
       "last": "2026-03-28",
       "plays": 81,
       "recent": 5,
-      "seed": 146,
-      "top": 187,
+      "seed": 147,
+      "top": 188,
       "travel": [
         "rotation"
       ],
@@ -3729,7 +3743,7 @@
       "plays": 31,
       "recent": 0,
       "seed": null,
-      "top": 194,
+      "top": 195,
       "travel": [],
       "weight": null
     },
@@ -3740,7 +3754,7 @@
       "plays": 26,
       "recent": 0,
       "seed": null,
-      "top": 197,
+      "top": 198,
       "travel": [],
       "weight": null
     },
@@ -3751,7 +3765,7 @@
       "plays": 80,
       "recent": 17,
       "seed": 63,
-      "top": 188,
+      "top": 189,
       "travel": [
         "rotation",
         "heavy"
@@ -3765,7 +3779,7 @@
       "plays": 31,
       "recent": 0,
       "seed": null,
-      "top": 195,
+      "top": 196,
       "travel": [],
       "weight": null
     },
@@ -3790,7 +3804,7 @@
       "plays": 27,
       "recent": 0,
       "seed": null,
-      "top": 196,
+      "top": 197,
       "travel": [],
       "weight": null
     },
@@ -3801,7 +3815,7 @@
       "plays": 45,
       "recent": 0,
       "seed": null,
-      "top": 192,
+      "top": 193,
       "travel": [],
       "weight": null
     },
@@ -3812,7 +3826,7 @@
       "plays": 59,
       "recent": 18,
       "seed": 70,
-      "top": 190,
+      "top": 191,
       "travel": [
         "rotation",
         "heavy"
@@ -3826,7 +3840,7 @@
       "plays": 64,
       "recent": 1,
       "seed": null,
-      "top": 189,
+      "top": 190,
       "travel": [
         "rotation"
       ],
@@ -3842,20 +3856,6 @@
       "top": 200,
       "travel": [],
       "weight": null
-    },
-    {
-      "artist": "Bad Bunny",
-      "days": 25,
-      "last": "2026-11-18",
-      "plays": 139,
-      "recent": 25,
-      "seed": 55,
-      "top": 199,
-      "travel": [
-        "rotation",
-        "heavy"
-      ],
-      "weight": 0.607
     },
     {
       "artist": "Gorillaz",
@@ -3888,7 +3888,7 @@
       "plays": 207,
       "recent": 1,
       "seed": 270,
-      "top": 198,
+      "top": 199,
       "travel": [
         "rotation"
       ],
@@ -3913,7 +3913,7 @@
       "last": "2026-01-20",
       "plays": 47,
       "recent": 5,
-      "seed": 158,
+      "seed": 159,
       "top": null,
       "travel": [],
       "weight": 0.343
@@ -4145,7 +4145,7 @@
       "last": "2026-01-21",
       "plays": 29,
       "recent": 14,
-      "seed": 96,
+      "seed": 97,
       "top": null,
       "travel": [
         "heavy"
@@ -4423,7 +4423,7 @@
       "last": "2026-04-24",
       "plays": 56,
       "recent": 9,
-      "seed": 95,
+      "seed": 96,
       "top": null,
       "travel": [
         "heavy"
@@ -4548,7 +4548,7 @@
       "last": "2025-01-17",
       "plays": 40,
       "recent": 6,
-      "seed": 153,
+      "seed": 154,
       "top": null,
       "travel": [],
       "weight": 0.355
@@ -4738,7 +4738,7 @@
       "last": "2026-06-12",
       "plays": 32,
       "recent": 6,
-      "seed": 161,
+      "seed": 162,
       "top": null,
       "travel": [],
       "weight": 0.338
@@ -4814,7 +4814,7 @@
       "last": "2026-04-04",
       "plays": 115,
       "recent": 8,
-      "seed": 99,
+      "seed": 100,
       "top": null,
       "travel": [
         "heavy"
@@ -4860,7 +4860,7 @@
       "last": "2026-04-23",
       "plays": 18,
       "recent": 7,
-      "seed": 163,
+      "seed": 164,
       "top": null,
       "travel": [],
       "weight": 0.335
@@ -5017,6 +5017,19 @@
       "weight": 0.299
     },
     {
+      "artist": "Woodkid",
+      "days": 14,
+      "last": "2026-11-19",
+      "plays": 48,
+      "recent": 14,
+      "seed": 95,
+      "top": null,
+      "travel": [
+        "heavy"
+      ],
+      "weight": 0.488
+    },
+    {
       "artist": "Young the Giant",
       "days": 14,
       "last": "2025-04-16",
@@ -5055,7 +5068,7 @@
       "last": "2026-10-31",
       "plays": 13,
       "recent": 9,
-      "seed": 149,
+      "seed": 150,
       "top": null,
       "travel": [
         "heavy"
@@ -5128,7 +5141,7 @@
       "last": "2026-04-15",
       "plays": 15,
       "recent": 8,
-      "seed": 157,
+      "seed": 158,
       "top": null,
       "travel": [
         "heavy"
@@ -5189,25 +5202,12 @@
       "last": "2026-04-01",
       "plays": 13,
       "recent": 8,
-      "seed": 162,
+      "seed": 163,
       "top": null,
       "travel": [
         "heavy"
       ],
       "weight": 0.337
-    },
-    {
-      "artist": "Woodkid",
-      "days": 13,
-      "last": "2026-11-15",
-      "plays": 47,
-      "recent": 13,
-      "seed": 100,
-      "top": null,
-      "travel": [
-        "heavy"
-      ],
-      "weight": 0.482
     },
     {
       "artist": "Drake",
@@ -5326,6 +5326,20 @@
       "weight": 0.215
     },
     {
+      "artist": "Angine de poitrine",
+      "days": 11,
+      "last": "2026-11-19",
+      "plays": 31,
+      "recent": 11,
+      "seed": 113,
+      "top": null,
+      "travel": [
+        "heavy",
+        "live"
+      ],
+      "weight": 0.44
+    },
+    {
       "artist": "Childish Gambino",
       "days": 11,
       "last": "2026-04-17",
@@ -5387,20 +5401,6 @@
       "weight": 0.384
     },
     {
-      "artist": "Angine de poitrine",
-      "days": 10,
-      "last": "2026-11-12",
-      "plays": 30,
-      "recent": 10,
-      "seed": 114,
-      "top": null,
-      "travel": [
-        "heavy",
-        "live"
-      ],
-      "weight": 0.431
-    },
-    {
       "artist": "Backstreet Boys",
       "days": 10,
       "last": "2026-04-15",
@@ -5414,12 +5414,25 @@
       "weight": 0.311
     },
     {
+      "artist": "Live",
+      "days": 10,
+      "last": "2026-11-19",
+      "plays": 19,
+      "recent": 9,
+      "seed": 146,
+      "top": null,
+      "travel": [
+        "heavy"
+      ],
+      "weight": 0.372
+    },
+    {
       "artist": "Mark Ronson",
       "days": 10,
       "last": "2025-10-27",
       "plays": 13,
       "recent": 9,
-      "seed": 155,
+      "seed": 156,
       "top": null,
       "travel": [
         "heavy"
@@ -5432,7 +5445,7 @@
       "last": "2026-11-11",
       "plays": 27,
       "recent": 8,
-      "seed": 148,
+      "seed": 149,
       "top": null,
       "travel": [
         "heavy",
@@ -5561,19 +5574,6 @@
       "weight": 0.29
     },
     {
-      "artist": "Live",
-      "days": 9,
-      "last": "2026-10-01",
-      "plays": 18,
-      "recent": 8,
-      "seed": 164,
-      "top": null,
-      "travel": [
-        "heavy"
-      ],
-      "weight": 0.334
-    },
-    {
       "artist": "Marshmello",
       "days": 9,
       "last": "2026-10-25",
@@ -5627,7 +5627,7 @@
       "last": "2026-04-01",
       "plays": 17,
       "recent": 9,
-      "seed": 152,
+      "seed": 153,
       "top": null,
       "travel": [
         "heavy"
@@ -5708,7 +5708,7 @@
       "last": "2026-10-09",
       "plays": 111,
       "recent": 8,
-      "seed": 113,
+      "seed": 114,
       "top": null,
       "travel": [
         "heavy"
@@ -6148,227 +6148,6 @@
     }
   ],
   "calendar": [
-    {
-      "acts": [
-        {
-          "affinity": 0.0036,
-          "artist": "Catch Your Breath",
-          "listeners": 258935,
-          "why": "tags match your taste: post-hardcore, hardcore, alternative metal"
-        },
-        {
-          "affinity": 0.0221,
-          "artist": "TX2",
-          "listeners": 164197,
-          "why": "tags match your taste: pop punk, emo, post-hardcore"
-        },
-        {
-          "affinity": 0.0004,
-          "artist": "Arankai",
-          "listeners": 69427,
-          "why": "tags match your taste: alternative metal, metalcore"
-        },
-        {
-          "affinity": 0.0109,
-          "artist": "Colorblind",
-          "listeners": 91254,
-          "why": "tags match your taste: post-hardcore, nu metal, hard rock"
-        }
-      ],
-      "id": "tm:177Zv0G65l9L0CA",
-      "region": "Toronto",
-      "starts_at": "2026-11-19T18:00:00",
-      "url": "https://www.ticketmaster.ca/catch-your-breath-not-broken-enough-toronto-ontario-11-19-2026/event/100064BAD77E4385",
-      "venue": {
-        "capacity": 1400,
-        "name": "The Danforth Music Hall"
-      }
-    },
-    {
-      "acts": [
-        {
-          "affinity": 0.0,
-          "artist": "In All Fairness",
-          "listeners": 644
-        },
-        {
-          "affinity": 0.0,
-          "artist": "Clovercast",
-          "listeners": 19
-        },
-        {
-          "affinity": 0.0,
-          "artist": "The Pressures",
-          "listeners": 694
-        },
-        {
-          "affinity": 0.0009,
-          "artist": "JRD",
-          "listeners": 121826,
-          "why": "tags match your taste: instrumental hip-hop, instrumental, lo-fi"
-        }
-      ],
-      "id": "tm:rZ7HnEZ1AfCoOf",
-      "region": "Toronto",
-      "starts_at": "2026-11-19T19:00:00",
-      "url": "https://www.ticketweb.ca/event/in-all-fairness-w-clovercast-supermarket-tickets/14391814",
-      "venue": {
-        "capacity": 200,
-        "name": "Supermarket"
-      }
-    },
-    {
-      "acts": [
-        {
-          "affinity": 0.0,
-          "artist": "Insomnium",
-          "listeners": 287211
-        },
-        {
-          "affinity": 0.0,
-          "artist": "Amorphis",
-          "listeners": 564530
-        },
-        {
-          "affinity": 0.0,
-          "artist": "Hinayana",
-          "listeners": 10421,
-          "why": "tags match your taste: metal, austin, texas"
-        }
-      ],
-      "id": "tm:rZ7HnEZ1Af1d1f",
-      "region": "Toronto",
-      "starts_at": "2026-11-19T19:00:00",
-      "url": "https://www.ticketweb.ca/event/insomnium-amorphis-the-concert-hall-tickets/14283294",
-      "venue": {
-        "capacity": 850,
-        "name": "The Concert Hall"
-      }
-    },
-    {
-      "acts": [
-        {
-          "affinity": 0.0631,
-          "artist": "Madeon",
-          "listeners": 818067,
-          "why": "similar to Daft Punk (0.27), Justice (0.26), The Chainsmokers (0.07)"
-        },
-        {
-          "affinity": 0.0129,
-          "artist": "Anamanaguchi",
-          "listeners": 798495,
-          "why": "similar to Toby Fox (0.16)"
-        }
-      ],
-      "id": "tm:177Zv0G61hw4hOH",
-      "region": "Toronto",
-      "starts_at": "2026-11-19T19:00:00",
-      "url": "https://www.ticketmaster.ca/madeon-presents-victory-live-toronto-ontario-11-19-2026/event/100064A6F255B83C",
-      "venue": {
-        "capacity": 2500,
-        "name": "History Toronto"
-      }
-    },
-    {
-      "acts": [
-        {
-          "affinity": 0.0,
-          "artist": "Rishab Rikhiram Sharma",
-          "listeners": 17071
-        }
-      ],
-      "id": "tm:1A8ZkfAGkduSQUW",
-      "region": "Toronto",
-      "starts_at": "2026-11-19T19:30:00",
-      "url": "https://www.ticketmaster.ca/rishab-rikhiram-sharma-sitar-for-mental-toronto-ontario-11-19-2026/event/10006505CDCDADBD",
-      "venue": {
-        "capacity": 2000,
-        "name": "The Theatre at Great Canadian Toronto"
-      }
-    },
-    {
-      "acts": [
-        {
-          "affinity": 0.0,
-          "artist": "Fox Stevenson",
-          "listeners": 303408
-        },
-        {
-          "affinity": 0.027,
-          "artist": "Mystery Skulls",
-          "listeners": 266019,
-          "why": "similar to Miike Snow (0.23), Owl City (0.12), Passion Pit (0.09)"
-        }
-      ],
-      "id": "tm:rZ7HnEZ1AfPObd",
-      "region": "Toronto",
-      "starts_at": "2026-11-19T20:00:00",
-      "url": "https://www.ticketweb.ca/event/fox-stevenson-x-mystery-skulls-lees-palace-tickets/14960603",
-      "venue": {
-        "capacity": 700,
-        "name": "Lee's Palace"
-      }
-    },
-    {
-      "acts": [
-        {
-          "affinity": 0.0008,
-          "artist": "LUCY (Cooper B. Handy)",
-          "listeners": 61998,
-          "why": "tags match your taste: art pop, experimental, lo-fi"
-        }
-      ],
-      "id": "tm:rZ7HnEZ1AfOx4K",
-      "region": "Toronto",
-      "starts_at": "2026-11-19T20:00:00",
-      "url": "https://www.ticketweb.ca/event/lucy-cooper-b-handy-with-the-dance-cave-tickets/14822553",
-      "venue": {
-        "capacity": 400,
-        "name": "The Dance Cave"
-      }
-    },
-    {
-      "acts": [
-        {
-          "affinity": 0.0769,
-          "artist": "Mamas Gun",
-          "listeners": 77900,
-          "why": "similar to Mayer Hawthorne (0.75), Vulfpeck (0.29), Leon Bridges (0.29)"
-        },
-        {
-          "affinity": 0.0446,
-          "artist": "Clerel",
-          "listeners": 7235,
-          "why": "tags match your taste: soul, blues"
-        }
-      ],
-      "id": "tm:rZ7HnEZ1AfOpvS",
-      "region": "Toronto",
-      "starts_at": "2026-11-19T20:00:00",
-      "url": "https://www.ticketweb.ca/event/mamas-gun-the-garrison-tickets/14816073",
-      "venue": {
-        "capacity": null,
-        "name": "The Garrison"
-      }
-    },
-    {
-      "acts": [
-        {
-          "affinity": 0.0369,
-          "artist": "Joshua Redman",
-          "listeners": 318899,
-          "why": "similar to Charlie Hunter (0.26)"
-        }
-      ],
-      "id": "tm:177Zv0G65a57uVh",
-      "region": "Toronto",
-      "starts_at": "2026-11-19T20:00:00",
-      "url": "https://www.ticketmaster.ca/joshua-redman-quartet-toronto-ontario-11-19-2026/event/100064B24B10DD1B",
-      "venue": {
-        "capacity": 1800,
-        "name": "Meridian Arts Centre: George Weston"
-      }
-    },
     {
       "acts": [
         {
@@ -8834,7 +8613,7 @@
     {
       "acts": [
         {
-          "affinity": 0.0439,
+          "affinity": 0.0493,
           "artist": "Josie Edwards",
           "listeners": 56639,
           "why": "similar to Noah Kahan (0.32), Annabelle Dinda (0.27), Radical Face (0.21)"
@@ -9534,7 +9313,7 @@
     {
       "acts": [
         {
-          "affinity": 0.2439,
+          "affinity": 0.2441,
           "artist": "Amanda Marshall",
           "listeners": 156238,
           "why": "similar to Sheryl Crow (0.40), Sarah McLachlan (0.39), Brandi Carlile (0.30)"
@@ -9790,7 +9569,7 @@
     {
       "acts": [
         {
-          "affinity": 0.2439,
+          "affinity": 0.2441,
           "artist": "Amanda Marshall",
           "listeners": 156238,
           "why": "similar to Sheryl Crow (0.40), Sarah McLachlan (0.39), Brandi Carlile (0.30)"
@@ -12820,7 +12599,7 @@
         {
           "affinity": 0.0,
           "artist": "Chase Matthew",
-          "listeners": 81857
+          "listeners": 82312
         },
         {
           "affinity": 0.01,
@@ -13826,7 +13605,7 @@
       }
     }
   ],
-  "generated_at": "2026-11-19T11:47:36+00:00",
+  "generated_at": "2026-11-20T11:46:52+00:00",
   "ledger": [
     {
       "artist": "Compagnie Yoann Bourgeois",
@@ -13846,7 +13625,7 @@
     },
     {
       "artist": "Hockey Academy",
-      "checked": "2026-11-19",
+      "checked": "2026-11-20",
       "event": {
         "starts_at": "2026-11-20T21:00:00",
         "url": "https://www.ticketweb.ca/event/around-the-corner-presents-man-lees-palace-tickets/14395614",
@@ -13865,7 +13644,7 @@
     },
     {
       "artist": "Mad Iris",
-      "checked": "2026-11-19",
+      "checked": "2026-11-20",
       "event": {
         "starts_at": "2026-11-20T21:00:00",
         "url": "https://www.ticketweb.ca/event/around-the-corner-presents-man-lees-palace-tickets/14395614",
@@ -13884,7 +13663,7 @@
     },
     {
       "artist": "OTNES",
-      "checked": "2026-11-19",
+      "checked": "2026-11-20",
       "event": {
         "starts_at": "2026-11-10T19:00:00",
         "url": "https://www.ticketmaster.ca/donny-benet-toronto-ontario-11-10-2026/event/1000648604E0EC43",
@@ -13903,7 +13682,7 @@
     },
     {
       "artist": "comehelpglo",
-      "checked": "2026-11-19",
+      "checked": "2026-11-20",
       "event": {
         "starts_at": "2026-11-10T19:00:00",
         "url": "https://www.ticketmaster.ca/pouya-the-forever-glades-tour-toronto-ontario-11-10-2026/event/100064C9B042E9DF",
@@ -13922,7 +13701,7 @@
     },
     {
       "artist": "Jackie Evans",
-      "checked": "2026-11-19",
+      "checked": "2026-11-20",
       "event": {
         "starts_at": "2026-11-08T19:00:00",
         "url": "https://www.ticketmaster.ca/jackie-evans-toronto-ontario-11-08-2026/event/100064DEA887A585",
@@ -13941,7 +13720,7 @@
     },
     {
       "artist": "Adam Cohen",
-      "checked": "2026-11-19",
+      "checked": "2026-11-20",
       "event": {
         "starts_at": "2026-11-07T20:00:00",
         "url": "https://www.ticketmaster.ca/everybody-knows-leonard-cohen-10th-anniversary-toronto-ontario-11-07-2026/event/100064E1E1815048",
@@ -13959,7 +13738,7 @@
     },
     {
       "artist": "AHI",
-      "checked": "2026-11-19",
+      "checked": "2026-11-20",
       "event": {
         "starts_at": "2026-10-22T19:00:00",
         "url": "https://www.ticketmaster.ca/allison-russell-with-very-special-guest-toronto-ontario-10-22-2026/event/10006547B0205A80",
@@ -13977,7 +13756,7 @@
     },
     {
       "artist": "Allison Russell",
-      "checked": "2026-11-19",
+      "checked": "2026-11-20",
       "event": {
         "starts_at": "2026-10-22T19:00:00",
         "url": "https://www.ticketmaster.ca/allison-russell-with-very-special-guest-toronto-ontario-10-22-2026/event/10006547B0205A80",
@@ -13996,7 +13775,7 @@
     },
     {
       "artist": "Ally Salort",
-      "checked": "2026-11-19",
+      "checked": "2026-11-20",
       "event": {
         "starts_at": "2026-10-26T19:00:00",
         "url": "https://www.ticketmaster.ca/lexi-jayde-toronto-ontario-10-26-2026/event/1000651B953A7C3B",
@@ -14015,7 +13794,7 @@
     },
     {
       "artist": "ARK IDENTITY",
-      "checked": "2026-11-19",
+      "checked": "2026-11-20",
       "event": {
         "starts_at": "2026-11-12T19:00:00",
         "url": "https://www.ticketweb.ca/event/ark-identity-the-sound-garage-tickets/14367184",
@@ -14033,7 +13812,7 @@
     },
     {
       "artist": "Band Of Silver",
-      "checked": "2026-11-19",
+      "checked": "2026-11-20",
       "event": {
         "starts_at": "2026-10-24T18:30:00",
         "url": "https://www.ticketmaster.ca/judah-the-lion-toronto-ontario-10-24-2026/event/100064CAD5EF8D62",
@@ -14051,7 +13830,7 @@
     },
     {
       "artist": "Caity Gyorgy",
-      "checked": "2026-11-19",
+      "checked": "2026-11-20",
       "event": {
         "starts_at": "2026-12-12T19:30:00",
         "url": "https://www.ticketmaster.ca/swing-into-the-holidays-ft-caity-toronto-ontario-12-12-2026/event/100064B24B04DD11",
@@ -14069,7 +13848,7 @@
     },
     {
       "artist": "Charlotte Cornfield",
-      "checked": "2026-11-19",
+      "checked": "2026-11-20",
       "event": {
         "starts_at": "2026-12-03T20:00:00",
         "url": "https://www.ticketweb.ca/event/charlotte-cornfield-and-friendship-with-lees-palace-tickets/14903453",
@@ -14088,7 +13867,7 @@
     },
     {
       "artist": "Colorblind",
-      "checked": "2026-11-19",
+      "checked": "2026-11-20",
       "event": {
         "starts_at": "2026-11-19T18:00:00",
         "url": "https://www.ticketmaster.ca/catch-your-breath-not-broken-enough-toronto-ontario-11-19-2026/event/100064BAD77E4385",
@@ -14106,7 +13885,7 @@
     },
     {
       "artist": "Devon Gabriella",
-      "checked": "2026-11-19",
+      "checked": "2026-11-20",
       "event": {
         "starts_at": "2026-12-07T18:30:00",
         "url": "https://www.ticketmaster.ca/devon-gabriella-toronto-ontario-12-07-2026/event/100065302201E92B",
@@ -14125,7 +13904,7 @@
     },
     {
       "artist": "Field Guide",
-      "checked": "2026-11-19",
+      "checked": "2026-11-20",
       "event": {
         "starts_at": "2026-11-20T19:00:00",
         "url": "https://www.ticketmaster.ca/boy-golden-good-goddamn-another-tour-toronto-ontario-11-20-2026/event/100065168FDDA025",
@@ -14145,7 +13924,7 @@
     },
     {
       "artist": "Kes",
-      "checked": "2026-11-19",
+      "checked": "2026-11-20",
       "event": {
         "starts_at": "2026-12-18T20:00:00",
         "url": "https://www.ticketmaster.ca/kesmas-with-kes-the-band-toronto-ontario-12-18-2026/event/10006549E31674D3",
@@ -14163,7 +13942,7 @@
     },
     {
       "artist": "Loviet",
-      "checked": "2026-11-19",
+      "checked": "2026-11-20",
       "event": {
         "starts_at": "2026-11-09T19:00:00",
         "url": "https://www.ticketmaster.ca/the-wldlfe-toronto-ontario-11-09-2026/event/100064CF43BE63DC",
@@ -14182,7 +13961,7 @@
     },
     {
       "artist": "Mamas Gun",
-      "checked": "2026-11-19",
+      "checked": "2026-11-20",
       "event": {
         "starts_at": "2026-11-19T20:00:00",
         "url": "https://www.ticketweb.ca/event/mamas-gun-the-garrison-tickets/14816073",
@@ -14200,7 +13979,7 @@
     },
     {
       "artist": "Mr. Fantasy",
-      "checked": "2026-11-19",
+      "checked": "2026-11-20",
       "event": {
         "starts_at": "2026-10-24T19:00:00",
         "url": "https://www.ticketmaster.ca/mr-fantasy-sexy-saturday-nights-tour-toronto-ontario-10-24-2026/event/10006528BD1EB11E",
@@ -14219,7 +13998,7 @@
     },
     {
       "artist": "Sam Quealy",
-      "checked": "2026-11-19",
+      "checked": "2026-11-20",
       "event": {
         "starts_at": "2026-12-04T19:00:00",
         "url": "https://www.ticketmaster.ca/sam-quealy-north-america-tour-toronto-ontario-12-04-2026/event/100064E7D333B647",
@@ -14238,7 +14017,7 @@
     },
     {
       "artist": "The Trews",
-      "checked": "2026-11-19",
+      "checked": "2026-11-20",
       "event": {
         "starts_at": "2026-12-05T18:30:00",
         "url": "https://www.ticketmaster.ca/the-trews-toronto-ontario-12-05-2026/event/1000652BDABA8714",
@@ -14256,7 +14035,7 @@
     },
     {
       "artist": "Venus & The Flytraps",
-      "checked": "2026-11-19",
+      "checked": "2026-11-20",
       "event": {
         "starts_at": "2026-11-03T19:00:00",
         "url": "https://www.ticketmaster.ca/dev-lemons-eat-the-pavement-tour-toronto-ontario-11-03-2026/event/100064E8A8117AF2",
@@ -14275,7 +14054,7 @@
     },
     {
       "artist": "The 4411",
-      "checked": "2026-11-19",
+      "checked": "2026-11-20",
       "event": {
         "starts_at": "2026-11-11T19:00:00",
         "url": "https://www.ticketmaster.ca/west-22nd-places-to-be-toronto-ontario-11-11-2026/event/10006487E12C8BA5",
@@ -14293,7 +14072,7 @@
     },
     {
       "artist": "54-40",
-      "checked": "2026-11-19",
+      "checked": "2026-11-20",
       "event": {
         "starts_at": "2026-11-28T19:00:00",
         "url": "https://www.ticketmaster.ca/5440-toronto-ontario-11-28-2026/event/1000648FE5A3BC17",
@@ -14311,7 +14090,7 @@
     },
     {
       "artist": "Boy Golden",
-      "checked": "2026-11-19",
+      "checked": "2026-11-20",
       "event": {
         "starts_at": "2026-11-20T19:00:00",
         "url": "https://www.ticketmaster.ca/boy-golden-good-goddamn-another-tour-toronto-ontario-11-20-2026/event/100065168FDDA025",
@@ -14330,7 +14109,7 @@
     },
     {
       "artist": "Bradley Hale",
-      "checked": "2026-11-19",
+      "checked": "2026-11-20",
       "event": {
         "starts_at": "2026-11-12T19:00:00",
         "url": "https://www.ticketmaster.ca/sully-burrows-the-leave-you-lonely-toronto-ontario-11-12-2026/event/10006523B5E9A6C3",
@@ -14348,7 +14127,7 @@
     },
     {
       "artist": "Clerel",
-      "checked": "2026-11-19",
+      "checked": "2026-11-20",
       "event": {
         "starts_at": "2026-11-19T20:00:00",
         "url": "https://www.ticketweb.ca/event/mamas-gun-the-garrison-tickets/14816073",
@@ -14365,7 +14144,7 @@
     },
     {
       "artist": "Dominique Way",
-      "checked": "2026-11-19",
+      "checked": "2026-11-20",
       "event": {
         "starts_at": "2026-10-17T19:00:00",
         "url": "https://www.ticketmaster.ca/anna-graves-americas-greatest-burnout-tour-toronto-ontario-10-17-2026/event/100064C9F1B9E130",
@@ -14383,7 +14162,7 @@
     },
     {
       "artist": "Ella Woolsey",
-      "checked": "2026-11-19",
+      "checked": "2026-11-20",
       "event": {
         "starts_at": "2026-10-25T19:00:00",
         "url": "https://www.ticketmaster.ca/the-army-the-navy-the-fake-toronto-ontario-10-25-2026/event/100064CBC7977C87",
@@ -14401,7 +14180,7 @@
     },
     {
       "artist": "Good Lovelies",
-      "checked": "2026-11-19",
+      "checked": "2026-11-20",
       "event": {
         "starts_at": "2026-12-17T20:00:00",
         "url": "https://www.ticketmaster.ca/good-lovelies-holiday-concert-toronto-ontario-12-17-2026/event/100064C2DE8DACA5",
@@ -14418,7 +14197,7 @@
     },
     {
       "artist": "Jonathan Roy",
-      "checked": "2026-11-19",
+      "checked": "2026-11-20",
       "event": {
         "starts_at": "2026-10-16T20:00:00",
         "url": "https://www.ticketmaster.ca/collective-soul-pickering-ontario-10-16-2026/event/100064DE913C6FA0",
@@ -14435,7 +14214,7 @@
     },
     {
       "artist": "Jordan Hart",
-      "checked": "2026-11-19",
+      "checked": "2026-11-20",
       "event": {
         "starts_at": "2026-12-20T19:00:00",
         "url": "https://www.ticketweb.ca/event/jordan-hart-longboat-hall-tickets/14322014",
@@ -14453,7 +14232,7 @@
     },
     {
       "artist": "Julian Taylor",
-      "checked": "2026-11-19",
+      "checked": "2026-11-20",
       "event": {
         "starts_at": "2026-10-16T19:00:00",
         "url": "https://www.ticketmaster.ca/sanctuary-park-tour-celebrating-40-years-toronto-ontario-10-16-2026/event/100064D1D94E7213",
@@ -14471,7 +14250,7 @@
     },
     {
       "artist": "Macy Todd",
-      "checked": "2026-11-19",
+      "checked": "2026-11-20",
       "event": {
         "starts_at": "2026-11-29T19:00:00",
         "url": "https://www.ticketmaster.ca/an-evening-with-sasha-alex-sloan-toronto-ontario-11-29-2026/event/1000654196337229",
@@ -14489,7 +14268,7 @@
     },
     {
       "artist": "Mike D",
-      "checked": "2026-11-19",
+      "checked": "2026-11-20",
       "event": {
         "starts_at": "2026-10-20T19:00:00",
         "url": "https://www.ticketmaster.ca/mike-d-5d-toronto-ontario-10-20-2026/event/100064F08ADE5798",
@@ -14506,7 +14285,7 @@
     },
     {
       "artist": "the olllam",
-      "checked": "2026-11-19",
+      "checked": "2026-11-20",
       "event": {
         "starts_at": "2026-11-12T19:00:00",
         "url": "https://www.ticketmaster.ca/the-olllam-toronto-ontario-11-12-2026/event/1000650506F2B686",
@@ -14524,7 +14303,7 @@
     },
     {
       "artist": "Raine Maida",
-      "checked": "2026-11-19",
+      "checked": "2026-11-20",
       "event": {
         "starts_at": "2026-11-22T18:30:00",
         "url": "https://www.ticketmaster.ca/an-evening-with-raine-maida-chantal-toronto-ontario-11-22-2026/event/100064A1A468B69F",
@@ -14542,7 +14321,7 @@
     },
     {
       "artist": "Rett Madison",
-      "checked": "2026-11-19",
+      "checked": "2026-11-20",
       "event": {
         "starts_at": "2026-10-17T19:00:00",
         "url": "https://www.ticketweb.ca/event/rett-madison-the-sound-garage-tickets/15001533",
@@ -14559,7 +14338,7 @@
     },
     {
       "artist": "Salin",
-      "checked": "2026-11-19",
+      "checked": "2026-11-20",
       "event": {
         "starts_at": "2026-10-19T19:00:00",
         "url": "https://www.ticketweb.ca/event/salin-the-garrison-tickets/15012983",
@@ -14576,7 +14355,7 @@
     },
     {
       "artist": "Telescreens",
-      "checked": "2026-11-19",
+      "checked": "2026-11-20",
       "event": {
         "starts_at": "2026-10-21T19:00:00",
         "url": "https://www.ticketweb.ca/event/telescreens-why-the-the-sound-garage-tickets/14980963",
@@ -14593,7 +14372,7 @@
     },
     {
       "artist": "Twin Fin",
-      "checked": "2026-11-19",
+      "checked": "2026-11-20",
       "event": {
         "starts_at": "2026-10-20T19:00:00",
         "url": "https://www.ticketweb.ca/event/twin-fin-monarch-tavern-tickets/15001983",
@@ -14611,7 +14390,7 @@
     },
     {
       "artist": "The Watchmen",
-      "checked": "2026-11-19",
+      "checked": "2026-11-20",
       "event": {
         "starts_at": "2026-11-21T19:00:00",
         "url": "https://www.ticketmaster.ca/the-watchmen-toronto-ontario-11-21-2026/event/10006489D43D10C3",
@@ -14629,7 +14408,7 @@
     },
     {
       "artist": "Whitmer Thomas",
-      "checked": "2026-11-19",
+      "checked": "2026-11-20",
       "event": {
         "starts_at": "2026-12-08T19:00:00",
         "url": "https://www.ticketweb.ca/event/whitmer-thomas-the-great-hall-tickets/15032263",
@@ -15024,11 +14803,11 @@
         "reasons": [
           "similar to Adele (0.82), Alessia Cara (0.70), Teddy Swims (0.68)",
           "only 27,963 listeners on Last.fm",
-          "listeners growing +0.5%/week over 4 weeks",
+          "listeners growing +0.5%/week over 5 weeks",
           "small venue (~575 cap.)",
           "you've never been to The Mod Club"
         ],
-        "score": 0.4073,
+        "score": 0.4066,
         "tier": "next_big_thing"
       },
       {
@@ -15059,11 +14838,11 @@
           "similar to The New Pornographers (0.40), Feist (0.39), José González (0.35)",
           "played Bottom of the Hill in SF",
           "only 54,796 listeners on Last.fm",
-          "listeners growing +0.2%/week over 4 weeks",
+          "listeners growing +0.2%/week over 5 weeks",
           "small venue (~700 cap.)",
           "you've never been to Lee's Palace"
         ],
-        "score": 0.292,
+        "score": 0.2917,
         "tier": "next_big_thing"
       },
       {
@@ -15131,11 +14910,11 @@
           "similar to Shakey Graves (0.43), Gregory Alan Isakov (0.38), The Lumineers (0.33)",
           "you played them on 1 day back in 2021",
           "only 97,616 listeners on Last.fm",
-          "listeners growing +0.1%/week over 4 weeks",
+          "listeners growing +0.1%/week over 5 weeks",
           "small venue (~575 cap.)",
           "you've never been to The Mod Club"
         ],
-        "score": 0.1932,
+        "score": 0.1931,
         "tier": "next_big_thing"
       },
       {
@@ -15203,7 +14982,7 @@
         "reasons": [
           "tags match your taste: singer-songwriter, indie rock, piano rock",
           "only 29,290 listeners on Last.fm",
-          "listeners growing +0.0%/week over 4 weeks",
+          "listeners growing +0.0%/week over 5 weeks",
           "small venue (~1,400 cap.)"
         ],
         "score": 0.126,
@@ -15237,7 +15016,7 @@
         "reasons": [
           "similar to The Tragically Hip (1.00), Sloan (0.54), Silversun Pickups (0.28)",
           "only 89,373 listeners on Last.fm",
-          "listeners growing +0.0%/week over 4 weeks",
+          "listeners growing +0.0%/week over 5 weeks",
           "small venue (~1,400 cap.)"
         ],
         "score": 0.12,
@@ -15377,9 +15156,9 @@
     ]
   },
   "stats": {
-    "events": 456,
+    "events": 447,
     "known_artists": 1811,
-    "snapshot_days": 35
+    "snapshot_days": 36
   },
   "user": "quepol"
 }
