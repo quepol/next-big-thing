@@ -41,6 +41,12 @@
       "artist": "Allan Rayman",
       "state": "follow",
       "at": "2026-11-14T04:34:58.600Z"
+    },
+    "unkle": {
+      "artist": "Unkle",
+      "state": "follow",
+      "at": "2026-11-28T05:30:03.578Z",
+      "tier": "would_like"
     }
   },
   "rooms": [
